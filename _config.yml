@@ -9,8 +9,8 @@
 title:            Android UI OpenSource
 email:            kmshack@naver.com
 description:      Collection of OpenSource for Android UI.
-baseurl:          '' # The subpath of your site, e.g. /blog
-url:              'http://android.kmshack.kr' # The base hostname & protocol for your site
+baseurl:          '/AndroidUICollection' # The subpath of your site, e.g. /blog
+url:              'http://kmshack.github.io' # The base hostname & protocol for your site
 github_username:  kmshack
 twitter_username: kmshack_kr
 

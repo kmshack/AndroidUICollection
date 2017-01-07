@@ -3,16 +3,17 @@
   <channel>
     <title>Android UI OpenSource</title>
     <description>Collection of OpenSource for Android UI.</description>
-    <link>http://android.kmshack.kr/</link>
-    <atom:link href="http://android.kmshack.kr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 02 Jan 2017 22:59:13 +0900</pubDate>
-    <lastBuildDate>Mon, 02 Jan 2017 22:59:13 +0900</lastBuildDate>
+    <link>http://kmshack.github.io/AndroidUICollection/</link>
+    <atom:link href="http://kmshack.github.io/AndroidUICollection/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 07 Jan 2017 19:30:08 +0900</pubDate>
+    <lastBuildDate>Sat, 07 Jan 2017 19:30:08 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
         <title>Text Decorator</title>
         <description>&lt;h1 id=&quot;text-decorator&quot;&gt;Text Decorator&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;https://travis-ci.org/nntuyen/text-decorator&quot;&gt;[Build Status](https://travis-ci.org/nntuyen/text-decorator.svg?branch=master)&lt;/a&gt;
+&lt;a href=&quot;http://androidweekly.net/issues/issue-238&quot;&gt;[Android Weekly](https://img.shields.io/badge/Android%20Weekly-%23238-blue.svg)&lt;/a&gt;
 &lt;a href=&quot;http://android-arsenal.com/details/1/4982&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Text%20Decorator-brightgreen.svg?style=flat)&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Decorate your TextView easily&lt;/p&gt;
@@ -43,7 +44,7 @@
 &lt;p&gt;or&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;TextDecorator&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;decorate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tvContent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;decorate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;textView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
         &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTextColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;colorAccent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Lorem&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;amet&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
         &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setBackgroundColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;colorPrimary&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;dolor&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;elit&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
         &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;strikethrough&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Duis&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Praesent&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
@@ -60,20 +61,10 @@
 &lt;/div&gt;
 
 &lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
-
-&lt;p&gt;Add this to your root build.gradle
-&lt;code class=&quot;highlighter-rouge&quot;&gt;javascript
-allprojects {
-  repositories {
-    ...
-    maven { 
-        url &quot;https://oss.sonatype.org/content/repositories/snapshots&quot; 
-    }
-}
-&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Gradle&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;com.tuyenmonkey:text-decorator:1.0.0-SNAPSHOT&#39;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;com.tuyenmonkey:text-decorator:1.0.0&#39;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -98,8 +89,8 @@ limitations under the License.
 
 </description>
         <pubDate>Mon, 02 Jan 2017 00:00:00 +0900</pubDate>
-        <link>http://android.kmshack.kr/2017/01/02/text_decorator/</link>
-        <guid isPermaLink="true">http://android.kmshack.kr/2017/01/02/text_decorator/</guid>
+        <link>http://kmshack.github.io/AndroidUICollection/2017/01/02/text_decorator/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/01/02/text_decorator/</guid>
         
         <category>text</category>
         
@@ -196,8 +187,8 @@ limitations under the License.
 
 </description>
         <pubDate>Mon, 02 Jan 2017 00:00:00 +0900</pubDate>
-        <link>http://android.kmshack.kr/2017/01/02/snowfall/</link>
-        <guid isPermaLink="true">http://android.kmshack.kr/2017/01/02/snowfall/</guid>
+        <link>http://kmshack.github.io/AndroidUICollection/2017/01/02/snowfall/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/01/02/snowfall/</guid>
         
         <category>snow</category>
         
@@ -211,9 +202,7 @@ limitations under the License.
 &lt;p&gt;&lt;a href=&quot;https://jitpack.io/#daniel-stoneuk/material-about-library&quot;&gt;[Release][101]&lt;/a&gt;
 &lt;a href=&quot;https://www.apache.org/licenses/LICENSE-2.0.html&quot;&gt;[Apache License 2.0][103]&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;If there are any icon designers out there that are willing to design a free icon for this libraries’ demo app, please contact me&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Makes it easy to create a beautiful about screen for your app.&lt;/p&gt;
+&lt;p&gt;Makes it easy to create a beautiful about screen for your app. Generates an activity or fragment.&lt;/p&gt;
 
 &lt;p&gt;Idea from here: &lt;a href=&quot;https://github.com/HeinrichReimer/open-source-library-request-manager/issues/3&quot;&gt;Heinrich Reimer’s open-source-library-request-manager&lt;/a&gt;&lt;/p&gt;
 
@@ -233,8 +222,8 @@ limitations under the License.
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;http://i.imgur.com/2d63NFS.png&quot;&gt;Demo App&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;http://i.imgur.com/1k4rcN7.png&quot;&gt;Monitor&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;http://i.imgur.com/xXWDmLb.png&quot;&gt;Demo App&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;http://i.imgur.com/HEm08Ax.png&quot;&gt;Monitor&lt;/a&gt;&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/app/src/main/java/com/danielstone/materialaboutlibrarydemo/ExampleMaterialAboutActivity.java&quot;&gt;&lt;em&gt;ExampleMaterialAboutActivity.java&lt;/em&gt;&lt;/a&gt;&lt;/td&gt;
@@ -266,13 +255,15 @@ allprojects {
 &lt;/code&gt;
 &lt;code class=&quot;highlighter-rouge&quot;&gt;gradle
 dependencies {
-    compile &#39;com.github.daniel-stoneuk:material-about-library:1.1.1&#39;
+    compile &#39;com.github.daniel-stoneuk:material-about-library:1.3.0&#39;
 }
 &lt;/code&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;setup&quot;&gt;Setup&lt;/h2&gt;
 
-&lt;p&gt;&lt;strong&gt;Step 1:&lt;/strong&gt; Your &lt;code class=&quot;highlighter-rouge&quot;&gt;Activity&lt;/code&gt; must extend &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/MaterialAboutActivity.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutActivity&lt;/code&gt;&lt;/a&gt; and be in your &lt;em&gt;AndroidManifest.java&lt;/em&gt;:
+&lt;p&gt;&lt;strong&gt;Fragment tutorial coming soon, check out the demo app in the meantime&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 1:&lt;/strong&gt; Your &lt;code class=&quot;highlighter-rouge&quot;&gt;Activity&lt;/code&gt; must extend &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/MaterialAboutActivity.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutActivity&lt;/code&gt;&lt;/a&gt; and be in your &lt;em&gt;AndroidManifest.xml&lt;/em&gt;:
 ```java
 public class ExampleMaterialAboutActivity extends MaterialAboutActivity {&lt;/p&gt;
 
@@ -385,8 +376,8 @@ limitations under the License.
 
 </description>
         <pubDate>Mon, 02 Jan 2017 00:00:00 +0900</pubDate>
-        <link>http://android.kmshack.kr/2017/01/02/material_about/</link>
-        <guid isPermaLink="true">http://android.kmshack.kr/2017/01/02/material_about/</guid>
+        <link>http://kmshack.github.io/AndroidUICollection/2017/01/02/material_about/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/01/02/material_about/</guid>
         
         <category>material</category>
         
@@ -399,14 +390,15 @@ limitations under the License.
         <title>Android ExpandIcon</title>
         <description>&lt;h1 id=&quot;android-expandicon&quot;&gt;Android-ExpandIcon&lt;/h1&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://jitpack.io/#zagum/Android-ExpandIcon&quot;&gt;[Release](https://jitpack.io/v/zagum/Android-ExpandIcon.svg)&lt;/a&gt;
-&lt;a href=&quot;https://android-arsenal.com/api?level=15&quot;&gt;[API](https://img.shields.io/badge/API-15%2B-blue.svg?style=flat)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://android-arsenal.com/details/1/4966&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Android–ExpandIcon-brightgreen.svg?style=flat)&lt;/a&gt;
+&lt;a href=&quot;https://jitpack.io/#zagum/Android-ExpandIcon&quot;&gt;[JitPack](https://jitpack.io/v/zagum/Android-ExpandIcon.svg)&lt;/a&gt;
+&lt;a href=&quot;https://android-arsenal.com/api?level=15&quot;&gt;[API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Nice and simple customizable implementation of Google style up/down arrow.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/zagum/Android-ExpandIcon/blob/master/art/expand_icon_demo.gif&quot;&gt;image&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Another nice example of using this library: https://github.com/hearsilent/PixelSlide&lt;/p&gt;
+&lt;p&gt;Another nice example of using this library: &lt;a href=&quot;https://github.com/hearsilent/PixelSlide&quot;&gt;Pixel Slide by hearsilent&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;compatibility&quot;&gt;Compatibility&lt;/h2&gt;
 
@@ -470,7 +462,7 @@ limitations under the License.
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;See sample project for more information&lt;/p&gt;
+&lt;p&gt;See &lt;a href=&quot;https://github.com/zagum/Android-ExpandIcon/tree/master/expandicon-sample&quot;&gt;sample&lt;/a&gt; project for more information.&lt;/p&gt;
 
 &lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
 
@@ -492,8 +484,8 @@ limitations under the License.
 
 </description>
         <pubDate>Mon, 02 Jan 2017 00:00:00 +0900</pubDate>
-        <link>http://android.kmshack.kr/2017/01/02/AndroidExpandIcon/</link>
-        <guid isPermaLink="true">http://android.kmshack.kr/2017/01/02/AndroidExpandIcon/</guid>
+        <link>http://kmshack.github.io/AndroidUICollection/2017/01/02/AndroidExpandIcon/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/01/02/AndroidExpandIcon/</guid>
         
         <category>icon</category>
         
@@ -502,7 +494,9 @@ limitations under the License.
     
       <item>
         <title>stencil</title>
-        <description>&lt;h2 id=&quot;stencil&quot;&gt;stencil&lt;/h2&gt;
+        <description>&lt;p&gt;&lt;a href=&quot;https://images.thoughtbot.com/blog-vellum-image-uploads/skrXLjMFRIC7uM9ukaF1_stencil-logo.png&quot;&gt;stencil logo&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;stencil&quot;&gt;stencil&lt;/h2&gt;
 &lt;p&gt;Android library, written exclusively in &lt;a href=&quot;https://kotlinlang.org/&quot;&gt;Kotlin&lt;/a&gt;, for animating the path created from text&lt;/p&gt;
 
 &lt;p&gt;&amp;lt;img src=”https://images.thoughtbot.com/blog-vellum-image-uploads/jZpvwqUR8muyhDIT5SSu_stencil.gif” width=300/&amp;gt;&lt;/p&gt;
@@ -544,8 +538,8 @@ allprojects {
 
 </description>
         <pubDate>Thu, 22 Dec 2016 00:00:00 +0900</pubDate>
-        <link>http://android.kmshack.kr/2016/12/22/stencil/</link>
-        <guid isPermaLink="true">http://android.kmshack.kr/2016/12/22/stencil/</guid>
+        <link>http://kmshack.github.io/AndroidUICollection/2016/12/22/stencil/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2016/12/22/stencil/</guid>
         
         <category>stencil</category>
         
@@ -664,8 +658,8 @@ startActivity(intent);
 
 </description>
         <pubDate>Thu, 22 Dec 2016 00:00:00 +0900</pubDate>
-        <link>http://android.kmshack.kr/2016/12/22/FolioReader/</link>
-        <guid isPermaLink="true">http://android.kmshack.kr/2016/12/22/FolioReader/</guid>
+        <link>http://kmshack.github.io/AndroidUICollection/2016/12/22/FolioReader/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2016/12/22/FolioReader/</guid>
         
         <category>reader</category>
         
@@ -686,7 +680,7 @@ Or see the full video demo on YouTube. &lt;br /&gt;
 https://youtu.be/oSETieldmyw &lt;br /&gt; &lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;A library that let you implement a behaviour similar to the Instagram’s &lt;br /&gt;
-long press to show detail one, with the option to put every kind of views inside it, &lt;br /&gt;
+long-press to show detail, with the option to put every kind of views inside it, &lt;br /&gt;
 (even web views, lists, pagers and so on) show tooltips on drag over &lt;br /&gt;
 and handle the release of the finger over Views &lt;br /&gt;&lt;/p&gt;
 
@@ -695,7 +689,7 @@ and handle the release of the finger over Views &lt;br /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
 &lt;p&gt;####Gradle:
 &lt;code class=&quot;highlighter-rouge&quot;&gt;groovy
-compile &#39;com.rm:longpresspopup:1.0.0&#39;
+compile &#39;com.rm:longpresspopup:1.0.1&#39;
 &lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;
@@ -862,11 +856,16 @@ public void onHoverChanged(View view, boolean isHovered) {
 * &lt;code class=&quot;highlighter-rouge&quot;&gt;public void dismissNow()&lt;/code&gt; &lt;br /&gt;
     Which dismiss immediately the popup if open&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt; &lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;####Known Bugs
+* This library do not work correctly with ListViews (Use RecyclerViews) &lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2016 Riccardo Moro.
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2017 Riccardo Moro.
 
 Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 you may not use this file except in compliance with the License.
@@ -884,8 +883,8 @@ limitations under the License.
 
 </description>
         <pubDate>Mon, 21 Nov 2016 00:00:00 +0900</pubDate>
-        <link>http://android.kmshack.kr/2016/11/21/LongPressPopup/</link>
-        <guid isPermaLink="true">http://android.kmshack.kr/2016/11/21/LongPressPopup/</guid>
+        <link>http://kmshack.github.io/AndroidUICollection/2016/11/21/LongPressPopup/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2016/11/21/LongPressPopup/</guid>
         
         <category>popup</category>
         
@@ -1057,8 +1056,8 @@ SOFTWARE.
 
 </description>
         <pubDate>Mon, 21 Nov 2016 00:00:00 +0900</pubDate>
-        <link>http://android.kmshack.kr/2016/11/21/Crescento/</link>
-        <guid isPermaLink="true">http://android.kmshack.kr/2016/11/21/Crescento/</guid>
+        <link>http://kmshack.github.io/AndroidUICollection/2016/11/21/Crescento/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2016/11/21/Crescento/</guid>
         
         <category>imageview</category>
         
@@ -1292,8 +1291,8 @@ limitations under the License.
 
 </description>
         <pubDate>Sun, 20 Nov 2016 00:00:00 +0900</pubDate>
-        <link>http://android.kmshack.kr/2016/11/20/RMSwitch/</link>
-        <guid isPermaLink="true">http://android.kmshack.kr/2016/11/20/RMSwitch/</guid>
+        <link>http://kmshack.github.io/AndroidUICollection/2016/11/20/RMSwitch/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2016/11/20/RMSwitch/</guid>
         
         <category>switch</category>
         
@@ -1324,8 +1323,8 @@ limitations under the License.
 &lt;p&gt;&lt;a href=&quot;http://agens.no/&quot;&gt;&lt;img src=&quot;http://static.agens.no/images/agens_logo_w_slogan_avenir_medium.png&quot; width=&quot;340&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 17 Nov 2016 00:00:00 +0900</pubDate>
-        <link>http://android.kmshack.kr/2016/11/17/Depth/</link>
-        <guid isPermaLink="true">http://android.kmshack.kr/2016/11/17/Depth/</guid>
+        <link>http://kmshack.github.io/AndroidUICollection/2016/11/17/Depth/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2016/11/17/Depth/</guid>
         
         <category>depth</category>
         

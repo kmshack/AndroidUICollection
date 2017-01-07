@@ -1,2 +1,1 @@
-# kmshack.github.com
-android.kmshack.kr
+# kmshack.github.com/androiduicollection
