@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>FolioReader</title>
+  <meta name="description" content="FolioReader logo[Build Status](https://api.travis-ci.org/FolioReader/FolioReader-Android.svg?branch=master)FolioReader-Android is an ePub reader and parser f...">
+  <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
+  <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
+    
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://android.kmshack.kr/2016/12/22/FolioReader/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://android.kmshack.kr/feed.xml">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
+    
+  <meta name="description" content="FolioReader logo[Build Status](https://api.travis-ci.org/FolioReader/FolioReader-Android.svg?branch=master)FolioReader-Android is an ePub reader and parser f...">
+
+
+  <meta name="author" content="kmshack" />
+
+  <meta property="og:title" content="FolioReader">
+  <meta property="og:site_name" content="Android UI OpenSource" />
+  <meta property="og:description" content="FolioReader logo[Build Status](https://api.travis-ci.org/FolioReader/FolioReader-Android.svg?branch=master)FolioReader-Android is an ePub reader and parser f...">
+  <meta property="og:url" content="http://android.kmshack.kr/2016/12/22/FolioReader/" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:site" content="@kmshack" />
+  <meta name="twitter:description" content="FolioReader logo[Build Status](https://api.travis-ci.org/FolioReader/FolioReader-Android.svg?branch=master)FolioReader-Android is an ePub reader and parser f..." />
+
+  
+  	<!-- Article specific OG data -->
+  	<meta property="og:type" content="article" />
+  	<meta property="article:published_time" content="2016-12-22 00:00:00 +0900" />
+  	
+  	<meta property="article:author" content="http://facebook.com/kmshack" />
+    <meta property="article:publisher" content="https://www.facebook.com/kmshack" />
+  	<meta property="article:section" content="" />
+  	
+
+  	<meta name="twitter:card" content="summary_large_image" />
+  	<meta name="twitter:creator" content="@kmshack_kr" />
+  	<meta name="twitter:title" content="FolioReader" />
+	
+	  	<meta property="og:image" content="/images/posts/2016-12-22-FolioReader.gif" />
+	  	<meta name="twitter:image" content="/images/posts/2016-12-22-FolioReader.gif" />
+  	
+
+  
+
+  <script>
+    var base_url = "";
+  </script>
+    
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9975139260149901",
+    enable_page_level_ads: true
+  });
+</script>
+    
+</head>
+
+<body>
+
+  <!-- Google Analytics Code -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85072530-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  <div class="off-canvas-container">
+    <div class="sidebar">
+  <div class="row">
+
+    <div class="column small-10 large-12">
+      <br>
+      <h1 class="sidebar__logo logo"><a href="/">Android UI OpenSource</a></h1>
+      <div class="sidebar__description font-tiny">Collection of OpenSource for Android UI.</div>
+    </div>
+
+    <label class="off-canvas-toggle"><span data-icon="ei-navicon" data-size="s"></span></label>
+
+    <div class="off-canvas-content">
+
+      <div class="column small-12 large-12">
+        <nav class="navigation">
+          <ul class="list-bare text-center">
+            
+              
+            
+              
+                
+                  <li>
+                    <a class="page-link" href="/about.html">About</a>
+                  </li>
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+            <li><a class="subscribe-button icon-feed" href="/feed.xml">RSS</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="column small-12 large-12">
+        <ul class="social-nav social-icons">
+
+          
+          <li>
+            <a href="http://www.github.com/kmshack" target="_blank">
+              <span data-icon="ei-sc-github" data-size="s"></span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="http://www.twitter.com/kmshack_kr" target="_blank">
+              <span data-icon="ei-sc-twitter" data-size="s"></span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="mailto:kmshack@naver.com" target="_blank">
+              <span data-icon="ei-envelope" data-size="s"></span>
+            </a>
+          </li>
+          
+
+          <li>
+            <a class="toggle-search-button" href="#">
+              <span data-icon="ei-search" data-size="s"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+        
+      <div class="sidebar__bottom">
+        <div class="column small-12 large-12">
+            
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- androidui -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:250px;height:250px"
+     data-ad-client="ca-pub-9975139260149901"
+     data-ad-slot="5123612274"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+            
+          <div class="font-tiny">
+              <br>
+            &copy; 2017 Android UI OpenSource
+          </div>
+        </div>
+      </div>
+        
+    </div> <!-- off-canvas-content -->
+      
+
+
+  </div>
+    
+
+    
+</div>
+
+<div class="search-form-container">
+
+  <form class="search-form">
+    <fieldset class="search-form__fieldset">
+      <div class="row">
+        <div class="column column--center large-8">
+          <input class="search-form__field" placeholder="Type to search" autofocus>
+          <input class="search-form__submit" type="submit" value="search">
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+  <div class="row">
+    <div class="column column--center large-8">
+      <div class="search-results"></div>
+    </div>
+  </div>
+
+  <div data-icon="ei-close" data-size="s" class="close-search-button search-form-container__close"></div>
+
+</div>
+
+    
+
+
+
+<div class="wrapper">
+  <div class="row row--full">
+
+    <div class="column column--center medium-12 large-12">
+      <div class="grey-bg CoverImage FlexEmbed FlexEmbed--16by9" style="background-image: url(/images/posts/2016-12-22-FolioReader.gif)"></div>
+        
+    </div>
+      
+    <div class="column column--center medium-12 large-10">
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+        
+          <meta itemprop="og:image" content="http://android.kmshack.kr/images/posts/2016-12-22-FolioReader.gif">
+        
+
+        <header class="post__header">
+          <h2 class="post__title" itemprop="name headline">FolioReader</h2>
+          
+          <h3 class="post__date">
+            <a href="https://github.com/FolioReader/FolioReader-Android" target="_blank"><span data-icon="ei-sc-github" data-size="s"></span>https://github.com/FolioReader/FolioReader-Android</a>
+          </h3>
+        </header>
+
+        <div class="post-content" itemprop="articleBody">
+            
+            <div class="column column--center medium-12 large-4">
+              <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-12-22-FolioReader.gif)"></div>
+            </div>
+             <br><br>
+            <hr>
+          <br>
+          <p><a href="https://raw.githubusercontent.com/FolioReader/FolioReaderKit/assets/folioreader.png">FolioReader logo</a></p>
+
+<p><a href="https://travis-ci.org/FolioReader/FolioReader-Android">[Build Status](https://api.travis-ci.org/FolioReader/FolioReader-Android.svg?branch=master)</a></p>
+
+<p>FolioReader-Android is an ePub reader and parser framework written in Java.</p>
+
+<h3 id="features">Features</h3>
+
+<ul>
+  <li>[x] Custom Fonts</li>
+  <li>[x] Custom Text Size</li>
+  <li>[x] Themes / Day mode / Night mode</li>
+  <li>[x] Text Highlighting</li>
+  <li>[x] List / Edit / Delete Highlights</li>
+  <li>[x] Handle Internal and External Links</li>
+  <li>[x] Portrait / Landscape</li>
+  <li>[x] Reading Time Left / Pages left</li>
+  <li>[ ] In-App Dictionary</li>
+  <li>[x] Media Overlays (Sync text rendering with audio playback)</li>
+  <li>[x] TTS - Text to Speech Support</li>
+  <li>[ ] Parse epub cover image</li>
+  <li>[ ] PDF support</li>
+  <li>[ ] Book Search</li>
+  <li>[x] Add Notes to a Highlight</li>
+  <li>[ ] Better Documentation</li>
+</ul>
+
+<h2 id="demo">Demo</h2>
+<p>##### Custom Fonts
+<a href="https://cloud.githubusercontent.com/assets/1277242/19012915/0661c7b2-87e0-11e6-81d6-8c71051e1074.gif">Custom fonts</a>
+##### Day and Night Mode
+<a href="https://cloud.githubusercontent.com/assets/1277242/19012914/f42059c4-87df-11e6-97f8-29e61a79e8aa.gif">Day night mode</a>
+##### Text Highlighting 
+<a href="https://cloud.githubusercontent.com/assets/1277242/19012904/c2700c3a-87df-11e6-97ed-507765b3ddf0.gif">Highlight</a>
+##### Media Overlays 
+<a href="https://cloud.githubusercontent.com/assets/1277242/19012908/d61f3ce2-87df-11e6-8652-d72b6a1ad9a3.gif">Media Overlay</a></p>
+
+<h3 id="gradle">Gradle</h3>
+<p>Add following dependency to your app build.gradle
+<code class="highlighter-rouge">java
+compile 'com.folioreader:folioreader:0.2.5'
+</code></p>
+
+<h3 id="usage">Usage</h3>
+
+<p>To use FolioReader, you need to call FolioReaderActivity with following parameters:
+1. INTENT_EPUB_SOURCE_TYPE - your epub can come from raw or assets folder or from SD card. Use enum FolioActivity.EpubSourceType.
+2. INTENT_EPUB_SOURCE_PATH - assets/SD card path of the epub file or raw ID of epub file if epub file is in raw folder</p>
+
+<p>Reading from assets folder
+<code class="highlighter-rouge">java
+Intent intent = new Intent(HomeActivity.this, FolioActivity.class);
+intent.putExtra(FolioActivity.INTENT_EPUB_SOURCE_TYPE, FolioActivity.EpubSourceType.ASSESTS);
+intent.putExtra(FolioActivity.INTENT_EPUB_SOURCE_PATH, "epub/The Silver Chair.epub");
+startActivity(intent);
+</code></p>
+
+<p>Reading from raw folder of resources
+<code class="highlighter-rouge">java
+Intent intent = new Intent(HomeActivity.this, FolioActivity.class);
+intent.putExtra(FolioActivity.INTENT_EPUB_SOURCE_TYPE, FolioActivity.EpubSourceType.RAW);
+intent.putExtra(FolioActivity.INTENT_EPUB_SOURCE_PATH, R.raw.adventures);
+startActivity(intent);
+</code></p>
+
+<p>For reading from SD card, just retrieve absolute path of epub file and pass that in INTENT_EPUB_SOURCE_PATH.</p>
+
+<h3 id="credits">Credits</h3>
+<ol>
+  <li><a href="https://github.com/daimajia/AndroidSwipeLayout">SwipeLayout</a></li>
+  <li><a href="http://ormlite.com/">ORMLite</a></li>
+  <li><a href="https://github.com/julianharty/new-android-daisy-reader">SMIL parsing</a></li>
+</ol>
+
+<h3 id="author">Author</h3>
+<p><a href="https://github.com/hebertialmeida"><strong>Heberti Almeida</strong></a></p>
+
+<ul>
+  <li>Follow me on <strong>Twitter</strong>: <a href="https://twitter.com/hebertialmeida"><strong>@hebertialmeida</strong></a></li>
+  <li>Contact me on <strong>LinkedIn</strong>: <a href="http://linkedin.com/in/hebertialmeida"><strong>hebertialmeida</strong></a></li>
+</ul>
+
+<p><a href="https://github.com/mahavir155"><strong>Mahavir Jain</strong></a></p>
+
+<ul>
+  <li>Follow me on <strong>Twitter</strong>: <a href="https://twitter.com/mahavir155"><strong>@mahavir155</strong></a></li>
+  <li>Contact me on <strong>LinkedIn</strong>: <a href="http://linkedin.com/in/mahavir155"><strong>mahavir155</strong></a></li>
+</ul>
+
+<h2 id="donations">Donations</h2>
+
+<p><strong>This project needs you</strong> If you would like to support this project’s further development, the creator of this project or the continuous maintenance of this project, <strong>feel free to donate</strong>. Your donation is highly appreciated. Thank you</p>
+
+<p><strong>PayPal</strong></p>
+
+<ul>
+  <li>[<strong>Donate 5 $</strong>] (https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=hebertialmeida%40gmail%2ecom&amp;lc=US&amp;item_name=FolioReader%20Libraries&amp;amount=5%2e00&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted): Thank’s for creating this project, here’s a tea (or some juice) for you</li>
+  <li>[<strong>Donate 10 $</strong>] (https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=hebertialmeida%40gmail%2ecom&amp;lc=US&amp;item_name=FolioReader%20Libraries&amp;amount=10%2e00&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted): Wow, I am stunned. Let me take you to the movies</li>
+  <li>[<strong>Donate 15 $</strong>] (https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=hebertialmeida%40gmail%2ecom&amp;lc=US&amp;item_name=FolioReader%20Libraries&amp;amount=15%2e00&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted): I really appreciate your work, let’s grab some lunch</li>
+  <li>[<strong>Donate 25 $</strong>] (https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=hebertialmeida%40gmail%2ecom&amp;lc=US&amp;item_name=FolioReader%20Libraries&amp;amount=25%2e00&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted): That’s some awesome stuff you did right there, dinner is on me</li>
+  <li>[<strong>Donate 50 $</strong>] (https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=hebertialmeida%40gmail%2ecom&amp;lc=US&amp;item_name=FolioReader%20Libraries&amp;amount=50%2e00&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted): I really really want to support this project, great job</li>
+  <li>[<strong>Donate 100 $</strong>] (https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=hebertialmeida%40gmail%2ecom&amp;lc=US&amp;item_name=FolioReader%20Libraries&amp;amount=100%2e00&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted): You are the man This project saved me hours (if not days) of struggle and hard work, simply awesome</li>
+  <li>Of course, you can also <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=hebertialmeida%40gmail%2ecom&amp;lc=US&amp;item_name=FolioReader%20Libraries&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"><strong>choose what you want to donate</strong></a>, all donations are awesome</li>
+</ul>
+
+<h2 id="license">License</h2>
+<p>FolioReaderKit is available under the BSD license. See the <a href="https://github.com/FolioReader/FolioReader-Android/blob/master/License.md">LICENSE</a> file.</p>
+
+
+          <br>
+          <div class="post__tags">
+            
+              <a href="/tag/reader">reader</a>
+            
+              <a href="/tag/view">view</a>
+            
+          </div>
+            
+        </div>
+          
+          <br>
+          <hr>
+          <br>  
+          <div class="post-content"  itemprop="articleBody">
+            
+          </div>
+          <br>
+          <hr>
+          <br>
+
+        
+
+        
+
+<ul class="share-list">
+  <li>
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=FolioReader&url=http://android.kmshack.kr/2016/12/22/FolioReader/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+      <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
+    </a>
+  </li>
+  <li>
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://android.kmshack.kr/2016/12/22/FolioReader/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
+    </a>
+  </li>
+  <li>
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://android.kmshack.kr/2016/12/22/FolioReader/" rel="nofollow" target="_blank" title="Share on Google+">
+    <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
+    </a>
+  </li>
+</ul>
+
+        <h5 class="separator">
+  <span class="separator__title">Newsletter</span>
+</h5>
+
+<div class="box box--news-letter">
+  <form action="//aspirethemes.us12.list-manage.com/subscribe/post?u=9723f3c5c3a2637fbba3bc673&amp;id=7b50db9989" method="post" target="_blank">
+    <div class="row">
+      <div class="column medium-9 large-9">
+        <input type="email" name="EMAIL" placeholder="Your email address">
+      </div>
+      <div class="column medium-3 large-3">
+        <input type="submit" class="button button--expand" value="SIGN UP">
+      </div>
+    </div>
+  </form>
+</div>
+
+        <section class="disqus">
+  <h5 class="separator">
+    <span class="separator__title">Comments</span>
+  </h5>
+  <div id="disqus_thread"></div>
+
+<script>
+  var disqus_config = function () {
+    this.page.url = "http://android.kmshack.kr/2016/12/22/FolioReader/";
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//android-kmshack-kr.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</section>
+      </article>
+    </div>
+
+  </div> <!-- row-->
+</div> <!-- wrapper -->
+  </div>
+
+  <script src="/js/jquery-2.1.4.min.js"></script>
+  <script src="/js/evil-icons.min.js"></script>
+  <script src="/js/jquery.fitvids.js"></script>
+  <script src="/js/jquery.ghostHunter.min.js"></script>
+  <script src="/js/script.js"></script>
+</body>
+
+</html>

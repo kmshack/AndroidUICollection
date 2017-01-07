@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>MaterialCamera</title>
+  <meta name="description" content="Material CameraAndroid’s video recording APIs are very difficult to figure out, especially since a lot of manufacturerslike to mount their camera sensors ups...">
+  <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
+  <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
+    
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://android.kmshack.kr/2016/10/19/MaterialCamera/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://android.kmshack.kr/feed.xml">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
+    
+  <meta name="description" content="Material CameraAndroid’s video recording APIs are very difficult to figure out, especially since a lot of manufacturerslike to mount their camera sensors ups...">
+
+
+  <meta name="author" content="kmshack" />
+
+  <meta property="og:title" content="MaterialCamera">
+  <meta property="og:site_name" content="Android UI OpenSource" />
+  <meta property="og:description" content="Material CameraAndroid’s video recording APIs are very difficult to figure out, especially since a lot of manufacturerslike to mount their camera sensors ups...">
+  <meta property="og:url" content="http://android.kmshack.kr/2016/10/19/MaterialCamera/" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:site" content="@kmshack" />
+  <meta name="twitter:description" content="Material CameraAndroid’s video recording APIs are very difficult to figure out, especially since a lot of manufacturerslike to mount their camera sensors ups..." />
+
+  
+  	<!-- Article specific OG data -->
+  	<meta property="og:type" content="article" />
+  	<meta property="article:published_time" content="2016-10-19 00:00:00 +0900" />
+  	
+  	<meta property="article:author" content="http://facebook.com/kmshack" />
+    <meta property="article:publisher" content="https://www.facebook.com/kmshack" />
+  	<meta property="article:section" content="" />
+  	
+
+  	<meta name="twitter:card" content="summary_large_image" />
+  	<meta name="twitter:creator" content="@kmshack_kr" />
+  	<meta name="twitter:title" content="MaterialCamera" />
+	
+	  	<meta property="og:image" content="/images/posts/2016-10-19-MaterialCamera.png" />
+	  	<meta name="twitter:image" content="/images/posts/2016-10-19-MaterialCamera.png" />
+  	
+
+  
+
+  <script>
+    var base_url = "";
+  </script>
+    
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9975139260149901",
+    enable_page_level_ads: true
+  });
+</script>
+    
+</head>
+
+<body>
+
+  <!-- Google Analytics Code -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85072530-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  <div class="off-canvas-container">
+    <div class="sidebar">
+  <div class="row">
+
+    <div class="column small-10 large-12">
+      <br>
+      <h1 class="sidebar__logo logo"><a href="/">Android UI OpenSource</a></h1>
+      <div class="sidebar__description font-tiny">Collection of OpenSource for Android UI.</div>
+    </div>
+
+    <label class="off-canvas-toggle"><span data-icon="ei-navicon" data-size="s"></span></label>
+
+    <div class="off-canvas-content">
+
+      <div class="column small-12 large-12">
+        <nav class="navigation">
+          <ul class="list-bare text-center">
+            
+              
+            
+              
+                
+                  <li>
+                    <a class="page-link" href="/about.html">About</a>
+                  </li>
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+            <li><a class="subscribe-button icon-feed" href="/feed.xml">RSS</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="column small-12 large-12">
+        <ul class="social-nav social-icons">
+
+          
+          <li>
+            <a href="http://www.github.com/kmshack" target="_blank">
+              <span data-icon="ei-sc-github" data-size="s"></span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="http://www.twitter.com/kmshack_kr" target="_blank">
+              <span data-icon="ei-sc-twitter" data-size="s"></span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="mailto:kmshack@naver.com" target="_blank">
+              <span data-icon="ei-envelope" data-size="s"></span>
+            </a>
+          </li>
+          
+
+          <li>
+            <a class="toggle-search-button" href="#">
+              <span data-icon="ei-search" data-size="s"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+        
+      <div class="sidebar__bottom">
+        <div class="column small-12 large-12">
+            
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- androidui -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:250px;height:250px"
+     data-ad-client="ca-pub-9975139260149901"
+     data-ad-slot="5123612274"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+            
+          <div class="font-tiny">
+              <br>
+            &copy; 2017 Android UI OpenSource
+          </div>
+        </div>
+      </div>
+        
+    </div> <!-- off-canvas-content -->
+      
+
+
+  </div>
+    
+
+    
+</div>
+
+<div class="search-form-container">
+
+  <form class="search-form">
+    <fieldset class="search-form__fieldset">
+      <div class="row">
+        <div class="column column--center large-8">
+          <input class="search-form__field" placeholder="Type to search" autofocus>
+          <input class="search-form__submit" type="submit" value="search">
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+  <div class="row">
+    <div class="column column--center large-8">
+      <div class="search-results"></div>
+    </div>
+  </div>
+
+  <div data-icon="ei-close" data-size="s" class="close-search-button search-form-container__close"></div>
+
+</div>
+
+    
+
+
+
+<div class="wrapper">
+  <div class="row row--full">
+
+    <div class="column column--center medium-12 large-12">
+      <div class="grey-bg CoverImage FlexEmbed FlexEmbed--16by9" style="background-image: url(/images/posts/2016-10-19-MaterialCamera.png)"></div>
+        
+    </div>
+      
+    <div class="column column--center medium-12 large-10">
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+        
+          <meta itemprop="og:image" content="http://android.kmshack.kr/images/posts/2016-10-19-MaterialCamera.png">
+        
+
+        <header class="post__header">
+          <h2 class="post__title" itemprop="name headline">MaterialCamera</h2>
+          
+          <h3 class="post__date">
+            <a href="https://github.com/afollestad/material-camera" target="_blank"><span data-icon="ei-sc-github" data-size="s"></span>https://github.com/afollestad/material-camera</a>
+          </h3>
+        </header>
+
+        <div class="post-content" itemprop="articleBody">
+            
+            <div class="column column--center medium-12 large-4">
+              <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-10-19-MaterialCamera.png)"></div>
+            </div>
+             <br><br>
+            <hr>
+          <br>
+          <h1 id="material-camera">Material Camera</h1>
+
+<p>Android’s video recording APIs are very difficult to figure out, especially since a lot of manufacturers
+like to mount their camera sensors upside down or sideways. This library is a result of lots of research
+and experimentation to get video recording to work universally.</p>
+
+<p><img src="https://raw.githubusercontent.com/afollestad/material-camera/master/art/showcase1.png" width="800px" /></p>
+
+<hr />
+
+<h1 id="notice">Notice</h1>
+
+<p>Please report any issues you have, and include device information. Camera behavior can be unpredictable
+across different Android manufacturers and versions, especially on pre-Lollipop devices. I’ve done quite
+a bit of testing, but it’s possible I missed something.</p>
+
+<p><strong>Some of this documentation may be outdated, exploration of the library is encouraged.</strong></p>
+
+<hr />
+
+<h1 id="gradle-dependency">Gradle Dependency</h1>
+
+<p><a href="https://bintray.com/drummer-aidan/maven/material-camera/_latestVersion"> [jCenter](https://api.bintray.com/packages/drummer-aidan/maven/material-camera/images/download.svg) </a>
+<a href="https://travis-ci.org/afollestad/material-camera">[Build Status](https://travis-ci.org/afollestad/material-camera.svg)</a>
+<a href="https://www.apache.org/licenses/LICENSE-2.0.html">[License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?style=flat-square)</a></p>
+
+<p>The Gradle dependency is available via <a href="https://bintray.com/drummer-aidan/maven/material-camera/view">jCenter</a>.
+jCenter is the default Maven repository used by Android Studio.</p>
+
+<h3 id="dependency">Dependency</h3>
+
+<p>Add Bintray to your repositories, for some reason this specific library doesn’t seem to work via jCenter
+even though all of my other libraries do.</p>
+
+<pre><code class="language-gradle">repositories {
+    jcenter()
+    maven { url "https://dl.bintray.com/drummer-aidan/maven" }
+}
+</code></pre>
+
+<p>Add this in your module’s <code class="highlighter-rouge">build.gradle</code> file:</p>
+
+<pre><code class="language-gradle">dependencies {
+    // ... other dependencies
+
+    compile 'com.afollestad:material-camera:0.4.4'
+}
+</code></pre>
+
+<hr />
+
+<h1 id="basics">Basics</h1>
+
+<h3 id="android-manifest">Android Manifest</h3>
+
+<p>First, you have to register two library Activities from your app’s <code class="highlighter-rouge">AndroidManifest.xml</code> file:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;activity</span>
+    <span class="na">android:name=</span><span class="s">"com.afollestad.materialcamera.CaptureActivity"</span>
+    <span class="na">android:theme=</span><span class="s">"@style/MaterialCamera.CaptureActivity"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;activity</span>
+    <span class="na">android:name=</span><span class="s">"com.afollestad.materialcamera.CaptureActivity2"</span>
+    <span class="na">android:theme=</span><span class="s">"@style/MaterialCamera.CaptureActivity"</span> <span class="nt">/&gt;</span>
+</code></pre>
+</div>
+
+<p>Feel free to use your own custom theme. The included themes give the activities a good default look. 
+See the sample project for more details.</p>
+
+<h3 id="code-for-video">Code for Video</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">CAMERA_RQ</span> <span class="o">=</span> <span class="mi">6969</span><span class="o">;</span> 
+
+<span class="n">File</span> <span class="n">saveFolder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">Environment</span><span class="o">.</span><span class="na">getExternalStorageDirectory</span><span class="o">(),</span> <span class="s">"MaterialCamera Sample"</span><span class="o">);</span>
+<span class="k">if</span> <span class="o">(</span><span class="n">saveFolder</span><span class="o">.</span><span class="na">mkdirs</span><span class="o">())</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="o">(</span><span class="s">"Unable to create save directory, make sure WRITE_EXTERNAL_STORAGE permission is granted."</span><span class="o">);</span>
+
+<span class="k">new</span> <span class="nf">MaterialCamera</span><span class="p">(</span><span class="k">this</span><span class="o">)</span>                               <span class="c1">// Constructor takes an Activity</span>
+    <span class="o">.</span><span class="na">allowRetry</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>                                  <span class="c1">// Whether or not 'Retry' is visible during playback</span>
+    <span class="o">.</span><span class="na">autoSubmit</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>                                 <span class="c1">// Whether or not user is allowed to playback videos after recording. This can affect other things, discussed in the next section.</span>
+    <span class="o">.</span><span class="na">saveDir</span><span class="o">(</span><span class="n">saveFolder</span><span class="o">)</span>                               <span class="c1">// The folder recorded videos are saved to</span>
+    <span class="o">.</span><span class="na">primaryColorAttr</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">attr</span><span class="o">.</span><span class="na">colorPrimary</span><span class="o">)</span>             <span class="c1">// The theme color used for the camera, defaults to colorPrimary of Activity in the constructor</span>
+    <span class="o">.</span><span class="na">showPortraitWarning</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>                         <span class="c1">// Whether or not a warning is displayed if the user presses record in portrait orientation</span>
+    <span class="o">.</span><span class="na">defaultToFrontFacing</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>                       <span class="c1">// Whether or not the camera will initially show the front facing camera</span>
+    <span class="o">.</span><span class="na">allowChangeCamera</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>                           <span class="c1">// Allows the user to change cameras. </span>
+    <span class="o">.</span><span class="na">retryExits</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>                                 <span class="c1">// If true, the 'Retry' button in the playback screen will exit the camera instead of going back to the recorder</span>
+    <span class="o">.</span><span class="na">restartTimerOnRetry</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>                        <span class="c1">// If true, the countdown timer is reset to 0 when the user taps 'Retry' in playback</span>
+    <span class="o">.</span><span class="na">continueTimerInPlayback</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>                    <span class="c1">// If true, the countdown timer will continue to go down during playback, rather than pausing.</span>
+    <span class="o">.</span><span class="na">videoEncodingBitRate</span><span class="o">(</span><span class="mi">1024000</span><span class="o">)</span>                     <span class="c1">// Sets a custom bit rate for video recording.</span>
+    <span class="o">.</span><span class="na">audioEncodingBitRate</span><span class="o">(</span><span class="mi">50000</span><span class="o">)</span>                       <span class="c1">// Sets a custom bit rate for audio recording.</span>
+    <span class="o">.</span><span class="na">videoFrameRate</span><span class="o">(</span><span class="mi">24</span><span class="o">)</span>                                <span class="c1">// Sets a custom frame rate (FPS) for video recording.</span>
+    <span class="o">.</span><span class="na">qualityProfile</span><span class="o">(</span><span class="n">MaterialCamera</span><span class="o">.</span><span class="na">QUALITY_HIGH</span><span class="o">)</span>       <span class="c1">// Sets a quality profile, manually setting bit rates or frame rates with other settings will overwrite individual quality profile settings</span>
+    <span class="o">.</span><span class="na">videoPreferredHeight</span><span class="o">(</span><span class="mi">720</span><span class="o">)</span>                         <span class="c1">// Sets a preferred height for the recorded video output.</span>
+    <span class="o">.</span><span class="na">videoPreferredAspect</span><span class="o">(</span><span class="mi">4</span><span class="n">f</span> <span class="o">/</span> <span class="mi">3</span><span class="n">f</span><span class="o">)</span>                     <span class="c1">// Sets a preferred aspect ratio for the recorded video output.</span>
+    <span class="o">.</span><span class="na">maxAllowedFileSize</span><span class="o">(</span><span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">5</span><span class="o">)</span>               <span class="c1">// Sets a max file size of 5MB, recording will stop if file reaches this limit. Keep in mind, the FAT file system has a file size limit of 4GB.</span>
+    <span class="o">.</span><span class="na">iconRecord</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">mcam_action_capture</span><span class="o">)</span>        <span class="c1">// Sets a custom icon for the button used to start recording</span>
+    <span class="o">.</span><span class="na">iconStop</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">mcam_action_stop</span><span class="o">)</span>             <span class="c1">// Sets a custom icon for the button used to stop recording</span>
+    <span class="o">.</span><span class="na">iconFrontCamera</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">mcam_camera_front</span><span class="o">)</span>     <span class="c1">// Sets a custom icon for the button used to switch to the front camera</span>
+    <span class="o">.</span><span class="na">iconRearCamera</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">mcam_camera_rear</span><span class="o">)</span>       <span class="c1">// Sets a custom icon for the button used to switch to the rear camera</span>
+    <span class="o">.</span><span class="na">iconPlay</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">evp_action_play</span><span class="o">)</span>              <span class="c1">// Sets a custom icon used to start playback</span>
+    <span class="o">.</span><span class="na">iconPause</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">evp_action_pause</span><span class="o">)</span>            <span class="c1">// Sets a custom icon used to pause playback</span>
+    <span class="o">.</span><span class="na">iconRestart</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">evp_action_restart</span><span class="o">)</span>        <span class="c1">// Sets a custom icon used to restart playback</span>
+    <span class="o">.</span><span class="na">labelRetry</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">mcam_retry</span><span class="o">)</span>                   <span class="c1">// Sets a custom button label for the button used to retry recording, when available</span>
+    <span class="o">.</span><span class="na">labelConfirm</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">mcam_use_video</span><span class="o">)</span>             <span class="c1">// Sets a custom button label for the button used to confirm/submit a recording</span>
+    <span class="o">.</span><span class="na">autoRecordWithDelaySec</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span>                         <span class="c1">// The video camera will start recording automatically after a 5 second countdown. This disables switching between the front and back camera initially.</span>
+    <span class="o">.</span><span class="na">autoRecordWithDelayMs</span><span class="o">(</span><span class="mi">5000</span><span class="o">)</span>                       <span class="c1">// Same as the above, expressed with milliseconds instead of seconds.</span>
+    <span class="o">.</span><span class="na">audioDisabled</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>                              <span class="c1">// Set to true to record video without any audio.</span>
+    <span class="o">.</span><span class="na">start</span><span class="o">(</span><span class="n">CAMERA_RQ</span><span class="o">);</span>                                 <span class="c1">// Starts the camera activity, the result will be sent back to the current Activity</span>
+</code></pre>
+</div>
+
+<p><strong>Note</strong>: For <code class="highlighter-rouge">retryExists(true)</code>, <code class="highlighter-rouge">onActivityResult()</code> in the <code class="highlighter-rouge">Activity</code> that starts the camera will
+receive <code class="highlighter-rouge">MaterialCamera.STATUS_RETRY</code> as the value of the <code class="highlighter-rouge">MaterialCamera.STATUS_EXTRA</code> intent extra.</p>
+
+<hr />
+
+<h1 id="length-limiting">Length Limiting</h1>
+
+<p>You can specify a time limit for recording. <code class="highlighter-rouge">countdownMillis(long)</code>, <code class="highlighter-rouge">countdownSeconds(float)</code>, 
+and <code class="highlighter-rouge">countdownMinutes(float)</code> are all methods for length limiting.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">new</span> <span class="nf">MaterialCamera</span><span class="p">(</span><span class="k">this</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">countdownMinutes</span><span class="o">(</span><span class="mf">2.5f</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">start</span><span class="o">(</span><span class="n">CAMERA_RQ</span><span class="o">);</span>
+</code></pre>
+</div>
+
+<p>When the countdown reaches 0, recording stops. There are different behaviors that can occur after this based on
+<code class="highlighter-rouge">autoSubmit</code> and <code class="highlighter-rouge">autoRetry</code>:</p>
+
+<ol>
+  <li><code class="highlighter-rouge">autoSubmit(false)</code>, <code class="highlighter-rouge">allowRetry(true)</code>
+    <ul>
+      <li>The user will be able to playback the recording, and the ‘Retry’ button will be visible. This is default behavior.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">autoSubmit(false)</code>, <code class="highlighter-rouge">allowRetry(false)</code>
+    <ul>
+      <li>The user will be able to playback the recording, but the ‘Retry’ button will be hidden.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">autoSubmit(true)</code>, <code class="highlighter-rouge">allowRetry(false)</code>
+    <ul>
+      <li>The user won’t be able to playback the recording, the result will immediately be returned to the starting Activity.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">autoSubmit(true)</code>, <code class="highlighter-rouge">allowRetry(true)</code>
+    <ul>
+      <li>If you don’t specify a length limit, the behavior will be the same as number 3. If you do specify a length limit, the user is allowed to retry, but the countdown timer will continue until it reaches 0. When the countdown is complete, the result will be returned to the starting Activity automatically.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>If you want the countdown to start immediately when the camera is open, as opposed to when the user presses
+‘Record’, you can set <code class="highlighter-rouge">countdownImmediately(true)</code>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">new</span> <span class="nf">MaterialCamera</span><span class="p">(</span><span class="k">this</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">countdownMinutes</span><span class="o">(</span><span class="mf">2.5f</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">countdownImmediately</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">start</span><span class="o">(</span><span class="n">CAMERA_RQ</span><span class="o">);</span>
+</code></pre>
+</div>
+
+<hr />
+
+<h3 id="code-for-stillshots-pictures">Code for Stillshots (Pictures)</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">new</span> <span class="nf">MaterialCamera</span><span class="p">(</span><span class="k">this</span><span class="o">)</span>
+    <span class="cm">/** all the previous methods can be called, but video ones would be ignored */</span>
+    <span class="o">.</span><span class="na">stillShot</span><span class="o">()</span> <span class="c1">// launches the Camera in stillshot mode</span>
+    <span class="o">.</span><span class="na">start</span><span class="o">(</span><span class="n">CAMERA_RQ</span><span class="o">);</span>
+</code></pre>
+</div>
+<hr />
+
+<h1 id="receiving-results">Receiving Results</h1>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">CAMERA_RQ</span> <span class="o">=</span> <span class="mi">6969</span><span class="o">;</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="n">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_main</span><span class="o">);</span>
+        
+        <span class="k">new</span> <span class="n">MaterialCamera</span><span class="o">(</span><span class="k">this</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">start</span><span class="o">(</span><span class="n">CAMERA_RQ</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="n">onActivityResult</span><span class="o">(</span><span class="kt">int</span> <span class="n">requestCode</span><span class="o">,</span> <span class="kt">int</span> <span class="n">resultCode</span><span class="o">,</span> <span class="n">Intent</span> <span class="n">data</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onActivityResult</span><span class="o">(</span><span class="n">requestCode</span><span class="o">,</span> <span class="n">resultCode</span><span class="o">,</span> <span class="n">data</span><span class="o">);</span>
+
+        <span class="c1">// Received recording or error from MaterialCamera</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">requestCode</span> <span class="o">==</span> <span class="n">CAMERA_RQ</span><span class="o">)</span> <span class="o">{</span>
+        
+            <span class="k">if</span> <span class="o">(</span><span class="n">resultCode</span> <span class="o">==</span> <span class="n">RESULT_OK</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="s">"Saved to: "</span> <span class="o">+</span> <span class="n">data</span><span class="o">.</span><span class="na">getDataString</span><span class="o">(),</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_LONG</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">data</span> <span class="o">=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">Exception</span> <span class="n">e</span> <span class="o">=</span> <span class="o">(</span><span class="n">Exception</span><span class="o">)</span> <span class="n">data</span><span class="o">.</span><span class="na">getSerializableExtra</span><span class="o">(</span><span class="n">MaterialCamera</span><span class="o">.</span><span class="na">ERROR_EXTRA</span><span class="o">);</span>
+                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+                <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">(),</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_LONG</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<hr />
+
+<h1 id="licenselicensemd"><a href="/LICENSE.md">LICENSE</a></h1>
+
+<h6 id="copyright-2016-aidan-follestad">Copyright 2016 Aidan Follestad</h6>
+
+<p>Licensed under the Apache License, Version 2.0 (the “License”);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at</p>
+
+<p>http://www.apache.org/licenses/LICENSE-2.0</p>
+
+<p>Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an “AS IS” BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.</p>
+
+
+          <br>
+          <div class="post__tags">
+            
+              <a href="/tag/material">material</a>
+            
+              <a href="/tag/camera">camera</a>
+            
+          </div>
+            
+        </div>
+          
+          <br>
+          <hr>
+          <br>  
+          <div class="post-content"  itemprop="articleBody">
+            
+          </div>
+          <br>
+          <hr>
+          <br>
+
+        
+
+        
+
+<ul class="share-list">
+  <li>
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=MaterialCamera&url=http://android.kmshack.kr/2016/10/19/MaterialCamera/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+      <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
+    </a>
+  </li>
+  <li>
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://android.kmshack.kr/2016/10/19/MaterialCamera/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
+    </a>
+  </li>
+  <li>
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://android.kmshack.kr/2016/10/19/MaterialCamera/" rel="nofollow" target="_blank" title="Share on Google+">
+    <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
+    </a>
+  </li>
+</ul>
+
+        <h5 class="separator">
+  <span class="separator__title">Newsletter</span>
+</h5>
+
+<div class="box box--news-letter">
+  <form action="//aspirethemes.us12.list-manage.com/subscribe/post?u=9723f3c5c3a2637fbba3bc673&amp;id=7b50db9989" method="post" target="_blank">
+    <div class="row">
+      <div class="column medium-9 large-9">
+        <input type="email" name="EMAIL" placeholder="Your email address">
+      </div>
+      <div class="column medium-3 large-3">
+        <input type="submit" class="button button--expand" value="SIGN UP">
+      </div>
+    </div>
+  </form>
+</div>
+
+        <section class="disqus">
+  <h5 class="separator">
+    <span class="separator__title">Comments</span>
+  </h5>
+  <div id="disqus_thread"></div>
+
+<script>
+  var disqus_config = function () {
+    this.page.url = "http://android.kmshack.kr/2016/10/19/MaterialCamera/";
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//android-kmshack-kr.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</section>
+      </article>
+    </div>
+
+  </div> <!-- row-->
+</div> <!-- wrapper -->
+  </div>
+
+  <script src="/js/jquery-2.1.4.min.js"></script>
+  <script src="/js/evil-icons.min.js"></script>
+  <script src="/js/jquery.fitvids.js"></script>
+  <script src="/js/jquery.ghostHunter.min.js"></script>
+  <script src="/js/script.js"></script>
+</body>
+
+</html>
