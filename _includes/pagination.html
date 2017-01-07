@@ -1,0 +1,15 @@
+<!-- Pagination links -->
+
+<div class="pagination clearfix">
+  {% if paginator.previous_page %}
+  <div class="column medium-6 large-6 left">
+    <a class="newer-posts" href="{{ paginator.previous_page_path | prepend: site.baseurl }}"><div data-icon="ei-chevron-left"></div> <span>Previous</span></a>
+  </div>
+  {% endif %}
+
+  {% if paginator.next_page %}
+  <div class="column medium-6 large-6 right">
+    <a class="older-posts" href="{{ paginator.next_page_path | prepend: site.baseurl }}"><span>Next</span> <div data-icon="ei-chevron-right"></div></a>
+  </div>
+  {% endif %}
+</div>

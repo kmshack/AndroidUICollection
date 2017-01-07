@@ -1,0 +1,78 @@
+//---------------------------
+// Pagination
+//---------------------------
+
+// Next & Previous Posts
+
+.pagination {
+  clear: both;
+  font-size: $font-size__tiny;
+  line-height: $line-height__medium;
+
+  span,
+  .icon { position: relative; }
+
+  .newer-posts {
+    float: left;
+    text-align: left;
+
+    span,
+    .icon { left: -$line-height__medium / 3; }
+  }
+
+  .older-posts {
+    float: right;
+    text-align: right;
+
+    span,
+    .icon { right: -$line-height__medium / 3; }
+  }
+
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    transition: $base-transition-speed;
+  }
+}
+
+// Next & previous posts in single post page
+
+.post-navigation {
+
+  // Make the post card to grow to full width if there is one post
+  // this will happen if we are in the first post of last post
+
+  flex-grow: 1;
+
+  .post-card {
+    border-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  &:before {
+    position: absolute;
+    z-index: 1;
+    content: "";
+    top: half($line-height__base);
+    padding: 0 half($line-height__base);
+    font-size: $font-size__small;
+    color: $color__base--hover;
+    background-color: rgba(255, 255, 255, .9);
+    transition: $base-transition-speed;
+  }
+
+  &.prev:before {
+    left: $line-height__base;
+    content: "Previous Story";
+  }
+
+  &.next:before {
+    right: $line-height__base;
+    content: "Next Story";
+  }
+
+  &:hover {
+    &:before { background-color: rgba(255, 255, 255, 1); }
+  }
+}

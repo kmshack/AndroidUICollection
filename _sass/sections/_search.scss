@@ -1,0 +1,112 @@
+//---------------------------
+//
+// Search
+//
+//---------------------------
+
+.search-form-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 101;
+  white-space: nowrap;
+  background: #fff;
+  opacity: 0;
+  visibility: hidden;
+  transition: all $base-transition-speed ease-in-out;
+  transform: translate(0px, -100%) scale(0, 0);
+
+  &__close {
+    position: absolute;
+    top: $line-height__base;
+    right: $line-height__base;
+    cursor: pointer;
+    transition: $base-transition-speed;
+    fill: $color__base;
+
+    &:hover {
+      fill: $color__base--hover;
+      transform: rotate(90deg);
+    }
+
+    @media #{$medium-down} {
+      top: half($line-height__base);
+      right: half($line-height__base);
+    }
+  }
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0px, 0px) scale(1, 1);
+  }
+}
+
+.search-form {
+  margin-bottom: half($line-height__base);
+
+  &__field {
+    padding: 0;
+    width: 100%;
+    outline: none;
+
+    font-size: double($font-size__base);
+    line-height: double($line-height__base);
+
+    border: 0;
+    border-bottom: 1px solid $border-color;
+
+    @media #{$medium-down} {
+      font-size: double($font-size__small);
+      line-height: double($line-height__small);
+    }
+
+    &:focus {
+      border: 0;
+      border-bottom: 1px solid $border-color;
+    }
+  }
+
+  &__submit { display: none; }
+
+  &__fieldset {
+    border: 0;
+    margin-top: double($line-height__base);
+    padding: 0;
+  }
+}
+
+.search-results {
+  display: none;
+  height: 80vh;
+  overflow: auto;
+  white-space: normal;
+
+  .heading {
+    margin-right: half($line-height__base);
+    margin-bottom: half($line-height__base);
+    color: $color__base--hover;
+  }
+
+  &__item {
+    margin-bottom: half($line-height__base);
+    margin-right: half($line-height__base);
+    padding-bottom: half($line-height__base);
+    border-bottom: 1px solid $border-color;
+
+    &__title {
+      display: block;
+      text-decoration: none;
+      font-size: $font-size__medium;
+      line-height: $line-height__medium;
+    }
+
+    &__date {
+      font-size: $font-size__tiny;
+      line-height: $line-height__small;
+      color: $color__base--hover;
+    }
+  }
+}

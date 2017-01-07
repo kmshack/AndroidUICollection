@@ -1,0 +1,48 @@
+//---------------------------
+// suit-flex-embed v1.4.0
+// github.com/suitcss
+//---------------------------
+
+.FlexEmbed {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.FlexEmbed:before {
+  content: "";
+  display: block;
+  width: 100%;
+}
+
+.FlexEmbed--3by1:before {
+  padding-bottom: 33.33333%;
+}
+
+.FlexEmbed--2by1:before {
+  padding-bottom: 50%;
+}
+
+.FlexEmbed--16by9:before {
+  padding-bottom: 56.25%;
+}
+
+.FlexEmbed--4by3:before {
+  padding-bottom: 75%;
+}
+
+.FlexEmbed--9by16:before {
+
+  @media #{$large-up} { padding-bottom: 180%; }
+  @media #{$large-down} { padding-bottom: 80%; }
+     
+}
+
+.CoverImage {
+  max-height: 600px;
+  max-width: 100%;
+
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

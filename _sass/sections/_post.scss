@@ -1,0 +1,42 @@
+//---------------------------
+// Post Page
+//---------------------------
+
+.post {
+  position: relative;
+  padding: $line-height__base;
+  margin: 0 auto;
+  max-width: 45em;
+  background: #fff;
+
+  @media #{$medium-up} { top: - double($line-height__base); }
+
+  @media #{$large-up} {
+    top: (-$line-height__base * 3);
+    padding: double($line-height__base);
+  }
+
+  &__header {
+    margin-bottom: half($line-height__medium);
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: half($line-height__medium);
+    font-size: double($font-size__medium);
+    line-height: double($line-height__medium);
+
+    @media #{$medium-down} {
+      font-size: $font-size__base;
+      line-height: $line-height__base;
+    }
+  }
+
+  &__date {
+    font-size: $font-size__small;
+    line-height: $line-height__small;
+    color: $color__base--hover;
+  }
+
+  &-content { margin-top: $line-height__medium; }
+}

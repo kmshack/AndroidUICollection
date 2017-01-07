@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Json2View</title>
+  <meta name="description" content="json2view  travis-cijson2view is a simple library that can convert a compatible JSON file to an Android view so you can load dynamically the view in your And...">
+  <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
+  <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
+    
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://android.kmshack.kr/2016/10/07/Json2View/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://android.kmshack.kr/feed.xml">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
+    
+  <meta name="description" content="json2view  travis-cijson2view is a simple library that can convert a compatible JSON file to an Android view so you can load dynamically the view in your And...">
+
+
+  <meta name="author" content="kmshack" />
+
+  <meta property="og:title" content="Json2View">
+  <meta property="og:site_name" content="Android UI OpenSource" />
+  <meta property="og:description" content="json2view  travis-cijson2view is a simple library that can convert a compatible JSON file to an Android view so you can load dynamically the view in your And...">
+  <meta property="og:url" content="http://android.kmshack.kr/2016/10/07/Json2View/" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:site" content="@kmshack" />
+  <meta name="twitter:description" content="json2view  travis-cijson2view is a simple library that can convert a compatible JSON file to an Android view so you can load dynamically the view in your And..." />
+
+  
+  	<!-- Article specific OG data -->
+  	<meta property="og:type" content="article" />
+  	<meta property="article:published_time" content="2016-10-07 00:00:00 +0900" />
+  	
+  	<meta property="article:author" content="http://facebook.com/kmshack" />
+    <meta property="article:publisher" content="https://www.facebook.com/kmshack" />
+  	<meta property="article:section" content="" />
+  	
+
+  	<meta name="twitter:card" content="summary_large_image" />
+  	<meta name="twitter:creator" content="@kmshack_kr" />
+  	<meta name="twitter:title" content="Json2View" />
+	
+	  	<meta property="og:image" content="/images/posts/2016-10-07-Json2View.png" />
+	  	<meta name="twitter:image" content="/images/posts/2016-10-07-Json2View.png" />
+  	
+
+  
+
+  <script>
+    var base_url = "";
+  </script>
+    
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9975139260149901",
+    enable_page_level_ads: true
+  });
+</script>
+    
+</head>
+
+<body>
+
+  <!-- Google Analytics Code -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85072530-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  <div class="off-canvas-container">
+    <div class="sidebar">
+  <div class="row">
+
+    <div class="column small-10 large-12">
+      <br>
+      <h1 class="sidebar__logo logo"><a href="/">Android UI OpenSource</a></h1>
+      <div class="sidebar__description font-tiny">Collection of OpenSource for Android UI.</div>
+    </div>
+
+    <label class="off-canvas-toggle"><span data-icon="ei-navicon" data-size="s"></span></label>
+
+    <div class="off-canvas-content">
+
+      <div class="column small-12 large-12">
+        <nav class="navigation">
+          <ul class="list-bare text-center">
+            
+              
+            
+              
+                
+                  <li>
+                    <a class="page-link" href="/about.html">About</a>
+                  </li>
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+            <li><a class="subscribe-button icon-feed" href="/feed.xml">RSS</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="column small-12 large-12">
+        <ul class="social-nav social-icons">
+
+          
+          <li>
+            <a href="http://www.github.com/kmshack" target="_blank">
+              <span data-icon="ei-sc-github" data-size="s"></span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="http://www.twitter.com/kmshack_kr" target="_blank">
+              <span data-icon="ei-sc-twitter" data-size="s"></span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="mailto:kmshack@naver.com" target="_blank">
+              <span data-icon="ei-envelope" data-size="s"></span>
+            </a>
+          </li>
+          
+
+          <li>
+            <a class="toggle-search-button" href="#">
+              <span data-icon="ei-search" data-size="s"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+        
+      <div class="sidebar__bottom">
+        <div class="column small-12 large-12">
+            
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- androidui -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:250px;height:250px"
+     data-ad-client="ca-pub-9975139260149901"
+     data-ad-slot="5123612274"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+            
+          <div class="font-tiny">
+              <br>
+            &copy; 2017 Android UI OpenSource
+          </div>
+        </div>
+      </div>
+        
+    </div> <!-- off-canvas-content -->
+      
+
+
+  </div>
+    
+
+    
+</div>
+
+<div class="search-form-container">
+
+  <form class="search-form">
+    <fieldset class="search-form__fieldset">
+      <div class="row">
+        <div class="column column--center large-8">
+          <input class="search-form__field" placeholder="Type to search" autofocus>
+          <input class="search-form__submit" type="submit" value="search">
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+  <div class="row">
+    <div class="column column--center large-8">
+      <div class="search-results"></div>
+    </div>
+  </div>
+
+  <div data-icon="ei-close" data-size="s" class="close-search-button search-form-container__close"></div>
+
+</div>
+
+    
+
+
+
+<div class="wrapper">
+  <div class="row row--full">
+
+    <div class="column column--center medium-12 large-12">
+      <div class="grey-bg CoverImage FlexEmbed FlexEmbed--16by9" style="background-image: url(/images/posts/2016-10-07-Json2View.png)"></div>
+        
+    </div>
+      
+    <div class="column column--center medium-12 large-10">
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+        
+          <meta itemprop="og:image" content="http://android.kmshack.kr/images/posts/2016-10-07-Json2View.png">
+        
+
+        <header class="post__header">
+          <h2 class="post__title" itemprop="name headline">Json2View</h2>
+          
+          <h3 class="post__date">
+            <a href="https://github.com/Avocarrot/json2view" target="_blank"><span data-icon="ei-sc-github" data-size="s"></span>https://github.com/Avocarrot/json2view</a>
+          </h3>
+        </header>
+
+        <div class="post-content" itemprop="articleBody">
+            
+            <div class="column column--center medium-12 large-4">
+              <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-10-07-Json2View.png)"></div>
+            </div>
+             <br><br>
+            <hr>
+          <br>
+          <h1 id="json2view--travis-cihttpstravis-ciorgavocarrotjson2viewsvg">json2view  <a href="https://travis-ci.org/Avocarrot/json2view.svg">travis-ci</a></h1>
+
+<p><strong>json2view</strong> is a simple library that can convert a compatible JSON file to an Android view so you can load dynamically the view in your Android app without the need to update the APK.</p>
+
+<p>This removes the hassle of updating, re-compiling and uploading the APK to Google Play everytime you want to make small or big changes in the UI.</p>
+
+<table>
+<tr style="border: 0px;">
+<td style="border: 0px;">
+<ul class="task-list">
+<li><a href="#common-use-cases">Common use cases</a></li>
+<li><a href="#how-it-works">How it works</a></li>
+<li><a href="#examples">Examples</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#getting-started">Getting started</a></li>
+<li><a href="#contributing">Contributing</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+</td>
+<td style="width:60%; border: 0px; text-align:right;">
+<img alt="json2view logo" src="https://github.com/Avocarrot/json2view/blob/master/example_assets/json2view.png" width="250px" />
+</td>
+</tr>
+</table>
+
+<h2 id="common-use-cases">Common use cases</h2>
+
+<ol>
+  <li>If you need to A/B test different UI designs without the need to re-upload your APK.</li>
+  <li>If your app’s UI changes dynamically based on different users or scenarios.</li>
+  <li>If you need to deploy UI fixes quickly and in real-time.</li>
+</ol>
+
+<p>In the case of <a href="http://www.avocarrot.com">Avocarrot</a>, we are using json2view to run A/B test experiments and quickly deploy UI enhancements that improve revenue performance of native ads integrations in our network.</p>
+
+<h2 id="how-it-works">How it works</h2>
+
+<p>You can parse any xml through the json2view library to create a JSON that will be used at runtime to dynamically generate the Android UI using native code. This JSON can be hosted anywhere on the internet (your own server, Dropbox, Github Pages etc.) and can be fetched in your app at any point you decide.</p>
+
+<p><img alt="how it works schematic" src="https://github.com/Avocarrot/json2view/blob/master/example_assets/how_it_works.png" width="700px" /></p>
+
+<p>Note: Runtime creation of a view without the precompiled version of xml in apk (res/layout), especially for highly complex layouts, can be a potential latency issue.</p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="changing-text-color">Changing text color</h3>
+
+<p>Using json2view to change text color, background color and position of a view. <a href="https://github.com/Avocarrot/json2view/wiki/Changing-Properties">(more details)</a></p>
+
+<p><a href="https://github.com/Avocarrot/json2view/blob/master/example_assets/test00.png">output</a></p>
+
+<h3 id="reorganizing-the-layout">Reorganizing the layout</h3>
+
+<p>Using json2view to reorganize the layout of a screen. <a href="https://github.com/Avocarrot/json2view/wiki/Changing-Layouts">(more details)</a></p>
+
+<p><a href="https://github.com/Avocarrot/json2view/blob/master/example_assets/test01.png">output</a></p>
+
+<p>You can find more help and examples in the <a href="https://github.com/Avocarrot/json2view/wiki">wiki</a>.</p>
+
+<p>Also, a sample project for quick use of the lib can be found in the <a href="https://github.com/Avocarrot/json2view/tree/master/sample">sample submodule</a></p>
+
+<h2 id="installation">Installation</h2>
+<ul>
+  <li>
+    <p>Download project
+<code class="highlighter-rouge">
+git clone https://github.com/Avocarrot/json2view.git
+</code></p>
+  </li>
+  <li>
+    <p>add json2view in your project by adding in your settings.gradle
+<code class="highlighter-rouge">
+include ':json2view'
+project(':json2view'*).projectDir = new File(settingsDir, '$(json2viewPath)/json2view/json2view')
+</code></p>
+  </li>
+  <li>
+    <p>add in build.gradle of application module (not project build.gradle) in <code class="highlighter-rouge">dependencies</code> section</p>
+  </li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>compile project(':json2view')
+</code></pre>
+</div>
+
+<h2 id="getting-started">Getting started</h2>
+
+<h3 id="basic-json-format">Basic JSON format</h3>
+<p>The input JSON has 3 fields for every view we want to create :</p>
+
+<ul>
+  <li><code class="highlighter-rouge">widget</code> : canonicalName of View (for views in package <code class="highlighter-rouge">android.widget</code> you can ommit <code class="highlighter-rouge">android.widget</code>)</li>
+  <li><code class="highlighter-rouge">properties</code> : list of properties for the view. (<a href="https://github.com/Avocarrot/json2view/wiki/Available-Properties">Available Properties</a>) By default we add <code class="highlighter-rouge">layout_width</code> &amp; <code class="highlighter-rouge">layout_height</code> with value `wrap_content’</li>
+  <li><code class="highlighter-rouge">views</code> : children views for ViewGroup <em>(optional)</em></li>
+</ul>
+
+<p>eg. JSON to create a empty TextView
+<code class="highlighter-rouge">javascript
+{
+    "widget": "android.widgetTextView",
+	"properties": []
+}
+</code></p>
+
+<p>eg. JSON to create a TextView with textSize : 12sp and text : “Hello Avocarrot”
+<code class="highlighter-rouge">javascript
+{
+    "widget": "TextView",
+	"properties": [
+	    {"name":"textSize", "type": "dimen", "value":"13sp"},
+	    {"name":"text", "type": "string", "value":"Hello Avocarrot"}
+	]
+}
+</code></p>
+
+<p>You can find some examples for xml to JSON conversions in the wiki <a href="https://github.com/Avocarrot/json2view/wiki/Xml-2-JSON-Examples">here</a></p>
+
+<p>You can use <em>ConvertXML2JSON.groovy</em> (from ./utils) to convert any android xml to json2view valid JSON file
+<em>(the script needs further development to create a valid JSON for <b>every</b> case)</em> <br />
+try : <br /></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>./gradlew runScript -Pxml=./pathToInputXmlFile.xml
+</code></pre>
+</div>
+<p>from the root folder of the project</p>
+
+<h3 id="loading-dynamic-layout">Loading dynamic layout</h3>
+<p>create and attach view in the specific Parent (created from xml) <br />
+<code class="highlighter-rouge">java
+ViewParent viewParent = (ViewParent) findViewById(R.id.parent_view_id)
+JSONObject jsonObject = ... // load from network, sdcard etc
+View sampleView = DynamicView.createView(this, jsonObject, viewParent);
+</code></p>
+
+<p>You can check some example use cases in the wiki <a href="https://github.com/Avocarrot/json2view/wiki/Creating-Dynamic-Layouts">here</a></p>
+
+<h2 id="contributing">Contributing</h2>
+
+<ol>
+  <li>Fork the repo</li>
+  <li>Apply your changes</li>
+  <li>Write tests</li>
+  <li>Submit your pull request</li>
+</ol>
+
+<p>For feedback or suggestions you can drop us a line at support@avocarrot.com</p>
+
+<h2 id="license">License</h2>
+<p><a href="https://github.com/Avocarrot/json2view/blob/master/LICENSE">The MIT License (MIT)</a></p>
+
+<p>Also check out the project at <a href="https://android-arsenal.com/details/1/1453">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-json2view-brightgreen.svg?style=flat)</a></p>
+
+          <br>
+          <div class="post__tags">
+            
+              <a href="/tag/view">view</a>
+            
+              <a href="/tag/json">json</a>
+            
+          </div>
+            
+        </div>
+          
+          <br>
+          <hr>
+          <br>  
+          <div class="post-content"  itemprop="articleBody">
+            
+          </div>
+          <br>
+          <hr>
+          <br>
+
+        
+
+        
+
+<ul class="share-list">
+  <li>
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Json2View&url=http://android.kmshack.kr/2016/10/07/Json2View/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+      <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
+    </a>
+  </li>
+  <li>
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://android.kmshack.kr/2016/10/07/Json2View/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
+    </a>
+  </li>
+  <li>
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://android.kmshack.kr/2016/10/07/Json2View/" rel="nofollow" target="_blank" title="Share on Google+">
+    <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
+    </a>
+  </li>
+</ul>
+
+        <h5 class="separator">
+  <span class="separator__title">Newsletter</span>
+</h5>
+
+<div class="box box--news-letter">
+  <form action="//aspirethemes.us12.list-manage.com/subscribe/post?u=9723f3c5c3a2637fbba3bc673&amp;id=7b50db9989" method="post" target="_blank">
+    <div class="row">
+      <div class="column medium-9 large-9">
+        <input type="email" name="EMAIL" placeholder="Your email address">
+      </div>
+      <div class="column medium-3 large-3">
+        <input type="submit" class="button button--expand" value="SIGN UP">
+      </div>
+    </div>
+  </form>
+</div>
+
+        <section class="disqus">
+  <h5 class="separator">
+    <span class="separator__title">Comments</span>
+  </h5>
+  <div id="disqus_thread"></div>
+
+<script>
+  var disqus_config = function () {
+    this.page.url = "http://android.kmshack.kr/2016/10/07/Json2View/";
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//android-kmshack-kr.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</section>
+      </article>
+    </div>
+
+  </div> <!-- row-->
+</div> <!-- wrapper -->
+  </div>
+
+  <script src="/js/jquery-2.1.4.min.js"></script>
+  <script src="/js/evil-icons.min.js"></script>
+  <script src="/js/jquery.fitvids.js"></script>
+  <script src="/js/jquery.ghostHunter.min.js"></script>
+  <script src="/js/script.js"></script>
+</body>
+
+</html>

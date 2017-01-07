@@ -1,0 +1,29 @@
+//---------------------------
+// Buttons
+//---------------------------
+
+.button {
+  display: inline-block;
+  text-align: center;
+  padding: quarter($line-height__base) half($line-height__base);
+  font-family: $font__serif;
+  font-size: $font-size__tiny;
+  line-height: $line-height__medium;
+  letter-spacing: 1px;
+  border: 0;
+  border-radius: 0;
+
+  text-decoration: none;
+  color: #fff;
+  background-color: $color__base;
+  transition: $base-transition-speed;
+
+  &--expand { width: 100%; }
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: #fff;
+    background-color: $color__base--hover;
+  }
+}

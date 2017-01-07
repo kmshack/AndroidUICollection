@@ -1,0 +1,26 @@
+//---------------------------
+// Media
+//---------------------------
+
+img,
+iframe { display: block; }
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+.post-content {
+  img,
+  iframe,
+  .fluid-width-video-wrapper,
+  .twitter-tweet {
+    margin-bottom: $line-height__medium !important;
+
+    @media #{$medium-down} {
+      margin-bottom: $line-height__small;
+    }
+  }
+
+  p img { margin-bottom: 0; }
+}

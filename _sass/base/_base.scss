@@ -1,0 +1,36 @@
+//---------------------------
+// Base
+//---------------------------
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  padding: $line-height__medium 0;
+
+  @media #{$large-up} {
+    padding: $line-height__base 0;
+    margin-left: $sidebar-width;
+  }
+}
+
+// Make the footer stick to the bottom if content is small
+
+.off-canvas-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
+  .wrapper {
+    flex: 1 0 auto;
+  }
+}
+
+// Fix Evil Icons vertical align
+
+.icon {
+  vertical-align: bottom;
+}

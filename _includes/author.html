@@ -1,0 +1,57 @@
+<div class="box box--author">
+
+  {% if author.gravatar %}
+  <figure class="author-image">
+    <div class="img" style="background-image: url({{ author.gravatar }})">
+      <span class="hidden">{{ author.name }}'s Picture</span>
+    </div>
+  </figure>
+  {% endif %}
+
+  <div class="box__body">
+
+    <h4 class="box__title">
+      {{ author.name }}
+    </h4>
+
+    {% if author.bio %}
+    <p class="box__text">{{ author.bio }}</p>
+    {% endif %}
+
+    <div class="author-meta box__text">
+      {% if author.website %}
+      <div class="author-link inline-block">
+        <a href="{{ author.website }}">
+          <span data-icon="ei-link" data-size="s"></span>
+        </a>
+      </div>
+      {% endif %}
+
+      {% if author.twitter_username %}
+      <div class="author-link inline-block">
+        <a href="http://www.twitter.com/{{ author.twitter_username }}" target="_blank">
+          <span data-icon="ei-sc-twitter" data-size="s"></span>
+        </a>
+      </div>
+      {% endif %}
+
+      {% if author.github_username %}
+      <div class="author-link inline-block">
+        <a href="http://www.github.com/{{ author.github_username }}" target="_blank">
+          <span data-icon="ei-sc-github" data-size="s"></span>
+        </a>
+      </div>
+      {% endif %}
+
+      {% if author.email %}
+      <div class="author-link inline-block">
+        <a href="mailto:{{ author.email }}" target="_blank">
+          <span data-icon="ei-envelope" data-size="s"></span>
+        </a>
+      </div>
+      {% endif %}
+    </div>
+
+  </div><!-- box__body -->
+
+</div><!-- box -->

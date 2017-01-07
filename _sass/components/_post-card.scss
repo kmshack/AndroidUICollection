@@ -1,0 +1,88 @@
+//---------------------------
+// Post Card
+//---------------------------
+
+.post-card {
+  margin-bottom: $line-height__medium;
+  padding-bottom: $line-height__medium;
+
+  border-bottom: 1px solid $border-color;
+  text-align: center;
+
+  &__image {
+    margin-bottom: half($line-height__base);
+    transition: $base-transition-speed;
+
+    @media #{$medium-down} {
+      margin-bottom: half($line-height__medium);
+    }
+  }
+
+  &__title {
+    font-size: $font-size__medium;
+    line-height: $line-height__medium;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    a {
+      display: block;
+      border-bottom: none;
+      transition: $base-transition-speed;
+
+      &:hover { color: #a60505; }
+    }
+  }
+
+  &__meta {
+    margin-bottom: quarter($line-height__base);
+    font-size: $font-size__tiny;
+    line-height: $line-height__small;
+    color: $color__base--hover;
+
+    a { color: $color__base--hover; text-decoration: none; }
+  }
+
+  &:hover {
+    .post-card__image {
+      opacity: 0.9;
+    }
+
+    .post-card__title a { color: #a60505; }
+  }
+
+  &--featured {
+    &__icon {
+      position: absolute;
+      bottom: quarter($line-height__base);
+      left: quarter($line-height__base);
+      fill: #fff;
+    }
+  }
+
+  @media #{$large-up} {
+    margin-bottom: $line-height__base;
+    padding-bottom: $line-height__base;
+  }
+}
+
+// Make post cards the same height
+
+.post-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  // Safari (iPad)
+  display: -webkit-flex;
+  -webkit-flex-wrap: wrap;
+
+  .post-card-wrap {
+    display: flex;
+
+    // Safari (iPad)
+    display: -webkit-flex;
+  }
+
+  .post-card {
+    width: 100%;
+  }
+}

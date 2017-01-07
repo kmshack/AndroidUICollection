@@ -1,0 +1,51 @@
+//---------------------------
+// Off-canvas
+//---------------------------
+
+.off-canvas-toggle {
+  display: none;
+
+  @media #{$large-down} {
+    float: right;
+    display: block;
+    margin-right: quarter($line-height__base);
+
+    font-size: $font-size__small;
+    cursor: pointer;
+  }
+}
+
+@media #{$large-down} {
+
+  // prevent horizontal scroll during off-canvas
+
+  html,
+  body { overflow-x: hidden; }
+
+  .off-canvas-content {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: $sidebar-width;
+    height: 100%;
+
+    background-color: #fff;
+    border-left: 1px solid $border-color;
+    -webkit-transform: translate3d(0px, 0px, 0px) translateX($sidebar-width);
+            transform: translate3d(0px, 0px, 0px) translateX($sidebar-width);
+    -webkit-transition: all $base-transition-speed cubic-bezier(0.16, 0.63, 0.45, 0.98) 0s;
+            transition: all $base-transition-speed cubic-bezier(0.16, 0.63, 0.45, 0.98) 0s;
+  }
+
+ .off-canvas-container {
+    -webkit-transform: translate3d(0, 0, 0) translateX(0);
+            transform: translate3d(0, 0, 0) translateX(0);
+    -webkit-transition: all $base-transition-speed cubic-bezier(0.16, 0.63, 0.45, 0.98) 0s;
+    transition: all $base-transition-speed cubic-bezier(0.16, 0.63, 0.45, 0.98) 0s;
+
+    &.is-active {
+      -webkit-transform: translate3d(0px, 0px, 0px) translateX(- $sidebar-width);
+              transform: translate3d(0px, 0px, 0px) translateX(- $sidebar-width);
+    }
+  }
+}

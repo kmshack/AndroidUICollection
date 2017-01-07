@@ -1,0 +1,21 @@
+//---------------------------
+// Layout
+//---------------------------
+
+.inline       { display: inline; }
+.block        { display: block; }
+.inline-block { display: inline-block; }
+.hide         { display: none; }
+
+.left { float: left; }
+.right { float: right; }
+
+.hidden {
+  border: 0 none;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+}
