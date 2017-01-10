@@ -5,9 +5,134 @@
     <description>Collection of OpenSource for Android UI.</description>
     <link>http://kmshack.github.io/AndroidUICollection/</link>
     <atom:link href="http://kmshack.github.io/AndroidUICollection/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 07 Jan 2017 19:30:08 +0900</pubDate>
-    <lastBuildDate>Sat, 07 Jan 2017 19:30:08 +0900</lastBuildDate>
+    <pubDate>Tue, 10 Jan 2017 18:16:00 +0900</pubDate>
+    <lastBuildDate>Tue, 10 Jan 2017 18:16:00 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>EasyFlipView</title>
+        <description>&lt;h1 id=&quot;easyflipview&quot;&gt;EasyFlipView&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://bintray.com/wajahatkarim3/EasyFlipView/com.wajahatkarim3.EasyFlipView/_latestVersion&quot;&gt; [Download](https://api.bintray.com/packages/wajahatkarim3/EasyFlipView/com.wajahatkarim3.EasyFlipView/images/download.svg) &lt;/a&gt; &lt;a href=&quot;https://android-arsenal.com/details/1/5051&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-EasyFlipView-brightgreen.svg?style=flat)&lt;/a&gt; &lt;a href=&quot;https://android-arsenal.com/api?level=15&quot;&gt;[API](https://img.shields.io/badge/API-15%2B-blue.svg?style=flat)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;A quick and easy flip view through which you can create views with two sides like credit cards, poker cards etc.&lt;/p&gt;
+
+&lt;p&gt;[](https://github.com/wajahatkarim3/EasyFlipView/blob/master/Art/demo.gif)&lt;/p&gt;
+
+&lt;h1 id=&quot;demo&quot;&gt;Demo&lt;/h1&gt;
+&lt;p&gt;Install &lt;a href=&quot;https://github.com/wajahatkarim3/EasyFlipView/releases/download/1.0.0/EasyFlipView-Demo_v1.0.0.apk&quot;&gt;Demo&lt;/a&gt; app or APK from &lt;a href=&quot;https://github.com/wajahatkarim3/EasyFlipView/releases&quot;&gt;Releases&lt;/a&gt; on your device and click on any card to flip it&lt;/p&gt;
+
+&lt;h1 id=&quot;installation&quot;&gt;Installation&lt;/h1&gt;
+&lt;p&gt;Add this in your app’s build.gradle file:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;groovy
+dependencies {
+  compile &#39;com.wajahatkarim3.EasyFlipView:EasyFlipView:1.0.0&#39;
+}
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Or add DBFlowManager as a new dependency inside your pom.xml&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt; 
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;com.wajahatkarim3.EasyFlipView&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;EasyFlipView&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt; 
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.0.0&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt; 
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;type&amp;gt;&lt;/span&gt;pom&lt;span class=&quot;nt&quot;&gt;&amp;lt;/type&amp;gt;&lt;/span&gt; 
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Usage
+=====&lt;/p&gt;
+
+&lt;h2 id=&quot;xml&quot;&gt;XML&lt;/h2&gt;
+&lt;p&gt;EasyFlipView In XML layouts
+```xml&lt;/p&gt;
+&lt;com.wajahatkarim3.easyflipview.easyflipview android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; app:flipontouch=&quot;true&quot; app:flipenabled=&quot;true&quot; app:flipduration=&quot;400&quot;&gt;
+
+	&amp;lt;-- Back Layout Goes Here --&amp;gt;
+	&lt;include layout=&quot;@layout/flash_card_layout_back&quot; /&gt;
+        
+	&amp;lt;-- Front Layout Goes Here --&amp;gt;
+	&lt;include layout=&quot;@layout/flash_card_layout_front&quot; /&gt;
+
+&lt;/com.wajahatkarim3.easyflipview.easyflipview&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;All customizable attributes for EasyFlipView
+```xml
+&amp;lt;declare-styleable name=&quot;easy_flip_view&quot;&amp;gt;
+	&amp;lt;-- Whether card should be flipped on touch or not (Default is true) --&amp;gt;
+	&amp;lt;attr name=&quot;flipOnTouch&quot; format=&quot;boolean&quot;/&amp;gt;
+	&amp;lt;-- The duration of flip animation in milliseconds (Default is 400 ms) --&amp;gt;
+	&amp;lt;attr name=&quot;flipDuration&quot; format=&quot;integer&quot;/&amp;gt;
+	&amp;lt;-- If this is set to false, then it won&#39;t flip ever (Default is true) --&amp;gt;
+	&amp;lt;attr name=&quot;flipEnabled&quot; format=&quot;boolean&quot;/&amp;gt;
+&amp;lt;/declare-styleable&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;in-code-java&quot;&gt;In Code (Java)&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Flips the view with animation&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;mYourFlipView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;flipTheView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Sets and Gets the Flip Animation Duration in milliseconds (Default is 400 ms)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;mYourFlipView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setFlipDuration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mYourFlipView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getFlipDuration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Sets and gets the flip enable status (Default is true)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;mYourFlipView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setFlipEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flipStatus&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mYourFlipView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isFlipEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Sets and gets the flip on touch status (Default is true)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;mYourFlipView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setFlipOntouch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flipTouchStatus&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mYourFlipView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isFlipOnTouch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;developed-by&quot;&gt;Developed By&lt;/h1&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Wajahat Karim
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;Website (http://wajahatkarim.com)&lt;/li&gt;
+  &lt;li&gt;Twitter (http://twitter.com/wajahatkarim)&lt;/li&gt;
+  &lt;li&gt;Medium (http://www.medium.com/@wajahatkarim3)&lt;/li&gt;
+  &lt;li&gt;LinkedIn (http://www.linkedin.com/in/wajahatkarim)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;how-to-contribute&quot;&gt;How to Contribute&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Fork it&lt;/li&gt;
+  &lt;li&gt;Create your feature branch (git checkout -b my-new-feature)&lt;/li&gt;
+  &lt;li&gt;Commit your changes (git commit -am ‘Add some feature’)&lt;/li&gt;
+  &lt;li&gt;Push to the branch (git push origin my-new-feature)&lt;/li&gt;
+  &lt;li&gt;Create new Pull Request&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;license&quot;&gt;License&lt;/h1&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2016 Wajahat Karim
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Mon, 09 Jan 2017 00:00:00 +0900</pubDate>
+        <link>http://kmshack.github.io/AndroidUICollection/2017/01/09/EasyFlipView/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/01/09/EasyFlipView/</guid>
+        
+        <category>flip</category>
+        
+        
+      </item>
     
       <item>
         <title>Text Decorator</title>
@@ -105,11 +230,13 @@ limitations under the License.
 
 &lt;p&gt;&lt;a href=&quot;https://android-arsenal.com/details/1/4952&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Android–Snowfall-brightgreen.svg?style=flat)&lt;/a&gt;
 &lt;a href=&quot;https://jitpack.io/#jetradarmobile/android-snowfall&quot;&gt;[Release](https://jitpack.io/v/jetradarmobile/android-snowfall.svg)&lt;/a&gt;
-&lt;a href=&quot;https://android-arsenal.com/api?level=16&quot;&gt;[API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;https://android-arsenal.com/api?level=16&quot;&gt;[API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)&lt;/a&gt;
+&lt;a href=&quot;http://androidweekly.net/issues/issue-238&quot;&gt;[AndroidWeekly](https://img.shields.io/badge/Android%20Weekly-%23238-blue.svg?style=flat)&lt;/a&gt;
+&lt;a href=&quot;https://www.androiddevdigest.com/digest-124/&quot;&gt;[AndroidDev Digest](https://img.shields.io/badge/AndroidDev%20Digest-%23124-blue.svg?style=flat)&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Fully customizable implementation of “Snowfall View” on Android.&lt;/p&gt;
 
-&lt;p&gt;That’s how we use it in our app “Hotellook”&lt;/p&gt;
+&lt;p&gt;That’s how we use it in our app &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.hotellook&quot;&gt;Hotellook&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/JetradarMobile/android-snowfall/master/art/hotellook-demo.gif&quot;&gt;image&lt;/a&gt;&lt;/p&gt;
 
@@ -255,20 +382,20 @@ allprojects {
 &lt;/code&gt;
 &lt;code class=&quot;highlighter-rouge&quot;&gt;gradle
 dependencies {
-    compile &#39;com.github.daniel-stoneuk:material-about-library:1.3.0&#39;
+    compile &#39;com.github.daniel-stoneuk:material-about-library:1.4.1&#39;
 }
 &lt;/code&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;setup&quot;&gt;Setup&lt;/h2&gt;
 
-&lt;p&gt;&lt;strong&gt;Fragment tutorial coming soon, check out the demo app in the meantime&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;activity&quot;&gt;Activity&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;Step 1:&lt;/strong&gt; Your &lt;code class=&quot;highlighter-rouge&quot;&gt;Activity&lt;/code&gt; must extend &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/MaterialAboutActivity.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutActivity&lt;/code&gt;&lt;/a&gt; and be in your &lt;em&gt;AndroidManifest.xml&lt;/em&gt;:
+&lt;p&gt;Your &lt;code class=&quot;highlighter-rouge&quot;&gt;Activity&lt;/code&gt; must extend &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/MaterialAboutActivity.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutActivity&lt;/code&gt;&lt;/a&gt; and be in your &lt;em&gt;AndroidManifest.xml&lt;/em&gt;:
 ```java
 public class ExampleMaterialAboutActivity extends MaterialAboutActivity {&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@Override
-protected MaterialAboutList getMaterialAboutList() {
+protected MaterialAboutList getMaterialAboutList(Context context) {
     return new MaterialAboutList.Builder()
             .build();
 }
@@ -281,27 +408,41 @@ protected CharSequence getActivityTitle() {
 &lt;/div&gt;
 
 &lt;p&gt;}
-&lt;code class=&quot;highlighter-rouge&quot;&gt;
-Ensure that the theme extends &#39;Theme.Mal&#39;, and apply primary &amp;amp; accent colours.
-&lt;/code&gt;xml
-&amp;lt;manifest …&amp;gt;
-    &amp;lt;application …&amp;gt;
-        &lt;activity android:name=&quot;.ExampleMaterialAboutActivity&quot; android:theme=&quot;@style/AppTheme.MaterialAboutActivity&quot;&gt;&lt;/activity&gt;
-    &amp;lt;/application&amp;gt;
-&amp;lt;/manifest&amp;gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;
-&lt;/code&gt;xml
-    &lt;style name=&quot;AppTheme.MaterialAboutActivity&quot; parent=&quot;Theme.Mal&quot;&gt;
-        &amp;lt;-- Customize your theme here. --&amp;gt;
-        &lt;item name=&quot;colorPrimary&quot;&gt;@color/colorPrimary&lt;/item&gt;
-        &lt;item name=&quot;colorPrimaryDark&quot;&gt;@color/colorPrimaryDark&lt;/item&gt;
-        &lt;item name=&quot;colorAccent&quot;&gt;@color/colorAccent&lt;/item&gt;
-    &lt;/style&gt;
 ```&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Step 2:&lt;/strong&gt; Add Cards:&lt;/p&gt;
+&lt;p&gt;Ensure that the theme extends ‘Theme.Mal’, and apply primary &amp;amp; accent colours.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;xml
+&amp;lt;manifest ...&amp;gt;
+    &amp;lt;application ...&amp;gt;
+        &amp;lt;activity android:name=&quot;.ExampleMaterialAboutActivity&quot;
+            android:theme=&quot;@style/AppTheme.MaterialAboutActivity&quot;/&amp;gt;
+    &amp;lt;/application&amp;gt;
+&amp;lt;/manifest&amp;gt;
+&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;xml
+    &amp;lt;style name=&quot;AppTheme.MaterialAboutActivity&quot; parent=&quot;Theme.Mal&quot; &amp;gt;
+        &amp;lt;-- Customize your theme here. --&amp;gt;
+        &amp;lt;item name=&quot;colorPrimary&quot;&amp;gt;@color/colorPrimary&amp;lt;/item&amp;gt;
+        &amp;lt;item name=&quot;colorPrimaryDark&quot;&amp;gt;@color/colorPrimaryDark&amp;lt;/item&amp;gt;
+        &amp;lt;item name=&quot;colorAccent&quot;&amp;gt;@color/colorAccent&amp;lt;/item&amp;gt;
+    &amp;lt;/style&amp;gt;
+&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;Start building a “card” using &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/ce35cdc99d33af1faf40c7a1cddf2889898be4e7/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutCard.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutCard.Builder()&lt;/code&gt;&lt;/a&gt;
+&lt;h3 id=&quot;fragment&quot;&gt;Fragment&lt;/h3&gt;
+
+&lt;p&gt;Your &lt;code class=&quot;highlighter-rouge&quot;&gt;fragment&lt;/code&gt; must extend &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/app/src/main/java/com/danielstone/materialaboutlibrarydemo/ExampleMaterialAboutFragment.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutFragment&lt;/code&gt;&lt;/a&gt;.
+```java
+public class ExampleMaterialAboutFragment extends MaterialAboutFragment {&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@Override
+protected MaterialAboutList getMaterialAboutList(final Context activityContext) {
+} } ```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;add-cards&quot;&gt;Add Cards:&lt;/h3&gt;
+
+&lt;p&gt;Start building a “card” using &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutCard.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutCard.Builder()&lt;/code&gt;&lt;/a&gt;
 ```java
 public class ExampleMaterialAboutActivity extends MaterialAboutActivity {&lt;/p&gt;
 
@@ -312,23 +453,23 @@ protected MaterialAboutList getMaterialAboutList() {
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Step 3:&lt;/strong&gt; Add Items:&lt;/p&gt;
+&lt;h3 id=&quot;add-items&quot;&gt;Add Items:&lt;/h3&gt;
 
-&lt;p&gt;There are currently two types of item you can add to a card - &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/ce35cdc99d33af1faf40c7a1cddf2889898be4e7/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutTitleItem.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutTitleItem&lt;/code&gt;&lt;/a&gt; and &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/ce35cdc99d33af1faf40c7a1cddf2889898be4e7/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutActionItem.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutActionItem&lt;/code&gt;&lt;/a&gt;. Planned items include “person” items which feature buttons to showcase a single person. Feel free to submit a PR or Issue for more item ideas.&lt;/p&gt;
+&lt;p&gt;There are currently two types of item you can add to a card - &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutTitleItem.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutTitleItem&lt;/code&gt;&lt;/a&gt; and &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutActionItem.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutActionItem&lt;/code&gt;&lt;/a&gt;. Planned items include “person” items which feature buttons to showcase a single person. Feel free to submit a PR or Issue for more item ideas.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutActionItem&lt;/code&gt;: Standard item with text, icon and optional subtext.&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutTitleItem&lt;/code&gt;: Larger item with large icon (eg app icon) and larger text.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/ce35cdc99d33af1faf40c7a1cddf2889898be4e7/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutTitleItem.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutTitleItem&lt;/code&gt;&lt;/a&gt; is created with &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/ce35cdc99d33af1faf40c7a1cddf2889898be4e7/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutTitleItem.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutTitleItem.Builder()&lt;/code&gt;&lt;/a&gt; and lets you specify &lt;strong&gt;text&lt;/strong&gt; and an &lt;strong&gt;icon&lt;/strong&gt;.
+&lt;p&gt;&lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutTitleItem.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutTitleItem&lt;/code&gt;&lt;/a&gt; is created with &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutTitleItem.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutTitleItem.Builder()&lt;/code&gt;&lt;/a&gt; and lets you specify &lt;strong&gt;text&lt;/strong&gt; and an &lt;strong&gt;icon&lt;/strong&gt;.
 &lt;code class=&quot;highlighter-rouge&quot;&gt;java
         appCardBuilder.addItem(new MaterialAboutTitleItem.Builder()
                 .text(&quot;Material About Library&quot;)
                 .icon(R.mipmap.ic_launcher)
                 .build());
 &lt;/code&gt;
-&lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/ce35cdc99d33af1faf40c7a1cddf2889898be4e7/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutActionItem.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutActionItem&lt;/code&gt;&lt;/a&gt; is created with &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/ce35cdc99d33af1faf40c7a1cddf2889898be4e7/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutActionItem.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutActionItem.Builder()&lt;/code&gt;&lt;/a&gt; and lets you specify &lt;strong&gt;text&lt;/strong&gt;, &lt;strong&gt;sub-text&lt;/strong&gt;, an &lt;strong&gt;icon&lt;/strong&gt; and an &lt;strong&gt;OnClickListener&lt;/strong&gt;.
+&lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutActionItem.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutActionItem&lt;/code&gt;&lt;/a&gt; is created with &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutActionItem.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutActionItem.Builder()&lt;/code&gt;&lt;/a&gt; and lets you specify &lt;strong&gt;text&lt;/strong&gt;, &lt;strong&gt;sub-text&lt;/strong&gt;, an &lt;strong&gt;icon&lt;/strong&gt; and an &lt;strong&gt;OnClickListener&lt;/strong&gt;.
 &lt;code class=&quot;highlighter-rouge&quot;&gt;java
         appCardBuilder.addItem(new MaterialAboutActionItem.Builder()
                 .text(&quot;Version&quot;)
@@ -342,8 +483,8 @@ protected MaterialAboutList getMaterialAboutList() {
                 })
                 .build());
 &lt;/code&gt;
-&lt;strong&gt;Step 4:&lt;/strong&gt; Return the list:
-Create a &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/ce35cdc99d33af1faf40c7a1cddf2889898be4e7/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutList.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutList&lt;/code&gt;&lt;/a&gt; using &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/ce35cdc99d33af1faf40c7a1cddf2889898be4e7/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutList.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutList.Builder()&lt;/code&gt;&lt;/a&gt;, passing in the cards you would like to display.
+### Return the list:
+Create a &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutList.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutList&lt;/code&gt;&lt;/a&gt; using &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutList.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutList.Builder()&lt;/code&gt;&lt;/a&gt;, passing in the cards you would like to display.
 &lt;code class=&quot;highlighter-rouge&quot;&gt;java
         return new MaterialAboutList.Builder()
                 .addCard(supportCardBuilder.build())
@@ -355,6 +496,10 @@ Create a &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-libra
 &lt;p&gt;Check out a working example in &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/app/src/main/java/com/danielstone/materialaboutlibrarydemo/ExampleMaterialAboutActivity.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ExampleMaterialAboutActivity.java&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; You can either use &lt;em&gt;Strings&lt;/em&gt; / &lt;em&gt;Drawables&lt;/em&gt; or &lt;em&gt;Resources&lt;/em&gt; when creating &lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutItem&lt;/code&gt;’s&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; Use &lt;a href=&quot;https://github.com/mikepenz/Android-Iconics&quot;&gt;Android-Iconics&lt;/a&gt; with 18dp icons.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; Use &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/ConvenienceBuilder.java&quot;&gt;ConvenienceBuilder&lt;/a&gt; to easily create items or OnClickListeners.&lt;/p&gt;
 
 &lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
 
@@ -1295,40 +1440,6 @@ limitations under the License.
         <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2016/11/20/RMSwitch/</guid>
         
         <category>switch</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Depth-LIB-Android</title>
-        <description>&lt;h1 id=&quot;depth-lib-android&quot;&gt;Depth-LIB-Android&lt;/h1&gt;
-
-&lt;p&gt;This library adds depth/thickness to views.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=ih2erag2beM&quot;&gt;&lt;img src=&quot;https://d13yacurqjgara.cloudfront.net/users/655449/screenshots/2179342/menu_dribble.gif&quot; width=&quot;400&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=ih2erag2beM&quot;&gt;See demo on youtube&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;demo&quot;&gt;Demo&lt;/h2&gt;
-&lt;p&gt;The demo code contains some examples of Canvas drawing techniques to create particle systems, waves and grain effect. I wasn’t really happy with the default shadows in Android beacuse they start misbehaving when they are rotated so I made my own shadow solution. The project also contains various tweening functions for animations, and uses the Facebook rebound lib for some tweens. Don’t expect too much from this lib, it was written as a quick prototype, so the visuals look good but the code behind it could have been better.&lt;/p&gt;
-
-&lt;h2 id=&quot;contact&quot;&gt;Contact&lt;/h2&gt;
-
-&lt;p&gt;You can reach me on twitter as &lt;a href=&quot;https://twitter.com/zellah&quot;&gt;@zellah&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;whos-behind-this&quot;&gt;Who’s behind this?&lt;/h2&gt;
-
-&lt;p&gt;Developed by &lt;a href=&quot;https://twitter.com/zellah&quot;&gt;@zellah&lt;/a&gt; at &lt;a href=&quot;http://agens.no/&quot;&gt;agens.no&lt;/a&gt;, a company situated in Oslo.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://agens.no/&quot;&gt;&lt;img src=&quot;http://static.agens.no/images/agens_logo_w_slogan_avenir_medium.png&quot; width=&quot;340&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 17 Nov 2016 00:00:00 +0900</pubDate>
-        <link>http://kmshack.github.io/AndroidUICollection/2016/11/17/Depth/</link>
-        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2016/11/17/Depth/</guid>
-        
-        <category>depth</category>
-        
-        <category>thickness</category>
         
         
       </item>

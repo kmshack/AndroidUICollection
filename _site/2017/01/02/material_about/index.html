@@ -389,6 +389,10 @@
                 
               
             
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -576,20 +580,20 @@ allprojects {
 </code>
 <code class="highlighter-rouge">gradle
 dependencies {
-    compile 'com.github.daniel-stoneuk:material-about-library:1.3.0'
+    compile 'com.github.daniel-stoneuk:material-about-library:1.4.1'
 }
 </code></p>
 
 <h2 id="setup">Setup</h2>
 
-<p><strong>Fragment tutorial coming soon, check out the demo app in the meantime</strong></p>
+<h3 id="activity">Activity</h3>
 
-<p><strong>Step 1:</strong> Your <code class="highlighter-rouge">Activity</code> must extend <a href="https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/MaterialAboutActivity.java"><code class="highlighter-rouge">MaterialAboutActivity</code></a> and be in your <em>AndroidManifest.xml</em>:
+<p>Your <code class="highlighter-rouge">Activity</code> must extend <a href="https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/MaterialAboutActivity.java"><code class="highlighter-rouge">MaterialAboutActivity</code></a> and be in your <em>AndroidManifest.xml</em>:
 ```java
 public class ExampleMaterialAboutActivity extends MaterialAboutActivity {</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>@Override
-protected MaterialAboutList getMaterialAboutList() {
+protected MaterialAboutList getMaterialAboutList(Context context) {
     return new MaterialAboutList.Builder()
             .build();
 }
@@ -602,27 +606,41 @@ protected CharSequence getActivityTitle() {
 </div>
 
 <p>}
-<code class="highlighter-rouge">
-Ensure that the theme extends 'Theme.Mal', and apply primary &amp; accent colours.
-</code>xml
-&lt;manifest …&gt;
-    &lt;application …&gt;
-        <activity android:name=".ExampleMaterialAboutActivity" android:theme="@style/AppTheme.MaterialAboutActivity"></activity>
-    &lt;/application&gt;
-&lt;/manifest&gt;
-<code class="highlighter-rouge">
-</code>xml
-    <style name="AppTheme.MaterialAboutActivity" parent="Theme.Mal">
-        &lt;-- Customize your theme here. --&gt;
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-    </style>
 ```</p>
 
-<p><strong>Step 2:</strong> Add Cards:</p>
+<p>Ensure that the theme extends ‘Theme.Mal’, and apply primary &amp; accent colours.
+<code class="highlighter-rouge">xml
+&lt;manifest ...&gt;
+    &lt;application ...&gt;
+        &lt;activity android:name=".ExampleMaterialAboutActivity"
+            android:theme="@style/AppTheme.MaterialAboutActivity"/&gt;
+    &lt;/application&gt;
+&lt;/manifest&gt;
+</code>
+<code class="highlighter-rouge">xml
+    &lt;style name="AppTheme.MaterialAboutActivity" parent="Theme.Mal" &gt;
+        &lt;-- Customize your theme here. --&gt;
+        &lt;item name="colorPrimary"&gt;@color/colorPrimary&lt;/item&gt;
+        &lt;item name="colorPrimaryDark"&gt;@color/colorPrimaryDark&lt;/item&gt;
+        &lt;item name="colorAccent"&gt;@color/colorAccent&lt;/item&gt;
+    &lt;/style&gt;
+</code></p>
 
-<p>Start building a “card” using <a href="https://github.com/daniel-stoneuk/material-about-library/blob/ce35cdc99d33af1faf40c7a1cddf2889898be4e7/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutCard.java"><code class="highlighter-rouge">MaterialAboutCard.Builder()</code></a>
+<h3 id="fragment">Fragment</h3>
+
+<p>Your <code class="highlighter-rouge">fragment</code> must extend <a href="https://github.com/daniel-stoneuk/material-about-library/blob/master/app/src/main/java/com/danielstone/materialaboutlibrarydemo/ExampleMaterialAboutFragment.java"><code class="highlighter-rouge">MaterialAboutFragment</code></a>.
+```java
+public class ExampleMaterialAboutFragment extends MaterialAboutFragment {</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>@Override
+protected MaterialAboutList getMaterialAboutList(final Context activityContext) {
+} } ```
+</code></pre>
+</div>
+
+<h3 id="add-cards">Add Cards:</h3>
+
+<p>Start building a “card” using <a href="https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutCard.java"><code class="highlighter-rouge">MaterialAboutCard.Builder()</code></a>
 ```java
 public class ExampleMaterialAboutActivity extends MaterialAboutActivity {</p>
 
@@ -633,23 +651,23 @@ protected MaterialAboutList getMaterialAboutList() {
 </code></pre>
 </div>
 
-<p><strong>Step 3:</strong> Add Items:</p>
+<h3 id="add-items">Add Items:</h3>
 
-<p>There are currently two types of item you can add to a card - <a href="https://github.com/daniel-stoneuk/material-about-library/blob/ce35cdc99d33af1faf40c7a1cddf2889898be4e7/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutTitleItem.java"><code class="highlighter-rouge">MaterialAboutTitleItem</code></a> and <a href="https://github.com/daniel-stoneuk/material-about-library/blob/ce35cdc99d33af1faf40c7a1cddf2889898be4e7/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutActionItem.java"><code class="highlighter-rouge">MaterialAboutActionItem</code></a>. Planned items include “person” items which feature buttons to showcase a single person. Feel free to submit a PR or Issue for more item ideas.</p>
+<p>There are currently two types of item you can add to a card - <a href="https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutTitleItem.java"><code class="highlighter-rouge">MaterialAboutTitleItem</code></a> and <a href="https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutActionItem.java"><code class="highlighter-rouge">MaterialAboutActionItem</code></a>. Planned items include “person” items which feature buttons to showcase a single person. Feel free to submit a PR or Issue for more item ideas.</p>
 
 <ul>
   <li><code class="highlighter-rouge">MaterialAboutActionItem</code>: Standard item with text, icon and optional subtext.</li>
   <li><code class="highlighter-rouge">MaterialAboutTitleItem</code>: Larger item with large icon (eg app icon) and larger text.</li>
 </ul>
 
-<p><a href="https://github.com/daniel-stoneuk/material-about-library/blob/ce35cdc99d33af1faf40c7a1cddf2889898be4e7/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutTitleItem.java"><code class="highlighter-rouge">MaterialAboutTitleItem</code></a> is created with <a href="https://github.com/daniel-stoneuk/material-about-library/blob/ce35cdc99d33af1faf40c7a1cddf2889898be4e7/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutTitleItem.java"><code class="highlighter-rouge">MaterialAboutTitleItem.Builder()</code></a> and lets you specify <strong>text</strong> and an <strong>icon</strong>.
+<p><a href="https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutTitleItem.java"><code class="highlighter-rouge">MaterialAboutTitleItem</code></a> is created with <a href="https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutTitleItem.java"><code class="highlighter-rouge">MaterialAboutTitleItem.Builder()</code></a> and lets you specify <strong>text</strong> and an <strong>icon</strong>.
 <code class="highlighter-rouge">java
         appCardBuilder.addItem(new MaterialAboutTitleItem.Builder()
                 .text("Material About Library")
                 .icon(R.mipmap.ic_launcher)
                 .build());
 </code>
-<a href="https://github.com/daniel-stoneuk/material-about-library/blob/ce35cdc99d33af1faf40c7a1cddf2889898be4e7/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutActionItem.java"><code class="highlighter-rouge">MaterialAboutActionItem</code></a> is created with <a href="https://github.com/daniel-stoneuk/material-about-library/blob/ce35cdc99d33af1faf40c7a1cddf2889898be4e7/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutActionItem.java"><code class="highlighter-rouge">MaterialAboutActionItem.Builder()</code></a> and lets you specify <strong>text</strong>, <strong>sub-text</strong>, an <strong>icon</strong> and an <strong>OnClickListener</strong>.
+<a href="https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutActionItem.java"><code class="highlighter-rouge">MaterialAboutActionItem</code></a> is created with <a href="https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutActionItem.java"><code class="highlighter-rouge">MaterialAboutActionItem.Builder()</code></a> and lets you specify <strong>text</strong>, <strong>sub-text</strong>, an <strong>icon</strong> and an <strong>OnClickListener</strong>.
 <code class="highlighter-rouge">java
         appCardBuilder.addItem(new MaterialAboutActionItem.Builder()
                 .text("Version")
@@ -663,8 +681,8 @@ protected MaterialAboutList getMaterialAboutList() {
                 })
                 .build());
 </code>
-<strong>Step 4:</strong> Return the list:
-Create a <a href="https://github.com/daniel-stoneuk/material-about-library/blob/ce35cdc99d33af1faf40c7a1cddf2889898be4e7/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutList.java"><code class="highlighter-rouge">MaterialAboutList</code></a> using <a href="https://github.com/daniel-stoneuk/material-about-library/blob/ce35cdc99d33af1faf40c7a1cddf2889898be4e7/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutList.java"><code class="highlighter-rouge">MaterialAboutList.Builder()</code></a>, passing in the cards you would like to display.
+### Return the list:
+Create a <a href="https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutList.java"><code class="highlighter-rouge">MaterialAboutList</code></a> using <a href="https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutList.java"><code class="highlighter-rouge">MaterialAboutList.Builder()</code></a>, passing in the cards you would like to display.
 <code class="highlighter-rouge">java
         return new MaterialAboutList.Builder()
                 .addCard(supportCardBuilder.build())
@@ -676,6 +694,10 @@ Create a <a href="https://github.com/daniel-stoneuk/material-about-library/blob/
 <p>Check out a working example in <a href="https://github.com/daniel-stoneuk/material-about-library/blob/master/app/src/main/java/com/danielstone/materialaboutlibrarydemo/ExampleMaterialAboutActivity.java"><code class="highlighter-rouge">ExampleMaterialAboutActivity.java</code></a>.</p>
 
 <p><strong>Tip:</strong> You can either use <em>Strings</em> / <em>Drawables</em> or <em>Resources</em> when creating <code class="highlighter-rouge">MaterialAboutItem</code>’s</p>
+
+<p><strong>Tip:</strong> Use <a href="https://github.com/mikepenz/Android-Iconics">Android-Iconics</a> with 18dp icons.</p>
+
+<p><strong>Tip:</strong> Use <a href="https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/ConvenienceBuilder.java">ConvenienceBuilder</a> to easily create items or OnClickListeners.</p>
 
 <h2 id="license">License</h2>
 
