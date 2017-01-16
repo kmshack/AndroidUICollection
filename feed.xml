@@ -5,14 +5,407 @@
     <description>Collection of OpenSource for Android UI.</description>
     <link>http://kmshack.github.io/AndroidUICollection/</link>
     <atom:link href="http://kmshack.github.io/AndroidUICollection/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 10 Jan 2017 18:16:00 +0900</pubDate>
-    <lastBuildDate>Tue, 10 Jan 2017 18:16:00 +0900</lastBuildDate>
+    <pubDate>Mon, 16 Jan 2017 10:00:59 +0900</pubDate>
+    <lastBuildDate>Mon, 16 Jan 2017 10:00:59 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>SwitchIcon</title>
+        <description>&lt;h1 id=&quot;android-switchicon&quot;&gt;Android-SwitchIcon&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://jitpack.io/#zagum/Android-SwitchIcon&quot;&gt;[](https://jitpack.io/v/zagum/Android-SwitchIcon.svg)&lt;/a&gt;
+&lt;a href=&quot;https://android-arsenal.com/api?level=15&quot;&gt;[API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Google launcher-style implementation of switch (enable/disable) icon&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/zagum/Android-SwitchIcon/blob/master/art/sample.gif&quot;&gt;image&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;compatibility&quot;&gt;Compatibility&lt;/h2&gt;
+
+&lt;p&gt;This library is compatible from API 15 (Android 4.0.3).&lt;/p&gt;
+
+&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
+
+&lt;p&gt;Add it in your root build.gradle at the end of repositories:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;allprojects&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;repositories&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;maven&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://jitpack.io&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Add the dependency&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;com.github.zagum:Android-SwitchIcon:1.3.2&#39;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+
+&lt;p&gt;SwitchIconView extends from AppCompatImageView so you can set icon with  &lt;code class=&quot;highlighter-rouge&quot;&gt;app:srcCompat&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Set any icon (vector or image) to SwitchIconView and enjoy switchable icon in your app :)&lt;/p&gt;
+
+&lt;p&gt;Use &lt;code class=&quot;highlighter-rouge&quot;&gt;app:si_tint_color&lt;/code&gt; to set color to icon. Default color is black;&lt;/p&gt;
+
+&lt;p&gt;Use &lt;code class=&quot;highlighter-rouge&quot;&gt;app:si_disabled_color&lt;/code&gt; to set color when icon disabled. Default color is equals with &lt;code class=&quot;highlighter-rouge&quot;&gt;app:si_tint_color&lt;/code&gt;;&lt;/p&gt;
+
+&lt;p&gt;Use &lt;code class=&quot;highlighter-rouge&quot;&gt;app:si_disabled_alpha&lt;/code&gt; to set alpha when icon disabled. Default alpha is &lt;code class=&quot;highlighter-rouge&quot;&gt;.5&lt;/code&gt;;&lt;/p&gt;
+
+&lt;p&gt;Use &lt;code class=&quot;highlighter-rouge&quot;&gt;app:si_no_dash&lt;/code&gt; if you don’t want to draw dash, when icon disabled;&lt;/p&gt;
+
+&lt;p&gt;Use &lt;code class=&quot;highlighter-rouge&quot;&gt;app:si_animation_duration&lt;/code&gt; if you want to change switching state animation duration;&lt;/p&gt;
+
+&lt;p&gt;Use &lt;code class=&quot;highlighter-rouge&quot;&gt;app:si_enabled&lt;/code&gt; to set initial icon state;&lt;/p&gt;
+
+&lt;p&gt;Fully customized implementation:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;lt;com.github.zagum.switchicon.SwitchIconView&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:padding=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;8dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:si_animation_duration=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;500&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:si_disabled_alpha=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;.3&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:si_disabled_color=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#b7b7b7&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:si_tint_color=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#ff3c00&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:si_enabled=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:si_no_dash=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:srcCompat=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@drawable/ic_cloud&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Public methods:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setIconEnabled&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;enabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;setIconEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;enabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;animate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isIconEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+
+  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;switchState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+
+  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;switchState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;animate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;See &lt;a href=&quot;https://github.com/zagum/Android-SwitchIcon/tree/master/switchicon-sample&quot;&gt;sample&lt;/a&gt; project for more information.&lt;/p&gt;
+
+&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2017 Evgenii Zagumennyi
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Mon, 16 Jan 2017 00:00:00 +0900</pubDate>
+        <link>http://kmshack.github.io/AndroidUICollection/2017/01/16/SwitchIcon/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/01/16/SwitchIcon/</guid>
+        
+        <category>switch</category>
+        
+        <category>icon</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>GithubWidget</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Pic/title_image_3.png?raw=true&quot;&gt;GithubWidget&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;github-widget&quot;&gt;Github Widget&lt;/h1&gt;
+&lt;p&gt;Contributions, stars, followers, trending etc. on Github.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager&quot;&gt;[WoWoViewPager](https://github.com/Nightonke/WoWoViewPager/blob/master/app/src/main/res/mipmap-hdpi/ic_launcher.png?raw=true)&lt;/a&gt;
+&lt;a href=&quot;https://github.com/Nightonke/BoomMenu&quot;&gt;[BoomMenu](https://github.com/Nightonke/BoomMenu/blob/master/app/src/main/res/mipmap-hdpi/ic_launcher.png?raw=true)&lt;/a&gt;
+&lt;a href=&quot;https://github.com/Nightonke/CoCoin&quot;&gt;[CoCoin](https://github.com/Nightonke/CoCoin/blob/master/app/src/main/res/mipmap-hdpi/ic_launcher.png?raw=true)&lt;/a&gt;
+&lt;a href=&quot;https://github.com/Nightonke/BlurLockView&quot;&gt;[BlurLockView](https://github.com/Nightonke/BlurLockView/blob/master/app/src/main/res/mipmap-hdpi/ic_launcher.png?raw=true)&lt;/a&gt;
+&lt;a href=&quot;https://github.com/Nightonke/LeeCo&quot;&gt;[LeeCo](https://github.com/Nightonke/LeeCo/blob/master/app/src/main/res/mipmap-hdpi/ic_launcher.png?raw=true)&lt;/a&gt;
+&lt;a href=&quot;https://github.com/Nightonke/GithubWidget&quot;&gt;[GithubWidget](https://github.com/Nightonke/GithubWidget/blob/master/app/src/main/res/mipmap-hdpi/ic_launcher.png?raw=true)&lt;/a&gt;
+&lt;a href=&quot;https://github.com/Nightonke/JellyToggleButton&quot;&gt;[JellyToggleButton](https://github.com/Nightonke/JellyToggleButton/blob/master/app/src/main/res/mipmap-hdpi/ic_launcher.png?raw=true)&lt;/a&gt;
+&lt;a href=&quot;https://github.com/Nightonke/FaceOffToggleButton&quot;&gt;[FaceOffToggleButton](https://github.com/Nightonke/FaceOffToggleButton/blob/master/app/src/main/res/mipmap-hdpi/ic_launcher.png?raw=true)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;guide&quot;&gt;Guide&lt;/h1&gt;
+&lt;p&gt;#### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/README-ZH.md&quot;&gt;中文文档&lt;/a&gt;
+#### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#what-is-github-widget-1&quot;&gt;What is Github Widget?&lt;/a&gt;
+#### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#download&quot;&gt;Download&lt;/a&gt;
+#### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#styles-of-github-widget-1&quot;&gt;Styles of Github Widget&lt;/a&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;httpsgithubcomnightonkegithubwidget41-1&quot;&gt;&lt;a href=&quot;https://github.com/Nightonke/GithubWidget#41-1&quot;&gt;4×1&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;##### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#42-1-1&quot;&gt;4×2-1&lt;/a&gt;
+##### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#42-2-1&quot;&gt;4×2-2&lt;/a&gt;
+##### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#43-1-1&quot;&gt;4×3-1&lt;/a&gt;
+##### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#4345-2-1&quot;&gt;4×345-2&lt;/a&gt;
+##### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#4345-3-1&quot;&gt;4×345-3&lt;/a&gt;
+##### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#44-1-1&quot;&gt;4×4-1&lt;/a&gt;
+##### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#44-2-1&quot;&gt;4×4-2&lt;/a&gt;
+##### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#445-3-1&quot;&gt;4×45-3&lt;/a&gt;
+##### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#45-1-1&quot;&gt;4×5-1&lt;/a&gt;
+##### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#45-2-1&quot;&gt;4×5-2&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;settingshttpsgithubcomnightonkegithubwidgetsettings-1&quot;&gt;&lt;a href=&quot;https://github.com/Nightonke/GithubWidget#settings-1&quot;&gt;Settings&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;#### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#problems-bugs-or-enhancement&quot;&gt;Problems, Bugs or Enhancement&lt;/a&gt;
+#### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#version-list-1&quot;&gt;Version List&lt;/a&gt;
+#### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#license-1&quot;&gt;License&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;what-is-github-widget&quot;&gt;What is Github Widget?&lt;/h3&gt;
+&lt;p&gt;Github Widget is a ligthweight application for 11 different styles of widget to show the following information of github user.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Contributions chart(2D/3D)&lt;/li&gt;
+  &lt;li&gt;Total contribution of this year&lt;/li&gt;
+  &lt;li&gt;Avatar&lt;/li&gt;
+  &lt;li&gt;Motto&lt;/li&gt;
+  &lt;li&gt;Followers&lt;/li&gt;
+  &lt;li&gt;Contributions of today&lt;/li&gt;
+  &lt;li&gt;Current streak&lt;/li&gt;
+  &lt;li&gt;Addition of stars&lt;/li&gt;
+  &lt;li&gt;Contributions of busiest day&lt;/li&gt;
+  &lt;li&gt;Longest streak&lt;/li&gt;
+  &lt;li&gt;Trending(daily/weekly/monthly)&lt;/li&gt;
+  &lt;li&gt;Received events&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;After installing Github Widget, there is no launch icon for it. Try to add widgets to launcher and you will find Github Widget there.&lt;/p&gt;
+
+&lt;h3 id=&quot;download&quot;&gt;Download&lt;/h3&gt;
+&lt;p&gt;Check the &lt;a href=&quot;https://github.com/Nightonke/GithubWidget/tree/master/Apk&quot;&gt;Apk&lt;/a&gt; diectory for all versions apks and qrcode pictures.&lt;br /&gt;
+Download the current version &lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Apk/GithubWidget_1.0.3.apk?raw=true&quot;&gt;here&lt;/a&gt;.&lt;br /&gt;
+Or from &lt;a href=&quot;http://fir.im/GithubWidget&quot;&gt;fir.im/GithubWidget&lt;/a&gt;.&lt;br /&gt;
+Or by qrcode:&lt;br /&gt;
+&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Apk/GithubWidget_1.0.3.png?raw=true&quot;&gt;Qrcode&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;styles-of-github-widget&quot;&gt;Styles of Github Widget&lt;/h3&gt;
+&lt;p&gt;The first version supports 11 styles for showing part of the above information.&lt;br /&gt;
+Notice that from version 1.0.3, all the widgets support width larger or equal than 4-blocks. But I suggest 4-blocks-width widgets should be used because sometimes images look strange when the widgets are too wide.&lt;/p&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;4×1&lt;/h4&gt;
+&lt;p&gt;✓ 2D Contributions chart&lt;br /&gt;
+✓ Total contributions of this year&lt;br /&gt;
+✓ Avatar&lt;br /&gt;
+&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Pic/style_0.png?raw=true&quot;&gt;4×1&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;4×2-1&lt;/h4&gt;
+&lt;p&gt;✓ 2D Contributions chart&lt;br /&gt;
+✓ Total contributions of this year&lt;br /&gt;
+✓ Avatar&lt;br /&gt;
+✓ Motto&lt;br /&gt;
+✓ Followers&lt;br /&gt;
+✓ Contributions of today&lt;br /&gt;
+✓ Current streak&lt;br /&gt;
+✓ Addition of stars&lt;br /&gt;
+From top to bottom: contribution, avatar and motto, numbers&lt;br /&gt;
+&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Pic/style_1.png?raw=true&quot;&gt;4×2-1&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;section-2&quot;&gt;4×2-2&lt;/h4&gt;
+&lt;p&gt;✓ 2D Contributions chart&lt;br /&gt;
+✓ Total contributions of this year&lt;br /&gt;
+✓ Avatar&lt;br /&gt;
+✓ Motto&lt;br /&gt;
+✓ Followers&lt;br /&gt;
+✓ Contributions of today&lt;br /&gt;
+✓ Current streak&lt;br /&gt;
+✓ Addition of stars&lt;br /&gt;
+From top to bottom: avatar and motto, numbers,  contribution&lt;br /&gt;
+&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Pic/style_2.png?raw=true&quot;&gt;4×2-2&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;section-3&quot;&gt;4×3-1&lt;/h4&gt;
+&lt;p&gt;✓ 3D Contributions chart&lt;br /&gt;
+✓ Total contributions of this year&lt;br /&gt;
+✓ Avatar&lt;br /&gt;
+✓ Contributions on busiest day&lt;br /&gt;
+✓ Current streak&lt;br /&gt;
+✓ Longest streak&lt;br /&gt;
+&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Pic/style_3.png?raw=true&quot;&gt;4×3-1&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;section-4&quot;&gt;4×345-2&lt;/h4&gt;
+&lt;p&gt;✓ 2D Contributions chart&lt;br /&gt;
+✓ Total contributions of this year&lt;br /&gt;
+✓ Avatar&lt;br /&gt;
+✓ Motto&lt;br /&gt;
+✓ Followers&lt;br /&gt;
+✓ Contributions of today&lt;br /&gt;
+✓ Current streak&lt;br /&gt;
+✓ Addition of stars&lt;br /&gt;
+✓ Trending(daily, weekly or monthly)&lt;br /&gt;
+✓ Received events&lt;br /&gt;
+(From top to bottom: contribution, avatar and motto, numbers, trending or events)&lt;br /&gt;
+Notice that this style is able to resize to 4×3, 4×4 or 4×5.&lt;br /&gt;
+&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Pic/style_4.png?raw=true&quot;&gt;4×345-2&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;section-5&quot;&gt;4×345-3&lt;/h4&gt;
+&lt;p&gt;✓ 2D Contributions chart&lt;br /&gt;
+✓ Total contributions of this year&lt;br /&gt;
+✓ Avatar&lt;br /&gt;
+✓ Motto&lt;br /&gt;
+✓ Followers&lt;br /&gt;
+✓ Contributions of today&lt;br /&gt;
+✓ Current streak&lt;br /&gt;
+✓ Addition of stars&lt;br /&gt;
+✓ Trending(daily, weekly or monthly)&lt;br /&gt;
+✓ Received events&lt;br /&gt;
+(From top to bottom: avatar and motto, numbers, contribution, trending or events)&lt;br /&gt;
+Notice that this style is able to resize to 4×3, 4×4 or 4×5.&lt;br /&gt;
+&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Pic/style_5.png?raw=true&quot;&gt;4×345-3&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;section-6&quot;&gt;4×4-1&lt;/h4&gt;
+&lt;p&gt;✓ 3D Contributions chart&lt;br /&gt;
+✓ Total contributions of this year&lt;br /&gt;
+✓ Avatar&lt;br /&gt;
+✓ Motto&lt;br /&gt;
+✓ Followers&lt;br /&gt;
+✓ Contributions of today&lt;br /&gt;
+✓ Current streak&lt;br /&gt;
+✓ Addition of stars&lt;br /&gt;
+✓ Contributions on busiest day&lt;br /&gt;
+✓ Longest streak
+(From top to bottom: contribution, avatar and motto, numbers)&lt;br /&gt;
+&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Pic/style_6.png?raw=true&quot;&gt;4×4-1&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;section-7&quot;&gt;4×4-2&lt;/h4&gt;
+&lt;p&gt;✓ 3D Contributions chart&lt;br /&gt;
+✓ Total contributions of this year&lt;br /&gt;
+✓ Avatar&lt;br /&gt;
+✓ Motto&lt;br /&gt;
+✓ Followers&lt;br /&gt;
+✓ Contributions of today&lt;br /&gt;
+✓ Current streak&lt;br /&gt;
+✓ Addition of stars&lt;br /&gt;
+✓ Contributions on busiest day&lt;br /&gt;
+✓ Longest streak
+(From top to bottom: avatar and motto, numbers, contribution)&lt;br /&gt;
+&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Pic/style_7.png?raw=true&quot;&gt;4×4-2&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;section-8&quot;&gt;4×45-3&lt;/h4&gt;
+&lt;p&gt;✓ 3D Contributions chart&lt;br /&gt;
+✓ Total contributions of this year&lt;br /&gt;
+✓ Avatar&lt;br /&gt;
+✓ Contributions on busiest day&lt;br /&gt;
+✓ Current streak&lt;br /&gt;
+✓ Longest streak&lt;br /&gt;
+✓ Trending(daily, weekly and monthly) &lt;br /&gt;
+✓ Received events&lt;br /&gt;
+Notice that this style is able to resize to 4×4 or 4×5.&lt;br /&gt;
+&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Pic/style_8.png?raw=true&quot;&gt;4×45-3&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;section-9&quot;&gt;4×5-1&lt;/h4&gt;
+&lt;p&gt;✓ 3D Contributions chart&lt;br /&gt;
+✓ Total contributions of this year&lt;br /&gt;
+✓ Avatar&lt;br /&gt;
+✓ Motto &lt;br /&gt;
+✓ Followers &lt;br /&gt;
+✓ Contributions of today &lt;br /&gt;
+✓ Current streak &lt;br /&gt;
+✓ Addition of stars &lt;br /&gt;
+✓ Contributions on busiest day &lt;br /&gt;
+✓ Longest streak &lt;br /&gt;
+✓ Trending(daily, weekly or monthly)&lt;br /&gt;
+✓ Received events&lt;br /&gt;
+(From top to bottom: contribution, avatar and motto, numbers, trending or events)&lt;br /&gt;
+&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Pic/style_9.png?raw=true&quot;&gt;4×5-1&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;section-10&quot;&gt;4×5-2&lt;/h4&gt;
+&lt;p&gt;✓ 3D Contributions chart&lt;br /&gt;
+✓ Total contributions of this year&lt;br /&gt;
+✓ Avatar&lt;br /&gt;
+✓ Motto &lt;br /&gt;
+✓ Followers &lt;br /&gt;
+✓ Contributions of today &lt;br /&gt;
+✓ Current streak &lt;br /&gt;
+✓ Addition of stars &lt;br /&gt;
+✓ Contributions on busiest day &lt;br /&gt;
+✓ Longest streak &lt;br /&gt;
+✓ Trending(daily, weekly or monthly)&lt;br /&gt;
+✓ Received events&lt;br /&gt;
+(From top to bottom: avatar and motto, numbers, trending or events, contribution)&lt;br /&gt;
+&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Pic/style_10.png?raw=true&quot;&gt;4×5-2&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;settings&quot;&gt;Settings&lt;/h3&gt;
+&lt;p&gt;After inputting your user name in Github, you can click your avatar to refresh current data in Github Widget. Clicking anywhere else leads you to the settings page to do some DIY things for Github Widget. You can:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Change the user name in Github to get another user’s data to show in Github Widget&lt;/li&gt;
+  &lt;li&gt;Change your motto&lt;/li&gt;
+  &lt;li&gt;Change the color of the blocks in the 2D chart and the columns in 3D chart&lt;/li&gt;
+  &lt;li&gt;Reset the above color to default color&lt;/li&gt;
+  &lt;li&gt;Sign in, then we can get the data of contributions for your private repositories&lt;/li&gt;
+  &lt;li&gt;Whether show toast when operations or errors happen&lt;/li&gt;
+  &lt;li&gt;Whether draw month dash in 3D chart&lt;/li&gt;
+  &lt;li&gt;Whether draw week dash in 3D chart&lt;/li&gt;
+  &lt;li&gt;Start from Sunday or Monday&lt;/li&gt;
+  &lt;li&gt;Frequency for updating the data&lt;/li&gt;
+  &lt;li&gt;Events to be gotten from internet. The larger, the couting for stars are more accurate but more network flow is needed&lt;/li&gt;
+  &lt;li&gt;Contents in the list view in Github Widget. It can be one of the values: daily, weekly or monthly trending for the language you choose below or the events you got&lt;/li&gt;
+  &lt;li&gt;The language for the trending content&lt;/li&gt;
+  &lt;li&gt;About and the url for this page and url for the developer&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Pic/color.png?raw=true&quot;&gt;Color&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;problems-bugs-or-enhancements&quot;&gt;Problems, Bugs or Enhancements&lt;/h3&gt;
+&lt;p&gt;Maybe you get problems or bugs? Just tell me in issues or email. And you can tell me your enhancements in issues or pull-requests.&lt;/p&gt;
+
+&lt;h3 id=&quot;version-list&quot;&gt;Version List&lt;/h3&gt;
+&lt;p&gt;##### First Version
+&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Apk/GithubWidget_1.0.1.apk?raw=true&quot;&gt; V1.0.1&lt;/a&gt;
+##### 1.0.2
+&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Apk/GithubWidget_1.0.2.apk?raw=true&quot;&gt; V1.0.2&lt;/a&gt;&lt;br /&gt;
+Add all language support.&lt;br /&gt;
+##### 1.0.3
+&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Apk/GithubWidget_1.0.3.apk?raw=true&quot;&gt; V1.0.3&lt;/a&gt;&lt;br /&gt;
+Delete url and img tags, support larger width.&lt;/p&gt;
+
+&lt;h3 id=&quot;license&quot;&gt;License&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2016 Nightonke
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Sun, 15 Jan 2017 00:00:00 +0900</pubDate>
+        <link>http://kmshack.github.io/AndroidUICollection/2017/01/15/GithubWidget/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/01/15/GithubWidget/</guid>
+        
+        <category>widget</category>
+        
+        <category>github</category>
+        
+        
+      </item>
     
       <item>
         <title>EasyFlipView</title>
         <description>&lt;h1 id=&quot;easyflipview&quot;&gt;EasyFlipView&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;https://bintray.com/wajahatkarim3/EasyFlipView/com.wajahatkarim3.EasyFlipView/_latestVersion&quot;&gt; [Download](https://api.bintray.com/packages/wajahatkarim3/EasyFlipView/com.wajahatkarim3.EasyFlipView/images/download.svg) &lt;/a&gt; &lt;a href=&quot;https://android-arsenal.com/details/1/5051&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-EasyFlipView-brightgreen.svg?style=flat)&lt;/a&gt; &lt;a href=&quot;https://android-arsenal.com/api?level=15&quot;&gt;[API](https://img.shields.io/badge/API-15%2B-blue.svg?style=flat)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://bintray.com/wajahatkarim3/EasyFlipView/com.wajahatkarim3.EasyFlipView/_latestVersion&quot;&gt; [Download](https://api.bintray.com/packages/wajahatkarim3/EasyFlipView/com.wajahatkarim3.EasyFlipView/images/download.svg) &lt;/a&gt; &lt;a href=&quot;https://android-arsenal.com/details/1/5051&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-EasyFlipView-brightgreen.svg?style=flat)&lt;/a&gt; &lt;a href=&quot;https://android-arsenal.com/api?level=15&quot;&gt;[API](https://img.shields.io/badge/API-15%2B-blue.svg?style=flat)&lt;/a&gt; &lt;a href=&quot;https://material.uplabs.com/posts/easyflipview&quot;&gt;[API](https://img.shields.io/badge/MaterialUp-EasyFlipView-yellowgreen.svg)&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;A quick and easy flip view through which you can create views with two sides like credit cards, poker cards etc.&lt;/p&gt;
 
@@ -21,20 +414,23 @@
 &lt;h1 id=&quot;demo&quot;&gt;Demo&lt;/h1&gt;
 &lt;p&gt;Install &lt;a href=&quot;https://github.com/wajahatkarim3/EasyFlipView/releases/download/1.0.0/EasyFlipView-Demo_v1.0.0.apk&quot;&gt;Demo&lt;/a&gt; app or APK from &lt;a href=&quot;https://github.com/wajahatkarim3/EasyFlipView/releases&quot;&gt;Releases&lt;/a&gt; on your device and click on any card to flip it&lt;/p&gt;
 
+&lt;h1 id=&quot;changelog&quot;&gt;Changelog&lt;/h1&gt;
+&lt;p&gt;Changes exist in the &lt;a href=&quot;https://github.com/wajahatkarim3/EasyFlipView/releases&quot;&gt;releases&lt;/a&gt; tab.&lt;/p&gt;
+
 &lt;h1 id=&quot;installation&quot;&gt;Installation&lt;/h1&gt;
 &lt;p&gt;Add this in your app’s build.gradle file:
 &lt;code class=&quot;highlighter-rouge&quot;&gt;groovy
 dependencies {
-  compile &#39;com.wajahatkarim3.EasyFlipView:EasyFlipView:1.0.0&#39;
+  compile &#39;com.wajahatkarim3.EasyFlipView:EasyFlipView:1.0.1&#39;
 }
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;Or add DBFlowManager as a new dependency inside your pom.xml&lt;/p&gt;
+&lt;p&gt;Or add EasyFlipView as a new dependency inside your pom.xml&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt; 
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;com.wajahatkarim3.EasyFlipView&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;EasyFlipView&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt; 
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.0.0&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt; 
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.0.1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt; 
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;type&amp;gt;&lt;/span&gt;pom&lt;span class=&quot;nt&quot;&gt;&amp;lt;/type&amp;gt;&lt;/span&gt; 
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
@@ -68,8 +464,9 @@ dependencies {
 &lt;/div&gt;
 
 &lt;h2 id=&quot;in-code-java&quot;&gt;In Code (Java)&lt;/h2&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Flips the view with animation&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Flips the view with or without animation&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;mYourFlipView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;flipTheView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;mYourFlipView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;flipTheView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;// Sets and Gets the Flip Animation Duration in milliseconds (Default is 400 ms)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;mYourFlipView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setFlipDuration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
@@ -82,6 +479,13 @@ dependencies {
 &lt;span class=&quot;c1&quot;&gt;// Sets and gets the flip on touch status (Default is true)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;mYourFlipView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setFlipOntouch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flipTouchStatus&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mYourFlipView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isFlipOnTouch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Get current flip state in enum (FlipState.FRONT_SIDE or FlipState.BACK_SIDE)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;EasyFlipView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;FlipState&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flipSide&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mYourFlipView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getCurrentFlipState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Get whether front/back side of flip is visible or not.&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;frontVal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mYourFlipView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isFrontSide&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;backVal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mYourFlipView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isBackSide&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -138,7 +542,6 @@ limitations under the License.
         <title>Text Decorator</title>
         <description>&lt;h1 id=&quot;text-decorator&quot;&gt;Text Decorator&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;https://travis-ci.org/nntuyen/text-decorator&quot;&gt;[Build Status](https://travis-ci.org/nntuyen/text-decorator.svg?branch=master)&lt;/a&gt;
-&lt;a href=&quot;http://androidweekly.net/issues/issue-238&quot;&gt;[Android Weekly](https://img.shields.io/badge/Android%20Weekly-%23238-blue.svg)&lt;/a&gt;
 &lt;a href=&quot;http://android-arsenal.com/details/1/4982&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Text%20Decorator-brightgreen.svg?style=flat)&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Decorate your TextView easily&lt;/p&gt;
@@ -353,7 +756,7 @@ limitations under the License.
       &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;http://i.imgur.com/HEm08Ax.png&quot;&gt;Monitor&lt;/a&gt;&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/app/src/main/java/com/danielstone/materialaboutlibrarydemo/ExampleMaterialAboutActivity.java&quot;&gt;&lt;em&gt;ExampleMaterialAboutActivity.java&lt;/em&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/app/src/main/java/com/danielstone/materialaboutlibrarydemo/Demo.java&quot;&gt;&lt;em&gt;ExampleMaterialAboutActivity.java&lt;/em&gt;&lt;/a&gt;&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.danielstone.energyhive&quot;&gt;&lt;em&gt;Monitor&lt;/em&gt;&lt;/a&gt;&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
@@ -382,7 +785,7 @@ allprojects {
 &lt;/code&gt;
 &lt;code class=&quot;highlighter-rouge&quot;&gt;gradle
 dependencies {
-    compile &#39;com.github.daniel-stoneuk:material-about-library:1.4.1&#39;
+    compile &#39;com.github.daniel-stoneuk:material-about-library:1.4.2&#39;
 }
 &lt;/code&gt;&lt;/p&gt;
 
@@ -493,13 +896,20 @@ Create a &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-libra
 }
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;Check out a working example in &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/app/src/main/java/com/danielstone/materialaboutlibrarydemo/ExampleMaterialAboutActivity.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ExampleMaterialAboutActivity.java&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Check out a working example in &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/app/src/main/java/com/danielstone/materialaboutlibrarydemo/Demo.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Demo.java&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; You can either use &lt;em&gt;Strings&lt;/em&gt; / &lt;em&gt;Drawables&lt;/em&gt; or &lt;em&gt;Resources&lt;/em&gt; when creating &lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutItem&lt;/code&gt;’s&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; Use &lt;a href=&quot;https://github.com/mikepenz/Android-Iconics&quot;&gt;Android-Iconics&lt;/a&gt; with 18dp icons.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; Use &lt;a href=&quot;https://github.com/mikepenz/Android-Iconics&quot;&gt;Android-Iconics&lt;/a&gt; for icons. “Android-Iconics - Use any icon font, or vector (.svg) as drawable in your application.”&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; Use &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/ConvenienceBuilder.java&quot;&gt;ConvenienceBuilder&lt;/a&gt; to easily create items or OnClickListeners.&lt;/p&gt;
+
+&lt;h2 id=&quot;contributors&quot;&gt;Contributors&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Daniel Stone (&lt;a href=&quot;https://github.com/daniel-stoneuk&quot;&gt;@daniel-stoneuk&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;Jonas Uekötter (&lt;a href=&quot;https://github.com/ueman&quot;&gt;@ueman&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;Rainer Lang (&lt;a href=&quot;https://github.com/rainer-lang&quot;&gt;@Rainer-Lang&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
 
@@ -1034,412 +1444,6 @@ limitations under the License.
         <category>popup</category>
         
         <category>3dtouch</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Crescento</title>
-        <description>&lt;h1 id=&quot;crescento&quot;&gt;Crescento&lt;/h1&gt;
-
-&lt;p&gt;Android library that adds a curve at the below of image views and relative layouts. &lt;strong&gt;CrescentoImageView&lt;/strong&gt; and &lt;strong&gt;CrescentoContainer&lt;/strong&gt; are the image view and relative layout respectively. You can change the radius of curve with &lt;strong&gt;attribute:curvature&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://android-arsenal.com/api?level=11&quot;&gt;[API](https://img.shields.io/badge/API-9%2B-orange.svg?style=flat)&lt;/a&gt;
-&lt;a href=&quot;https://android-arsenal.com/details/1/4684&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Crescento-green.svg?style=true)&lt;/a&gt;
-&lt;a href=&quot;http://androidweekly.net/issues/issue-232&quot;&gt;[Android Weekly](https://img.shields.io/badge/Android%20Weekly-%23232-blue.svg)&lt;/a&gt;
-&lt;a href=&quot;https://www.androiddevdigest.com/digest-119/&quot;&gt;[AndroidDev Digest](https://img.shields.io/badge/AndroidDev%20Digest-%23119-blue.svg)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/art/sample_image.jpg&quot;&gt;Sample Image 2&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Crescento&lt;/strong&gt; provides following advantages:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Curve Bottom&lt;/strong&gt;: It adds a curve bottom as stated above.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Tint&lt;/strong&gt;: It add tint on &lt;strong&gt;CrescentoImageView&lt;/strong&gt; by using &lt;strong&gt;attribute:tintColor&lt;/strong&gt;. It pick color automatically from the image if &lt;strong&gt;tintMode&lt;/strong&gt; is set to &lt;strong&gt;automatic&lt;/strong&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Alpha&lt;/strong&gt;: Add transparency in tint by using &lt;strong&gt;attribute:tintAlpha&lt;/strong&gt;. Varies from 0 to 255.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Gradient&lt;/strong&gt; : Add gradient on the imageview.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/developer-shivam/crescento/blob/master/demo.apk&quot;&gt;Sample Apk&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;use-with-kenburnsview&quot;&gt;Use with &lt;strong&gt;&lt;a href=&quot;https://github.com/flavioarfaria/KenBurnsView&quot;&gt;KenBurnsView&lt;/a&gt;&lt;/strong&gt;&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;/art/sample2.gif&quot;&gt;Sample Image 1&lt;/a&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;developer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;shivam&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;CrescentoContainer&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;android:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/crescentoContainer&quot;&lt;/span&gt;
-        &lt;span class=&quot;nl&quot;&gt;android:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;layout_width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-        &lt;span class=&quot;nl&quot;&gt;android:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;layout_height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;300dp&quot;&lt;/span&gt;
-        &lt;span class=&quot;nl&quot;&gt;android:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;elevation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;20dp&quot;&lt;/span&gt;
-        &lt;span class=&quot;nl&quot;&gt;android:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scaleType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;centerCrop&quot;&lt;/span&gt;
-        &lt;span class=&quot;nl&quot;&gt;attribute:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;curvature&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;50dp&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-
-        &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;flaviofaria&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;kenburnsview&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;KenBurnsView&lt;/span&gt;
-            &lt;span class=&quot;nl&quot;&gt;android:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;layout_width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-            &lt;span class=&quot;nl&quot;&gt;android:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;layout_height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-            &lt;span class=&quot;nl&quot;&gt;android:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@drawable/wallpaper2&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;developer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;shivam&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;CrescentoContainer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;donations&quot;&gt;Donations&lt;/h2&gt;
-
-&lt;p&gt;This project needs you If you would like to support this project’s further development, the creator of this project or the continuous maintenance of this project, feel free to donate. Your donation is highly appreciated (and I love food, coffee and beer). Thank you&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;PayPal&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://www.paypal.me/developerShivam/5&quot;&gt;Donate $5&lt;/a&gt;&lt;/strong&gt;: Thank’s for creating this project, here’s a coffee (or some beer) for you&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://www.paypal.me/developerShivam/10&quot;&gt;Donate $10&lt;/a&gt;&lt;/strong&gt;: Wow, I am stunned. Let me take you to the movies&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://www.paypal.me/developerShivam/15&quot;&gt;Donate $15&lt;/a&gt;&lt;/strong&gt;: I really appreciate your work, let’s grab some lunch&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://www.paypal.me/developerShivam/25&quot;&gt;Donate $25&lt;/a&gt;&lt;/strong&gt;: That’s some awesome stuff you did right there, dinner is on me&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://www.paypal.me/developerShivam/50&quot;&gt;Donate $50&lt;/a&gt;&lt;/strong&gt;: I really really want to support this project, great job&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://www.paypal.me/developerShivam/100&quot;&gt;Donate $100&lt;/a&gt;&lt;/strong&gt;: You are the man This project saved me hours (if not days) of struggle and hard work, simply awesome&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://www.paypal.me/developerShivam/2799&quot;&gt;Donate $2799&lt;/a&gt;&lt;/strong&gt;: Go buddy, buy Macbook Pro for yourself
-Of course, you can also choose what you want to donate, all donations are awesome&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;demo&quot;&gt;Demo&lt;/h2&gt;
-
-&lt;p&gt;Here is a very good example of how to use &lt;code class=&quot;highlighter-rouge&quot;&gt;Crescento&lt;/code&gt;. &lt;strong&gt;Zsolt Szilvai&lt;/strong&gt; has made a very good design and I’ve illustrated using crescento.&lt;/p&gt;
-
-&lt;p&gt;https://material.uplabs.com/posts/cinema-application-interface&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/art/sample2.png&quot;&gt;Sample of Zsolt Szilvai’s design&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;gradle-integration&quot;&gt;Gradle Integration&lt;/h2&gt;
-
-&lt;p&gt;If you are using gradle then add these lines in build.gradle file at project level.
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-	allprojects {
-        repositories {
-            ...
-            maven { url &quot;https://jitpack.io&quot; }
-        }
-    }
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Add below lines in build.gradle at app level.
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-	compile &#39;com.github.developer-shivam:crescento:1.0.1&#39;
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;basic-usage&quot;&gt;Basic Usage&lt;/h2&gt;
-
-&lt;p&gt;&lt;em&gt;For a working implementation, see &lt;code class=&quot;highlighter-rouge&quot;&gt;/app&lt;/code&gt; folder&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;CrescentoImageView&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;developer.shivam.library.CrescentoImageView&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/crescentoImageView&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;300dp&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:elevation=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;20dp&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:scaleType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;centerCrop&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;attribute:curvature=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;50dp&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;attribute:tintMode=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;manual&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;attribute:tintColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#FFFFFF&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;attribute:tintAlpha=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;50&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;CrescentoContainer&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;developer.shivam.library.CrescentoContainer&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/crescentoContainer&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;300dp&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:elevation=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;20dp&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;attribute:curvature=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;50dp&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;--&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;Your&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;code&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;here&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/developer.shivam.library.CrescentoContainer&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;attributes&quot;&gt;Attributes&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;curvature&lt;/strong&gt;: To change the size of curve.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;curvatureDirection&lt;/strong&gt; : To change the direction of curvature. Whether &lt;strong&gt;inward&lt;/strong&gt; or &lt;strong&gt;outward&lt;/strong&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;tintColor&lt;/strong&gt;: To add tint on image view.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;tintMode&lt;/strong&gt;: To add tint &lt;strong&gt;manually&lt;/strong&gt; or &lt;strong&gt;automatically&lt;/strong&gt;. If &lt;strong&gt;automatically&lt;/strong&gt; it will pick color from image you have set.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;tintAlpha&lt;/strong&gt;: To set the amount of tint. 0 for 100% transparent and 255 for opaque.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;gradientDirection&lt;/strong&gt; : To set the direction of gradient. Supported direction are &lt;strong&gt;TOP_TO_BOTTOM&lt;/strong&gt;, &lt;strong&gt;BOTTOM_TO_TOP&lt;/strong&gt;, &lt;strong&gt;LEFT_TO_RIGHT&lt;/strong&gt; and &lt;strong&gt;RIGHT_TO_LEFT&lt;/strong&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;gradientStartColor&lt;/strong&gt; : gradient start color.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;gradientEndColor&lt;/strong&gt; : gradient end color.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;question--contact-me--hire-me&quot;&gt;Question / Contact Me / Hire Me&lt;/h2&gt;
-&lt;p&gt;Please feel free to ping me at &lt;strong&gt;dr.droid27@gmail.com&lt;/strong&gt;. Expected package would be &lt;strong&gt;12 lpa&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;MIT License
-
-Copyright (c) 2016 Shivam Satija
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Mon, 21 Nov 2016 00:00:00 +0900</pubDate>
-        <link>http://kmshack.github.io/AndroidUICollection/2016/11/21/Crescento/</link>
-        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2016/11/21/Crescento/</guid>
-        
-        <category>imageview</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>RMSwitch</title>
-        <description>&lt;h1 id=&quot;rmswitch&quot;&gt;RMSwitch&lt;/h1&gt;
-
-&lt;p&gt;&lt;img src=&quot;switch-sample.gif&quot; title=&quot;sample&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;A simple View that works like a switch, but with more customizations. &lt;br /&gt;
-With the option to choose between two or three states. (from v1.1.0) &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;#####** If you’re upgrading from a version &amp;lt; 1.2.0, check the changelog of the 1.2.0 version, there are breaking changes &lt;br /&gt;
-[Changelog] (CHANGELOG.md)&lt;/p&gt;
-
-&lt;h5 id=&quot;from-version-120-you-can-choose-between-three-switch-design-br-&quot;&gt;From version 1.2.0 you can choose between three switch design: &lt;br /&gt;&lt;/h5&gt;
-&lt;p&gt;-“Slim” &lt;br /&gt;
--“Large” &lt;br /&gt;
--“Android” &lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;switch_design_samples.png&quot; title=&quot;design_sample&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
-&lt;p&gt;####Gradle:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;groovy
-compile &#39;com.rm:rmswitch:1.2.2&#39;
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;b&gt;Min API level: 16 (Android 4.1) &lt;/b&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-
-&lt;p&gt;To use them, just add this to your layout file&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;lt;--&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;Two&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;states&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;com.rm.rmswitch.RMSwitch&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/your_id&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-                
-                &lt;span class=&quot;na&quot;&gt;app:checked=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;app:forceAspectRatio=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;app:enabled=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;app:switchDesign=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;android&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;app:switchBkgCheckedColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/green&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;app:switchBkgNotCheckedColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/red&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;app:switchToggleCheckedColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/green&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;app:switchToggleCheckedImage=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@drawable/happy&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;app:switchToggleNotCheckedColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/red&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;app:switchToggleNotCheckedImage=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@drawable/sad&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-                
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;--&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;Three&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;states&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;                
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;com.rm.rmswitch.RMTristateSwitch&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/your_id2&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-                
-                &lt;span class=&quot;na&quot;&gt;app:forceAspectRatio=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;app:state=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;left&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;app:enabled=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;app:switchDesign=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;large&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;app:switchBkgLeftColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/red&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;app:switchBkgMiddleColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/grey&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;app:switchBkgRightColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/green&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;app:switchToggleLeftColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/red&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;app:switchToggleLeftImage=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@drawable/sad&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;app:switchToggleMiddleColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/grey&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;app:switchToggleMiddleImage=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@drawable/neutral&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;app:switchToggleRightColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/green&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;app:switchToggleRightImage=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@drawable/happy&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;… if you need to use this View’s custom xml attributes (shown in a table below or in the example above) do not forget to add this to your root layout
-&lt;code class=&quot;highlighter-rouge&quot;&gt;
-xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;To see how it looks in the preview screen of Android Studio, build your project first&lt;/p&gt;
-
-&lt;p&gt;And this in your Activity
-```java
-public class MainActivity extends AppCompatActivity {
-    RMSwitch mSwitch;
-    RMTristateSwitch mTristateSwitch;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@Override
-protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
-    
-    mSwitch = (RMSwitch) findViewById(R.id.your_id);
-    mTristateSwitch = (RMTristateSwitch) findViewById(R.id.your_id2);
-    
-    
-    // Setup the switch
-    mSwitch.setChecked(true);
-    mSwitch.setEnabled(true);
-    mSwitch.setForceAspectRatio(false);
-    mSwitch.setSwitchBkgCheckedColor(Color.GREEN);
-    mSwitch.setSwitchBkgNotCheckedColor(Color.RED);
-    mSwitch.setSwitchToggleCheckedColor(Color.BLACK);
-    mSwitch.setSwitchToggleNotCheckedColor(Color.BLACK);
-    mSwitch.setSwitchDesign(RMTristateSwitch.DESIGN_ANDROID);
-    
-    
-    // You can choose if use drawable or drawable resource
-    //mSwitch.setSwitchToggleCheckedDrawableRes(android.R.drawable.ic_media_next);
-    mSwitch.setSwitchToggleCheckedDrawable(ContextCompat.getDrawable(this, android.R.drawable.ic_media_next));
-    
-    //mSwitch.setSwitchToggleNotCheckedDrawableRes(android.R.drawable.ic_media_previous);
-    mSwitch.setSwitchToggleNotCheckedDrawable(ContextCompat.getDrawable(this, android.R.drawable.ic_media_previous));
-    
-    
-    // Setup the tristate switch
-    mTristateSwitch.setState(RMTristateSwitch.STATE_LEFT);
-    mTristateSwitch.setForceAspectRatio(true);
-    mTristateSwitch.setEnabled(true);
-    mTristateSwitch.setRightToLeft(false);
-    mTristateSwitch.setSwitchDesign(RMTristateSwitch.DESIGN_LARGE);
-    mTristateSwitch.setSwitchToggleLeftColor(Color.DKGRAY);
-    mTristateSwitch.setSwitchToggleMiddleColor(Color.DKGRAY);
-    mTristateSwitch.setSwitchToggleRightColor(Color.DKGRAY);
-    mTristateSwitch.setSwitchBkgLeftColor(Color.LTGRAY);
-    mTristateSwitch.setSwitchBkgMiddleColor(Color.LTGRAY);
-    mTristateSwitch.setSwitchBkgRightColor(Color.LTGRAY);
-    
-    
-    // You can choose if use drawable or drawable resource
-    //mTristateSwitch.setSwitchToggleLeftDrawableRes(android.R.drawable.ic_media_previous);
-    mTristateSwitch.setSwitchToggleLeftDrawable(ContextCompat.getDrawable(this, android.R.drawable.ic_media_previous));
-    
-    //mTristateSwitch.setSwitchToggleMiddleDrawableRes(android.R.drawable.ic_media_play);
-    mTristateSwitch.setSwitchToggleMiddleDrawable(ContextCompat.getDrawable(this, android.R.drawable.ic_media_play));
-    
-    //mTristateSwitch.setSwitchToggleRightDrawableRes(android.R.drawable.ic_media_next);
-    mTristateSwitch.setSwitchToggleRightDrawable(ContextCompat.getDrawable(this, android.R.drawable.ic_media_next));
-    
-    
-    // Add a Switch state observer
-    mSwitch.addSwitchObserver(new RMSwitch.RMSwitchObserver() {
-        @Override
-        public void onCheckStateChange(RMSwitch switchView, boolean isChecked) {
-                            Toast.makeText(MainActivity.this, 
-                                    &quot;Switch state: &quot; + 
-                                    (isChecked ? &quot;checked&quot; : &quot;not checked&quot;), Toast.LENGTH_LONG)
-                                    .show();
-        }
-    });
-    
-    mTristateSwitch.addSwitchObserver(new RMTristateSwitch.RMTristateSwitchObserver() {
-        @Override
-        public void onCheckStateChange(RMTristateSwitch switchView, @RMTristateSwitch.State int state) {
-            Toast
-                    .makeText(MainActivity.this,
-                            state == RMTristateSwitch.STATE_LEFT ?
-                                    &quot;Left&quot; :
-                                    state == RMTristateSwitch.STATE_MIDDLE ?
-                                            &quot;Middle&quot; :
-                                            &quot;Right&quot;,
-                            Toast.LENGTH_SHORT).show();
-        }
-    });
-} } ```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;####Supported Attributes
-RMSwitch
-——
-| XML Attribute                 | Java method                                                     	| Description                                                                                                     	| Default value                                      	                                        |
-|————————-	    |—————————————————————–	|—————————————————————————————————————–	|———————————————————————————————  |
-| checked                  	    | setChecked(boolean checked)                                     	| The initial state of the Switch, if checked or not                                                              	| false                                              	                                        |
-| enabled                  	    | setEnabled(boolean enabled)                                     	| If not enabled, the Switch will not be clickable, but it is still possible to change its state programmatically 	| true                                               	                                        |
-| forceAspectRatio         	    | setForceAspectRatio(boolean forceAspectRatio)                   	| Force the Switch aspect ratio                                                                                   	| true                                               	                                        |
-| switchBkgCheckedColor    	    | setSwitchBkgCheckedColor(@ColorInt int color)                   	| The background color of the Switch if checked                                                                   	| your current theme colorControlHighlight attribute 	                                        |
-| switchBkgNotCheckedColor 	    | setSwitchBkgNotCheckedColor(@ColorInt int color)                	| The background color of the Switch if not checked                                                               	| the same as switchBkgCheckedColor                	                                            |
-| switchToggleCheckedColor      | setSwitchToggleCheckedColor(@ColorInt int color)                	| The color of the Switch toggle if checked                                                                       	| your current theme colorAccent attribute           	                                        |
-| switchToggleNotCheckedColor   | setSwitchToggleNotCheckedColor(@ColorInt int color)             	| The color of the Switch toggle if not checked                                                                   	| white                                              	                                        |
-| switchToggleCheckedImage      | setSwitchToggleCheckedDrawableRes(@DrawableRes int drawable)    	| The image to be shown on the toggle if checked                                                                  	| the same as switchToggleNotCheckedImage if set, none otherwise                                |
-|                               | setSwitchToggleCheckedDrawable(Drawable drawable)                 |                                                                                                                   |                                                                                               |
-| switchToggleNotCheckedImage   | setSwitchToggleNotCheckedDrawableRes(@DrawableRes int drawable) 	| The image to be shown on the toggle if not checked                                                              	| the same as switchToggleCheckedImage if set, none otherwise                                   |
-|                               | setSwitchToggleNotCheckedDrawable(Drawable drawable)                 |                                                                                                                   |                                                                                            |
-| switchDesign                  | setSwitchDesign(@SwitchDesign int switchDesign)                   | The switch design, one of the RMAbstractSwitch.DESIGN_*** constants, changes the appearance of the switch         | RMAbstractSwitch.DESIGN_LARGE                                                                 |&lt;/p&gt;
-
-&lt;h2 id=&quot;rmtristateswitch&quot;&gt;RMTristateSwitch&lt;/h2&gt;
-&lt;p&gt;| XML Attribute                 | Java method                                                     	| Description                                                                                                     	| Default value                                      	                                        |
-|————————-	    |—————————————————————–	|—————————————————————————————————————–	|———————————————————————————————  |
-| state                  	    | setState(@State int state)                                     	| The initial state of the Switch, if left, middle or right                                                         | left                                              	                                        |
-| enabled                  	    | setEnabled(boolean enabled)                                     	| If not enabled, the Switch will not be clickable, but it is still possible to change its state programmatically 	| true                                               	                                        |
-| forceAspectRatio         	    | setForceAspectRatio(boolean forceAspectRatio)                   	| Force the Switch aspect ratio                                                                                   	| true                                               	                                        |
-| right_to_left                 | setRightToLeft(boolean rightToLeft)                               | The direction of the switch at every tap, if from left to right or right to left                                  | false                                                                                         |
-| switchBkgLeftColor    	    | setSwitchBkgLeftColor(@ColorInt int color)                   	    | The background color of the Switch if in the left state                                                           | your current theme colorControlHighlight attribute 	                                        |
-| switchBkgMiddleColor    	    | setSwitchBkgMiddleColor(@ColorInt int color)                   	| The background color of the Switch if in the middle state                                                         | the same as switchBkgLeftColor                      	                                        |
-| switchBkgRightColor    	    | setSwitchBkgRightColor(@ColorInt int color)                   	| The background color of the Switch if in the right state                                                     	    | the same as switchBkgLeftColor                     	                                        |
-| switchToggleLeftColor    	    | setSwitchToggleLeftColor(@ColorInt int color)                   	| The background color of the Switch if in the left state                                                           | white                                              	                                        |
-| switchToggleMiddleColor    	| setSwitchToggleMiddleColor(@ColorInt int color)                   | The background color of the Switch if in the middle state                                                         | your current theme primaryColor attribute          	                                        |
-| switchToggleRightColor    	| setSwitchToggleRightColor(@ColorInt int color)                   	| The background color of the Switch Toggle if in the right state                                                   | your current theme accentColor attribute          	                                        |
-| switchToggleLeftImage    	    | setSwitchToggleLeftDrawableRes(@ColorInt int color)               | The toggle image of the Switch if in the left state                                                               | the same as the one of the other states toggle image if at least one set, none otherwise 	    |
-|                               | setSwitchToggleLeftDrawable(Drawable drawable)                    |                                                                                                                   |                                                                                               |
-| switchToggleMiddleImage    	| setSwitchToggleMiddleDrawableRes(@ColorInt int color)             | The toggle image of the Switch if in the middle state                                                             | the same as the one of the other states toggle image if at least one set, none otherwise 	    |
-|                               | setSwitchToggleMiddleDrawable(Drawable drawable)                  |                                                                                                                   |                                                                                               |
-| switchToggleRightImage    	| setSwitchToggleRightDrawableRes(@ColorInt int color)              | The toggle image of the Switch if in the right state                                                              | the same as the one of the other states toggle image if at least one set, none otherwise 	    |
-|                               | setSwitchToggleRightDrawable(Drawable drawable)                   |                                                                                                                   |                                                                                               |
-| switchDesign                  | setSwitchDesign(@SwitchDesign int switchDesign)                   | The switch design, one of the RMAbstractSwitch.DESIGN_*** constants, changes the appearance of the switch         | RMAbstractSwitch.DESIGN_LARGE                                                                 |&lt;/p&gt;
-
-&lt;p&gt;The changes between the Switch states will be automatically cross-faded, to obtain a smooth experience&lt;/p&gt;
-
-&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2016 Riccardo Moro.
-
-Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and 
-limitations under the License.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Sun, 20 Nov 2016 00:00:00 +0900</pubDate>
-        <link>http://kmshack.github.io/AndroidUICollection/2016/11/20/RMSwitch/</link>
-        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2016/11/20/RMSwitch/</guid>
-        
-        <category>switch</category>
         
         
       </item>
