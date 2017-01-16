@@ -393,6 +393,14 @@
                 
               
             
+              
+                
+              
+            
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -540,7 +548,7 @@ but with support of CRUD animations i decided to make such stuff and share it.</
 
 <p>with gradle
 <code class="highlighter-rouge">GRADLE 
-compile 'com.beloo.widget:ChipsLayoutManager:0.3.6@aar'
+compile 'com.beloo.widget:ChipsLayoutManager:0.3.7@aar'
 </code></p>
 
 <p>Assuming you have installed jCenter provider:
@@ -608,6 +616,7 @@ But we could distribute that space for available views in that row.</p>
   <li><code class="highlighter-rouge">STRATEGY_FILL_VIEW</code> - available space is distributed among views.</li>
   <li><code class="highlighter-rouge">STRATEGY_FILL_SPACE</code> - available space is distributed among spaces between views, start &amp; end views are docked to a nearest border.</li>
   <li><code class="highlighter-rouge">STRATEGY_CENTER</code> - available space is distributed among spaces between views, start &amp; end spaces included. Views are placed in center of canvas.</li>
+  <li><code class="highlighter-rouge">STRATEGY_CENTER_DENSE</code> - Views are placed in center of canvas. There is no extra space distributed between views.</li>
 </ul>
 
 <p>In such layouts by default last row isn’t considered completed. So strategy isn’t applied for last row.
@@ -669,7 +678,7 @@ ViewCompat.setLayoutDirection(recyclerView, ViewCompat.LAYOUT_DIRECTION_RTL);
 You may need an <code class="highlighter-rouge">RecyclerView.ItemDecoration</code> to work with <code class="highlighter-rouge">ChipsLayoutManager</code> for fast setup as showed in sample. <br />
 It contained in same package and named <code class="highlighter-rouge">SpacingItemDecoration</code>.</p>
 
-<h2 id="support--maintainedhttpsimgshieldsiomaintenanceyes2016svg">Support <a href=""> [Maintained](https://img.shields.io/maintenance/yes/2016.svg)</a></h2>
+<h2 id="support--maintainedhttpsimgshieldsiomaintenanceyes2017svg-httpsgithubcombelooschipslayoutmanagertreedev">Support <a href="https://github.com/BelooS/ChipsLayoutManager/tree/dev"> [Maintained](https://img.shields.io/maintenance/yes/2017.svg) </a></h2>
 <p>BETA is going.
 I respond to your founded issues. Just create a ticket if you found something goes wrong.<br />
 Thanks for testing, guys. I’m really appreciate it.</p>
@@ -678,11 +687,13 @@ Thanks for testing, guys. I’m really appreciate it.</p>
 <p>All pull requests are welcome. I’ve tried to make code clean &amp; readable, so the next is up to you.
 I appreciate any help and contributors will be mentioned here.</p>
 
+<p>Thanks, <a href="https://github.com/szijpeter">szijpeter</a> and everyone for valuable updates.</p>
+
 <h3 id="known-issues">Known issues</h3>
 <p>I create issues in tracking board of known problems.
 These issues are going to be fixed in next versions.</p>
 
-<h3 id="license-license-for-chipslayoutmanagerhttpsimgshieldsiocrateslrustc-serializesvg">License <a href="#">[license for ChipsLayoutManager](https://img.shields.io/crates/l/rustc-serialize.svg)</a></h3>
+<h3 id="license--license-for-chipslayoutmanagerhttpsimgshieldsiohexpmlplugsvg-httpsgithubcombelooschipslayoutmanagerblobdevlicense">License <a href="https://github.com/BelooS/ChipsLayoutManager/blob/dev/LICENSE"> [license for ChipsLayoutManager](https://img.shields.io/hexpm/l/plug.svg) </a></h3>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2016 Beloy Oleg, Ukraine.
 
