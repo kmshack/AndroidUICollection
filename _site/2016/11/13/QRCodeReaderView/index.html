@@ -401,6 +401,26 @@
                 
               
             
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -530,7 +550,7 @@
              <br><br>
             <hr>
           <br>
-          <h1 id="qrcodereaderview-downloadhttpsapibintraycompackagesdlazaro66mavenqrcodereaderviewimagesdownloadsvg-httpsbintraycomdlazaro66mavenqrcodereaderviewlatestversion-android-arsenalhttpsimgshieldsiobadgeandroid20arsenal-qrcodereaderview-brightgreensvgstyleflathttpandroid-arsenalcomdetails11891">QRCodeReaderView <a href="https://bintray.com/dlazaro66/maven/QRCodeReaderView/_latestVersion">[Download](https://api.bintray.com/packages/dlazaro66/maven/QRCodeReaderView/images/download.svg) </a> <a href="http://android-arsenal.com/details/1/1891">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-QRCodeReaderView-brightgreen.svg?style=flat)</a></h1>
+          <h1 id="qrcodereaderview-downloadhttpsapibintraycompackagesdlazaro66mavenqrcodereaderviewimagesdownloadsvg-httpsbintraycomdlazaro66mavenqrcodereaderviewlatestversion-android-arsenalhttpsimgshieldsiobadgeandroid20arsenal-qrcodereaderview-brightgreensvgstyleflathttpandroid-arsenalcomdetails11891-build-statushttpstravis-ciorgdlazaro66qrcodereaderviewsvgbranchmasterhttpstravis-ciorgdlazaro66qrcodereaderview">QRCodeReaderView <a href="https://bintray.com/dlazaro66/maven/QRCodeReaderView/_latestVersion">[Download](https://api.bintray.com/packages/dlazaro66/maven/QRCodeReaderView/images/download.svg) </a> <a href="http://android-arsenal.com/details/1/1891">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-QRCodeReaderView-brightgreen.svg?style=flat)</a> <a href="https://travis-ci.org/dlazaro66/QRCodeReaderView">[Build Status](https://travis-ci.org/dlazaro66/QRCodeReaderView.svg?branch=master)</a></h1>
 
 <h4 id="modification-of-zxing-barcode-scanner-project-for-easy-android-qr-code-detection-and-ar-purposes">Modification of ZXING Barcode Scanner project for easy Android QR-Code detection and AR purposes.</h4>
 
@@ -566,7 +586,7 @@
 <div class="highlighter-rouge"><pre class="highlight"><code>	<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DecoderActivity</span> <span class="kd">extends</span> <span class="n">Activity</span> <span class="kd">implements</span> <span class="n">OnQRCodeReadListener</span> <span class="o">{</span>
 
     <span class="kd">private</span> <span class="n">TextView</span> <span class="n">resultTextView</span><span class="o">;</span>
-	<span class="kd">private</span> <span class="n">QRCodeReaderView</span> <span class="n">qrCodeReaderView</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="n">QRCodeReaderView</span> <span class="n">mydecoderview</span><span class="o">;</span>
 
 	<span class="nd">@Override</span>
     <span class="kd">protected</span> <span class="kt">void</span> <span class="n">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
@@ -576,7 +596,7 @@
         <span class="n">mydecoderview</span> <span class="o">=</span> <span class="o">(</span><span class="n">QRCodeReaderView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">qrdecoderview</span><span class="o">);</span>
         <span class="n">mydecoderview</span><span class="o">.</span><span class="na">setOnQRCodeReadListener</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
 
-    	<span class="c1">// Use this function to enable/disable decoding</span>
+    	  <span class="c1">// Use this function to enable/disable decoding</span>
         <span class="n">mydecoderview</span><span class="o">.</span><span class="na">setQRDecodingEnabled</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
 
         <span class="c1">// Use this function to change the autofocus interval (default is 5 secs)</span>
@@ -641,7 +661,8 @@
 
 <h2 id="do-you-want-to-contribute">Do you want to contribute?</h2>
 
-<p>Please send a PR or open an issue with your comments</p>
+<p>Please send a PR or open an issue with your comments.
+See <a href="CONTRIBUTING.md">CONTRIBUTING file</a> for further information</p>
 
 <h2 id="libraries-used-in-this-project">Libraries used in this project</h2>
 
@@ -676,7 +697,7 @@
 
 <h2 id="license">License</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2013 David Lázaro
+<div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2017 David Lázaro
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

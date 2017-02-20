@@ -401,6 +401,26 @@
                 
               
             
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -544,7 +564,7 @@ To API Level 14 or later are supported</p>
 <a href="http://youtu.be/nb8M2p0agF4">SimpleFloating</a></p>
 
 <h2 id="requirements">Requirements</h2>
-<p>Target Sdk Version : 24
+<p>Target Sdk Version : 25<br />
 Min Sdk Version : 14</p>
 
 <h2 id="how-to-use">How to use</h2>
@@ -557,7 +577,7 @@ Min Sdk Version : 14</p>
   }</p>
 
 <p>dependencies {
-    compile ‘com.github.recruit-lifestyle:FloatingView:2.0’
+    compile ‘com.github.recruit-lifestyle:FloatingView:2.2’
   }
   ```</p>
 
@@ -585,9 +605,9 @@ public class ChatHeadService extends Service {
   mFloatingViewManager.addViewToWindow(iconView, options);
 </code></p>
 
-<p>The second argument of FloatingViewManager is FloatingViewListener</p>
+<p>The second argument of <code class="highlighter-rouge">FloatingViewManager</code> is <code class="highlighter-rouge">FloatingViewListener</code></p>
 
-<p>Describe the process (onFinishFloatingView) that is called when you exit the FloatingView
+<p>Describe the process (<code class="highlighter-rouge">onFinishFloatingView</code>) that is called when you exit the FloatingView
 <code class="highlighter-rouge">java
     @Override
     public void onFinishFloatingView() {
@@ -620,13 +640,122 @@ example)
     activity.startService(new Intent(activity, ChatHeadService.class));
 </code></p>
 
-<h2 id="credits">Credits</h2>
+<h2 id="static-options">Static Options</h2>
+<p>It can be set only when displaying for the first time</p>
+
+<p>example)
+<code class="highlighter-rouge">java
+final FloatingViewManager.Options options = new FloatingViewManager.Options();
+options.overMargin = (int) (16 * metrics.density);
+mFloatingViewManager.addViewToWindow(iconView, options);
+</code></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Option</th>
+      <th>Description</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">shape</td>
+      <td><code class="highlighter-rouge">FloatingViewManager.SHAPE_CIRCLE</code>:Cicle(default)<br /> <code class="highlighter-rouge">FloatingViewManager.SHAPE_RECTANGLE</code>:Rectangle</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">overMargin</td>
+      <td>Margin over the edge of the screen (px)<br />(default) 0</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">floatingViewX</td>
+      <td>X coordinate of initial display<br />(default) left side of display</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">floatingViewY</td>
+      <td>Y coordinate of initial display<br />(default) top of display</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">floatingViewWidth</td>
+      <td>FloatingView width<br />(default) The width of the layout added to FloatingView</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">floatingViewHeight</td>
+      <td>FloatingView height<br />(default) The height of the layout added to FloatingView</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">moveDirection</td>
+      <td><code class="highlighter-rouge">FloatingViewManager.MOVE_DIRECTION_DEFAULT</code>:Left end or right end(default)<br /> <code class="highlighter-rouge">FloatingViewManager.MOVE_DIRECTION_LEFT</code>:Left end<br /><code class="highlighter-rouge">FloatingViewManager.MOVE_DIRECTION_RIGHT</code>:Right end<br /><code class="highlighter-rouge">FloatingViewManager.MOVE_DIRECTION_NONE</code>:Not move</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">animateInitialMove</td>
+      <td>If true, animation when first displayed<br />(FloatingViewX, floatingViewY) to screen edge<br />Info: If <code class="highlighter-rouge">MOVE_DIRECTION_NONE</code> is set, nothing happens</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="dynamic-options">Dynamic Options</h2>
+<p>It can be set any time</p>
+
+<p>exapmle)
+<code class="highlighter-rouge">java
+mFloatingViewManager.setFixedTrashIconImage(R.drawable.ic_trash_fixed);
+mFloatingViewManager.setActionTrashIconImage(R.drawable.ic_trash_action);
+</code></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Option</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">setFixedTrashIconImage</td>
+      <td>It is an icon that does <em>not</em> enlarge when FloatingView overlaps.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">setActionTrashIconImage</td>
+      <td>It is an icon that enlarge when FloatingView overlaps.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">setDisplayMode</td>
+      <td><code class="highlighter-rouge">FloatingViewManager.DISPLAY_MODE_SHOW_ALWAYS</code>:Always show<br /><code class="highlighter-rouge">FloatingViewManager.DISPLAY_MODE_HIDE_ALWAYS</code>:Always hidden<br /><code class="highlighter-rouge">FloatingViewManager.DISPLAY_MODE_HIDE_FULLSCREEN</code>:It is hidden when in full screen</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">setTrashViewEnabled</td>
+      <td>If false, the trash icon does not show during dragging.<br />(default) true</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="revisions">Revisions</h1>
+<p>## Update in 2.2
+- Support for large image for FloatingView (not complete, but almost works)(<a href="../../issues/16">#16</a>)
+- Support size specification of FloatingView(<a href="../../issues/16">#16</a>)
+- Fix issue <a href="../../issues/14">#14</a></p>
+
+<h2 id="update-in-21">Update in 2.1</h2>
+<ul>
+  <li>Add <code class="highlighter-rouge">FloatingViewListener#onTouchFinished</code>.This method is called when the touch action is finished.</li>
+</ul>
+
+<h1 id="credits">Credits</h1>
 
 <p>FloatingView is owned and maintained by <a href="http://www.recruit-lifestyle.co.jp/">RECRUIT LIFESTYLE CO., LTD.</a></p>
 
 <p>FloatingView was originally created by <a href="https://twitter.com/egg_sogawa">Yoshihide Sogawa</a></p>
 
-<h2 id="license">License</h2>
+<h1 id="license">License</h1>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2015 RECRUIT LIFESTYLE CO., LTD.
 

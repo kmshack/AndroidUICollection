@@ -401,6 +401,26 @@
                 
               
             
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -551,7 +571,7 @@ allprojects {
 app build.gradle
 <code class="highlighter-rouge">groovy
 dependencies {
-    compile 'com.github.TellH:RecyclerTreeView:1.1.4'
+    compile 'com.github.TellH:RecyclerTreeView:1.2.0'
 }
 </code></p>
 
@@ -649,6 +669,32 @@ dependencies {
         <span class="o">);</span>
         <span class="n">TreeViewAdapter</span> <span class="n">adapter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeViewAdapter</span><span class="o">(</span><span class="n">nodes</span><span class="o">,</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="k">new</span> <span class="n">FileNodeBinder</span><span class="o">(),</span> <span class="k">new</span> <span class="n">DirectoryNodeBinder</span><span class="o">()));</span>
         <span class="n">rv</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(</span><span class="n">adapter</span><span class="o">);</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>set TreeNodeListener to TreeViewAdapter</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>        <span class="n">adapter</span><span class="o">.</span><span class="na">setOnTreeNodeListener</span><span class="o">(</span><span class="k">new</span> <span class="n">TreeViewAdapter</span><span class="o">.</span><span class="na">OnTreeNodeListener</span><span class="o">()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">boolean</span> <span class="n">onClick</span><span class="o">(</span><span class="n">TreeNode</span> <span class="n">node</span><span class="o">,</span> <span class="n">RecyclerView</span><span class="o">.</span><span class="na">ViewHolder</span> <span class="n">holder</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">node</span><span class="o">.</span><span class="na">isLeaf</span><span class="o">())</span> <span class="o">{</span>
+                    <span class="c1">//Update and toggle the node.</span>
+                    <span class="n">onToggle</span><span class="o">(</span><span class="n">node</span><span class="o">.</span><span class="na">isExpand</span><span class="o">(),</span> <span class="n">holder</span><span class="o">);</span>
+                <span class="o">}</span>
+                <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="n">onToggle</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">isExpand</span><span class="o">,</span> <span class="n">RecyclerView</span><span class="o">.</span><span class="na">ViewHolder</span> <span class="n">holder</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">DirectoryNodeBinder</span><span class="o">.</span><span class="na">ViewHolder</span> <span class="n">dirViewHolder</span> <span class="o">=</span> <span class="o">(</span><span class="n">DirectoryNodeBinder</span><span class="o">.</span><span class="na">ViewHolder</span><span class="o">)</span> <span class="n">holder</span><span class="o">;</span>
+                <span class="kd">final</span> <span class="n">ImageView</span> <span class="n">ivArrow</span> <span class="o">=</span> <span class="n">dirViewHolder</span><span class="o">.</span><span class="na">getIvArrow</span><span class="o">();</span>
+                <span class="kt">int</span> <span class="n">rotateDegree</span> <span class="o">=</span> <span class="n">isExpand</span> <span class="o">?</span> <span class="mi">90</span> <span class="o">:</span> <span class="o">-</span><span class="mi">90</span><span class="o">;</span>
+                <span class="n">ivArrow</span><span class="o">.</span><span class="na">animate</span><span class="o">().</span><span class="na">rotationBy</span><span class="o">(</span><span class="n">rotateDegree</span><span class="o">)</span>
+                        <span class="o">.</span><span class="na">start</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">});</span>
 </code></pre>
 </div>
 

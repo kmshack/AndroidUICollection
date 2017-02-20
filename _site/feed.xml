@@ -5,9 +5,804 @@
     <description>Collection of OpenSource for Android UI.</description>
     <link>http://kmshack.github.io/AndroidUICollection/</link>
     <atom:link href="http://kmshack.github.io/AndroidUICollection/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 16 Jan 2017 10:00:59 +0900</pubDate>
-    <lastBuildDate>Mon, 16 Jan 2017 10:00:59 +0900</lastBuildDate>
+    <pubDate>Mon, 20 Feb 2017 10:59:52 +0900</pubDate>
+    <lastBuildDate>Mon, 20 Feb 2017 10:59:52 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>Alerter</title>
+        <description>&lt;h1 id=&quot;alerter&quot;&gt;Alerter&lt;/h1&gt;
+
+&lt;h3 id=&quot;general&quot;&gt;General&lt;/h3&gt;
+
+&lt;p&gt;This library aims to overcome the limitations of Toasts and Snackbars, while reducing the
+complexity of your layouts.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;./documentation/alert_default.gif&quot;&gt;Default Alert&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;A customisable Alert view is dynamically added to the Decor View of the Window, overlaying
+all content.&lt;/p&gt;
+
+&lt;h2 id=&quot;gradle&quot;&gt;Gradle&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;com.tapadoo.android:alerter:1.0.1&#39;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;usage&quot;&gt;Usage&lt;/h1&gt;
+
+&lt;p&gt;With simplicity in mind, the Alerter employs the builder pattern to facilitate easy integration
+into any app.&lt;/p&gt;
+
+&lt;p&gt;From an Activity -&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Alerter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alert Title&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alert text...&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Or from a Fragment -&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Alerter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getActivity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt;
+       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alert Title&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alert text...&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;customisation&quot;&gt;Customisation&lt;/h1&gt;
+
+&lt;h3 id=&quot;background-colour&quot;&gt;Background Colour&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Alerter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alert Title&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alert text...&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setBackgroundColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;colorAccent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;./documentation/alert_coloured.gif&quot;&gt;Coloured Alert&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;icon&quot;&gt;Icon&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Alerter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alert text...&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setIcon&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ic_face&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;./documentation/alert_icon.gif&quot;&gt;Custom Icon Alert&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;on-screen-duration-in-milliseconds&quot;&gt;On screen duration, in milliseconds&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Alerter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alert Title&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alert text...&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setDuration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;without-title&quot;&gt;Without title&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Alerter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alert text...&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;./documentation/alert_text_only.gif&quot;&gt;Text Only Alert&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;adding-an-on-click-listener&quot;&gt;Adding an On Click Listener&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;n&quot;&gt;Alerter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ExampleActivity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alert Title&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alert text...&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setDuration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setOnClickListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;View&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;OnClickListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+            &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;makeText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ExampleActivity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;OnClick Called&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LENGTH_LONG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;./documentation/alert_on_click.gif&quot;&gt;On Click Alert&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;verbose-text&quot;&gt;Verbose text&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;n&quot;&gt;Alerter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ExampleActivity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alert Title&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;The alert scales to accommodate larger bodies of text. &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+                 &lt;span class=&quot;s&quot;&gt;&quot;The alert scales to accommodate larger bodies of text. &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+                 &lt;span class=&quot;s&quot;&gt;&quot;The alert scales to accommodate larger bodies of text.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;./documentation/alert_verbose.gif&quot;&gt;Verbose Alert&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;sample&quot;&gt;Sample&lt;/h2&gt;
+
+&lt;p&gt;Clone this repo and check out the &lt;code class=&quot;highlighter-rouge&quot;&gt;app&lt;/code&gt; module.&lt;/p&gt;
+
+&lt;h2 id=&quot;licence&quot;&gt;Licence&lt;/h2&gt;
+
+&lt;p&gt;See the &lt;a href=&quot;LICENSE.md&quot;&gt;LICENSE&lt;/a&gt; file for license rights and limitations (MIT).&lt;/p&gt;
+
+&lt;p&gt;Copyright 2016 Tapadoo, Dublin.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://tapadoo.com/wp-content/themes/tapadoo/img/tapadoo-logo@2x.png&quot;&gt;Alt Text&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 20 Feb 2017 00:00:00 +0900</pubDate>
+        <link>http://kmshack.github.io/AndroidUICollection/2017/02/20/Alerter/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/02/20/Alerter/</guid>
+        
+        <category>alert</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Android Material Stepper</title>
+        <description>&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;./art/material-stepper-logo.png&quot; width=&quot;256&quot; height=&quot;256&quot; /&gt;
+&lt;/p&gt;
+&lt;p&gt;# Android Material Stepper &lt;a href=&quot;https://travis-ci.org/stepstone-tech/android-material-stepper&quot;&gt;[Build Status](https://travis-ci.org/stepstone-tech/android-material-stepper.svg?branch=master)&lt;/a&gt; &lt;a href=&quot;https://android-arsenal.com/details/1/5138&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Android%20Material%20Stepper-brightgreen.svg?style=flat)&lt;/a&gt; &lt;a href=&quot;http://androidweekly.net/issues/issue-243&quot;&gt;[Android Weekly](https://img.shields.io/badge/Android%20Weekly-%23243-brightgreen.svg)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This library allows to use Material steppers inside Android applications.&lt;/p&gt;
+
+&lt;p&gt;Quoting the &lt;a href=&quot;https://www.google.com/design/spec/components/steppers.html&quot;&gt;documentation&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Steppers display progress through a sequence by breaking it up into multiple logical and numbered steps.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;download-from-jcenter&quot;&gt;Download (from JCenter)&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;com.stepstone.stepper:material-stepper:2.2.0&#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;supported-steppers&quot;&gt;Supported steppers&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Mobile stepper with dots &lt;br /&gt;
+&lt;img src=&quot;./gifs/dotted-progress-bar.gif&quot; width=&quot;360&quot; height=&quot;640&quot; /&gt;  &lt;img src=&quot;./gifs/dotted-progress-bar-styled.gif&quot; width=&quot;360&quot; height=&quot;640&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Mobile stepper with progress bar &lt;br /&gt;
+&lt;img src=&quot;./gifs/linear-progress-bar.gif&quot; width=&quot;360&quot; height=&quot;640&quot; /&gt;  &lt;img src=&quot;./gifs/linear-progress-bar-styled.gif&quot; width=&quot;360&quot; height=&quot;640&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Horizontal stepper &lt;br /&gt;
+&lt;img src=&quot;./gifs/tabs.gif&quot; width=&quot;640&quot; height=&quot;360&quot; /&gt;
+&lt;img src=&quot;./gifs/tabs-styled.gif&quot; width=&quot;640&quot; height=&quot;360&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;supported-features&quot;&gt;Supported features&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;color customisation of individual widgets inside of the stepper via View attributes or a style from a theme&lt;/li&gt;
+  &lt;li&gt;custom texts of individual widgets inside of the stepper via View attributes or a style from a theme&lt;/li&gt;
+  &lt;li&gt;embedding the stepper anywhere in the view hierarchy and changing the stepper type for various device configurations, e.g. phone/tablet, portrait/landscape&lt;/li&gt;
+  &lt;li&gt;step validation&lt;/li&gt;
+  &lt;li&gt;use with Fragments or Views&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;getting-started&quot;&gt;Getting started&lt;/h2&gt;
+
+&lt;h3 id=&quot;create-layout-in-xml&quot;&gt;Create layout in XML&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.stepstone.stepper.StepperLayout&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:android=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;xmlns:app=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res-auto&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/stepperLayout&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:orientation=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;vertical&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;app:ms_stepperType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;progress_bar&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;For a complete list of StepperLayout attributes see &lt;a href=&quot;#StepperLayout attributes&quot;&gt;StepperLayout attributes&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;create-step-fragments&quot;&gt;Create step Fragment(s)&lt;/h3&gt;
+&lt;p&gt;Step fragments must extend &lt;a href=&quot;http://developer.android.com/reference/android/support/v4/app/Fragment.html&quot;&gt;android.support.v4.app.Fragment&lt;/a&gt;
+and implement &lt;code class=&quot;highlighter-rouge&quot;&gt;com.stepstone.stepper.Step&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;StepFragmentSample&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fragment&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Step&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onCreateView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LayoutInflater&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inflater&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ViewGroup&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;container&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Bundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inflater&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;inflate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;step&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;container&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;//initialize your UI&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VerificationError&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;verifyStep&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//return null if the user can go to the next step, create a new VerificationError instance otherwise&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onSelected&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//update UI when selected&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onError&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@NonNull&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VerificationError&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//handle error inside of the fragment, e.g. show error on EditText&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;extend-abstractfragmentstepadapter&quot;&gt;Extend AbstractFragmentStepAdapter&lt;/h3&gt;
+&lt;p&gt;AbstractFragmentStepAdapter extends &lt;a href=&quot;http://developer.android.com/reference/android/support/v4/app/FragmentPagerAdapter.html&quot;&gt;FragmentPagerAdapter&lt;/a&gt;
+but instead of overriding the method &lt;code class=&quot;highlighter-rouge&quot;&gt;getItem(int)&lt;/code&gt; you must override the &lt;code class=&quot;highlighter-rouge&quot;&gt;createStep(int)&lt;/code&gt; method.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyStepperAdapter&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AbstractFragmentStepAdapter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MyStepperAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FragmentManager&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Context&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Step&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;createStep&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StepFragmentSample&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;step&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StepFragmentSample&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Bundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Bundle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;putInt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CURRENT_STEP_POSITION_KEY&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;step&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setArguments&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;step&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getCount&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@NonNull&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StepViewModel&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getViewModel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@IntRange&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//Override this method to set Step title for the Tabs, not necessary for other stepper types&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StepViewModel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Builder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;tab_title&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//can be a CharSequence instead&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;set-adapter-in-activity&quot;&gt;Set adapter in Activity&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;StepperActivity&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AppCompatActivity&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StepperLayout&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mStepperLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Bundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;setContentView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;mStepperLayout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;StepperLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stepperLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;mStepperLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MyStepperAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getSupportFragmentManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;add-a-stepperlistener-in-the-activity-optional&quot;&gt;Add a StepperListener in the Activity (optional)&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;StepperActivity&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AppCompatActivity&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StepperLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;StepperListener&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Bundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;mStepperLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onCompleted&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;completeButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;makeText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;onCompleted&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LENGTH_SHORT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onError&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;VerificationError&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;verificationError&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;makeText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;onError -&amp;gt; &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;verificationError&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getErrorMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LENGTH_SHORT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onStepSelected&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;newStepPosition&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;makeText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;onStepSelected -&amp;gt; &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;newStepPosition&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LENGTH_SHORT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onReturn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;finish&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;change-nextcomplete-buttons-text-color-when-going-to-the-next-step-should-be-disabled-optional&quot;&gt;Change Next/Complete button’s text color when going to the next step should be disabled (optional)&lt;/h3&gt;
+&lt;p&gt;It is possible to change the Next/Complete button’s text color (together with right chevron’s color)
+when all the criteria to go to the next step are not met. This color should indicate that
+the user cannot go to next step yet and look as if disabled. Clicking on the button will still perform the regular
+step verification. There is a custom state added since setting &lt;code class=&quot;highlighter-rouge&quot;&gt;android:state_enabled&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt; in a color selector would disable the clicks
+and we want to have them so that we can show an info message for the user.
+In order to set that color:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create a new color selector in &lt;code class=&quot;highlighter-rouge&quot;&gt;res/color&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;```xml
+ &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;/p&gt;
+    &lt;selector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;&gt;
+     &lt;item app:state_verification_failed=&quot;true&quot; android:color=&quot;#30BDBDBD&quot; /&gt;
+     &lt;item android:color=&quot;@color/ms_white&quot; /&gt;
+ &lt;/selector&gt;
+    &lt;p&gt;```&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Change button’s (text) color in layout file&lt;/p&gt;
+
+    &lt;p&gt;```xml
+ &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;/p&gt;
+    &lt;com.stepstone.stepper.stepperlayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot; android:id=&quot;@+id/stepperLayout&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;match_parent&quot; app:ms_steppertype=&quot;dots&quot; app:ms_nextbuttoncolor=&quot;@color/ms_custom_button_text_color&quot; app:ms_completebuttoncolor=&quot;@color/ms_custom_button_text_color&quot; /&gt;
+
+    &lt;p&gt;```&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Toggle the state in code&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+ mStepperLayout.setNextButtonVerificationFailed(enabled);
+ mStepperLayout.setCompleteButtonVerificationFailed(enabled);
+&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;make-an-io-operation-before-going-to-the-next-step-optional&quot;&gt;Make an IO operation before going to the next step (optional)&lt;/h3&gt;
+&lt;p&gt;If the user wants to e.g. save something in the database or make a network call on a separate Thread after clicking on the Next button
+he can perform these operations and then invoke the &lt;code class=&quot;highlighter-rouge&quot;&gt;goToNextStep()&lt;/code&gt; method of the &lt;code class=&quot;highlighter-rouge&quot;&gt;StepperLayout.OnNextClickedCallback&lt;/code&gt; in the current Step.
+While operations are performed, and the user would like to go back you can cancel them and then invoke &lt;code class=&quot;highlighter-rouge&quot;&gt;onBackClicked()&lt;/code&gt; method of the &lt;code class=&quot;highlighter-rouge&quot;&gt;StepperLayout.OnBackClickedCallback&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./gifs/delayed-transition.gif&quot; width=&quot;360&quot; height=&quot;640&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;The fragment must implement &lt;code class=&quot;highlighter-rouge&quot;&gt;BlockingStep&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;Step&lt;/code&gt;.
+Also, make sure that &lt;code class=&quot;highlighter-rouge&quot;&gt;goToNextStep()&lt;/code&gt; gets called on the main thread.
+&lt;strong&gt;Note:&lt;/strong&gt; the &lt;code class=&quot;highlighter-rouge&quot;&gt;onNextClicked(StepperLayout.OnNextClickedCallback)&lt;/code&gt; method gets invoked after step verification.
+E.g.:
+```java
+public class DelayedTransitionStepFragmentSample extends Fragment implements BlockingStep {&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//...
+
+@Override
+@UiThread
+public void onNextClicked(final StepperLayout.OnNextClickedCallback callback) {
+    new Handler().postDelayed(new Runnable() {
+        @Override
+        public void run() {
+            callback.goToNextStep();
+        }
+    }, 2000L);
+}
+
+@Override
+@UiThread
+public void onBackClicked(StepperLayout.OnBackClickedCallback callback) {
+    Toast.makeText(this.getContext(), &quot;Your custom back action. Here you should cancel currently running operations&quot;, Toast.LENGTH_SHORT).show();
+    callback.goToPrevStep();
+ }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;}
+```&lt;/p&gt;
+
+&lt;h3 id=&quot;changing-backnext-button-labels-per-step&quot;&gt;Changing Back/Next button labels per step&lt;/h3&gt;
+&lt;p&gt;Sometimes you might want to have different labels on the Next and/or Back navigation buttons on different steps e.g. use the default labels on the first few steps,
+but display ‘Summary’ just before the last page.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./gifs/different-next-buttons.gif&quot; width=&quot;360&quot; height=&quot;640&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;In such case you need to override the &lt;code class=&quot;highlighter-rouge&quot;&gt;getViewModel(int)&lt;/code&gt; method from the &lt;code class=&quot;highlighter-rouge&quot;&gt;StepAdapter&lt;/code&gt; e.g.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+    @NonNull
+    @Override
+    public StepViewModel getViewModel(@IntRange(from = 0) int position) {
+        StepViewModel.Builder builder = new StepViewModel.Builder(context)
+                .setTitle(R.string.tab_title);
+        switch (position) {
+            case 0:
+                builder
+                        .setNextButtonLabel(&quot;This way&quot;)
+                        .setBackButtonLabel(&quot;Go to first&quot;);
+                break;
+            case 1:
+                builder
+                        .setNextButtonLabel(R.string.go_to_summary)
+                        .setBackButtonLabel(&quot;Go to first&quot;);
+                break;
+            case 2:
+                builder.setBackButtonLabel(&quot;Go back&quot;);
+                break;
+            default:
+                throw new IllegalArgumentException(&quot;Unsupported position: &quot; + position);
+        }
+        return builder.create();
+    }
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;using-the-same-stepper-styling-across-the-application&quot;&gt;Using the same stepper styling across the application&lt;/h3&gt;
+&lt;p&gt;If you have many steppers in your application in different activities/fragments you might want to set a common style in a theme.
+To do so, you need to set the &lt;code class=&quot;highlighter-rouge&quot;&gt;ms_stepperStyle&lt;/code&gt; attribute in the theme, e.g.
+```xml
+    &lt;style name=&quot;AppTheme&quot; parent=&quot;Theme.AppCompat.Light.DarkActionBar&quot;&gt;
+        ...&lt;/style&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &amp;lt;item name=&quot;ms_stepperStyle&quot;&amp;gt;@style/DotStepperStyle&amp;lt;/item&amp;gt;
+&amp;lt;/style&amp;gt; ``` and declare that style in the XML you keep your styles at, e.g. ```xml
+&amp;lt;style name=&quot;DotStepperStyle&quot;&amp;gt;
+    &amp;lt;item name=&quot;ms_stepperType&quot;&amp;gt;dots&amp;lt;/item&amp;gt;
+    &amp;lt;item name=&quot;ms_activeStepColor&quot;&amp;gt;#FFFFFF&amp;lt;/item&amp;gt;
+    &amp;lt;item name=&quot;ms_inactiveStepColor&quot;&amp;gt;#006867&amp;lt;/item&amp;gt;
+    &amp;lt;item name=&quot;ms_bottomNavigationBackground&quot;&amp;gt;?attr/colorAccent&amp;lt;/item&amp;gt;
+&amp;lt;/style&amp;gt; ```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;showing-a-back-button-on-first-step&quot;&gt;Showing a Back button on first step&lt;/h3&gt;
+&lt;p&gt;By default if the user is on the first step then the Back button in the bottom navigation is hidden. 
+This behaviour can be changed by setting &lt;code class=&quot;highlighter-rouge&quot;&gt;ms_showBackButtonOnFirstStep&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;, e.g.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;xml
+    &amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;
+    &amp;lt;com.stepstone.stepper.StepperLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+        xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+        android:id=&quot;@+id/stepperLayout&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;match_parent&quot;
+        app:ms_showBackButtonOnFirstStep=&quot;true&quot;
+        app:ms_stepperType=&quot;dots&quot; /&amp;gt;
+&lt;/code&gt;
+To get a callback when this button was pressed you need set a &lt;code class=&quot;highlighter-rouge&quot;&gt;StepperListener&lt;/code&gt; and write your own custom return logic in the &lt;code class=&quot;highlighter-rouge&quot;&gt;onReturn()&lt;/code&gt; method to e.g. close the Activity.&lt;/p&gt;
+
+&lt;h3 id=&quot;using-with-views-instead-of-fragments&quot;&gt;Using with Views instead of Fragments&lt;/h3&gt;
+&lt;p&gt;It is possible to use this library without the need to rely on Fragments.
+To do so you need to use &lt;code class=&quot;highlighter-rouge&quot;&gt;AbstractStepAdapter&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;AbstractFragmentStepAdapter&lt;/code&gt;.
+For an example of how to use it with views please see the sample app.&lt;/p&gt;
+
+&lt;h3 id=&quot;custom-styling&quot;&gt;Custom styling&lt;/h3&gt;
+&lt;p&gt;Basic styling can be done by choosing the active and inactive step colors. 
+There are some additional properties which can be changed directly from StepperLayout’s attributes e.g. the background of bottom navigation buttons (see &lt;a href=&quot;#stepperlayout-attributes&quot;&gt;StepperLayout attributes&lt;/a&gt;)
+For advanced styling you can use &lt;code class=&quot;highlighter-rouge&quot;&gt;ms_stepperLayoutTheme&lt;/code&gt; StepperLayout’s attribute and provide your custom style to be used.
+See ‘Custom StepperLayout theme’ in the sample app for an example.&lt;/p&gt;
+
+&lt;h3 id=&quot;advanced-usage&quot;&gt;Advanced usage&lt;/h3&gt;
+&lt;p&gt;For other examples, e.g. persisting state on rotation, displaying errors, changing whether the user can go to the next step, etc. check out the sample app.&lt;/p&gt;
+
+&lt;h2 id=&quot;stepperlayout-attributes&quot;&gt;StepperLayout attributes&lt;/h2&gt;
+&lt;p&gt;| Attribute name                  | Format                                    | Description |
+| ——————————–|——————————————-|————-|
+| &lt;em&gt;ms_stepperType&lt;/em&gt;                | one of &lt;code class=&quot;highlighter-rouge&quot;&gt;dots&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;progress_bar&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;tabs&lt;/code&gt;   | &lt;strong&gt;REQUIRED:&lt;/strong&gt; Type of the stepper |
+| &lt;em&gt;ms_backButtonColor&lt;/em&gt;            | color or reference                        | BACK button’s text color           |
+| &lt;em&gt;ms_nextButtonColor&lt;/em&gt;            | color or reference                        | NEXT button’s text color            |
+| &lt;em&gt;ms_completeButtonColor&lt;/em&gt;        | color or reference                        | COMPLETE button’s text color            |
+| &lt;em&gt;ms_activeStepColor&lt;/em&gt;            | color or reference                        | Active step’s color            |
+| &lt;em&gt;ms_inactiveStepColor&lt;/em&gt;          | color or reference                        | Inactive step’s color            |
+| &lt;em&gt;ms_bottomNavigationBackground&lt;/em&gt; | reference                                 | Background of the bottom navigation            |
+| &lt;em&gt;ms_backButtonBackground&lt;/em&gt;       | reference                                 | BACK button’s background            |
+| &lt;em&gt;ms_nextButtonBackground&lt;/em&gt;       | reference                                 | NEXT button’s background            |
+| &lt;em&gt;ms_completeButtonBackground&lt;/em&gt;   | reference                                 | COMPLETE button’s background            |
+| &lt;em&gt;ms_backButtonText&lt;/em&gt;             | string or reference                       | BACK button’s text            |
+| &lt;em&gt;ms_nextButtonText&lt;/em&gt;             | string or reference                       | NEXT button’s text            |
+| &lt;em&gt;ms_completeButtonText&lt;/em&gt;         | string or reference                       | COMPLETE button’s text            |
+| &lt;em&gt;ms_tabStepDividerWidth&lt;/em&gt;        | dimension or reference                    | The width of the horizontal tab divider used in tabs stepper type            |
+| &lt;em&gt;ms_showBackButtonOnFirstStep&lt;/em&gt;  | boolean                                   | Flag indicating if the Back (Previous step) button should be shown on the first step. False by default.            |
+| &lt;em&gt;ms_errorColor&lt;/em&gt;                 | color or reference                        | Error color in Tabs stepper |
+| &lt;em&gt;ms_showErrorState&lt;/em&gt;             | boolean                                   | Flag indicating whether to show the error state. Only available with ‘tabs’ type. False by default. |
+| &lt;em&gt;ms_showErrorStateOnBack&lt;/em&gt;       | boolean                                   | Flag indicating whether to keep showing the error state when user moves back. Only available with ‘tabs’ type. False by default. |
+| &lt;em&gt;ms_stepperLayoutTheme&lt;/em&gt;         | reference                                 | Theme to use for even more custom styling of the stepper layout. It is recommended that it should extend @style/MSDefaultStepperLayoutTheme, which is the default theme used. |&lt;/p&gt;
+
+&lt;h3 id=&quot;stepperlayout-style-attributes&quot;&gt;StepperLayout style attributes&lt;/h3&gt;
+&lt;p&gt;A list of &lt;code class=&quot;highlighter-rouge&quot;&gt;ms_stepperLayoutTheme&lt;/code&gt; attributes responsible for styling of StepperLayout’s child views.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Attribute name&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;em&gt;ms_bottomNavigationStyle&lt;/em&gt;&lt;/td&gt;
+      &lt;td&gt;Used by ms_bottomNavigation in layout/ms_stepper_layout&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;em&gt;ms_tabsContainerStyle&lt;/em&gt;&lt;/td&gt;
+      &lt;td&gt;Used by ms_stepTabsContainer in layout/ms_stepper_layout&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;em&gt;ms_backNavigationButtonStyle&lt;/em&gt;&lt;/td&gt;
+      &lt;td&gt;Used by ms_stepPrevButton in layout/ms_stepper_layout&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;em&gt;ms_nextNavigationButtonStyle&lt;/em&gt;&lt;/td&gt;
+      &lt;td&gt;Used by ms_stepNextButton in layout/ms_stepper_layout&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;em&gt;ms_completeNavigationButtonStyle&lt;/em&gt;&lt;/td&gt;
+      &lt;td&gt;Used by ms_stepCompleteButton in layout/ms_stepper_layout&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;em&gt;ms_colorableProgressBarStyle&lt;/em&gt;&lt;/td&gt;
+      &lt;td&gt;Used by ms_stepProgressBar in layout/ms_stepper_layout&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;em&gt;ms_stepTabsScrollViewStyle&lt;/em&gt;&lt;/td&gt;
+      &lt;td&gt;Used by ms_stepTabsScrollView in layout/ms_tabs_container&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;em&gt;ms_stepTabsInnerContainerStyle&lt;/em&gt;&lt;/td&gt;
+      &lt;td&gt;Used by ms_stepTabsInnerContainer in layout/ms_tabs_container&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;em&gt;ms_stepTabContainerStyle&lt;/em&gt;&lt;/td&gt;
+      &lt;td&gt;Used in layout/ms_step_tab_container&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;em&gt;ms_stepTabNumberStyle&lt;/em&gt;&lt;/td&gt;
+      &lt;td&gt;Used by ms_stepNumber in layout/ms_step_tab&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;em&gt;ms_stepTabDoneIndicatorStyle&lt;/em&gt;&lt;/td&gt;
+      &lt;td&gt;Used by ms_stepDoneIndicator in layout/ms_step_tab&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;em&gt;ms_stepTabErrorIndicatorStyle&lt;/em&gt;&lt;/td&gt;
+      &lt;td&gt;Used by ms_stepErrorIndicator in layout/ms_step_tab&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;em&gt;ms_stepTabTitleStyle&lt;/em&gt;&lt;/td&gt;
+      &lt;td&gt;Used by ms_stepTitle in layout/ms_step_tab&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;em&gt;ms_stepTabDividerStyle&lt;/em&gt;&lt;/td&gt;
+      &lt;td&gt;Used by ms_stepDivider in layout/ms_step_tab&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;missing-features&quot;&gt;Missing features&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;support for non-linear steppers&lt;/li&gt;
+  &lt;li&gt;support for non-editable steppers&lt;/li&gt;
+  &lt;li&gt;support for Alternative labels in the horizontal stepper&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
+&lt;p&gt;Copyright 2016 StepStone Services&lt;/p&gt;
+
+&lt;p&gt;Licensed under the Apache License, Version 2.0 (the “License”);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at&lt;/p&gt;
+
+&lt;p&gt;    &lt;a href=&quot;http://www.apache.org/licenses/LICENSE-2.0&quot;&gt;http://www.apache.org/licenses/LICENSE-2.0&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an “AS IS” BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.&lt;/p&gt;
+
+&lt;h2 id=&quot;maintained-by&quot;&gt;Maintained by&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.stepstone.com&quot;&gt;&lt;img src=&quot;./art/stepstone-logo.png&quot; alt=&quot;Stepstone&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 19 Feb 2017 00:00:00 +0900</pubDate>
+        <link>http://kmshack.github.io/AndroidUICollection/2017/02/19/android-material-stepper/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/02/19/android-material-stepper/</guid>
+        
+        <category>material</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>SlidingSquaresLoader</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://jitpack.io/#biodunalfet/SlidingSquaresLoader&quot;&gt;[](https://jitpack.io/v/biodunalfet/SlidingSquaresLoader.svg)&lt;/a&gt;
+# SlidingSquaresLoader&lt;/p&gt;
+
+&lt;p&gt;Sliding Square Loader - A simple progress loader inspired by &lt;a href=&quot;https://stories.uplabs.com/can-you-code-this-ui-volume-6-7bd09fa6dd92#.nyh2zhpvb&quot;&gt;Can you Code this UI? Volume 6&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://media.giphy.com/media/l0ExrZuZO2ihDzAfm/giphy.gif&quot;&gt;sslv animation&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;gradle&quot;&gt;Gradle&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 1.&lt;/strong&gt; Add the JitPack repository to your build file&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;allprojects&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;repositories&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;maven&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;https://jitpack.io&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 2.&lt;/strong&gt; Add the dependency&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;com.github.biodunalfet:SlidingSquaresLoader:1.0&quot;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;In XML Layout&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.hamza.slidingsquaresloader.SlidingSquareLoaderView&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;app:sslv_start=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;app:sslv_delay=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;15&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;app:sslv_duration=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;150&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;app:sslv_gap=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;2dp&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;app:sslv_square_length=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;12dp&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;app:sslv_color=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/colorPrimary&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;xmlns:app=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res-auto&quot;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sslv_start&lt;/code&gt; = &lt;code class=&quot;highlighter-rouge&quot;&gt;boolean&lt;/code&gt; that determines if the loader should start sliding. Default value is &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sslv_duration&lt;/code&gt; = the amount of milliseconds it takes for a square to complete sliding. Default value is &lt;code class=&quot;highlighter-rouge&quot;&gt;350&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sslv_delay&lt;/code&gt; = the number of milliseconds to wait before sliding. Default value is &lt;code class=&quot;highlighter-rouge&quot;&gt;25&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sslv_square_length&lt;/code&gt; = the dimension of each square. Default value is &lt;code class=&quot;highlighter-rouge&quot;&gt;25dp&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sslv_gap&lt;/code&gt; = the dimension of the gap between each square. Default value is &lt;code class=&quot;highlighter-rouge&quot;&gt;5dp&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sslv_color&lt;/code&gt; = the &lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt; of the square. Defaults to &lt;code class=&quot;highlighter-rouge&quot;&gt;#ff8f00&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;In Java&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;SlidingSquareLoaderView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;slidingview2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SlidingSquareLoaderView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;sliding_view2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;slidingview&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// starts the sliding&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;slidingview&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;// stops the sliding&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;slidingview&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setDuration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xxx&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;// sets duration of sliding&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;slidingview&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setDelay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xxx&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// sets delay period before sliding&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;slidingview&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;parseColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#2196F3&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// sets the color of the squares&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
+&lt;p&gt;The contents of this repository are covered under the &lt;a href=&quot;https://github.com/biodunalfet/SlidingSquareLoader/blob/master/LICENSE&quot;&gt;MIT License&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 19 Feb 2017 00:00:00 +0900</pubDate>
+        <link>http://kmshack.github.io/AndroidUICollection/2017/02/19/SlidingSquaresLoader/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/02/19/SlidingSquaresLoader/</guid>
+        
+        <category>sliding</category>
+        
+        <category>square</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Toasty</title>
+        <description>&lt;h1 id=&quot;toasty&quot;&gt;Toasty&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://android-arsenal.com/api?level=9&quot;&gt;[API](https://img.shields.io/badge/API-9%2B-blue.svg?style=flat)&lt;/a&gt; &lt;a href=&quot;https://jitpack.io/#GrenderG/Toasty&quot;&gt;[](https://jitpack.io/v/GrenderG/Toasty.svg)&lt;/a&gt; &lt;a href=&quot;https://android-arsenal.com/details/1/5102&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Toasty-brightgreen.svg?style=flat)&lt;/a&gt; &lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;amp;hosted_button_id=XUUEWEHJYFYV2&quot;&gt;[Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)&lt;/a&gt;&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+	&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/web_hi_res_512.png&quot; width=&quot;128&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The usual Toast, but with steroids. &lt;strong&gt;(Screenshots at the end of the file.)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Add this in your root &lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt; file (&lt;strong&gt;not&lt;/strong&gt; your module &lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt; file):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-gradle&quot;&gt;allprojects {
+	repositories {
+		...
+		maven { url &quot;https://jitpack.io&quot; }
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;dependency&quot;&gt;Dependency&lt;/h2&gt;
+
+&lt;p&gt;Add this to your module’s &lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt; file (make sure the version matches the JitPack badge above):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-gradle&quot;&gt;dependencies {
+	...
+	compile &#39;com.github.GrenderG:Toasty:1.1.3&#39;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+
+&lt;p&gt;Each method always returns a &lt;code class=&quot;highlighter-rouge&quot;&gt;Toast&lt;/code&gt; object, so you can customize the Toast much more. &lt;strong&gt;DON’T FORGET THE &lt;code class=&quot;highlighter-rouge&quot;&gt;show()&lt;/code&gt; METHOD&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;To display an error Toast:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Toasty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yourContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;This is an error toast.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LENGTH_SHORT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;To display a success Toast:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Toasty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yourContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Success&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LENGTH_SHORT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;To display an info Toast:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Toasty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yourContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Here is some info for you.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LENGTH_SHORT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;To display a warning Toast:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Toasty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;warning&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yourContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Beware of the dog.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LENGTH_SHORT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;To display the usual Toast:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Toasty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;normal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yourContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Normal toast w/o icon&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;To display the usual Toast with icon:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Toasty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;normal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yourContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Normal toast w/ icon&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;yourIconDrawable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;You can also create your custom Toasts with the &lt;code class=&quot;highlighter-rouge&quot;&gt;custom()&lt;/code&gt; method:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+Toasty.custom(yourContext, &quot;I&#39;m a custom Toast&quot;, yourIconDrawable, textColor, tintColor, duration, withIcon, true).show();
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;There are variants of each method, feel free to explore this library.&lt;/p&gt;
+
+&lt;h2 id=&quot;apps-using-toasty&quot;&gt;Apps using Toasty&lt;/h2&gt;
+
+&lt;p&gt;Want to be here? Open an &lt;code class=&quot;highlighter-rouge&quot;&gt;issue&lt;/code&gt; or make a &lt;code class=&quot;highlighter-rouge&quot;&gt;pull request&lt;/code&gt;.&lt;/p&gt;
+
+&lt;table&gt;
+	&lt;tr&gt;
+	&lt;td&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/vmch41lYF_TKb1MKgtYrSgz2rKQ4T1EnGRCGpWSMqLRSzi_pgNWoZpw9WJE8UV4t614=w300-rw&quot; width=&quot;64&quot; /&gt;&lt;/td&gt;
+	&lt;td&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.trivisionzero.chromophoto&quot;&gt;ChromoPhoto - Colorize B&amp;amp;W&lt;/a&gt;&lt;/td&gt;
+
+
+Screenshots
+--
+
+&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr1.png&quot; width=&quot;250&quot; /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr2.png&quot; width=&quot;250&quot; /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr3.png&quot; width=&quot;250&quot; /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr4.png&quot; width=&quot;250&quot; /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr5.png&quot; width=&quot;250&quot; /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr6.png&quot; width=&quot;250&quot; /&gt;
+
+&lt;/tr&gt;&lt;/table&gt;
+</description>
+        <pubDate>Sat, 18 Feb 2017 00:00:00 +0900</pubDate>
+        <link>http://kmshack.github.io/AndroidUICollection/2017/02/18/Toasty/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/02/18/Toasty/</guid>
+        
+        <category>toast</category>
+        
+        
+      </item>
     
       <item>
         <title>SwitchIcon</title>
@@ -405,7 +1200,7 @@ limitations under the License.
       <item>
         <title>EasyFlipView</title>
         <description>&lt;h1 id=&quot;easyflipview&quot;&gt;EasyFlipView&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;https://bintray.com/wajahatkarim3/EasyFlipView/com.wajahatkarim3.EasyFlipView/_latestVersion&quot;&gt; [Download](https://api.bintray.com/packages/wajahatkarim3/EasyFlipView/com.wajahatkarim3.EasyFlipView/images/download.svg) &lt;/a&gt; &lt;a href=&quot;https://android-arsenal.com/details/1/5051&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-EasyFlipView-brightgreen.svg?style=flat)&lt;/a&gt; &lt;a href=&quot;https://android-arsenal.com/api?level=15&quot;&gt;[API](https://img.shields.io/badge/API-15%2B-blue.svg?style=flat)&lt;/a&gt; &lt;a href=&quot;https://material.uplabs.com/posts/easyflipview&quot;&gt;[API](https://img.shields.io/badge/MaterialUp-EasyFlipView-yellowgreen.svg)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://travis-ci.org/wajahatkarim3/EasyFlipView&quot;&gt;[Build Status](https://travis-ci.org/wajahatkarim3/EasyFlipView.svg?branch=master)&lt;/a&gt; &lt;a href=&quot;https://bintray.com/wajahatkarim3/EasyFlipView/com.wajahatkarim3.EasyFlipView/_latestVersion&quot;&gt; [Download](https://api.bintray.com/packages/wajahatkarim3/EasyFlipView/com.wajahatkarim3.EasyFlipView/images/download.svg) &lt;/a&gt; &lt;a href=&quot;https://android-arsenal.com/details/1/5051&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-EasyFlipView-brightgreen.svg?style=flat)&lt;/a&gt; &lt;a href=&quot;https://android-arsenal.com/api?level=15&quot;&gt;[API](https://img.shields.io/badge/API-15%2B-blue.svg?style=flat)&lt;/a&gt; &lt;a href=&quot;https://material.uplabs.com/posts/easyflipview&quot;&gt;[](https://img.shields.io/badge/MaterialUp-EasyFlipView-yellowgreen.png)&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;A quick and easy flip view through which you can create views with two sides like credit cards, poker cards etc.&lt;/p&gt;
 
@@ -421,7 +1216,7 @@ limitations under the License.
 &lt;p&gt;Add this in your app’s build.gradle file:
 &lt;code class=&quot;highlighter-rouge&quot;&gt;groovy
 dependencies {
-  compile &#39;com.wajahatkarim3.EasyFlipView:EasyFlipView:1.0.1&#39;
+  compile &#39;com.wajahatkarim3.EasyFlipView:EasyFlipView:1.0.2&#39;
 }
 &lt;/code&gt;&lt;/p&gt;
 
@@ -430,7 +1225,7 @@ dependencies {
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt; 
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;com.wajahatkarim3.EasyFlipView&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;EasyFlipView&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt; 
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.0.1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt; 
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.0.2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt; 
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;type&amp;gt;&lt;/span&gt;pom&lt;span class=&quot;nt&quot;&gt;&amp;lt;/type&amp;gt;&lt;/span&gt; 
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
@@ -542,7 +1337,8 @@ limitations under the License.
         <title>Text Decorator</title>
         <description>&lt;h1 id=&quot;text-decorator&quot;&gt;Text Decorator&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;https://travis-ci.org/nntuyen/text-decorator&quot;&gt;[Build Status](https://travis-ci.org/nntuyen/text-decorator.svg?branch=master)&lt;/a&gt;
-&lt;a href=&quot;http://android-arsenal.com/details/1/4982&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Text%20Decorator-brightgreen.svg?style=flat)&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;http://android-arsenal.com/details/1/4982&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Text%20Decorator-brightgreen.svg?style=flat)&lt;/a&gt;
+&lt;a href=&quot;http://www.android-gems.com/lib/nntuyen/text-decorator&quot;&gt;[Android Gems](http://www.android-gems.com/badge/nntuyen/text-decorator.svg?branch=master)&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Decorate your TextView easily&lt;/p&gt;
 
@@ -738,6 +1534,8 @@ limitations under the License.
 
 &lt;p&gt;Design inspired by Phonograph.&lt;/p&gt;
 
+&lt;p&gt;If you use this library in your app, please let me know and I’ll add it to the list.&lt;/p&gt;
+
 &lt;h2 id=&quot;demo&quot;&gt;Demo&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.danielstone.materialaboutlibrarydemo&amp;amp;pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1&quot;&gt;&lt;img alt=&quot;Get it on Google Play&quot; src=&quot;https://play.google.com/intl/en_gb/badges/images/generic/en_badge_web_generic.png&quot; height=&quot;60&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -785,7 +1583,7 @@ allprojects {
 &lt;/code&gt;
 &lt;code class=&quot;highlighter-rouge&quot;&gt;gradle
 dependencies {
-    compile &#39;com.github.daniel-stoneuk:material-about-library:1.4.2&#39;
+	  compile &#39;com.github.daniel-stoneuk:material-about-library:1.7.1&#39;
 }
 &lt;/code&gt;&lt;/p&gt;
 
@@ -813,23 +1611,33 @@ protected CharSequence getActivityTitle() {
 &lt;p&gt;}
 ```&lt;/p&gt;
 
-&lt;p&gt;Ensure that the theme extends ‘Theme.Mal’, and apply primary &amp;amp; accent colours.
-&lt;code class=&quot;highlighter-rouge&quot;&gt;xml
-&amp;lt;manifest ...&amp;gt;
-    &amp;lt;application ...&amp;gt;
-        &amp;lt;activity android:name=&quot;.ExampleMaterialAboutActivity&quot;
-            android:theme=&quot;@style/AppTheme.MaterialAboutActivity&quot;/&amp;gt;
-    &amp;lt;/application&amp;gt;
-&amp;lt;/manifest&amp;gt;
-&lt;/code&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;xml
-    &amp;lt;style name=&quot;AppTheme.MaterialAboutActivity&quot; parent=&quot;Theme.Mal&quot; &amp;gt;
-        &amp;lt;-- Customize your theme here. --&amp;gt;
-        &amp;lt;item name=&quot;colorPrimary&quot;&amp;gt;@color/colorPrimary&amp;lt;/item&amp;gt;
-        &amp;lt;item name=&quot;colorPrimaryDark&quot;&amp;gt;@color/colorPrimaryDark&amp;lt;/item&amp;gt;
-        &amp;lt;item name=&quot;colorAccent&quot;&amp;gt;@color/colorAccent&amp;lt;/item&amp;gt;
-    &amp;lt;/style&amp;gt;
-&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Ensure that the theme extends either of these themes, and apply primary &amp;amp; accent colours:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Theme.Mal.Light.DarkActionBar&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Theme.Mal.Light.LightActionBar&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Theme.Mal.Dark.LightActionBar&lt;/li&gt;
+  &lt;li&gt;Theme.Mal.Dark.DarkActionBar&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;manifest&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;application&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;activity&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;android:name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;.ExampleMaterialAboutActivity&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;android:theme=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@style/AppTheme.MaterialAboutActivity&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/application&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/manifest&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;lt;style&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;AppTheme.MaterialAboutActivity&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;parent=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Theme.Mal.Light.DarkActionBar&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;--&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;Customize&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;your&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;theme&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;here.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;item&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;colorPrimary&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;@color/colorPrimary&lt;span class=&quot;nt&quot;&gt;&amp;lt;/item&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;item&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;colorPrimaryDark&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;@color/colorPrimaryDark&lt;span class=&quot;nt&quot;&gt;&amp;lt;/item&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;item&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;colorAccent&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;@color/colorAccent&lt;span class=&quot;nt&quot;&gt;&amp;lt;/item&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;h3 id=&quot;fragment&quot;&gt;Fragment&lt;/h3&gt;
 
@@ -911,6 +1719,14 @@ Create a &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-libra
   &lt;li&gt;Rainer Lang (&lt;a href=&quot;https://github.com/rainer-lang&quot;&gt;@Rainer-Lang&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h2 id=&quot;apps-using-this-library&quot;&gt;Apps using this library&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.danielstone.energyhive&quot;&gt;Monitor for EnergyHive &amp;amp; Engage&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=biemann.android.craftingnms&quot;&gt;Crafting Assistant NMS&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=cz.kutner.comicsdbclient.comicsdbclient&quot;&gt;ComicsDB Client&lt;/a&gt;, code available on &lt;a href=&quot;https://github.com/tukak/comicsdbclient&quot;&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/eggheadgames/android-about-box&quot;&gt;Android About Box&lt;/a&gt; (library) - an opinionated About Box for Android&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2016 Daniel Stone
@@ -937,513 +1753,6 @@ limitations under the License.
         <category>material</category>
         
         <category>about</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Android ExpandIcon</title>
-        <description>&lt;h1 id=&quot;android-expandicon&quot;&gt;Android-ExpandIcon&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://android-arsenal.com/details/1/4966&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Android–ExpandIcon-brightgreen.svg?style=flat)&lt;/a&gt;
-&lt;a href=&quot;https://jitpack.io/#zagum/Android-ExpandIcon&quot;&gt;[JitPack](https://jitpack.io/v/zagum/Android-ExpandIcon.svg)&lt;/a&gt;
-&lt;a href=&quot;https://android-arsenal.com/api?level=15&quot;&gt;[API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Nice and simple customizable implementation of Google style up/down arrow.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/zagum/Android-ExpandIcon/blob/master/art/expand_icon_demo.gif&quot;&gt;image&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Another nice example of using this library: &lt;a href=&quot;https://github.com/hearsilent/PixelSlide&quot;&gt;Pixel Slide by hearsilent&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;compatibility&quot;&gt;Compatibility&lt;/h2&gt;
-
-&lt;p&gt;This library is compatible from API 15 (Android 4.0.3).&lt;/p&gt;
-
-&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
-
-&lt;p&gt;Add it in your root build.gradle at the end of repositories:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;allprojects&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;repositories&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;maven&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://jitpack.io&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Add the dependency&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;com.github.zagum:Android-ExpandIcon:1.1.1&#39;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-
-&lt;p&gt;Default implementation:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;lt;com.github.zagum.expandicon.ExpandIconView&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;24dp&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;24dp&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Fully customized implementation:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;lt;com.github.zagum.expandicon.ExpandIconView&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;48dp&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;48dp&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_gravity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;center_horizontal&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_marginTop=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;56dp&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:eiv_animationDuration=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;300&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:eiv_color=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#000&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:eiv_colorLess=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#f00&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:eiv_colorMore=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#00f&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:eiv_roundedCorners=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:eiv_switchColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:eiv_padding=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;8dp&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Public methods:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;n&quot;&gt;expandIconView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;switchState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-    
-    &lt;span class=&quot;n&quot;&gt;expandIconView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ExpandIconView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LESS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    
-    &lt;span class=&quot;n&quot;&gt;expandIconView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setFraction&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;See &lt;a href=&quot;https://github.com/zagum/Android-ExpandIcon/tree/master/expandicon-sample&quot;&gt;sample&lt;/a&gt; project for more information.&lt;/p&gt;
-
-&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2016 Evgenii Zagumennyi
-
-Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Mon, 02 Jan 2017 00:00:00 +0900</pubDate>
-        <link>http://kmshack.github.io/AndroidUICollection/2017/01/02/AndroidExpandIcon/</link>
-        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/01/02/AndroidExpandIcon/</guid>
-        
-        <category>icon</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>stencil</title>
-        <description>&lt;p&gt;&lt;a href=&quot;https://images.thoughtbot.com/blog-vellum-image-uploads/skrXLjMFRIC7uM9ukaF1_stencil-logo.png&quot;&gt;stencil logo&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;stencil&quot;&gt;stencil&lt;/h2&gt;
-&lt;p&gt;Android library, written exclusively in &lt;a href=&quot;https://kotlinlang.org/&quot;&gt;Kotlin&lt;/a&gt;, for animating the path created from text&lt;/p&gt;
-
-&lt;p&gt;&amp;lt;img src=”https://images.thoughtbot.com/blog-vellum-image-uploads/jZpvwqUR8muyhDIT5SSu_stencil.gif” width=300/&amp;gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Step 1. Add the JitPack repository to your root &lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt; file&lt;/strong&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;groovy
-allprojects {
-  repositories {
-    ...
-    maven { url &#39;https://jitpack.io&#39; }
-  }
-}
-&lt;/code&gt;
-&lt;strong&gt;Step 2. Add the dependency to your app’s &lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt; file&lt;/strong&gt;
-```groovy&lt;/p&gt;
-
-&lt;p&gt;dependencies {
-  compile ‘com.github.thoughtbot:stencil:1.0’
-}
-```&lt;/p&gt;
-
-&lt;h2 id=&quot;contributing&quot;&gt;Contributing&lt;/h2&gt;
-
-&lt;p&gt;See the &lt;a href=&quot;CONTRIBUTING.md&quot;&gt;CONTRIBUTING&lt;/a&gt; document. Thank you, &lt;a href=&quot;https://github.com/thoughtbot/stencil/graphs/contributors&quot;&gt;contributors&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
-
-&lt;p&gt;stencil is Copyright (c) 2016 thoughtbot, inc. It is free software, and may be redistributed under the terms specified in the &lt;a href=&quot;/LICENSE&quot;&gt;LICENSE&lt;/a&gt; file.&lt;/p&gt;
-
-&lt;h2 id=&quot;about&quot;&gt;About&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://thoughtbot.com/logo.png&quot;&gt;thoughtbot&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;stencil is maintained and funded by thoughtbot, inc. The names and logos for thoughtbot are trademarks of thoughtbot, inc.&lt;/p&gt;
-
-&lt;p&gt;We love open source software See &lt;a href=&quot;https://thoughtbot.com/tools?utm_source=github&quot;&gt;our other projects&lt;/a&gt; or &lt;a href=&quot;https://thoughtbot.com/hire-us?utm_source=github&quot;&gt;hire us&lt;/a&gt; to help build your product.&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 22 Dec 2016 00:00:00 +0900</pubDate>
-        <link>http://kmshack.github.io/AndroidUICollection/2016/12/22/stencil/</link>
-        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2016/12/22/stencil/</guid>
-        
-        <category>stencil</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>FolioReader</title>
-        <description>&lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/FolioReader/FolioReaderKit/assets/folioreader.png&quot;&gt;FolioReader logo&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://travis-ci.org/FolioReader/FolioReader-Android&quot;&gt;[Build Status](https://api.travis-ci.org/FolioReader/FolioReader-Android.svg?branch=master)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;FolioReader-Android is an ePub reader and parser framework written in Java.&lt;/p&gt;
-
-&lt;h3 id=&quot;features&quot;&gt;Features&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;[x] Custom Fonts&lt;/li&gt;
-  &lt;li&gt;[x] Custom Text Size&lt;/li&gt;
-  &lt;li&gt;[x] Themes / Day mode / Night mode&lt;/li&gt;
-  &lt;li&gt;[x] Text Highlighting&lt;/li&gt;
-  &lt;li&gt;[x] List / Edit / Delete Highlights&lt;/li&gt;
-  &lt;li&gt;[x] Handle Internal and External Links&lt;/li&gt;
-  &lt;li&gt;[x] Portrait / Landscape&lt;/li&gt;
-  &lt;li&gt;[x] Reading Time Left / Pages left&lt;/li&gt;
-  &lt;li&gt;[ ] In-App Dictionary&lt;/li&gt;
-  &lt;li&gt;[x] Media Overlays (Sync text rendering with audio playback)&lt;/li&gt;
-  &lt;li&gt;[x] TTS - Text to Speech Support&lt;/li&gt;
-  &lt;li&gt;[ ] Parse epub cover image&lt;/li&gt;
-  &lt;li&gt;[ ] PDF support&lt;/li&gt;
-  &lt;li&gt;[ ] Book Search&lt;/li&gt;
-  &lt;li&gt;[x] Add Notes to a Highlight&lt;/li&gt;
-  &lt;li&gt;[ ] Better Documentation&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;demo&quot;&gt;Demo&lt;/h2&gt;
-&lt;p&gt;##### Custom Fonts
-&lt;a href=&quot;https://cloud.githubusercontent.com/assets/1277242/19012915/0661c7b2-87e0-11e6-81d6-8c71051e1074.gif&quot;&gt;Custom fonts&lt;/a&gt;
-##### Day and Night Mode
-&lt;a href=&quot;https://cloud.githubusercontent.com/assets/1277242/19012914/f42059c4-87df-11e6-97f8-29e61a79e8aa.gif&quot;&gt;Day night mode&lt;/a&gt;
-##### Text Highlighting 
-&lt;a href=&quot;https://cloud.githubusercontent.com/assets/1277242/19012904/c2700c3a-87df-11e6-97ed-507765b3ddf0.gif&quot;&gt;Highlight&lt;/a&gt;
-##### Media Overlays 
-&lt;a href=&quot;https://cloud.githubusercontent.com/assets/1277242/19012908/d61f3ce2-87df-11e6-8652-d72b6a1ad9a3.gif&quot;&gt;Media Overlay&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;gradle&quot;&gt;Gradle&lt;/h3&gt;
-&lt;p&gt;Add following dependency to your app build.gradle
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-compile &#39;com.folioreader:folioreader:0.2.5&#39;
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;usage&quot;&gt;Usage&lt;/h3&gt;
-
-&lt;p&gt;To use FolioReader, you need to call FolioReaderActivity with following parameters:
-1. INTENT_EPUB_SOURCE_TYPE - your epub can come from raw or assets folder or from SD card. Use enum FolioActivity.EpubSourceType.
-2. INTENT_EPUB_SOURCE_PATH - assets/SD card path of the epub file or raw ID of epub file if epub file is in raw folder&lt;/p&gt;
-
-&lt;p&gt;Reading from assets folder
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-Intent intent = new Intent(HomeActivity.this, FolioActivity.class);
-intent.putExtra(FolioActivity.INTENT_EPUB_SOURCE_TYPE, FolioActivity.EpubSourceType.ASSESTS);
-intent.putExtra(FolioActivity.INTENT_EPUB_SOURCE_PATH, &quot;epub/The Silver Chair.epub&quot;);
-startActivity(intent);
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Reading from raw folder of resources
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-Intent intent = new Intent(HomeActivity.this, FolioActivity.class);
-intent.putExtra(FolioActivity.INTENT_EPUB_SOURCE_TYPE, FolioActivity.EpubSourceType.RAW);
-intent.putExtra(FolioActivity.INTENT_EPUB_SOURCE_PATH, R.raw.adventures);
-startActivity(intent);
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;For reading from SD card, just retrieve absolute path of epub file and pass that in INTENT_EPUB_SOURCE_PATH.&lt;/p&gt;
-
-&lt;h3 id=&quot;credits&quot;&gt;Credits&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/daimajia/AndroidSwipeLayout&quot;&gt;SwipeLayout&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://ormlite.com/&quot;&gt;ORMLite&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/julianharty/new-android-daisy-reader&quot;&gt;SMIL parsing&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;author&quot;&gt;Author&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/hebertialmeida&quot;&gt;&lt;strong&gt;Heberti Almeida&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Follow me on &lt;strong&gt;Twitter&lt;/strong&gt;: &lt;a href=&quot;https://twitter.com/hebertialmeida&quot;&gt;&lt;strong&gt;@hebertialmeida&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Contact me on &lt;strong&gt;LinkedIn&lt;/strong&gt;: &lt;a href=&quot;http://linkedin.com/in/hebertialmeida&quot;&gt;&lt;strong&gt;hebertialmeida&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/mahavir155&quot;&gt;&lt;strong&gt;Mahavir Jain&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Follow me on &lt;strong&gt;Twitter&lt;/strong&gt;: &lt;a href=&quot;https://twitter.com/mahavir155&quot;&gt;&lt;strong&gt;@mahavir155&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Contact me on &lt;strong&gt;LinkedIn&lt;/strong&gt;: &lt;a href=&quot;http://linkedin.com/in/mahavir155&quot;&gt;&lt;strong&gt;mahavir155&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;donations&quot;&gt;Donations&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;This project needs you&lt;/strong&gt; If you would like to support this project’s further development, the creator of this project or the continuous maintenance of this project, &lt;strong&gt;feel free to donate&lt;/strong&gt;. Your donation is highly appreciated. Thank you&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;PayPal&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;[&lt;strong&gt;Donate 5 $&lt;/strong&gt;] (https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;amp;business=hebertialmeida%40gmail%2ecom&amp;amp;lc=US&amp;amp;item_name=FolioReader%20Libraries&amp;amp;amount=5%2e00&amp;amp;currency_code=USD&amp;amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted): Thank’s for creating this project, here’s a tea (or some juice) for you&lt;/li&gt;
-  &lt;li&gt;[&lt;strong&gt;Donate 10 $&lt;/strong&gt;] (https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;amp;business=hebertialmeida%40gmail%2ecom&amp;amp;lc=US&amp;amp;item_name=FolioReader%20Libraries&amp;amp;amount=10%2e00&amp;amp;currency_code=USD&amp;amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted): Wow, I am stunned. Let me take you to the movies&lt;/li&gt;
-  &lt;li&gt;[&lt;strong&gt;Donate 15 $&lt;/strong&gt;] (https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;amp;business=hebertialmeida%40gmail%2ecom&amp;amp;lc=US&amp;amp;item_name=FolioReader%20Libraries&amp;amp;amount=15%2e00&amp;amp;currency_code=USD&amp;amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted): I really appreciate your work, let’s grab some lunch&lt;/li&gt;
-  &lt;li&gt;[&lt;strong&gt;Donate 25 $&lt;/strong&gt;] (https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;amp;business=hebertialmeida%40gmail%2ecom&amp;amp;lc=US&amp;amp;item_name=FolioReader%20Libraries&amp;amp;amount=25%2e00&amp;amp;currency_code=USD&amp;amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted): That’s some awesome stuff you did right there, dinner is on me&lt;/li&gt;
-  &lt;li&gt;[&lt;strong&gt;Donate 50 $&lt;/strong&gt;] (https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;amp;business=hebertialmeida%40gmail%2ecom&amp;amp;lc=US&amp;amp;item_name=FolioReader%20Libraries&amp;amp;amount=50%2e00&amp;amp;currency_code=USD&amp;amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted): I really really want to support this project, great job&lt;/li&gt;
-  &lt;li&gt;[&lt;strong&gt;Donate 100 $&lt;/strong&gt;] (https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;amp;business=hebertialmeida%40gmail%2ecom&amp;amp;lc=US&amp;amp;item_name=FolioReader%20Libraries&amp;amp;amount=100%2e00&amp;amp;currency_code=USD&amp;amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted): You are the man This project saved me hours (if not days) of struggle and hard work, simply awesome&lt;/li&gt;
-  &lt;li&gt;Of course, you can also &lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;amp;business=hebertialmeida%40gmail%2ecom&amp;amp;lc=US&amp;amp;item_name=FolioReader%20Libraries&amp;amp;currency_code=USD&amp;amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted&quot;&gt;&lt;strong&gt;choose what you want to donate&lt;/strong&gt;&lt;/a&gt;, all donations are awesome&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
-&lt;p&gt;FolioReaderKit is available under the BSD license. See the &lt;a href=&quot;https://github.com/FolioReader/FolioReader-Android/blob/master/License.md&quot;&gt;LICENSE&lt;/a&gt; file.&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 22 Dec 2016 00:00:00 +0900</pubDate>
-        <link>http://kmshack.github.io/AndroidUICollection/2016/12/22/FolioReader/</link>
-        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2016/12/22/FolioReader/</guid>
-        
-        <category>reader</category>
-        
-        <category>view</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>LongPressPopup</title>
-        <description>&lt;h1 id=&quot;longpresspopup&quot;&gt;LongPressPopup&lt;/h1&gt;
-
-&lt;p&gt;&lt;img src=&quot;sample.gif&quot; title=&quot;sample&quot; /&gt;
-&lt;br /&gt;
-You can try the demo app on google play store. &lt;br /&gt;
-https://play.google.com/store/apps/details?id=rm.com.longpresspopupsample &lt;br /&gt; &lt;br /&gt;
-Or see the full video demo on YouTube. &lt;br /&gt;
-https://youtu.be/oSETieldmyw &lt;br /&gt; &lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;A library that let you implement a behaviour similar to the Instagram’s &lt;br /&gt;
-long-press to show detail, with the option to put every kind of views inside it, &lt;br /&gt;
-(even web views, lists, pagers and so on) show tooltips on drag over &lt;br /&gt;
-and handle the release of the finger over Views &lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;[Changelog] (CHANGELOG.md)&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
-&lt;p&gt;####Gradle:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;groovy
-compile &#39;com.rm:longpresspopup:1.0.1&#39;
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;b&gt;Min SDK version: 10 (Android 2.3.3) &lt;/b&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;##Usage&lt;/p&gt;
-
-&lt;p&gt;####Basic
-Here’s a basic example &lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ActivityMain&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AppCompatActivity&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Bundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;setContentView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;activity_main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-            
-            &lt;span class=&quot;n&quot;&gt;Button&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;btn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Button&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;btn_popup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-            
-            &lt;span class=&quot;c1&quot;&gt;// Create a foo TextView&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;TextView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;textView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TextView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;textView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello, Foo&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-            
-            &lt;span class=&quot;n&quot;&gt;LongPressPopup&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;popup&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LongPressPopupBuilder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// A Context object for the builder constructor&lt;/span&gt;
-                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTarget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;btn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// The View which will open the popup if long pressed&lt;/span&gt;
-                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setPopupView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;textView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// The View to show when long pressed &lt;/span&gt;
-                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// This will give you a LongPressPopup object&lt;/span&gt;
-                    
-            &lt;span class=&quot;c1&quot;&gt;// You can also chain it to the .build() mehod call above without declaring the &quot;popup&quot; variable before &lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;popup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;register&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// From this moment, the touch events are registered and, if long pressed, will show the given view inside the popup, call unregister() to stop&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;sample_short.gif&quot; title=&quot;sample&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;####Advanced
-Here’s a complete example with all the options &lt;br /&gt;
-```java
-public class ActivityMain extends AppCompatActivity implements PopupInflaterListener,
-            PopupStateListener, PopupOnHoverListener, View.OnClickListener {&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;private static final String TAG = ActivityMain.class.getSimpleName();
- 
-private TextView mTxtPopup;   
-    
-@Override
-public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
-    
-    Button btn = (Button) findViewById(R.id.btn_popup);
-    
-    LongPressPopup popup = new LongPressPopupBuilder(this)
-                    .setTarget(btn)
-                    //.setPopupView(textView)// Not using this time
-                    .setPopupView(R.layout.popup_layout, this)
-                    .setLongPressDuration(750)
-                    .setDismissOnLongPressStop(false)
-                    .setDismissOnTouchOutside(false)
-                    .setDismissOnBackPressed(false)
-                    .setCancelTouchOnDragOutsideView(true)
-                    .setLongPressReleaseListener(this)
-                    .setOnHoverListener(this)
-                    .setPopupListener(this)
-                    .setTag(&quot;PopupFoo&quot;)
-                    .setAnimationType(LongPressPopup.ANIMATION_TYPE_FROM_CENTER)
-                    .build();
-            
-    // You can also chain it to the .build() mehod call above without declaring the &quot;popup&quot; variable before 
-    popup.register();
-}
-
-
-// Popup inflater listener
-@Override
-public void onViewInflated(@Nullable String popupTag, View root) {
-    mTxtPopup = (TextView) root.findViewById(R.id.txt_popup);
-}
-
-
-// Touch released on a View listener
-@Override
-public void onClick(View view) {
-    if (mTxtPopup = null &amp;amp;&amp;amp; view.getId() == mTxtPopup.getId()) {
-        Toast.makeText(ActivityMain.this, &quot;TextView Clicked&quot;, Toast.LENGTH_SHORT).show();
-    }
-}
-
-
-// PopupStateListener
-@Override
-public void onPopupShow(@Nullable String popupTag) {
-    if(mTxtPopup = null) {
-        mTxtPopup.setText(&quot;FooBar&quot;);
-    }
-}
-
-@Override
-public void onPopupDismiss(@Nullable String popupTag) {
-    Toast.makeText(this, &quot;Popup dismissed&quot;, Toast.LENGTH_SHORT).show();
-}
-
-
-// Hover state listener
-@Override
-public void onHoverChanged(View view, boolean isHovered) {
-    Log.e(TAG, &quot;Hover change: &quot; + isHovered + &quot; on View &quot; + view.getClass().getSimpleName());
-} } ``` &amp;lt;br /&amp;gt; &amp;lt;br /&amp;gt; And here are the functions you can use to customize the Popup and it&#39;s behaviour from the LongPressPopupBuilder class: &amp;lt;br /&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;public LongPressPopupBuilder setTarget(View target)&lt;/code&gt; &lt;b&gt;(null by default) &lt;/b&gt; &lt;br /&gt;
-  Select which view will show the popup view if long pressed &lt;br /&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;public LongPressPopupBuilder setPopupView(View popupView)&lt;/code&gt; &lt;b&gt;(null by default)&lt;/b&gt; &lt;br /&gt;
-  Select the view that will be shown inside the popup &lt;br /&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;public LongPressPopupBuilder setPopupView(@LayoutRes int popupViewRes, PopupInflaterListener inflaterListener)&lt;/code&gt; &lt;b&gt;(0, null by default)&lt;/b&gt; &lt;br /&gt;
-  Select the view that will be shown inside the popup, and give the popup that will be &lt;br /&gt;
-  called when the view is inflated (not necessarily when shown, so not load images and so on in this callback, &lt;br /&gt;
-  just take the views like in the OnCreate method of an Activity) &lt;br /&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;public LongPressPopupBuilder setLongPressDuration(@IntRange(from = 1) int duration)&lt;/code&gt; &lt;b&gt;(500 by default)&lt;/b&gt; &lt;br /&gt;
-  Pretty self explanatory right? **Captain here, the long press time needed to show the popup &lt;br /&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;public LongPressPopupBuilder setDismissOnLongPressStop(boolean dismissOnPressStop)&lt;/code&gt; &lt;b&gt;(true by default)&lt;/b&gt; &lt;br /&gt;
-  Set if the popup will be dismissed when the user releases the finger (if released on a View inside &lt;br /&gt;
-  the popup, the View’s or the given OnClickListener will be called) &lt;br /&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;public LongPressPopupBuilder setDismissOnTouchOutside(boolean dismissOnTouchOutside)&lt;/code&gt; &lt;b&gt;(true by default)&lt;/b&gt; &lt;br /&gt;
-  If &lt;code class=&quot;highlighter-rouge&quot;&gt;setDismissOnLongPressStop(boolean dismissOnPressStop)&lt;/code&gt; is set to false, you can choose to make &lt;br /&gt;
-  the popup dismiss or not if the user touch outside it with this boolean &lt;br /&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;public LongPressPopupBuilder setDismissOnBackPressed(boolean dismissOnBackPressed)&lt;/code&gt;  &lt;b&gt;(true by default)&lt;/b&gt; &lt;br /&gt;
-  If &lt;code class=&quot;highlighter-rouge&quot;&gt;setDismissOnLongPressStop(boolean dismissOnPressStop)&lt;/code&gt; is set to false, you can choose to make &lt;br /&gt;
-  the popup dismiss or not if the user press the back button &lt;br /&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;public LongPressPopupBuilder setCancelTouchOnDragOutsideView(boolean cancelOnDragOutside)&lt;/code&gt; &lt;b&gt;(true by default)&lt;/b&gt; &lt;br /&gt;
-  Set if the long press timer will stop or not if the user drag the finger outside the target View &lt;br /&gt;
-  (If the target View is inside a scrolling parent, when scrolling vertically the long press timer &lt;br /&gt;
-  will be automatically stopped &lt;br /&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;public LongPressPopupBuilder setLongPressReleaseListener(View.OnClickListener listener)&lt;/code&gt; &lt;b&gt;(null by default)&lt;/b&gt; &lt;br /&gt;
-  This is a standard OnClickListener, which will be called if the user release the finger on a view inside &lt;br /&gt;
-  the popup, you can use this method or set a standard OnClickListener on the View you want, it will be called &lt;br /&gt;
-  automatically for you &lt;br /&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;public LongPressPopupBuilder setOnHoverListener(PopupOnHoverListener listener)&lt;/code&gt; &lt;b&gt;(null by default)&lt;/b&gt; &lt;br /&gt;
-  This listener will be called every time the user keeps dragging it’s finger inside or outside the popup &lt;br /&gt;
-  views, with a View reference and a boolean with the hover state &lt;br /&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;public LongPressPopupBuilder setPopupListener(PopupStateListener popupListener)&lt;/code&gt; &lt;b&gt;(null by default)&lt;/b&gt; &lt;br /&gt;
-  This listener will be called when the popup is shown or dismissed, use this listener to load images or compile text views and so on &lt;br /&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;public LongPressPopupBuilder setTag(String tag)&lt;/code&gt; &lt;b&gt;(null by default)&lt;/b&gt; &lt;br /&gt;
-  This method sets a tag on the LongPressPopup, the given tag will be returned in all the listeners. You can also set it in the build(String tag) &lt;br /&gt; 
-  method &lt;br /&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;public LongPressPopupBuilder setAnimationType(@LongPressPopup.AnimationType int animationType)&lt;/code&gt; &lt;b&gt;(none by default)&lt;/b&gt; &lt;br /&gt;
-  This method set the opening and closing animation for the popup, can be none or from-to Bottom, Top, Right, Left, Center&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;Also, the LongPressPopup class gives some utility methods, like &lt;br /&gt; 
-* &lt;code class=&quot;highlighter-rouge&quot;&gt;public void register()&lt;/code&gt; &lt;br /&gt;
-    Which means that the popup is listening for touch events on the given view to show itself &lt;br /&gt; &lt;br /&gt;
-* &lt;code class=&quot;highlighter-rouge&quot;&gt;public void unregister()&lt;/code&gt; &lt;br /&gt;
-    Which makes to popup stop listening for touch events and dismiss itself if open  &lt;br /&gt; &lt;br /&gt;
-* &lt;code class=&quot;highlighter-rouge&quot;&gt;public void showNow()&lt;/code&gt; &lt;br /&gt;
-    Which shows immediately the popup
-* &lt;code class=&quot;highlighter-rouge&quot;&gt;public void dismissNow()&lt;/code&gt; &lt;br /&gt;
-    Which dismiss immediately the popup if open&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;####Known Bugs
-* This library do not work correctly with ListViews (Use RecyclerViews) &lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2017 Riccardo Moro.
-
-Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and 
-limitations under the License.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Mon, 21 Nov 2016 00:00:00 +0900</pubDate>
-        <link>http://kmshack.github.io/AndroidUICollection/2016/11/21/LongPressPopup/</link>
-        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2016/11/21/LongPressPopup/</guid>
-        
-        <category>popup</category>
-        
-        <category>3dtouch</category>
         
         
       </item>

@@ -401,6 +401,26 @@
                 
               
             
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -544,7 +564,8 @@
         <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
         <span class="na">android:layout_height=</span><span class="s">"250dp"</span>
         <span class="na">diagonal:diagonal_angle=</span><span class="s">"10"</span>
-        <span class="na">diagonal:diagonal_gravity=</span><span class="s">"left|right|top|bottom"</span>
+        <span class="na">diagonal:diagonal_position=</span><span class="s">"left / right / top / bottom"</span>
+        <span class="na">diagonal:diagonal_direction=</span><span class="s">"left / right"</span>
         <span class="na">android:elevation=</span><span class="s">"10dp"</span>
         <span class="nt">&gt;</span>
 
@@ -565,7 +586,8 @@
         <span class="na">android:layout_height=</span><span class="s">"250dp"</span>
         <span class="na">android:elevation=</span><span class="s">"10dp"</span>
         <span class="na">app:diagonal_angle=</span><span class="s">"20"</span>
-        <span class="na">app:diagonal_gravity=</span><span class="s">"right|bottom"</span><span class="nt">&gt;</span>
+        <span class="na">diagonal:diagonal_direction=</span><span class="s">"left"</span>
+        <span class="na">diagonal:diagonal_position=</span><span class="s">"bottom"</span><span class="nt">&gt;</span>
 
         <span class="nt">&lt;ImageView</span>
             <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
@@ -586,7 +608,8 @@
         <span class="na">android:layout_height=</span><span class="s">"250dp"</span>
         <span class="na">android:elevation=</span><span class="s">"10dp"</span>
         <span class="na">app:diagonal_angle=</span><span class="s">"20"</span>
-        <span class="na">app:diagonal_gravity=</span><span class="s">"right|top"</span><span class="nt">&gt;</span>
+        <span class="na">app:diagonal_position=</span><span class="s">"top"</span>
+        <span class="na">app:diagonal_direction=</span><span class="s">"right"</span><span class="nt">&gt;</span>
 
         <span class="nt">&lt;ImageView</span>
             <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
@@ -597,6 +620,10 @@
 <span class="nt">&lt;/com.github.florent37.diagonallayout.DiagonalLayout&gt;</span>
 </code></pre>
 </div>
+
+<h1 id="position--direction">Position / Direction</h1>
+
+<p><a href="https://www.github.com/florent37/DiagonalLayout">[screen](https://raw.githubusercontent.com/florent37/DiagonalLayout/master/media/positions_small.png)</a></p>
 
 <h1 id="elevation">Elevation</h1>
 
@@ -615,7 +642,7 @@
         <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
         <span class="na">android:layout_height=</span><span class="s">"250dp"</span>
         <span class="na">diagonal:diagonal_angle=</span><span class="s">"10"</span>
-        <span class="na">diagonal:diagonal_gravity=</span><span class="s">"left"</span>
+        <span class="na">diagonal:diagonal_position=</span><span class="s">"left"</span>
         <span class="na">android:elevation=</span><span class="s">"30dp"</span>
         <span class="nt">&gt;</span>
 
@@ -644,7 +671,7 @@
 
 <p>In your module <a href="https://bintray.com/florent37/maven/DiagonalLayout/_latestVersion">[Download](https://api.bintray.com/packages/florent37/maven/DiagonalLayout/images/download.svg)</a>
 <code class="highlighter-rouge">groovy
-compile 'com.github.florent37:diagonallayout:1.0.2'
+compile 'com.github.florent37:diagonallayout:1.0.4'
 </code></p>
 
 <p>#Logs</p>
@@ -672,6 +699,13 @@ compile 'com.github.florent37:diagonallayout:1.0.2'
   <li>Changed shadow casting method</li>
   <li>Removed unnecessary content layout</li>
   <li>added support for padding</li>
+</ul>
+
+<p>##1.0.4</p>
+
+<ul>
+  <li>Removed <code class="highlighter-rouge">:gravity</code></li>
+  <li>Added <code class="highlighter-rouge">:position</code> &amp; <code class="highlighter-rouge">direction</code></li>
 </ul>
 
 <p>#Credits</p>
