@@ -401,6 +401,26 @@
                 
               
             
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -534,10 +554,10 @@
 
 <p>Android library that adds a curve at the below of image views and relative layouts. <strong>CrescentoImageView</strong> and <strong>CrescentoContainer</strong> are the image view and relative layout respectively. You can change the radius of curve with <strong>attribute:curvature</strong>.</p>
 
-<p><a href="https://android-arsenal.com/api?level=11">[API](https://img.shields.io/badge/API-9%2B-orange.svg?style=flat)</a>
+<p><a href="https://android-arsenal.com/api?level=11">[API](https://img.shields.io/badge/API-11%2B-red.svg)</a>
 <a href="https://android-arsenal.com/details/1/4684">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Crescento-green.svg?style=true)</a>
 <a href="http://androidweekly.net/issues/issue-232">[Android Weekly](https://img.shields.io/badge/Android%20Weekly-%23232-blue.svg)</a>
-<a href="https://www.androiddevdigest.com/digest-119/">[AndroidDev Digest](https://img.shields.io/badge/AndroidDev%20Digest-%23119-blue.svg)</a></p>
+<a href="https://www.androiddevdigest.com/digest-119/">[AndroidDev Digest](https://img.shields.io/badge/AndroidDev%20Digest-%23119-yellow.svg)</a></p>
 
 <p><a href="/art/sample_image.jpg">Sample Image 2</a></p>
 
@@ -550,6 +570,7 @@
   <li><strong>Tint</strong>: It add tint on <strong>CrescentoImageView</strong> by using <strong>attribute:tintColor</strong>. It pick color automatically from the image if <strong>tintMode</strong> is set to <strong>automatic</strong>.</li>
   <li><strong>Alpha</strong>: Add transparency in tint by using <strong>attribute:tintAlpha</strong>. Varies from 0 to 255.</li>
   <li><strong>Gradient</strong> : Add gradient on the imageview.</li>
+  <li><strong>Gravity</strong> : You can now add crescento to bottom of your layout. Arc will form on top.</li>
 </ul>
 
 <p><strong><a href="https://github.com/developer-shivam/crescento/blob/master/demo.apk">Sample Apk</a></strong></p>
@@ -612,7 +633,7 @@ Of course, you can also choose what you want to donate, all donations are awesom
 
 <p>Add below lines in build.gradle at app level.
 <code class="highlighter-rouge">java
-	compile 'com.github.developer-shivam:crescento:1.0.1'
+	compile 'com.github.developer-shivam:crescento:1.1.0'
 </code></p>
 
 <h2 id="basic-usage">Basic Usage</h2>
@@ -626,6 +647,7 @@ Of course, you can also choose what you want to donate, all donations are awesom
     <span class="na">android:layout_height=</span><span class="s">"300dp"</span>
     <span class="na">android:elevation=</span><span class="s">"20dp"</span>
     <span class="na">android:scaleType=</span><span class="s">"centerCrop"</span>
+    <span class="na">attribute:gravity=</span><span class="s">"top"</span>
     <span class="na">attribute:curvature=</span><span class="s">"50dp"</span>
     <span class="na">attribute:tintMode=</span><span class="s">"manual"</span>
     <span class="na">attribute:tintColor=</span><span class="s">"#FFFFFF"</span>
@@ -658,10 +680,25 @@ Of course, you can also choose what you want to donate, all donations are awesom
   <li><strong>gradientDirection</strong> : To set the direction of gradient. Supported direction are <strong>TOP_TO_BOTTOM</strong>, <strong>BOTTOM_TO_TOP</strong>, <strong>LEFT_TO_RIGHT</strong> and <strong>RIGHT_TO_LEFT</strong>.</li>
   <li><strong>gradientStartColor</strong> : gradient start color.</li>
   <li><strong>gradientEndColor</strong> : gradient end color.</li>
+  <li><strong>gravity</strong> : To set gravity. <strong>TOP</strong> or <strong>BOTTOM</strong>.</li>
 </ul>
 
+<p>#Connect Me</p>
+
+<p>Shivam Satija (droidsergeant)</p>
+
+<p><a href="https://plus.google.com/108004024169425288075">
+  <img alt="Connect me on Google+" src="/art/gplus.png" />
+</a>
+<a href="https://www.facebook.com/developerShivam">
+  <img alt="Connect me on Facebook" src="/art/fb.png" width="64" height="64" />
+</a>
+<a href="https://in.linkedin.com/in/developershivam">
+  <img alt="Connect me on LinkedIn" src="/art/linkedin.png" />
+</a></p>
+
 <h2 id="question--contact-me--hire-me">Question / Contact Me / Hire Me</h2>
-<p>Please feel free to ping me at <strong>dr.droid27@gmail.com</strong>. Expected package would be <strong>12 lpa</strong>.</p>
+<p>Please feel free to ping me at <strong>dr.droid27@gmail.com</strong>. Expected package would be <strong>6 lpa</strong>.</p>
 
 <h2 id="license">License</h2>
 
