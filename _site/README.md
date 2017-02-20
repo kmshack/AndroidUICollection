@@ -1,1 +1,0 @@
-# kmshack.github.com/androiduicollection
