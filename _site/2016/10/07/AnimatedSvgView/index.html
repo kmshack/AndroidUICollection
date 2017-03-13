@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>AnimatedSvgView</title>
+  <meta name="description" content="AnimatedSvgView[Maven Central](https://maven-badges.herokuapp.com/maven-central/com.jrummyapps/animated-svg-view/badge.svg)[License](http://img.shields.io/:l...">
+  <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
+  <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
+    
+  <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
+  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/10/07/AnimatedSvgView/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
+    
+  <meta name="description" content="AnimatedSvgView[Maven Central](https://maven-badges.herokuapp.com/maven-central/com.jrummyapps/animated-svg-view/badge.svg)[License](http://img.shields.io/:l...">
+
+
+  <meta name="author" content="kmshack" />
+
+  <meta property="og:title" content="AnimatedSvgView">
+  <meta property="og:site_name" content="Android UI OpenSource" />
+  <meta property="og:description" content="AnimatedSvgView[Maven Central](https://maven-badges.herokuapp.com/maven-central/com.jrummyapps/animated-svg-view/badge.svg)[License](http://img.shields.io/:l...">
+  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/10/07/AnimatedSvgView/" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:site" content="@kmshack" />
+  <meta name="twitter:description" content="AnimatedSvgView[Maven Central](https://maven-badges.herokuapp.com/maven-central/com.jrummyapps/animated-svg-view/badge.svg)[License](http://img.shields.io/:l..." />
+
+  
+  	<!-- Article specific OG data -->
+  	<meta property="og:type" content="article" />
+  	<meta property="article:published_time" content="2016-10-07 00:00:00 +0900" />
+  	
+  	<meta property="article:author" content="http://facebook.com/kmshack" />
+    <meta property="article:publisher" content="https://www.facebook.com/kmshack" />
+  	<meta property="article:section" content="" />
+  	
+
+  	<meta name="twitter:card" content="summary_large_image" />
+  	<meta name="twitter:creator" content="@kmshack_kr" />
+  	<meta name="twitter:title" content="AnimatedSvgView" />
+	
+	  	<meta property="og:image" content="/images/posts/2016-10-07-AnimatedSvgView.gif" />
+	  	<meta name="twitter:image" content="/images/posts/2016-10-07-AnimatedSvgView.gif" />
+  	
+
+  
+
+  <script>
+    var base_url = "/AndroidUICollection";
+  </script>
+    
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9975139260149901",
+    enable_page_level_ads: true
+  });
+</script>
+    
+</head>
+
+<body>
+
+  <!-- Google Analytics Code -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85072530-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  <div class="off-canvas-container">
+    <div class="sidebar">
+  <div class="row">
+
+    <div class="column small-10 large-12">
+      <br>
+      <h1 class="sidebar__logo logo"><a href="/AndroidUICollection/">Android UI OpenSource</a></h1>
+      <div class="sidebar__description font-tiny">Collection of OpenSource for Android UI.</div>
+    </div>
+
+    <label class="off-canvas-toggle"><span data-icon="ei-navicon" data-size="s"></span></label>
+
+    <div class="off-canvas-content">
+
+      <div class="column small-12 large-12">
+        <nav class="navigation">
+          <ul class="list-bare text-center">
+            
+              
+            
+              
+                
+                  <li>
+                    <a class="page-link" href="/AndroidUICollection/about.html">About</a>
+                  </li>
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+            <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="column small-12 large-12">
+        <ul class="social-nav social-icons">
+
+          
+          <li>
+            <a href="http://www.github.com/kmshack" target="_blank">
+              <span data-icon="ei-sc-github" data-size="s"></span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="http://www.twitter.com/kmshack_kr" target="_blank">
+              <span data-icon="ei-sc-twitter" data-size="s"></span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="mailto:kmshack@naver.com" target="_blank">
+              <span data-icon="ei-envelope" data-size="s"></span>
+            </a>
+          </li>
+          
+
+          <li>
+            <a class="toggle-search-button" href="#">
+              <span data-icon="ei-search" data-size="s"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+        
+      <div class="sidebar__bottom">
+        <div class="column small-12 large-12">
+            
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- androidui -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:250px;height:250px"
+     data-ad-client="ca-pub-9975139260149901"
+     data-ad-slot="5123612274"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+            
+          <div class="font-tiny">
+              <br>
+            &copy; 2017 Android UI OpenSource
+          </div>
+        </div>
+      </div>
+        
+    </div> <!-- off-canvas-content -->
+      
+
+
+  </div>
+    
+
+    
+</div>
+
+<div class="search-form-container">
+
+  <form class="search-form">
+    <fieldset class="search-form__fieldset">
+      <div class="row">
+        <div class="column column--center large-8">
+          <input class="search-form__field" placeholder="Type to search" autofocus>
+          <input class="search-form__submit" type="submit" value="search">
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+  <div class="row">
+    <div class="column column--center large-8">
+      <div class="search-results"></div>
+    </div>
+  </div>
+
+  <div data-icon="ei-close" data-size="s" class="close-search-button search-form-container__close"></div>
+
+</div>
+
+    
+
+
+
+<div class="wrapper">
+  <div class="row row--full">
+
+    <div class="column column--center medium-12 large-12">
+      <div class="grey-bg CoverImage FlexEmbed FlexEmbed--16by9" style="background-image: url(/AndroidUICollection/images/posts/2016-10-07-AnimatedSvgView.gif)"></div>
+        
+    </div>
+      
+    <div class="column column--center medium-12 large-10">
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+        
+          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-10-07-AnimatedSvgView.gif">
+        
+
+        <header class="post__header">
+          <h2 class="post__title" itemprop="name headline">AnimatedSvgView</h2>
+          
+          <h3 class="post__date">
+            <a href="https://github.com/jaredrummler/AnimatedSvgView" target="_blank"><span data-icon="ei-sc-github" data-size="s"></span>https://github.com/jaredrummler/AnimatedSvgView</a>
+          </h3>
+        </header>
+
+        <div class="post-content" itemprop="articleBody">
+            
+            <div class="column column--center medium-12 large-4">
+              <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/AndroidUICollection/images/posts/2016-10-07-AnimatedSvgView.gif)"></div>
+            </div>
+             <br><br>
+            <hr>
+          <br>
+          <h1 id="animatedsvgview">AnimatedSvgView</h1>
+
+<p><a href="https://maven-badges.herokuapp.com/maven-central/com.jrummyapps/animated-svg-view">[Maven Central](https://maven-badges.herokuapp.com/maven-central/com.jrummyapps/animated-svg-view/badge.svg)</a>
+<a href="LICENSE">[License](http://img.shields.io/:license-apache-blue.svg)</a>
+<a href="https://android-arsenal.com/api?level=14">[API](https://img.shields.io/badge/API-14%2B-blue.svg?style=flat)</a> 
+<a href="https://twitter.com/jrummy16">[Twitter Follow](https://img.shields.io/twitter/follow/jrummy16.svg?style=social)</a></p>
+
+<p>Animated SVG Drawing for Android</p>
+
+<p><a href="demo/demo.gif">DEMO</a></p>
+
+<h1 id="usage">Usage</h1>
+
+<p>Get SVG path data and add it to a string array:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;string-array</span> <span class="na">name=</span><span class="s">"google_glyph_strings"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;item&gt;</span>M142.9,24.2C97.6,39.7,59,73.6,37.5,116.5c-7.5,14.8-12.9,30.5-16.2,46.8c-8.2,40.4-2.5,83.5,16.1,120.3   c12.1,24,29.5,45.4,50.5,62.1c19.9,15.8,43,27.6,67.6,34.1c31,8.3,64,8.1,95.2,1c28.2-6.5,54.9-20,76.2-39.6   c22.5-20.7,38.6-47.9,47.1-77.2c9.3-31.9,10.5-66,4.7-98.8c-58.3,0-116.7,0-175,0c0,24.2,0,48.4,0,72.6c33.8,0,67.6,0,101.4,0   c-3.9,23.2-17.7,44.4-37.2,57.5c-12.3,8.3-26.4,13.6-41,16.2c-14.6,2.5-29.8,2.8-44.4-0.1c-14.9-3-29-9.2-41.4-17.9   c-19.8-13.9-34.9-34.2-42.6-57.1c-7.9-23.3-8-49.2,0-72.4c5.6-16.4,14.8-31.5,27-43.9c15-15.4,34.5-26.4,55.6-30.9   c18-3.8,37-3.1,54.6,2.2c15,4.5,28.8,12.8,40.1,23.6c11.4-11.4,22.8-22.8,34.2-34.2c6-6.1,12.3-12,18.1-18.3   c-17.3-16-37.7-28.9-59.9-37.1C228.2,10.6,183.2,10.3,142.9,24.2z<span class="nt">&lt;/item&gt;</span>
+  <span class="nt">&lt;item&gt;</span>M142.9,24.2c40.2-13.9,85.3-13.6,125.3,1.1c22.2,8.2,42.5,21,59.9,37.1c-5.8,6.3-12.1,12.2-18.1,18.3    c-11.4,11.4-22.8,22.8-34.2,34.2c-11.3-10.8-25.1-19-40.1-23.6c-17.6-5.3-36.6-6.1-54.6-2.2c-21,4.5-40.5,15.5-55.6,30.9    c-12.2,12.3-21.4,27.5-27,43.9c-20.3-15.8-40.6-31.5-61-47.3C59,73.6,97.6,39.7,142.9,24.2z<span class="nt">&lt;/item&gt;</span>
+  <span class="nt">&lt;item&gt;</span>M21.4,163.2c3.3-16.2,8.7-32,16.2-46.8c20.3,15.8,40.6,31.5,61,47.3c-8,23.3-8,49.2,0,72.4    c-20.3,15.8-40.6,31.6-60.9,47.3C18.9,246.7,13.2,203.6,21.4,163.2z<span class="nt">&lt;/item&gt;</span>
+  <span class="nt">&lt;item&gt;</span>M203.7,165.1c58.3,0,116.7,0,175,0c5.8,32.7,4.5,66.8-4.7,98.8c-8.5,29.3-24.6,56.5-47.1,77.2    c-19.7-15.3-39.4-30.6-59.1-45.9c19.5-13.1,33.3-34.3,37.2-57.5c-33.8,0-67.6,0-101.4,0C203.7,213.5,203.7,189.3,203.7,165.1z<span class="nt">&lt;/item&gt;</span>
+  <span class="nt">&lt;item&gt;</span>M37.5,283.5c20.3-15.7,40.6-31.5,60.9-47.3c7.8,22.9,22.8,43.2,42.6,57.1c12.4,8.7,26.6,14.9,41.4,17.9    c14.6,3,29.7,2.6,44.4,0.1c14.6-2.6,28.7-7.9,41-16.2c19.7,15.3,39.4,30.6,59.1,45.9c-21.3,19.7-48,33.1-76.2,39.6    c-31.2,7.1-64.2,7.3-95.2-1c-24.6-6.5-47.7-18.2-67.6-34.1C67,328.9,49.6,307.5,37.5,283.5z<span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/string-array&gt;</span>
+</code></pre>
+</div>
+
+<p>Add the colors for each path in an integer-array:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">"google_red"</span><span class="nt">&gt;</span>#EA4335<span class="nt">&lt;/color&gt;</span>
+<span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">"google_yellow"</span><span class="nt">&gt;</span>#FBBC05<span class="nt">&lt;/color&gt;</span>
+<span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">"google_blue"</span><span class="nt">&gt;</span>#4285F4<span class="nt">&lt;/color&gt;</span>
+<span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">"google_green"</span><span class="nt">&gt;</span>#34A853<span class="nt">&lt;/color&gt;</span>
+
+<span class="nt">&lt;integer-array</span> <span class="na">name=</span><span class="s">"google_glyph_colors"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;item&gt;</span>@android:color/white<span class="nt">&lt;/item&gt;</span>
+  <span class="nt">&lt;item&gt;</span>@color/google_red<span class="nt">&lt;/item&gt;</span>
+  <span class="nt">&lt;item&gt;</span>@color/google_yellow<span class="nt">&lt;/item&gt;</span>
+  <span class="nt">&lt;item&gt;</span>@color/google_blue<span class="nt">&lt;/item&gt;</span>
+  <span class="nt">&lt;item&gt;</span>@color/google_green<span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/integer-array&gt;</span>
+</code></pre>
+</div>
+
+<p>Add the view to your layout:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;com.jrummyapps.android.widget.AnimatedSvgView</span>
+    <span class="na">android:id=</span><span class="s">"@+id/animated_svg_view"</span>
+    <span class="na">android:layout_width=</span><span class="s">"180dp"</span>
+    <span class="na">android:layout_height=</span><span class="s">"180dp"</span>
+    <span class="na">android:layout_gravity=</span><span class="s">"center"</span>
+    <span class="na">android:layout_marginBottom=</span><span class="s">"25dp"</span>
+    <span class="na">app:animatedSvgFillColors=</span><span class="s">"@array/google_glyph_colors"</span>
+    <span class="na">app:animatedSvgGlyphStrings=</span><span class="s">"@array/google_glyph_strings"</span>
+    <span class="na">app:animatedSvgFillStart=</span><span class="s">"1200"</span>
+    <span class="na">app:animatedSvgFillTime=</span><span class="s">"1000"</span>
+    <span class="na">app:animatedSvgImageSizeX=</span><span class="s">"400"</span>
+    <span class="na">app:animatedSvgImageSizeY=</span><span class="s">"400"</span>
+    <span class="na">app:animatedSvgTraceTime=</span><span class="s">"2000"</span>
+    <span class="na">app:animatedSvgTraceTimePerGlyph=</span><span class="s">"1000"</span><span class="nt">/&gt;</span>
+</code></pre>
+</div>
+
+<p>Play the animation:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">AnimatedSvgView</span> <span class="n">svgView</span> <span class="o">=</span> <span class="o">(</span><span class="n">AnimatedSvgView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">animated_svg_view</span><span class="o">);</span>
+<span class="n">svgView</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+</code></pre>
+</div>
+
+<p>You can also set SVG glyphs and colors dynamically (see the <a href="demo">demo</a>).</p>
+
+<h1 id="download">Download</h1>
+
+<p>Download <a href="https://repo1.maven.org/maven2/com/jrummyapps/animated-svg-view/1.0.1/animated-svg-view-1.0.1.aar">the latest AAR</a> or grab via Gradle:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">compile</span> <span class="s1">'com.jrummyapps:animated-svg-view:1.0.1'</span>
+</code></pre>
+</div>
+<p>or Maven:
+```xml</p>
+<dependency>
+  <groupid>com.jrummyapps</groupid>
+  <artifactid>animated-svg-view</artifactid>
+  <version>1.0.1</version>
+  <type>aar</type>
+</dependency>
+<div class="highlighter-rouge"><pre class="highlight"><code>
+# Dependencies
+
+Animated Vector Drawable
+
+```groovy
+compile 'com.android.support:animated-vector-drawable:${latest_version}'
+</code></pre>
+</div>
+
+<h1 id="acknowledgements">Acknowledgements</h1>
+
+<p><a href="https://github.com/romannurik/muzei/blob/master/main/src/main/java/com/google/android/apps/muzei/util/AnimatedMuzeiLogoView.java">AnimatedMuzeiLogoView</a> by <a href="https://github.com/romannurik">Roman Nurik</a></p>
+
+<p><a href="https://github.com/willowtreeapps/OAK/tree/master/oak-animatedsvgview">oak-animatedsvgview</a> by <a href="https://github.com/willowtreeapps">WillowTree, Inc.</a></p>
+
+<h1 id="license">License</h1>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Copyright (C) 2016, Jared Rummler
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</code></pre>
+</div>
+
+          <br>
+          <div class="post__tags">
+            
+              <a href="/AndroidUICollection/tag/svg">svg</a>
+            
+              <a href="/AndroidUICollection/tag/animated">animated</a>
+            
+          </div>
+            
+        </div>
+          
+          <br>
+          <hr>
+          <br>  
+          <div class="post-content"  itemprop="articleBody">
+            
+          </div>
+          <br>
+          <hr>
+          <br>
+
+        
+
+        
+
+<ul class="share-list">
+  <li>
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=AnimatedSvgView&url=http://kmshack.github.io/AndroidUICollection/2016/10/07/AnimatedSvgView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+      <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
+    </a>
+  </li>
+  <li>
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/10/07/AnimatedSvgView/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
+    </a>
+  </li>
+  <li>
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/10/07/AnimatedSvgView/" rel="nofollow" target="_blank" title="Share on Google+">
+    <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
+    </a>
+  </li>
+</ul>
+
+        <h5 class="separator">
+  <span class="separator__title">Newsletter</span>
+</h5>
+
+<div class="box box--news-letter">
+  <form action="//aspirethemes.us12.list-manage.com/subscribe/post?u=9723f3c5c3a2637fbba3bc673&amp;id=7b50db9989" method="post" target="_blank">
+    <div class="row">
+      <div class="column medium-9 large-9">
+        <input type="email" name="EMAIL" placeholder="Your email address">
+      </div>
+      <div class="column medium-3 large-3">
+        <input type="submit" class="button button--expand" value="SIGN UP">
+      </div>
+    </div>
+  </form>
+</div>
+
+        <section class="disqus">
+  <h5 class="separator">
+    <span class="separator__title">Comments</span>
+  </h5>
+  <div id="disqus_thread"></div>
+
+<script>
+  var disqus_config = function () {
+    this.page.url = "http://kmshack.github.io/2016/10/07/AnimatedSvgView/";
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//android-kmshack-kr.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</section>
+      </article>
+    </div>
+
+  </div> <!-- row-->
+</div> <!-- wrapper -->
+  </div>
+
+  <script src="/AndroidUICollection/js/jquery-2.1.4.min.js"></script>
+  <script src="/AndroidUICollection/js/evil-icons.min.js"></script>
+  <script src="/AndroidUICollection/js/jquery.fitvids.js"></script>
+  <script src="/AndroidUICollection/js/jquery.ghostHunter.min.js"></script>
+  <script src="/AndroidUICollection/js/script.js"></script>
+</body>
+
+</html>
