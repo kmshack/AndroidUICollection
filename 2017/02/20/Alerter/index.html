@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Alerter</title>
-  <meta name="description" content="AlerterGeneralThis library aims to overcome the limitations of Toasts and Snackbars, while reducing thecomplexity of your layouts.Default AlertA customisable...">
+  <meta name="description" content="AlerterGeneral [Download](https://api.bintray.com/packages/tapadoo/maven/alerter/images/download.svg) [Android Arsenal](https://img.shields.io/badge/Android%...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
@@ -16,18 +16,18 @@
   <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="AlerterGeneralThis library aims to overcome the limitations of Toasts and Snackbars, while reducing thecomplexity of your layouts.Default AlertA customisable...">
+  <meta name="description" content="AlerterGeneral [Download](https://api.bintray.com/packages/tapadoo/maven/alerter/images/download.svg) [Android Arsenal](https://img.shields.io/badge/Android%...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="Alerter">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="AlerterGeneralThis library aims to overcome the limitations of Toasts and Snackbars, while reducing thecomplexity of your layouts.Default AlertA customisable...">
+  <meta property="og:description" content="AlerterGeneral [Download](https://api.bintray.com/packages/tapadoo/maven/alerter/images/download.svg) [Android Arsenal](https://img.shields.io/badge/Android%...">
   <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2017/02/20/Alerter/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="AlerterGeneralThis library aims to overcome the limitations of Toasts and Snackbars, while reducing thecomplexity of your layouts.Default AlertA customisable..." />
+  <meta name="twitter:description" content="AlerterGeneral [Download](https://api.bintray.com/packages/tapadoo/maven/alerter/images/download.svg) [Android Arsenal](https://img.shields.io/badge/Android%..." />
 
   
   	<!-- Article specific OG data -->
@@ -102,6 +102,14 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
+                
+              
+            
+              
                 
               
             
@@ -554,6 +562,10 @@
 
 <h3 id="general">General</h3>
 
+<p><a href="https://bintray.com/tapadoo/maven/alerter/_latestVersion"> [Download](https://api.bintray.com/packages/tapadoo/maven/alerter/images/download.svg) </a></p>
+
+<p><a href="https://android-arsenal.com/details/1/5302">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Alerter-blue.svg?style=flat)</a></p>
+
 <p>This library aims to overcome the limitations of Toasts and Snackbars, while reducing the
 complexity of your layouts.</p>
 
@@ -565,7 +577,7 @@ all content.</p>
 <h2 id="gradle">Gradle</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
-    <span class="n">compile</span> <span class="s1">'com.tapadoo.android:alerter:1.0.1'</span>
+    <span class="n">compile</span> <span class="s1">'com.tapadoo.android:alerter:1.0.6'</span>
 <span class="o">}</span>
 </code></pre>
 </div>
@@ -611,7 +623,7 @@ into any app.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="n">Alerter</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="k">this</span><span class="o">)</span>
        <span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"Alert text..."</span><span class="o">)</span>
-       <span class="o">.</span><span class="na">setIcon</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">ic_face</span><span class="o">)</span>
+       <span class="o">.</span><span class="na">setIcon</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">alerter_ic_face</span><span class="o">)</span>
        <span class="o">.</span><span class="na">show</span><span class="o">();</span>
 </code></pre>
 </div>
@@ -668,6 +680,26 @@ into any app.</p>
 </div>
 
 <p><a href="./documentation/alert_verbose.gif">Verbose Alert</a></p>
+
+<h3 id="visibility-callbacks">Visibility Callbacks</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> <span class="n">Alerter</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">ExampleActivity</span><span class="o">.</span><span class="na">this</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">setTitle</span><span class="o">(</span><span class="s">"Alert Title"</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">setOnShowListener</span><span class="o">(</span><span class="k">new</span> <span class="n">OnShowAlertListener</span><span class="o">()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="n">onShow</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">ExampleActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="s">"Alert Shown"</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_LONG</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">})</span>
+        <span class="o">.</span><span class="na">setOnHideListener</span><span class="o">(</span><span class="k">new</span> <span class="n">OnHideAlertListener</span><span class="o">()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="n">onHide</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">ExampleActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="s">"Alert Hidden"</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_LONG</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+            <span class="o">}</span>
+         <span class="o">})</span>
+        <span class="o">.</span><span class="na">show</span><span class="o">();</span>
+</code></pre>
+</div>
 
 <h2 id="sample">Sample</h2>
 

@@ -5,15 +5,249 @@
     <description>Collection of OpenSource for Android UI.</description>
     <link>http://kmshack.github.io/AndroidUICollection/</link>
     <atom:link href="http://kmshack.github.io/AndroidUICollection/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 20 Feb 2017 11:16:16 +0900</pubDate>
-    <lastBuildDate>Mon, 20 Feb 2017 11:16:16 +0900</lastBuildDate>
+    <pubDate>Mon, 13 Mar 2017 21:09:17 +0900</pubDate>
+    <lastBuildDate>Mon, 13 Mar 2017 21:09:17 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>DiscreteScrollView</title>
+        <description>&lt;h1 id=&quot;discretescrollview&quot;&gt;DiscreteScrollView&lt;/h1&gt;
+
+&lt;p&gt;The library is a RecyclerView-based implementation of a scrollable list, where current item is centered and can be changed using swipes.
+It is similar to a ViewPager, but you can quickly and painlessly create layout, where views adjacent to the currently selected view are partially or fully visible on the screen.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/yarolegovich/DiscreteScrollView/blob/master/images/cards_shop.gif&quot;&gt;GifSampleShop&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;gradle&quot;&gt;Gradle&lt;/h2&gt;
+&lt;p&gt;Add this into your dependencies block.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+compile &#39;com.yarolegovich:discrete-scrollview:1.0.3&#39;
+&lt;/code&gt;
+## Sample
+&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.yarolegovich.discretescrollview.sample&quot;&gt;&lt;img alt=&quot;Get it on Google Play&quot; src=&quot;https://play.google.com/intl/en_us/badges/images/apps/en-play-badge.png&quot; width=&quot;185&quot; height=&quot;60&quot; /&gt;&lt;/a&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Please see the [sample app] (https://github.com/yarolegovich/DiscreteScrollView/tree/master/sample/src/main/java/com/yarolegovich/discretescrollview/sample) for examples of library usage.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/yarolegovich/DiscreteScrollView/blob/master/images/cards_weather.gif&quot;&gt;GifSampleWeather&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;wiki&quot;&gt;Wiki&lt;/h2&gt;
+&lt;p&gt;### General
+The library uses a custom LayoutManager to adjust items’ positions on the screen and handle scroll, however it is not exposed to the client 
+code. All public API is accessible through DiscreteScrollView class, which is a simple descendant of RecyclerView.&lt;/p&gt;
+
+&lt;p&gt;If you have ever used RecyclerView - you already know how to use this library. One thing to note - you should NOT set LayoutManager.&lt;/p&gt;
+
+&lt;h4 id=&quot;usage&quot;&gt;Usage:&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;Add DiscreteScrollView to your layout either using xml or code:&lt;/li&gt;
+  &lt;li&gt;Create your implementation of RecyclerView.Adapter. Refer to the [sample] (https://github.com/yarolegovich/DiscreteScrollView/blob/master/sample/src/main/java/com/yarolegovich/discretescrollview/sample/shop/ShopAdapter.java) for an example, if you don’t know how to do it.&lt;/li&gt;
+  &lt;li&gt;Set the adapter.&lt;/li&gt;
+  &lt;li&gt;You are done 
+```xml&lt;/li&gt;
+&lt;/ol&gt;
+&lt;com.yarolegovich.discretescrollview.discretescrollview android:id=&quot;@+id/picker&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; /&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;```java
+DiscreteScrollView scrollView = findViewById(R.id.picker);
+scrollView.setAdapter(new YourAdapterImplementation());
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;api&quot;&gt;API&lt;/h3&gt;
+&lt;p&gt;#### Related to the current item:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+scrollView.getCurrentItem(); //returns adapter position of the currently selected item or -1 if adapter is empty.
+scrollView.scrollToPosition(int position); //position becomes selected
+scrollView.smoothScrollToPosition(int position); //position becomes selected with animated scroll
+scrollView.setItemTransitionTimeMillis(int millis); //determines how much time it takes to change the item on fling, settle or smoothScroll
+&lt;/code&gt;
+#### Transformations
+One useful feature of ViewPager is page transformations. It allows you, for example, to create carousel effect. DiscreteScrollView also supports 
+page transformations.
+```java
+scrollView.setItemTransformer(transformer);&lt;/p&gt;
+
+&lt;p&gt;public interface DiscreteScrollItemTransformer {
+    /**
+     * In this method you apply any transform you can imagine (perfomance is not guaranteed).
+     * @param position is a value inside the interval [-1f..1f]. In idle state:
+     * |view1|  |currentlySelectedView|  |view2|
+     * -view1 and everything to the left is on position -1;
+     * -currentlySelectedView is on position 0;
+     * -view2 and everything to the right is on position 1.
+     */
+    void transformItem(View item, float position); 
+}
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+Because scale transformation is the most common, I included a helper class - ScaleTransformer, here is how to use it:
+&lt;/code&gt;java
+cityPicker.setItemTransformer(new ScaleTransformer.Builder()
+  .setMaxScale(1.05f) 
+  .setMinScale(0.8f) 
+  .setPivotX(Pivot.X.CENTER) // CENTER is a default one
+  .setPivotY(Pivot.Y.BOTTOM) // CENTER is a default one
+  .build());
+```
+You may see how it works on GIFs.&lt;/p&gt;
+
+&lt;h4 id=&quot;callbacks&quot;&gt;Callbacks&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Scroll state changes:
+```java
+scrollView.setScrollStateChangeListener(listener);&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;public interface ScrollStateChangeListener&lt;t extends=&quot;&quot; viewholder=&quot;&quot;&gt; {
+  void onScrollStart(T currentItemHolder, int adapterPosition); //called when scroll is started, including programatically initiated scroll
+  void onScrollEnd(T currentItemHolder, int adapterPosition); //called when scroll ends
+  /**
+   * Called when scroll is in progress. 
+   * @param scrollPosition is a value inside the interval [-1f..1f], it corresponds to the position of currentlySelectedView.
+   * In idle state:
+   * |view1|  |currentlySelectedView|  |view2|
+   * -view1 is on position -1;
+   * -currentlySelectedView is on position 0;
+   * -view2 is on position 1.
+   */
+  void onScroll(float scrollPosition); 
+}
+```
+* Current selection changes:
+```java
+scrollView.setCurrentItemChangeListener(listener);&lt;/t&gt;&lt;/p&gt;
+
+&lt;p&gt;public interface CurrentItemChangeListener&lt;t extends=&quot;&quot; viewholder=&quot;&quot;&gt; {
+  /**
+   * Called when new item is selected. It is similar to the onScrollEnd of ScrollStateChangeListener, except that it is 
+   * also called when currently selected item appears on the screen for the first time.
+   */
+  void onCurrentItemChanged(T viewHolder, int adapterPosition); 
+}
+```&lt;/t&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;special-thanks&quot;&gt;Special thanks&lt;/h2&gt;
+&lt;p&gt;Thanks to [Tayisiya Yurkiv] (https://www.behance.net/yurkivt) for sample app design and beautiful GIFs.&lt;/p&gt;
+
+&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2017 Yaroslav Shevchuk
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Mon, 13 Mar 2017 00:00:00 +0900</pubDate>
+        <link>http://kmshack.github.io/AndroidUICollection/2017/03/13/DiscreteScrollView/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/03/13/DiscreteScrollView/</guid>
+        
+        <category>scrollView</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>InstaCropper</title>
+        <description>&lt;h1 id=&quot;instacropper&quot;&gt;InstaCropper&lt;/h1&gt;
+&lt;p&gt;A View for cropping images that is similar to Instagram’s crop. Also an Activity for cropping is included.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://cloud.githubusercontent.com/assets/4597931/23830368/724ddf70-071e-11e7-9d7e-65615be8d5e6.gif&quot;&gt;alt tag&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;##Usage&lt;/p&gt;
+
+&lt;p&gt;Add the dependency:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;Groovy
+dependencies {
+	compile &#39;com.yashoid:instacropper:1.0.0&#39;
+}
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;how-to-use-this-library&quot;&gt;How to use this library&lt;/h2&gt;
+
+&lt;p&gt;Add &lt;code class=&quot;highlighter-rouge&quot;&gt;InstaCropperView&lt;/code&gt; to your xml layout&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;FrameLayout&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:android=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;xmlns:app=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res-auto&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;com.yashoid.instacropper.InstaCropperView&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/instacropper&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:backgroundColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@android:color/white&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/FrameLayout&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;InstaCropperView receives only Uri but any Uri is possible.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+mInstaCropper.setImageUri(imageUri);
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;You can specify three size ratios for the crop. The narrowest allowed, the widest allowed and the ideal ratio. The View will adjust its size by the ideal ratio.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+mInstaCropper.setRatios(defaultRatio, minimumRatio, maximumRatio);
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The cropped image is returned in a callback. You can specify MeasureSpec to adjust the width and height of the returned Bitmap.
+```java
+mInstaCropper.crop(
+        View.MeasureSpec.makeMeasureSpec(1024, View.MeasureSpec.AT_MOST),
+        View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
+        new InstaCropperView.BitmapCallback() {&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;        @Override
+        public void onBitmapReady(Bitmap bitmap) {
+            // Do something.
+        }
+        
+    } ); ```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;It is also possible to use the crop feature via an Intent call. There are various &lt;code class=&quot;highlighter-rouge&quot;&gt;getIntent()&lt;/code&gt; methods defined on &lt;code class=&quot;highlighter-rouge&quot;&gt;InstaCropperActivity&lt;/code&gt;. You will then receive the crop result in &lt;code class=&quot;highlighter-rouge&quot;&gt;data.getData()&lt;/code&gt;.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+Intent intent = InstaCropperActivity.getIntent(context, srcUri, dstUri, maxWidth, outputQuality);
+startActivityForResult(intent, REQUEST_CROP);
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;To change the title of the crop Activity and the title of the crop action define the string.
+```xml&lt;/p&gt;
+&lt;string name=&quot;instacropper_title&quot;&gt;Crop&lt;/string&gt;
+&lt;string name=&quot;instacropper_crop&quot;&gt;Crop&lt;/string&gt;
+&lt;p&gt;```&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 12 Mar 2017 00:00:00 +0900</pubDate>
+        <link>http://kmshack.github.io/AndroidUICollection/2017/03/12/InstaCropper/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/03/12/InstaCropper/</guid>
+        
+        <category>cropper</category>
+        
+        
+      </item>
     
       <item>
         <title>Alerter</title>
         <description>&lt;h1 id=&quot;alerter&quot;&gt;Alerter&lt;/h1&gt;
 
 &lt;h3 id=&quot;general&quot;&gt;General&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://bintray.com/tapadoo/maven/alerter/_latestVersion&quot;&gt; [Download](https://api.bintray.com/packages/tapadoo/maven/alerter/images/download.svg) &lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://android-arsenal.com/details/1/5302&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Alerter-blue.svg?style=flat)&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;This library aims to overcome the limitations of Toasts and Snackbars, while reducing the
 complexity of your layouts.&lt;/p&gt;
@@ -26,7 +260,7 @@ all content.&lt;/p&gt;
 &lt;h2 id=&quot;gradle&quot;&gt;Gradle&lt;/h2&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;com.tapadoo.android:alerter:1.0.1&#39;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;com.tapadoo.android:alerter:1.0.6&#39;&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -72,7 +306,7 @@ into any app.&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Alerter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alert text...&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setIcon&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ic_face&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setIcon&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;alerter_ic_face&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -130,6 +364,26 @@ into any app.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;./documentation/alert_verbose.gif&quot;&gt;Verbose Alert&lt;/a&gt;&lt;/p&gt;
 
+&lt;h3 id=&quot;visibility-callbacks&quot;&gt;Visibility Callbacks&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;n&quot;&gt;Alerter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ExampleActivity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alert Title&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setOnShowListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;OnShowAlertListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+            &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onShow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;makeText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ExampleActivity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Alert Shown&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LENGTH_LONG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setOnHideListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;OnHideAlertListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+            &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onHide&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;makeText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ExampleActivity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Alert Hidden&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LENGTH_LONG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+         &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
 &lt;h2 id=&quot;sample&quot;&gt;Sample&lt;/h2&gt;
 
 &lt;p&gt;Clone this repo and check out the &lt;code class=&quot;highlighter-rouge&quot;&gt;app&lt;/code&gt; module.&lt;/p&gt;
@@ -168,7 +422,7 @@ into any app.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;download-from-jcenter&quot;&gt;Download (from JCenter)&lt;/h2&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;com.stepstone.stepper:material-stepper:2.2.0&#39;&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;com.stepstone.stepper:material-stepper:3.0.0&#39;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -378,39 +632,39 @@ While operations are performed, and the user would like to go back you can cance
 &lt;p&gt;The fragment must implement &lt;code class=&quot;highlighter-rouge&quot;&gt;BlockingStep&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;Step&lt;/code&gt;.
 Also, make sure that &lt;code class=&quot;highlighter-rouge&quot;&gt;goToNextStep()&lt;/code&gt; gets called on the main thread.
 &lt;strong&gt;Note:&lt;/strong&gt; the &lt;code class=&quot;highlighter-rouge&quot;&gt;onNextClicked(StepperLayout.OnNextClickedCallback)&lt;/code&gt; method gets invoked after step verification.
-E.g.:
-```java
-public class DelayedTransitionStepFragmentSample extends Fragment implements BlockingStep {&lt;/p&gt;
+E.g.:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//...
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;DelayedTransitionStepFragmentSample&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fragment&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BlockingStep&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
 
-@Override
-@UiThread
-public void onNextClicked(final StepperLayout.OnNextClickedCallback callback) {
-    new Handler().postDelayed(new Runnable() {
-        @Override
-        public void run() {
-            callback.goToNextStep();
-        }
-    }, 2000L);
-}
+    &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
 
-@Override
-@UiThread
-public void onBackClicked(StepperLayout.OnBackClickedCallback callback) {
-    Toast.makeText(this.getContext(), &quot;Your custom back action. Here you should cancel currently running operations&quot;, Toast.LENGTH_SHORT).show();
-    callback.goToPrevStep();
- }
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@UiThread&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onNextClicked&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StepperLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;OnNextClickedCallback&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;postDelayed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Runnable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+            &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;goToNextStep&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2000L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@UiThread&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onBackClicked&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;StepperLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;OnBackClickedCallback&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;makeText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Your custom back action. Here you should cancel currently running operations&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LENGTH_SHORT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;goToPrevStep&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;}
-```&lt;/p&gt;
-
-&lt;h3 id=&quot;changing-backnext-button-labels-per-step&quot;&gt;Changing Back/Next button labels per step&lt;/h3&gt;
+&lt;h3 id=&quot;changing-backnext-button-labels--compound-drawables-per-step&quot;&gt;Changing Back/Next button labels &amp;amp; compound drawables per step&lt;/h3&gt;
 &lt;p&gt;Sometimes you might want to have different labels on the Next and/or Back navigation buttons on different steps e.g. use the default labels on the first few steps,
-but display ‘Summary’ just before the last page.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;./gifs/different-next-buttons.gif&quot; width=&quot;360&quot; height=&quot;640&quot; /&gt;&lt;/p&gt;
+but display ‘Summary’ just before the last page.
+You might also want to use your custom icons instead of the default navigation button compound drawables or not show the compound drawables for some of the buttons.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./gifs/custom-navigation-buttons.gif&quot; width=&quot;360&quot; height=&quot;640&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;In such case you need to override the &lt;code class=&quot;highlighter-rouge&quot;&gt;getViewModel(int)&lt;/code&gt; method from the &lt;code class=&quot;highlighter-rouge&quot;&gt;StepAdapter&lt;/code&gt; e.g.
 &lt;code class=&quot;highlighter-rouge&quot;&gt;java
     @NonNull
@@ -421,13 +675,16 @@ but display ‘Summary’ just before the last page.&lt;/p&gt;
         switch (position) {
             case 0:
                 builder
-                        .setNextButtonLabel(&quot;This way&quot;)
-                        .setBackButtonLabel(&quot;Go to first&quot;);
+                    .setNextButtonLabel(&quot;This way&quot;)
+                    .setBackButtonLabel(&quot;Cancel&quot;)
+                    .setNextButtonEndDrawableResId(R.drawable.ms_forward_arrow)
+                    .setBackButtonStartDrawableResId(StepViewModel.NULL_DRAWABLE);
                 break;
             case 1:
                 builder
-                        .setNextButtonLabel(R.string.go_to_summary)
-                        .setBackButtonLabel(&quot;Go to first&quot;);
+                    .setNextButtonLabel(R.string.go_to_summary)
+                    .setBackButtonLabel(&quot;Go to first&quot;)
+                    .setBackButtonStartDrawableResId(R.drawable.ms_back_arrow);
                 break;
             case 2:
                 builder.setBackButtonLabel(&quot;Go back&quot;);
@@ -477,11 +734,18 @@ To get a callback when this button was pressed you need set a &lt;code class=&qu
 To do so you need to use &lt;code class=&quot;highlighter-rouge&quot;&gt;AbstractStepAdapter&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;AbstractFragmentStepAdapter&lt;/code&gt;.
 For an example of how to use it with views please see the sample app.&lt;/p&gt;
 
+&lt;h3 id=&quot;showing-an-error-on-tabs-if-step-verification-failed&quot;&gt;Showing an error on tabs if step verification failed&lt;/h3&gt;
+&lt;p&gt;To show an error in the tabbed stepper if step verification fails you need to set &lt;code class=&quot;highlighter-rouge&quot;&gt;ms_showErrorStateEnabled&lt;/code&gt; attribute to &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./gifs/error-on-tabs.gif&quot; width=&quot;360&quot; height=&quot;640&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you want to keep the error displayed when going back to the previous step you need to also set &lt;code class=&quot;highlighter-rouge&quot;&gt;ms_showErrorStateOnBackEnabled&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;.&lt;/p&gt;
+
 &lt;h3 id=&quot;custom-styling&quot;&gt;Custom styling&lt;/h3&gt;
 &lt;p&gt;Basic styling can be done by choosing the active and inactive step colors. 
 There are some additional properties which can be changed directly from StepperLayout’s attributes e.g. the background of bottom navigation buttons (see &lt;a href=&quot;#stepperlayout-attributes&quot;&gt;StepperLayout attributes&lt;/a&gt;)
 For advanced styling you can use &lt;code class=&quot;highlighter-rouge&quot;&gt;ms_stepperLayoutTheme&lt;/code&gt; StepperLayout’s attribute and provide your custom style to be used.
 See ‘Custom StepperLayout theme’ in the sample app for an example.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./gifs/custom-theme.gif&quot; width=&quot;360&quot; height=&quot;640&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;advanced-usage&quot;&gt;Advanced usage&lt;/h3&gt;
 &lt;p&gt;For other examples, e.g. persisting state on rotation, displaying errors, changing whether the user can go to the next step, etc. check out the sample app.&lt;/p&gt;
@@ -505,8 +769,9 @@ See ‘Custom StepperLayout theme’ in the sample app for an example.&lt;/p&gt;
 | &lt;em&gt;ms_tabStepDividerWidth&lt;/em&gt;        | dimension or reference                    | The width of the horizontal tab divider used in tabs stepper type            |
 | &lt;em&gt;ms_showBackButtonOnFirstStep&lt;/em&gt;  | boolean                                   | Flag indicating if the Back (Previous step) button should be shown on the first step. False by default.            |
 | &lt;em&gt;ms_errorColor&lt;/em&gt;                 | color or reference                        | Error color in Tabs stepper |
-| &lt;em&gt;ms_showErrorState&lt;/em&gt;             | boolean                                   | Flag indicating whether to show the error state. Only available with ‘tabs’ type. False by default. |
-| &lt;em&gt;ms_showErrorStateOnBack&lt;/em&gt;       | boolean                                   | Flag indicating whether to keep showing the error state when user moves back. Only available with ‘tabs’ type. False by default. |
+| &lt;em&gt;ms_showErrorStateEnabled&lt;/em&gt;      | boolean                                   | Flag indicating whether to show the error state. Only applicable for ‘tabs’ type. False by default. |
+| &lt;em&gt;ms_showErrorStateOnBackEnabled&lt;/em&gt;| boolean                                   | Flag indicating whether to keep showing the error state when user moves back. Only applicable for ‘tabs’ type. False by default. |
+| &lt;em&gt;ms_tabNavigationEnabled&lt;/em&gt;       | boolean                                   | Flag indicating whether step navigation is possible by clicking on the tabs directly. Only applicable for ‘tabs’ type. True by default. |
 | &lt;em&gt;ms_stepperLayoutTheme&lt;/em&gt;         | reference                                 | Theme to use for even more custom styling of the stepper layout. It is recommended that it should extend @style/MSDefaultStepperLayoutTheme, which is the default theme used. |&lt;/p&gt;
 
 &lt;h3 id=&quot;stepperlayout-style-attributes&quot;&gt;StepperLayout style attributes&lt;/h3&gt;
@@ -565,8 +830,8 @@ See ‘Custom StepperLayout theme’ in the sample app for an example.&lt;/p&gt;
       &lt;td&gt;Used by ms_stepDoneIndicator in layout/ms_step_tab&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;em&gt;ms_stepTabErrorIndicatorStyle&lt;/em&gt;&lt;/td&gt;
-      &lt;td&gt;Used by ms_stepErrorIndicator in layout/ms_step_tab&lt;/td&gt;
+      &lt;td&gt;&lt;em&gt;ms_stepTabIconBackgroundStyle&lt;/em&gt;&lt;/td&gt;
+      &lt;td&gt;Used by ms_stepIconBackground in layout/ms_step_tab&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;em&gt;ms_stepTabTitleStyle&lt;/em&gt;&lt;/td&gt;
@@ -649,7 +914,7 @@ limitations under the License.&lt;/p&gt;
   &lt;li&gt;In XML Layout&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.hamza.slidingsquaresloader.SlidingSquareLoaderView&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.hamza.slidingsquaresloaderview.SlidingSquareLoaderView&lt;/span&gt;
     &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
     &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
     &lt;span class=&quot;na&quot;&gt;app:sslv_start=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;
@@ -779,21 +1044,24 @@ Toasty.custom(yourContext, &quot;I&#39;m a custom Toast&quot;, yourIconDrawable,
 
 &lt;table&gt;
 	&lt;tr&gt;
-	&lt;td&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/vmch41lYF_TKb1MKgtYrSgz2rKQ4T1EnGRCGpWSMqLRSzi_pgNWoZpw9WJE8UV4t614=w300-rw&quot; width=&quot;64&quot; /&gt;&lt;/td&gt;
-	&lt;td&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.trivisionzero.chromophoto&quot;&gt;ChromoPhoto - Colorize B&amp;amp;W&lt;/a&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/vmch41lYF_TKb1MKgtYrSgz2rKQ4T1EnGRCGpWSMqLRSzi_pgNWoZpw9WJE8UV4t614=w300-rw&quot; width=&quot;64&quot; /&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.trivisionzero.chromophoto&quot;&gt;ChromoPhoto - Colorize B&amp;amp;W&lt;/a&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/2EYJPs-qBlKJ3L6cy7idQpzKfZkTzA2G4UQfbs-96VGMftQ-7aV4Dvj77ejzZlAAVx_C=w300-rw&quot; width=&quot;64&quot; /&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.serg.chuprin.tageditor&quot;&gt;AutoTagger - редактор тегов.&lt;/a&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
 
+&lt;h2 id=&quot;screenshots&quot;&gt;Screenshots&lt;/h2&gt;
 
-Screenshots
---
-
-&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr1.png&quot; width=&quot;250&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr1.png&quot; width=&quot;250&quot; /&gt;
 &lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr2.png&quot; width=&quot;250&quot; /&gt;
 &lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr3.png&quot; width=&quot;250&quot; /&gt;
 &lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr4.png&quot; width=&quot;250&quot; /&gt;
 &lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr5.png&quot; width=&quot;250&quot; /&gt;
-&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr6.png&quot; width=&quot;250&quot; /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr6.png&quot; width=&quot;250&quot; /&gt;&lt;/p&gt;
 
-&lt;/tr&gt;&lt;/table&gt;
 </description>
         <pubDate>Sat, 18 Feb 2017 00:00:00 +0900</pubDate>
         <link>http://kmshack.github.io/AndroidUICollection/2017/02/18/Toasty/</link>
@@ -1419,340 +1687,6 @@ limitations under the License.
         <category>text</category>
         
         <category>decorator</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Snowfall</title>
-        <description>&lt;h1 id=&quot;android-snowfall&quot;&gt;Android-Snowfall&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://android-arsenal.com/details/1/4952&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Android–Snowfall-brightgreen.svg?style=flat)&lt;/a&gt;
-&lt;a href=&quot;https://jitpack.io/#jetradarmobile/android-snowfall&quot;&gt;[Release](https://jitpack.io/v/jetradarmobile/android-snowfall.svg)&lt;/a&gt;
-&lt;a href=&quot;https://android-arsenal.com/api?level=16&quot;&gt;[API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)&lt;/a&gt;
-&lt;a href=&quot;http://androidweekly.net/issues/issue-238&quot;&gt;[AndroidWeekly](https://img.shields.io/badge/Android%20Weekly-%23238-blue.svg?style=flat)&lt;/a&gt;
-&lt;a href=&quot;https://www.androiddevdigest.com/digest-124/&quot;&gt;[AndroidDev Digest](https://img.shields.io/badge/AndroidDev%20Digest-%23124-blue.svg?style=flat)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Fully customizable implementation of “Snowfall View” on Android.&lt;/p&gt;
-
-&lt;p&gt;That’s how we use it in our app &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.hotellook&quot;&gt;Hotellook&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/JetradarMobile/android-snowfall/master/art/hotellook-demo.gif&quot;&gt;image&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;compatibility&quot;&gt;Compatibility&lt;/h2&gt;
-
-&lt;p&gt;This library is compatible from API 16 (Android 4.1).&lt;/p&gt;
-
-&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
-
-&lt;p&gt;Add it in your root build.gradle at the end of repositories:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;allprojects&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;repositories&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;maven&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://jitpack.io&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Add the dependency&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;com.github.jetradarmobile:android-snowfall:1.1.6&#39;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-
-&lt;p&gt;Default implementation with round snowflakes:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.jetradarmobile.snowfall.SnowfallView&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Fully customized implementation:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.jetradarmobile.snowfall.SnowfallView&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;app:snowflakesNum=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;250&quot;&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;app:snowflakeAlphaMin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;150&quot;&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;app:snowflakeAlphaMax=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;255&quot;&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;app:snowflakeAngleMax=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;5&quot;&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;app:snowflakeSizeMin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;8dp&quot;&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;app:snowflakeSizeMax=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;32dp&quot;&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;app:snowflakeSpeedMin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;4&quot;&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;app:snowflakeSpeedMax=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;12&quot;&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;app:snowflakesFadingEnabled=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;app:snowflakesAlreadyFalling=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;app:snowflakeImage=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@drawable/snowflake&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2016 JetRadar
-
-Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Mon, 02 Jan 2017 00:00:00 +0900</pubDate>
-        <link>http://kmshack.github.io/AndroidUICollection/2017/01/02/snowfall/</link>
-        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/01/02/snowfall/</guid>
-        
-        <category>snow</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>material about</title>
-        <description>&lt;p&gt;#material-about-library&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://jitpack.io/#daniel-stoneuk/material-about-library&quot;&gt;[Release][101]&lt;/a&gt;
-&lt;a href=&quot;https://www.apache.org/licenses/LICENSE-2.0.html&quot;&gt;[Apache License 2.0][103]&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Makes it easy to create a beautiful about screen for your app. Generates an activity or fragment.&lt;/p&gt;
-
-&lt;p&gt;Idea from here: &lt;a href=&quot;https://github.com/HeinrichReimer/open-source-library-request-manager/issues/3&quot;&gt;Heinrich Reimer’s open-source-library-request-manager&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Design inspired by Phonograph.&lt;/p&gt;
-
-&lt;p&gt;If you use this library in your app, please let me know and I’ll add it to the list.&lt;/p&gt;
-
-&lt;h2 id=&quot;demo&quot;&gt;Demo&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.danielstone.materialaboutlibrarydemo&amp;amp;pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1&quot;&gt;&lt;img alt=&quot;Get it on Google Play&quot; src=&quot;https://play.google.com/intl/en_gb/badges/images/generic/en_badge_web_generic.png&quot; height=&quot;60&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;screenshots&quot;&gt;Screenshots&lt;/h2&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Demo App&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Example&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;http://i.imgur.com/xXWDmLb.png&quot;&gt;Demo App&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;http://i.imgur.com/HEm08Ax.png&quot;&gt;Monitor&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/app/src/main/java/com/danielstone/materialaboutlibrarydemo/Demo.java&quot;&gt;&lt;em&gt;ExampleMaterialAboutActivity.java&lt;/em&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.danielstone.energyhive&quot;&gt;&lt;em&gt;Monitor&lt;/em&gt;&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Material design&lt;/li&gt;
-  &lt;li&gt;Modular backend&lt;/li&gt;
-  &lt;li&gt;Easy to implement&lt;/li&gt;
-  &lt;li&gt;Simple but intuitive API&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;dependency&quot;&gt;Dependency&lt;/h2&gt;
-
-&lt;p&gt;&lt;em&gt;material-about-library&lt;/em&gt; is available on &lt;a href=&quot;https://jitpack.io&quot;&gt;&lt;strong&gt;jitpack.io&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Gradle dependency:&lt;/strong&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;gradle
-allprojects {
-    repositories {
-        maven { url &#39;https://jitpack.io&#39; }
-    }
-}
-&lt;/code&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;gradle
-dependencies {
-	  compile &#39;com.github.daniel-stoneuk:material-about-library:1.7.1&#39;
-}
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;setup&quot;&gt;Setup&lt;/h2&gt;
-
-&lt;h3 id=&quot;activity&quot;&gt;Activity&lt;/h3&gt;
-
-&lt;p&gt;Your &lt;code class=&quot;highlighter-rouge&quot;&gt;Activity&lt;/code&gt; must extend &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/MaterialAboutActivity.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutActivity&lt;/code&gt;&lt;/a&gt; and be in your &lt;em&gt;AndroidManifest.xml&lt;/em&gt;:
-```java
-public class ExampleMaterialAboutActivity extends MaterialAboutActivity {&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@Override
-protected MaterialAboutList getMaterialAboutList(Context context) {
-    return new MaterialAboutList.Builder()
-            .build();
-}
-
-@Override
-protected CharSequence getActivityTitle() {
-    return getString(R.string.mal_title_about);
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;}
-```&lt;/p&gt;
-
-&lt;p&gt;Ensure that the theme extends either of these themes, and apply primary &amp;amp; accent colours:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Theme.Mal.Light.DarkActionBar&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Theme.Mal.Light.LightActionBar&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Theme.Mal.Dark.LightActionBar&lt;/li&gt;
-  &lt;li&gt;Theme.Mal.Dark.DarkActionBar&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;manifest&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;application&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;activity&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;android:name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;.ExampleMaterialAboutActivity&quot;&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;android:theme=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@style/AppTheme.MaterialAboutActivity&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/application&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/manifest&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;lt;style&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;AppTheme.MaterialAboutActivity&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;parent=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Theme.Mal.Light.DarkActionBar&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;--&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;Customize&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;your&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;theme&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;here.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;item&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;colorPrimary&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;@color/colorPrimary&lt;span class=&quot;nt&quot;&gt;&amp;lt;/item&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;item&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;colorPrimaryDark&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;@color/colorPrimaryDark&lt;span class=&quot;nt&quot;&gt;&amp;lt;/item&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;item&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;colorAccent&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;@color/colorAccent&lt;span class=&quot;nt&quot;&gt;&amp;lt;/item&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;fragment&quot;&gt;Fragment&lt;/h3&gt;
-
-&lt;p&gt;Your &lt;code class=&quot;highlighter-rouge&quot;&gt;fragment&lt;/code&gt; must extend &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/app/src/main/java/com/danielstone/materialaboutlibrarydemo/ExampleMaterialAboutFragment.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutFragment&lt;/code&gt;&lt;/a&gt;.
-```java
-public class ExampleMaterialAboutFragment extends MaterialAboutFragment {&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@Override
-protected MaterialAboutList getMaterialAboutList(final Context activityContext) {
-} } ```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;add-cards&quot;&gt;Add Cards:&lt;/h3&gt;
-
-&lt;p&gt;Start building a “card” using &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutCard.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutCard.Builder()&lt;/code&gt;&lt;/a&gt;
-```java
-public class ExampleMaterialAboutActivity extends MaterialAboutActivity {&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@Override
-protected MaterialAboutList getMaterialAboutList() {
-    MaterialAboutCard.Builder appCardBuilder = new MaterialAboutCard.Builder(); ``` Give the card a title by calling `.title` on the `Builder` ```java
-    authorCardBuilder.title(&quot;Author&quot;); ```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;add-items&quot;&gt;Add Items:&lt;/h3&gt;
-
-&lt;p&gt;There are currently two types of item you can add to a card - &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutTitleItem.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutTitleItem&lt;/code&gt;&lt;/a&gt; and &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutActionItem.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutActionItem&lt;/code&gt;&lt;/a&gt;. Planned items include “person” items which feature buttons to showcase a single person. Feel free to submit a PR or Issue for more item ideas.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutActionItem&lt;/code&gt;: Standard item with text, icon and optional subtext.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutTitleItem&lt;/code&gt;: Larger item with large icon (eg app icon) and larger text.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutTitleItem.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutTitleItem&lt;/code&gt;&lt;/a&gt; is created with &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutTitleItem.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutTitleItem.Builder()&lt;/code&gt;&lt;/a&gt; and lets you specify &lt;strong&gt;text&lt;/strong&gt; and an &lt;strong&gt;icon&lt;/strong&gt;.
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-        appCardBuilder.addItem(new MaterialAboutTitleItem.Builder()
-                .text(&quot;Material About Library&quot;)
-                .icon(R.mipmap.ic_launcher)
-                .build());
-&lt;/code&gt;
-&lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutActionItem.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutActionItem&lt;/code&gt;&lt;/a&gt; is created with &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutActionItem.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutActionItem.Builder()&lt;/code&gt;&lt;/a&gt; and lets you specify &lt;strong&gt;text&lt;/strong&gt;, &lt;strong&gt;sub-text&lt;/strong&gt;, an &lt;strong&gt;icon&lt;/strong&gt; and an &lt;strong&gt;OnClickListener&lt;/strong&gt;.
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-        appCardBuilder.addItem(new MaterialAboutActionItem.Builder()
-                .text(&quot;Version&quot;)
-                .subText(&quot;1.0.0&quot;)
-                .icon(R.drawable.ic_about_info)
-                .setOnClickListener(new MaterialAboutActionItem.OnClickListener() {
-                    @Override
-                    public void onClick() {
-                        Toast.makeText(ExampleMaterialAboutActivity.this, &quot;Version Tapped&quot;, Toast.LENGTH_SHORT).show();
-                    }
-                })
-                .build());
-&lt;/code&gt;
-### Return the list:
-Create a &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutList.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutList&lt;/code&gt;&lt;/a&gt; using &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutList.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutList.Builder()&lt;/code&gt;&lt;/a&gt;, passing in the cards you would like to display.
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-        return new MaterialAboutList.Builder()
-                .addCard(supportCardBuilder.build())
-                .build();
-    }
-}
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Check out a working example in &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/app/src/main/java/com/danielstone/materialaboutlibrarydemo/Demo.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Demo.java&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; You can either use &lt;em&gt;Strings&lt;/em&gt; / &lt;em&gt;Drawables&lt;/em&gt; or &lt;em&gt;Resources&lt;/em&gt; when creating &lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutItem&lt;/code&gt;’s&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; Use &lt;a href=&quot;https://github.com/mikepenz/Android-Iconics&quot;&gt;Android-Iconics&lt;/a&gt; for icons. “Android-Iconics - Use any icon font, or vector (.svg) as drawable in your application.”&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; Use &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/ConvenienceBuilder.java&quot;&gt;ConvenienceBuilder&lt;/a&gt; to easily create items or OnClickListeners.&lt;/p&gt;
-
-&lt;h2 id=&quot;contributors&quot;&gt;Contributors&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Daniel Stone (&lt;a href=&quot;https://github.com/daniel-stoneuk&quot;&gt;@daniel-stoneuk&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;Jonas Uekötter (&lt;a href=&quot;https://github.com/ueman&quot;&gt;@ueman&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;Rainer Lang (&lt;a href=&quot;https://github.com/rainer-lang&quot;&gt;@Rainer-Lang&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;apps-using-this-library&quot;&gt;Apps using this library&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.danielstone.energyhive&quot;&gt;Monitor for EnergyHive &amp;amp; Engage&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=biemann.android.craftingnms&quot;&gt;Crafting Assistant NMS&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=cz.kutner.comicsdbclient.comicsdbclient&quot;&gt;ComicsDB Client&lt;/a&gt;, code available on &lt;a href=&quot;https://github.com/tukak/comicsdbclient&quot;&gt;GitHub&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/eggheadgames/android-about-box&quot;&gt;Android About Box&lt;/a&gt; (library) - an opinionated About Box for Android&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2016 Daniel Stone
-
-Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Mon, 02 Jan 2017 00:00:00 +0900</pubDate>
-        <link>http://kmshack.github.io/AndroidUICollection/2017/01/02/material_about/</link>
-        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/01/02/material_about/</guid>
-        
-        <category>material</category>
-        
-        <category>about</category>
         
         
       </item>
