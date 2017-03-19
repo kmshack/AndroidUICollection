@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>InstaCropper</title>
-  <meta name="description" content="InstaCropperA View for cropping images that is similar to Instagram’s crop. Also an Activity for cropping is included.alt tag##UsageAdd the dependency:Groovy...">
+  <meta name="description" content="InstaCropperA View for cropping images that is similar to Instagram’s crop. Also an Activity for cropping is included.alt tagUsageAdd the dependency:Groovyde...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
@@ -16,18 +16,18 @@
   <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="InstaCropperA View for cropping images that is similar to Instagram’s crop. Also an Activity for cropping is included.alt tag##UsageAdd the dependency:Groovy...">
+  <meta name="description" content="InstaCropperA View for cropping images that is similar to Instagram’s crop. Also an Activity for cropping is included.alt tagUsageAdd the dependency:Groovyde...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="InstaCropper">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="InstaCropperA View for cropping images that is similar to Instagram’s crop. Also an Activity for cropping is included.alt tag##UsageAdd the dependency:Groovy...">
+  <meta property="og:description" content="InstaCropperA View for cropping images that is similar to Instagram’s crop. Also an Activity for cropping is included.alt tagUsageAdd the dependency:Groovyde...">
   <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2017/03/12/InstaCropper/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="InstaCropperA View for cropping images that is similar to Instagram’s crop. Also an Activity for cropping is included.alt tag##UsageAdd the dependency:Groovy..." />
+  <meta name="twitter:description" content="InstaCropperA View for cropping images that is similar to Instagram’s crop. Also an Activity for cropping is included.alt tagUsageAdd the dependency:Groovyde..." />
 
   
   	<!-- Article specific OG data -->
@@ -563,12 +563,12 @@
 
 <p><a href="https://cloud.githubusercontent.com/assets/4597931/23830368/724ddf70-071e-11e7-9d7e-65615be8d5e6.gif">alt tag</a></p>
 
-<p>##Usage</p>
+<h2 id="usage">Usage</h2>
 
 <p>Add the dependency:
 <code class="highlighter-rouge">Groovy
 dependencies {
-	compile 'com.yashoid:instacropper:1.0.0'
+	compile 'com.yashoid:instacropper:1.0.4'
 }
 </code></p>
 
@@ -624,12 +624,22 @@ Intent intent = InstaCropperActivity.getIntent(context, srcUri, dstUri, maxWidth
 startActivityForResult(intent, REQUEST_CROP);
 </code></p>
 
-<p>To change the title of the crop Activity and the title of the crop action define the string.
+<p>You can modify the crop Activity’s apprearance by overriding the following resouce values:
 ```xml</p>
 <string name="instacropper_title">Crop</string>
+<p>&lt;– Title of toolbar –&gt;</p>
 <string name="instacropper_crop">Crop</string>
-<p>```</p>
+<p>&lt;– Title of crop action in toolbar –&gt;</p>
 
+<color name="instacropper_cropper_background">@android:color/white</color>
+<p>&lt;– Background color of InstaCropperView in the activity –&gt;</p>
+<color name="instacropper_crop_color">@android:color/black</color>
+<p>&lt;– Color of crop action in toolbar –&gt;</p>
+
+<style name="InstaCropper" parent="android:style/Theme.DeviceDefault.Light"> <-- Style of crop Activity -->
+```
+
+</style>
 
           <br>
           <div class="post__tags">
