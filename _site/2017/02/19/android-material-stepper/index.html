@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Android Material Stepper</title>
+  <meta name="description" content="  # Android Material Stepper [Build Status](https://travis-ci.org/stepstone-tech/android-material-stepper.svg?branch=master) [Android Arsenal](https://img.sh...">
+  <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
+  <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
+    
+  <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
+  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2017/02/19/android-material-stepper/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
+    
+  <meta name="description" content="  # Android Material Stepper [Build Status](https://travis-ci.org/stepstone-tech/android-material-stepper.svg?branch=master) [Android Arsenal](https://img.sh...">
+
+
+  <meta name="author" content="kmshack" />
+
+  <meta property="og:title" content="Android Material Stepper">
+  <meta property="og:site_name" content="Android UI OpenSource" />
+  <meta property="og:description" content="  # Android Material Stepper [Build Status](https://travis-ci.org/stepstone-tech/android-material-stepper.svg?branch=master) [Android Arsenal](https://img.sh...">
+  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2017/02/19/android-material-stepper/" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:site" content="@kmshack" />
+  <meta name="twitter:description" content="  # Android Material Stepper [Build Status](https://travis-ci.org/stepstone-tech/android-material-stepper.svg?branch=master) [Android Arsenal](https://img.sh..." />
+
+  
+  	<!-- Article specific OG data -->
+  	<meta property="og:type" content="article" />
+  	<meta property="article:published_time" content="2017-02-19 00:00:00 +0900" />
+  	
+  	<meta property="article:author" content="http://facebook.com/kmshack" />
+    <meta property="article:publisher" content="https://www.facebook.com/kmshack" />
+  	<meta property="article:section" content="" />
+  	
+
+  	<meta name="twitter:card" content="summary_large_image" />
+  	<meta name="twitter:creator" content="@kmshack_kr" />
+  	<meta name="twitter:title" content="Android Material Stepper" />
+	
+	  	<meta property="og:image" content="/images/posts/2017-02-19-android-material-stepper.gif" />
+	  	<meta name="twitter:image" content="/images/posts/2017-02-19-android-material-stepper.gif" />
+  	
+
+  
+
+  <script>
+    var base_url = "/AndroidUICollection";
+  </script>
+    
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9975139260149901",
+    enable_page_level_ads: true
+  });
+</script>
+    
+</head>
+
+<body>
+
+  <!-- Google Analytics Code -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85072530-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  <div class="off-canvas-container">
+    <div class="sidebar">
+  <div class="row">
+
+    <div class="column small-10 large-12">
+      <br>
+      <h1 class="sidebar__logo logo"><a href="/AndroidUICollection/">Android UI OpenSource</a></h1>
+      <div class="sidebar__description font-tiny">Collection of OpenSource for Android UI.</div>
+    </div>
+
+    <label class="off-canvas-toggle"><span data-icon="ei-navicon" data-size="s"></span></label>
+
+    <div class="off-canvas-content">
+
+      <div class="column small-12 large-12">
+        <nav class="navigation">
+          <ul class="list-bare text-center">
+            
+              
+            
+              
+                
+                  <li>
+                    <a class="page-link" href="/AndroidUICollection/about.html">About</a>
+                  </li>
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+            <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="column small-12 large-12">
+        <ul class="social-nav social-icons">
+
+          
+          <li>
+            <a href="http://www.github.com/kmshack" target="_blank">
+              <span data-icon="ei-sc-github" data-size="s"></span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="http://www.twitter.com/kmshack_kr" target="_blank">
+              <span data-icon="ei-sc-twitter" data-size="s"></span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="mailto:kmshack@naver.com" target="_blank">
+              <span data-icon="ei-envelope" data-size="s"></span>
+            </a>
+          </li>
+          
+
+          <li>
+            <a class="toggle-search-button" href="#">
+              <span data-icon="ei-search" data-size="s"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+        
+      <div class="sidebar__bottom">
+        <div class="column small-12 large-12">
+            
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- androidui -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:250px;height:250px"
+     data-ad-client="ca-pub-9975139260149901"
+     data-ad-slot="5123612274"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+            
+          <div class="font-tiny">
+              <br>
+            &copy; 2017 Android UI OpenSource
+          </div>
+        </div>
+      </div>
+        
+    </div> <!-- off-canvas-content -->
+      
+
+
+  </div>
+    
+
+    
+</div>
+
+<div class="search-form-container">
+
+  <form class="search-form">
+    <fieldset class="search-form__fieldset">
+      <div class="row">
+        <div class="column column--center large-8">
+          <input class="search-form__field" placeholder="Type to search" autofocus>
+          <input class="search-form__submit" type="submit" value="search">
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+  <div class="row">
+    <div class="column column--center large-8">
+      <div class="search-results"></div>
+    </div>
+  </div>
+
+  <div data-icon="ei-close" data-size="s" class="close-search-button search-form-container__close"></div>
+
+</div>
+
+    
+
+
+
+<div class="wrapper">
+  <div class="row row--full">
+
+    <div class="column column--center medium-12 large-12">
+      <div class="grey-bg CoverImage FlexEmbed FlexEmbed--16by9" style="background-image: url(/AndroidUICollection/images/posts/2017-02-19-android-material-stepper.gif)"></div>
+        
+    </div>
+      
+    <div class="column column--center medium-12 large-10">
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+        
+          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2017-02-19-android-material-stepper.gif">
+        
+
+        <header class="post__header">
+          <h2 class="post__title" itemprop="name headline">Android Material Stepper</h2>
+          
+          <h3 class="post__date">
+            <a href="https://github.com/stepstone-tech/android-material-stepper" target="_blank"><span data-icon="ei-sc-github" data-size="s"></span>https://github.com/stepstone-tech/android-material-stepper</a>
+          </h3>
+        </header>
+
+        <div class="post-content" itemprop="articleBody">
+            
+            <div class="column column--center medium-12 large-4">
+              <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/AndroidUICollection/images/posts/2017-02-19-android-material-stepper.gif)"></div>
+            </div>
+             <br><br>
+            <hr>
+          <br>
+          <p align="center">
+  <img src="./art/material-stepper-logo.png" width="256" height="256" />
+</p>
+<p># Android Material Stepper <a href="https://travis-ci.org/stepstone-tech/android-material-stepper">[Build Status](https://travis-ci.org/stepstone-tech/android-material-stepper.svg?branch=master)</a> <a href="https://android-arsenal.com/details/1/5138">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Android%20Material%20Stepper-brightgreen.svg?style=flat)</a> <a href="http://androidweekly.net/issues/issue-243">[Android Weekly](https://img.shields.io/badge/Android%20Weekly-%23243-brightgreen.svg)</a></p>
+
+<p>This library allows to use Material steppers inside Android applications.</p>
+
+<p>Quoting the <a href="https://www.google.com/design/spec/components/steppers.html">documentation</a>:</p>
+
+<blockquote>
+  <p>Steppers display progress through a sequence by breaking it up into multiple logical and numbered steps.</p>
+</blockquote>
+
+<h2 id="download-from-jcenter">Download (from JCenter)</h2>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">compile</span> <span class="s1">'com.stepstone.stepper:material-stepper:3.0.0'</span>
+</code></pre>
+</div>
+
+<h2 id="supported-steppers">Supported steppers</h2>
+<ul>
+  <li>Mobile stepper with dots <br />
+<img src="./gifs/dotted-progress-bar.gif" width="360" height="640" />  <img src="./gifs/dotted-progress-bar-styled.gif" width="360" height="640" /></li>
+  <li>Mobile stepper with progress bar <br />
+<img src="./gifs/linear-progress-bar.gif" width="360" height="640" />  <img src="./gifs/linear-progress-bar-styled.gif" width="360" height="640" /></li>
+  <li>Horizontal stepper <br />
+<img src="./gifs/tabs.gif" width="640" height="360" />
+<img src="./gifs/tabs-styled.gif" width="640" height="360" /></li>
+</ul>
+
+<h2 id="supported-features">Supported features</h2>
+<ul>
+  <li>color customisation of individual widgets inside of the stepper via View attributes or a style from a theme</li>
+  <li>custom texts of individual widgets inside of the stepper via View attributes or a style from a theme</li>
+  <li>embedding the stepper anywhere in the view hierarchy and changing the stepper type for various device configurations, e.g. phone/tablet, portrait/landscape</li>
+  <li>step validation</li>
+  <li>use with Fragments or Views</li>
+</ul>
+
+<h2 id="getting-started">Getting started</h2>
+
+<h3 id="create-layout-in-xml">Create layout in XML</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;com.stepstone.stepper.StepperLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+    <span class="na">android:id=</span><span class="s">"@+id/stepperLayout"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:orientation=</span><span class="s">"vertical"</span>
+    <span class="na">app:ms_stepperType=</span><span class="s">"progress_bar"</span> <span class="nt">/&gt;</span>
+</code></pre>
+</div>
+
+<p>For a complete list of StepperLayout attributes see <a href="#StepperLayout attributes">StepperLayout attributes</a>.</p>
+
+<h3 id="create-step-fragments">Create step Fragment(s)</h3>
+<p>Step fragments must extend <a href="http://developer.android.com/reference/android/support/v4/app/Fragment.html">android.support.v4.app.Fragment</a>
+and implement <code class="highlighter-rouge">com.stepstone.stepper.Step</code></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">StepFragmentSample</span> <span class="kd">extends</span> <span class="n">Fragment</span> <span class="kd">implements</span> <span class="n">Step</span> <span class="o">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">View</span> <span class="n">onCreateView</span><span class="o">(</span><span class="n">LayoutInflater</span> <span class="n">inflater</span><span class="o">,</span> <span class="n">ViewGroup</span> <span class="n">container</span><span class="o">,</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">View</span> <span class="n">v</span> <span class="o">=</span> <span class="n">inflater</span><span class="o">.</span><span class="na">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">step</span><span class="o">,</span> <span class="n">container</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+
+        <span class="c1">//initialize your UI</span>
+
+        <span class="k">return</span> <span class="n">v</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">VerificationError</span> <span class="n">verifyStep</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">//return null if the user can go to the next step, create a new VerificationError instance otherwise</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onSelected</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">//update UI when selected</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onError</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">VerificationError</span> <span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//handle error inside of the fragment, e.g. show error on EditText</span>
+    <span class="o">}</span>
+    
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h3 id="extend-abstractfragmentstepadapter">Extend AbstractFragmentStepAdapter</h3>
+<p>AbstractFragmentStepAdapter extends <a href="http://developer.android.com/reference/android/support/v4/app/FragmentPagerAdapter.html">FragmentPagerAdapter</a>
+but instead of overriding the method <code class="highlighter-rouge">getItem(int)</code> you must override the <code class="highlighter-rouge">createStep(int)</code> method.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">MyStepperAdapter</span> <span class="kd">extends</span> <span class="n">AbstractFragmentStepAdapter</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="n">MyStepperAdapter</span><span class="o">(</span><span class="n">FragmentManager</span> <span class="n">fm</span><span class="o">,</span> <span class="n">Context</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">fm</span><span class="o">,</span> <span class="n">context</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">Step</span> <span class="n">createStep</span><span class="o">(</span><span class="kt">int</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">final</span> <span class="n">StepFragmentSample</span> <span class="n">step</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StepFragmentSample</span><span class="o">();</span>
+        <span class="n">Bundle</span> <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
+        <span class="n">b</span><span class="o">.</span><span class="na">putInt</span><span class="o">(</span><span class="n">CURRENT_STEP_POSITION_KEY</span><span class="o">,</span> <span class="n">position</span><span class="o">);</span>
+        <span class="n">step</span><span class="o">.</span><span class="na">setArguments</span><span class="o">(</span><span class="n">b</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">step</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="n">getCount</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="mi">3</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@NonNull</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">StepViewModel</span> <span class="n">getViewModel</span><span class="o">(</span><span class="nd">@IntRange</span><span class="o">(</span><span class="n">from</span> <span class="o">=</span> <span class="mi">0</span><span class="o">)</span> <span class="kt">int</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//Override this method to set Step title for the Tabs, not necessary for other stepper types</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">StepViewModel</span><span class="o">.</span><span class="na">Builder</span><span class="o">(</span><span class="n">context</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">setTitle</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">tab_title</span><span class="o">)</span> <span class="c1">//can be a CharSequence instead</span>
+                <span class="o">.</span><span class="na">create</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre>
+</div>
+
+<h3 id="set-adapter-in-activity">Set adapter in Activity</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">StepperActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="n">StepperLayout</span> <span class="n">mStepperLayout</span><span class="o">;</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="n">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">main</span><span class="o">);</span>
+        <span class="n">mStepperLayout</span> <span class="o">=</span> <span class="o">(</span><span class="n">StepperLayout</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">stepperLayout</span><span class="o">);</span>
+        <span class="n">mStepperLayout</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(</span><span class="k">new</span> <span class="n">MyStepperAdapter</span><span class="o">(</span><span class="n">getSupportFragmentManager</span><span class="o">(),</span> <span class="k">this</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h3 id="add-a-stepperlistener-in-the-activity-optional">Add a StepperListener in the Activity (optional)</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">StepperActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="kd">implements</span> <span class="n">StepperLayout</span><span class="o">.</span><span class="na">StepperListener</span> <span class="o">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="n">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//...</span>
+        <span class="n">mStepperLayout</span><span class="o">.</span><span class="na">setListener</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onCompleted</span><span class="o">(</span><span class="n">View</span> <span class="n">completeButton</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="s">"onCompleted"</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onError</span><span class="o">(</span><span class="n">VerificationError</span> <span class="n">verificationError</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="s">"onError -&gt; "</span> <span class="o">+</span> <span class="n">verificationError</span><span class="o">.</span><span class="na">getErrorMessage</span><span class="o">(),</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onStepSelected</span><span class="o">(</span><span class="kt">int</span> <span class="n">newStepPosition</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="s">"onStepSelected -&gt; "</span> <span class="o">+</span> <span class="n">newStepPosition</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onReturn</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">finish</span><span class="o">();</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h3 id="change-nextcomplete-buttons-text-color-when-going-to-the-next-step-should-be-disabled-optional">Change Next/Complete button’s text color when going to the next step should be disabled (optional)</h3>
+<p>It is possible to change the Next/Complete button’s text color (together with right chevron’s color)
+when all the criteria to go to the next step are not met. This color should indicate that
+the user cannot go to next step yet and look as if disabled. Clicking on the button will still perform the regular
+step verification. There is a custom state added since setting <code class="highlighter-rouge">android:state_enabled</code> to <code class="highlighter-rouge">false</code> in a color selector would disable the clicks
+and we want to have them so that we can show an info message for the user.
+In order to set that color:</p>
+
+<ol>
+  <li>
+    <p>Create a new color selector in <code class="highlighter-rouge">res/color</code></p>
+
+    <p>```xml
+ <?xml version="1.0" encoding="utf-8"?></p>
+    <selector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+     <item app:state_verification_failed="true" android:color="#30BDBDBD" />
+     <item android:color="@color/ms_white" />
+ </selector>
+    <p>```</p>
+  </li>
+  <li>
+    <p>Change button’s (text) color in layout file</p>
+
+    <p>```xml
+ <?xml version="1.0" encoding="utf-8"?></p>
+    <com.stepstone.stepper.stepperlayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/stepperLayout" android:layout_width="match_parent" android:layout_height="match_parent" app:ms_steppertype="dots" app:ms_nextbuttoncolor="@color/ms_custom_button_text_color" app:ms_completebuttoncolor="@color/ms_custom_button_text_color" />
+
+    <p>```</p>
+  </li>
+  <li>
+    <p>Toggle the state in code</p>
+
+    <p><code class="highlighter-rouge">java
+ mStepperLayout.setNextButtonVerificationFailed(enabled);
+ mStepperLayout.setCompleteButtonVerificationFailed(enabled);
+</code></p>
+  </li>
+</ol>
+
+<h3 id="make-an-io-operation-before-going-to-the-next-step-optional">Make an IO operation before going to the next step (optional)</h3>
+<p>If the user wants to e.g. save something in the database or make a network call on a separate Thread after clicking on the Next button
+he can perform these operations and then invoke the <code class="highlighter-rouge">goToNextStep()</code> method of the <code class="highlighter-rouge">StepperLayout.OnNextClickedCallback</code> in the current Step.
+While operations are performed, and the user would like to go back you can cancel them and then invoke <code class="highlighter-rouge">onBackClicked()</code> method of the <code class="highlighter-rouge">StepperLayout.OnBackClickedCallback</code>.</p>
+<p><img src="./gifs/delayed-transition.gif" width="360" height="640" /></p>
+<p>The fragment must implement <code class="highlighter-rouge">BlockingStep</code> instead of <code class="highlighter-rouge">Step</code>.
+Also, make sure that <code class="highlighter-rouge">goToNextStep()</code> gets called on the main thread.
+<strong>Note:</strong> the <code class="highlighter-rouge">onNextClicked(StepperLayout.OnNextClickedCallback)</code> method gets invoked after step verification.
+E.g.:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DelayedTransitionStepFragmentSample</span> <span class="kd">extends</span> <span class="n">Fragment</span> <span class="kd">implements</span> <span class="n">BlockingStep</span> <span class="o">{</span>
+
+    <span class="c1">//...</span>
+
+    <span class="nd">@Override</span>
+    <span class="nd">@UiThread</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onNextClicked</span><span class="o">(</span><span class="kd">final</span> <span class="n">StepperLayout</span><span class="o">.</span><span class="na">OnNextClickedCallback</span> <span class="n">callback</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">new</span> <span class="n">Handler</span><span class="o">().</span><span class="na">postDelayed</span><span class="o">(</span><span class="k">new</span> <span class="n">Runnable</span><span class="o">()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="n">run</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">callback</span><span class="o">.</span><span class="na">goToNextStep</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">},</span> <span class="mi">2000L</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="nd">@UiThread</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onBackClicked</span><span class="o">(</span><span class="n">StepperLayout</span><span class="o">.</span><span class="na">OnBackClickedCallback</span> <span class="n">callback</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">getContext</span><span class="o">(),</span> <span class="s">"Your custom back action. Here you should cancel currently running operations"</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+        <span class="n">callback</span><span class="o">.</span><span class="na">goToPrevStep</span><span class="o">();</span>
+     <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h3 id="changing-backnext-button-labels--compound-drawables-per-step">Changing Back/Next button labels &amp; compound drawables per step</h3>
+<p>Sometimes you might want to have different labels on the Next and/or Back navigation buttons on different steps e.g. use the default labels on the first few steps,
+but display ‘Summary’ just before the last page.
+You might also want to use your custom icons instead of the default navigation button compound drawables or not show the compound drawables for some of the buttons.</p>
+<p><img src="./gifs/custom-navigation-buttons.gif" width="360" height="640" /></p>
+<p>In such case you need to override the <code class="highlighter-rouge">getViewModel(int)</code> method from the <code class="highlighter-rouge">StepAdapter</code> e.g.
+<code class="highlighter-rouge">java
+    @NonNull
+    @Override
+    public StepViewModel getViewModel(@IntRange(from = 0) int position) {
+        StepViewModel.Builder builder = new StepViewModel.Builder(context)
+                .setTitle(R.string.tab_title);
+        switch (position) {
+            case 0:
+                builder
+                    .setNextButtonLabel("This way")
+                    .setBackButtonLabel("Cancel")
+                    .setNextButtonEndDrawableResId(R.drawable.ms_forward_arrow)
+                    .setBackButtonStartDrawableResId(StepViewModel.NULL_DRAWABLE);
+                break;
+            case 1:
+                builder
+                    .setNextButtonLabel(R.string.go_to_summary)
+                    .setBackButtonLabel("Go to first")
+                    .setBackButtonStartDrawableResId(R.drawable.ms_back_arrow);
+                break;
+            case 2:
+                builder.setBackButtonLabel("Go back");
+                break;
+            default:
+                throw new IllegalArgumentException("Unsupported position: " + position);
+        }
+        return builder.create();
+    }
+</code></p>
+
+<h3 id="using-the-same-stepper-styling-across-the-application">Using the same stepper styling across the application</h3>
+<p>If you have many steppers in your application in different activities/fragments you might want to set a common style in a theme.
+To do so, you need to set the <code class="highlighter-rouge">ms_stepperStyle</code> attribute in the theme, e.g.
+```xml
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        ...</style></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    &lt;item name="ms_stepperStyle"&gt;@style/DotStepperStyle&lt;/item&gt;
+&lt;/style&gt; ``` and declare that style in the XML you keep your styles at, e.g. ```xml
+&lt;style name="DotStepperStyle"&gt;
+    &lt;item name="ms_stepperType"&gt;dots&lt;/item&gt;
+    &lt;item name="ms_activeStepColor"&gt;#FFFFFF&lt;/item&gt;
+    &lt;item name="ms_inactiveStepColor"&gt;#006867&lt;/item&gt;
+    &lt;item name="ms_bottomNavigationBackground"&gt;?attr/colorAccent&lt;/item&gt;
+&lt;/style&gt; ```
+</code></pre>
+</div>
+
+<h3 id="showing-a-back-button-on-first-step">Showing a Back button on first step</h3>
+<p>By default if the user is on the first step then the Back button in the bottom navigation is hidden. 
+This behaviour can be changed by setting <code class="highlighter-rouge">ms_showBackButtonOnFirstStep</code> to <code class="highlighter-rouge">true</code>, e.g.
+<code class="highlighter-rouge">xml
+    &lt;?xml version="1.0" encoding="utf-8"?&gt;
+    &lt;com.stepstone.stepper.StepperLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/stepperLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:ms_showBackButtonOnFirstStep="true"
+        app:ms_stepperType="dots" /&gt;
+</code>
+To get a callback when this button was pressed you need set a <code class="highlighter-rouge">StepperListener</code> and write your own custom return logic in the <code class="highlighter-rouge">onReturn()</code> method to e.g. close the Activity.</p>
+
+<h3 id="using-with-views-instead-of-fragments">Using with Views instead of Fragments</h3>
+<p>It is possible to use this library without the need to rely on Fragments.
+To do so you need to use <code class="highlighter-rouge">AbstractStepAdapter</code> instead of <code class="highlighter-rouge">AbstractFragmentStepAdapter</code>.
+For an example of how to use it with views please see the sample app.</p>
+
+<h3 id="showing-an-error-on-tabs-if-step-verification-failed">Showing an error on tabs if step verification failed</h3>
+<p>To show an error in the tabbed stepper if step verification fails you need to set <code class="highlighter-rouge">ms_showErrorStateEnabled</code> attribute to <code class="highlighter-rouge">true</code>.</p>
+<p><img src="./gifs/error-on-tabs.gif" width="360" height="640" /></p>
+
+<p>If you want to keep the error displayed when going back to the previous step you need to also set <code class="highlighter-rouge">ms_showErrorStateOnBackEnabled</code> to <code class="highlighter-rouge">true</code>.</p>
+
+<h3 id="custom-styling">Custom styling</h3>
+<p>Basic styling can be done by choosing the active and inactive step colors. 
+There are some additional properties which can be changed directly from StepperLayout’s attributes e.g. the background of bottom navigation buttons (see <a href="#stepperlayout-attributes">StepperLayout attributes</a>)
+For advanced styling you can use <code class="highlighter-rouge">ms_stepperLayoutTheme</code> StepperLayout’s attribute and provide your custom style to be used.
+See ‘Custom StepperLayout theme’ in the sample app for an example.</p>
+<p><img src="./gifs/custom-theme.gif" width="360" height="640" /></p>
+
+<h3 id="advanced-usage">Advanced usage</h3>
+<p>For other examples, e.g. persisting state on rotation, displaying errors, changing whether the user can go to the next step, etc. check out the sample app.</p>
+
+<h2 id="stepperlayout-attributes">StepperLayout attributes</h2>
+<p>| Attribute name                  | Format                                    | Description |
+| ——————————–|——————————————-|————-|
+| <em>ms_stepperType</em>                | one of <code class="highlighter-rouge">dots</code>, <code class="highlighter-rouge">progress_bar</code> or <code class="highlighter-rouge">tabs</code>   | <strong>REQUIRED:</strong> Type of the stepper |
+| <em>ms_backButtonColor</em>            | color or reference                        | BACK button’s text color           |
+| <em>ms_nextButtonColor</em>            | color or reference                        | NEXT button’s text color            |
+| <em>ms_completeButtonColor</em>        | color or reference                        | COMPLETE button’s text color            |
+| <em>ms_activeStepColor</em>            | color or reference                        | Active step’s color            |
+| <em>ms_inactiveStepColor</em>          | color or reference                        | Inactive step’s color            |
+| <em>ms_bottomNavigationBackground</em> | reference                                 | Background of the bottom navigation            |
+| <em>ms_backButtonBackground</em>       | reference                                 | BACK button’s background            |
+| <em>ms_nextButtonBackground</em>       | reference                                 | NEXT button’s background            |
+| <em>ms_completeButtonBackground</em>   | reference                                 | COMPLETE button’s background            |
+| <em>ms_backButtonText</em>             | string or reference                       | BACK button’s text            |
+| <em>ms_nextButtonText</em>             | string or reference                       | NEXT button’s text            |
+| <em>ms_completeButtonText</em>         | string or reference                       | COMPLETE button’s text            |
+| <em>ms_tabStepDividerWidth</em>        | dimension or reference                    | The width of the horizontal tab divider used in tabs stepper type            |
+| <em>ms_showBackButtonOnFirstStep</em>  | boolean                                   | Flag indicating if the Back (Previous step) button should be shown on the first step. False by default.            |
+| <em>ms_errorColor</em>                 | color or reference                        | Error color in Tabs stepper |
+| <em>ms_showErrorStateEnabled</em>      | boolean                                   | Flag indicating whether to show the error state. Only applicable for ‘tabs’ type. False by default. |
+| <em>ms_showErrorStateOnBackEnabled</em>| boolean                                   | Flag indicating whether to keep showing the error state when user moves back. Only applicable for ‘tabs’ type. False by default. |
+| <em>ms_tabNavigationEnabled</em>       | boolean                                   | Flag indicating whether step navigation is possible by clicking on the tabs directly. Only applicable for ‘tabs’ type. True by default. |
+| <em>ms_stepperLayoutTheme</em>         | reference                                 | Theme to use for even more custom styling of the stepper layout. It is recommended that it should extend @style/MSDefaultStepperLayoutTheme, which is the default theme used. |</p>
+
+<h3 id="stepperlayout-style-attributes">StepperLayout style attributes</h3>
+<p>A list of <code class="highlighter-rouge">ms_stepperLayoutTheme</code> attributes responsible for styling of StepperLayout’s child views.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>ms_bottomNavigationStyle</em></td>
+      <td>Used by ms_bottomNavigation in layout/ms_stepper_layout</td>
+    </tr>
+    <tr>
+      <td><em>ms_tabsContainerStyle</em></td>
+      <td>Used by ms_stepTabsContainer in layout/ms_stepper_layout</td>
+    </tr>
+    <tr>
+      <td><em>ms_backNavigationButtonStyle</em></td>
+      <td>Used by ms_stepPrevButton in layout/ms_stepper_layout</td>
+    </tr>
+    <tr>
+      <td><em>ms_nextNavigationButtonStyle</em></td>
+      <td>Used by ms_stepNextButton in layout/ms_stepper_layout</td>
+    </tr>
+    <tr>
+      <td><em>ms_completeNavigationButtonStyle</em></td>
+      <td>Used by ms_stepCompleteButton in layout/ms_stepper_layout</td>
+    </tr>
+    <tr>
+      <td><em>ms_colorableProgressBarStyle</em></td>
+      <td>Used by ms_stepProgressBar in layout/ms_stepper_layout</td>
+    </tr>
+    <tr>
+      <td><em>ms_stepTabsScrollViewStyle</em></td>
+      <td>Used by ms_stepTabsScrollView in layout/ms_tabs_container</td>
+    </tr>
+    <tr>
+      <td><em>ms_stepTabsInnerContainerStyle</em></td>
+      <td>Used by ms_stepTabsInnerContainer in layout/ms_tabs_container</td>
+    </tr>
+    <tr>
+      <td><em>ms_stepTabContainerStyle</em></td>
+      <td>Used in layout/ms_step_tab_container</td>
+    </tr>
+    <tr>
+      <td><em>ms_stepTabNumberStyle</em></td>
+      <td>Used by ms_stepNumber in layout/ms_step_tab</td>
+    </tr>
+    <tr>
+      <td><em>ms_stepTabDoneIndicatorStyle</em></td>
+      <td>Used by ms_stepDoneIndicator in layout/ms_step_tab</td>
+    </tr>
+    <tr>
+      <td><em>ms_stepTabIconBackgroundStyle</em></td>
+      <td>Used by ms_stepIconBackground in layout/ms_step_tab</td>
+    </tr>
+    <tr>
+      <td><em>ms_stepTabTitleStyle</em></td>
+      <td>Used by ms_stepTitle in layout/ms_step_tab</td>
+    </tr>
+    <tr>
+      <td><em>ms_stepTabDividerStyle</em></td>
+      <td>Used by ms_stepDivider in layout/ms_step_tab</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="missing-features">Missing features</h2>
+<ul>
+  <li>support for non-linear steppers</li>
+  <li>support for non-editable steppers</li>
+  <li>support for Alternative labels in the horizontal stepper</li>
+</ul>
+
+<h2 id="license">License</h2>
+<p>Copyright 2016 StepStone Services</p>
+
+<p>Licensed under the Apache License, Version 2.0 (the “License”);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at</p>
+
+<p>    <a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
+
+<p>Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an “AS IS” BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.</p>
+
+<h2 id="maintained-by">Maintained by</h2>
+<p><a href="http://www.stepstone.com"><img src="./art/stepstone-logo.png" alt="Stepstone" /></a></p>
+
+
+          <br>
+          <div class="post__tags">
+            
+              <a href="/AndroidUICollection/tag/material">material</a>
+            
+          </div>
+            
+        </div>
+          
+          <br>
+          <hr>
+          <br>  
+          <div class="post-content"  itemprop="articleBody">
+            
+          </div>
+          <br>
+          <hr>
+          <br>
+
+        
+
+        
+
+<ul class="share-list">
+  <li>
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Android Material Stepper&url=http://kmshack.github.io/AndroidUICollection/2017/02/19/android-material-stepper/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+      <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
+    </a>
+  </li>
+  <li>
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2017/02/19/android-material-stepper/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
+    </a>
+  </li>
+  <li>
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2017/02/19/android-material-stepper/" rel="nofollow" target="_blank" title="Share on Google+">
+    <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
+    </a>
+  </li>
+</ul>
+
+        <h5 class="separator">
+  <span class="separator__title">Newsletter</span>
+</h5>
+
+<div class="box box--news-letter">
+  <form action="//aspirethemes.us12.list-manage.com/subscribe/post?u=9723f3c5c3a2637fbba3bc673&amp;id=7b50db9989" method="post" target="_blank">
+    <div class="row">
+      <div class="column medium-9 large-9">
+        <input type="email" name="EMAIL" placeholder="Your email address">
+      </div>
+      <div class="column medium-3 large-3">
+        <input type="submit" class="button button--expand" value="SIGN UP">
+      </div>
+    </div>
+  </form>
+</div>
+
+        <section class="disqus">
+  <h5 class="separator">
+    <span class="separator__title">Comments</span>
+  </h5>
+  <div id="disqus_thread"></div>
+
+<script>
+  var disqus_config = function () {
+    this.page.url = "http://kmshack.github.io/2017/02/19/android-material-stepper/";
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//android-kmshack-kr.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</section>
+      </article>
+    </div>
+
+  </div> <!-- row-->
+</div> <!-- wrapper -->
+  </div>
+
+  <script src="/AndroidUICollection/js/jquery-2.1.4.min.js"></script>
+  <script src="/AndroidUICollection/js/evil-icons.min.js"></script>
+  <script src="/AndroidUICollection/js/jquery.fitvids.js"></script>
+  <script src="/AndroidUICollection/js/jquery.ghostHunter.min.js"></script>
+  <script src="/AndroidUICollection/js/script.js"></script>
+</body>
+
+</html>
