@@ -5,8 +5,8 @@
     <description>Collection of OpenSource for Android UI.</description>
     <link>http://kmshack.github.io/AndroidUICollection/</link>
     <atom:link href="http://kmshack.github.io/AndroidUICollection/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 19 Mar 2017 19:45:35 +0900</pubDate>
-    <lastBuildDate>Sun, 19 Mar 2017 19:45:35 +0900</lastBuildDate>
+    <pubDate>Sun, 19 Mar 2017 23:56:29 +0900</pubDate>
+    <lastBuildDate>Sun, 19 Mar 2017 23:56:29 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -168,17 +168,6 @@ limitations under the License.
         <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/03/13/DiscreteScrollView/</guid>
         
         <category>scrollView</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Ad</title>
-        <description>
-</description>
-        <pubDate>Mon, 13 Mar 2017 00:00:00 +0900</pubDate>
-        <link>http://kmshack.github.io/AndroidUICollection/2017/03/13/AD/</link>
-        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/03/13/AD/</guid>
         
         
       </item>
@@ -1195,6 +1184,17 @@ Toasty.custom(yourContext, &quot;I&#39;m a custom Toast&quot;, yourIconDrawable,
         <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/02/18/Toasty/</guid>
         
         <category>toast</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Ad</title>
+        <description>
+</description>
+        <pubDate>Sat, 18 Feb 2017 00:00:00 +0900</pubDate>
+        <link>http://kmshack.github.io/AndroidUICollection/2017/02/18/AD/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/02/18/AD/</guid>
         
         
       </item>
