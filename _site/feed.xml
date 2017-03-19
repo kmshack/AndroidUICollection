@@ -5,8 +5,8 @@
     <description>Collection of OpenSource for Android UI.</description>
     <link>http://kmshack.github.io/AndroidUICollection/</link>
     <atom:link href="http://kmshack.github.io/AndroidUICollection/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 13 Mar 2017 21:09:17 +0900</pubDate>
-    <lastBuildDate>Mon, 13 Mar 2017 21:09:17 +0900</lastBuildDate>
+    <pubDate>Sun, 19 Mar 2017 19:45:35 +0900</pubDate>
+    <lastBuildDate>Sun, 19 Mar 2017 19:45:35 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -21,12 +21,12 @@ It is similar to a ViewPager, but you can quickly and painlessly create layout, 
 &lt;h2 id=&quot;gradle&quot;&gt;Gradle&lt;/h2&gt;
 &lt;p&gt;Add this into your dependencies block.
 &lt;code class=&quot;highlighter-rouge&quot;&gt;
-compile &#39;com.yarolegovich:discrete-scrollview:1.0.3&#39;
+compile &#39;com.yarolegovich:discrete-scrollview:1.1.1&#39;
 &lt;/code&gt;
 ## Sample
 &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.yarolegovich.discretescrollview.sample&quot;&gt;&lt;img alt=&quot;Get it on Google Play&quot; src=&quot;https://play.google.com/intl/en_us/badges/images/apps/en-play-badge.png&quot; width=&quot;185&quot; height=&quot;60&quot; /&gt;&lt;/a&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;Please see the [sample app] (https://github.com/yarolegovich/DiscreteScrollView/tree/master/sample/src/main/java/com/yarolegovich/discretescrollview/sample) for examples of library usage.&lt;/p&gt;
+&lt;p&gt;Please see the &lt;a href=&quot;https://github.com/yarolegovich/DiscreteScrollView/tree/master/sample/src/main/java/com/yarolegovich/discretescrollview/sample&quot;&gt;sample app&lt;/a&gt; for examples of library usage.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/yarolegovich/DiscreteScrollView/blob/master/images/cards_weather.gif&quot;&gt;GifSampleWeather&lt;/a&gt;&lt;/p&gt;
 
@@ -40,21 +40,25 @@ code. All public API is accessible through DiscreteScrollView class, which is a 
 &lt;h4 id=&quot;usage&quot;&gt;Usage:&lt;/h4&gt;
 &lt;ol&gt;
   &lt;li&gt;Add DiscreteScrollView to your layout either using xml or code:&lt;/li&gt;
-  &lt;li&gt;Create your implementation of RecyclerView.Adapter. Refer to the [sample] (https://github.com/yarolegovich/DiscreteScrollView/blob/master/sample/src/main/java/com/yarolegovich/discretescrollview/sample/shop/ShopAdapter.java) for an example, if you don’t know how to do it.&lt;/li&gt;
+  &lt;li&gt;Create your implementation of RecyclerView.Adapter. Refer to the &lt;a href=&quot;https://github.com/yarolegovich/DiscreteScrollView/blob/master/sample/src/main/java/com/yarolegovich/discretescrollview/sample/shop/ShopAdapter.java&quot;&gt;sample&lt;/a&gt; for an example, if you don’t know how to do it.&lt;/li&gt;
   &lt;li&gt;Set the adapter.&lt;/li&gt;
   &lt;li&gt;You are done 
 ```xml&lt;/li&gt;
 &lt;/ol&gt;
-&lt;com.yarolegovich.discretescrollview.discretescrollview android:id=&quot;@+id/picker&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; /&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;```java
+&lt;com.yarolegovich.discretescrollview.discretescrollview android:id=&quot;@+id/picker&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; app:dsv_orientation=&quot;horizontal|vertical&quot; /&gt;
+&lt;p&gt;&amp;lt;– orientation is optional, default is horizontal –&amp;gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+&lt;/code&gt;java
 DiscreteScrollView scrollView = findViewById(R.id.picker);
 scrollView.setAdapter(new YourAdapterImplementation());
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+```&lt;/p&gt;
 
 &lt;h3 id=&quot;api&quot;&gt;API&lt;/h3&gt;
-&lt;p&gt;#### Related to the current item:
+&lt;p&gt;#### Layout
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+scrollView.setOrientation(Orientation o); //Sets an orientation of the view
+&lt;/code&gt;
+#### Related to the current item:
 &lt;code class=&quot;highlighter-rouge&quot;&gt;java
 scrollView.getCurrentItem(); //returns adapter position of the currently selected item or -1 if adapter is empty.
 scrollView.scrollToPosition(int position); //position becomes selected
@@ -97,9 +101,11 @@ You may see how it works on GIFs.&lt;/p&gt;
 scrollView.setScrollStateChangeListener(listener);&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;public interface ScrollStateChangeListener&lt;t extends=&quot;&quot; viewholder=&quot;&quot;&gt; {
-  void onScrollStart(T currentItemHolder, int adapterPosition); //called when scroll is started, including programatically initiated scroll
-  void onScrollEnd(T currentItemHolder, int adapterPosition); //called when scroll ends
+&lt;p&gt;public interface ScrollStateChangeListener&lt;t extends=&quot;&quot; viewholder=&quot;&quot;&gt; {&lt;/t&gt;&lt;/p&gt;
+
+&lt;p&gt;void onScrollStart(T currentItemHolder, int adapterPosition); //called when scroll is started, including programatically initiated scroll&lt;/p&gt;
+
+&lt;p&gt;void onScrollEnd(T currentItemHolder, int adapterPosition); //called when scroll ends
   /**
    * Called when scroll is in progress. 
    * @param scrollPosition is a value inside the interval [-1f..1f], it corresponds to the position of currentlySelectedView.
@@ -108,25 +114,36 @@ scrollView.setScrollStateChangeListener(listener);&lt;/li&gt;
    * -view1 is on position -1;
    * -currentlySelectedView is on position 0;
    * -view2 is on position 1.
+   * @param currentHolder - ViewHolder of a current view
+   * @param newCurrent - ViewHolder of a view that moved closer to the center
    */
-  void onScroll(float scrollPosition); 
+  void onScroll(float scrollPosition, @NonNull T currentHolder, @NonNull T newCurrentHolder); 
+}
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+* Scroll:
+&lt;/code&gt;java
+scrollView.setScrollListener(listener);&lt;/p&gt;
+
+&lt;p&gt;public interface ScrollListener&lt;t extends=&quot;&quot; viewholder=&quot;&quot;&gt; {
+  //The same as ScrollStateChangeListener, but for the cases when you are interested only in onScroll()
+  void onScroll(float scrollPosition, @NonNull T currentHolder, @NonNull T newCurrentHolder);
 }
 ```
 * Current selection changes:
 ```java
-scrollView.setCurrentItemChangeListener(listener);&lt;/t&gt;&lt;/p&gt;
+scrollView.setOnItemChangedListener(listener);&lt;/t&gt;&lt;/p&gt;
 
-&lt;p&gt;public interface CurrentItemChangeListener&lt;t extends=&quot;&quot; viewholder=&quot;&quot;&gt; {
+&lt;p&gt;public interface OnItemChangedListener&lt;t extends=&quot;&quot; viewholder=&quot;&quot;&gt; {
   /**
    * Called when new item is selected. It is similar to the onScrollEnd of ScrollStateChangeListener, except that it is 
    * also called when currently selected item appears on the screen for the first time.
    */
-  void onCurrentItemChanged(T viewHolder, int adapterPosition); 
+  void onCurrentItemChanged(@NonNull T viewHolder, int adapterPosition); 
 }
 ```&lt;/t&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;special-thanks&quot;&gt;Special thanks&lt;/h2&gt;
-&lt;p&gt;Thanks to [Tayisiya Yurkiv] (https://www.behance.net/yurkivt) for sample app design and beautiful GIFs.&lt;/p&gt;
+&lt;p&gt;Thanks to &lt;a href=&quot;https://www.behance.net/yurkivt&quot;&gt;Tayisiya Yurkiv&lt;/a&gt; for sample app design and beautiful GIFs.&lt;/p&gt;
 
 &lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2017 Yaroslav Shevchuk
@@ -156,18 +173,29 @@ limitations under the License.
       </item>
     
       <item>
+        <title>Ad</title>
+        <description>
+</description>
+        <pubDate>Mon, 13 Mar 2017 00:00:00 +0900</pubDate>
+        <link>http://kmshack.github.io/AndroidUICollection/2017/03/13/AD/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/03/13/AD/</guid>
+        
+        
+      </item>
+    
+      <item>
         <title>InstaCropper</title>
         <description>&lt;h1 id=&quot;instacropper&quot;&gt;InstaCropper&lt;/h1&gt;
 &lt;p&gt;A View for cropping images that is similar to Instagram’s crop. Also an Activity for cropping is included.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://cloud.githubusercontent.com/assets/4597931/23830368/724ddf70-071e-11e7-9d7e-65615be8d5e6.gif&quot;&gt;alt tag&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;##Usage&lt;/p&gt;
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
 
 &lt;p&gt;Add the dependency:
 &lt;code class=&quot;highlighter-rouge&quot;&gt;Groovy
 dependencies {
-	compile &#39;com.yashoid:instacropper:1.0.0&#39;
+	compile &#39;com.yashoid:instacropper:1.0.4&#39;
 }
 &lt;/code&gt;&lt;/p&gt;
 
@@ -223,12 +251,22 @@ Intent intent = InstaCropperActivity.getIntent(context, srcUri, dstUri, maxWidth
 startActivityForResult(intent, REQUEST_CROP);
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;To change the title of the crop Activity and the title of the crop action define the string.
+&lt;p&gt;You can modify the crop Activity’s apprearance by overriding the following resouce values:
 ```xml&lt;/p&gt;
 &lt;string name=&quot;instacropper_title&quot;&gt;Crop&lt;/string&gt;
+&lt;p&gt;&amp;lt;– Title of toolbar –&amp;gt;&lt;/p&gt;
 &lt;string name=&quot;instacropper_crop&quot;&gt;Crop&lt;/string&gt;
-&lt;p&gt;```&lt;/p&gt;
+&lt;p&gt;&amp;lt;– Title of crop action in toolbar –&amp;gt;&lt;/p&gt;
 
+&lt;color name=&quot;instacropper_cropper_background&quot;&gt;@android:color/white&lt;/color&gt;
+&lt;p&gt;&amp;lt;– Background color of InstaCropperView in the activity –&amp;gt;&lt;/p&gt;
+&lt;color name=&quot;instacropper_crop_color&quot;&gt;@android:color/black&lt;/color&gt;
+&lt;p&gt;&amp;lt;– Color of crop action in toolbar –&amp;gt;&lt;/p&gt;
+
+&lt;style name=&quot;InstaCropper&quot; parent=&quot;android:style/Theme.DeviceDefault.Light&quot;&gt; &lt;-- Style of crop Activity --&gt;
+```
+
+&lt;/style&gt;
 </description>
         <pubDate>Sun, 12 Mar 2017 00:00:00 +0900</pubDate>
         <link>http://kmshack.github.io/AndroidUICollection/2017/03/12/InstaCropper/</link>
@@ -411,7 +449,8 @@ into any app.&lt;/p&gt;
         <description>&lt;p align=&quot;center&quot;&gt;
   &lt;img src=&quot;./art/material-stepper-logo.png&quot; width=&quot;256&quot; height=&quot;256&quot; /&gt;
 &lt;/p&gt;
-&lt;p&gt;# Android Material Stepper &lt;a href=&quot;https://travis-ci.org/stepstone-tech/android-material-stepper&quot;&gt;[Build Status](https://travis-ci.org/stepstone-tech/android-material-stepper.svg?branch=master)&lt;/a&gt; &lt;a href=&quot;https://android-arsenal.com/details/1/5138&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Android%20Material%20Stepper-brightgreen.svg?style=flat)&lt;/a&gt; &lt;a href=&quot;http://androidweekly.net/issues/issue-243&quot;&gt;[Android Weekly](https://img.shields.io/badge/Android%20Weekly-%23243-brightgreen.svg)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;android-material-stepper-build-statushttpstravis-ciorgstepstone-techandroid-material-steppersvgbranchmasterhttpstravis-ciorgstepstone-techandroid-material-stepper-android-arsenalhttpsimgshieldsiobadgeandroid20arsenal-android20material20stepper-brightgreensvgstyleflathttpsandroid-arsenalcomdetails15138-android-weeklyhttpsimgshieldsiobadgeandroid20weekly-23243-brightgreensvghttpandroidweeklynetissuesissue-243&quot;&gt;Android Material Stepper &lt;a href=&quot;https://travis-ci.org/stepstone-tech/android-material-stepper&quot;&gt;[Build Status](https://travis-ci.org/stepstone-tech/android-material-stepper.svg?branch=master)&lt;/a&gt; &lt;a href=&quot;https://android-arsenal.com/details/1/5138&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Android%20Material%20Stepper-brightgreen.svg?style=flat)&lt;/a&gt; &lt;a href=&quot;http://androidweekly.net/issues/issue-243&quot;&gt;[Android Weekly](https://img.shields.io/badge/Android%20Weekly-%23243-brightgreen.svg)&lt;/a&gt;&lt;/h1&gt;
 
 &lt;p&gt;This library allows to use Material steppers inside Android applications.&lt;/p&gt;
 
@@ -422,7 +461,7 @@ into any app.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;download-from-jcenter&quot;&gt;Download (from JCenter)&lt;/h2&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;com.stepstone.stepper:material-stepper:3.0.0&#39;&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;com.stepstone.stepper:material-stepper:3.2.0&#39;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -444,6 +483,8 @@ into any app.&lt;/p&gt;
   &lt;li&gt;embedding the stepper anywhere in the view hierarchy and changing the stepper type for various device configurations, e.g. phone/tablet, portrait/landscape&lt;/li&gt;
   &lt;li&gt;step validation&lt;/li&gt;
   &lt;li&gt;use with Fragments or Views&lt;/li&gt;
+  &lt;li&gt;showing errors in tabs&lt;/li&gt;
+  &lt;li&gt;showing stepper feedback for ongoing operations (see &lt;a href=&quot;https://material.io/guidelines/components/steppers.html#steppers-types-of-steppers&quot;&gt;Stepper feedback&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;getting-started&quot;&gt;Getting started&lt;/h2&gt;
@@ -594,44 +635,56 @@ and we want to have them so that we can show an info message for the user.
 In order to set that color:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Create a new color selector in &lt;code class=&quot;highlighter-rouge&quot;&gt;res/color&lt;/code&gt;&lt;/p&gt;
-
-    &lt;p&gt;```xml
- &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;/p&gt;
-    &lt;selector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;&gt;
-     &lt;item app:state_verification_failed=&quot;true&quot; android:color=&quot;#30BDBDBD&quot; /&gt;
-     &lt;item android:color=&quot;@color/ms_white&quot; /&gt;
- &lt;/selector&gt;
-    &lt;p&gt;```&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Change button’s (text) color in layout file&lt;/p&gt;
-
-    &lt;p&gt;```xml
- &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;/p&gt;
-    &lt;com.stepstone.stepper.stepperlayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot; android:id=&quot;@+id/stepperLayout&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;match_parent&quot; app:ms_steppertype=&quot;dots&quot; app:ms_nextbuttoncolor=&quot;@color/ms_custom_button_text_color&quot; app:ms_completebuttoncolor=&quot;@color/ms_custom_button_text_color&quot; /&gt;
-
-    &lt;p&gt;```&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Toggle the state in code&lt;/p&gt;
-
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;java
- mStepperLayout.setNextButtonVerificationFailed(enabled);
- mStepperLayout.setCompleteButtonVerificationFailed(enabled);
-&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;Create a new color selector in &lt;code class=&quot;highlighter-rouge&quot;&gt;res/color&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&quot;make-an-io-operation-before-going-to-the-next-step-optional&quot;&gt;Make an IO operation before going to the next step (optional)&lt;/h3&gt;
-&lt;p&gt;If the user wants to e.g. save something in the database or make a network call on a separate Thread after clicking on the Next button
-he can perform these operations and then invoke the &lt;code class=&quot;highlighter-rouge&quot;&gt;goToNextStep()&lt;/code&gt; method of the &lt;code class=&quot;highlighter-rouge&quot;&gt;StepperLayout.OnNextClickedCallback&lt;/code&gt; in the current Step.
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;selector&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:android=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:app=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res-auto&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;item&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;app:state_verification_failed=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;android:color=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#30BDBDBD&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;item&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;android:color=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/ms_white&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/selector&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Change button’s (text) color in layout file&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;com.stepstone.stepper.StepperLayout&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:android=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;xmlns:app=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res-auto&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/stepperLayout&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:ms_stepperType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;dots&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:ms_nextButtonColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/ms_custom_button_text_color&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:ms_completeButtonColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/ms_custom_button_text_color&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Toggle the state in code&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;n&quot;&gt;mStepperLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setNextButtonVerificationFailed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;enabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;mStepperLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setCompleteButtonVerificationFailed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;enabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;make-extra-operations-before-going-to-the-next-step-optional&quot;&gt;Make extra operations before going to the next step (optional)&lt;/h3&gt;
+&lt;p&gt;After clicking on the Next button if the user wants to e.g.:
+* save something in the database
+* make a network call on a separate Thread
+* simply save the data from the current step to some other component or parent Activity&lt;/p&gt;
+
+&lt;p&gt;he can perform these operations and then invoke the &lt;code class=&quot;highlighter-rouge&quot;&gt;goToNextStep()&lt;/code&gt; method of the &lt;code class=&quot;highlighter-rouge&quot;&gt;StepperLayout.OnNextClickedCallback&lt;/code&gt; in the current Step.
+If the user wants to perform these operations on the final step, when clicking on the Complete button, he needs to invoke the &lt;code class=&quot;highlighter-rouge&quot;&gt;complete()&lt;/code&gt; method of the  &lt;code class=&quot;highlighter-rouge&quot;&gt;StepperLayout.OnCompleteClickedCallback&lt;/code&gt;.
 While operations are performed, and the user would like to go back you can cancel them and then invoke &lt;code class=&quot;highlighter-rouge&quot;&gt;onBackClicked()&lt;/code&gt; method of the &lt;code class=&quot;highlighter-rouge&quot;&gt;StepperLayout.OnBackClickedCallback&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;./gifs/delayed-transition.gif&quot; width=&quot;360&quot; height=&quot;640&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;The fragment must implement &lt;code class=&quot;highlighter-rouge&quot;&gt;BlockingStep&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;Step&lt;/code&gt;.
-Also, make sure that &lt;code class=&quot;highlighter-rouge&quot;&gt;goToNextStep()&lt;/code&gt; gets called on the main thread.
-&lt;strong&gt;Note:&lt;/strong&gt; the &lt;code class=&quot;highlighter-rouge&quot;&gt;onNextClicked(StepperLayout.OnNextClickedCallback)&lt;/code&gt; method gets invoked after step verification.
+
+&lt;p&gt;To do so the fragment/view must implement &lt;code class=&quot;highlighter-rouge&quot;&gt;BlockingStep&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;Step&lt;/code&gt;.
+Also, make sure that &lt;code class=&quot;highlighter-rouge&quot;&gt;goToNextStep()&lt;/code&gt; and/or &lt;code class=&quot;highlighter-rouge&quot;&gt;complete()&lt;/code&gt; get called on the main thread.
+&lt;strong&gt;Note:&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;onNextClicked(StepperLayout.OnNextClickedCallback)&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;onCompleteClicked(StepperLayout.OnCompleteClickedCallback)&lt;/code&gt; methods get invoked after step verification.
 E.g.:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;DelayedTransitionStepFragmentSample&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fragment&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BlockingStep&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
@@ -645,6 +698,17 @@ E.g.:&lt;/p&gt;
             &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
             &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
                 &lt;span class=&quot;n&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;goToNextStep&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2000L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@UiThread&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onCompleteClicked&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StepperLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;OnCompleteClickedCallback&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;postDelayed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Runnable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+            &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;complete&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
             &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
         &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2000L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
@@ -665,36 +729,37 @@ E.g.:&lt;/p&gt;
 but display ‘Summary’ just before the last page.
 You might also want to use your custom icons instead of the default navigation button compound drawables or not show the compound drawables for some of the buttons.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;./gifs/custom-navigation-buttons.gif&quot; width=&quot;360&quot; height=&quot;640&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;In such case you need to override the &lt;code class=&quot;highlighter-rouge&quot;&gt;getViewModel(int)&lt;/code&gt; method from the &lt;code class=&quot;highlighter-rouge&quot;&gt;StepAdapter&lt;/code&gt; e.g.
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-    @NonNull
-    @Override
-    public StepViewModel getViewModel(@IntRange(from = 0) int position) {
-        StepViewModel.Builder builder = new StepViewModel.Builder(context)
-                .setTitle(R.string.tab_title);
-        switch (position) {
-            case 0:
-                builder
-                    .setNextButtonLabel(&quot;This way&quot;)
-                    .setBackButtonLabel(&quot;Cancel&quot;)
-                    .setNextButtonEndDrawableResId(R.drawable.ms_forward_arrow)
-                    .setBackButtonStartDrawableResId(StepViewModel.NULL_DRAWABLE);
-                break;
-            case 1:
-                builder
-                    .setNextButtonLabel(R.string.go_to_summary)
-                    .setBackButtonLabel(&quot;Go to first&quot;)
-                    .setBackButtonStartDrawableResId(R.drawable.ms_back_arrow);
-                break;
-            case 2:
-                builder.setBackButtonLabel(&quot;Go back&quot;);
-                break;
-            default:
-                throw new IllegalArgumentException(&quot;Unsupported position: &quot; + position);
-        }
-        return builder.create();
-    }
-&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;In such case you need to override the &lt;code class=&quot;highlighter-rouge&quot;&gt;getViewModel(int)&lt;/code&gt; method from the &lt;code class=&quot;highlighter-rouge&quot;&gt;StepAdapter&lt;/code&gt; e.g.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nd&quot;&gt;@NonNull&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StepViewModel&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getViewModel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@IntRange&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;StepViewModel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Builder&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;builder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StepViewModel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Builder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;tab_title&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;builder&lt;/span&gt;
+                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setNextButtonLabel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;This way&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setBackButtonLabel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Cancel&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setNextButtonEndDrawableResId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ms_forward_arrow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setBackButtonStartDrawableResId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;StepViewModel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;NULL_DRAWABLE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;builder&lt;/span&gt;
+                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setNextButtonLabel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;go_to_summary&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setBackButtonLabel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Go to first&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setBackButtonStartDrawableResId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ms_back_arrow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;builder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setBackButtonLabel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Go back&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IllegalArgumentException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Unsupported position: &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;builder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;h3 id=&quot;using-the-same-stepper-styling-across-the-application&quot;&gt;Using the same stepper styling across the application&lt;/h3&gt;
 &lt;p&gt;If you have many steppers in your application in different activities/fragments you might want to set a common style in a theme.
@@ -736,9 +801,59 @@ For an example of how to use it with views please see the sample app.&lt;/p&gt;
 
 &lt;h3 id=&quot;showing-an-error-on-tabs-if-step-verification-failed&quot;&gt;Showing an error on tabs if step verification failed&lt;/h3&gt;
 &lt;p&gt;To show an error in the tabbed stepper if step verification fails you need to set &lt;code class=&quot;highlighter-rouge&quot;&gt;ms_showErrorStateEnabled&lt;/code&gt; attribute to &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;./gifs/error-on-tabs.gif&quot; width=&quot;360&quot; height=&quot;640&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./gifs/error-on-tabs.gif&quot; width=&quot;640&quot; height=&quot;360&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;If you want to keep the error displayed when going back to the previous step you need to also set &lt;code class=&quot;highlighter-rouge&quot;&gt;ms_showErrorStateOnBackEnabled&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;stepper-feedback&quot;&gt;Stepper feedback&lt;/h3&gt;
+&lt;p&gt;It is possible to show stepper feedback for ongoing operations (see &lt;a href=&quot;https://material.io/guidelines/components/steppers.html#steppers-types-of-steppers&quot;&gt;Stepper feedback&lt;/a&gt;).
+To do so you firstly need to set &lt;code class=&quot;highlighter-rouge&quot;&gt;ms_stepperFeedbackType&lt;/code&gt; to one or more of:
+* &lt;code class=&quot;highlighter-rouge&quot;&gt;tabs&lt;/code&gt; - shows a progress message instead of the tabs during operation,
+* &lt;code class=&quot;highlighter-rouge&quot;&gt;content&lt;/code&gt; - shows a progress bar on top of the steps’ content and partially fades the content out during operation,
+* &lt;code class=&quot;highlighter-rouge&quot;&gt;disabled_bottom_navigation&lt;/code&gt; - disables the buttons in the bottom navigation during operation.
+The default is &lt;code class=&quot;highlighter-rouge&quot;&gt;none&lt;/code&gt; which does nothing. It is possible to use multiple flags together.&lt;/p&gt;
+
+&lt;p&gt;After setting this to show the feedback you need to call &lt;code class=&quot;highlighter-rouge&quot;&gt;StepperLayout#showProgress(@NonNull String progressMessage)&lt;/code&gt;
+and do hide the progress indicator you need to call &lt;code class=&quot;highlighter-rouge&quot;&gt;StepperLayout#hideProgress()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;./gifs/stepper-feedback.gif&quot; width=&quot;640&quot; height=&quot;360&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;E.g.
+In layout:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;xml
+    &amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;
+    &amp;lt;com.stepstone.stepper.StepperLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+        xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+        android:id=&quot;@+id/stepperLayout&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;match_parent&quot;
+        app:ms_stepperType=&quot;tabs&quot;
+        app:ms_stepperFeedbackType=&quot;tabs|content|disabled_bottom_navigation&quot; /&amp;gt;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;and in BlockingStep:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;StepperFeedbackStepFragment&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fragment&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BlockingStep&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@UiThread&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onNextClicked&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StepperLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;OnNextClickedCallback&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getStepperLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;showProgress&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Operation in progress, please wait...&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;postDelayed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Runnable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+            &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;goToNextStep&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getStepperLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;hideProgress&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2000L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;h3 id=&quot;custom-styling&quot;&gt;Custom styling&lt;/h3&gt;
 &lt;p&gt;Basic styling can be done by choosing the active and inactive step colors. 
@@ -751,28 +866,29 @@ See ‘Custom StepperLayout theme’ in the sample app for an example.&lt;/p&gt;
 &lt;p&gt;For other examples, e.g. persisting state on rotation, displaying errors, changing whether the user can go to the next step, etc. check out the sample app.&lt;/p&gt;
 
 &lt;h2 id=&quot;stepperlayout-attributes&quot;&gt;StepperLayout attributes&lt;/h2&gt;
-&lt;p&gt;| Attribute name                  | Format                                    | Description |
-| ——————————–|——————————————-|————-|
-| &lt;em&gt;ms_stepperType&lt;/em&gt;                | one of &lt;code class=&quot;highlighter-rouge&quot;&gt;dots&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;progress_bar&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;tabs&lt;/code&gt;   | &lt;strong&gt;REQUIRED:&lt;/strong&gt; Type of the stepper |
-| &lt;em&gt;ms_backButtonColor&lt;/em&gt;            | color or reference                        | BACK button’s text color           |
-| &lt;em&gt;ms_nextButtonColor&lt;/em&gt;            | color or reference                        | NEXT button’s text color            |
-| &lt;em&gt;ms_completeButtonColor&lt;/em&gt;        | color or reference                        | COMPLETE button’s text color            |
-| &lt;em&gt;ms_activeStepColor&lt;/em&gt;            | color or reference                        | Active step’s color            |
-| &lt;em&gt;ms_inactiveStepColor&lt;/em&gt;          | color or reference                        | Inactive step’s color            |
-| &lt;em&gt;ms_bottomNavigationBackground&lt;/em&gt; | reference                                 | Background of the bottom navigation            |
-| &lt;em&gt;ms_backButtonBackground&lt;/em&gt;       | reference                                 | BACK button’s background            |
-| &lt;em&gt;ms_nextButtonBackground&lt;/em&gt;       | reference                                 | NEXT button’s background            |
-| &lt;em&gt;ms_completeButtonBackground&lt;/em&gt;   | reference                                 | COMPLETE button’s background            |
-| &lt;em&gt;ms_backButtonText&lt;/em&gt;             | string or reference                       | BACK button’s text            |
-| &lt;em&gt;ms_nextButtonText&lt;/em&gt;             | string or reference                       | NEXT button’s text            |
-| &lt;em&gt;ms_completeButtonText&lt;/em&gt;         | string or reference                       | COMPLETE button’s text            |
-| &lt;em&gt;ms_tabStepDividerWidth&lt;/em&gt;        | dimension or reference                    | The width of the horizontal tab divider used in tabs stepper type            |
-| &lt;em&gt;ms_showBackButtonOnFirstStep&lt;/em&gt;  | boolean                                   | Flag indicating if the Back (Previous step) button should be shown on the first step. False by default.            |
-| &lt;em&gt;ms_errorColor&lt;/em&gt;                 | color or reference                        | Error color in Tabs stepper |
-| &lt;em&gt;ms_showErrorStateEnabled&lt;/em&gt;      | boolean                                   | Flag indicating whether to show the error state. Only applicable for ‘tabs’ type. False by default. |
-| &lt;em&gt;ms_showErrorStateOnBackEnabled&lt;/em&gt;| boolean                                   | Flag indicating whether to keep showing the error state when user moves back. Only applicable for ‘tabs’ type. False by default. |
-| &lt;em&gt;ms_tabNavigationEnabled&lt;/em&gt;       | boolean                                   | Flag indicating whether step navigation is possible by clicking on the tabs directly. Only applicable for ‘tabs’ type. True by default. |
-| &lt;em&gt;ms_stepperLayoutTheme&lt;/em&gt;         | reference                                 | Theme to use for even more custom styling of the stepper layout. It is recommended that it should extend @style/MSDefaultStepperLayoutTheme, which is the default theme used. |&lt;/p&gt;
+&lt;p&gt;| Attribute name                  | Format                                                              | Description |
+| ——————————–|———————————————————————|————-|
+| &lt;em&gt;ms_stepperType&lt;/em&gt;                | one of &lt;code class=&quot;highlighter-rouge&quot;&gt;dots&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;progress_bar&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;tabs&lt;/code&gt;                             | &lt;strong&gt;REQUIRED:&lt;/strong&gt; Type of the stepper |
+| &lt;em&gt;ms_backButtonColor&lt;/em&gt;            | color or reference                                                  | BACK button’s text color           |
+| &lt;em&gt;ms_nextButtonColor&lt;/em&gt;            | color or reference                                                  | NEXT button’s text color            |
+| &lt;em&gt;ms_completeButtonColor&lt;/em&gt;        | color or reference                                                  | COMPLETE button’s text color            |
+| &lt;em&gt;ms_activeStepColor&lt;/em&gt;            | color or reference                                                  | Active step’s color            |
+| &lt;em&gt;ms_inactiveStepColor&lt;/em&gt;          | color or reference                                                  | Inactive step’s color            |
+| &lt;em&gt;ms_bottomNavigationBackground&lt;/em&gt; | reference                                                           | Background of the bottom navigation            |
+| &lt;em&gt;ms_backButtonBackground&lt;/em&gt;       | reference                                                           | BACK button’s background            |
+| &lt;em&gt;ms_nextButtonBackground&lt;/em&gt;       | reference                                                           | NEXT button’s background            |
+| &lt;em&gt;ms_completeButtonBackground&lt;/em&gt;   | reference                                                           | COMPLETE button’s background            |
+| &lt;em&gt;ms_backButtonText&lt;/em&gt;             | string or reference                                                 | BACK button’s text            |
+| &lt;em&gt;ms_nextButtonText&lt;/em&gt;             | string or reference                                                 | NEXT button’s text            |
+| &lt;em&gt;ms_completeButtonText&lt;/em&gt;         | string or reference                                                 | COMPLETE button’s text            |
+| &lt;em&gt;ms_tabStepDividerWidth&lt;/em&gt;        | dimension or reference                                              | The width of the horizontal tab divider used in tabs stepper type            |
+| &lt;em&gt;ms_showBackButtonOnFirstStep&lt;/em&gt;  | boolean                                                             | Flag indicating if the Back (Previous step) button should be shown on the first step. False by default.            |
+| &lt;em&gt;ms_errorColor&lt;/em&gt;                 | color or reference                                                  | Error color in Tabs stepper |
+| &lt;em&gt;ms_showErrorStateEnabled&lt;/em&gt;      | boolean                                                             | Flag indicating whether to show the error state. Only applicable for ‘tabs’ type. False by default. |
+| &lt;em&gt;ms_showErrorStateOnBackEnabled&lt;/em&gt;| boolean                                                             | Flag indicating whether to keep showing the error state when user moves back. Only applicable for ‘tabs’ type. False by default. |
+| &lt;em&gt;ms_tabNavigationEnabled&lt;/em&gt;       | boolean                                                             | Flag indicating whether step navigation is possible by clicking on the tabs directly. Only applicable for ‘tabs’ type. True by default. |
+| &lt;em&gt;ms_stepperFeedbackType&lt;/em&gt;        | flag(s): &lt;code class=&quot;highlighter-rouge&quot;&gt;none&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;tabs&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;content&lt;/code&gt; &amp;amp; &lt;code class=&quot;highlighter-rouge&quot;&gt;disabled_bottom_navigation&lt;/code&gt; | Type(s) of stepper feedback. Can be a combination of &lt;code class=&quot;highlighter-rouge&quot;&gt;tabs&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;content&lt;/code&gt; &amp;amp; &lt;code class=&quot;highlighter-rouge&quot;&gt;disabled_bottom_navigation&lt;/code&gt;. Default is &lt;code class=&quot;highlighter-rouge&quot;&gt;none&lt;/code&gt;.|
+| &lt;em&gt;ms_stepperLayoutTheme&lt;/em&gt;         | reference                                                           | Theme to use for even more custom styling of the stepper layout. It is recommended that it should extend @style/MSDefaultStepperLayoutTheme, which is the default theme used. |&lt;/p&gt;
 
 &lt;h3 id=&quot;stepperlayout-style-attributes&quot;&gt;StepperLayout style attributes&lt;/h3&gt;
 &lt;p&gt;A list of &lt;code class=&quot;highlighter-rouge&quot;&gt;ms_stepperLayoutTheme&lt;/code&gt; attributes responsible for styling of StepperLayout’s child views.&lt;/p&gt;
@@ -810,12 +926,20 @@ See ‘Custom StepperLayout theme’ in the sample app for an example.&lt;/p&gt;
       &lt;td&gt;Used by ms_stepProgressBar in layout/ms_stepper_layout&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
+      &lt;td&gt;&lt;em&gt;ms_stepPagerProgressBarStyle&lt;/em&gt;&lt;/td&gt;
+      &lt;td&gt;Used by ms_stepPagerProgressBar in layout/ms_stepper_layout&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
       &lt;td&gt;&lt;em&gt;ms_stepTabsScrollViewStyle&lt;/em&gt;&lt;/td&gt;
       &lt;td&gt;Used by ms_stepTabsScrollView in layout/ms_tabs_container&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;em&gt;ms_stepTabsInnerContainerStyle&lt;/em&gt;&lt;/td&gt;
       &lt;td&gt;Used by ms_stepTabsInnerContainer in layout/ms_tabs_container&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;em&gt;ms_stepTabsProgressMessageStyle&lt;/em&gt;&lt;/td&gt;
+      &lt;td&gt;Used by ms_stepTabsProgressMessage in layout/ms_tabs_container&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;em&gt;ms_stepTabContainerStyle&lt;/em&gt;&lt;/td&gt;
@@ -992,7 +1116,7 @@ limitations under the License.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-gradle&quot;&gt;dependencies {
 	...
-	compile &#39;com.github.GrenderG:Toasty:1.1.3&#39;
+	compile &#39;com.github.GrenderG:Toasty:1.1.4&#39;
 }
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -1034,7 +1158,9 @@ limitations under the License.&lt;/p&gt;
 &lt;p&gt;You can also create your custom Toasts with the &lt;code class=&quot;highlighter-rouge&quot;&gt;custom()&lt;/code&gt; method:
 &lt;code class=&quot;highlighter-rouge&quot;&gt;java
 Toasty.custom(yourContext, &quot;I&#39;m a custom Toast&quot;, yourIconDrawable, textColor, tintColor, duration, withIcon, true).show();
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;
+### Extra
+&lt;a href=&quot;https://github.com/GrenderG/Toasty/blob/master/app/src/main/java/es/dmoral/toastysample/MainActivity.java#L76-L93&quot;&gt;You can pass formatted text to Toasty&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;There are variants of each method, feel free to explore this library.&lt;/p&gt;
 
@@ -1055,12 +1181,13 @@ Toasty.custom(yourContext, &quot;I&#39;m a custom Toast&quot;, yourIconDrawable,
 
 &lt;h2 id=&quot;screenshots&quot;&gt;Screenshots&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr1.png&quot; width=&quot;250&quot; /&gt;
-&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr2.png&quot; width=&quot;250&quot; /&gt;
-&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr3.png&quot; width=&quot;250&quot; /&gt;
-&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr4.png&quot; width=&quot;250&quot; /&gt;
-&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr5.png&quot; width=&quot;250&quot; /&gt;
-&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr6.png&quot; width=&quot;250&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr_1.png&quot; width=&quot;250&quot; /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr_2.png&quot; width=&quot;250&quot; /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr_3.png&quot; width=&quot;250&quot; /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr_4.png&quot; width=&quot;250&quot; /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr_5.png&quot; width=&quot;250&quot; /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr_6.png&quot; width=&quot;250&quot; /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr_7.png&quot; width=&quot;250&quot; /&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Sat, 18 Feb 2017 00:00:00 +0900</pubDate>
@@ -1597,96 +1724,6 @@ limitations under the License.
         <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/01/09/EasyFlipView/</guid>
         
         <category>flip</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Text Decorator</title>
-        <description>&lt;h1 id=&quot;text-decorator&quot;&gt;Text Decorator&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;https://travis-ci.org/nntuyen/text-decorator&quot;&gt;[Build Status](https://travis-ci.org/nntuyen/text-decorator.svg?branch=master)&lt;/a&gt;
-&lt;a href=&quot;http://android-arsenal.com/details/1/4982&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Text%20Decorator-brightgreen.svg?style=flat)&lt;/a&gt;
-&lt;a href=&quot;http://www.android-gems.com/lib/nntuyen/text-decorator&quot;&gt;[Android Gems](http://www.android-gems.com/badge/nntuyen/text-decorator.svg?branch=master)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Decorate your TextView easily&lt;/p&gt;
-
-&lt;p&gt;[](screenshot/screenshot2.gif)&lt;/p&gt;
-
-&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;TextDecorator&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;decorate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;textView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTextColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;colorAccent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setBackgroundColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;colorPrimary&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;strikethrough&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;26&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTextStyle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Typeface&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;BOLD&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Typeface&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ITALIC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;27&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTypeface&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;serif&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;70&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;77&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setSuperscript&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;78&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;86&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setSubscript&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;87&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;92&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;underline&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;120&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;blur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BlurMaskFilter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Blur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;NORMAL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;makeTextClickable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;OnTextClickListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-          &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;makeText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MainActivity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LENGTH_SHORT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-          &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;250&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;270&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;or&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;TextDecorator&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;decorate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;textView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTextColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;colorAccent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Lorem&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;amet&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setBackgroundColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;colorPrimary&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;dolor&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;elit&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;strikethrough&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Duis&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Praesent&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;underline&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sodales&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;quam&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setSubscript&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;vitae&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;makeTextClickable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;OnTextClickListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-          &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;makeText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MainActivity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LENGTH_SHORT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-          &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;porta&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;commodo&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;tempor venenatis nulla&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTextColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;holo_green_light&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;porta&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;commodo&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;tempor venenatis nulla&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
-&lt;p&gt;Gradle&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;com.tuyenmonkey:text-decorator:1.0.0&#39;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2016 Tuyen Monkey
-
-Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Mon, 02 Jan 2017 00:00:00 +0900</pubDate>
-        <link>http://kmshack.github.io/AndroidUICollection/2017/01/02/text_decorator/</link>
-        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/01/02/text_decorator/</guid>
-        
-        <category>text</category>
-        
-        <category>decorator</category>
         
         
       </item>

@@ -568,12 +568,12 @@ It is similar to a ViewPager, but you can quickly and painlessly create layout, 
 <h2 id="gradle">Gradle</h2>
 <p>Add this into your dependencies block.
 <code class="highlighter-rouge">
-compile 'com.yarolegovich:discrete-scrollview:1.0.3'
+compile 'com.yarolegovich:discrete-scrollview:1.1.1'
 </code>
 ## Sample
 <a href="https://play.google.com/store/apps/details?id=com.yarolegovich.discretescrollview.sample"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/apps/en-play-badge.png" width="185" height="60" /></a><br /></p>
 
-<p>Please see the [sample app] (https://github.com/yarolegovich/DiscreteScrollView/tree/master/sample/src/main/java/com/yarolegovich/discretescrollview/sample) for examples of library usage.</p>
+<p>Please see the <a href="https://github.com/yarolegovich/DiscreteScrollView/tree/master/sample/src/main/java/com/yarolegovich/discretescrollview/sample">sample app</a> for examples of library usage.</p>
 
 <p><a href="https://github.com/yarolegovich/DiscreteScrollView/blob/master/images/cards_weather.gif">GifSampleWeather</a></p>
 
@@ -587,21 +587,25 @@ code. All public API is accessible through DiscreteScrollView class, which is a 
 <h4 id="usage">Usage:</h4>
 <ol>
   <li>Add DiscreteScrollView to your layout either using xml or code:</li>
-  <li>Create your implementation of RecyclerView.Adapter. Refer to the [sample] (https://github.com/yarolegovich/DiscreteScrollView/blob/master/sample/src/main/java/com/yarolegovich/discretescrollview/sample/shop/ShopAdapter.java) for an example, if you don’t know how to do it.</li>
+  <li>Create your implementation of RecyclerView.Adapter. Refer to the <a href="https://github.com/yarolegovich/DiscreteScrollView/blob/master/sample/src/main/java/com/yarolegovich/discretescrollview/sample/shop/ShopAdapter.java">sample</a> for an example, if you don’t know how to do it.</li>
   <li>Set the adapter.</li>
   <li>You are done 
 ```xml</li>
 </ol>
-<com.yarolegovich.discretescrollview.discretescrollview android:id="@+id/picker" android:layout_width="match_parent" android:layout_height="wrap_content" />
-
-<div class="highlighter-rouge"><pre class="highlight"><code>```java
+<com.yarolegovich.discretescrollview.discretescrollview android:id="@+id/picker" android:layout_width="match_parent" android:layout_height="wrap_content" app:dsv_orientation="horizontal|vertical" />
+<p>&lt;– orientation is optional, default is horizontal –&gt;
+<code class="highlighter-rouge">
+</code>java
 DiscreteScrollView scrollView = findViewById(R.id.picker);
 scrollView.setAdapter(new YourAdapterImplementation());
-</code></pre>
-</div>
+```</p>
 
 <h3 id="api">API</h3>
-<p>#### Related to the current item:
+<p>#### Layout
+<code class="highlighter-rouge">java
+scrollView.setOrientation(Orientation o); //Sets an orientation of the view
+</code>
+#### Related to the current item:
 <code class="highlighter-rouge">java
 scrollView.getCurrentItem(); //returns adapter position of the currently selected item or -1 if adapter is empty.
 scrollView.scrollToPosition(int position); //position becomes selected
@@ -644,9 +648,11 @@ You may see how it works on GIFs.</p>
 scrollView.setScrollStateChangeListener(listener);</li>
 </ul>
 
-<p>public interface ScrollStateChangeListener<t extends="" viewholder=""> {
-  void onScrollStart(T currentItemHolder, int adapterPosition); //called when scroll is started, including programatically initiated scroll
-  void onScrollEnd(T currentItemHolder, int adapterPosition); //called when scroll ends
+<p>public interface ScrollStateChangeListener<t extends="" viewholder=""> {</t></p>
+
+<p>void onScrollStart(T currentItemHolder, int adapterPosition); //called when scroll is started, including programatically initiated scroll</p>
+
+<p>void onScrollEnd(T currentItemHolder, int adapterPosition); //called when scroll ends
   /**
    * Called when scroll is in progress. 
    * @param scrollPosition is a value inside the interval [-1f..1f], it corresponds to the position of currentlySelectedView.
@@ -655,25 +661,36 @@ scrollView.setScrollStateChangeListener(listener);</li>
    * -view1 is on position -1;
    * -currentlySelectedView is on position 0;
    * -view2 is on position 1.
+   * @param currentHolder - ViewHolder of a current view
+   * @param newCurrent - ViewHolder of a view that moved closer to the center
    */
-  void onScroll(float scrollPosition); 
+  void onScroll(float scrollPosition, @NonNull T currentHolder, @NonNull T newCurrentHolder); 
+}
+<code class="highlighter-rouge">
+* Scroll:
+</code>java
+scrollView.setScrollListener(listener);</p>
+
+<p>public interface ScrollListener<t extends="" viewholder=""> {
+  //The same as ScrollStateChangeListener, but for the cases when you are interested only in onScroll()
+  void onScroll(float scrollPosition, @NonNull T currentHolder, @NonNull T newCurrentHolder);
 }
 ```
 * Current selection changes:
 ```java
-scrollView.setCurrentItemChangeListener(listener);</t></p>
+scrollView.setOnItemChangedListener(listener);</t></p>
 
-<p>public interface CurrentItemChangeListener<t extends="" viewholder=""> {
+<p>public interface OnItemChangedListener<t extends="" viewholder=""> {
   /**
    * Called when new item is selected. It is similar to the onScrollEnd of ScrollStateChangeListener, except that it is 
    * also called when currently selected item appears on the screen for the first time.
    */
-  void onCurrentItemChanged(T viewHolder, int adapterPosition); 
+  void onCurrentItemChanged(@NonNull T viewHolder, int adapterPosition); 
 }
 ```</t></p>
 
 <h2 id="special-thanks">Special thanks</h2>
-<p>Thanks to [Tayisiya Yurkiv] (https://www.behance.net/yurkivt) for sample app design and beautiful GIFs.</p>
+<p>Thanks to <a href="https://www.behance.net/yurkivt">Tayisiya Yurkiv</a> for sample app design and beautiful GIFs.</p>
 
 <h2 id="license">License</h2>
 <div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2017 Yaroslav Shevchuk
