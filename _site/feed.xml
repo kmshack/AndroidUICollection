@@ -5,9 +5,371 @@
     <description>Collection of OpenSource for Android UI.</description>
     <link>http://kmshack.github.io/AndroidUICollection/</link>
     <atom:link href="http://kmshack.github.io/AndroidUICollection/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 19 Mar 2017 23:56:29 +0900</pubDate>
-    <lastBuildDate>Sun, 19 Mar 2017 23:56:29 +0900</lastBuildDate>
+    <pubDate>Mon, 20 Mar 2017 00:58:19 +0900</pubDate>
+    <lastBuildDate>Mon, 20 Mar 2017 00:58:19 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>BubblePicker</title>
+        <description>&lt;h1 id=&quot;bubble-picker&quot;&gt;Bubble-Picker&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;&quot;&gt;[License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)&lt;/a&gt;
+&lt;a href=&quot;https://jitpack.io/#igalata/Bubble-Picker&quot;&gt;[](https://jitpack.io/v/igalata/Bubble-Picker.svg)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.igalata.bubblepickerdemo&amp;amp;pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1&quot;&gt;&lt;img alt=&quot;Get it on Google Play&quot; src=&quot;https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png&quot; height=&quot;70&quot; width=&quot;180&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://appetize.io/app/eem5172h1pvn1wzxf8uq35xqbg?device=nexus5&amp;amp;scale=75&amp;amp;orientation=portrait&amp;amp;osVersion=7.0&quot;&gt;Live DEMO on appetize.io&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Check this &lt;a href=&quot;https://dribbble.com/shots/3349372-Bubble-Picker-Open-Source-Component&quot;&gt;project on dribbble&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Read how we did it &lt;a href=&quot;https://medium.com/@igalata13/how-to-create-a-bubble-selection-animation-on-android-627044da4854#.ajonc010b&quot;&gt;on Medium&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;shot.gif&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;##Requirements
+- Android SDK 16+&lt;/p&gt;
+
+&lt;p&gt;##Usage&lt;/p&gt;
+
+&lt;p&gt;Add to your root build.gradle:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;Groovy
+allprojects {
+	repositories {
+	...
+	maven { url &quot;https://jitpack.io&quot; }
+	}
+}
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Add the dependency:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;Groovy
+dependencies {
+	compile &#39;com.github.igalata:Bubble-Picker:v0.1.2&#39;
+}
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;how-to-use-this-library&quot;&gt;How to use this library&lt;/h2&gt;
+
+&lt;p&gt;Add &lt;code class=&quot;highlighter-rouge&quot;&gt;BubblePicker&lt;/code&gt; to your xml layout&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;FrameLayout&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:android=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;xmlns:app=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res-auto&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;com.igalata.bubblepicker.rendering.BubblePicker&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/picker&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:backgroundColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@android:color/white&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/FrameLayout&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Override onResume() and onPause() methods to call the same methods from the &lt;code class=&quot;highlighter-rouge&quot;&gt;BubblePicker&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Kotlin
+```kotlin
+override fun onResume() {
+      super.onResume()
+      picker.onResume()
+}&lt;/p&gt;
+
+&lt;p&gt;override fun onPause() {
+      super.onPause()
+      picker.onPause()
+}
+```&lt;/p&gt;
+
+&lt;p&gt;Java
+```java
+@Override
+protected void onResume() {
+      super.onResume();
+      picker.onResume();
+}&lt;/p&gt;
+
+&lt;p&gt;@Override
+protected void onPause() {
+      super.onPause();
+      picker.onPause();
+}
+```&lt;/p&gt;
+
+&lt;p&gt;Pass the &lt;code class=&quot;highlighter-rouge&quot;&gt;PickerItem&lt;/code&gt; list to the &lt;code class=&quot;highlighter-rouge&quot;&gt;BubblePicker&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Kotlin
+```kotlin
+val titles = resources.getStringArray(R.array.countries)
+val colors = resources.obtainTypedArray(R.array.colors)
+val images = resources.obtainTypedArray(R.array.images)&lt;/p&gt;
+
+&lt;p&gt;picker.items = ArrayList()&lt;/p&gt;
+
+&lt;p&gt;titles.forEachIndexed { i, country -&amp;gt;
+            picker.items?.add(PickerItem(country,
+                    gradient = BubbleGradient(colors.getColor((i * 2) % 8, 0), colors.getColor((i * 2) % 8 + 1, 0),
+                            BubbleGradient.VERTICAL),
+                    typeface = mediumTypeface,
+                    textColor = ContextCompat.getColor(this, android.R.color.white),
+                    image = ContextCompat.getDrawable(this, images.getResourceId(i, 0))))
+}
+```&lt;/p&gt;
+
+&lt;p&gt;Java
+```java
+final String[] titles = getResources().getStringArray(R.array.countries);
+final TypedArray colors = getResources().obtainTypedArray(R.array.colors);
+final TypedArray images = getResources().obtainTypedArray(R.array.images);&lt;/p&gt;
+
+&lt;p&gt;picker.setItems(new ArrayList&lt;pickeritem&gt;() {{
+      for (int i = 0; i &amp;lt; titles.length; ++i) {
+                add(new PickerItem(titles[i], colors.getColor((i * 2) % 8, 0),
+                        ContextCompat.getColor(TestActivity.this, android.R.color.white),
+                        ContextCompat.getDrawable(TestActivity.this, images.getResourceId(i, 0))));
+      }
+}});
+```&lt;/pickeritem&gt;&lt;/p&gt;
+
+&lt;p&gt;Specify the &lt;code class=&quot;highlighter-rouge&quot;&gt;BubblePickerListener&lt;/code&gt; to get notified about events&lt;/p&gt;
+
+&lt;p&gt;Kotlin
+```kotlin
+picker.listener = object : BubblePickerListener {
+            override fun onBubbleSelected(item: PickerItem) {&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;        }
+
+        override fun onBubbleDeselected(item: PickerItem) {
+
+        } } ```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Java
+```java
+picker.setListener(new BubblePickerListener() {
+            @Override
+            public void onBubbleSelected(@NotNull PickerItem item) {&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;        }
+
+        @Override
+        public void onBubbleDeselected(@NotNull PickerItem item) {
+
+        } }); ```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;To get all selected items use &lt;code class=&quot;highlighter-rouge&quot;&gt;picker.selectedItems&lt;/code&gt; variable in Kotlin or &lt;code class=&quot;highlighter-rouge&quot;&gt;picker.getSelectedItems()&lt;/code&gt; method in Java.&lt;/p&gt;
+
+&lt;p&gt;For more usage examples please review the sample app&lt;/p&gt;
+
+&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
+
+&lt;p&gt;MIT License&lt;/p&gt;
+
+&lt;p&gt;Copyright (c) 2017 Irina Galata&lt;/p&gt;
+
+&lt;p&gt;Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the “Software”), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:&lt;/p&gt;
+
+&lt;p&gt;The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.&lt;/p&gt;
+
+&lt;p&gt;THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 20 Mar 2017 00:00:00 +0900</pubDate>
+        <link>http://kmshack.github.io/AndroidUICollection/2017/03/20/BubblePicker/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/03/20/BubblePicker/</guid>
+        
+        <category>Bubble</category>
+        
+        <category>Picker</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>AutoplayVideos</title>
+        <description>&lt;h1 id=&quot;autoplayvideos&quot;&gt;AutoplayVideos&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://android-arsenal.com/details/1/5372&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AutoPlay%20Videos-blue.svg)&lt;/a&gt; &lt;a href=&quot;https://android-arsenal.com/api?level=16&quot;&gt;[API](https://img.shields.io/badge/API-16%2B-green.svg)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This library is created with the purpose to implement recyclerview with videos easily.
+This is the first version of the library and suggestions/contributions are most welcome to improvise the library.&lt;/p&gt;
+
+&lt;p&gt;It is targeted at solving following problems:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Flicker when scrolling.&lt;/li&gt;
+  &lt;li&gt;Lag or skipping frames when video starts.&lt;/li&gt;
+  &lt;li&gt;OutOfMemory errors.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;And it has following features:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Auto-play videos when in view.&lt;/li&gt;
+  &lt;li&gt;Auto-pause videos when not in view or partially in view.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;demo&quot;&gt;Demo&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/Krupen/AutoplayVideos/master/AutoPlayVideos%20Demo.gif&quot;&gt;autoplayvideos_demo&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;gradle&quot;&gt;Gradle&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 1.&lt;/strong&gt; Add the jCenter repository to your project-level build.gradle file&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;allprojects&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;repositories&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;jcenter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 2.&lt;/strong&gt; Add the dependency to your app-level build.gradle file:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	 &lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;com.allattentionhere:autoplayvideos:0.0.4&#39;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;usage&quot;&gt;Usage&lt;/h1&gt;
+
+&lt;p&gt;Add &lt;code class=&quot;highlighter-rouge&quot;&gt;AAH_VideoImage&lt;/code&gt; to your xml file for single list item &lt;code class=&quot;highlighter-rouge&quot;&gt;single_card.xml&lt;/code&gt;:
+```
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;/p&gt;
+&lt;linearlayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; xmlns:card_view=&quot;http://schemas.android.com/apk/res-auto&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; android:layout_gravity=&quot;center&quot; android:gravity=&quot;center&quot; android:layout_marginbottom=&quot;8dp&quot; android:layout_marginleft=&quot;64dp&quot; android:layout_marginright=&quot;64dp&quot; android:layout_margintop=&quot;8dp&quot;&gt;
+ &lt;android.support.v7.widget.cardview android:id=&quot;@+id/card_view&quot; android:layout_width=&quot;wrap_content&quot; android:layout_height=&quot;wrap_content&quot; card_view:cardcornerradius=&quot;4dp&quot; card_view:cardelevation=&quot;4dp&quot; android:layout_gravity=&quot;center&quot; card_view:cardpreventcorneroverlap=&quot;false&quot;&gt;
+    &lt;linearlayout android:orientation=&quot;vertical&quot; android:layout_width=&quot;wrap_content&quot; android:layout_height=&quot;wrap_content&quot;&gt;
+	
+        &lt;com.allattentionhere.autoplayvideos.aah_videoimage android:layout_width=&quot;220dp&quot; android:layout_height=&quot;220dp&quot; /&gt;
+	    
+        &lt;textview android:gravity=&quot;center&quot; android:text=&quot;hello&quot; android:id=&quot;@+id/tv&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; /&gt;
+    &lt;/linearlayout&gt;
+ &lt;/android.support.v7.widget.cardview&gt;
+&lt;/linearlayout&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+Add `AAH_CustomRecyclerView` to your Activity layout xml `MainActivity.xml`:
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;linearlayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot; xmlns:tools=&quot;http://schemas.android.com/tools&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;match_parent&quot; android:orientation=&quot;vertical&quot; tools:ignore=&quot;MissingPrefix&quot; android:gravity=&quot;center&quot;&gt;
+
+&lt;com.allattentionhere.autoplayvideos.aah_customrecyclerview android:layout_gravity=&quot;center&quot; android:id=&quot;@+id/rv_home&quot; android:layout_width=&quot;wrap_content&quot; android:layout_height=&quot;match_parent&quot; /&gt;
+
+&lt;/linearlayout&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+Set Adapter with following specifics:
+
+1. Adapter should extend `AAH_VideosAdapter`.
+2. ViewHolder should extend `AAH_CustomViewHolder`.
+3. Set thumbnail image url and video url in `onBindViewHolder` method.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;public class MyVideosAdapter extends AAH_VideosAdapter {&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;private List&amp;lt;MyModel&amp;gt; list;
+Picasso picasso;
+
+public class MyViewHolder extends AAH_CustomViewHolder {
+    TextView tv;
+    public MyViewHolder(View x) {
+        super(x);
+        tv = ButterKnife.findById(x, R.id.tv);
+    }
+}
+
+public MyVideosAdapter(List&amp;lt;MyModel&amp;gt; list_urls, Picasso p) {
+    this.list = list_urls;
+    this.picasso = p;
+}
+
+@Override
+public AAH_CustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    View itemView = LayoutInflater.from(parent.getContext())
+            .inflate(R.layout.single_card, parent, false);
+    return new MyViewHolder(itemView);
+}
+
+@Override
+public void onBindViewHolder(AAH_CustomViewHolder holder, int position) {
+    ((MyViewHolder) holder).tv.setText(list.get(position).getName());
+
+    //todo
+    holder.setImageUrl(list.get(position).getImage_url());
+    holder.setVideoUrl(list.get(position).getVideo_url());
+    //load image/thumbnail into imageview
+    if (list.get(position).getImage_url() = null &amp;amp;&amp;amp; list.get(position).getImage_url().isEmpty())
+        picasso.load(holder.getImageUrl()).config(Bitmap.Config.RGB_565).into(holder.getAAH_ImageView());
+}
+
+@Override
+public int getItemCount() {
+    return list.size();
+}
+
+@Override
+public int getItemViewType(int position) {
+    return 0;
+} } ```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Finally &lt;code class=&quot;highlighter-rouge&quot;&gt;setActivity&lt;/code&gt; in your Activity before setting the adapter and (Optional) scroll programmatically to initiate videos on initial screen:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+ //todo before setAdapter
+    recyclerView.setActivity(this);
+    recyclerView.setAdapter(mAdapter);
+ //to init videos before scrolling
+    recyclerView.smoothScrollBy(0,1);
+    recyclerView.smoothScrollBy(0,-1);
+&lt;/code&gt;
+# Use Cloudinary (Optional)&lt;/p&gt;
+
+&lt;p&gt;It is recommended to use &lt;a href=&quot;https://cloudinary.com&quot; target=&quot;_blank&quot;&gt;Cloudinary.com&lt;/a&gt; to host your videos as it provides easy &lt;a href=&quot;http://cloudinary.com/documentation/video_manipulation_and_delivery#generating_video_thumbnails&quot; target=&quot;_blank&quot;&gt;thumbnail-generation&lt;/a&gt; and &lt;a href=&quot;http://cloudinary.com/documentation/video_manipulation_and_delivery#resizing_and_cropping_videos&quot; target=&quot;_blank&quot;&gt;resizing/cropping videos&lt;/a&gt; on-the-fly.&lt;/p&gt;
+
+&lt;h1 id=&quot;license&quot;&gt;License&lt;/h1&gt;
+&lt;p&gt;Copyright 2017 Krupen Ghetiya&lt;/p&gt;
+
+&lt;p&gt;Licensed under the Apache License, Version 2.0 (the “License”);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at&lt;/p&gt;
+
+&lt;p&gt;http://www.apache.org/licenses/LICENSE-2.0&lt;/p&gt;
+
+&lt;p&gt;Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an “AS IS” BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 20 Mar 2017 00:00:00 +0900</pubDate>
+        <link>http://kmshack.github.io/AndroidUICollection/2017/03/20/AutoplayVideos/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/03/20/AutoplayVideos/</guid>
+        
+        <category>video</category>
+        
+        <category>player</category>
+        
+        
+      </item>
     
       <item>
         <title>DiscreteScrollView</title>
@@ -262,6 +624,17 @@ startActivityForResult(intent, REQUEST_CROP);
         <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/03/12/InstaCropper/</guid>
         
         <category>cropper</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Ad</title>
+        <description>
+</description>
+        <pubDate>Wed, 22 Feb 2017 00:00:00 +0900</pubDate>
+        <link>http://kmshack.github.io/AndroidUICollection/2017/02/22/AD/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/02/22/AD/</guid>
         
         
       </item>
@@ -1189,17 +1562,6 @@ Toasty.custom(yourContext, &quot;I&#39;m a custom Toast&quot;, yourIconDrawable,
       </item>
     
       <item>
-        <title>Ad</title>
-        <description>
-</description>
-        <pubDate>Sat, 18 Feb 2017 00:00:00 +0900</pubDate>
-        <link>http://kmshack.github.io/AndroidUICollection/2017/02/18/AD/</link>
-        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/02/18/AD/</guid>
-        
-        
-      </item>
-    
-      <item>
         <title>SwitchIcon</title>
         <description>&lt;h1 id=&quot;android-switchicon&quot;&gt;Android-SwitchIcon&lt;/h1&gt;
 
@@ -1312,418 +1674,6 @@ limitations under the License.
         <category>switch</category>
         
         <category>icon</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>GithubWidget</title>
-        <description>&lt;p&gt;&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Pic/title_image_3.png?raw=true&quot;&gt;GithubWidget&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;github-widget&quot;&gt;Github Widget&lt;/h1&gt;
-&lt;p&gt;Contributions, stars, followers, trending etc. on Github.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager&quot;&gt;[WoWoViewPager](https://github.com/Nightonke/WoWoViewPager/blob/master/app/src/main/res/mipmap-hdpi/ic_launcher.png?raw=true)&lt;/a&gt;
-&lt;a href=&quot;https://github.com/Nightonke/BoomMenu&quot;&gt;[BoomMenu](https://github.com/Nightonke/BoomMenu/blob/master/app/src/main/res/mipmap-hdpi/ic_launcher.png?raw=true)&lt;/a&gt;
-&lt;a href=&quot;https://github.com/Nightonke/CoCoin&quot;&gt;[CoCoin](https://github.com/Nightonke/CoCoin/blob/master/app/src/main/res/mipmap-hdpi/ic_launcher.png?raw=true)&lt;/a&gt;
-&lt;a href=&quot;https://github.com/Nightonke/BlurLockView&quot;&gt;[BlurLockView](https://github.com/Nightonke/BlurLockView/blob/master/app/src/main/res/mipmap-hdpi/ic_launcher.png?raw=true)&lt;/a&gt;
-&lt;a href=&quot;https://github.com/Nightonke/LeeCo&quot;&gt;[LeeCo](https://github.com/Nightonke/LeeCo/blob/master/app/src/main/res/mipmap-hdpi/ic_launcher.png?raw=true)&lt;/a&gt;
-&lt;a href=&quot;https://github.com/Nightonke/GithubWidget&quot;&gt;[GithubWidget](https://github.com/Nightonke/GithubWidget/blob/master/app/src/main/res/mipmap-hdpi/ic_launcher.png?raw=true)&lt;/a&gt;
-&lt;a href=&quot;https://github.com/Nightonke/JellyToggleButton&quot;&gt;[JellyToggleButton](https://github.com/Nightonke/JellyToggleButton/blob/master/app/src/main/res/mipmap-hdpi/ic_launcher.png?raw=true)&lt;/a&gt;
-&lt;a href=&quot;https://github.com/Nightonke/FaceOffToggleButton&quot;&gt;[FaceOffToggleButton](https://github.com/Nightonke/FaceOffToggleButton/blob/master/app/src/main/res/mipmap-hdpi/ic_launcher.png?raw=true)&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;guide&quot;&gt;Guide&lt;/h1&gt;
-&lt;p&gt;#### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/README-ZH.md&quot;&gt;中文文档&lt;/a&gt;
-#### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#what-is-github-widget-1&quot;&gt;What is Github Widget?&lt;/a&gt;
-#### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#download&quot;&gt;Download&lt;/a&gt;
-#### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#styles-of-github-widget-1&quot;&gt;Styles of Github Widget&lt;/a&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;httpsgithubcomnightonkegithubwidget41-1&quot;&gt;&lt;a href=&quot;https://github.com/Nightonke/GithubWidget#41-1&quot;&gt;4×1&lt;/a&gt;&lt;/h5&gt;
-&lt;p&gt;##### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#42-1-1&quot;&gt;4×2-1&lt;/a&gt;
-##### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#42-2-1&quot;&gt;4×2-2&lt;/a&gt;
-##### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#43-1-1&quot;&gt;4×3-1&lt;/a&gt;
-##### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#4345-2-1&quot;&gt;4×345-2&lt;/a&gt;
-##### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#4345-3-1&quot;&gt;4×345-3&lt;/a&gt;
-##### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#44-1-1&quot;&gt;4×4-1&lt;/a&gt;
-##### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#44-2-1&quot;&gt;4×4-2&lt;/a&gt;
-##### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#445-3-1&quot;&gt;4×45-3&lt;/a&gt;
-##### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#45-1-1&quot;&gt;4×5-1&lt;/a&gt;
-##### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#45-2-1&quot;&gt;4×5-2&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;settingshttpsgithubcomnightonkegithubwidgetsettings-1&quot;&gt;&lt;a href=&quot;https://github.com/Nightonke/GithubWidget#settings-1&quot;&gt;Settings&lt;/a&gt;&lt;/h4&gt;
-&lt;p&gt;#### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#problems-bugs-or-enhancement&quot;&gt;Problems, Bugs or Enhancement&lt;/a&gt;
-#### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#version-list-1&quot;&gt;Version List&lt;/a&gt;
-#### &lt;a href=&quot;https://github.com/Nightonke/GithubWidget#license-1&quot;&gt;License&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;what-is-github-widget&quot;&gt;What is Github Widget?&lt;/h3&gt;
-&lt;p&gt;Github Widget is a ligthweight application for 11 different styles of widget to show the following information of github user.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Contributions chart(2D/3D)&lt;/li&gt;
-  &lt;li&gt;Total contribution of this year&lt;/li&gt;
-  &lt;li&gt;Avatar&lt;/li&gt;
-  &lt;li&gt;Motto&lt;/li&gt;
-  &lt;li&gt;Followers&lt;/li&gt;
-  &lt;li&gt;Contributions of today&lt;/li&gt;
-  &lt;li&gt;Current streak&lt;/li&gt;
-  &lt;li&gt;Addition of stars&lt;/li&gt;
-  &lt;li&gt;Contributions of busiest day&lt;/li&gt;
-  &lt;li&gt;Longest streak&lt;/li&gt;
-  &lt;li&gt;Trending(daily/weekly/monthly)&lt;/li&gt;
-  &lt;li&gt;Received events&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;After installing Github Widget, there is no launch icon for it. Try to add widgets to launcher and you will find Github Widget there.&lt;/p&gt;
-
-&lt;h3 id=&quot;download&quot;&gt;Download&lt;/h3&gt;
-&lt;p&gt;Check the &lt;a href=&quot;https://github.com/Nightonke/GithubWidget/tree/master/Apk&quot;&gt;Apk&lt;/a&gt; diectory for all versions apks and qrcode pictures.&lt;br /&gt;
-Download the current version &lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Apk/GithubWidget_1.0.3.apk?raw=true&quot;&gt;here&lt;/a&gt;.&lt;br /&gt;
-Or from &lt;a href=&quot;http://fir.im/GithubWidget&quot;&gt;fir.im/GithubWidget&lt;/a&gt;.&lt;br /&gt;
-Or by qrcode:&lt;br /&gt;
-&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Apk/GithubWidget_1.0.3.png?raw=true&quot;&gt;Qrcode&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;styles-of-github-widget&quot;&gt;Styles of Github Widget&lt;/h3&gt;
-&lt;p&gt;The first version supports 11 styles for showing part of the above information.&lt;br /&gt;
-Notice that from version 1.0.3, all the widgets support width larger or equal than 4-blocks. But I suggest 4-blocks-width widgets should be used because sometimes images look strange when the widgets are too wide.&lt;/p&gt;
-
-&lt;h4 id=&quot;section&quot;&gt;4×1&lt;/h4&gt;
-&lt;p&gt;✓ 2D Contributions chart&lt;br /&gt;
-✓ Total contributions of this year&lt;br /&gt;
-✓ Avatar&lt;br /&gt;
-&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Pic/style_0.png?raw=true&quot;&gt;4×1&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;section-1&quot;&gt;4×2-1&lt;/h4&gt;
-&lt;p&gt;✓ 2D Contributions chart&lt;br /&gt;
-✓ Total contributions of this year&lt;br /&gt;
-✓ Avatar&lt;br /&gt;
-✓ Motto&lt;br /&gt;
-✓ Followers&lt;br /&gt;
-✓ Contributions of today&lt;br /&gt;
-✓ Current streak&lt;br /&gt;
-✓ Addition of stars&lt;br /&gt;
-From top to bottom: contribution, avatar and motto, numbers&lt;br /&gt;
-&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Pic/style_1.png?raw=true&quot;&gt;4×2-1&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;section-2&quot;&gt;4×2-2&lt;/h4&gt;
-&lt;p&gt;✓ 2D Contributions chart&lt;br /&gt;
-✓ Total contributions of this year&lt;br /&gt;
-✓ Avatar&lt;br /&gt;
-✓ Motto&lt;br /&gt;
-✓ Followers&lt;br /&gt;
-✓ Contributions of today&lt;br /&gt;
-✓ Current streak&lt;br /&gt;
-✓ Addition of stars&lt;br /&gt;
-From top to bottom: avatar and motto, numbers,  contribution&lt;br /&gt;
-&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Pic/style_2.png?raw=true&quot;&gt;4×2-2&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;section-3&quot;&gt;4×3-1&lt;/h4&gt;
-&lt;p&gt;✓ 3D Contributions chart&lt;br /&gt;
-✓ Total contributions of this year&lt;br /&gt;
-✓ Avatar&lt;br /&gt;
-✓ Contributions on busiest day&lt;br /&gt;
-✓ Current streak&lt;br /&gt;
-✓ Longest streak&lt;br /&gt;
-&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Pic/style_3.png?raw=true&quot;&gt;4×3-1&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;section-4&quot;&gt;4×345-2&lt;/h4&gt;
-&lt;p&gt;✓ 2D Contributions chart&lt;br /&gt;
-✓ Total contributions of this year&lt;br /&gt;
-✓ Avatar&lt;br /&gt;
-✓ Motto&lt;br /&gt;
-✓ Followers&lt;br /&gt;
-✓ Contributions of today&lt;br /&gt;
-✓ Current streak&lt;br /&gt;
-✓ Addition of stars&lt;br /&gt;
-✓ Trending(daily, weekly or monthly)&lt;br /&gt;
-✓ Received events&lt;br /&gt;
-(From top to bottom: contribution, avatar and motto, numbers, trending or events)&lt;br /&gt;
-Notice that this style is able to resize to 4×3, 4×4 or 4×5.&lt;br /&gt;
-&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Pic/style_4.png?raw=true&quot;&gt;4×345-2&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;section-5&quot;&gt;4×345-3&lt;/h4&gt;
-&lt;p&gt;✓ 2D Contributions chart&lt;br /&gt;
-✓ Total contributions of this year&lt;br /&gt;
-✓ Avatar&lt;br /&gt;
-✓ Motto&lt;br /&gt;
-✓ Followers&lt;br /&gt;
-✓ Contributions of today&lt;br /&gt;
-✓ Current streak&lt;br /&gt;
-✓ Addition of stars&lt;br /&gt;
-✓ Trending(daily, weekly or monthly)&lt;br /&gt;
-✓ Received events&lt;br /&gt;
-(From top to bottom: avatar and motto, numbers, contribution, trending or events)&lt;br /&gt;
-Notice that this style is able to resize to 4×3, 4×4 or 4×5.&lt;br /&gt;
-&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Pic/style_5.png?raw=true&quot;&gt;4×345-3&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;section-6&quot;&gt;4×4-1&lt;/h4&gt;
-&lt;p&gt;✓ 3D Contributions chart&lt;br /&gt;
-✓ Total contributions of this year&lt;br /&gt;
-✓ Avatar&lt;br /&gt;
-✓ Motto&lt;br /&gt;
-✓ Followers&lt;br /&gt;
-✓ Contributions of today&lt;br /&gt;
-✓ Current streak&lt;br /&gt;
-✓ Addition of stars&lt;br /&gt;
-✓ Contributions on busiest day&lt;br /&gt;
-✓ Longest streak
-(From top to bottom: contribution, avatar and motto, numbers)&lt;br /&gt;
-&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Pic/style_6.png?raw=true&quot;&gt;4×4-1&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;section-7&quot;&gt;4×4-2&lt;/h4&gt;
-&lt;p&gt;✓ 3D Contributions chart&lt;br /&gt;
-✓ Total contributions of this year&lt;br /&gt;
-✓ Avatar&lt;br /&gt;
-✓ Motto&lt;br /&gt;
-✓ Followers&lt;br /&gt;
-✓ Contributions of today&lt;br /&gt;
-✓ Current streak&lt;br /&gt;
-✓ Addition of stars&lt;br /&gt;
-✓ Contributions on busiest day&lt;br /&gt;
-✓ Longest streak
-(From top to bottom: avatar and motto, numbers, contribution)&lt;br /&gt;
-&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Pic/style_7.png?raw=true&quot;&gt;4×4-2&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;section-8&quot;&gt;4×45-3&lt;/h4&gt;
-&lt;p&gt;✓ 3D Contributions chart&lt;br /&gt;
-✓ Total contributions of this year&lt;br /&gt;
-✓ Avatar&lt;br /&gt;
-✓ Contributions on busiest day&lt;br /&gt;
-✓ Current streak&lt;br /&gt;
-✓ Longest streak&lt;br /&gt;
-✓ Trending(daily, weekly and monthly) &lt;br /&gt;
-✓ Received events&lt;br /&gt;
-Notice that this style is able to resize to 4×4 or 4×5.&lt;br /&gt;
-&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Pic/style_8.png?raw=true&quot;&gt;4×45-3&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;section-9&quot;&gt;4×5-1&lt;/h4&gt;
-&lt;p&gt;✓ 3D Contributions chart&lt;br /&gt;
-✓ Total contributions of this year&lt;br /&gt;
-✓ Avatar&lt;br /&gt;
-✓ Motto &lt;br /&gt;
-✓ Followers &lt;br /&gt;
-✓ Contributions of today &lt;br /&gt;
-✓ Current streak &lt;br /&gt;
-✓ Addition of stars &lt;br /&gt;
-✓ Contributions on busiest day &lt;br /&gt;
-✓ Longest streak &lt;br /&gt;
-✓ Trending(daily, weekly or monthly)&lt;br /&gt;
-✓ Received events&lt;br /&gt;
-(From top to bottom: contribution, avatar and motto, numbers, trending or events)&lt;br /&gt;
-&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Pic/style_9.png?raw=true&quot;&gt;4×5-1&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;section-10&quot;&gt;4×5-2&lt;/h4&gt;
-&lt;p&gt;✓ 3D Contributions chart&lt;br /&gt;
-✓ Total contributions of this year&lt;br /&gt;
-✓ Avatar&lt;br /&gt;
-✓ Motto &lt;br /&gt;
-✓ Followers &lt;br /&gt;
-✓ Contributions of today &lt;br /&gt;
-✓ Current streak &lt;br /&gt;
-✓ Addition of stars &lt;br /&gt;
-✓ Contributions on busiest day &lt;br /&gt;
-✓ Longest streak &lt;br /&gt;
-✓ Trending(daily, weekly or monthly)&lt;br /&gt;
-✓ Received events&lt;br /&gt;
-(From top to bottom: avatar and motto, numbers, trending or events, contribution)&lt;br /&gt;
-&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Pic/style_10.png?raw=true&quot;&gt;4×5-2&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;settings&quot;&gt;Settings&lt;/h3&gt;
-&lt;p&gt;After inputting your user name in Github, you can click your avatar to refresh current data in Github Widget. Clicking anywhere else leads you to the settings page to do some DIY things for Github Widget. You can:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Change the user name in Github to get another user’s data to show in Github Widget&lt;/li&gt;
-  &lt;li&gt;Change your motto&lt;/li&gt;
-  &lt;li&gt;Change the color of the blocks in the 2D chart and the columns in 3D chart&lt;/li&gt;
-  &lt;li&gt;Reset the above color to default color&lt;/li&gt;
-  &lt;li&gt;Sign in, then we can get the data of contributions for your private repositories&lt;/li&gt;
-  &lt;li&gt;Whether show toast when operations or errors happen&lt;/li&gt;
-  &lt;li&gt;Whether draw month dash in 3D chart&lt;/li&gt;
-  &lt;li&gt;Whether draw week dash in 3D chart&lt;/li&gt;
-  &lt;li&gt;Start from Sunday or Monday&lt;/li&gt;
-  &lt;li&gt;Frequency for updating the data&lt;/li&gt;
-  &lt;li&gt;Events to be gotten from internet. The larger, the couting for stars are more accurate but more network flow is needed&lt;/li&gt;
-  &lt;li&gt;Contents in the list view in Github Widget. It can be one of the values: daily, weekly or monthly trending for the language you choose below or the events you got&lt;/li&gt;
-  &lt;li&gt;The language for the trending content&lt;/li&gt;
-  &lt;li&gt;About and the url for this page and url for the developer&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Pic/color.png?raw=true&quot;&gt;Color&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;problems-bugs-or-enhancements&quot;&gt;Problems, Bugs or Enhancements&lt;/h3&gt;
-&lt;p&gt;Maybe you get problems or bugs? Just tell me in issues or email. And you can tell me your enhancements in issues or pull-requests.&lt;/p&gt;
-
-&lt;h3 id=&quot;version-list&quot;&gt;Version List&lt;/h3&gt;
-&lt;p&gt;##### First Version
-&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Apk/GithubWidget_1.0.1.apk?raw=true&quot;&gt; V1.0.1&lt;/a&gt;
-##### 1.0.2
-&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Apk/GithubWidget_1.0.2.apk?raw=true&quot;&gt; V1.0.2&lt;/a&gt;&lt;br /&gt;
-Add all language support.&lt;br /&gt;
-##### 1.0.3
-&lt;a href=&quot;https://github.com/Nightonke/GithubWidget/blob/master/Apk/GithubWidget_1.0.3.apk?raw=true&quot;&gt; V1.0.3&lt;/a&gt;&lt;br /&gt;
-Delete url and img tags, support larger width.&lt;/p&gt;
-
-&lt;h3 id=&quot;license&quot;&gt;License&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2016 Nightonke
-
-Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Sun, 15 Jan 2017 00:00:00 +0900</pubDate>
-        <link>http://kmshack.github.io/AndroidUICollection/2017/01/15/GithubWidget/</link>
-        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/01/15/GithubWidget/</guid>
-        
-        <category>widget</category>
-        
-        <category>github</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>EasyFlipView</title>
-        <description>&lt;h1 id=&quot;easyflipview&quot;&gt;EasyFlipView&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;https://travis-ci.org/wajahatkarim3/EasyFlipView&quot;&gt;[Build Status](https://travis-ci.org/wajahatkarim3/EasyFlipView.svg?branch=master)&lt;/a&gt; &lt;a href=&quot;https://bintray.com/wajahatkarim3/EasyFlipView/com.wajahatkarim3.EasyFlipView/_latestVersion&quot;&gt; [Download](https://api.bintray.com/packages/wajahatkarim3/EasyFlipView/com.wajahatkarim3.EasyFlipView/images/download.svg) &lt;/a&gt; &lt;a href=&quot;https://android-arsenal.com/details/1/5051&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-EasyFlipView-brightgreen.svg?style=flat)&lt;/a&gt; &lt;a href=&quot;https://android-arsenal.com/api?level=15&quot;&gt;[API](https://img.shields.io/badge/API-15%2B-blue.svg?style=flat)&lt;/a&gt; &lt;a href=&quot;https://material.uplabs.com/posts/easyflipview&quot;&gt;[](https://img.shields.io/badge/MaterialUp-EasyFlipView-yellowgreen.png)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;A quick and easy flip view through which you can create views with two sides like credit cards, poker cards etc.&lt;/p&gt;
-
-&lt;p&gt;[](https://github.com/wajahatkarim3/EasyFlipView/blob/master/Art/demo.gif)&lt;/p&gt;
-
-&lt;h1 id=&quot;demo&quot;&gt;Demo&lt;/h1&gt;
-&lt;p&gt;Install &lt;a href=&quot;https://github.com/wajahatkarim3/EasyFlipView/releases/download/1.0.0/EasyFlipView-Demo_v1.0.0.apk&quot;&gt;Demo&lt;/a&gt; app or APK from &lt;a href=&quot;https://github.com/wajahatkarim3/EasyFlipView/releases&quot;&gt;Releases&lt;/a&gt; on your device and click on any card to flip it&lt;/p&gt;
-
-&lt;h1 id=&quot;changelog&quot;&gt;Changelog&lt;/h1&gt;
-&lt;p&gt;Changes exist in the &lt;a href=&quot;https://github.com/wajahatkarim3/EasyFlipView/releases&quot;&gt;releases&lt;/a&gt; tab.&lt;/p&gt;
-
-&lt;h1 id=&quot;installation&quot;&gt;Installation&lt;/h1&gt;
-&lt;p&gt;Add this in your app’s build.gradle file:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;groovy
-dependencies {
-  compile &#39;com.wajahatkarim3.EasyFlipView:EasyFlipView:1.0.2&#39;
-}
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Or add EasyFlipView as a new dependency inside your pom.xml&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt; 
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;com.wajahatkarim3.EasyFlipView&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;EasyFlipView&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt; 
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.0.2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt; 
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;type&amp;gt;&lt;/span&gt;pom&lt;span class=&quot;nt&quot;&gt;&amp;lt;/type&amp;gt;&lt;/span&gt; 
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;Usage
-=====&lt;/p&gt;
-
-&lt;h2 id=&quot;xml&quot;&gt;XML&lt;/h2&gt;
-&lt;p&gt;EasyFlipView In XML layouts
-```xml&lt;/p&gt;
-&lt;com.wajahatkarim3.easyflipview.easyflipview android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; app:flipontouch=&quot;true&quot; app:flipenabled=&quot;true&quot; app:flipduration=&quot;400&quot;&gt;
-
-	&amp;lt;-- Back Layout Goes Here --&amp;gt;
-	&lt;include layout=&quot;@layout/flash_card_layout_back&quot; /&gt;
-        
-	&amp;lt;-- Front Layout Goes Here --&amp;gt;
-	&lt;include layout=&quot;@layout/flash_card_layout_front&quot; /&gt;
-
-&lt;/com.wajahatkarim3.easyflipview.easyflipview&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;All customizable attributes for EasyFlipView
-```xml
-&amp;lt;declare-styleable name=&quot;easy_flip_view&quot;&amp;gt;
-	&amp;lt;-- Whether card should be flipped on touch or not (Default is true) --&amp;gt;
-	&amp;lt;attr name=&quot;flipOnTouch&quot; format=&quot;boolean&quot;/&amp;gt;
-	&amp;lt;-- The duration of flip animation in milliseconds (Default is 400 ms) --&amp;gt;
-	&amp;lt;attr name=&quot;flipDuration&quot; format=&quot;integer&quot;/&amp;gt;
-	&amp;lt;-- If this is set to false, then it won&#39;t flip ever (Default is true) --&amp;gt;
-	&amp;lt;attr name=&quot;flipEnabled&quot; format=&quot;boolean&quot;/&amp;gt;
-&amp;lt;/declare-styleable&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;in-code-java&quot;&gt;In Code (Java)&lt;/h2&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Flips the view with or without animation&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;mYourFlipView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;flipTheView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;mYourFlipView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;flipTheView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Sets and Gets the Flip Animation Duration in milliseconds (Default is 400 ms)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;mYourFlipView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setFlipDuration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mYourFlipView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getFlipDuration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Sets and gets the flip enable status (Default is true)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;mYourFlipView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setFlipEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flipStatus&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mYourFlipView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isFlipEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Sets and gets the flip on touch status (Default is true)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;mYourFlipView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setFlipOntouch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flipTouchStatus&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mYourFlipView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isFlipOnTouch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Get current flip state in enum (FlipState.FRONT_SIDE or FlipState.BACK_SIDE)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;EasyFlipView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;FlipState&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flipSide&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mYourFlipView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getCurrentFlipState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Get whether front/back side of flip is visible or not.&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;frontVal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mYourFlipView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isFrontSide&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;backVal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mYourFlipView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isBackSide&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h1 id=&quot;developed-by&quot;&gt;Developed By&lt;/h1&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Wajahat Karim
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;Website (http://wajahatkarim.com)&lt;/li&gt;
-  &lt;li&gt;Twitter (http://twitter.com/wajahatkarim)&lt;/li&gt;
-  &lt;li&gt;Medium (http://www.medium.com/@wajahatkarim3)&lt;/li&gt;
-  &lt;li&gt;LinkedIn (http://www.linkedin.com/in/wajahatkarim)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;how-to-contribute&quot;&gt;How to Contribute&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Fork it&lt;/li&gt;
-  &lt;li&gt;Create your feature branch (git checkout -b my-new-feature)&lt;/li&gt;
-  &lt;li&gt;Commit your changes (git commit -am ‘Add some feature’)&lt;/li&gt;
-  &lt;li&gt;Push to the branch (git push origin my-new-feature)&lt;/li&gt;
-  &lt;li&gt;Create new Pull Request&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;license&quot;&gt;License&lt;/h1&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2016 Wajahat Karim
-
-Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Mon, 09 Jan 2017 00:00:00 +0900</pubDate>
-        <link>http://kmshack.github.io/AndroidUICollection/2017/01/09/EasyFlipView/</link>
-        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/01/09/EasyFlipView/</guid>
-        
-        <category>flip</category>
         
         
       </item>
