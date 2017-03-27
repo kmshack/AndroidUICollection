@@ -5,9 +5,130 @@
     <description>Collection of OpenSource for Android UI.</description>
     <link>http://kmshack.github.io/AndroidUICollection/</link>
     <atom:link href="http://kmshack.github.io/AndroidUICollection/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 20 Mar 2017 00:58:19 +0900</pubDate>
-    <lastBuildDate>Mon, 20 Mar 2017 00:58:19 +0900</lastBuildDate>
+    <pubDate>Mon, 27 Mar 2017 21:49:12 +0900</pubDate>
+    <lastBuildDate>Mon, 27 Mar 2017 21:49:12 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>StatusView</title>
+        <description>
+</description>
+        <pubDate>Mon, 27 Mar 2017 00:00:00 +0900</pubDate>
+        <link>http://kmshack.github.io/AndroidUICollection/2017/03/27/StatusView/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/03/27/StatusView/</guid>
+        
+        <category>Status</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>FancyShowCaseView</title>
+        <description>&lt;h1 id=&quot;fancyshowcaseview-statushttpstravis-ciorgfaruktoptasfancyshowcaseviewsvgbranchmasterhttpstravis-ciorgfaruktoptasfancyshowcaseview-httpsjitpackiovfaruktoptasfancyshowcaseviewsvghttpsjitpackiofaruktoptasfancyshowcaseview--android-arsenalhttpsimgshieldsiobadgeandroid20arsenal-fancyshowcaseview-brightgreensvgstyleflathttpsandroid-arsenalcomdetails15440-apihttpsimgshieldsiobadgeapi-102b-bluesvgstyleflathttpsandroid-arsenalcomapilevel10&quot;&gt;FancyShowCaseView &lt;a href=&quot;https://travis-ci.org/faruktoptas/FancyShowCaseView&quot;&gt;[Status](https://travis-ci.org/faruktoptas/FancyShowCaseView.svg?branch=master)&lt;/a&gt; &lt;a href=&quot;https://jitpack.io/#faruktoptas/FancyShowCaseView&quot;&gt;[](https://jitpack.io/v/faruktoptas/FancyShowCaseView.svg)&lt;/a&gt;  &lt;a href=&quot;https://android-arsenal.com/details/1/5440&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-FancyShowCaseView-brightgreen.svg?style=flat)&lt;/a&gt; &lt;a href=&quot;https://android-arsenal.com/api?level=10&quot;&gt;[API](https://img.shields.io/badge/API-10%2B-blue.svg?style=flat)&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;An easy-to-use customizable show case view with circular reveal animation.&lt;/p&gt;
+
+&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Circular reveal animation (API Level 21+)&lt;/li&gt;
+  &lt;li&gt;Background color&lt;/li&gt;
+  &lt;li&gt;Circle and Rounded Rectangle focus shapes&lt;/li&gt;
+  &lt;li&gt;Title style and position&lt;/li&gt;
+  &lt;li&gt;Custom view inflation&lt;/li&gt;
+  &lt;li&gt;Custom enter/exit animations&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://cloud.githubusercontent.com/assets/1595227/24331187/ad143b80-1237-11e7-919c-36111c1ce559.gif&quot;&gt;gif&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://cloud.githubusercontent.com/assets/1595227/24331189/afec8d9e-1237-11e7-986d-0ab7c44db7c7.gif&quot;&gt;gif&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;gradle-dependency&quot;&gt;Gradle Dependency&lt;/h1&gt;
+
+&lt;p&gt;Add this in your root &lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt; file (&lt;strong&gt;not&lt;/strong&gt; your module &lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt; file):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-gradle&quot;&gt;allprojects {
+	repositories {
+		...
+		maven { url &quot;https://jitpack.io&quot; }
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then, add the library to your module &lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;gradle
+dependencies {
+    com.github.faruktoptas:FancyShowCaseView:latest.release.here
+}
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;sample-usage&quot;&gt;Sample Usage&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FancyShowCaseView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Builder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;focusOn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Focus on View&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;## Rounded Rectangle
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+new FancyShowCaseView.Builder(this)
+        .focusOn(view)
+        .title(&quot;Focus on View&quot;)
+        .focusShape(FocusShape.ROUNDED_RECTANGLE)
+        .build()
+        .show();
+&lt;/code&gt;
+## Customize
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+new FancyShowCaseView.Builder(this)
+        .focusOn(view)
+        .focusCircleRadiusFactor(1.5)
+        .title(&quot;Focus on View with larger circle&quot;)
+        .titleStyle(0, Gravity.BOTTOM | Gravity.CENTER)
+        .enterAnimation(enterAnimation)
+        .exitAnimation(exitAnimation)
+        .showOnce(&quot;fancy1&quot;)
+        .backgroundColor(Color.parseColor(&quot;#CC00FF00&quot;))
+        .build()
+        .show();
+&lt;/code&gt;
+## Inflating Custom View
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+new FancyShowCaseView.Builder(this)
+        .customView(R.layout.layout_my_custom_view, null)
+        .build()
+        .show();
+&lt;/code&gt;
+## Already in use in following apps
+(feel free to send me new projects)
+* &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.moblino.countrynews&quot;&gt;News - Newspaper &amp;amp; Magazine&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;license&quot;&gt;License&lt;/h1&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2017 Faruk Toptaş
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Mon, 27 Mar 2017 00:00:00 +0900</pubDate>
+        <link>http://kmshack.github.io/AndroidUICollection/2017/03/27/FancyShowCaseView/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/03/27/FancyShowCaseView/</guid>
+        
+        <category>ShowCase</category>
+        
+        
+      </item>
     
       <item>
         <title>BubblePicker</title>
@@ -18,18 +139,18 @@
 
 &lt;p&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.igalata.bubblepickerdemo&amp;amp;pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1&quot;&gt;&lt;img alt=&quot;Get it on Google Play&quot; src=&quot;https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png&quot; height=&quot;70&quot; width=&quot;180&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://appetize.io/app/eem5172h1pvn1wzxf8uq35xqbg?device=nexus5&amp;amp;scale=75&amp;amp;orientation=portrait&amp;amp;osVersion=7.0&quot;&gt;Live DEMO on appetize.io&lt;/a&gt;&lt;/p&gt;
-
 &lt;p&gt;Check this &lt;a href=&quot;https://dribbble.com/shots/3349372-Bubble-Picker-Open-Source-Component&quot;&gt;project on dribbble&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Read how we did it &lt;a href=&quot;https://medium.com/@igalata13/how-to-create-a-bubble-selection-animation-on-android-627044da4854#.ajonc010b&quot;&gt;on Medium&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;shot.gif&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;##Requirements
-- Android SDK 16+&lt;/p&gt;
+&lt;h2 id=&quot;requirements&quot;&gt;Requirements&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Android SDK 16+&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;##Usage&lt;/p&gt;
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
 
 &lt;p&gt;Add to your root build.gradle:
 &lt;code class=&quot;highlighter-rouge&quot;&gt;Groovy
@@ -44,7 +165,7 @@ allprojects {
 &lt;p&gt;Add the dependency:
 &lt;code class=&quot;highlighter-rouge&quot;&gt;Groovy
 dependencies {
-	compile &#39;com.github.igalata:Bubble-Picker:v0.1.2&#39;
+	compile &#39;com.github.igalata:Bubble-Picker:v0.1.3&#39;
 }
 &lt;/code&gt;&lt;/p&gt;
 
@@ -206,10 +327,10 @@ SOFTWARE.&lt;/p&gt;
       <item>
         <title>AutoplayVideos</title>
         <description>&lt;h1 id=&quot;autoplayvideos&quot;&gt;AutoplayVideos&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;https://android-arsenal.com/details/1/5372&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AutoPlay%20Videos-blue.svg)&lt;/a&gt; &lt;a href=&quot;https://android-arsenal.com/api?level=16&quot;&gt;[API](https://img.shields.io/badge/API-16%2B-green.svg)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://android-arsenal.com/api?level=16&quot;&gt;[API](https://img.shields.io/badge/API-16%2B-brightgreen.svg)&lt;/a&gt; &lt;a href=&quot;https://android-arsenal.com/details/1/5372&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AutoPlay%20Videos-2CB3E5.svg)&lt;/a&gt; &lt;a href=&quot;http://androidweekly.net/issues/issue-249&quot;&gt;[API](https://img.shields.io/badge/Android%20Weekly-%23249-2CB3E5.svg)&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;This library is created with the purpose to implement recyclerview with videos easily.
-This is the first version of the library and suggestions/contributions are most welcome to improvise the library.&lt;/p&gt;
+This is the first version of the library and suggestions/contributions to optimize memory and CPU usage are most welcome to improvise the library.&lt;/p&gt;
 
 &lt;p&gt;It is targeted at solving following problems:&lt;/p&gt;
 
@@ -244,7 +365,7 @@ This is the first version of the library and suggestions/contributions are most 
 &lt;p&gt;&lt;strong&gt;Step 2.&lt;/strong&gt; Add the dependency to your app-level build.gradle file:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	 &lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;com.allattentionhere:autoplayvideos:0.0.4&#39;&lt;/span&gt;
+	 &lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;com.allattentionhere:autoplayvideos:0.0.6&#39;&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -254,25 +375,28 @@ This is the first version of the library and suggestions/contributions are most 
 &lt;p&gt;Add &lt;code class=&quot;highlighter-rouge&quot;&gt;AAH_VideoImage&lt;/code&gt; to your xml file for single list item &lt;code class=&quot;highlighter-rouge&quot;&gt;single_card.xml&lt;/code&gt;:
 ```
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;/p&gt;
-&lt;linearlayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; xmlns:card_view=&quot;http://schemas.android.com/apk/res-auto&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; android:layout_gravity=&quot;center&quot; android:gravity=&quot;center&quot; android:layout_marginbottom=&quot;8dp&quot; android:layout_marginleft=&quot;64dp&quot; android:layout_marginright=&quot;64dp&quot; android:layout_margintop=&quot;8dp&quot;&gt;
- &lt;android.support.v7.widget.cardview android:id=&quot;@+id/card_view&quot; android:layout_width=&quot;wrap_content&quot; android:layout_height=&quot;wrap_content&quot; card_view:cardcornerradius=&quot;4dp&quot; card_view:cardelevation=&quot;4dp&quot; android:layout_gravity=&quot;center&quot; card_view:cardpreventcorneroverlap=&quot;false&quot;&gt;
-    &lt;linearlayout android:orientation=&quot;vertical&quot; android:layout_width=&quot;wrap_content&quot; android:layout_height=&quot;wrap_content&quot;&gt;
-	
-        &lt;com.allattentionhere.autoplayvideos.aah_videoimage android:layout_width=&quot;220dp&quot; android:layout_height=&quot;220dp&quot; /&gt;
-	    
-        &lt;textview android:gravity=&quot;center&quot; android:text=&quot;hello&quot; android:id=&quot;@+id/tv&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; /&gt;
-    &lt;/linearlayout&gt;
- &lt;/android.support.v7.widget.cardview&gt;
+&lt;linearlayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; xmlns:card_view=&quot;http://schemas.android.com/apk/res-auto&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot;&gt;
+
+    &lt;android.support.v7.widget.cardview android:id=&quot;@+id/card_view&quot; android:layout_width=&quot;wrap_content&quot; android:layout_height=&quot;wrap_content&quot;&gt;
+       
+       &lt;linearlayout android:layout_width=&quot;wrap_content&quot; android:layout_height=&quot;wrap_content&quot; android:orientation=&quot;vertical&quot;&gt;
+
+            &lt;com.allattentionhere.autoplayvideos.aah_videoimage android:layout_width=&quot;300dp&quot; android:layout_height=&quot;150dp&quot; /&gt;
+
+            &lt;textview android:id=&quot;@+id/tv&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; android:gravity=&quot;center&quot; /&gt;
+		
+        &lt;/linearlayout&gt;
+    &lt;/android.support.v7.widget.cardview&gt;
 &lt;/linearlayout&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 Add `AAH_CustomRecyclerView` to your Activity layout xml `MainActivity.xml`:
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;linearlayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot; xmlns:tools=&quot;http://schemas.android.com/tools&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;match_parent&quot; android:orientation=&quot;vertical&quot; tools:ignore=&quot;MissingPrefix&quot; android:gravity=&quot;center&quot;&gt;
+&lt;linearlayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;match_parent&quot; android:orientation=&quot;vertical&quot;&gt;
 
-&lt;com.allattentionhere.autoplayvideos.aah_customrecyclerview android:layout_gravity=&quot;center&quot; android:id=&quot;@+id/rv_home&quot; android:layout_width=&quot;wrap_content&quot; android:layout_height=&quot;match_parent&quot; /&gt;
-
+    &lt;com.allattentionhere.autoplayvideos.aah_customrecyclerview android:id=&quot;@+id/rv_home&quot; android:layout_width=&quot;wrap_content&quot; android:layout_height=&quot;wrap_content&quot; /&gt;
+	
 &lt;/linearlayout&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 Set Adapter with following specifics:
@@ -367,6 +491,17 @@ limitations under the License.&lt;/p&gt;
         <category>video</category>
         
         <category>player</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Ad</title>
+        <description>
+</description>
+        <pubDate>Tue, 14 Mar 2017 00:00:00 +0900</pubDate>
+        <link>http://kmshack.github.io/AndroidUICollection/2017/03/14/AD/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/03/14/AD/</guid>
         
         
       </item>
@@ -624,17 +759,6 @@ startActivityForResult(intent, REQUEST_CROP);
         <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/03/12/InstaCropper/</guid>
         
         <category>cropper</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Ad</title>
-        <description>
-</description>
-        <pubDate>Wed, 22 Feb 2017 00:00:00 +0900</pubDate>
-        <link>http://kmshack.github.io/AndroidUICollection/2017/02/22/AD/</link>
-        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/02/22/AD/</guid>
         
         
       </item>
@@ -1037,7 +1161,7 @@ In order to set that color:&lt;/p&gt;
 &lt;p&gt;After clicking on the Next button if the user wants to e.g.:
 * save something in the database
 * make a network call on a separate Thread
-* simply save the data from the current step to some other component or parent Activity&lt;/p&gt;
+* simply save the data from the current step to some other component or parent Activity (see ‘Passing data between steps’ in the sample app for more details)&lt;/p&gt;
 
 &lt;p&gt;he can perform these operations and then invoke the &lt;code class=&quot;highlighter-rouge&quot;&gt;goToNextStep()&lt;/code&gt; method of the &lt;code class=&quot;highlighter-rouge&quot;&gt;StepperLayout.OnNextClickedCallback&lt;/code&gt; in the current Step.
 If the user wants to perform these operations on the final step, when clicking on the Complete button, he needs to invoke the &lt;code class=&quot;highlighter-rouge&quot;&gt;complete()&lt;/code&gt; method of the  &lt;code class=&quot;highlighter-rouge&quot;&gt;StepperLayout.OnCompleteClickedCallback&lt;/code&gt;.
@@ -1172,8 +1296,9 @@ For an example of how to use it with views please see the sample app.&lt;/p&gt;
 To do so you firstly need to set &lt;code class=&quot;highlighter-rouge&quot;&gt;ms_stepperFeedbackType&lt;/code&gt; to one or more of:
 * &lt;code class=&quot;highlighter-rouge&quot;&gt;tabs&lt;/code&gt; - shows a progress message instead of the tabs during operation,
 * &lt;code class=&quot;highlighter-rouge&quot;&gt;content&lt;/code&gt; - shows a progress bar on top of the steps’ content and partially fades the content out during operation,
-* &lt;code class=&quot;highlighter-rouge&quot;&gt;disabled_bottom_navigation&lt;/code&gt; - disables the buttons in the bottom navigation during operation.
-The default is &lt;code class=&quot;highlighter-rouge&quot;&gt;none&lt;/code&gt; which does nothing. It is possible to use multiple flags together.&lt;/p&gt;
+* &lt;code class=&quot;highlighter-rouge&quot;&gt;disabled_bottom_navigation&lt;/code&gt; - disables the buttons in the bottom navigation during operation. In order to see that the buttons are disabled on the bottom navigation bar, make sure that the button colors are assigned using color selectors with a disabled state (see the sample app).&lt;/p&gt;
+
+&lt;p&gt;The default is &lt;code class=&quot;highlighter-rouge&quot;&gt;none&lt;/code&gt; which does nothing. It is possible to use multiple flags together.&lt;/p&gt;
 
 &lt;p&gt;After setting this to show the feedback you need to call &lt;code class=&quot;highlighter-rouge&quot;&gt;StepperLayout#showProgress(@NonNull String progressMessage)&lt;/code&gt;
 and do hide the progress indicator you need to call &lt;code class=&quot;highlighter-rouge&quot;&gt;StepperLayout#hideProgress()&lt;/code&gt;.&lt;/p&gt;
@@ -1189,6 +1314,9 @@ In layout:
         android:id=&quot;@+id/stepperLayout&quot;
         android:layout_width=&quot;match_parent&quot;
         android:layout_height=&quot;match_parent&quot;
+        app:ms_backButtonColor=&quot;@color/ms_disabling_button_text_color_selector&quot;
+        app:ms_nextButtonColor=&quot;@color/ms_disabling_button_text_color_selector&quot;
+        app:ms_completeButtonColor=&quot;@color/ms_disabling_button_text_color_selector&quot;
         app:ms_stepperType=&quot;tabs&quot;
         app:ms_stepperFeedbackType=&quot;tabs|content|disabled_bottom_navigation&quot; /&amp;gt;
 &lt;/code&gt;&lt;/p&gt;
@@ -1447,233 +1575,6 @@ limitations under the License.&lt;/p&gt;
         <category>sliding</category>
         
         <category>square</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Toasty</title>
-        <description>&lt;h1 id=&quot;toasty&quot;&gt;Toasty&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;https://android-arsenal.com/api?level=9&quot;&gt;[API](https://img.shields.io/badge/API-9%2B-blue.svg?style=flat)&lt;/a&gt; &lt;a href=&quot;https://jitpack.io/#GrenderG/Toasty&quot;&gt;[](https://jitpack.io/v/GrenderG/Toasty.svg)&lt;/a&gt; &lt;a href=&quot;https://android-arsenal.com/details/1/5102&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Toasty-brightgreen.svg?style=flat)&lt;/a&gt; &lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;amp;hosted_button_id=XUUEWEHJYFYV2&quot;&gt;[Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)&lt;/a&gt;&lt;/p&gt;
-
-&lt;div align=&quot;center&quot;&gt;
-	&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/web_hi_res_512.png&quot; width=&quot;128&quot; /&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The usual Toast, but with steroids. &lt;strong&gt;(Screenshots at the end of the file.)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Add this in your root &lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt; file (&lt;strong&gt;not&lt;/strong&gt; your module &lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt; file):&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-gradle&quot;&gt;allprojects {
-	repositories {
-		...
-		maven { url &quot;https://jitpack.io&quot; }
-	}
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;dependency&quot;&gt;Dependency&lt;/h2&gt;
-
-&lt;p&gt;Add this to your module’s &lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt; file (make sure the version matches the JitPack badge above):&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-gradle&quot;&gt;dependencies {
-	...
-	compile &#39;com.github.GrenderG:Toasty:1.1.4&#39;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-
-&lt;p&gt;Each method always returns a &lt;code class=&quot;highlighter-rouge&quot;&gt;Toast&lt;/code&gt; object, so you can customize the Toast much more. &lt;strong&gt;DON’T FORGET THE &lt;code class=&quot;highlighter-rouge&quot;&gt;show()&lt;/code&gt; METHOD&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;To display an error Toast:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Toasty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yourContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;This is an error toast.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LENGTH_SHORT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;To display a success Toast:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Toasty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yourContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Success&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LENGTH_SHORT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;To display an info Toast:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Toasty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yourContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Here is some info for you.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LENGTH_SHORT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;To display a warning Toast:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Toasty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;warning&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yourContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Beware of the dog.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LENGTH_SHORT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;To display the usual Toast:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Toasty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;normal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yourContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Normal toast w/o icon&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;To display the usual Toast with icon:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Toasty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;normal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yourContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Normal toast w/ icon&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;yourIconDrawable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;You can also create your custom Toasts with the &lt;code class=&quot;highlighter-rouge&quot;&gt;custom()&lt;/code&gt; method:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-Toasty.custom(yourContext, &quot;I&#39;m a custom Toast&quot;, yourIconDrawable, textColor, tintColor, duration, withIcon, true).show();
-&lt;/code&gt;
-### Extra
-&lt;a href=&quot;https://github.com/GrenderG/Toasty/blob/master/app/src/main/java/es/dmoral/toastysample/MainActivity.java#L76-L93&quot;&gt;You can pass formatted text to Toasty&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;There are variants of each method, feel free to explore this library.&lt;/p&gt;
-
-&lt;h2 id=&quot;apps-using-toasty&quot;&gt;Apps using Toasty&lt;/h2&gt;
-
-&lt;p&gt;Want to be here? Open an &lt;code class=&quot;highlighter-rouge&quot;&gt;issue&lt;/code&gt; or make a &lt;code class=&quot;highlighter-rouge&quot;&gt;pull request&lt;/code&gt;.&lt;/p&gt;
-
-&lt;table&gt;
-	&lt;tr&gt;
-		&lt;td&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/vmch41lYF_TKb1MKgtYrSgz2rKQ4T1EnGRCGpWSMqLRSzi_pgNWoZpw9WJE8UV4t614=w300-rw&quot; width=&quot;64&quot; /&gt;&lt;/td&gt;
-		&lt;td&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.trivisionzero.chromophoto&quot;&gt;ChromoPhoto - Colorize B&amp;amp;W&lt;/a&gt;&lt;/td&gt;
-	&lt;/tr&gt;
-	&lt;tr&gt;
-		&lt;td&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/2EYJPs-qBlKJ3L6cy7idQpzKfZkTzA2G4UQfbs-96VGMftQ-7aV4Dvj77ejzZlAAVx_C=w300-rw&quot; width=&quot;64&quot; /&gt;&lt;/td&gt;
-		&lt;td&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.serg.chuprin.tageditor&quot;&gt;AutoTagger - редактор тегов.&lt;/a&gt;&lt;/td&gt;
-	&lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;screenshots&quot;&gt;Screenshots&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr_1.png&quot; width=&quot;250&quot; /&gt;
-&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr_2.png&quot; width=&quot;250&quot; /&gt;
-&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr_3.png&quot; width=&quot;250&quot; /&gt;
-&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr_4.png&quot; width=&quot;250&quot; /&gt;
-&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr_5.png&quot; width=&quot;250&quot; /&gt;
-&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr_6.png&quot; width=&quot;250&quot; /&gt;
-&lt;img src=&quot;https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr_7.png&quot; width=&quot;250&quot; /&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 18 Feb 2017 00:00:00 +0900</pubDate>
-        <link>http://kmshack.github.io/AndroidUICollection/2017/02/18/Toasty/</link>
-        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/02/18/Toasty/</guid>
-        
-        <category>toast</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>SwitchIcon</title>
-        <description>&lt;h1 id=&quot;android-switchicon&quot;&gt;Android-SwitchIcon&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://jitpack.io/#zagum/Android-SwitchIcon&quot;&gt;[](https://jitpack.io/v/zagum/Android-SwitchIcon.svg)&lt;/a&gt;
-&lt;a href=&quot;https://android-arsenal.com/api?level=15&quot;&gt;[API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Google launcher-style implementation of switch (enable/disable) icon&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/zagum/Android-SwitchIcon/blob/master/art/sample.gif&quot;&gt;image&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;compatibility&quot;&gt;Compatibility&lt;/h2&gt;
-
-&lt;p&gt;This library is compatible from API 15 (Android 4.0.3).&lt;/p&gt;
-
-&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
-
-&lt;p&gt;Add it in your root build.gradle at the end of repositories:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;allprojects&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;repositories&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;maven&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://jitpack.io&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Add the dependency&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;com.github.zagum:Android-SwitchIcon:1.3.2&#39;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-
-&lt;p&gt;SwitchIconView extends from AppCompatImageView so you can set icon with  &lt;code class=&quot;highlighter-rouge&quot;&gt;app:srcCompat&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Set any icon (vector or image) to SwitchIconView and enjoy switchable icon in your app :)&lt;/p&gt;
-
-&lt;p&gt;Use &lt;code class=&quot;highlighter-rouge&quot;&gt;app:si_tint_color&lt;/code&gt; to set color to icon. Default color is black;&lt;/p&gt;
-
-&lt;p&gt;Use &lt;code class=&quot;highlighter-rouge&quot;&gt;app:si_disabled_color&lt;/code&gt; to set color when icon disabled. Default color is equals with &lt;code class=&quot;highlighter-rouge&quot;&gt;app:si_tint_color&lt;/code&gt;;&lt;/p&gt;
-
-&lt;p&gt;Use &lt;code class=&quot;highlighter-rouge&quot;&gt;app:si_disabled_alpha&lt;/code&gt; to set alpha when icon disabled. Default alpha is &lt;code class=&quot;highlighter-rouge&quot;&gt;.5&lt;/code&gt;;&lt;/p&gt;
-
-&lt;p&gt;Use &lt;code class=&quot;highlighter-rouge&quot;&gt;app:si_no_dash&lt;/code&gt; if you don’t want to draw dash, when icon disabled;&lt;/p&gt;
-
-&lt;p&gt;Use &lt;code class=&quot;highlighter-rouge&quot;&gt;app:si_animation_duration&lt;/code&gt; if you want to change switching state animation duration;&lt;/p&gt;
-
-&lt;p&gt;Use &lt;code class=&quot;highlighter-rouge&quot;&gt;app:si_enabled&lt;/code&gt; to set initial icon state;&lt;/p&gt;
-
-&lt;p&gt;Fully customized implementation:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;lt;com.github.zagum.switchicon.SwitchIconView&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:padding=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;8dp&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:si_animation_duration=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;500&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:si_disabled_alpha=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;.3&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:si_disabled_color=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#b7b7b7&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:si_tint_color=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#ff3c00&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:si_enabled=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:si_no_dash=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:srcCompat=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@drawable/ic_cloud&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Public methods:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setIconEnabled&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;enabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;setIconEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;enabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;animate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isIconEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;switchState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;switchState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;animate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;See &lt;a href=&quot;https://github.com/zagum/Android-SwitchIcon/tree/master/switchicon-sample&quot;&gt;sample&lt;/a&gt; project for more information.&lt;/p&gt;
-
-&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2017 Evgenii Zagumennyi
-
-Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Mon, 16 Jan 2017 00:00:00 +0900</pubDate>
-        <link>http://kmshack.github.io/AndroidUICollection/2017/01/16/SwitchIcon/</link>
-        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/01/16/SwitchIcon/</guid>
-        
-        <category>switch</category>
-        
-        <category>icon</category>
         
         
       </item>
