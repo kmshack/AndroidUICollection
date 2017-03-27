@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Groupie</title>
-  <meta name="description" content="groupieGroupie helps you display and manage complex RecyclerView layouts.  It lets you treat your content as logical groups and handles change notifications ...">
+  <meta name="description" content="groupieGroupie is a simple, flexible library for complex RecyclerView layouts.Groupie lets you treat your content as logical groups and handles change notifi...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
@@ -16,18 +16,18 @@
   <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="groupieGroupie helps you display and manage complex RecyclerView layouts.  It lets you treat your content as logical groups and handles change notifications ...">
+  <meta name="description" content="groupieGroupie is a simple, flexible library for complex RecyclerView layouts.Groupie lets you treat your content as logical groups and handles change notifi...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="Groupie">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="groupieGroupie helps you display and manage complex RecyclerView layouts.  It lets you treat your content as logical groups and handles change notifications ...">
+  <meta property="og:description" content="groupieGroupie is a simple, flexible library for complex RecyclerView layouts.Groupie lets you treat your content as logical groups and handles change notifi...">
   <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/10/05/groupie/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="groupieGroupie helps you display and manage complex RecyclerView layouts.  It lets you treat your content as logical groups and handles change notifications ..." />
+  <meta name="twitter:description" content="groupieGroupie is a simple, flexible library for complex RecyclerView layouts.Groupie lets you treat your content as logical groups and handles change notifi..." />
 
   
   	<!-- Article specific OG data -->
@@ -102,6 +102,14 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
+                
+              
+            
+              
                 
               
             
@@ -568,21 +576,31 @@
               <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/AndroidUICollection/images/posts/2016-10-05-groupie.gif)"></div>
             </div>
              <br><br>
-            <hr>
+            
           <br>
+          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- androiduicollection -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-9975139260149901"
+                 data-ad-slot="2900853479"
+                 data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+             <br>
           <h1 id="groupie">groupie</h1>
 
-<p>Groupie helps you display and manage complex RecyclerView layouts.  It lets you treat your content as logical groups and handles change notifications for you – think sections with headers and footers, expandable groups, blocks of vertical columns, and much more.  It makes it easy to handle asynchronous content updates and insertions and user-driven content changes.  At the item level, it abstracts the boilerplate of item view types, item layouts, viewholders, and span sizes.</p>
+<p>Groupie is a simple, flexible library for complex RecyclerView layouts.</p>
 
-<p>Groupie was developed as an internal library at Genius because none of the existing solutions for multiple view types or groups were simple or flexible enough for us.  We decided to make it public to encourage discussion about managing and developing complex, rich user interfaces with RecyclerView.</p>
+<p>Groupie lets you treat your content as logical groups and handles change notifications for you – think sections with headers and footers, expandable groups, blocks of vertical columns, and much more.  It makes it easy to handle asynchronous content updates and insertions and user-driven content changes.  At the item level, it abstracts the boilerplate of item view types, item layouts, viewholders, and span sizes.</p>
 
 <p><img src="http://i.imgur.com/eftOE0v.gif" width="300px" /></p>
 
 <h1 id="try-it-out">Try it out:</h1>
 
-<p>Groupie is available on jcenter:</p>
-
-<pre><code class="language-gradle">compile 'com.genius:groupie:0.8.0'
+<pre><code class="language-gradle">compile 'com.xwray:groupie:1.0.0'
 </code></pre>
 
 <p>Groupie uses Android’s <a href="https://developer.android.com/topic/libraries/data-binding/index.html">data binding</a> to generate view holders.  To enable code generation, add to your app module’s build.gradle.</p>
@@ -626,7 +644,7 @@
 </code></pre>
 </div>
 
-<p>We’ve provided a few simple implementations of Groups within the library:
+<p>There are a few simple implementations of Groups within the library:
 - <code class="highlighter-rouge">Section</code>, a list of body content with an optional header group and footer group.<br />
 - <code class="highlighter-rouge">ExpandableGroup</code>, a single parent group with a list of body content that can be toggled hidden or shown.
 - <code class="highlighter-rouge">UpdatingGroup</code>, a list of items which can diff its previous and new contents and animate moves, updates and other changes</p>
@@ -648,9 +666,9 @@
 </code></pre>
 </div>
 
-<p>At Genius, we found that our groups were rarely exactly the same.  Groups are designed so that making new ones and defining their behavior is easy.  We think you should make many small, simple, custom groups as the need strikes you.</p>
+<p>Life is messy, so groups are designed so that making new ones and defining their behavior is easy. You should make many small, simple, custom groups as the need strikes you.</p>
 
-<p>You can implement the Group interface directly if you want.  However, we’ve provided NestedGroup as a base implementation, and in most cases, we strongly recommend extending it.  NestedGroup provides support for arbitrary nesting of groups, registering/unregistering listeners, and fine-grained change notifications to support animations and updating the adapter.</p>
+<p>You can implement the <code class="highlighter-rouge">Group</code> interface directly if you want.  However, in most cases, you should extend the base implementation, <code class="highlighter-rouge">NestedGroup</code>.  NestedGroup provides support for arbitrary nesting of groups, registering/unregistering listeners, and fine-grained change notifications to support animations and updating the adapter.</p>
 
 <h2 id="items">Items</h2>
 
@@ -698,19 +716,30 @@
 
     </framelayout>
 </layout>
-<p>```</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>
+You can add a `&lt;data&gt;` section to directly bind a model or ViewModel, but you don't have to.  The generated view bindings alone are a huge time saver.  
 
-<p>We like to add a <code class="highlighter-rouge">&lt;data&gt;</code> section to directly bind a model or ViewModel, but you don’t have to.  The generated view bindings alone are a huge time saver.</p>
+Items can also declare their own column span and whether they are draggable or swipeable.  
 
-<p>Items can also declare their own column span and whether they are draggable or swipeable.</p>
 
-<h1 id="limitations">Limitations</h1>
-<ul>
-  <li>groupie requires you to use data binding (for now)</li>
-  <li>groupie is in beta and its API may still change.</li>
-</ul>
+# Contributing
+Contributions you say?  Yes please
 
-<p>If you try it out, we’d love to know what you think Please hit up Lisa at lisa@genius.com.</p>
+### Bug report? 
+- If at all possible, please attach a *minimal* sample project or code which reproduces the bug. 
+- Screenshots are also a huge help if the problem is visual.
+### Send a pull request
+- If you're fixing a bug, bonus points for adding a failing test, but anything is welcome
+
+# Notes
+
+Pre-release versions of groupie had a different package name.  The last working build was:
+```gradle
+compile 'com.genius:groupie:0.7.0'
+</code></pre>
+</div>
+
+<p>If you try it out, I’d love to know what you think. Please hit up Lisa at [first][last]@gmail.com or on Twitter at <a href="https://twitter.com/lisawrayz">@lisawrayz</a>.</p>
 
           <br>
           <div class="post__tags">

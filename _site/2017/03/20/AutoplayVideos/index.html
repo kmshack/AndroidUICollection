@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>AutoplayVideos</title>
-  <meta name="description" content="AutoplayVideos[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AutoPlay%20Videos-blue.svg) [API](https://img.shields.io/badge/API-16%2B-green...">
+  <meta name="description" content="AutoplayVideos[API](https://img.shields.io/badge/API-16%2B-brightgreen.svg) [Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AutoPlay%20Video...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
@@ -16,18 +16,18 @@
   <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="AutoplayVideos[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AutoPlay%20Videos-blue.svg) [API](https://img.shields.io/badge/API-16%2B-green...">
+  <meta name="description" content="AutoplayVideos[API](https://img.shields.io/badge/API-16%2B-brightgreen.svg) [Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AutoPlay%20Video...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="AutoplayVideos">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="AutoplayVideos[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AutoPlay%20Videos-blue.svg) [API](https://img.shields.io/badge/API-16%2B-green...">
+  <meta property="og:description" content="AutoplayVideos[API](https://img.shields.io/badge/API-16%2B-brightgreen.svg) [Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AutoPlay%20Video...">
   <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2017/03/20/AutoplayVideos/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="AutoplayVideos[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AutoPlay%20Videos-blue.svg) [API](https://img.shields.io/badge/API-16%2B-green..." />
+  <meta name="twitter:description" content="AutoplayVideos[API](https://img.shields.io/badge/API-16%2B-brightgreen.svg) [Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AutoPlay%20Video..." />
 
   
   	<!-- Article specific OG data -->
@@ -102,6 +102,14 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
+                
+              
+            
+              
                 
               
             
@@ -568,13 +576,25 @@
               <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/AndroidUICollection/images/posts/2017-03-20-AutoplayVideos.gif)"></div>
             </div>
              <br><br>
-            <hr>
+            
           <br>
+          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- androiduicollection -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-9975139260149901"
+                 data-ad-slot="2900853479"
+                 data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+             <br>
           <h1 id="autoplayvideos">AutoplayVideos</h1>
-<p><a href="https://android-arsenal.com/details/1/5372">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AutoPlay%20Videos-blue.svg)</a> <a href="https://android-arsenal.com/api?level=16">[API](https://img.shields.io/badge/API-16%2B-green.svg)</a></p>
+<p><a href="https://android-arsenal.com/api?level=16">[API](https://img.shields.io/badge/API-16%2B-brightgreen.svg)</a> <a href="https://android-arsenal.com/details/1/5372">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AutoPlay%20Videos-2CB3E5.svg)</a> <a href="http://androidweekly.net/issues/issue-249">[API](https://img.shields.io/badge/Android%20Weekly-%23249-2CB3E5.svg)</a></p>
 
 <p>This library is created with the purpose to implement recyclerview with videos easily.
-This is the first version of the library and suggestions/contributions are most welcome to improvise the library.</p>
+This is the first version of the library and suggestions/contributions to optimize memory and CPU usage are most welcome to improvise the library.</p>
 
 <p>It is targeted at solving following problems:</p>
 
@@ -609,7 +629,7 @@ This is the first version of the library and suggestions/contributions are most 
 <p><strong>Step 2.</strong> Add the dependency to your app-level build.gradle file:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
-	 <span class="n">compile</span> <span class="s1">'com.allattentionhere:autoplayvideos:0.0.4'</span>
+	 <span class="n">compile</span> <span class="s1">'com.allattentionhere:autoplayvideos:0.0.6'</span>
 <span class="o">}</span>
 </code></pre>
 </div>
@@ -619,25 +639,28 @@ This is the first version of the library and suggestions/contributions are most 
 <p>Add <code class="highlighter-rouge">AAH_VideoImage</code> to your xml file for single list item <code class="highlighter-rouge">single_card.xml</code>:
 ```
 <?xml version="1.0" encoding="utf-8"?></p>
-<linearlayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:card_view="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="center" android:gravity="center" android:layout_marginbottom="8dp" android:layout_marginleft="64dp" android:layout_marginright="64dp" android:layout_margintop="8dp">
- <android.support.v7.widget.cardview android:id="@+id/card_view" android:layout_width="wrap_content" android:layout_height="wrap_content" card_view:cardcornerradius="4dp" card_view:cardelevation="4dp" android:layout_gravity="center" card_view:cardpreventcorneroverlap="false">
-    <linearlayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
-	
-        <com.allattentionhere.autoplayvideos.aah_videoimage android:layout_width="220dp" android:layout_height="220dp" />
-	    
-        <textview android:gravity="center" android:text="hello" android:id="@+id/tv" android:layout_width="match_parent" android:layout_height="wrap_content" />
-    </linearlayout>
- </android.support.v7.widget.cardview>
+<linearlayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:card_view="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="wrap_content">
+
+    <android.support.v7.widget.cardview android:id="@+id/card_view" android:layout_width="wrap_content" android:layout_height="wrap_content">
+       
+       <linearlayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
+
+            <com.allattentionhere.autoplayvideos.aah_videoimage android:layout_width="300dp" android:layout_height="150dp" />
+
+            <textview android:id="@+id/tv" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" />
+		
+        </linearlayout>
+    </android.support.v7.widget.cardview>
 </linearlayout>
 <div class="highlighter-rouge"><pre class="highlight"><code>
 Add `AAH_CustomRecyclerView` to your Activity layout xml `MainActivity.xml`:
 </code></pre>
 </div>
 <?xml version="1.0" encoding="utf-8"?>
-<linearlayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" tools:ignore="MissingPrefix" android:gravity="center">
+<linearlayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
 
-<com.allattentionhere.autoplayvideos.aah_customrecyclerview android:layout_gravity="center" android:id="@+id/rv_home" android:layout_width="wrap_content" android:layout_height="match_parent" />
-
+    <com.allattentionhere.autoplayvideos.aah_customrecyclerview android:id="@+id/rv_home" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+	
 </linearlayout>
 <div class="highlighter-rouge"><pre class="highlight"><code>
 Set Adapter with following specifics:

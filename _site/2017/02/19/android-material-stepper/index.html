@@ -441,6 +441,14 @@
                 
               
             
+              
+                
+              
+            
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -568,8 +576,20 @@
               <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/AndroidUICollection/images/posts/2017-02-19-android-material-stepper.gif)"></div>
             </div>
              <br><br>
-            <hr>
+            
           <br>
+          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- androiduicollection -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-9975139260149901"
+                 data-ad-slot="2900853479"
+                 data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+             <br>
           <p align="center">
   <img src="./art/material-stepper-logo.png" width="256" height="256" />
 </p>
@@ -799,7 +819,7 @@ In order to set that color:</p>
 <p>After clicking on the Next button if the user wants to e.g.:
 * save something in the database
 * make a network call on a separate Thread
-* simply save the data from the current step to some other component or parent Activity</p>
+* simply save the data from the current step to some other component or parent Activity (see ‘Passing data between steps’ in the sample app for more details)</p>
 
 <p>he can perform these operations and then invoke the <code class="highlighter-rouge">goToNextStep()</code> method of the <code class="highlighter-rouge">StepperLayout.OnNextClickedCallback</code> in the current Step.
 If the user wants to perform these operations on the final step, when clicking on the Complete button, he needs to invoke the <code class="highlighter-rouge">complete()</code> method of the  <code class="highlighter-rouge">StepperLayout.OnCompleteClickedCallback</code>.
@@ -934,8 +954,9 @@ For an example of how to use it with views please see the sample app.</p>
 To do so you firstly need to set <code class="highlighter-rouge">ms_stepperFeedbackType</code> to one or more of:
 * <code class="highlighter-rouge">tabs</code> - shows a progress message instead of the tabs during operation,
 * <code class="highlighter-rouge">content</code> - shows a progress bar on top of the steps’ content and partially fades the content out during operation,
-* <code class="highlighter-rouge">disabled_bottom_navigation</code> - disables the buttons in the bottom navigation during operation.
-The default is <code class="highlighter-rouge">none</code> which does nothing. It is possible to use multiple flags together.</p>
+* <code class="highlighter-rouge">disabled_bottom_navigation</code> - disables the buttons in the bottom navigation during operation. In order to see that the buttons are disabled on the bottom navigation bar, make sure that the button colors are assigned using color selectors with a disabled state (see the sample app).</p>
+
+<p>The default is <code class="highlighter-rouge">none</code> which does nothing. It is possible to use multiple flags together.</p>
 
 <p>After setting this to show the feedback you need to call <code class="highlighter-rouge">StepperLayout#showProgress(@NonNull String progressMessage)</code>
 and do hide the progress indicator you need to call <code class="highlighter-rouge">StepperLayout#hideProgress()</code>.</p>
@@ -951,6 +972,9 @@ In layout:
         android:id="@+id/stepperLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:ms_backButtonColor="@color/ms_disabling_button_text_color_selector"
+        app:ms_nextButtonColor="@color/ms_disabling_button_text_color_selector"
+        app:ms_completeButtonColor="@color/ms_disabling_button_text_color_selector"
         app:ms_stepperType="tabs"
         app:ms_stepperFeedbackType="tabs|content|disabled_bottom_navigation" /&gt;
 </code></p>
