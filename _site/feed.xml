@@ -5,9 +5,90 @@
     <description>Collection of OpenSource for Android UI.</description>
     <link>http://kmshack.github.io/AndroidUICollection/</link>
     <atom:link href="http://kmshack.github.io/AndroidUICollection/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 27 Mar 2017 21:49:12 +0900</pubDate>
-    <lastBuildDate>Mon, 27 Mar 2017 21:49:12 +0900</lastBuildDate>
+    <pubDate>Tue, 28 Mar 2017 19:23:30 +0900</pubDate>
+    <lastBuildDate>Tue, 28 Mar 2017 19:23:30 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>MusicPlayer</title>
+        <description>&lt;p&gt;&lt;a href=&quot;http://www.apache.org/licenses/LICENSE-2.0&quot;&gt;[License Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=true)&lt;/a&gt;
+&lt;a href=&quot;https://img.shields.io/badge/minSdkVersion-21-red.svg?style=true&quot;&gt;minSdkVersion 21&lt;/a&gt;
+&lt;a href=&quot;https://img.shields.io/badge/compileSdkVersion-24-yellow.svg?style=true&quot;&gt;compileSdkVersion 24&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://android-arsenal.com/details/3/3855&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Music–Player-green.svg?style=true)&lt;/a&gt;
+&lt;a href=&quot;https://www.uplabs.com/posts/music-player-open-source-apps&quot;&gt;[MaterialUp Music-Player](https://img.shields.io/badge/MaterialUp-Music–Player-blue.svg?style=true)&lt;/a&gt;
+&lt;a href=&quot;https://androidsweets.ongoodbits.com/2016/07/14/issue-27&quot;&gt;[Android Sweets #27](https://img.shields.io/badge/Android%20Sweets-%2327-ff69b4.svg?style=true)&lt;/a&gt;
+&lt;a href=&quot;https://android.libhunt.com/newsletter/22&quot;&gt;[Awesome Android #22](https://img.shields.io/badge/Awesome%20Android-%2322-green.svg?style=true)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/andremion/Music-Player/master/app/src/main/res/mipmap-hdpi/ic_launcher.png&quot;&gt;Icon&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;music-player-from-ui-proposal-to-code&quot;&gt;Music Player: From UI Proposal to Code&lt;/h1&gt;
+
+&lt;p&gt;Some developers have difficult to code when the UI proposal is a bit “sophisticated” or “complex”. Many of them strip a lot of significant portion of the UI or even the Motion when they are coding, and the result ends up quite different of the original proposal.&lt;/p&gt;
+
+&lt;p&gt;This article talks about how would be to code an UI proposal, skipping some basic Android details and focusing in the transition and animation approach…&lt;/p&gt;
+
+&lt;p&gt;Read more at https://medium.com/@andremion/music-player-3a85864d6df7#.iklz50r6n&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;a href=&quot;https://dribbble.com/shots/1850527-Music-Player-Transition&quot;&gt;Transition&lt;/a&gt; by &lt;a href=&quot;https://dribbble.com/anish_chandran&quot;&gt;Anish Chandran&lt;/a&gt;&lt;/th&gt;
+      &lt;th&gt;Code by &lt;a href=&quot;https://github.com/andremion&quot;&gt;André Mion&lt;/a&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;https://raw.githubusercontent.com/andremion/Music-Player/master/art/music_player_concept_cropped.gif&quot;&gt;Transition by Anish Chandran&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://raw.githubusercontent.com/andremion/Music-Player/master/art/music_player_code.gif&quot;&gt;Code by André Mion&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.sample.andremion.musicplayer&quot;&gt;[Get it on Google Play](https://developer.android.com/images/brand/en_generic_rgb_wo_60.png)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;libraries-and-tools-used-in-the-project&quot;&gt;Libraries and tools used in the project&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://developer.android.com/intl/pt-br/tools/support-library/features.html#design&quot;&gt;Design Support Library&lt;/a&gt;
+The Design package provides APIs to support adding material design components and patterns to your apps.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/andremion/Music-Cover-View&quot;&gt;MusicCoverView&lt;/a&gt;
+A Subclass of ImageView that ‘morphs’ into a circle shape and can rotates. Useful to be used as album cover in Music apps.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://developer.android.com/intl/pt-br/reference/android/support/v7/widget/RecyclerView.html&quot;&gt;RecyclerView&lt;/a&gt;
+A flexible view for providing a limited window into a large data set.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.android.com/reference/android/support/percent/PercentRelativeLayout.html&quot;&gt;PercentRelativeLayout&lt;/a&gt;
+Subclass of RelativeLayout that supports percentage based dimensions and margins.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2016 André Mion
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Tue, 28 Mar 2017 00:00:00 +0900</pubDate>
+        <link>http://kmshack.github.io/AndroidUICollection/2017/03/28/MusicPlayer/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/03/28/MusicPlayer/</guid>
+        
+        <category>music</category>
+        
+        <category>player</category>
+        
+        
+      </item>
     
       <item>
         <title>StatusView</title>
@@ -35,6 +116,8 @@
   &lt;li&gt;Title style and position&lt;/li&gt;
   &lt;li&gt;Custom view inflation&lt;/li&gt;
   &lt;li&gt;Custom enter/exit animations&lt;/li&gt;
+  &lt;li&gt;Chaining multiple FancyShowCaseView instances&lt;/li&gt;
+  &lt;li&gt;Showing only one time&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://cloud.githubusercontent.com/assets/1595227/24331187/ad143b80-1237-11e7-919c-36111c1ce559.gif&quot;&gt;gif&lt;/a&gt;&lt;/p&gt;
@@ -98,9 +181,21 @@ new FancyShowCaseView.Builder(this)
         .build()
         .show();
 &lt;/code&gt;
+## Queuing multiple instances
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+new FancyShowCaseQueue()
+	    .add(fancyShowCaseView1)
+	    .add(fancyShowCaseView2)
+	    .add(fancyShowCaseView3)
+	    .show();
+&lt;/code&gt;
 ## Already in use in following apps
 (feel free to send me new projects)
 * &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.moblino.countrynews&quot;&gt;News - Newspaper &amp;amp; Magazine&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;contribute&quot;&gt;Contribute&lt;/h2&gt;
+&lt;p&gt;You can contribute by opening a pull request to &lt;strong&gt;dev&lt;/strong&gt; branch.
+Please try to push one feature in one commit for a clean commit history.&lt;/p&gt;
 
 &lt;h1 id=&quot;license&quot;&gt;License&lt;/h1&gt;
 
@@ -1489,92 +1584,6 @@ limitations under the License.&lt;/p&gt;
         <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/02/19/android-material-stepper/</guid>
         
         <category>material</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>SlidingSquaresLoader</title>
-        <description>&lt;p&gt;&lt;a href=&quot;https://jitpack.io/#biodunalfet/SlidingSquaresLoader&quot;&gt;[](https://jitpack.io/v/biodunalfet/SlidingSquaresLoader.svg)&lt;/a&gt;
-# SlidingSquaresLoader&lt;/p&gt;
-
-&lt;p&gt;Sliding Square Loader - A simple progress loader inspired by &lt;a href=&quot;https://stories.uplabs.com/can-you-code-this-ui-volume-6-7bd09fa6dd92#.nyh2zhpvb&quot;&gt;Can you Code this UI? Volume 6&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://media.giphy.com/media/l0ExrZuZO2ihDzAfm/giphy.gif&quot;&gt;sslv animation&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;gradle&quot;&gt;Gradle&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Step 1.&lt;/strong&gt; Add the JitPack repository to your build file&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;allprojects&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;repositories&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;maven&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;https://jitpack.io&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Step 2.&lt;/strong&gt; Add the dependency&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;com.github.biodunalfet:SlidingSquaresLoader:1.0&quot;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;In XML Layout&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.hamza.slidingsquaresloaderview.SlidingSquareLoaderView&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;app:sslv_start=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;app:sslv_delay=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;15&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;app:sslv_duration=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;150&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;app:sslv_gap=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;2dp&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;app:sslv_square_length=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;12dp&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;app:sslv_color=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/colorPrimary&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;xmlns:app=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res-auto&quot;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sslv_start&lt;/code&gt; = &lt;code class=&quot;highlighter-rouge&quot;&gt;boolean&lt;/code&gt; that determines if the loader should start sliding. Default value is &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sslv_duration&lt;/code&gt; = the amount of milliseconds it takes for a square to complete sliding. Default value is &lt;code class=&quot;highlighter-rouge&quot;&gt;350&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sslv_delay&lt;/code&gt; = the number of milliseconds to wait before sliding. Default value is &lt;code class=&quot;highlighter-rouge&quot;&gt;25&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sslv_square_length&lt;/code&gt; = the dimension of each square. Default value is &lt;code class=&quot;highlighter-rouge&quot;&gt;25dp&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sslv_gap&lt;/code&gt; = the dimension of the gap between each square. Default value is &lt;code class=&quot;highlighter-rouge&quot;&gt;5dp&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sslv_color&lt;/code&gt; = the &lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt; of the square. Defaults to &lt;code class=&quot;highlighter-rouge&quot;&gt;#ff8f00&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;In Java&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;SlidingSquareLoaderView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;slidingview2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SlidingSquareLoaderView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;sliding_view2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;slidingview&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// starts the sliding&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;slidingview&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;// stops the sliding&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;slidingview&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setDuration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xxx&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;// sets duration of sliding&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;slidingview&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setDelay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xxx&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// sets delay period before sliding&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;slidingview&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;parseColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#2196F3&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// sets the color of the squares&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
-&lt;p&gt;The contents of this repository are covered under the &lt;a href=&quot;https://github.com/biodunalfet/SlidingSquareLoader/blob/master/LICENSE&quot;&gt;MIT License&lt;/a&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Sun, 19 Feb 2017 00:00:00 +0900</pubDate>
-        <link>http://kmshack.github.io/AndroidUICollection/2017/02/19/SlidingSquaresLoader/</link>
-        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/02/19/SlidingSquaresLoader/</guid>
-        
-        <category>sliding</category>
-        
-        <category>square</category>
         
         
       </item>
