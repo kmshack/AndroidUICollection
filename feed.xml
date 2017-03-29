@@ -5,9 +5,525 @@
     <description>Collection of OpenSource for Android UI.</description>
     <link>http://kmshack.github.io/AndroidUICollection/</link>
     <atom:link href="http://kmshack.github.io/AndroidUICollection/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 28 Mar 2017 19:23:30 +0900</pubDate>
-    <lastBuildDate>Tue, 28 Mar 2017 19:23:30 +0900</lastBuildDate>
+    <pubDate>Wed, 29 Mar 2017 22:50:17 +0900</pubDate>
+    <lastBuildDate>Wed, 29 Mar 2017 22:50:17 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>ShimmerRecyclerView</title>
+        <description>
+</description>
+        <pubDate>Wed, 29 Mar 2017 00:00:00 +0900</pubDate>
+        <link>http://kmshack.github.io/AndroidUICollection/2017/03/29/ShimmerRecyclerView/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/03/29/ShimmerRecyclerView/</guid>
+        
+        <category>RecyclerView</category>
+        
+        <category>Shimmer</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>HorizontalCalendar</title>
+        <description>&lt;h1 id=&quot;horizontal-calendar&quot;&gt;Horizontal Calendar&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://bintray.com/mulham-raee/maven/horizontal-calendar/_latestVersion&quot;&gt; [Download](https://api.bintray.com/packages/mulham-raee/maven/horizontal-calendar/images/download.svg) &lt;/a&gt;
+&lt;a href=&quot;https://opensource.org/licenses/Apache-2.0&quot;&gt;[License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;A material horizontal calendar view for Android based on &lt;code class=&quot;highlighter-rouge&quot;&gt;RecyclerView&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/art/demo.gif&quot;&gt;demo&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+&lt;p&gt;The library is hosted on jcenter, add this to your &lt;strong&gt;build.gradle&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-gradle&quot;&gt;repositories {
+      jcenter()
+    }
+    
+    dependencies {
+      compile &#39;devs.mulham.horizontalcalendar:horizontalcalendar:1.1.0&#39;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;##Prerequisites
+The minimum API level supported by this library is &lt;strong&gt;API 9 (GINGERBREAD)&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;p&gt;Add &lt;code class=&quot;highlighter-rouge&quot;&gt;HorizontalCalendarView&lt;/code&gt; to your layout file, for example:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;android.support.design.widget.AppBarLayout&lt;/span&gt;
+		&lt;span class=&quot;err&quot;&gt;............&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+		
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;devs.mulham.horizontalcalendar.HorizontalCalendarView&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/calendarView&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;android:background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/colorPrimary&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;app:textColorSelected=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#FFFF&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+            
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/android.support.design.widget.AppBarLayout&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In your Activity, define your &lt;strong&gt;start&lt;/strong&gt; and &lt;strong&gt;end&lt;/strong&gt; dates to set the range of the calendar:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/** end after 1 month from now */&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Calendar&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endDate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;endDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;MONTH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;/** start before 1 month from now */&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Calendar&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;startDate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;startDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;MONTH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Then setup &lt;strong&gt;HorizontalCalendarView&lt;/strong&gt; using its Builder and pass the &lt;strong&gt;id&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;HorizontalCalendar&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;horizontalCalendar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HorizontalCalendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Builder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;calendarView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;startDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;startDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getTime&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;endDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getTime&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;To listen to date change events you need to set a listener:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;horizontalCalendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setCalendarListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HorizontalCalendarListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+            &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onDateSelected&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Date&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;//do something&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;You can also listen to &lt;strong&gt;scroll&lt;/strong&gt; and &lt;strong&gt;long press&lt;/strong&gt; events by overriding each prespective method within &lt;strong&gt;HorizontalCalendarListener&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;horizontalCalendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setCalendarListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HorizontalCalendarListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+            &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onDateSelected&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Date&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+            &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+            &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onCalendarScroll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HorizontalCalendarView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;calendarView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; 
+            &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dx&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+            &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+            &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onDateLongClicked&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Date&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;customization&quot;&gt;Customization&lt;/h2&gt;
+&lt;p&gt;You can customize it directly inside your layout:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;devs.mulham.horizontalcalendar.HorizontalCalendarView&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/calendarView&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;android:background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/colorPrimary&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;app:textColorNormal=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#bababa&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;app:textColorSelected=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#FFFF&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;app:selectorColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#c62828&quot;&lt;/span&gt;   &lt;span class=&quot;err&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;colorAccent.&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;app:selectedDateBackground=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#00ffffff&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Or you can do it programmatically in your Activity using the &lt;strong&gt;Builder&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;HorizontalCalendar&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;horizontalCalendar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HorizontalCalendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Builder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;calendarView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;startDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;startDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getTime&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;endDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getTime&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;datesNumberOnScreen&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;// Number of Dates cells shown on screen (Recommended 5)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;dayNameFormat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;EEE&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;	  &lt;span class=&quot;c1&quot;&gt;// WeekDay text format&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;dayNumberFormat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;dd&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// Date format&lt;/span&gt;
+				&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;monthFormat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;MMM&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 	  &lt;span class=&quot;c1&quot;&gt;// Month format&lt;/span&gt;
+				&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;showDayName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;	  &lt;span class=&quot;c1&quot;&gt;// Show or Hide dayName text&lt;/span&gt;
+				&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;showMonthName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;	  &lt;span class=&quot;c1&quot;&gt;// Show or Hide month text&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;textColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LTGRAY&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;WHITE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// Text color for none selected Dates, Text color for selected Date.&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;selectedDateBackground&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;TRANSPARENT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// Background color of the selected date cell.&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;selectorColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;RED&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;// Color of the selection indicator bar (default to colorAccent).&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;You can select a specific &lt;strong&gt;Date&lt;/strong&gt; programmatically with the option whether to play the animation or not, with:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+horizontalCalendar.selectDate(Date date, boolean immediate); // set immediate to false to ignore animation.
+  // or simply
+horizontalCalendar.goToday(boolean immediate);
+&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Check if two dates’ &lt;strong&gt;days&lt;/strong&gt; are equal:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+horizontalCalendar.isDatesDaysEquals(Date date1, Date date2);
+&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Check if a date is contained in the Calendar:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+horizontalCalendar.contains(Date date);
+&lt;/code&gt;
+## Contributing
+Contributions are welcome, feel free to submit a pull request.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Copyright 2017  Mulham Raee&lt;/p&gt;
+
+  &lt;p&gt;Licensed under the Apache License, Version 2.0 (the “License”);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+       http://www.apache.org/licenses/LICENSE-2.0&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an “AS IS” BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the &lt;a href=&quot;/LICENSE&quot;&gt;License&lt;/a&gt; for the specific language governing
+permissions and limitations under the License.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</description>
+        <pubDate>Wed, 29 Mar 2017 00:00:00 +0900</pubDate>
+        <link>http://kmshack.github.io/AndroidUICollection/2017/03/29/HorizontalCalendar/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/03/29/HorizontalCalendar/</guid>
+        
+        <category>Horizontal</category>
+        
+        <category>Calendar</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>ExcelPanel</title>
+        <description>&lt;h1 id=&quot;excelpanel&quot;&gt;excelPanel&lt;/h1&gt;
+&lt;p&gt;A two-dimensional RecyclerView. Not only can load historical data, but also can load future data.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/zhouchaoyuan/excelPanel/master/app/src/main/assets/roomFormDemo.gif&quot;&gt;demo_gif&lt;/a&gt;
+&lt;a href=&quot;https://raw.githubusercontent.com/zhouchaoyuan/excelPanel/master/app/src/main/assets/roomFormDemoAdjustHeight.gif&quot;&gt;demo_gif_adjust_height&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;including-in-your-project&quot;&gt;Including in your project&lt;/h1&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;compile &#39;cn.zhouchaoyuan:excelpanel:1.0.2&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;usage&quot;&gt;Usage&lt;/h1&gt;
+
+&lt;p&gt;###1、Write in xml&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;cn.zhouchaoyuan.excelpanel.ExcelPanel&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/content_container&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:left_cell_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@dimen/room_status_cell_length&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:normal_cell_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@dimen/room_status_cell_length&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:top_cell_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@dimen/room_status_cell_length&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Configure using xml attributes&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+app:left_cell_width     //left header cell&#39;s width, not support wrap_content
+app:normal_cell_width   //container cell&#39;s width, not support wrap_content
+app:top_cell_height     //top header cell&#39;s height, not support wrap_content
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;###2、Define your Custom Adapter
+Your adapter must extends BaseExcelPanelAdapter and override seven methods show as follow:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Adapter&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BaseExcelPanelAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RowTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ColTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Adapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Context&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;//=========================================normal cell=========================================&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RecyclerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ViewHolder&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onCreateCellViewHolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ViewGroup&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;viewType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onBindCellViewHolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RecyclerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ViewHolder&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;holder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;verticalPosition&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;horizontalPosition&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;//=========================================top cell===========================================&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RecyclerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ViewHolder&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onCreateTopViewHolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ViewGroup&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;viewType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onBindTopViewHolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RecyclerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ViewHolder&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;holder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;//=========================================left cell===========================================&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RecyclerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ViewHolder&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onCreateLeftViewHolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ViewGroup&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;viewType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onBindLeftViewHolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RecyclerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ViewHolder&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;holder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;//=========================================top left cell=======================================&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onCreateTopLeftView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;###3、Use your Adapter&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//==============================&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RowTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rowTitles&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ColTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;colTitles&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Cell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cells&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ExcelPanel&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;excelPanel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CustomAdapter&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;View&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;OnClickListener&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blockListener&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//..........................................&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;excelPanel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ExcelPanel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;content_container&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;adapter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CustomAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blockListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;excelPanel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;adapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;excelPanel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setOnLoadMoreListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//your Activity or Fragment implement ExcelPanel.OnLoadMoreListener&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;adapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAllData&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;colTitles&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rowTitles&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cells&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;adapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;enableFooter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//load more, you can also call disableFooter()----default&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;adapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;enableHeader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//load history, you can also call disableHeader()----default&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If using setOnLoadMoreListener(…) and enableHeader() you must call addHistorySize(int) to tell ExcelPanel how many data have been added.&lt;/p&gt;
+
+&lt;p&gt;#ChangeLog&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;V1.0.1————–line i can be different to line i+1, but the same line’s height must be equals&lt;/li&gt;
+  &lt;li&gt;V1.0.2————–support different viewType which using to config different row with different height&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;#License&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+   Copyright 2017 zhouchaoyuan
+
+   Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Wed, 29 Mar 2017 00:00:00 +0900</pubDate>
+        <link>http://kmshack.github.io/AndroidUICollection/2017/03/29/ExcelPanel/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/03/29/ExcelPanel/</guid>
+        
+        <category>Excel</category>
+        
+        <category>Panel</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>CoordinatorTabLayout</title>
+        <description>&lt;h1 id=&quot;coordinatortablayout&quot;&gt;CoordinatorTabLayout&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/hugeterry/CoordinatorTabLayout/blob/master/LICENSE.txt&quot;&gt;[License](https://img.shields.io/badge/license-Apache%202.0-green.svg)&lt;/a&gt;
+&lt;a href=&quot;https://bintray.com/hugeterry/CoordinatorTabLayout/CoordinatorTabLayout/_latestVersion&quot;&gt;[Download](https://api.bintray.com/packages/hugeterry/CoordinatorTabLayout/CoordinatorTabLayout/images/download.svg) &lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;README_CN.md&quot;&gt;中文版文档&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;CoordinatorTabLayout is a custom composite control that quickly implements the combination of TabLayout and CoordinatorLayout.
+Inherited to the CoordinatorLayout, in the following components used CollapsingToolbarLayout contains TabLayout.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;showUI/show1.gif&quot;&gt;show&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;##Usage&lt;/p&gt;
+
+&lt;p&gt;###Step 1&lt;/p&gt;
+
+&lt;p&gt;Add the following to your build.gradle:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+dependencies {
+    compile &#39;cn.hugeterry.coordinatortablayout:coordinatortablayout:1.0.6&#39;
+}
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;###Step 2&lt;/p&gt;
+
+&lt;p&gt;Config in xml:
+```&lt;/p&gt;
+&lt;cn.hugeterry.coordinatortablayout.coordinatortablayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot; android:id=&quot;@+id/coordinatortablayout&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;match_parent&quot;&gt;
+
+    &lt;android.support.v4.view.viewpager android:id=&quot;@+id/vp&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;match_parent&quot; app:layout_behavior=&quot;@string/appbar_scrolling_view_behavior&quot; /&gt;
+&lt;/cn.hugeterry.coordinatortablayout.coordinatortablayout&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+
+###Step 3
+
+[show](showUI/show3.gif)&amp;lt;/br&amp;gt;
+Use it in your own code:&amp;lt;/br&amp;gt;
+1.`setTitle(String title)`:Set the CoordinatorTabLayout&#39;s title.&amp;lt;/br&amp;gt;
+2.`setupWithViewPager(ViewPager viewPager)`:To link the two together.&amp;lt;/br&amp;gt;
+3.`setImageArray(int[] imageArray)`:Set the image array of the header according to the number of tabs and pass it to the control.&amp;lt;/br&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    //Add the fragment to the viewpager
+    initFragments();
+    initViewPager();
+    //Image array
+    mImageArray = new int[]{
+            R.mipmap.bg_android,
+            R.mipmap.bg_ios,
+            R.mipmap.bg_js,
+            R.mipmap.bg_other};
+
+    mCoordinatorTabLayout = (CoordinatorTabLayout) findViewById(R.id.coordinatortablayout);
+    mCoordinatorTabLayout.setTitle(&quot;Demo&quot;)
+            .setImageArray(mImageArray)
+            .setupWithViewPager(mViewPager); ```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Finish, enjoy it.&lt;/p&gt;
+
+&lt;p&gt;##More&lt;/p&gt;
+
+&lt;p&gt;###Set the content scrim&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;showUI/show2.gif&quot;&gt;show&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;setImageArray(int[] imageArray, int[] colorArray)&lt;/code&gt;:Set the color array to use for the content scrim for each tab.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+        mColorArray = new int[]{
+                android.R.color.holo_blue_light,
+                android.R.color.holo_red_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_green_light};
+        mCoordinatorTabLayout.setImageArray(mImageArray, mColorArray);
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;###Set back enable
+&lt;code class=&quot;highlighter-rouge&quot;&gt;setBackEnable(Boolean canBack)&lt;/code&gt;:To enable the Up button for an activity that has a parent activity.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        ...
+        mCoordinatorTabLayout.setBackEnable(true);
+        ...
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;###Load header images from network&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;setLoadHeaderImagesListener(LoadHeaderImagesListener loadHeaderImagesListener)&lt;/code&gt;:Set the listener that gets the header images.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        ...
+        mCoordinatorTabLayout.setTitle(&quot;Demo&quot;)
+                .setBackEnable(true)
+                .setContentScrimColorArray(mColorArray)
+                .setLoadHeaderImagesListener(new LoadHeaderImagesListener() {
+                    @Override
+                    public void loadHeaderImages(ImageView imageView, TabLayout.Tab tab) {
+                        switch (tab.getPosition()) {
+                            case 0:
+                                //load header images
+                                break;
+                            ...
+                        }
+                    }
+                })
+                .setupWithViewPager(mViewPager);
+    }
+&lt;/code&gt;
+You also can load header images using glide/picasso，&lt;a href=&quot;https://github.com/hugeterry/CoordinatorTabLayout/blob/master/sample/src/main/java/cn/hugeterry/coordinatortablayoutdemo/LoadHeaderImageFromNetworkActivity.java&quot;&gt;Sample&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;###Gets the child control
+&lt;code class=&quot;highlighter-rouge&quot;&gt;getActionBar()&lt;/code&gt;:get the ActionBar&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;getTabLayout()&lt;/code&gt;:get the TabLayout&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;getImageView()&lt;/code&gt;:get the ImageView&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/hugeterry/CoordinatorTabLayout/blob/master/sample/src/main/java/cn/hugeterry/coordinatortablayoutdemo/MainActivity.java&quot;&gt;More code&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;##Attributes
+- &lt;code class=&quot;highlighter-rouge&quot;&gt;app:contentScrim&lt;/code&gt; -&amp;gt; color.Defaults to ?attr/colorPrimary
+- &lt;code class=&quot;highlighter-rouge&quot;&gt;app:tabIndicatorColor&lt;/code&gt; -&amp;gt; color.
+- &lt;code class=&quot;highlighter-rouge&quot;&gt;app:tabTextColor&lt;/code&gt; -&amp;gt; color.&lt;/p&gt;
+
+&lt;p&gt;##Demo
+&lt;a href=&quot;http://fir.im/ctlayout&quot;&gt;http://fir.im/ctlayout&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;license&quot;&gt;LICENSE&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2017 HugeTerry.
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Wed, 29 Mar 2017 00:00:00 +0900</pubDate>
+        <link>http://kmshack.github.io/AndroidUICollection/2017/03/29/CoordinatorTabLayout/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/03/29/CoordinatorTabLayout/</guid>
+        
+        <category>Coordinator</category>
+        
+        <category>TabLayout</category>
+        
+        
+      </item>
     
       <item>
         <title>MusicPlayer</title>
@@ -597,993 +1113,6 @@ limitations under the License.&lt;/p&gt;
         <pubDate>Tue, 14 Mar 2017 00:00:00 +0900</pubDate>
         <link>http://kmshack.github.io/AndroidUICollection/2017/03/14/AD/</link>
         <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/03/14/AD/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>DiscreteScrollView</title>
-        <description>&lt;h1 id=&quot;discretescrollview&quot;&gt;DiscreteScrollView&lt;/h1&gt;
-
-&lt;p&gt;The library is a RecyclerView-based implementation of a scrollable list, where current item is centered and can be changed using swipes.
-It is similar to a ViewPager, but you can quickly and painlessly create layout, where views adjacent to the currently selected view are partially or fully visible on the screen.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/yarolegovich/DiscreteScrollView/blob/master/images/cards_shop.gif&quot;&gt;GifSampleShop&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;gradle&quot;&gt;Gradle&lt;/h2&gt;
-&lt;p&gt;Add this into your dependencies block.
-&lt;code class=&quot;highlighter-rouge&quot;&gt;
-compile &#39;com.yarolegovich:discrete-scrollview:1.1.1&#39;
-&lt;/code&gt;
-## Sample
-&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.yarolegovich.discretescrollview.sample&quot;&gt;&lt;img alt=&quot;Get it on Google Play&quot; src=&quot;https://play.google.com/intl/en_us/badges/images/apps/en-play-badge.png&quot; width=&quot;185&quot; height=&quot;60&quot; /&gt;&lt;/a&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;Please see the &lt;a href=&quot;https://github.com/yarolegovich/DiscreteScrollView/tree/master/sample/src/main/java/com/yarolegovich/discretescrollview/sample&quot;&gt;sample app&lt;/a&gt; for examples of library usage.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/yarolegovich/DiscreteScrollView/blob/master/images/cards_weather.gif&quot;&gt;GifSampleWeather&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;wiki&quot;&gt;Wiki&lt;/h2&gt;
-&lt;p&gt;### General
-The library uses a custom LayoutManager to adjust items’ positions on the screen and handle scroll, however it is not exposed to the client 
-code. All public API is accessible through DiscreteScrollView class, which is a simple descendant of RecyclerView.&lt;/p&gt;
-
-&lt;p&gt;If you have ever used RecyclerView - you already know how to use this library. One thing to note - you should NOT set LayoutManager.&lt;/p&gt;
-
-&lt;h4 id=&quot;usage&quot;&gt;Usage:&lt;/h4&gt;
-&lt;ol&gt;
-  &lt;li&gt;Add DiscreteScrollView to your layout either using xml or code:&lt;/li&gt;
-  &lt;li&gt;Create your implementation of RecyclerView.Adapter. Refer to the &lt;a href=&quot;https://github.com/yarolegovich/DiscreteScrollView/blob/master/sample/src/main/java/com/yarolegovich/discretescrollview/sample/shop/ShopAdapter.java&quot;&gt;sample&lt;/a&gt; for an example, if you don’t know how to do it.&lt;/li&gt;
-  &lt;li&gt;Set the adapter.&lt;/li&gt;
-  &lt;li&gt;You are done 
-```xml&lt;/li&gt;
-&lt;/ol&gt;
-&lt;com.yarolegovich.discretescrollview.discretescrollview android:id=&quot;@+id/picker&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; app:dsv_orientation=&quot;horizontal|vertical&quot; /&gt;
-&lt;p&gt;&amp;lt;– orientation is optional, default is horizontal –&amp;gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;
-&lt;/code&gt;java
-DiscreteScrollView scrollView = findViewById(R.id.picker);
-scrollView.setAdapter(new YourAdapterImplementation());
-```&lt;/p&gt;
-
-&lt;h3 id=&quot;api&quot;&gt;API&lt;/h3&gt;
-&lt;p&gt;#### Layout
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-scrollView.setOrientation(Orientation o); //Sets an orientation of the view
-&lt;/code&gt;
-#### Related to the current item:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-scrollView.getCurrentItem(); //returns adapter position of the currently selected item or -1 if adapter is empty.
-scrollView.scrollToPosition(int position); //position becomes selected
-scrollView.smoothScrollToPosition(int position); //position becomes selected with animated scroll
-scrollView.setItemTransitionTimeMillis(int millis); //determines how much time it takes to change the item on fling, settle or smoothScroll
-&lt;/code&gt;
-#### Transformations
-One useful feature of ViewPager is page transformations. It allows you, for example, to create carousel effect. DiscreteScrollView also supports 
-page transformations.
-```java
-scrollView.setItemTransformer(transformer);&lt;/p&gt;
-
-&lt;p&gt;public interface DiscreteScrollItemTransformer {
-    /**
-     * In this method you apply any transform you can imagine (perfomance is not guaranteed).
-     * @param position is a value inside the interval [-1f..1f]. In idle state:
-     * |view1|  |currentlySelectedView|  |view2|
-     * -view1 and everything to the left is on position -1;
-     * -currentlySelectedView is on position 0;
-     * -view2 and everything to the right is on position 1.
-     */
-    void transformItem(View item, float position); 
-}
-&lt;code class=&quot;highlighter-rouge&quot;&gt;
-Because scale transformation is the most common, I included a helper class - ScaleTransformer, here is how to use it:
-&lt;/code&gt;java
-cityPicker.setItemTransformer(new ScaleTransformer.Builder()
-  .setMaxScale(1.05f) 
-  .setMinScale(0.8f) 
-  .setPivotX(Pivot.X.CENTER) // CENTER is a default one
-  .setPivotY(Pivot.Y.BOTTOM) // CENTER is a default one
-  .build());
-```
-You may see how it works on GIFs.&lt;/p&gt;
-
-&lt;h4 id=&quot;callbacks&quot;&gt;Callbacks&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Scroll state changes:
-```java
-scrollView.setScrollStateChangeListener(listener);&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;public interface ScrollStateChangeListener&lt;t extends=&quot;&quot; viewholder=&quot;&quot;&gt; {&lt;/t&gt;&lt;/p&gt;
-
-&lt;p&gt;void onScrollStart(T currentItemHolder, int adapterPosition); //called when scroll is started, including programatically initiated scroll&lt;/p&gt;
-
-&lt;p&gt;void onScrollEnd(T currentItemHolder, int adapterPosition); //called when scroll ends
-  /**
-   * Called when scroll is in progress. 
-   * @param scrollPosition is a value inside the interval [-1f..1f], it corresponds to the position of currentlySelectedView.
-   * In idle state:
-   * |view1|  |currentlySelectedView|  |view2|
-   * -view1 is on position -1;
-   * -currentlySelectedView is on position 0;
-   * -view2 is on position 1.
-   * @param currentHolder - ViewHolder of a current view
-   * @param newCurrent - ViewHolder of a view that moved closer to the center
-   */
-  void onScroll(float scrollPosition, @NonNull T currentHolder, @NonNull T newCurrentHolder); 
-}
-&lt;code class=&quot;highlighter-rouge&quot;&gt;
-* Scroll:
-&lt;/code&gt;java
-scrollView.setScrollListener(listener);&lt;/p&gt;
-
-&lt;p&gt;public interface ScrollListener&lt;t extends=&quot;&quot; viewholder=&quot;&quot;&gt; {
-  //The same as ScrollStateChangeListener, but for the cases when you are interested only in onScroll()
-  void onScroll(float scrollPosition, @NonNull T currentHolder, @NonNull T newCurrentHolder);
-}
-```
-* Current selection changes:
-```java
-scrollView.setOnItemChangedListener(listener);&lt;/t&gt;&lt;/p&gt;
-
-&lt;p&gt;public interface OnItemChangedListener&lt;t extends=&quot;&quot; viewholder=&quot;&quot;&gt; {
-  /**
-   * Called when new item is selected. It is similar to the onScrollEnd of ScrollStateChangeListener, except that it is 
-   * also called when currently selected item appears on the screen for the first time.
-   */
-  void onCurrentItemChanged(@NonNull T viewHolder, int adapterPosition); 
-}
-```&lt;/t&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;special-thanks&quot;&gt;Special thanks&lt;/h2&gt;
-&lt;p&gt;Thanks to &lt;a href=&quot;https://www.behance.net/yurkivt&quot;&gt;Tayisiya Yurkiv&lt;/a&gt; for sample app design and beautiful GIFs.&lt;/p&gt;
-
-&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2017 Yaroslav Shevchuk
-
-Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Mon, 13 Mar 2017 00:00:00 +0900</pubDate>
-        <link>http://kmshack.github.io/AndroidUICollection/2017/03/13/DiscreteScrollView/</link>
-        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/03/13/DiscreteScrollView/</guid>
-        
-        <category>scrollView</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>InstaCropper</title>
-        <description>&lt;h1 id=&quot;instacropper&quot;&gt;InstaCropper&lt;/h1&gt;
-&lt;p&gt;A View for cropping images that is similar to Instagram’s crop. Also an Activity for cropping is included.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://cloud.githubusercontent.com/assets/4597931/23830368/724ddf70-071e-11e7-9d7e-65615be8d5e6.gif&quot;&gt;alt tag&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-
-&lt;p&gt;Add the dependency:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;Groovy
-dependencies {
-	compile &#39;com.yashoid:instacropper:1.0.4&#39;
-}
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;how-to-use-this-library&quot;&gt;How to use this library&lt;/h2&gt;
-
-&lt;p&gt;Add &lt;code class=&quot;highlighter-rouge&quot;&gt;InstaCropperView&lt;/code&gt; to your xml layout&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;FrameLayout&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:android=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;xmlns:app=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res-auto&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;com.yashoid.instacropper.InstaCropperView&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/instacropper&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:backgroundColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@android:color/white&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/FrameLayout&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;InstaCropperView receives only Uri but any Uri is possible.
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-mInstaCropper.setImageUri(imageUri);
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;You can specify three size ratios for the crop. The narrowest allowed, the widest allowed and the ideal ratio. The View will adjust its size by the ideal ratio.
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-mInstaCropper.setRatios(defaultRatio, minimumRatio, maximumRatio);
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;The cropped image is returned in a callback. You can specify MeasureSpec to adjust the width and height of the returned Bitmap.
-```java
-mInstaCropper.crop(
-        View.MeasureSpec.makeMeasureSpec(1024, View.MeasureSpec.AT_MOST),
-        View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
-        new InstaCropperView.BitmapCallback() {&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;        @Override
-        public void onBitmapReady(Bitmap bitmap) {
-            // Do something.
-        }
-        
-    } ); ```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;It is also possible to use the crop feature via an Intent call. There are various &lt;code class=&quot;highlighter-rouge&quot;&gt;getIntent()&lt;/code&gt; methods defined on &lt;code class=&quot;highlighter-rouge&quot;&gt;InstaCropperActivity&lt;/code&gt;. You will then receive the crop result in &lt;code class=&quot;highlighter-rouge&quot;&gt;data.getData()&lt;/code&gt;.
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-Intent intent = InstaCropperActivity.getIntent(context, srcUri, dstUri, maxWidth, outputQuality);
-startActivityForResult(intent, REQUEST_CROP);
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;You can modify the crop Activity’s apprearance by overriding the following resouce values:
-```xml&lt;/p&gt;
-&lt;string name=&quot;instacropper_title&quot;&gt;Crop&lt;/string&gt;
-&lt;p&gt;&amp;lt;– Title of toolbar –&amp;gt;&lt;/p&gt;
-&lt;string name=&quot;instacropper_crop&quot;&gt;Crop&lt;/string&gt;
-&lt;p&gt;&amp;lt;– Title of crop action in toolbar –&amp;gt;&lt;/p&gt;
-
-&lt;color name=&quot;instacropper_cropper_background&quot;&gt;@android:color/white&lt;/color&gt;
-&lt;p&gt;&amp;lt;– Background color of InstaCropperView in the activity –&amp;gt;&lt;/p&gt;
-&lt;color name=&quot;instacropper_crop_color&quot;&gt;@android:color/black&lt;/color&gt;
-&lt;p&gt;&amp;lt;– Color of crop action in toolbar –&amp;gt;&lt;/p&gt;
-
-&lt;style name=&quot;InstaCropper&quot; parent=&quot;android:style/Theme.DeviceDefault.Light&quot;&gt; &lt;-- Style of crop Activity --&gt;
-```
-
-&lt;/style&gt;
-</description>
-        <pubDate>Sun, 12 Mar 2017 00:00:00 +0900</pubDate>
-        <link>http://kmshack.github.io/AndroidUICollection/2017/03/12/InstaCropper/</link>
-        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/03/12/InstaCropper/</guid>
-        
-        <category>cropper</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Alerter</title>
-        <description>&lt;h1 id=&quot;alerter&quot;&gt;Alerter&lt;/h1&gt;
-
-&lt;h3 id=&quot;general&quot;&gt;General&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://bintray.com/tapadoo/maven/alerter/_latestVersion&quot;&gt; [Download](https://api.bintray.com/packages/tapadoo/maven/alerter/images/download.svg) &lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://android-arsenal.com/details/1/5302&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Alerter-blue.svg?style=flat)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;This library aims to overcome the limitations of Toasts and Snackbars, while reducing the
-complexity of your layouts.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;./documentation/alert_default.gif&quot;&gt;Default Alert&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;A customisable Alert view is dynamically added to the Decor View of the Window, overlaying
-all content.&lt;/p&gt;
-
-&lt;h2 id=&quot;gradle&quot;&gt;Gradle&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;com.tapadoo.android:alerter:1.0.6&#39;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h1 id=&quot;usage&quot;&gt;Usage&lt;/h1&gt;
-
-&lt;p&gt;With simplicity in mind, the Alerter employs the builder pattern to facilitate easy integration
-into any app.&lt;/p&gt;
-
-&lt;p&gt;From an Activity -&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Alerter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alert Title&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alert text...&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Or from a Fragment -&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Alerter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getActivity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt;
-       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alert Title&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alert text...&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h1 id=&quot;customisation&quot;&gt;Customisation&lt;/h1&gt;
-
-&lt;h3 id=&quot;background-colour&quot;&gt;Background Colour&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Alerter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alert Title&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alert text...&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setBackgroundColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;colorAccent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;a href=&quot;./documentation/alert_coloured.gif&quot;&gt;Coloured Alert&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;icon&quot;&gt;Icon&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Alerter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alert text...&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setIcon&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;alerter_ic_face&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;a href=&quot;./documentation/alert_icon.gif&quot;&gt;Custom Icon Alert&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;on-screen-duration-in-milliseconds&quot;&gt;On screen duration, in milliseconds&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Alerter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alert Title&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alert text...&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setDuration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;without-title&quot;&gt;Without title&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Alerter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alert text...&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;a href=&quot;./documentation/alert_text_only.gif&quot;&gt;Text Only Alert&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;adding-an-on-click-listener&quot;&gt;Adding an On Click Listener&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;n&quot;&gt;Alerter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ExampleActivity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alert Title&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alert text...&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setDuration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setOnClickListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;View&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;OnClickListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-            &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;makeText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ExampleActivity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;OnClick Called&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LENGTH_LONG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;a href=&quot;./documentation/alert_on_click.gif&quot;&gt;On Click Alert&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;verbose-text&quot;&gt;Verbose text&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;n&quot;&gt;Alerter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ExampleActivity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alert Title&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;The alert scales to accommodate larger bodies of text. &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
-                 &lt;span class=&quot;s&quot;&gt;&quot;The alert scales to accommodate larger bodies of text. &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
-                 &lt;span class=&quot;s&quot;&gt;&quot;The alert scales to accommodate larger bodies of text.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;a href=&quot;./documentation/alert_verbose.gif&quot;&gt;Verbose Alert&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;visibility-callbacks&quot;&gt;Visibility Callbacks&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;n&quot;&gt;Alerter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ExampleActivity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alert Title&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setOnShowListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;OnShowAlertListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-            &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onShow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;makeText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ExampleActivity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Alert Shown&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LENGTH_LONG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setOnHideListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;OnHideAlertListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-            &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onHide&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;makeText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ExampleActivity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Alert Hidden&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LENGTH_LONG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-         &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;sample&quot;&gt;Sample&lt;/h2&gt;
-
-&lt;p&gt;Clone this repo and check out the &lt;code class=&quot;highlighter-rouge&quot;&gt;app&lt;/code&gt; module.&lt;/p&gt;
-
-&lt;h2 id=&quot;licence&quot;&gt;Licence&lt;/h2&gt;
-
-&lt;p&gt;See the &lt;a href=&quot;LICENSE.md&quot;&gt;LICENSE&lt;/a&gt; file for license rights and limitations (MIT).&lt;/p&gt;
-
-&lt;p&gt;Copyright 2016 Tapadoo, Dublin.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://tapadoo.com/wp-content/themes/tapadoo/img/tapadoo-logo@2x.png&quot;&gt;Alt Text&lt;/a&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 20 Feb 2017 00:00:00 +0900</pubDate>
-        <link>http://kmshack.github.io/AndroidUICollection/2017/02/20/Alerter/</link>
-        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/02/20/Alerter/</guid>
-        
-        <category>alert</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Android Material Stepper</title>
-        <description>&lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;./art/material-stepper-logo.png&quot; width=&quot;256&quot; height=&quot;256&quot; /&gt;
-&lt;/p&gt;
-
-&lt;h1 id=&quot;android-material-stepper-build-statushttpstravis-ciorgstepstone-techandroid-material-steppersvgbranchmasterhttpstravis-ciorgstepstone-techandroid-material-stepper-android-arsenalhttpsimgshieldsiobadgeandroid20arsenal-android20material20stepper-brightgreensvgstyleflathttpsandroid-arsenalcomdetails15138-android-weeklyhttpsimgshieldsiobadgeandroid20weekly-23243-brightgreensvghttpandroidweeklynetissuesissue-243&quot;&gt;Android Material Stepper &lt;a href=&quot;https://travis-ci.org/stepstone-tech/android-material-stepper&quot;&gt;[Build Status](https://travis-ci.org/stepstone-tech/android-material-stepper.svg?branch=master)&lt;/a&gt; &lt;a href=&quot;https://android-arsenal.com/details/1/5138&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Android%20Material%20Stepper-brightgreen.svg?style=flat)&lt;/a&gt; &lt;a href=&quot;http://androidweekly.net/issues/issue-243&quot;&gt;[Android Weekly](https://img.shields.io/badge/Android%20Weekly-%23243-brightgreen.svg)&lt;/a&gt;&lt;/h1&gt;
-
-&lt;p&gt;This library allows to use Material steppers inside Android applications.&lt;/p&gt;
-
-&lt;p&gt;Quoting the &lt;a href=&quot;https://www.google.com/design/spec/components/steppers.html&quot;&gt;documentation&lt;/a&gt;:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Steppers display progress through a sequence by breaking it up into multiple logical and numbered steps.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;download-from-jcenter&quot;&gt;Download (from JCenter)&lt;/h2&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;com.stepstone.stepper:material-stepper:3.2.0&#39;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;supported-steppers&quot;&gt;Supported steppers&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Mobile stepper with dots &lt;br /&gt;
-&lt;img src=&quot;./gifs/dotted-progress-bar.gif&quot; width=&quot;360&quot; height=&quot;640&quot; /&gt;  &lt;img src=&quot;./gifs/dotted-progress-bar-styled.gif&quot; width=&quot;360&quot; height=&quot;640&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;Mobile stepper with progress bar &lt;br /&gt;
-&lt;img src=&quot;./gifs/linear-progress-bar.gif&quot; width=&quot;360&quot; height=&quot;640&quot; /&gt;  &lt;img src=&quot;./gifs/linear-progress-bar-styled.gif&quot; width=&quot;360&quot; height=&quot;640&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;Horizontal stepper &lt;br /&gt;
-&lt;img src=&quot;./gifs/tabs.gif&quot; width=&quot;640&quot; height=&quot;360&quot; /&gt;
-&lt;img src=&quot;./gifs/tabs-styled.gif&quot; width=&quot;640&quot; height=&quot;360&quot; /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;supported-features&quot;&gt;Supported features&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;color customisation of individual widgets inside of the stepper via View attributes or a style from a theme&lt;/li&gt;
-  &lt;li&gt;custom texts of individual widgets inside of the stepper via View attributes or a style from a theme&lt;/li&gt;
-  &lt;li&gt;embedding the stepper anywhere in the view hierarchy and changing the stepper type for various device configurations, e.g. phone/tablet, portrait/landscape&lt;/li&gt;
-  &lt;li&gt;step validation&lt;/li&gt;
-  &lt;li&gt;use with Fragments or Views&lt;/li&gt;
-  &lt;li&gt;showing errors in tabs&lt;/li&gt;
-  &lt;li&gt;showing stepper feedback for ongoing operations (see &lt;a href=&quot;https://material.io/guidelines/components/steppers.html#steppers-types-of-steppers&quot;&gt;Stepper feedback&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;getting-started&quot;&gt;Getting started&lt;/h2&gt;
-
-&lt;h3 id=&quot;create-layout-in-xml&quot;&gt;Create layout in XML&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.stepstone.stepper.StepperLayout&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:android=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;xmlns:app=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res-auto&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/stepperLayout&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:orientation=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;vertical&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;app:ms_stepperType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;progress_bar&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;For a complete list of StepperLayout attributes see &lt;a href=&quot;#StepperLayout attributes&quot;&gt;StepperLayout attributes&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;create-step-fragments&quot;&gt;Create step Fragment(s)&lt;/h3&gt;
-&lt;p&gt;Step fragments must extend &lt;a href=&quot;http://developer.android.com/reference/android/support/v4/app/Fragment.html&quot;&gt;android.support.v4.app.Fragment&lt;/a&gt;
-and implement &lt;code class=&quot;highlighter-rouge&quot;&gt;com.stepstone.stepper.Step&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;StepFragmentSample&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fragment&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Step&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onCreateView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LayoutInflater&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inflater&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ViewGroup&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;container&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Bundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inflater&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;inflate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;step&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;container&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;//initialize your UI&lt;/span&gt;
-
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VerificationError&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;verifyStep&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//return null if the user can go to the next step, create a new VerificationError instance otherwise&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onSelected&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//update UI when selected&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onError&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@NonNull&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VerificationError&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//handle error inside of the fragment, e.g. show error on EditText&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;extend-abstractfragmentstepadapter&quot;&gt;Extend AbstractFragmentStepAdapter&lt;/h3&gt;
-&lt;p&gt;AbstractFragmentStepAdapter extends &lt;a href=&quot;http://developer.android.com/reference/android/support/v4/app/FragmentPagerAdapter.html&quot;&gt;FragmentPagerAdapter&lt;/a&gt;
-but instead of overriding the method &lt;code class=&quot;highlighter-rouge&quot;&gt;getItem(int)&lt;/code&gt; you must override the &lt;code class=&quot;highlighter-rouge&quot;&gt;createStep(int)&lt;/code&gt; method.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyStepperAdapter&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AbstractFragmentStepAdapter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MyStepperAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FragmentManager&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Context&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Step&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;createStep&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StepFragmentSample&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;step&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StepFragmentSample&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Bundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Bundle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;putInt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CURRENT_STEP_POSITION_KEY&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;step&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setArguments&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;step&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getCount&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@NonNull&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StepViewModel&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getViewModel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@IntRange&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//Override this method to set Step title for the Tabs, not necessary for other stepper types&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StepViewModel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Builder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;tab_title&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//can be a CharSequence instead&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;set-adapter-in-activity&quot;&gt;Set adapter in Activity&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;StepperActivity&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AppCompatActivity&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StepperLayout&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mStepperLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Bundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;setContentView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;mStepperLayout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;StepperLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stepperLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;mStepperLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MyStepperAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getSupportFragmentManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;add-a-stepperlistener-in-the-activity-optional&quot;&gt;Add a StepperListener in the Activity (optional)&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;StepperActivity&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AppCompatActivity&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StepperLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;StepperListener&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Bundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;mStepperLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onCompleted&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;completeButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;makeText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;onCompleted&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LENGTH_SHORT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onError&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;VerificationError&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;verificationError&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;makeText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;onError -&amp;gt; &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;verificationError&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getErrorMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LENGTH_SHORT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onStepSelected&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;newStepPosition&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;makeText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;onStepSelected -&amp;gt; &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;newStepPosition&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LENGTH_SHORT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onReturn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;finish&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;change-nextcomplete-buttons-text-color-when-going-to-the-next-step-should-be-disabled-optional&quot;&gt;Change Next/Complete button’s text color when going to the next step should be disabled (optional)&lt;/h3&gt;
-&lt;p&gt;It is possible to change the Next/Complete button’s text color (together with right chevron’s color)
-when all the criteria to go to the next step are not met. This color should indicate that
-the user cannot go to next step yet and look as if disabled. Clicking on the button will still perform the regular
-step verification. There is a custom state added since setting &lt;code class=&quot;highlighter-rouge&quot;&gt;android:state_enabled&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt; in a color selector would disable the clicks
-and we want to have them so that we can show an info message for the user.
-In order to set that color:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Create a new color selector in &lt;code class=&quot;highlighter-rouge&quot;&gt;res/color&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;selector&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:android=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:app=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res-auto&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;item&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;app:state_verification_failed=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;android:color=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#30BDBDBD&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;item&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;android:color=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/ms_white&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/selector&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Change button’s (text) color in layout file&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;com.stepstone.stepper.StepperLayout&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:android=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;xmlns:app=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res-auto&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/stepperLayout&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:ms_stepperType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;dots&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:ms_nextButtonColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/ms_custom_button_text_color&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:ms_completeButtonColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/ms_custom_button_text_color&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Toggle the state in code&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;n&quot;&gt;mStepperLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setNextButtonVerificationFailed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;enabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;mStepperLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setCompleteButtonVerificationFailed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;enabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;make-extra-operations-before-going-to-the-next-step-optional&quot;&gt;Make extra operations before going to the next step (optional)&lt;/h3&gt;
-&lt;p&gt;After clicking on the Next button if the user wants to e.g.:
-* save something in the database
-* make a network call on a separate Thread
-* simply save the data from the current step to some other component or parent Activity (see ‘Passing data between steps’ in the sample app for more details)&lt;/p&gt;
-
-&lt;p&gt;he can perform these operations and then invoke the &lt;code class=&quot;highlighter-rouge&quot;&gt;goToNextStep()&lt;/code&gt; method of the &lt;code class=&quot;highlighter-rouge&quot;&gt;StepperLayout.OnNextClickedCallback&lt;/code&gt; in the current Step.
-If the user wants to perform these operations on the final step, when clicking on the Complete button, he needs to invoke the &lt;code class=&quot;highlighter-rouge&quot;&gt;complete()&lt;/code&gt; method of the  &lt;code class=&quot;highlighter-rouge&quot;&gt;StepperLayout.OnCompleteClickedCallback&lt;/code&gt;.
-While operations are performed, and the user would like to go back you can cancel them and then invoke &lt;code class=&quot;highlighter-rouge&quot;&gt;onBackClicked()&lt;/code&gt; method of the &lt;code class=&quot;highlighter-rouge&quot;&gt;StepperLayout.OnBackClickedCallback&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;./gifs/delayed-transition.gif&quot; width=&quot;360&quot; height=&quot;640&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;To do so the fragment/view must implement &lt;code class=&quot;highlighter-rouge&quot;&gt;BlockingStep&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;Step&lt;/code&gt;.
-Also, make sure that &lt;code class=&quot;highlighter-rouge&quot;&gt;goToNextStep()&lt;/code&gt; and/or &lt;code class=&quot;highlighter-rouge&quot;&gt;complete()&lt;/code&gt; get called on the main thread.
-&lt;strong&gt;Note:&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;onNextClicked(StepperLayout.OnNextClickedCallback)&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;onCompleteClicked(StepperLayout.OnCompleteClickedCallback)&lt;/code&gt; methods get invoked after step verification.
-E.g.:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;DelayedTransitionStepFragmentSample&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fragment&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BlockingStep&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@UiThread&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onNextClicked&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StepperLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;OnNextClickedCallback&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;postDelayed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Runnable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-            &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;goToNextStep&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2000L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@UiThread&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onCompleteClicked&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StepperLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;OnCompleteClickedCallback&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;postDelayed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Runnable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-            &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;complete&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2000L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@UiThread&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onBackClicked&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;StepperLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;OnBackClickedCallback&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;makeText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Your custom back action. Here you should cancel currently running operations&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LENGTH_SHORT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;goToPrevStep&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;changing-backnext-button-labels--compound-drawables-per-step&quot;&gt;Changing Back/Next button labels &amp;amp; compound drawables per step&lt;/h3&gt;
-&lt;p&gt;Sometimes you might want to have different labels on the Next and/or Back navigation buttons on different steps e.g. use the default labels on the first few steps,
-but display ‘Summary’ just before the last page.
-You might also want to use your custom icons instead of the default navigation button compound drawables or not show the compound drawables for some of the buttons.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;./gifs/custom-navigation-buttons.gif&quot; width=&quot;360&quot; height=&quot;640&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;In such case you need to override the &lt;code class=&quot;highlighter-rouge&quot;&gt;getViewModel(int)&lt;/code&gt; method from the &lt;code class=&quot;highlighter-rouge&quot;&gt;StepAdapter&lt;/code&gt; e.g.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nd&quot;&gt;@NonNull&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StepViewModel&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getViewModel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@IntRange&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;StepViewModel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Builder&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;builder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StepViewModel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Builder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;tab_title&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;builder&lt;/span&gt;
-                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setNextButtonLabel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;This way&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setBackButtonLabel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Cancel&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setNextButtonEndDrawableResId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ms_forward_arrow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setBackButtonStartDrawableResId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;StepViewModel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;NULL_DRAWABLE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;builder&lt;/span&gt;
-                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setNextButtonLabel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;go_to_summary&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setBackButtonLabel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Go to first&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setBackButtonStartDrawableResId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ms_back_arrow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;builder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setBackButtonLabel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Go back&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IllegalArgumentException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Unsupported position: &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;builder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;using-the-same-stepper-styling-across-the-application&quot;&gt;Using the same stepper styling across the application&lt;/h3&gt;
-&lt;p&gt;If you have many steppers in your application in different activities/fragments you might want to set a common style in a theme.
-To do so, you need to set the &lt;code class=&quot;highlighter-rouge&quot;&gt;ms_stepperStyle&lt;/code&gt; attribute in the theme, e.g.
-```xml
-    &lt;style name=&quot;AppTheme&quot; parent=&quot;Theme.AppCompat.Light.DarkActionBar&quot;&gt;
-        ...&lt;/style&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &amp;lt;item name=&quot;ms_stepperStyle&quot;&amp;gt;@style/DotStepperStyle&amp;lt;/item&amp;gt;
-&amp;lt;/style&amp;gt; ``` and declare that style in the XML you keep your styles at, e.g. ```xml
-&amp;lt;style name=&quot;DotStepperStyle&quot;&amp;gt;
-    &amp;lt;item name=&quot;ms_stepperType&quot;&amp;gt;dots&amp;lt;/item&amp;gt;
-    &amp;lt;item name=&quot;ms_activeStepColor&quot;&amp;gt;#FFFFFF&amp;lt;/item&amp;gt;
-    &amp;lt;item name=&quot;ms_inactiveStepColor&quot;&amp;gt;#006867&amp;lt;/item&amp;gt;
-    &amp;lt;item name=&quot;ms_bottomNavigationBackground&quot;&amp;gt;?attr/colorAccent&amp;lt;/item&amp;gt;
-&amp;lt;/style&amp;gt; ```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;showing-a-back-button-on-first-step&quot;&gt;Showing a Back button on first step&lt;/h3&gt;
-&lt;p&gt;By default if the user is on the first step then the Back button in the bottom navigation is hidden. 
-This behaviour can be changed by setting &lt;code class=&quot;highlighter-rouge&quot;&gt;ms_showBackButtonOnFirstStep&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;, e.g.
-&lt;code class=&quot;highlighter-rouge&quot;&gt;xml
-    &amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;
-    &amp;lt;com.stepstone.stepper.StepperLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-        xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
-        android:id=&quot;@+id/stepperLayout&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;match_parent&quot;
-        app:ms_showBackButtonOnFirstStep=&quot;true&quot;
-        app:ms_stepperType=&quot;dots&quot; /&amp;gt;
-&lt;/code&gt;
-To get a callback when this button was pressed you need set a &lt;code class=&quot;highlighter-rouge&quot;&gt;StepperListener&lt;/code&gt; and write your own custom return logic in the &lt;code class=&quot;highlighter-rouge&quot;&gt;onReturn()&lt;/code&gt; method to e.g. close the Activity.&lt;/p&gt;
-
-&lt;h3 id=&quot;using-with-views-instead-of-fragments&quot;&gt;Using with Views instead of Fragments&lt;/h3&gt;
-&lt;p&gt;It is possible to use this library without the need to rely on Fragments.
-To do so you need to use &lt;code class=&quot;highlighter-rouge&quot;&gt;AbstractStepAdapter&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;AbstractFragmentStepAdapter&lt;/code&gt;.
-For an example of how to use it with views please see the sample app.&lt;/p&gt;
-
-&lt;h3 id=&quot;showing-an-error-on-tabs-if-step-verification-failed&quot;&gt;Showing an error on tabs if step verification failed&lt;/h3&gt;
-&lt;p&gt;To show an error in the tabbed stepper if step verification fails you need to set &lt;code class=&quot;highlighter-rouge&quot;&gt;ms_showErrorStateEnabled&lt;/code&gt; attribute to &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;./gifs/error-on-tabs.gif&quot; width=&quot;640&quot; height=&quot;360&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;If you want to keep the error displayed when going back to the previous step you need to also set &lt;code class=&quot;highlighter-rouge&quot;&gt;ms_showErrorStateOnBackEnabled&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;stepper-feedback&quot;&gt;Stepper feedback&lt;/h3&gt;
-&lt;p&gt;It is possible to show stepper feedback for ongoing operations (see &lt;a href=&quot;https://material.io/guidelines/components/steppers.html#steppers-types-of-steppers&quot;&gt;Stepper feedback&lt;/a&gt;).
-To do so you firstly need to set &lt;code class=&quot;highlighter-rouge&quot;&gt;ms_stepperFeedbackType&lt;/code&gt; to one or more of:
-* &lt;code class=&quot;highlighter-rouge&quot;&gt;tabs&lt;/code&gt; - shows a progress message instead of the tabs during operation,
-* &lt;code class=&quot;highlighter-rouge&quot;&gt;content&lt;/code&gt; - shows a progress bar on top of the steps’ content and partially fades the content out during operation,
-* &lt;code class=&quot;highlighter-rouge&quot;&gt;disabled_bottom_navigation&lt;/code&gt; - disables the buttons in the bottom navigation during operation. In order to see that the buttons are disabled on the bottom navigation bar, make sure that the button colors are assigned using color selectors with a disabled state (see the sample app).&lt;/p&gt;
-
-&lt;p&gt;The default is &lt;code class=&quot;highlighter-rouge&quot;&gt;none&lt;/code&gt; which does nothing. It is possible to use multiple flags together.&lt;/p&gt;
-
-&lt;p&gt;After setting this to show the feedback you need to call &lt;code class=&quot;highlighter-rouge&quot;&gt;StepperLayout#showProgress(@NonNull String progressMessage)&lt;/code&gt;
-and do hide the progress indicator you need to call &lt;code class=&quot;highlighter-rouge&quot;&gt;StepperLayout#hideProgress()&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;./gifs/stepper-feedback.gif&quot; width=&quot;640&quot; height=&quot;360&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;E.g.
-In layout:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;xml
-    &amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;
-    &amp;lt;com.stepstone.stepper.StepperLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-        xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
-        android:id=&quot;@+id/stepperLayout&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;match_parent&quot;
-        app:ms_backButtonColor=&quot;@color/ms_disabling_button_text_color_selector&quot;
-        app:ms_nextButtonColor=&quot;@color/ms_disabling_button_text_color_selector&quot;
-        app:ms_completeButtonColor=&quot;@color/ms_disabling_button_text_color_selector&quot;
-        app:ms_stepperType=&quot;tabs&quot;
-        app:ms_stepperFeedbackType=&quot;tabs|content|disabled_bottom_navigation&quot; /&amp;gt;
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;and in BlockingStep:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;StepperFeedbackStepFragment&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fragment&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BlockingStep&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@UiThread&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onNextClicked&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StepperLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;OnNextClickedCallback&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getStepperLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;showProgress&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Operation in progress, please wait...&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;postDelayed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Runnable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-            &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;goToNextStep&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getStepperLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;hideProgress&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2000L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;custom-styling&quot;&gt;Custom styling&lt;/h3&gt;
-&lt;p&gt;Basic styling can be done by choosing the active and inactive step colors. 
-There are some additional properties which can be changed directly from StepperLayout’s attributes e.g. the background of bottom navigation buttons (see &lt;a href=&quot;#stepperlayout-attributes&quot;&gt;StepperLayout attributes&lt;/a&gt;)
-For advanced styling you can use &lt;code class=&quot;highlighter-rouge&quot;&gt;ms_stepperLayoutTheme&lt;/code&gt; StepperLayout’s attribute and provide your custom style to be used.
-See ‘Custom StepperLayout theme’ in the sample app for an example.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;./gifs/custom-theme.gif&quot; width=&quot;360&quot; height=&quot;640&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;advanced-usage&quot;&gt;Advanced usage&lt;/h3&gt;
-&lt;p&gt;For other examples, e.g. persisting state on rotation, displaying errors, changing whether the user can go to the next step, etc. check out the sample app.&lt;/p&gt;
-
-&lt;h2 id=&quot;stepperlayout-attributes&quot;&gt;StepperLayout attributes&lt;/h2&gt;
-&lt;p&gt;| Attribute name                  | Format                                                              | Description |
-| ——————————–|———————————————————————|————-|
-| &lt;em&gt;ms_stepperType&lt;/em&gt;                | one of &lt;code class=&quot;highlighter-rouge&quot;&gt;dots&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;progress_bar&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;tabs&lt;/code&gt;                             | &lt;strong&gt;REQUIRED:&lt;/strong&gt; Type of the stepper |
-| &lt;em&gt;ms_backButtonColor&lt;/em&gt;            | color or reference                                                  | BACK button’s text color           |
-| &lt;em&gt;ms_nextButtonColor&lt;/em&gt;            | color or reference                                                  | NEXT button’s text color            |
-| &lt;em&gt;ms_completeButtonColor&lt;/em&gt;        | color or reference                                                  | COMPLETE button’s text color            |
-| &lt;em&gt;ms_activeStepColor&lt;/em&gt;            | color or reference                                                  | Active step’s color            |
-| &lt;em&gt;ms_inactiveStepColor&lt;/em&gt;          | color or reference                                                  | Inactive step’s color            |
-| &lt;em&gt;ms_bottomNavigationBackground&lt;/em&gt; | reference                                                           | Background of the bottom navigation            |
-| &lt;em&gt;ms_backButtonBackground&lt;/em&gt;       | reference                                                           | BACK button’s background            |
-| &lt;em&gt;ms_nextButtonBackground&lt;/em&gt;       | reference                                                           | NEXT button’s background            |
-| &lt;em&gt;ms_completeButtonBackground&lt;/em&gt;   | reference                                                           | COMPLETE button’s background            |
-| &lt;em&gt;ms_backButtonText&lt;/em&gt;             | string or reference                                                 | BACK button’s text            |
-| &lt;em&gt;ms_nextButtonText&lt;/em&gt;             | string or reference                                                 | NEXT button’s text            |
-| &lt;em&gt;ms_completeButtonText&lt;/em&gt;         | string or reference                                                 | COMPLETE button’s text            |
-| &lt;em&gt;ms_tabStepDividerWidth&lt;/em&gt;        | dimension or reference                                              | The width of the horizontal tab divider used in tabs stepper type            |
-| &lt;em&gt;ms_showBackButtonOnFirstStep&lt;/em&gt;  | boolean                                                             | Flag indicating if the Back (Previous step) button should be shown on the first step. False by default.            |
-| &lt;em&gt;ms_errorColor&lt;/em&gt;                 | color or reference                                                  | Error color in Tabs stepper |
-| &lt;em&gt;ms_showErrorStateEnabled&lt;/em&gt;      | boolean                                                             | Flag indicating whether to show the error state. Only applicable for ‘tabs’ type. False by default. |
-| &lt;em&gt;ms_showErrorStateOnBackEnabled&lt;/em&gt;| boolean                                                             | Flag indicating whether to keep showing the error state when user moves back. Only applicable for ‘tabs’ type. False by default. |
-| &lt;em&gt;ms_tabNavigationEnabled&lt;/em&gt;       | boolean                                                             | Flag indicating whether step navigation is possible by clicking on the tabs directly. Only applicable for ‘tabs’ type. True by default. |
-| &lt;em&gt;ms_stepperFeedbackType&lt;/em&gt;        | flag(s): &lt;code class=&quot;highlighter-rouge&quot;&gt;none&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;tabs&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;content&lt;/code&gt; &amp;amp; &lt;code class=&quot;highlighter-rouge&quot;&gt;disabled_bottom_navigation&lt;/code&gt; | Type(s) of stepper feedback. Can be a combination of &lt;code class=&quot;highlighter-rouge&quot;&gt;tabs&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;content&lt;/code&gt; &amp;amp; &lt;code class=&quot;highlighter-rouge&quot;&gt;disabled_bottom_navigation&lt;/code&gt;. Default is &lt;code class=&quot;highlighter-rouge&quot;&gt;none&lt;/code&gt;.|
-| &lt;em&gt;ms_stepperLayoutTheme&lt;/em&gt;         | reference                                                           | Theme to use for even more custom styling of the stepper layout. It is recommended that it should extend @style/MSDefaultStepperLayoutTheme, which is the default theme used. |&lt;/p&gt;
-
-&lt;h3 id=&quot;stepperlayout-style-attributes&quot;&gt;StepperLayout style attributes&lt;/h3&gt;
-&lt;p&gt;A list of &lt;code class=&quot;highlighter-rouge&quot;&gt;ms_stepperLayoutTheme&lt;/code&gt; attributes responsible for styling of StepperLayout’s child views.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Attribute name&lt;/th&gt;
-      &lt;th&gt;Description&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;em&gt;ms_bottomNavigationStyle&lt;/em&gt;&lt;/td&gt;
-      &lt;td&gt;Used by ms_bottomNavigation in layout/ms_stepper_layout&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;em&gt;ms_tabsContainerStyle&lt;/em&gt;&lt;/td&gt;
-      &lt;td&gt;Used by ms_stepTabsContainer in layout/ms_stepper_layout&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;em&gt;ms_backNavigationButtonStyle&lt;/em&gt;&lt;/td&gt;
-      &lt;td&gt;Used by ms_stepPrevButton in layout/ms_stepper_layout&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;em&gt;ms_nextNavigationButtonStyle&lt;/em&gt;&lt;/td&gt;
-      &lt;td&gt;Used by ms_stepNextButton in layout/ms_stepper_layout&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;em&gt;ms_completeNavigationButtonStyle&lt;/em&gt;&lt;/td&gt;
-      &lt;td&gt;Used by ms_stepCompleteButton in layout/ms_stepper_layout&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;em&gt;ms_colorableProgressBarStyle&lt;/em&gt;&lt;/td&gt;
-      &lt;td&gt;Used by ms_stepProgressBar in layout/ms_stepper_layout&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;em&gt;ms_stepPagerProgressBarStyle&lt;/em&gt;&lt;/td&gt;
-      &lt;td&gt;Used by ms_stepPagerProgressBar in layout/ms_stepper_layout&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;em&gt;ms_stepTabsScrollViewStyle&lt;/em&gt;&lt;/td&gt;
-      &lt;td&gt;Used by ms_stepTabsScrollView in layout/ms_tabs_container&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;em&gt;ms_stepTabsInnerContainerStyle&lt;/em&gt;&lt;/td&gt;
-      &lt;td&gt;Used by ms_stepTabsInnerContainer in layout/ms_tabs_container&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;em&gt;ms_stepTabsProgressMessageStyle&lt;/em&gt;&lt;/td&gt;
-      &lt;td&gt;Used by ms_stepTabsProgressMessage in layout/ms_tabs_container&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;em&gt;ms_stepTabContainerStyle&lt;/em&gt;&lt;/td&gt;
-      &lt;td&gt;Used in layout/ms_step_tab_container&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;em&gt;ms_stepTabNumberStyle&lt;/em&gt;&lt;/td&gt;
-      &lt;td&gt;Used by ms_stepNumber in layout/ms_step_tab&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;em&gt;ms_stepTabDoneIndicatorStyle&lt;/em&gt;&lt;/td&gt;
-      &lt;td&gt;Used by ms_stepDoneIndicator in layout/ms_step_tab&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;em&gt;ms_stepTabIconBackgroundStyle&lt;/em&gt;&lt;/td&gt;
-      &lt;td&gt;Used by ms_stepIconBackground in layout/ms_step_tab&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;em&gt;ms_stepTabTitleStyle&lt;/em&gt;&lt;/td&gt;
-      &lt;td&gt;Used by ms_stepTitle in layout/ms_step_tab&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;em&gt;ms_stepTabDividerStyle&lt;/em&gt;&lt;/td&gt;
-      &lt;td&gt;Used by ms_stepDivider in layout/ms_step_tab&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;missing-features&quot;&gt;Missing features&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;support for non-linear steppers&lt;/li&gt;
-  &lt;li&gt;support for non-editable steppers&lt;/li&gt;
-  &lt;li&gt;support for Alternative labels in the horizontal stepper&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
-&lt;p&gt;Copyright 2016 StepStone Services&lt;/p&gt;
-
-&lt;p&gt;Licensed under the Apache License, Version 2.0 (the “License”);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at&lt;/p&gt;
-
-&lt;p&gt;    &lt;a href=&quot;http://www.apache.org/licenses/LICENSE-2.0&quot;&gt;http://www.apache.org/licenses/LICENSE-2.0&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an “AS IS” BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.&lt;/p&gt;
-
-&lt;h2 id=&quot;maintained-by&quot;&gt;Maintained by&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.stepstone.com&quot;&gt;&lt;img src=&quot;./art/stepstone-logo.png&quot; alt=&quot;Stepstone&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Sun, 19 Feb 2017 00:00:00 +0900</pubDate>
-        <link>http://kmshack.github.io/AndroidUICollection/2017/02/19/android-material-stepper/</link>
-        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/02/19/android-material-stepper/</guid>
-        
-        <category>material</category>
         
         
       </item>
