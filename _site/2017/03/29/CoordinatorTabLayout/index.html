@@ -481,6 +481,14 @@
                 
               
             
+              
+                
+              
+            
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -634,9 +642,9 @@ Inherited to the CoordinatorLayout, in the following components used CollapsingT
 
 <p><a href="showUI/show1.gif">show</a></p>
 
-<p>##Usage</p>
+<h2 id="usage">Usage</h2>
 
-<p>###Step 1</p>
+<h3 id="step-1">Step 1</h3>
 
 <p>Add the following to your build.gradle:
 <code class="highlighter-rouge">
@@ -645,7 +653,7 @@ dependencies {
 }
 </code></p>
 
-<p>###Step 2</p>
+<h3 id="step-2">Step 2</h3>
 
 <p>Config in xml:
 ```</p>
@@ -655,7 +663,7 @@ dependencies {
 </cn.hugeterry.coordinatortablayout.coordinatortablayout>
 <div class="highlighter-rouge"><pre class="highlight"><code>
 
-###Step 3
+### Step 3
 
 [show](showUI/show3.gif)&lt;/br&gt;
 Use it in your own code:&lt;/br&gt;
@@ -683,9 +691,9 @@ Use it in your own code:&lt;/br&gt;
 
 <p>Finish, enjoy it.</p>
 
-<p>##More</p>
+<h2 id="more">More</h2>
 
-<p>###Set the content scrim</p>
+<h3 id="set-the-content-scrim">Set the content scrim</h3>
 
 <p><a href="showUI/show2.gif">show</a></p>
 
@@ -699,8 +707,8 @@ Use it in your own code:&lt;/br&gt;
         mCoordinatorTabLayout.setImageArray(mImageArray, mColorArray);
 </code></p>
 
-<p>###Set back enable
-<code class="highlighter-rouge">setBackEnable(Boolean canBack)</code>:To enable the Up button for an activity that has a parent activity.
+<h3 id="set-back-enable">Set back enable</h3>
+<p><code class="highlighter-rouge">setBackEnable(Boolean canBack)</code>:To enable the Up button for an activity that has a parent activity.
 <code class="highlighter-rouge">
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -717,7 +725,7 @@ Use it in your own code:&lt;/br&gt;
     }
 </code></p>
 
-<p>###Load header images from network</p>
+<h3 id="load-header-images-from-network">Load header images from network</h3>
 
 <p><code class="highlighter-rouge">setLoadHeaderImagesListener(LoadHeaderImagesListener loadHeaderImagesListener)</code>:Set the listener that gets the header images.
 <code class="highlighter-rouge">
@@ -743,20 +751,22 @@ Use it in your own code:&lt;/br&gt;
 </code>
 You also can load header images using glide/picasso，<a href="https://github.com/hugeterry/CoordinatorTabLayout/blob/master/sample/src/main/java/cn/hugeterry/coordinatortablayoutdemo/LoadHeaderImageFromNetworkActivity.java">Sample</a></p>
 
-<p>###Gets the child control
-<code class="highlighter-rouge">getActionBar()</code>:get the ActionBar<br />
+<h3 id="gets-the-child-control">Gets the child control</h3>
+<p><code class="highlighter-rouge">getActionBar()</code>:get the ActionBar<br />
 <code class="highlighter-rouge">getTabLayout()</code>:get the TabLayout<br />
 <code class="highlighter-rouge">getImageView()</code>:get the ImageView</p>
 
 <p><a href="https://github.com/hugeterry/CoordinatorTabLayout/blob/master/sample/src/main/java/cn/hugeterry/coordinatortablayoutdemo/MainActivity.java">More code</a></p>
 
-<p>##Attributes
-- <code class="highlighter-rouge">app:contentScrim</code> -&gt; color.Defaults to ?attr/colorPrimary
-- <code class="highlighter-rouge">app:tabIndicatorColor</code> -&gt; color.
-- <code class="highlighter-rouge">app:tabTextColor</code> -&gt; color.</p>
+<h2 id="attributes">Attributes</h2>
+<ul>
+  <li><code class="highlighter-rouge">app:contentScrim</code> -&gt; color.Defaults to ?attr/colorPrimary</li>
+  <li><code class="highlighter-rouge">app:tabIndicatorColor</code> -&gt; color.</li>
+  <li><code class="highlighter-rouge">app:tabTextColor</code> -&gt; color.</li>
+</ul>
 
-<p>##Demo
-<a href="http://fir.im/ctlayout">http://fir.im/ctlayout</a></p>
+<h2 id="demo">Demo</h2>
+<p><a href="http://fir.im/ctlayout">http://fir.im/ctlayout</a></p>
 
 <h2 id="license">LICENSE</h2>
 <div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2017 HugeTerry.

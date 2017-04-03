@@ -481,6 +481,14 @@
                 
               
             
+              
+                
+              
+            
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -655,33 +663,33 @@
   <li>You can place widgets or views over QRDecoderView.</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>	<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DecoderActivity</span> <span class="kd">extends</span> <span class="n">Activity</span> <span class="kd">implements</span> <span class="n">OnQRCodeReadListener</span> <span class="o">{</span>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DecoderActivity</span> <span class="kd">extends</span> <span class="n">Activity</span> <span class="kd">implements</span> <span class="n">OnQRCodeReadListener</span> <span class="o">{</span>
 
     <span class="kd">private</span> <span class="n">TextView</span> <span class="n">resultTextView</span><span class="o">;</span>
-	<span class="kd">private</span> <span class="n">QRCodeReaderView</span> <span class="n">mydecoderview</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="n">QRCodeReaderView</span> <span class="n">qrCodeReaderView</span><span class="o">;</span>
 
 	<span class="nd">@Override</span>
     <span class="kd">protected</span> <span class="kt">void</span> <span class="n">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
         <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_decoder</span><span class="o">);</span>
         
-        <span class="n">mydecoderview</span> <span class="o">=</span> <span class="o">(</span><span class="n">QRCodeReaderView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">qrdecoderview</span><span class="o">);</span>
-        <span class="n">mydecoderview</span><span class="o">.</span><span class="na">setOnQRCodeReadListener</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+        <span class="n">qrCodeReaderView</span> <span class="o">=</span> <span class="o">(</span><span class="n">QRCodeReaderView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">qrdecoderview</span><span class="o">);</span>
+        <span class="n">qrCodeReaderView</span><span class="o">.</span><span class="na">setOnQRCodeReadListener</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
 
     	  <span class="c1">// Use this function to enable/disable decoding</span>
-        <span class="n">mydecoderview</span><span class="o">.</span><span class="na">setQRDecodingEnabled</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+        <span class="n">qrCodeReaderView</span><span class="o">.</span><span class="na">setQRDecodingEnabled</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
 
         <span class="c1">// Use this function to change the autofocus interval (default is 5 secs)</span>
-        <span class="n">mydecoderview</span><span class="o">.</span><span class="na">setAutofocusInterval</span><span class="o">(</span><span class="mi">2000L</span><span class="o">);</span>
+        <span class="n">qrCodeReaderView</span><span class="o">.</span><span class="na">setAutofocusInterval</span><span class="o">(</span><span class="mi">2000L</span><span class="o">);</span>
 
         <span class="c1">// Use this function to enable/disable Torch</span>
-        <span class="n">mydecoderview</span><span class="o">.</span><span class="na">setTorchEnabled</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+        <span class="n">qrCodeReaderView</span><span class="o">.</span><span class="na">setTorchEnabled</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
 
         <span class="c1">// Use this function to set front camera preview</span>
-        <span class="n">mydecoderview</span><span class="o">.</span><span class="na">setFrontCamera</span><span class="o">();</span>
+        <span class="n">qrCodeReaderView</span><span class="o">.</span><span class="na">setFrontCamera</span><span class="o">();</span>
 
         <span class="c1">// Use this function to set back camera preview</span>
-        <span class="n">mydecoderview</span><span class="o">.</span><span class="na">setBackCamera</span><span class="o">();</span>
+        <span class="n">qrCodeReaderView</span><span class="o">.</span><span class="na">setBackCamera</span><span class="o">();</span>
     <span class="o">}</span>
 
     <span class="c1">// Called when a QR is decoded</span>
@@ -713,7 +721,7 @@
 
 <div class="highlighter-rouge"><pre class="highlight"><code>
 <span class="n">dependencies</span><span class="o">{</span>
-      <span class="n">compile</span> <span class="s1">'com.dlazaro66.qrcodereaderview:qrcodereaderview:2.0.1'</span>
+      <span class="n">compile</span> <span class="s1">'com.dlazaro66.qrcodereaderview:qrcodereaderview:2.0.2'</span>
 <span class="o">}</span>
 </code></pre>
 </div>
@@ -722,7 +730,7 @@
 
 <div class="highlighter-rouge"><pre class="highlight"><code>
 <span class="n">dependencies</span><span class="o">{</span>
-      <span class="n">compile</span> <span class="o">(</span><span class="s1">'com.dlazaro66.qrcodereaderview:qrcodereaderview:2.0.1@aar'</span><span class="o">){</span>
+      <span class="n">compile</span> <span class="o">(</span><span class="s1">'com.dlazaro66.qrcodereaderview:qrcodereaderview:2.0.2@aar'</span><span class="o">){</span>
         <span class="n">transitive</span> <span class="o">=</span> <span class="kc">true</span>
       <span class="o">}</span>
 <span class="o">}</span>
