@@ -481,6 +481,14 @@
                 
               
             
+              
+                
+              
+            
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -647,7 +655,9 @@
 The minimum API level supported by this library is <strong>API 9 (GINGERBREAD)</strong>.</p>
 
 <h2 id="usage">Usage</h2>
-<p>Add <code class="highlighter-rouge">HorizontalCalendarView</code> to your layout file, for example:</p>
+<ul>
+  <li>Add <code class="highlighter-rouge">HorizontalCalendarView</code> to your layout file, for example:</li>
+</ul>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;android.support.design.widget.AppBarLayout</span>
 		<span class="err">............</span> <span class="nt">&gt;</span>
@@ -663,7 +673,9 @@ The minimum API level supported by this library is <strong>API 9 (GINGERBREAD)</
 </code></pre>
 </div>
 
-<p>In your Activity, define your <strong>start</strong> and <strong>end</strong> dates to set the range of the calendar:</p>
+<ul>
+  <li>In your Activity or Fragment, define your <strong>start</strong> and <strong>end</strong> dates to set the range of the calendar:</li>
+</ul>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="cm">/** end after 1 month from now */</span>
 <span class="n">Calendar</span> <span class="n">endDate</span> <span class="o">=</span> <span class="n">Calendar</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
@@ -675,7 +687,9 @@ The minimum API level supported by this library is <strong>API 9 (GINGERBREAD)</
 </code></pre>
 </div>
 
-<p>Then setup <strong>HorizontalCalendarView</strong> using its Builder and pass the <strong>id</strong>:</p>
+<ul>
+  <li>Then setup <code class="highlighter-rouge">HorizontalCalendar</code> in your <strong>Activity</strong> through its Builder:</li>
+</ul>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="n">HorizontalCalendar</span> <span class="n">horizontalCalendar</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HorizontalCalendar</span><span class="o">.</span><span class="na">Builder</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">calendarView</span><span class="o">)</span>
                 <span class="o">.</span><span class="na">startDate</span><span class="o">(</span><span class="n">startDate</span><span class="o">.</span><span class="na">getTime</span><span class="o">())</span>
@@ -684,7 +698,18 @@ The minimum API level supported by this library is <strong>API 9 (GINGERBREAD)</
 </code></pre>
 </div>
 
-<p>To listen to date change events you need to set a listener:</p>
+<ul>
+  <li>Or if you are using a <strong>Fragment</strong>:</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">HorizontalCalendar</span> <span class="n">horizontalCalendar</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HorizontalCalendar</span><span class="o">.</span><span class="na">Builder</span><span class="o">(</span><span class="n">rootView</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">calendarView</span><span class="o">)</span>
+	<span class="o">...................</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>To listen to date change events you need to set a listener:</li>
+</ul>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="n">horizontalCalendar</span><span class="o">.</span><span class="na">setCalendarListener</span><span class="o">(</span><span class="k">new</span> <span class="n">HorizontalCalendarListener</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
@@ -695,7 +720,9 @@ The minimum API level supported by this library is <strong>API 9 (GINGERBREAD)</
 </code></pre>
 </div>
 
-<p>You can also listen to <strong>scroll</strong> and <strong>long press</strong> events by overriding each prespective method within <strong>HorizontalCalendarListener</strong>:</p>
+<ul>
+  <li>You can also listen to <strong>scroll</strong> and <strong>long press</strong> events by overriding each prespective method within <strong>HorizontalCalendarListener</strong>:</li>
+</ul>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="n">horizontalCalendar</span><span class="o">.</span><span class="na">setCalendarListener</span><span class="o">(</span><span class="k">new</span> <span class="n">HorizontalCalendarListener</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
