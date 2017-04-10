@@ -5,9 +5,195 @@
     <description>Collection of OpenSource for Android UI.</description>
     <link>http://kmshack.github.io/AndroidUICollection/</link>
     <atom:link href="http://kmshack.github.io/AndroidUICollection/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 03 Apr 2017 13:56:25 +0900</pubDate>
-    <lastBuildDate>Mon, 03 Apr 2017 13:56:25 +0900</lastBuildDate>
+    <pubDate>Mon, 10 Apr 2017 10:51:44 +0900</pubDate>
+    <lastBuildDate>Mon, 10 Apr 2017 10:51:44 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>spruce</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://github.com/willowtreeapps/spruce-android/blob/master/imgs/header_image.png&quot;&gt;Spruce Logo&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;spruce-android-animation-library-and-ioshttpsgithubcomwillowtreeappsspruce-ios&quot;&gt;Spruce Android Animation Library (and &lt;a href=&quot;https://github.com/willowtreeapps/spruce-ios&quot;&gt;iOS&lt;/a&gt;)&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://circleci.com/gh/willowtreeapps/spruce-android&quot;&gt;[CircleCI Build Status](https://circleci.com/gh/willowtreeapps/spruce-android.svg?style=shield)&lt;/a&gt;
+&lt;a href=&quot;&quot;&gt;[License MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)&lt;/a&gt;
+&lt;a href=&quot;&quot;&gt;[Public Yes](https://img.shields.io/badge/Public-yes-green.svg?style=flat)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-it&quot;&gt;What is it?&lt;/h2&gt;
+&lt;p&gt;Spruce is a lightweight animation library that helps choreograph the animations on the screen. With so many different animation libraries out there, developers need to make sure that each view is animating at the appropriate time. Spruce can help designers request complex multi-view animations and not have the developers cringe at the prototype.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&amp;lt;img src=&quot;https://github.com/willowtreeapps/spruce-android/blob/master/imgs/recycler-example.gif&quot; width=25% height=25%/&amp;gt;
+&lt;/p&gt;
+
+&lt;h3 id=&quot;gradle&quot;&gt;Gradle&lt;/h3&gt;
+&lt;p&gt;Add the following to your project’s build.gradle file&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dependencies {
+    compile &#39;com.willowtreeapps.spruce:spruce-android:1.0.0&#39;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;documentation&quot;&gt;Documentation&lt;/h2&gt;
+&lt;p&gt;For javadocs checkout &lt;a href=&quot;https://willowtreeapps.github.io/spruce-android/&quot;&gt;the documentation&lt;/a&gt; for more information.&lt;/p&gt;
+
+&lt;h2 id=&quot;basic-usage&quot;&gt;Basic Usage&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Animator&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;spruceAnimator&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Spruce&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SpruceBuilder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parentViewGroup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;sortWith&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*interObjectDelay=*/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;animateWith&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Animator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DefaultAnimations&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;shrinkAnimator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parentViewGroup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/*duration=*/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;800&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)})&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Checkout &lt;a href=&quot;https://willowtreeapps.github.io/spruce-android/com/willowtreeapps/spruce/Spruce.SpruceBuilder.html&quot;&gt;the builder documentation&lt;/a&gt; for more information.&lt;/p&gt;
+
+&lt;h3 id=&quot;preparing-for-animation&quot;&gt;Preparing for Animation&lt;/h3&gt;
+&lt;p&gt;Spruce comes packed with &lt;code class=&quot;highlighter-rouge&quot;&gt;Animator&lt;/code&gt; options within the &lt;code class=&quot;highlighter-rouge&quot;&gt;DefaultAnimations&lt;/code&gt; class meant to make your life easier when calling an animation. Let’s say we want to have your views fade in. For example, we would create an &lt;code class=&quot;highlighter-rouge&quot;&gt;animators = new Animator[] {}&lt;/code&gt; and add &lt;code class=&quot;highlighter-rouge&quot;&gt;DefaultAnimations.fadeInAnimator(parentViewGroup, /*duration=*/800)&lt;/code&gt; as an array item.
+If you want a view to fade in, then you need to make sure that it is already faded out. To do that, we need to set the alpha to &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt; on the views or you could first use a fade out animator.&lt;/p&gt;
+
+&lt;h3 id=&quot;running-the-animation&quot;&gt;Running the Animation&lt;/h3&gt;
+
+&lt;p&gt;Use the following command to run a basic animation on your view.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Animator&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;spruceAnimator&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Spruce&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SpruceBuilder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parentViewGroup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;sortWith&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DefaultSort&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*interObjectDelay=*/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;animateWith&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;animators&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Checkout &lt;a href=&quot;https://willowtreeapps.github.io/spruce-android/com/willowtreeapps/spruce/animation/DefaultAnimations.html&quot;&gt;default animation documentation&lt;/a&gt; for more information.&lt;/p&gt;
+
+&lt;h2 id=&quot;using-a-sortfunction&quot;&gt;Using a SortFunction&lt;/h2&gt;
+&lt;p&gt;Luckily, Spruce comes with 8 &lt;code class=&quot;highlighter-rouge&quot;&gt;SortFunction&lt;/code&gt; implementations with a wide open possibility to make more Use the &lt;code class=&quot;highlighter-rouge&quot;&gt;SortFunction&lt;/code&gt; to change the order in which views animate. Consider the following example:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;LinearSort&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sort&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LinearSort&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*interObjectDelay=*/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/*reversed=*/&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LinearSort&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Direction&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;TOP_TO_BOTTOM&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;In this example we have created a &lt;code class=&quot;highlighter-rouge&quot;&gt;LinearSort&lt;/code&gt; which will have views animate in from the top to bottom. We can change the look and feel of the animation by using a &lt;code class=&quot;highlighter-rouge&quot;&gt;RadialSort&lt;/code&gt; instead which will have the views animate in a circular fashion. If we wanted to use this &lt;code class=&quot;highlighter-rouge&quot;&gt;sort&lt;/code&gt; in an actual Spruce &lt;code class=&quot;highlighter-rouge&quot;&gt;start()&lt;/code&gt; call then that would look something like:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Animator&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;spruceAnimator&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Spruce&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SpruceBuilder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parentViewGroup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;sortWith&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LinearSort&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*interObjectDelay=*/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/*reversed=*/&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LinearSort&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Direction&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;TOP_TO_BOTTOM&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;animateWith&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DefaultAnimations&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;shrinkAnimator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parentViewGroup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/*duration=*/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;800&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Definitely play around with the stock &lt;code class=&quot;highlighter-rouge&quot;&gt;SortFunction&lt;/code&gt; implementations until you find the one that is perfect for you Check out the example app if you want to get previews of what each &lt;code class=&quot;highlighter-rouge&quot;&gt;SortFunction&lt;/code&gt; will look like.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-animators&quot;&gt;The Animators&lt;/h3&gt;
+&lt;p&gt;The animations used in Spruce are produced by leveraging the &lt;code class=&quot;highlighter-rouge&quot;&gt;Animator&lt;/code&gt; class. You may provide your own custom animations by creating your own &lt;code class=&quot;highlighter-rouge&quot;&gt;Animator&lt;/code&gt; and provide it to the as part of an &lt;code class=&quot;highlighter-rouge&quot;&gt;Animator[]&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;SpruceBuilder.animateWith(Animator... animators)&lt;/code&gt;. For more information on using the &lt;code class=&quot;highlighter-rouge&quot;&gt;Animator&lt;/code&gt; class please check out https://developer.android.com/reference/android/animation/Animator.html&lt;/p&gt;
+
+&lt;h3 id=&quot;standard-animation&quot;&gt;Standard Animation&lt;/h3&gt;
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;DefaultAnimation&lt;/code&gt; class provides simple &lt;code class=&quot;highlighter-rouge&quot;&gt;Animator&lt;/code&gt; methods to apply the change &lt;code class=&quot;highlighter-rouge&quot;&gt;Animator&lt;/code&gt; to the views. Use this class if you want to have a stock linear movement of the changes.&lt;/p&gt;
+
+&lt;h2 id=&quot;sort-functions&quot;&gt;Sort Functions&lt;/h2&gt;
+&lt;p&gt;With all different types of animations, especially those dealing with subviews, we have to consider a way in which we want to animate them. Some views can have 0 subviews while others may have hundreds. To handle this, we have the notion of a &lt;code class=&quot;highlighter-rouge&quot;&gt;SortFunction&lt;/code&gt;. What this will do is take each of the subviews in the &lt;code class=&quot;highlighter-rouge&quot;&gt;ViewGroup&lt;/code&gt;, and apply a mapping from the specific subview to the exact delay that it should wait before animating. Some of these will sort in a radial formation while others may actually sort randomly. One of the cool features of Spruce, is that you can actually define your own &lt;code class=&quot;highlighter-rouge&quot;&gt;SortFunction&lt;/code&gt; and then the animation will look completely different. Luckily, Spruce also comes jam packed with a ton of default &lt;code class=&quot;highlighter-rouge&quot;&gt;SortFunction&lt;/code&gt; classes to make everything easier on you as the developer. Take a look at some of the default &lt;code class=&quot;highlighter-rouge&quot;&gt;SortFunction&lt;/code&gt; classes we have and see if you can use them or branch off of them for your cool and custom animations&lt;/p&gt;
+
+&lt;h3 id=&quot;the-sortfunction-interface&quot;&gt;The SortFunction Interface&lt;/h3&gt;
+&lt;p&gt;A very simple interface that requires classes to extend the following class&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;SortFunction&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SpruceTimedView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getViewListWithTimeOffsets&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ViewGroup&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;View&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;What the above class needs to do is take in a &lt;code class=&quot;highlighter-rouge&quot;&gt;ViewGroup&lt;/code&gt; parent and a &lt;code class=&quot;highlighter-rouge&quot;&gt;List&lt;/code&gt; of &lt;code class=&quot;highlighter-rouge&quot;&gt;View&lt;/code&gt; children or subviews to generate a list of subviews and their animation offsets. Once the list of subviews has been generated, you can define your own sort metric to determine in which order the &lt;code class=&quot;highlighter-rouge&quot;&gt;View&lt;/code&gt;’s should animate. To do so, you need to create a &lt;code class=&quot;highlighter-rouge&quot;&gt;List&lt;/code&gt; of &lt;code class=&quot;highlighter-rouge&quot;&gt;SpruceTimedView&lt;/code&gt;’s. This special class has two properties: (1) &lt;code class=&quot;highlighter-rouge&quot;&gt;View view&lt;/code&gt; and (2) &lt;code class=&quot;highlighter-rouge&quot;&gt;long timeOffset&lt;/code&gt;. Your &lt;code class=&quot;highlighter-rouge&quot;&gt;SortFunction&lt;/code&gt; can define the &lt;code class=&quot;highlighter-rouge&quot;&gt;timeOffset&lt;/code&gt; however it likes, but the animators will use this to determine how long it should delay the start of that specific view from animating. The best way to learn, is to play around. So why not have some fun and make your own &lt;code class=&quot;highlighter-rouge&quot;&gt;SortFunction&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;about-sort-functions&quot;&gt;About Sort Functions&lt;/h3&gt;
+&lt;p&gt;To make sure that developers can use Spruce out of the box, we included about 8 stock &lt;code class=&quot;highlighter-rouge&quot;&gt;SortFunction&lt;/code&gt; implementations. These are some of the main functions we use at WillowTree and are so excited to see what others come up with&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;DefaultSort&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;LinearSort&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CorneredSort&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;RadialSort&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;RandomSort&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;InlineSort&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ContinousSort&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ContinuousWeightedSort&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Check out the docs &lt;a href=&quot;https://willowtreeapps.github.io/spruce-android/com/willowtreeapps/spruce/sort/SortFunction.html&quot;&gt;here&lt;/a&gt; for more information&lt;/p&gt;
+
+&lt;h2 id=&quot;stock-animators&quot;&gt;Stock Animators&lt;/h2&gt;
+&lt;p&gt;To make everybody’s lives easier, the stock animators perform basic &lt;code class=&quot;highlighter-rouge&quot;&gt;View&lt;/code&gt; animations that a lot of apps use today. Mix and match these animators to get the core motion you are looking for.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;DefaultAnimations.growAnimator(View view, long duration)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;DefaultAnimations.shrinkAnimator(View view, long duration)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;DefaultAnimations.fadeAwayAnimator(View view, long duration)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;DefaultAnimations.fadeInAnimator(View view, long duration)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;DefaultAnimations.spinAnimator(View view, long duration)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Experiment which ones work for you If you think of anymore feel free to add them to the library yourself&lt;/p&gt;
+
+&lt;h1 id=&quot;example-app&quot;&gt;Example App&lt;/h1&gt;
+&lt;p&gt;Use the &lt;a href=&quot;https://github.com/willowtreeapps/spruce-android/tree/master/app&quot;&gt;example app&lt;/a&gt; to find the right &lt;code class=&quot;highlighter-rouge&quot;&gt;SortFunction&lt;/code&gt;. In the app you will be able to see the affects of each &lt;code class=&quot;highlighter-rouge&quot;&gt;SortFunction&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;contributing-to-spruce&quot;&gt;Contributing to Spruce&lt;/h2&gt;
+&lt;p&gt;Contributions are more than welcome Please see the &lt;a href=&quot;https://github.com/willowtreeapps/spruce-android/blob/master/Contributing.md&quot;&gt;Contributing Guidelines&lt;/a&gt; and be mindful of our &lt;a href=&quot;https://github.com/willowtreeapps/spruce-android/blob/master/code-of-conduct.md&quot;&gt;Code of Conduct&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;issues-or-future-ideas&quot;&gt;Issues or Future Ideas&lt;/h1&gt;
+&lt;p&gt;If part of Spruce is not working correctly be sure to file a Github issue. In the issue provide as many details as possible. This could include example code or the exact steps that you did so that everyone can reproduce the issue. Sample projects are always the best way :). This makes it easy for our developers or someone from the open-source community to start working&lt;/p&gt;
+
+&lt;p&gt;If you have a feature idea submit an issue with a feature request or submit a pull request and we will work with you to merge it in&lt;/p&gt;
+
+&lt;h1 id=&quot;about-willowtree&quot;&gt;About WillowTree&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/willowtreeapps/spruce-android/blob/master/imgs/willowtree_logo.png&quot;&gt;WillowTree Logo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;We build apps, responsive sites, bots—any digital product that lives on a screen—for the world’s leading companies. Our elite teams challenge themselves to build extraordinary experiences by bridging the latest strategy and design thinking with enterprise-grade software development.&lt;/p&gt;
+
+&lt;p&gt;Interested in working on more unique projects like Spruce? Check out our &lt;a href=&quot;http://willowtreeapps.com/careers?utm_campaign=spruce-gh&quot;&gt;careers page&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 10 Apr 2017 00:00:00 +0900</pubDate>
+        <link>http://kmshack.github.io/AndroidUICollection/2017/04/10/spruce/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/04/10/spruce/</guid>
+        
+        <category>recyclerview</category>
+        
+        <category>animation</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Searchable</title>
+        <description>&lt;h1 id=&quot;searchable-recyclerview-demo&quot;&gt;Searchable RecyclerView Demo&lt;/h1&gt;
+
+&lt;p&gt;An example app using a &lt;code class=&quot;highlighter-rouge&quot;&gt;SearchView&lt;/code&gt; to filter items in a &lt;code class=&quot;highlighter-rouge&quot;&gt;RecyclerView&lt;/code&gt; while taking full advantage of item animations&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Backwards compatible all the way down to Gingerbread (Android 2.3, API level 9)&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Item Animations are supported starting with Honeycomb (Android 3.0, API level 11)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://travis-ci.org/Wrdlbrnft/Searchable-RecyclerView-Demo&quot;&gt;[Build Status](https://travis-ci.org/Wrdlbrnft/Searchable-RecyclerView-Demo.svg?branch=master)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You can find a walkthrough of how to implement an app with these features &lt;a href=&quot;http://stackoverflow.com/a/30429439/2310866&quot;&gt;&lt;strong&gt;on Stack Overflow&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Or if you want to try out the app first you can download it from the Play Store:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.github.wrdlbrnft.searchablerecyclerviewdemo&quot;&gt;[Get it on Google Play](https://developer.android.com/images/brand/en_generic_rgb_wo_60.png)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;for-more-information-visit-the-project-homepagehttpswrdlbrnftgithubiosearchable-recyclerview-demo&quot;&gt;&lt;strong&gt;For more information visit the &lt;a href=&quot;https://wrdlbrnft.github.io/Searchable-RecyclerView-Demo/&quot;&gt;project homepage&lt;/a&gt;&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://i.stack.imgur.com/qDtH7.gif&quot;&gt;demo image&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 10 Apr 2017 00:00:00 +0900</pubDate>
+        <link>http://kmshack.github.io/AndroidUICollection/2017/04/10/Searchable/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/04/10/Searchable/</guid>
+        
+        <category>recyclerview</category>
+        
+        
+      </item>
     
       <item>
         <title>SlidingRootNav</title>
@@ -914,141 +1100,6 @@ limitations under the License.
         <category>music</category>
         
         <category>player</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>StatusView</title>
-        <description>
-</description>
-        <pubDate>Mon, 27 Mar 2017 00:00:00 +0900</pubDate>
-        <link>http://kmshack.github.io/AndroidUICollection/2017/03/27/StatusView/</link>
-        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/03/27/StatusView/</guid>
-        
-        <category>Status</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>FancyShowCaseView</title>
-        <description>&lt;h1 id=&quot;fancyshowcaseview-statushttpstravis-ciorgfaruktoptasfancyshowcaseviewsvgbranchmasterhttpstravis-ciorgfaruktoptasfancyshowcaseview-httpsjitpackiovfaruktoptasfancyshowcaseviewsvghttpsjitpackiofaruktoptasfancyshowcaseview--android-arsenalhttpsimgshieldsiobadgeandroid20arsenal-fancyshowcaseview-brightgreensvgstyleflathttpsandroid-arsenalcomdetails15440-apihttpsimgshieldsiobadgeapi-102b-bluesvgstyleflathttpsandroid-arsenalcomapilevel10&quot;&gt;FancyShowCaseView &lt;a href=&quot;https://travis-ci.org/faruktoptas/FancyShowCaseView&quot;&gt;[Status](https://travis-ci.org/faruktoptas/FancyShowCaseView.svg?branch=master)&lt;/a&gt; &lt;a href=&quot;https://jitpack.io/#faruktoptas/FancyShowCaseView&quot;&gt;[](https://jitpack.io/v/faruktoptas/FancyShowCaseView.svg)&lt;/a&gt;  &lt;a href=&quot;https://android-arsenal.com/details/1/5440&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-FancyShowCaseView-brightgreen.svg?style=flat)&lt;/a&gt; &lt;a href=&quot;https://android-arsenal.com/api?level=10&quot;&gt;[API](https://img.shields.io/badge/API-10%2B-blue.svg?style=flat)&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;An easy-to-use customizable show case view with circular reveal animation.&lt;/p&gt;
-
-&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Circular reveal animation (API Level 21+)&lt;/li&gt;
-  &lt;li&gt;Background color&lt;/li&gt;
-  &lt;li&gt;Circle and Rounded Rectangle focus shapes&lt;/li&gt;
-  &lt;li&gt;Title style and position&lt;/li&gt;
-  &lt;li&gt;Custom view inflation&lt;/li&gt;
-  &lt;li&gt;Custom enter/exit animations&lt;/li&gt;
-  &lt;li&gt;Chaining multiple FancyShowCaseView instances&lt;/li&gt;
-  &lt;li&gt;Showing only one time&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://cloud.githubusercontent.com/assets/1595227/24331187/ad143b80-1237-11e7-919c-36111c1ce559.gif&quot;&gt;gif&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://cloud.githubusercontent.com/assets/1595227/24331189/afec8d9e-1237-11e7-986d-0ab7c44db7c7.gif&quot;&gt;gif&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;gradle-dependency&quot;&gt;Gradle Dependency&lt;/h1&gt;
-
-&lt;p&gt;Add this in your root &lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt; file (&lt;strong&gt;not&lt;/strong&gt; your module &lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt; file):&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-gradle&quot;&gt;allprojects {
-	repositories {
-		...
-		maven { url &quot;https://jitpack.io&quot; }
-	}
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Then, add the library to your module &lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;gradle
-dependencies {
-    com.github.faruktoptas:FancyShowCaseView:latest.release.here
-}
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;sample-usage&quot;&gt;Sample Usage&lt;/h2&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FancyShowCaseView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Builder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;focusOn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Focus on View&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;## Rounded Rectangle
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-new FancyShowCaseView.Builder(this)
-        .focusOn(view)
-        .title(&quot;Focus on View&quot;)
-        .focusShape(FocusShape.ROUNDED_RECTANGLE)
-        .build()
-        .show();
-&lt;/code&gt;
-## Customize
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-new FancyShowCaseView.Builder(this)
-        .focusOn(view)
-        .focusCircleRadiusFactor(1.5)
-        .title(&quot;Focus on View with larger circle&quot;)
-        .titleStyle(0, Gravity.BOTTOM | Gravity.CENTER)
-        .enterAnimation(enterAnimation)
-        .exitAnimation(exitAnimation)
-        .showOnce(&quot;fancy1&quot;)
-        .backgroundColor(Color.parseColor(&quot;#CC00FF00&quot;))
-        .build()
-        .show();
-&lt;/code&gt;
-## Inflating Custom View
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-new FancyShowCaseView.Builder(this)
-        .customView(R.layout.layout_my_custom_view, null)
-        .build()
-        .show();
-&lt;/code&gt;
-## Queuing multiple instances
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-new FancyShowCaseQueue()
-	    .add(fancyShowCaseView1)
-	    .add(fancyShowCaseView2)
-	    .add(fancyShowCaseView3)
-	    .show();
-&lt;/code&gt;
-## Already in use in following apps
-(feel free to send me new projects)
-* &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.moblino.countrynews&quot;&gt;News - Newspaper &amp;amp; Magazine&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;contribute&quot;&gt;Contribute&lt;/h2&gt;
-&lt;p&gt;You can contribute by opening a pull request to &lt;strong&gt;dev&lt;/strong&gt; branch.
-Please try to push one feature in one commit for a clean commit history.&lt;/p&gt;
-
-&lt;h1 id=&quot;license&quot;&gt;License&lt;/h1&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2017 Faruk Toptaş
-
-Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Mon, 27 Mar 2017 00:00:00 +0900</pubDate>
-        <link>http://kmshack.github.io/AndroidUICollection/2017/03/27/FancyShowCaseView/</link>
-        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/03/27/FancyShowCaseView/</guid>
-        
-        <category>ShowCase</category>
         
         
       </item>
