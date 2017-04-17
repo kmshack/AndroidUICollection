@@ -493,6 +493,22 @@
                 
               
             
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -666,7 +682,7 @@
 <p>Add the dependency</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
-    <span class="n">compile</span> <span class="s1">'com.github.zagum:Android-ExpandIcon:1.1.3'</span>
+    <span class="n">compile</span> <span class="s1">'com.github.zagum:Android-ExpandIcon:1.2.0'</span>
 <span class="o">}</span>
 </code></pre>
 </div>
@@ -692,6 +708,7 @@
         <span class="na">app:eiv_color=</span><span class="s">"#000"</span>
         <span class="na">app:eiv_colorLess=</span><span class="s">"#f00"</span>
         <span class="na">app:eiv_colorMore=</span><span class="s">"#00f"</span>
+        <span class="na">app:eiv_colorIntermediate=</span><span class="s">"#0f0"</span>
         <span class="na">app:eiv_roundedCorners=</span><span class="s">"false"</span>
         <span class="na">app:eiv_switchColor=</span><span class="s">"true"</span>
         <span class="na">app:eiv_padding=</span><span class="s">"8dp"</span><span class="nt">/&gt;</span>
@@ -705,6 +722,8 @@
     <span class="n">expandIconView</span><span class="o">.</span><span class="na">setState</span><span class="o">(</span><span class="n">ExpandIconView</span><span class="o">.</span><span class="na">LESS</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
     
     <span class="n">expandIconView</span><span class="o">.</span><span class="na">setFraction</span><span class="o">(.</span><span class="mi">3</span><span class="n">f</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+    
+    <span class="n">expandIconView</span><span class="o">.</span><span class="na">setAnimationDuration</span><span class="o">(</span><span class="mi">2000</span><span class="o">);</span>
 </code></pre>
 </div>
 

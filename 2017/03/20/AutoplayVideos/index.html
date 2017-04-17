@@ -493,6 +493,22 @@
                 
               
             
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -637,6 +653,10 @@
           <h1 id="autoplayvideos">AutoplayVideos</h1>
 <p><a href="https://android-arsenal.com/api?level=16">[API](https://img.shields.io/badge/API-16%2B-brightgreen.svg)</a> <a href="https://android-arsenal.com/details/1/5372">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AutoPlay%20Videos-2CB3E5.svg)</a> <a href="http://androidweekly.net/issues/issue-249">[Android Weekly](https://img.shields.io/badge/Android%20Weekly-%23249-2CB3E5.svg)</a> <a href="https://www.androiddevdigest.com/digest136/">[AndroidDev Digest](https://img.shields.io/badge/AndroidDev%20Digest-%23136-2CB3E5.svg)</a></p>
 
+<h3 id="show-some-heart-and-star-the-repo-to-support-the-project">Show some :heart: and star the repo to support the project</h3>
+<p><a href="https://github.com/Krupen/AutoplayVideos/stargazers">[GitHub stars](https://img.shields.io/github/stars/Krupen/AutoplayVideos.svg?style=social)</a> <a href="https://github.com/Krupen/AutoplayVideos/network">[GitHub forks](https://img.shields.io/github/forks/Krupen/AutoplayVideos.svg?style=social)</a> <a href="https://github.com/Krupen/AutoplayVideos/watchers">[GitHub watchers](https://img.shields.io/github/watchers/Krupen/AutoplayVideos.svg?style=social)</a> <a href="https://github.com/Krupen/followers">[GitHub followers](https://img.shields.io/github/followers/Krupen.svg?style=social)</a><br />
+<a href="https://twitter.com/krupenghetiya">[Twitter Follow](https://img.shields.io/twitter/follow/KrupenGhetiya.svg?style=social&amp;label=Follow)</a></p>
+
 <p>This library is created with the purpose to implement recyclerview with videos easily.
 This is the first version of the library and suggestions/contributions to optimize memory and CPU usage are most welcome to improvise the library.</p>
 
@@ -654,12 +674,14 @@ This is the first version of the library and suggestions/contributions to optimi
   <li>Auto-play videos when in view.</li>
   <li>Auto-pause videos when not in view or partially in view.</li>
   <li>Mute/Un-mute videos.</li>
+  <li>Option to play only first visible video.</li>
 </ol>
 
 <h1 id="demo">Demo</h1>
 <p><a href="https://raw.githubusercontent.com/Krupen/AutoplayVideos/master/AutoPlayVideos%20Demo.gif">autoplayvideos_demo</a></p>
 
-<h1 id="gradle">Gradle</h1>
+<h1 id="download">Download</h1>
+<p><strong>Gradle</strong></p>
 
 <p><strong>Step 1.</strong> Add the jCenter repository to your project-level build.gradle file</p>
 
@@ -674,16 +696,26 @@ This is the first version of the library and suggestions/contributions to optimi
 <p><strong>Step 2.</strong> Add the dependency to your app-level build.gradle file:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
-	 <span class="n">compile</span> <span class="s1">'com.allattentionhere:autoplayvideos:0.0.7'</span>
+	 <span class="n">compile</span> <span class="s1">'com.allattentionhere:autoplayvideos:0.0.8'</span>
 <span class="o">}</span>
 </code></pre>
 </div>
 
-<h1 id="usage">Usage</h1>
+<p><strong>Or Maven</strong>
+``` groovy</p>
+<dependency>
+  <groupid>com.allattentionhere</groupid>
+  <artifactid>autoplayvideos</artifactid>
+  <version>0.0.8</version>
+  <type>pom</type>
+</dependency>
+<div class="highlighter-rouge"><pre class="highlight"><code>
+# Usage
 
-<p>Add <code class="highlighter-rouge">AAH_VideoImage</code> to your xml file for single list item <code class="highlighter-rouge">single_card.xml</code>:
-```
-<?xml version="1.0" encoding="utf-8"?></p>
+Add `AAH_VideoImage` to your xml file for single list item `single_card.xml`:
+</code></pre>
+</div>
+<?xml version="1.0" encoding="utf-8"?>
 <linearlayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:card_view="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="wrap_content">
 
     <android.support.v7.widget.cardview android:id="@+id/card_view" android:layout_width="wrap_content" android:layout_height="wrap_content">
@@ -797,15 +829,17 @@ public int getItemViewType(int position) {
 </div>
 
 <p>Finally <code class="highlighter-rouge">setActivity</code> in your Activity before setting the adapter and (Optional) scroll programmatically to initiate videos on initial screen:
-<code class="highlighter-rouge">
+```
  //todo before setAdapter
     recyclerView.setActivity(this);
-    recyclerView.setAdapter(mAdapter);
- //to init videos before scrolling
-    recyclerView.smoothScrollBy(0,1);
-    recyclerView.smoothScrollBy(0,-1);
-</code>
-# Use Cloudinary (Optional)</p>
+ //optional
+    recyclerView.setPlayOnlyFirstVideo(true); // false by default</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>recyclerView.setAdapter(mAdapter);  //to init videos before scrolling
+recyclerView.smoothScrollBy(0,1);
+recyclerView.smoothScrollBy(0,-1); ``` # Use Cloudinary (Optional)
+</code></pre>
+</div>
 
 <p>It is recommended to use <a href="https://cloudinary.com" target="_blank">Cloudinary.com</a> to host your videos as it provides easy <a href="http://cloudinary.com/documentation/video_manipulation_and_delivery#generating_video_thumbnails" target="_blank">thumbnail-generation</a> and <a href="http://cloudinary.com/documentation/video_manipulation_and_delivery#resizing_and_cropping_videos" target="_blank">resizing/cropping videos</a> on-the-fly.</p>
 

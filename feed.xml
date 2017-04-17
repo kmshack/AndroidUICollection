@@ -5,9 +5,594 @@
     <description>Collection of OpenSource for Android UI.</description>
     <link>http://kmshack.github.io/AndroidUICollection/</link>
     <atom:link href="http://kmshack.github.io/AndroidUICollection/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 10 Apr 2017 10:51:44 +0900</pubDate>
-    <lastBuildDate>Mon, 10 Apr 2017 10:51:44 +0900</lastBuildDate>
+    <pubDate>Mon, 17 Apr 2017 09:58:35 +0900</pubDate>
+    <lastBuildDate>Mon, 17 Apr 2017 09:58:35 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>MaterialChipsInput</title>
+        <description>&lt;h1 id=&quot;materialchipsinput&quot;&gt;MaterialChipsInput&lt;/h1&gt;
+
+&lt;p&gt;Implementation of Material Design &lt;a href=&quot;https://material.io/guidelines/components/chips.html&quot;&gt;Chips&lt;/a&gt; component for Android. The library provides two views : &lt;a href=&quot;#chipsinput&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ChipsInput&lt;/code&gt;&lt;/a&gt; and &lt;a href=&quot;#chipview&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ChipView&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://jitpack.io/#pchmn/MaterialChipsInput&quot;&gt;[Release](https://jitpack.io/v/pchmn/MaterialChipsInput.svg)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/pchmn/MaterialChipsInput/blob/master/docs/demo2.gif&quot; alt=&quot;Demo&quot; height=&quot;600px&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;demo&quot;&gt;Demo&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/pchmn/MaterialChipsInput/raw/master/docs/material-chips-input-sample-v1.0.1.apk&quot;&gt;Download sample-v1.0.1.apk&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://appetize.io/app/dmhu0jfyuypde3bw8wrjr7zn94?device=nexus5&amp;amp;scale=75&amp;amp;orientation=portrait&amp;amp;osVersion=7.0&quot;&gt;Live demo on appetize.io&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;setup&quot;&gt;Setup&lt;/h2&gt;
+
+&lt;p&gt;To use this library your &lt;code class=&quot;highlighter-rouge&quot;&gt;minSdkVersion&lt;/code&gt; must be &amp;gt;= 15.&lt;/p&gt;
+
+&lt;p&gt;In your project level build.gradle :
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+allprojects {
+    repositories {
+        ...
+        maven { url &quot;https://jitpack.io&quot; }
+    }
+}       
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In your app level build.gradle :
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+dependencies {
+    compile &#39;com.github.pchmn:MaterialChipsInput:1.0.1&#39;
+}      
+&lt;/code&gt;
+&lt;br /&gt;&lt;br /&gt;
+## ChipsInput
+This view implements the Material Design &lt;a href=&quot;https://material.io/guidelines/components/chips.html#chips-contact-chips&quot;&gt;Contact chips component&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It is composed of a collection of chips (&lt;code class=&quot;highlighter-rouge&quot;&gt;ChipView&lt;/code&gt;) and an input (&lt;code class=&quot;highlighter-rouge&quot;&gt;EditText&lt;/code&gt;). Touching a chip open a full detailed view (if non disable). The &lt;a href=&quot;#materialchipsinput&quot;&gt;GIF&lt;/a&gt; above describes the behavior of the &lt;code class=&quot;highlighter-rouge&quot;&gt;ChipsInput&lt;/code&gt; view.&lt;/p&gt;
+
+&lt;p&gt;But everything is configurable (optional avatar icon, optional full detailed view, …) so you can use the &lt;code class=&quot;highlighter-rouge&quot;&gt;ChipsInput&lt;/code&gt; view for non contact chips.
+### Basic Usage&lt;/p&gt;
+
+&lt;h4 id=&quot;xml&quot;&gt;XML&lt;/h4&gt;
+&lt;p&gt;Use the ChipsInput view in your layout with default options  :&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.pchmn.materialchips.ChipsInput&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/chips_input&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:hint=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Enter a name&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;You can also customize it (&lt;a href=&quot;#chipsinput-attributes&quot;&gt;see&lt;/a&gt; all attributes) :
+```xml&lt;/p&gt;
+&lt;com.pchmn.materialchips.chipsinput android:id=&quot;@+id/chips_input&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; app:hint=&quot;Enter a name&quot; app:hintcolor=&quot;@color/customColor&quot; app:textcolor=&quot;@color/customColor&quot; app:maxrows=&quot;3&quot; app:chip_labelcolor=&quot;@color/customColor&quot; app:chip_hasavataricon=&quot;true&quot; app:chip_backgroundcolor=&quot;@color/customColor&quot; app:chip_deletable=&quot;false&quot; app:chip_deleteiconcolor=&quot;@color/customColor&quot; app:chip_detailed_textcolor=&quot;@color/customColor&quot; app:chip_detailed_backgroundcolor=&quot;@color/customColor&quot; app:chip_detailed_deleteiconcolor=&quot;@color/customColor&quot; app:filterable_list_backgroundcolor=&quot;@color/customColor&quot; app:filterable_list_textcolor=&quot;@color/customColor&quot; /&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+#### Suggestions
+You can pass a `List&amp;lt;? extends ChipInterface&amp;gt;` object, which represents your suggestions, to the `ChipsInput` view, so it will work as a
+`MultiAutoCompleteTextView` :
+
+##### 1. Create a class that implements `ChipInterface` (or use directly the [`Chip`](https://github.com/pchmn/MaterialChipsInput/blob/master/library/src/main/java/com/pchmn/materialchips/model/Chip.java) class included in the library) :
+```java
+public class ContactChip implements ChipInterface {
+    ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;then-in-your-activity-or-anything-else-build-your-suggestion-list-of-contactchip-or-chip-and-pass-it-to-the-chipsinput-view-&quot;&gt;2. Then in your activity, or anything else, build your suggestion list of &lt;code class=&quot;highlighter-rouge&quot;&gt;ContactChip&lt;/code&gt; (or &lt;code class=&quot;highlighter-rouge&quot;&gt;Chip&lt;/code&gt;) and pass it to the &lt;code class=&quot;highlighter-rouge&quot;&gt;ChipsInput&lt;/code&gt; view :&lt;/h5&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// get ChipsInput view&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ChipsInput&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chipsInput&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ChipsInput&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;chips_input&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// build the ContactChip list&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ContactChip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;contactList&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;contactList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ContactChip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt; 
+&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// pass the ContactChip list&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;chipsInput&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setFilterableList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;contactList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;get-the-selected-list&quot;&gt;Get the selected list&lt;/h4&gt;
+&lt;p&gt;When you want you can get the current list of chips selected by the user :
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+// get the list
+List&amp;lt;ContactChip&amp;gt; contactsSelected = (List&amp;lt;ContactChip&amp;gt;) chipsInput.getSelectedChipList();
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;That’s it, there is nothing more to do.
+&lt;br /&gt;&lt;br /&gt;
+### Advanced Usage
+#### ChipsListener
+The &lt;code class=&quot;highlighter-rouge&quot;&gt;ChipsInput&lt;/code&gt; view provides a listener to interact with the input :
+```java
+chipsInput.addChipsListener(new ChipsInput.ChipsListener() {
+            @Override
+            public void onChipAdded(ChipInterface chip, int newSize) {
+                // chip added
+                // newSize is the size of the updated selected chip list
+            }&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;        @Override
+        public void onChipRemoved(ChipInterface chip, int newSize) {
+            // chip removed
+            // newSize is the size of the updated selected chip list
+        }
+
+        @Override
+        public void onTextChanged(CharSequence text) {
+            // text changed
+        }
+    }); ```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;add-and-remove-chips-manually&quot;&gt;Add and remove chips manually&lt;/h4&gt;
+&lt;p&gt;You don’t have to pass a &lt;code class=&quot;highlighter-rouge&quot;&gt;List&amp;lt;? extends ChipInterface&amp;gt;&lt;/code&gt; to the &lt;code class=&quot;highlighter-rouge&quot;&gt;ChipsInput&lt;/code&gt; view and you can do the trick manually. Thanks to the &lt;code class=&quot;highlighter-rouge&quot;&gt;ChipsListener&lt;/code&gt; you can be notified when the user is typing and do your own work.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;ChipsInput&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chipsInput&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ChipsInput&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;chips_input&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;add-a-chip&quot;&gt;Add a chip&lt;/h5&gt;
+&lt;p&gt;There are multiple implementations :
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+chipsInput.addChip(ChipInterface chip);
+// or
+chipsInput.addChip(Object id, Drawable icon, String label, String info);
+// or
+chipsInput.addChip(Drawable icon, String label, String info);
+// or
+chipsInput.addChip(Object id, Uri iconUri, String label, String info);
+// or
+chipsInput.addChip(Uri iconUri, String label, String info);
+// or
+chipsInput.addChip(String label, String info);
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;remove-a-chip&quot;&gt;Remove a chip&lt;/h5&gt;
+&lt;p&gt;There are multiple implementations :
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+chipsInput.removeChip(ChipInterface chip);
+// or
+chipsInput.removeChipById(Object id);
+// or
+chipsInput.removeChipByLabel(String label);
+// or
+chipsInput.removeChipByInfo(String info);
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;After you added or removed a chip the &lt;code class=&quot;highlighter-rouge&quot;&gt;ChipsListener&lt;/code&gt; will be triggered.&lt;/p&gt;
+
+&lt;h5 id=&quot;get-the-selected-list-1&quot;&gt;Get the selected list&lt;/h5&gt;
+&lt;p&gt;When you want you can get the current list of chips selected by the user :
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+// get the list
+List&amp;lt;ChipInterface&amp;gt; contactsSelected = chipsInput.getSelectedChipList();
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;chipsinput-attributes&quot;&gt;ChipsInput attributes&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Attribute&lt;/th&gt;
+      &lt;th&gt;Type&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+      &lt;th&gt;Default&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:hint&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;string&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Hint of the input when there is no chip&lt;/td&gt;
+      &lt;td&gt;null&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:hintColor&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Hint color&lt;/td&gt;
+      &lt;td&gt;android default&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:textColor&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Text color when user types&lt;/td&gt;
+      &lt;td&gt;android default&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:maxRows&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;int&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Max rows of chips&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:chip_labelColor&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Label color of the chips&lt;/td&gt;
+      &lt;td&gt;android default&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:chip_hasAvatarIcon&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;boolean&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Whether the chips have avatar icon or not&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:chip_deletable&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;boolean&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Whether the chips are deletable (delete icon) or not&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:chip_deleteIconColor&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Delete icon color of the chips&lt;/td&gt;
+      &lt;td&gt;white/black&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:chip_backgroundColor&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Background color of the chips&lt;/td&gt;
+      &lt;td&gt;grey&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:showChipDetailed&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;boolean&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Whether to show full detailed view or not when touching a chip&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:chip_detailed_textColor&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Full detailed view text color&lt;/td&gt;
+      &lt;td&gt;white/balck&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:chip_detailed_backgroundColor&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Background color of the full detailed view&lt;/td&gt;
+      &lt;td&gt;colorAccent&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:chip_detailed_deleteIconColor&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Delete icon color of the full detailed view&lt;/td&gt;
+      &lt;td&gt;white/black&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:filterable_list_backgroundColor&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Background color of the filterable list of suggestions&lt;/td&gt;
+      &lt;td&gt;white&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:filterable_list_textColor&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Text color of the filterable list of suggestions&lt;/td&gt;
+      &lt;td&gt;black&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
+## ChipView
+This view implements the chip component according to the &lt;a href=&quot;https://material.io/guidelines/components/chips.html#chips-usage&quot;&gt;Material Design guidelines&lt;/a&gt; with configurable options (background color, text color, …).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/pchmn/MaterialChipsInput/blob/master/docs/chips-examples.png&quot; alt=&quot;Chips examples&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;usage&quot;&gt;Usage&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.pchmn.materialchips.ChipView&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;app:label=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Chip 1&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+            
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.pchmn.materialchips.ChipView&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;app:label=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Chip 4&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;app:hasAvatarIcon=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.pchmn.materialchips.ChipView&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;app:label=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Chip 6&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;app:labelColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@android:color/white&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;app:avatarIcon=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@drawable/avatar&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;app:backgroundColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@android:color/holo_blue_light&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;app:deletable=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;app:deleteIconColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@android:color/white&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;chipview-attributes&quot;&gt;ChipView attributes&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Attribute&lt;/th&gt;
+      &lt;th&gt;Type&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+      &lt;th&gt;Default&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:label&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;string&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Label of the chip&lt;/td&gt;
+      &lt;td&gt;null&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:labelColor&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Label color of the chip&lt;/td&gt;
+      &lt;td&gt;android default&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:hasAvatarIcon&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;boolean&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Whether the chip has avatar icon or not&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:avatarIcon&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;drawable&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Avatar icon resource&lt;/td&gt;
+      &lt;td&gt;null&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:deletable&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;boolean&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Whether the chip is deletable (delete icon) or not&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:deleteIconColor&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Delete icon color of the chip&lt;/td&gt;
+      &lt;td&gt;grey&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:backgroundColor&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Background color of the chip&lt;/td&gt;
+      &lt;td&gt;grey&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;listeners&quot;&gt;Listeners&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;ChipView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chip&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ChipView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;chip_view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;On chip click listener :
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+chip.setOnChipClicked(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        // handle click    
+    }
+});
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;On delete button click listener :
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+chip.setOnDeleteClicked(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        // handle click     
+    }
+});
+&lt;/code&gt;
+&lt;br /&gt;&lt;br /&gt;
+## Sample&lt;/p&gt;
+
+&lt;p&gt;A sample app with some use cases of the library is available on this &lt;a href=&quot;https://github.com/pchmn/MaterialChipsInput/tree/master/sample&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You can also download the sample APK &lt;a href=&quot;https://github.com/pchmn/MaterialChipsInput/raw/master/docs/material-chips-input-sample-v1.0.0.apk&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;credits&quot;&gt;Credits&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/DoodleScheduling/android-material-chips&quot;&gt;Android Material Chips&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/robertlevonyan/materialChipView?utm_source=android-arsenal.com&amp;amp;utm_medium=referral&amp;amp;utm_campaign=5396&quot;&gt;Material Chip View&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/BelooS/ChipsLayoutManager&quot;&gt;ChipsLayoutManager&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2017 pchmn
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Mon, 17 Apr 2017 00:00:00 +0900</pubDate>
+        <link>http://kmshack.github.io/AndroidUICollection/2017/04/17/MaterialChipsInput/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/04/17/MaterialChipsInput/</guid>
+        
+        <category>Material</category>
+        
+        <category>Input</category>
+        
+        <category>Tag</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>AdaptiveTableLayout</title>
+        <description>&lt;h1 id=&quot;adaptivetablelayout-awesomehttpscdnrawgitcomsindresorhusawesomed7305f38d29fed78fa85652e3a63e154dd8e8829mediabadgesvghttpsgithubcomsindresorhusawesome-img-srchttpswwwcleveroadcompubliccomerciallabel-androidsvg-height19-a-hrefhttpswwwcleveroadcomutmsourcegithubutmmediumlabelutmcampaigncontactsimg-srchttpswwwcleveroadcompubliccomerciallabel-cleveroadsvg-height19a&quot;&gt;AdaptiveTableLayout &lt;a href=&quot;https://github.com/sindresorhus/awesome&quot;&gt;[Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)&lt;/a&gt; &lt;img src=&quot;https://www.cleveroad.com/public/comercial/label-android.svg&quot; height=&quot;19&quot; /&gt; &lt;a href=&quot;https://www.cleveroad.com/?utm_source=github&amp;amp;utm_medium=label&amp;amp;utm_campaign=contacts&quot;&gt;&lt;img src=&quot;https://www.cleveroad.com/public/comercial/label-cleveroad.svg&quot; height=&quot;19&quot; /&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;/images/header.png&quot;&gt;Header image&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;welcome-the-new-csv-library-adaptivetablelayout-for-android-by-cleveroad&quot;&gt;Welcome the new CSV Library AdaptiveTableLayout for Android by Cleveroad&lt;/h2&gt;
+
+&lt;p&gt;Pay your attention to our new library that makes it possible to read, edit and write CSV files. If you use Android-based device, you can easily use our library for implementation of all aforementioned actions. In addition, you will be able to change rows and columns, display the picture via link, and align the required data. It will surely help you cope with your tasks faster and make your output higher. AdaptiveTableLayout library is at your disposal.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/demo.gif&quot;&gt;Demo image&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;take-a-look-at-the-animation-of-stronga-targetblank-hrefhttpswwwyoutubecomwatchvytwpepilhueadaptivetablelayout-for-android-on-youtubeastrong-in-hd-quality-for-using-this-library-in-a-valuable-way-you-can-find-our-csv-editor-app-on-the-a-targetblank--hrefhttpsplaygooglecomstoreappsdetailsidcomcleveroadtablelayoutgoogle-play-storea-or-on-a-targetblank--hrefhttpsappetizeioappwgacjavwr57fec241bq802gzcgdevicenexus5scale75orientationportraitosversion70appetizea&quot;&gt;Take a look at the animation of &lt;strong&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=YTwpEPIlhuE&quot;&gt;AdaptiveTableLayout for Android on YouTube&lt;/a&gt;&lt;/strong&gt; in HD quality. For using this library in a valuable way, you can find our CSV Editor app on the &lt;a target=&quot;_blank&quot; href=&quot;https://play.google.com/store/apps/details?id=com.cleveroad.tablelayout&quot;&gt;Google Play Store&lt;/a&gt; or on &lt;a target=&quot;_blank&quot; href=&quot;https://appetize.io/app/wgacjavwr57fec241bq802gzcg?device=nexus5&amp;amp;scale=75&amp;amp;orientation=portrait&amp;amp;osVersion=7.0&quot;&gt;Appetize&lt;/a&gt;.&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=YTwpEPIlhuE&quot;&gt;[Awesome](/images/youtube.png)&lt;/a&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.cleveroad.tablelayout&quot;&gt;[Awesome](/images/google-play.png)&lt;/a&gt;&lt;a href=&quot;https://appetize.io/app/wgacjavwr57fec241bq802gzcg?device=nexus5&amp;amp;scale=75&amp;amp;orientation=portrait&amp;amp;osVersion=7.0&quot;&gt;[Awesome](/images/appertize.png)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The main goal of the library is to apply all its functions in the process of working with CSV files. Moreover, it will give you a competitive edge over others.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.cleveroad.com/?utm_source=github&amp;amp;utm_medium=label&amp;amp;utm_campaign=contacts&quot;&gt;[Awesome](/images/logo-footer.png)&lt;/a&gt;
+&lt;br /&gt;
+## Setup and usage
+### Installation
+by gradle : 
+&lt;code class=&quot;highlighter-rouge&quot;&gt;groovy
+dependencies {
+    compile &quot;com.cleveroad:adaptivetablelayout:1.0.1&quot;
+}
+&lt;/code&gt;
+### Features ###
+Library consists of three parts:
+- AdaptiveTableLayout (View)
+- LinkedAdaptiveTableAdapter (Adapter)
+- ViewHolderImpl (ViewHolder)&lt;/p&gt;
+
+&lt;h3 id=&quot;usage&quot;&gt;Usage&lt;/h3&gt;
+&lt;p&gt;#### AdaptiveTableLayout ####
+```XML&lt;/p&gt;
+&lt;com.cleveroad.adaptivetablelayout.adaptivetablelayout android:id=&quot;@+id/tableLayout&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;match_parent&quot; app:cellmargin=&quot;1dp&quot; app:fixedheaders=&quot;true&quot; app:solidrowheaders=&quot;true&quot; /&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;|  attribute name | description |
+|---|---|
+| cellMargin  | margin between cards |
+| fixedHeaders  | fixed headers mode. If enable, headers always will be displayed in the corners. |
+| solidRowHeaders  | solid row headers mode. If enable, row header will change its position with dragging row. |
+
+```groovy
+// return fixed headers mode
+boolean isHeaderFixed(); 
+
+// return solid row headers mode
+boolean isSolidRowHeader()
+
+// Set fixed headers mode
+void setHeaderFixed(boolean headerFixed)
+
+// Set solid row headers mode
+void setSolidRowHeader(boolean solidRowHeader)
+
+/**
+ * Set adapter with IMMUTABLE data.
+ * Create wrapper with links between layout rows, columns and data rows, columns.
+ * On drag and drop event just change links but not change data in adapter.
+ */
+void setAdapter(@Nullable AdaptiveTableAdapter adapter)
+
+/**
+ * Set adapter with MUTABLE data.
+ * You need to implement switch rows and columns methods.    
+ * DO NOT USE WITH BIG DATA
+ */
+void setAdapter(@Nullable DataAdaptiveTableLayoutAdapter adapter)
+
+// Notify any registered observers that the data set has changed.
+void notifyDataSetChanged()
+
+// Notify any registered observers that the item has changed.
+void notifyItemChanged(int rowIndex, int columnIndex)
+
+// Notify any registered observers that the row with rowIndex has changed.
+void notifyRowChanged(int rowIndex)
+
+// Notify any registered observers that the column with columnIndex has changed.
+void notifyColumnChanged(int columnIndex)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;#### Adapter ####
+You could use adapter interfaces: AdaptiveTableAdapter and DataAdaptiveTableLayoutAdapter. But to simplify the usage, library contains base adapters: &lt;b&gt;BaseDataAdaptiveTableLayoutAdapter&lt;/b&gt; and &lt;b&gt;LinkedAdaptiveTableAdapter&lt;/b&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;BaseDataAdaptiveTableLayoutAdapter&lt;/b&gt; - simple adapter which works with light data. WARNING on each row/column switch, original data will be changed.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;LinkedAdaptiveTableAdapter&lt;/b&gt; - adapter which works with heavy data. WARNING This type of adapter doesn’t change original data. It contains matrix with changed items with links on it. To get changed data you need use AdaptiveTableLayout.getLinkedAdapterRowsModifications() and AdaptiveTableLayout.getLinkedAdapterColumnsModifications().
+Don’t forget to check AdaptiveTableLayout.isSolidRowHeader() flag. If it’s false, you need to ignore switching first elemet in each row.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;For both adapters you need to know all rows/columns widths, heights and rows/columns count before set adapter to AdaptiveTableLayout.&lt;/b&gt;
+#### Fragment/Activity usage ####
+&lt;code class=&quot;highlighter-rouge&quot;&gt;groovy
+mTableLayout = (AdaptiveTableLayout) view.findViewById(R.id.tableLayout);
+...
+mTableAdapter = new SampleLinkedTableAdapter(getContext(), mCsvFileDataSource);
+mTableAdapter.setOnItemClickListener(...);
+mTableAdapter.setOnItemLongClickListener(...);
+mTableLayout.setAdapter(mTableAdapter);
+...
+mTableLayout.setHeaderFixed(true);
+mTableLayout.setSolidRowHeader(true);
+mTableAdapter.notifyDataSetChanged();
+&lt;/code&gt;
+#### XML usage ####
+```groovy&lt;/p&gt;
+&lt;com.cleveroad.adaptivetablelayout.adaptivetablelayout android:id=&quot;@+id/tableLayout&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;match_parent&quot; android:layout_below=&quot;@+id/toolbar&quot; app:cellmargin=&quot;1dp&quot; app:fixedheaders=&quot;true&quot; app:solidrowheaders=&quot;true&quot; /&gt;
+
+&lt;p&gt;```
+#### Adapter usage ####
+&lt;a href=&quot;sample/src/main/java/com/cleveroad/sample/adapter/SampleLinkedTableAdapter.java&quot;&gt; Adapter sample &lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;support&quot;&gt;Support&lt;/h3&gt;
+&lt;p&gt;If you have any questions, issues or propositions, please create a &lt;a href=&quot;../../issues/new&quot;&gt;new issue&lt;/a&gt; in this repository.&lt;/p&gt;
+
+&lt;p&gt;If you want to hire us, send an email to sales@cleveroad.com or fill the form on &lt;a href=&quot;https://www.cleveroad.com/contact&quot;&gt;contact page&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Follow us:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.facebook.com/cleveroadinc/&quot;&gt;[Awesome](/images/social/facebook.png)&lt;/a&gt;   &lt;a href=&quot;https://twitter.com/cleveroadinc&quot;&gt;[Awesome](/images/social/twitter.png)&lt;/a&gt;   &lt;a href=&quot;https://plus.google.com/+CleveroadInc&quot;&gt;[Awesome](/images/social/google.png)&lt;/a&gt;   &lt;a href=&quot;https://www.linkedin.com/company/cleveroad-inc-&quot;&gt;[Awesome](/images/social/linkedin.png)&lt;/a&gt;   &lt;a href=&quot;https://www.youtube.com/channel/UCFNHnq1sEtLiy0YCRHG2Vaw&quot;&gt;[Awesome](/images/social/youtube.png)&lt;/a&gt;
+&lt;br /&gt;
+### License ###
+* * *
+    The MIT License (MIT)&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright (c) 2016 Cleveroad Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Mon, 17 Apr 2017 00:00:00 +0900</pubDate>
+        <link>http://kmshack.github.io/AndroidUICollection/2017/04/17/AdaptiveTableLayout/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/04/17/AdaptiveTableLayout/</guid>
+        
+        <category>layout</category>
+        
+        
+      </item>
     
       <item>
         <title>spruce</title>
@@ -28,11 +613,10 @@
 &lt;h3 id=&quot;gradle&quot;&gt;Gradle&lt;/h3&gt;
 &lt;p&gt;Add the following to your project’s build.gradle file&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dependencies {
+&lt;pre&gt;&lt;code class=&quot;language-gradle&quot;&gt;dependencies {
     compile &#39;com.willowtreeapps.spruce:spruce-android:1.0.0&#39;
 }
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;h2 id=&quot;documentation&quot;&gt;Documentation&lt;/h2&gt;
 &lt;p&gt;For javadocs checkout &lt;a href=&quot;https://willowtreeapps.github.io/spruce-android/&quot;&gt;the documentation&lt;/a&gt; for more information.&lt;/p&gt;
@@ -851,255 +1435,6 @@ Your adapter must extends BaseExcelPanelAdapter and override seven methods show 
         <category>Excel</category>
         
         <category>Panel</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>CoordinatorTabLayout</title>
-        <description>&lt;h1 id=&quot;coordinatortablayout&quot;&gt;CoordinatorTabLayout&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/hugeterry/CoordinatorTabLayout/blob/master/LICENSE.txt&quot;&gt;[License](https://img.shields.io/badge/license-Apache%202.0-green.svg)&lt;/a&gt;
-&lt;a href=&quot;https://bintray.com/hugeterry/CoordinatorTabLayout/CoordinatorTabLayout/_latestVersion&quot;&gt;[Download](https://api.bintray.com/packages/hugeterry/CoordinatorTabLayout/CoordinatorTabLayout/images/download.svg) &lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;README_CN.md&quot;&gt;中文版文档&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;CoordinatorTabLayout is a custom composite control that quickly implements the combination of TabLayout and CoordinatorLayout.
-Inherited to the CoordinatorLayout, in the following components used CollapsingToolbarLayout contains TabLayout.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;showUI/show1.gif&quot;&gt;show&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-
-&lt;h3 id=&quot;step-1&quot;&gt;Step 1&lt;/h3&gt;
-
-&lt;p&gt;Add the following to your build.gradle:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;
-dependencies {
-    compile &#39;cn.hugeterry.coordinatortablayout:coordinatortablayout:1.0.6&#39;
-}
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;step-2&quot;&gt;Step 2&lt;/h3&gt;
-
-&lt;p&gt;Config in xml:
-```&lt;/p&gt;
-&lt;cn.hugeterry.coordinatortablayout.coordinatortablayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot; android:id=&quot;@+id/coordinatortablayout&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;match_parent&quot;&gt;
-
-    &lt;android.support.v4.view.viewpager android:id=&quot;@+id/vp&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;match_parent&quot; app:layout_behavior=&quot;@string/appbar_scrolling_view_behavior&quot; /&gt;
-&lt;/cn.hugeterry.coordinatortablayout.coordinatortablayout&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-
-### Step 3
-
-[show](showUI/show3.gif)&amp;lt;/br&amp;gt;
-Use it in your own code:&amp;lt;/br&amp;gt;
-1.`setTitle(String title)`:Set the CoordinatorTabLayout&#39;s title.&amp;lt;/br&amp;gt;
-2.`setupWithViewPager(ViewPager viewPager)`:To link the two together.&amp;lt;/br&amp;gt;
-3.`setImageArray(int[] imageArray)`:Set the image array of the header according to the number of tabs and pass it to the control.&amp;lt;/br&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    //Add the fragment to the viewpager
-    initFragments();
-    initViewPager();
-    //Image array
-    mImageArray = new int[]{
-            R.mipmap.bg_android,
-            R.mipmap.bg_ios,
-            R.mipmap.bg_js,
-            R.mipmap.bg_other};
-
-    mCoordinatorTabLayout = (CoordinatorTabLayout) findViewById(R.id.coordinatortablayout);
-    mCoordinatorTabLayout.setTitle(&quot;Demo&quot;)
-            .setImageArray(mImageArray)
-            .setupWithViewPager(mViewPager); ```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Finish, enjoy it.&lt;/p&gt;
-
-&lt;h2 id=&quot;more&quot;&gt;More&lt;/h2&gt;
-
-&lt;h3 id=&quot;set-the-content-scrim&quot;&gt;Set the content scrim&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;showUI/show2.gif&quot;&gt;show&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;setImageArray(int[] imageArray, int[] colorArray)&lt;/code&gt;:Set the color array to use for the content scrim for each tab.
-&lt;code class=&quot;highlighter-rouge&quot;&gt;
-        mColorArray = new int[]{
-                android.R.color.holo_blue_light,
-                android.R.color.holo_red_light,
-                android.R.color.holo_orange_light,
-                android.R.color.holo_green_light};
-        mCoordinatorTabLayout.setImageArray(mImageArray, mColorArray);
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;set-back-enable&quot;&gt;Set back enable&lt;/h3&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;setBackEnable(Boolean canBack)&lt;/code&gt;:To enable the Up button for an activity that has a parent activity.
-&lt;code class=&quot;highlighter-rouge&quot;&gt;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        ...
-        mCoordinatorTabLayout.setBackEnable(true);
-        ...
-    }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            finish();
-        }
-        return super.onOptionsItemSelected(item);
-    }
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;load-header-images-from-network&quot;&gt;Load header images from network&lt;/h3&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;setLoadHeaderImagesListener(LoadHeaderImagesListener loadHeaderImagesListener)&lt;/code&gt;:Set the listener that gets the header images.
-&lt;code class=&quot;highlighter-rouge&quot;&gt;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        ...
-        mCoordinatorTabLayout.setTitle(&quot;Demo&quot;)
-                .setBackEnable(true)
-                .setContentScrimColorArray(mColorArray)
-                .setLoadHeaderImagesListener(new LoadHeaderImagesListener() {
-                    @Override
-                    public void loadHeaderImages(ImageView imageView, TabLayout.Tab tab) {
-                        switch (tab.getPosition()) {
-                            case 0:
-                                //load header images
-                                break;
-                            ...
-                        }
-                    }
-                })
-                .setupWithViewPager(mViewPager);
-    }
-&lt;/code&gt;
-You also can load header images using glide/picasso，&lt;a href=&quot;https://github.com/hugeterry/CoordinatorTabLayout/blob/master/sample/src/main/java/cn/hugeterry/coordinatortablayoutdemo/LoadHeaderImageFromNetworkActivity.java&quot;&gt;Sample&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;gets-the-child-control&quot;&gt;Gets the child control&lt;/h3&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;getActionBar()&lt;/code&gt;:get the ActionBar&lt;br /&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;getTabLayout()&lt;/code&gt;:get the TabLayout&lt;br /&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;getImageView()&lt;/code&gt;:get the ImageView&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/hugeterry/CoordinatorTabLayout/blob/master/sample/src/main/java/cn/hugeterry/coordinatortablayoutdemo/MainActivity.java&quot;&gt;More code&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;attributes&quot;&gt;Attributes&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:contentScrim&lt;/code&gt; -&amp;gt; color.Defaults to ?attr/colorPrimary&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:tabIndicatorColor&lt;/code&gt; -&amp;gt; color.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:tabTextColor&lt;/code&gt; -&amp;gt; color.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;demo&quot;&gt;Demo&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;http://fir.im/ctlayout&quot;&gt;http://fir.im/ctlayout&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;license&quot;&gt;LICENSE&lt;/h2&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2017 HugeTerry.
-Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Wed, 29 Mar 2017 00:00:00 +0900</pubDate>
-        <link>http://kmshack.github.io/AndroidUICollection/2017/03/29/CoordinatorTabLayout/</link>
-        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/03/29/CoordinatorTabLayout/</guid>
-        
-        <category>Coordinator</category>
-        
-        <category>TabLayout</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>MusicPlayer</title>
-        <description>&lt;p&gt;&lt;a href=&quot;http://www.apache.org/licenses/LICENSE-2.0&quot;&gt;[License Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=true)&lt;/a&gt;
-&lt;a href=&quot;https://img.shields.io/badge/minSdkVersion-21-red.svg?style=true&quot;&gt;minSdkVersion 21&lt;/a&gt;
-&lt;a href=&quot;https://img.shields.io/badge/compileSdkVersion-24-yellow.svg?style=true&quot;&gt;compileSdkVersion 24&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://android-arsenal.com/details/3/3855&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Music–Player-green.svg?style=true)&lt;/a&gt;
-&lt;a href=&quot;https://www.uplabs.com/posts/music-player-open-source-apps&quot;&gt;[MaterialUp Music-Player](https://img.shields.io/badge/MaterialUp-Music–Player-blue.svg?style=true)&lt;/a&gt;
-&lt;a href=&quot;https://androidsweets.ongoodbits.com/2016/07/14/issue-27&quot;&gt;[Android Sweets #27](https://img.shields.io/badge/Android%20Sweets-%2327-ff69b4.svg?style=true)&lt;/a&gt;
-&lt;a href=&quot;https://android.libhunt.com/newsletter/22&quot;&gt;[Awesome Android #22](https://img.shields.io/badge/Awesome%20Android-%2322-green.svg?style=true)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/andremion/Music-Player/master/app/src/main/res/mipmap-hdpi/ic_launcher.png&quot;&gt;Icon&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;music-player-from-ui-proposal-to-code&quot;&gt;Music Player: From UI Proposal to Code&lt;/h1&gt;
-
-&lt;p&gt;Some developers have difficult to code when the UI proposal is a bit “sophisticated” or “complex”. Many of them strip a lot of significant portion of the UI or even the Motion when they are coding, and the result ends up quite different of the original proposal.&lt;/p&gt;
-
-&lt;p&gt;This article talks about how would be to code an UI proposal, skipping some basic Android details and focusing in the transition and animation approach…&lt;/p&gt;
-
-&lt;p&gt;Read more at https://medium.com/@andremion/music-player-3a85864d6df7#.iklz50r6n&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;&lt;a href=&quot;https://dribbble.com/shots/1850527-Music-Player-Transition&quot;&gt;Transition&lt;/a&gt; by &lt;a href=&quot;https://dribbble.com/anish_chandran&quot;&gt;Anish Chandran&lt;/a&gt;&lt;/th&gt;
-      &lt;th&gt;Code by &lt;a href=&quot;https://github.com/andremion&quot;&gt;André Mion&lt;/a&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;https://raw.githubusercontent.com/andremion/Music-Player/master/art/music_player_concept_cropped.gif&quot;&gt;Transition by Anish Chandran&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;https://raw.githubusercontent.com/andremion/Music-Player/master/art/music_player_code.gif&quot;&gt;Code by André Mion&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.sample.andremion.musicplayer&quot;&gt;[Get it on Google Play](https://developer.android.com/images/brand/en_generic_rgb_wo_60.png)&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;libraries-and-tools-used-in-the-project&quot;&gt;Libraries and tools used in the project&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://developer.android.com/intl/pt-br/tools/support-library/features.html#design&quot;&gt;Design Support Library&lt;/a&gt;
-The Design package provides APIs to support adding material design components and patterns to your apps.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/andremion/Music-Cover-View&quot;&gt;MusicCoverView&lt;/a&gt;
-A Subclass of ImageView that ‘morphs’ into a circle shape and can rotates. Useful to be used as album cover in Music apps.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://developer.android.com/intl/pt-br/reference/android/support/v7/widget/RecyclerView.html&quot;&gt;RecyclerView&lt;/a&gt;
-A flexible view for providing a limited window into a large data set.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://developer.android.com/reference/android/support/percent/PercentRelativeLayout.html&quot;&gt;PercentRelativeLayout&lt;/a&gt;
-Subclass of RelativeLayout that supports percentage based dimensions and margins.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2016 André Mion
-
-Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Tue, 28 Mar 2017 00:00:00 +0900</pubDate>
-        <link>http://kmshack.github.io/AndroidUICollection/2017/03/28/MusicPlayer/</link>
-        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/03/28/MusicPlayer/</guid>
-        
-        <category>music</category>
-        
-        <category>player</category>
         
         
       </item>
