@@ -505,10 +505,6 @@
                 
               
             
-              
-                
-              
-            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -551,17 +547,6 @@
         
       <div class="sidebar__bottom">
         <div class="column small-12 large-12">
-            
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- androidui -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:250px;height:250px"
-     data-ad-client="ca-pub-9975139260149901"
-     data-ad-slot="5123612274"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
             
           <div class="font-tiny">
               <br>
@@ -635,21 +620,7 @@
             <div class="column column--center medium-12 large-4">
               <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/AndroidUICollection/images/posts/2017-02-18-Toasty.png)"></div>
             </div>
-             <br><br>
-            
           <br>
-          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- androiduicollection -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-9975139260149901"
-                 data-ad-slot="2900853479"
-                 data-ad-format="auto"></ins>
-            <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-            
-             <br>
           <h1 id="toasty">Toasty</h1>
 <p><a href="https://android-arsenal.com/api?level=9">[API](https://img.shields.io/badge/API-9%2B-blue.svg?style=flat)</a> <a href="https://jitpack.io/#GrenderG/Toasty">[](https://jitpack.io/v/GrenderG/Toasty.svg)</a> <a href="https://android-arsenal.com/details/1/5102">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Toasty-brightgreen.svg?style=flat)</a> <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=XUUEWEHJYFYV2">[Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)</a></p>
 
@@ -675,9 +646,31 @@
 
 <pre><code class="language-gradle">dependencies {
 	...
-	compile 'com.github.GrenderG:Toasty:1.1.5'
+	compile 'com.github.GrenderG:Toasty:1.2.2'
 }
 </code></pre>
+
+<h2 id="configuration">Configuration</h2>
+
+<p>This step is optional, but if you want you can configure some Toasty parameters. Place this anywhere in your app:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">Toasty</span><span class="o">.</span><span class="na">Config</span><span class="o">.</span><span class="na">getInstance</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">setErrorColor</span><span class="o">(</span><span class="nd">@ColorInt</span> <span class="kt">int</span> <span class="n">errorColor</span><span class="o">)</span> <span class="c1">// optional</span>
+    <span class="o">.</span><span class="na">setInfoColor</span><span class="o">(</span><span class="nd">@ColorInt</span> <span class="kt">int</span> <span class="n">infoColor</span><span class="o">)</span> <span class="c1">// optional</span>
+    <span class="o">.</span><span class="na">setSuccessColor</span><span class="o">(</span><span class="nd">@ColorInt</span> <span class="kt">int</span> <span class="n">successColor</span><span class="o">)</span> <span class="c1">// optional</span>
+    <span class="o">.</span><span class="na">setWarningColor</span><span class="o">(</span><span class="nd">@ColorInt</span> <span class="kt">int</span> <span class="n">warningColor</span><span class="o">)</span> <span class="c1">// optional</span>
+    <span class="o">.</span><span class="na">setTextColor</span><span class="o">(</span><span class="nd">@ColorInt</span> <span class="kt">int</span> <span class="n">textColor</span><span class="o">)</span> <span class="c1">// optional</span>
+    <span class="o">.</span><span class="na">tintIcon</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">tintIcon</span><span class="o">)</span> <span class="c1">// optional (apply textColor also to the icon)</span>
+    <span class="o">.</span><span class="na">setToastTypeface</span><span class="o">(</span><span class="n">AssetManager</span> <span class="n">assetManager</span><span class="o">,</span> <span class="n">String</span> <span class="n">fontPath</span><span class="o">)</span> <span class="c1">// optional</span>
+    <span class="o">.</span><span class="na">apply</span><span class="o">();</span> <span class="c1">// required</span>
+</code></pre>
+</div>
+
+<p>You can reset the configuration by using <code class="highlighter-rouge">reset()</code> method:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">Toasty</span><span class="o">.</span><span class="na">Config</span><span class="o">.</span><span class="na">reset</span><span class="o">();</span>
+</code></pre>
+</div>
 
 <h2 id="usage">Usage</h2>
 
@@ -716,12 +709,13 @@
 
 <p>You can also create your custom Toasts with the <code class="highlighter-rouge">custom()</code> method:
 <code class="highlighter-rouge">java
-Toasty.custom(yourContext, "I'm a custom Toast", yourIconDrawable, textColor, tintColor, duration, withIcon, true).show();
+Toasty.custom(yourContext, "I'm a custom Toast", yourIconDrawable, tintColor, duration, withIcon, 
+shouldTint).show();
 </code>
 ### Extra
-<a href="https://github.com/GrenderG/Toasty/blob/master/app/src/main/java/es/dmoral/toastysample/MainActivity.java#L76-L93">You can pass formatted text to Toasty</a></p>
+<a href="https://github.com/GrenderG/Toasty/blob/master/app/src/main/java/es/dmoral/toastysample/MainActivity.java#L97-L106">You can pass formatted text to Toasty</a></p>
 
-<p>There are variants of each method, feel free to explore this library.</p>
+<p><strong>There are variants of each method, feel free to explore this library.</strong></p>
 
 <h2 id="apps-using-toasty">Apps using Toasty</h2>
 
@@ -740,17 +734,21 @@ Toasty.custom(yourContext, "I'm a custom Toast", yourIconDrawable, textColor, ti
 		<td><img src="https://archive.org/download/ic_launcher_colorhub/ic_launcher_colorhub.png" width="64" /></td>
 		<td><a href="https://play.google.com/store/apps/details?id=cheetatech.com.colorhub">ColorHub - Color Palette</a></td>
 	</tr>
+	<tr>
+		<td><img src="https://lh3.googleusercontent.com/Z9tz0izoW0CuBS59w9hbxbn3a7cSSwZUeGr1o9TpapngTKb4MKaGunZP-B306CxBAI8=w300-rw" width="64" /></td>
+		<td><a href="https://play.google.com/store/apps/details?id=com.fa.touch.free">Touch for Facebook</a></td>
+	</tr>
+	<tr>
+		<td><img src="https://lh3.googleusercontent.com/rXB22UBHujsK2uYpN-kAkVFBjTcnAp6ltSZYf9-LdYvRkM-kF-xtwPwR8kEInhludA=w300-rw" width="64" /></td>
+		<td><a href="https://play.google.com/store/apps/details?id=com.fa.daily.free">Daily – News flipped around</a></td>
+	</tr>
 </table>
 
 <h2 id="screenshots">Screenshots</h2>
 
-<p><img src="https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr_1.png" width="250" />
-<img src="https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr_2.png" width="250" />
-<img src="https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr_3.png" width="250" />
-<img src="https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr_4.png" width="250" />
-<img src="https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr_5.png" width="250" />
-<img src="https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr_6.png" width="250" />
-<img src="https://raw.githubusercontent.com/GrenderG/Toasty/master/art/scr_7.png" width="250" /></p>
+<p><strong>Please click the image below to enlarge.</strong></p>
+
+<p><img src="https://raw.githubusercontent.com/GrenderG/Toasty/master/art/collage.png" /></p>
 
 
           <br>

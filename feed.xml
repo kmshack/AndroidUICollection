@@ -5,8 +5,8 @@
     <description>Collection of OpenSource for Android UI.</description>
     <link>http://kmshack.github.io/AndroidUICollection/</link>
     <atom:link href="http://kmshack.github.io/AndroidUICollection/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 17 Apr 2017 09:58:35 +0900</pubDate>
-    <lastBuildDate>Mon, 17 Apr 2017 09:58:35 +0900</lastBuildDate>
+    <pubDate>Sat, 29 Apr 2017 12:47:52 +0900</pubDate>
+    <lastBuildDate>Sat, 29 Apr 2017 12:47:52 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -20,9 +20,7 @@
 &lt;p&gt;&lt;img src=&quot;https://github.com/pchmn/MaterialChipsInput/blob/master/docs/demo2.gif&quot; alt=&quot;Demo&quot; height=&quot;600px&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;demo&quot;&gt;Demo&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/pchmn/MaterialChipsInput/raw/master/docs/material-chips-input-sample-v1.0.1.apk&quot;&gt;Download sample-v1.0.1.apk&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://appetize.io/app/dmhu0jfyuypde3bw8wrjr7zn94?device=nexus5&amp;amp;scale=75&amp;amp;orientation=portrait&amp;amp;osVersion=7.0&quot;&gt;Live demo on appetize.io&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/pchmn/MaterialChipsInput/raw/master/docs/material-chips-input-sample-v1.0.4.apk&quot;&gt;Download sample-v1.0.4.apk&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;setup&quot;&gt;Setup&lt;/h2&gt;
 
@@ -41,7 +39,7 @@ allprojects {
 &lt;p&gt;In your app level build.gradle :
 &lt;code class=&quot;highlighter-rouge&quot;&gt;java
 dependencies {
-    compile &#39;com.github.pchmn:MaterialChipsInput:1.0.1&#39;
+    compile &#39;com.github.pchmn:MaterialChipsInput:1.0.4&#39;
 }      
 &lt;/code&gt;
 &lt;br /&gt;&lt;br /&gt;
@@ -1059,17 +1057,6 @@ THE SOFTWARE.
       </item>
     
       <item>
-        <title>Ad</title>
-        <description>
-</description>
-        <pubDate>Sat, 01 Apr 2017 00:00:00 +0900</pubDate>
-        <link>http://kmshack.github.io/AndroidUICollection/2017/04/01/AD/</link>
-        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/04/01/AD/</guid>
-        
-        
-      </item>
-    
-      <item>
         <title>ShimmerRecyclerView</title>
         <description>
 </description>
@@ -1435,6 +1422,174 @@ Your adapter must extends BaseExcelPanelAdapter and override seven methods show 
         <category>Excel</category>
         
         <category>Panel</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>CoordinatorTabLayout</title>
+        <description>&lt;h1 id=&quot;coordinatortablayout&quot;&gt;CoordinatorTabLayout&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/hugeterry/CoordinatorTabLayout/blob/master/LICENSE.txt&quot;&gt;[License](https://img.shields.io/badge/license-Apache%202.0-green.svg)&lt;/a&gt;
+&lt;a href=&quot;https://bintray.com/hugeterry/CoordinatorTabLayout/CoordinatorTabLayout/_latestVersion&quot;&gt;[Download](https://api.bintray.com/packages/hugeterry/CoordinatorTabLayout/CoordinatorTabLayout/images/download.svg) &lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;README_CN.md&quot;&gt;中文版文档&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;CoordinatorTabLayout is a custom composite control that quickly implements the combination of TabLayout and CoordinatorLayout.
+Inherited to the CoordinatorLayout, in the following components used CollapsingToolbarLayout contains TabLayout.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;showUI/show1.gif&quot;&gt;show&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+
+&lt;h3 id=&quot;step-1&quot;&gt;Step 1&lt;/h3&gt;
+
+&lt;p&gt;Add the following to your build.gradle:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+dependencies {
+    compile &#39;cn.hugeterry.coordinatortablayout:coordinatortablayout:1.0.6&#39;
+}
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;step-2&quot;&gt;Step 2&lt;/h3&gt;
+
+&lt;p&gt;Config in xml:
+```&lt;/p&gt;
+&lt;cn.hugeterry.coordinatortablayout.coordinatortablayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot; android:id=&quot;@+id/coordinatortablayout&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;match_parent&quot;&gt;
+
+    &lt;android.support.v4.view.viewpager android:id=&quot;@+id/vp&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;match_parent&quot; app:layout_behavior=&quot;@string/appbar_scrolling_view_behavior&quot; /&gt;
+&lt;/cn.hugeterry.coordinatortablayout.coordinatortablayout&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+
+### Step 3
+
+[show](showUI/show3.gif)&amp;lt;/br&amp;gt;
+Use it in your own code:&amp;lt;/br&amp;gt;
+1.`setTitle(String title)`:Set the CoordinatorTabLayout&#39;s title.&amp;lt;/br&amp;gt;
+2.`setupWithViewPager(ViewPager viewPager)`:To link the two together.&amp;lt;/br&amp;gt;
+3.`setImageArray(int[] imageArray)`:Set the image array of the header according to the number of tabs and pass it to the control.&amp;lt;/br&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    //Add the fragment to the viewpager
+    initFragments();
+    initViewPager();
+    //Image array
+    mImageArray = new int[]{
+            R.mipmap.bg_android,
+            R.mipmap.bg_ios,
+            R.mipmap.bg_js,
+            R.mipmap.bg_other};
+
+    mCoordinatorTabLayout = (CoordinatorTabLayout) findViewById(R.id.coordinatortablayout);
+    mCoordinatorTabLayout.setTitle(&quot;Demo&quot;)
+            .setImageArray(mImageArray)
+            .setupWithViewPager(mViewPager); ```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Finish, enjoy it.&lt;/p&gt;
+
+&lt;h2 id=&quot;more&quot;&gt;More&lt;/h2&gt;
+
+&lt;h3 id=&quot;set-the-content-scrim&quot;&gt;Set the content scrim&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;showUI/show2.gif&quot;&gt;show&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;setImageArray(int[] imageArray, int[] colorArray)&lt;/code&gt;:Set the color array to use for the content scrim for each tab.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+        mColorArray = new int[]{
+                android.R.color.holo_blue_light,
+                android.R.color.holo_red_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_green_light};
+        mCoordinatorTabLayout.setImageArray(mImageArray, mColorArray);
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;set-back-enable&quot;&gt;Set back enable&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;setBackEnable(Boolean canBack)&lt;/code&gt;:To enable the Up button for an activity that has a parent activity.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        ...
+        mCoordinatorTabLayout.setBackEnable(true);
+        ...
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;load-header-images-from-network&quot;&gt;Load header images from network&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;setLoadHeaderImagesListener(LoadHeaderImagesListener loadHeaderImagesListener)&lt;/code&gt;:Set the listener that gets the header images.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        ...
+        mCoordinatorTabLayout.setTitle(&quot;Demo&quot;)
+                .setBackEnable(true)
+                .setContentScrimColorArray(mColorArray)
+                .setLoadHeaderImagesListener(new LoadHeaderImagesListener() {
+                    @Override
+                    public void loadHeaderImages(ImageView imageView, TabLayout.Tab tab) {
+                        switch (tab.getPosition()) {
+                            case 0:
+                                //load header images
+                                break;
+                            ...
+                        }
+                    }
+                })
+                .setupWithViewPager(mViewPager);
+    }
+&lt;/code&gt;
+You also can load header images using glide/picasso，&lt;a href=&quot;https://github.com/hugeterry/CoordinatorTabLayout/blob/master/sample/src/main/java/cn/hugeterry/coordinatortablayoutdemo/LoadHeaderImageFromNetworkActivity.java&quot;&gt;Sample&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;gets-the-child-control&quot;&gt;Gets the child control&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;getActionBar()&lt;/code&gt;:get the ActionBar&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;getTabLayout()&lt;/code&gt;:get the TabLayout&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;getImageView()&lt;/code&gt;:get the ImageView&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/hugeterry/CoordinatorTabLayout/blob/master/sample/src/main/java/cn/hugeterry/coordinatortablayoutdemo/MainActivity.java&quot;&gt;More code&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;attributes&quot;&gt;Attributes&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:contentScrim&lt;/code&gt; -&amp;gt; color.Defaults to ?attr/colorPrimary&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:tabIndicatorColor&lt;/code&gt; -&amp;gt; color.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:tabTextColor&lt;/code&gt; -&amp;gt; color.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;demo&quot;&gt;Demo&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://fir.im/ctlayout&quot;&gt;http://fir.im/ctlayout&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;license&quot;&gt;LICENSE&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2017 HugeTerry.
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Wed, 29 Mar 2017 00:00:00 +0900</pubDate>
+        <link>http://kmshack.github.io/AndroidUICollection/2017/03/29/CoordinatorTabLayout/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/03/29/CoordinatorTabLayout/</guid>
+        
+        <category>Coordinator</category>
+        
+        <category>TabLayout</category>
         
         
       </item>

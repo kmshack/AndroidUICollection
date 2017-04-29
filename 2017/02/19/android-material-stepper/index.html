@@ -505,10 +505,6 @@
                 
               
             
-              
-                
-              
-            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -551,17 +547,6 @@
         
       <div class="sidebar__bottom">
         <div class="column small-12 large-12">
-            
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- androidui -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:250px;height:250px"
-     data-ad-client="ca-pub-9975139260149901"
-     data-ad-slot="5123612274"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
             
           <div class="font-tiny">
               <br>
@@ -635,21 +620,7 @@
             <div class="column column--center medium-12 large-4">
               <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/AndroidUICollection/images/posts/2017-02-19-android-material-stepper.gif)"></div>
             </div>
-             <br><br>
-            
           <br>
-          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- androiduicollection -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-9975139260149901"
-                 data-ad-slot="2900853479"
-                 data-ad-format="auto"></ins>
-            <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-            
-             <br>
           <p align="center">
   <img src="./art/material-stepper-logo.png" width="256" height="256" />
 </p>
@@ -664,21 +635,46 @@
   <p>Steppers display progress through a sequence by breaking it up into multiple logical and numbered steps.</p>
 </blockquote>
 
-<h2 id="download-from-jcenter">Download (from JCenter)</h2>
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">compile</span> <span class="s1">'com.stepstone.stepper:material-stepper:3.2.0'</span>
-</code></pre>
-</div>
+<p>All of the code &amp; features mentioned in <a href="#getting-started">Getting started</a> and <a href="#advanced-usage">Advanced usage</a> are showcased in the sample app.
+Moreover, you can find there other examples, e.g. how to persist state on rotation, display errors, change whether the user can go to the next step, etc. So please have a look</p>
+
+<h2 id="jump-to-section">Jump to section</h2>
+<ul>
+  <li><a href="#supported-steppers">Supported steppers</a></li>
+  <li><a href="#supported-features">Supported features</a></li>
+  <li><a href="#getting-started">Getting started</a></li>
+  <li><a href="#advanced-usage">Advanced usage</a>
+    <ul>
+      <li><a href="#making-extra-operations-before-going-to-the-next-step">Making extra operations before going to the next step</a></li>
+      <li><a href="#changing-button-labels--compound-drawables-per-step">Changing button labels &amp; compound drawables per step</a></li>
+      <li><a href="#custom-styling">Custom styling</a></li>
+      <li><a href="#using-same-stepper-styling-across-the-application">Using same stepper styling across the application</a></li>
+      <li><a href="#showing-a-back-button-on-first-step">Showing a Back button on first step</a></li>
+      <li><a href="#using-views-instead-of-fragments-as-steps">Using Views instead of Fragments as Steps</a></li>
+      <li><a href="#showing-an-error-on-tabs-if-step-verification-failed">Showing an error on tabs if step verification failed</a></li>
+      <li><a href="#stepper-feedback">Stepper feedback</a></li>
+      <li><a href="#changing-button-text-color-when-going-to-the-next-step-should-be-disabled">Changing button text color when going to the next step should be disabled</a></li>
+    </ul>
+  </li>
+  <li><a href="#stepperlayout-attributes">StepperLayout attributes</a>
+    <ul>
+      <li><a href="#view-attributes">View attributes</a></li>
+      <li><a href="#stepperlayout-style-attributes">StepperLayout style attributes</a></li>
+    </ul>
+  </li>
+  <li><a href="#license">License</a></li>
+</ul>
 
 <h2 id="supported-steppers">Supported steppers</h2>
-<ul>
-  <li>Mobile stepper with dots <br />
-<img src="./gifs/dotted-progress-bar.gif" width="360" height="640" />  <img src="./gifs/dotted-progress-bar-styled.gif" width="360" height="640" /></li>
-  <li>Mobile stepper with progress bar <br />
-<img src="./gifs/linear-progress-bar.gif" width="360" height="640" />  <img src="./gifs/linear-progress-bar-styled.gif" width="360" height="640" /></li>
-  <li>Horizontal stepper <br />
+
+<h3 id="mobile-stepper-with-dots-br">Mobile stepper with dots <br /></h3>
+<p><img src="./gifs/dotted-progress-bar.gif" width="360" height="640" />  <img src="./gifs/dotted-progress-bar-styled.gif" width="360" height="640" /></p>
+
+<h3 id="mobile-stepper-with-progress-bar-br">Mobile stepper with progress bar <br /></h3>
+<p><img src="./gifs/linear-progress-bar.gif" width="360" height="640" />  <img src="./gifs/linear-progress-bar-styled.gif" width="360" height="640" />
+### Horizontal stepper <br />
 <img src="./gifs/tabs.gif" width="640" height="360" />
-<img src="./gifs/tabs-styled.gif" width="640" height="360" /></li>
-</ul>
+<img src="./gifs/tabs-styled.gif" width="640" height="360" /></p>
 
 <h2 id="supported-features">Supported features</h2>
 <ul>
@@ -692,6 +688,11 @@
 </ul>
 
 <h2 id="getting-started">Getting started</h2>
+
+<h3 id="download-from-jcenter">Download (from JCenter)</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">compile</span> <span class="s1">'com.stepstone.stepper:material-stepper:3.2.0'</span>
+</code></pre>
+</div>
 
 <h3 id="create-layout-in-xml">Create layout in XML</h3>
 
@@ -830,52 +831,9 @@ but instead of overriding the method <code class="highlighter-rouge">getItem(int
 </code></pre>
 </div>
 
-<h3 id="change-nextcomplete-buttons-text-color-when-going-to-the-next-step-should-be-disabled-optional">Change Next/Complete button’s text color when going to the next step should be disabled (optional)</h3>
-<p>It is possible to change the Next/Complete button’s text color (together with right chevron’s color)
-when all the criteria to go to the next step are not met. This color should indicate that
-the user cannot go to next step yet and look as if disabled. Clicking on the button will still perform the regular
-step verification. There is a custom state added since setting <code class="highlighter-rouge">android:state_enabled</code> to <code class="highlighter-rouge">false</code> in a color selector would disable the clicks
-and we want to have them so that we can show an info message for the user.
-In order to set that color:</p>
+<h2 id="advanced-usage">Advanced usage</h2>
 
-<ol>
-  <li>Create a new color selector in <code class="highlighter-rouge">res/color</code></li>
-</ol>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-    <span class="nt">&lt;selector</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span> <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">app:state_verification_failed=</span><span class="s">"true"</span> <span class="na">android:color=</span><span class="s">"#30BDBDBD"</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">android:color=</span><span class="s">"@color/ms_white"</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;/selector&gt;</span>
-</code></pre>
-</div>
-
-<ol>
-  <li>Change button’s (text) color in layout file</li>
-</ol>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-    <span class="nt">&lt;com.stepstone.stepper.StepperLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
-        <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
-        <span class="na">android:id=</span><span class="s">"@+id/stepperLayout"</span>
-        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
-        <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
-        <span class="na">app:ms_stepperType=</span><span class="s">"dots"</span>
-        <span class="na">app:ms_nextButtonColor=</span><span class="s">"@color/ms_custom_button_text_color"</span>
-        <span class="na">app:ms_completeButtonColor=</span><span class="s">"@color/ms_custom_button_text_color"</span> <span class="nt">/&gt;</span>
-</code></pre>
-</div>
-
-<ol>
-  <li>Toggle the state in code</li>
-</ol>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="n">mStepperLayout</span><span class="o">.</span><span class="na">setNextButtonVerificationFailed</span><span class="o">(</span><span class="n">enabled</span><span class="o">);</span>
-    <span class="n">mStepperLayout</span><span class="o">.</span><span class="na">setCompleteButtonVerificationFailed</span><span class="o">(</span><span class="n">enabled</span><span class="o">);</span>
-</code></pre>
-</div>
-
-<h3 id="make-extra-operations-before-going-to-the-next-step-optional">Make extra operations before going to the next step (optional)</h3>
+<h3 id="making-extra-operations-before-going-to-the-next-step">Making extra operations before going to the next step</h3>
 <p>After clicking on the Next button if the user wants to e.g.:
 * save something in the database
 * make a network call on a separate Thread
@@ -928,7 +886,7 @@ E.g.:</p>
 </code></pre>
 </div>
 
-<h3 id="changing-backnext-button-labels--compound-drawables-per-step">Changing Back/Next button labels &amp; compound drawables per step</h3>
+<h3 id="changing-button-labels--compound-drawables-per-step">Changing button labels &amp; compound drawables per step</h3>
 <p>Sometimes you might want to have different labels on the Next and/or Back navigation buttons on different steps e.g. use the default labels on the first few steps,
 but display ‘Summary’ just before the last page.
 You might also want to use your custom icons instead of the default navigation button compound drawables or not show the compound drawables for some of the buttons.</p>
@@ -965,7 +923,14 @@ You might also want to use your custom icons instead of the default navigation b
 </code></pre>
 </div>
 
-<h3 id="using-the-same-stepper-styling-across-the-application">Using the same stepper styling across the application</h3>
+<h3 id="custom-styling">Custom styling</h3>
+<p>Basic styling can be done by choosing the active and inactive step colors. 
+There are some additional properties which can be changed directly from StepperLayout’s attributes e.g. the background of bottom navigation buttons (see <a href="#stepperlayout-attributes">StepperLayout attributes</a>)
+For advanced styling you can use <code class="highlighter-rouge">ms_stepperLayoutTheme</code> StepperLayout’s attribute and provide your custom style to be used.
+See ‘Custom StepperLayout theme’ in the sample app for an example.</p>
+<p><img src="./gifs/custom-theme.gif" width="360" height="640" /></p>
+
+<h3 id="using-same-stepper-styling-across-the-application">Using same stepper styling across the application</h3>
 <p>If you have many steppers in your application in different activities/fragments you might want to set a common style in a theme.
 To do so, you need to set the <code class="highlighter-rouge">ms_stepperStyle</code> attribute in the theme, e.g.
 ```xml
@@ -998,7 +963,7 @@ This behaviour can be changed by setting <code class="highlighter-rouge">ms_show
 </code>
 To get a callback when this button was pressed you need set a <code class="highlighter-rouge">StepperListener</code> and write your own custom return logic in the <code class="highlighter-rouge">onReturn()</code> method to e.g. close the Activity.</p>
 
-<h3 id="using-with-views-instead-of-fragments">Using with Views instead of Fragments</h3>
+<h3 id="using-views-instead-of-fragments-as-steps">Using Views instead of Fragments as Steps</h3>
 <p>It is possible to use this library without the need to rely on Fragments.
 To do so you need to use <code class="highlighter-rouge">AbstractStepAdapter</code> instead of <code class="highlighter-rouge">AbstractFragmentStepAdapter</code>.
 For an example of how to use it with views please see the sample app.</p>
@@ -1063,40 +1028,173 @@ In layout:
 </code></pre>
 </div>
 
-<h3 id="custom-styling">Custom styling</h3>
-<p>Basic styling can be done by choosing the active and inactive step colors. 
-There are some additional properties which can be changed directly from StepperLayout’s attributes e.g. the background of bottom navigation buttons (see <a href="#stepperlayout-attributes">StepperLayout attributes</a>)
-For advanced styling you can use <code class="highlighter-rouge">ms_stepperLayoutTheme</code> StepperLayout’s attribute and provide your custom style to be used.
-See ‘Custom StepperLayout theme’ in the sample app for an example.</p>
-<p><img src="./gifs/custom-theme.gif" width="360" height="640" /></p>
+<h3 id="changing-button-text-color-when-going-to-the-next-step-should-be-disabled">Changing button text color when going to the next step should be disabled</h3>
+<p>It is possible to change the Next/Complete button’s text color (together with right chevron’s color)
+when all the criteria to go to the next step are not met. This color should indicate that
+the user cannot go to next step yet and look as if disabled. Clicking on the button will still perform the regular
+step verification. There is a custom state added since setting <code class="highlighter-rouge">android:state_enabled</code> to <code class="highlighter-rouge">false</code> in a color selector would disable the clicks
+and we want to have them so that we can show an info message for the user.
+In order to set that color:</p>
 
-<h3 id="advanced-usage">Advanced usage</h3>
-<p>For other examples, e.g. persisting state on rotation, displaying errors, changing whether the user can go to the next step, etc. check out the sample app.</p>
+<ol>
+  <li>Create a new color selector in <code class="highlighter-rouge">res/color</code></li>
+</ol>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+    <span class="nt">&lt;selector</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span> <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">app:state_verification_failed=</span><span class="s">"true"</span> <span class="na">android:color=</span><span class="s">"#30BDBDBD"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">android:color=</span><span class="s">"@color/ms_white"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/selector&gt;</span>
+</code></pre>
+</div>
+
+<ol>
+  <li>Change button’s (text) color in layout file</li>
+</ol>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+    <span class="nt">&lt;com.stepstone.stepper.StepperLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+        <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+        <span class="na">android:id=</span><span class="s">"@+id/stepperLayout"</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+        <span class="na">app:ms_stepperType=</span><span class="s">"dots"</span>
+        <span class="na">app:ms_nextButtonColor=</span><span class="s">"@color/ms_custom_button_text_color"</span>
+        <span class="na">app:ms_completeButtonColor=</span><span class="s">"@color/ms_custom_button_text_color"</span> <span class="nt">/&gt;</span>
+</code></pre>
+</div>
+
+<ol>
+  <li>Toggle the state in code</li>
+</ol>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="n">mStepperLayout</span><span class="o">.</span><span class="na">setNextButtonVerificationFailed</span><span class="o">(</span><span class="n">enabled</span><span class="o">);</span>
+    <span class="n">mStepperLayout</span><span class="o">.</span><span class="na">setCompleteButtonVerificationFailed</span><span class="o">(</span><span class="n">enabled</span><span class="o">);</span>
+</code></pre>
+</div>
 
 <h2 id="stepperlayout-attributes">StepperLayout attributes</h2>
-<p>| Attribute name                  | Format                                                              | Description |
-| ——————————–|———————————————————————|————-|
-| <em>ms_stepperType</em>                | one of <code class="highlighter-rouge">dots</code>, <code class="highlighter-rouge">progress_bar</code> or <code class="highlighter-rouge">tabs</code>                             | <strong>REQUIRED:</strong> Type of the stepper |
-| <em>ms_backButtonColor</em>            | color or reference                                                  | BACK button’s text color           |
-| <em>ms_nextButtonColor</em>            | color or reference                                                  | NEXT button’s text color            |
-| <em>ms_completeButtonColor</em>        | color or reference                                                  | COMPLETE button’s text color            |
-| <em>ms_activeStepColor</em>            | color or reference                                                  | Active step’s color            |
-| <em>ms_inactiveStepColor</em>          | color or reference                                                  | Inactive step’s color            |
-| <em>ms_bottomNavigationBackground</em> | reference                                                           | Background of the bottom navigation            |
-| <em>ms_backButtonBackground</em>       | reference                                                           | BACK button’s background            |
-| <em>ms_nextButtonBackground</em>       | reference                                                           | NEXT button’s background            |
-| <em>ms_completeButtonBackground</em>   | reference                                                           | COMPLETE button’s background            |
-| <em>ms_backButtonText</em>             | string or reference                                                 | BACK button’s text            |
-| <em>ms_nextButtonText</em>             | string or reference                                                 | NEXT button’s text            |
-| <em>ms_completeButtonText</em>         | string or reference                                                 | COMPLETE button’s text            |
-| <em>ms_tabStepDividerWidth</em>        | dimension or reference                                              | The width of the horizontal tab divider used in tabs stepper type            |
-| <em>ms_showBackButtonOnFirstStep</em>  | boolean                                                             | Flag indicating if the Back (Previous step) button should be shown on the first step. False by default.            |
-| <em>ms_errorColor</em>                 | color or reference                                                  | Error color in Tabs stepper |
-| <em>ms_showErrorStateEnabled</em>      | boolean                                                             | Flag indicating whether to show the error state. Only applicable for ‘tabs’ type. False by default. |
-| <em>ms_showErrorStateOnBackEnabled</em>| boolean                                                             | Flag indicating whether to keep showing the error state when user moves back. Only applicable for ‘tabs’ type. False by default. |
-| <em>ms_tabNavigationEnabled</em>       | boolean                                                             | Flag indicating whether step navigation is possible by clicking on the tabs directly. Only applicable for ‘tabs’ type. True by default. |
-| <em>ms_stepperFeedbackType</em>        | flag(s): <code class="highlighter-rouge">none</code> or <code class="highlighter-rouge">tabs</code>, <code class="highlighter-rouge">content</code> &amp; <code class="highlighter-rouge">disabled_bottom_navigation</code> | Type(s) of stepper feedback. Can be a combination of <code class="highlighter-rouge">tabs</code>, <code class="highlighter-rouge">content</code> &amp; <code class="highlighter-rouge">disabled_bottom_navigation</code>. Default is <code class="highlighter-rouge">none</code>.|
-| <em>ms_stepperLayoutTheme</em>         | reference                                                           | Theme to use for even more custom styling of the stepper layout. It is recommended that it should extend @style/MSDefaultStepperLayoutTheme, which is the default theme used. |</p>
+
+<h3 id="view-attributes">View attributes</h3>
+<p>A list of base StepperLayout attributes used for behaviour configuration &amp; base UI configuration.
+For advanced styling please see <a href="#stepperlayout-style-attributes">StepperLayout style attributes</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute name</th>
+      <th>Format</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>ms_stepperType</em></td>
+      <td>one of <code class="highlighter-rouge">dots</code>, <code class="highlighter-rouge">progress_bar</code> or <code class="highlighter-rouge">tabs</code></td>
+      <td><strong>REQUIRED:</strong> Type of the stepper</td>
+    </tr>
+    <tr>
+      <td><em>ms_backButtonColor</em></td>
+      <td>color or reference</td>
+      <td>BACK button’s text color</td>
+    </tr>
+    <tr>
+      <td><em>ms_nextButtonColor</em></td>
+      <td>color or reference</td>
+      <td>NEXT button’s text color</td>
+    </tr>
+    <tr>
+      <td><em>ms_completeButtonColor</em></td>
+      <td>color or reference</td>
+      <td>COMPLETE button’s text color</td>
+    </tr>
+    <tr>
+      <td><em>ms_activeStepColor</em></td>
+      <td>color or reference</td>
+      <td>Active step’s color</td>
+    </tr>
+    <tr>
+      <td><em>ms_inactiveStepColor</em></td>
+      <td>color or reference</td>
+      <td>Inactive step’s color</td>
+    </tr>
+    <tr>
+      <td><em>ms_bottomNavigationBackground</em></td>
+      <td>reference</td>
+      <td>Background of the bottom navigation</td>
+    </tr>
+    <tr>
+      <td><em>ms_backButtonBackground</em></td>
+      <td>reference</td>
+      <td>BACK button’s background</td>
+    </tr>
+    <tr>
+      <td><em>ms_nextButtonBackground</em></td>
+      <td>reference</td>
+      <td>NEXT button’s background</td>
+    </tr>
+    <tr>
+      <td><em>ms_completeButtonBackground</em></td>
+      <td>reference</td>
+      <td>COMPLETE button’s background</td>
+    </tr>
+    <tr>
+      <td><em>ms_backButtonText</em></td>
+      <td>string or reference</td>
+      <td>BACK button’s text</td>
+    </tr>
+    <tr>
+      <td><em>ms_nextButtonText</em></td>
+      <td>string or reference</td>
+      <td>NEXT button’s text</td>
+    </tr>
+    <tr>
+      <td><em>ms_completeButtonText</em></td>
+      <td>string or reference</td>
+      <td>COMPLETE button’s text</td>
+    </tr>
+    <tr>
+      <td><em>ms_tabStepDividerWidth</em></td>
+      <td>dimension or reference</td>
+      <td>The width of the horizontal tab divider used in tabs stepper type</td>
+    </tr>
+    <tr>
+      <td><em>ms_showBackButtonOnFirstStep</em></td>
+      <td>boolean</td>
+      <td>Flag indicating if the Back (Previous step) button should be shown on the first step. False by default.</td>
+    </tr>
+    <tr>
+      <td><em>ms_errorColor</em></td>
+      <td>color or reference</td>
+      <td>Error color in Tabs stepper</td>
+    </tr>
+    <tr>
+      <td><em>ms_showErrorStateEnabled</em></td>
+      <td>boolean</td>
+      <td>Flag indicating whether to show the error state. Only applicable for ‘tabs’ type. False by default.</td>
+    </tr>
+    <tr>
+      <td><em>ms_showErrorStateOnBackEnabled</em></td>
+      <td>boolean</td>
+      <td>Flag indicating whether to keep showing the error state when user moves back. Only applicable for ‘tabs’ type. False by default.</td>
+    </tr>
+    <tr>
+      <td><em>ms_tabNavigationEnabled</em></td>
+      <td>boolean</td>
+      <td>Flag indicating whether step navigation is possible by clicking on the tabs directly. Only applicable for ‘tabs’ type. True by default.</td>
+    </tr>
+    <tr>
+      <td><em>ms_stepperFeedbackType</em></td>
+      <td>flag(s): <code class="highlighter-rouge">none</code> or <code class="highlighter-rouge">tabs</code>, <code class="highlighter-rouge">content</code> &amp; <code class="highlighter-rouge">disabled_bottom_navigation</code></td>
+      <td>Type(s) of stepper feedback. Can be a combination of <code class="highlighter-rouge">tabs</code>, <code class="highlighter-rouge">content</code> &amp; <code class="highlighter-rouge">disabled_bottom_navigation</code>. Default is <code class="highlighter-rouge">none</code>.</td>
+    </tr>
+    <tr>
+      <td><em>ms_stepperLayoutTheme</em></td>
+      <td>reference</td>
+      <td>Theme to use for even more custom styling of the stepper layout. It is recommended that it should extend @style/MSDefaultStepperLayoutTheme, which is the default theme used.</td>
+    </tr>
+  </tbody>
+</table>
 
 <h3 id="stepperlayout-style-attributes">StepperLayout style attributes</h3>
 <p>A list of <code class="highlighter-rouge">ms_stepperLayoutTheme</code> attributes responsible for styling of StepperLayout’s child views.</p>
@@ -1175,13 +1273,6 @@ See ‘Custom StepperLayout theme’ in the sample app for an example.</p>
     </tr>
   </tbody>
 </table>
-
-<h2 id="missing-features">Missing features</h2>
-<ul>
-  <li>support for non-linear steppers</li>
-  <li>support for non-editable steppers</li>
-  <li>support for Alternative labels in the horizontal stepper</li>
-</ul>
 
 <h2 id="license">License</h2>
 <p>Copyright 2016 StepStone Services</p>
