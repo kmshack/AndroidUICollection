@@ -505,6 +505,10 @@
                 
               
             
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -550,7 +554,7 @@
             
           <div class="font-tiny">
               <br>
-            &copy; 2017 Android UI OpenSource
+            &copy; 2018 Android UI OpenSource
           </div>
         </div>
       </div>
@@ -653,12 +657,12 @@ allprojects {
 
 <p>/app/build.gradle
 <code class="highlighter-rouge">groovy
-compile 'com.github.deano2390:MaterialShowcaseView:1.1.0'
+compile 'com.github.deano2390:MaterialShowcaseView:1.2.0'
 </code></p>
 
 <p>NOTE: Some people have mentioned that they needed to add the @aar suffix to get it to resolve from JitPack:
 <code class="highlighter-rouge">groovy
-compile 'com.github.deano2390:MaterialShowcaseView:1.1.0@aar'
+compile 'com.github.deano2390:MaterialShowcaseView:1.2.0@aar'
 </code></p>
 
 <h1 id="how-to-use">How to use</h1>
@@ -668,34 +672,34 @@ compile 'com.github.deano2390:MaterialShowcaseView:1.1.0@aar'
 <div class="highlighter-rouge"><pre class="highlight"><code>
 	<span class="c1">// single example</span>
 	<span class="k">new</span> <span class="n">MaterialShowcaseView</span><span class="o">.</span><span class="na">Builder</span><span class="o">(</span><span class="k">this</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">setTarget</span><span class="o">(</span><span class="n">mButtonShow</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">setDismissText</span><span class="o">(</span><span class="s">"GOT IT"</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">setContentText</span><span class="o">(</span><span class="s">"This is some amazing feature you should know about"</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">setDelay</span><span class="o">(</span><span class="n">withDelay</span><span class="o">)</span> <span class="c1">// optional but starting animations immediately in onCreate can make them choppy</span>
-                <span class="o">.</span><span class="na">singleUse</span><span class="o">(</span><span class="n">SHOWCASE_ID</span><span class="o">)</span> <span class="c1">// provide a unique ID used to ensure it is only shown once</span>
-                <span class="o">.</span><span class="na">show</span><span class="o">();</span>
+		<span class="o">.</span><span class="na">setTarget</span><span class="o">(</span><span class="n">mButtonShow</span><span class="o">)</span>
+		<span class="o">.</span><span class="na">setDismissText</span><span class="o">(</span><span class="s">"GOT IT"</span><span class="o">)</span>
+		<span class="o">.</span><span class="na">setContentText</span><span class="o">(</span><span class="s">"This is some amazing feature you should know about"</span><span class="o">)</span>
+		<span class="o">.</span><span class="na">setDelay</span><span class="o">(</span><span class="n">withDelay</span><span class="o">)</span> <span class="c1">// optional but starting animations immediately in onCreate can make them choppy</span>
+		<span class="o">.</span><span class="na">singleUse</span><span class="o">(</span><span class="n">SHOWCASE_ID</span><span class="o">)</span> <span class="c1">// provide a unique ID used to ensure it is only shown once</span>
+		<span class="o">.</span><span class="na">show</span><span class="o">();</span>
                 
                 
                 
                 
-    	<span class="c1">// sequence example            </span>
-    	<span class="n">ShowcaseConfig</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ShowcaseConfig</span><span class="o">();</span>
-        <span class="n">config</span><span class="o">.</span><span class="na">setDelay</span><span class="o">(</span><span class="mi">500</span><span class="o">);</span> <span class="c1">// half second between each showcase view</span>
+	<span class="c1">// sequence example            </span>
+	<span class="n">ShowcaseConfig</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ShowcaseConfig</span><span class="o">();</span>
+	<span class="n">config</span><span class="o">.</span><span class="na">setDelay</span><span class="o">(</span><span class="mi">500</span><span class="o">);</span> <span class="c1">// half second between each showcase view</span>
 
-        <span class="n">MaterialShowcaseSequence</span> <span class="n">sequence</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MaterialShowcaseSequence</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">SHOWCASE_ID</span><span class="o">);</span>
+	<span class="n">MaterialShowcaseSequence</span> <span class="n">sequence</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MaterialShowcaseSequence</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">SHOWCASE_ID</span><span class="o">);</span>
 
-        <span class="n">sequence</span><span class="o">.</span><span class="na">setConfig</span><span class="o">(</span><span class="n">config</span><span class="o">);</span>
+	<span class="n">sequence</span><span class="o">.</span><span class="na">setConfig</span><span class="o">(</span><span class="n">config</span><span class="o">);</span>
 
-        <span class="n">sequence</span><span class="o">.</span><span class="na">addSequenceItem</span><span class="o">(</span><span class="n">mButtonOne</span><span class="o">,</span>
-                <span class="s">"This is button one"</span><span class="o">,</span> <span class="s">"GOT IT"</span><span class="o">);</span>
+	<span class="n">sequence</span><span class="o">.</span><span class="na">addSequenceItem</span><span class="o">(</span><span class="n">mButtonOne</span><span class="o">,</span>
+		<span class="s">"This is button one"</span><span class="o">,</span> <span class="s">"GOT IT"</span><span class="o">);</span>
 
-        <span class="n">sequence</span><span class="o">.</span><span class="na">addSequenceItem</span><span class="o">(</span><span class="n">mButtonTwo</span><span class="o">,</span>
-                <span class="s">"This is button two"</span><span class="o">,</span> <span class="s">"GOT IT"</span><span class="o">);</span>
+	<span class="n">sequence</span><span class="o">.</span><span class="na">addSequenceItem</span><span class="o">(</span><span class="n">mButtonTwo</span><span class="o">,</span>
+		<span class="s">"This is button two"</span><span class="o">,</span> <span class="s">"GOT IT"</span><span class="o">);</span>
 
-        <span class="n">sequence</span><span class="o">.</span><span class="na">addSequenceItem</span><span class="o">(</span><span class="n">mButtonThree</span><span class="o">,</span>
-                <span class="s">"This is button three"</span><span class="o">,</span> <span class="s">"GOT IT"</span><span class="o">);</span>
+	<span class="n">sequence</span><span class="o">.</span><span class="na">addSequenceItem</span><span class="o">(</span><span class="n">mButtonThree</span><span class="o">,</span>
+		<span class="s">"This is button three"</span><span class="o">,</span> <span class="s">"GOT IT"</span><span class="o">);</span>
 
-        <span class="n">sequence</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+	<span class="n">sequence</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
                 
 </code></pre>
 </div>
@@ -703,6 +707,17 @@ compile 'com.github.deano2390:MaterialShowcaseView:1.1.0@aar'
 <h1 id="why-jitpack">Why Jitpack</h1>
 <hr />
 <p>Publishing libraries to Maven is a chore that takes time and effort. Jitpack.io allows me to release without ever leaving GitHub so I can release easily and more often.</p>
+
+<h1 id="apps-using-materialshowcaseview">Apps using MaterialShowcaseView</h1>
+<hr />
+
+<ul>
+  <li><a href="https://play.google.com/store/apps/details?id=com.cesarsk.say_it">Say It - English Learning</a> : An Android App aimed to improve your English Pronunciation.
+    <ul>
+      <li><a href="https://github.com/cesarsk/say_it">Github Page</a></li>
+    </ul>
+  </li>
+</ul>
 
 <h1 id="license">License</h1>
 <hr />

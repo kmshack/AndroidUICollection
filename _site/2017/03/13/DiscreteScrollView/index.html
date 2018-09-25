@@ -505,6 +505,10 @@
                 
               
             
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -550,7 +554,7 @@
             
           <div class="font-tiny">
               <br>
-            &copy; 2017 Android UI OpenSource
+            &copy; 2018 Android UI OpenSource
           </div>
         </div>
       </div>
@@ -631,10 +635,17 @@ It is similar to a ViewPager, but you can quickly and painlessly create layout, 
 <h2 id="gradle">Gradle</h2>
 <p>Add this into your dependencies block.
 <code class="highlighter-rouge">
-compile 'com.yarolegovich:discrete-scrollview:1.1.4'
-</code>
-## Sample
-<a href="https://play.google.com/store/apps/details?id=com.yarolegovich.discretescrollview.sample"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/apps/en-play-badge.png" width="185" height="60" /></a><br /></p>
+compile 'com.yarolegovich:discrete-scrollview:1.4.9'
+</code></p>
+
+<h2 id="reporting-an-issue">Reporting an issue</h2>
+
+<p>If you are going to report an issue, I will greatly appreciate you including some code which I can run to see the issue. By doing so you maximize the chance that I will fix the problem.</p>
+
+<p>By the way, before reporting a problem, try replacing DiscreteScrollView with a RecyclerView. If the problem is still present, it’s likely somewhere in your code.</p>
+
+<h2 id="sample">Sample</h2>
+<p><a href="https://play.google.com/store/apps/details?id=com.yarolegovich.discretescrollview.sample"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/apps/en-play-badge.png" width="185" height="60" /></a><br /></p>
 
 <p>Please see the <a href="https://github.com/yarolegovich/DiscreteScrollView/tree/master/sample/src/main/java/com/yarolegovich/discretescrollview/sample">sample app</a> for examples of library usage.</p>
 
@@ -664,10 +675,11 @@ scrollView.setAdapter(new YourAdapterImplementation());
 ```</p>
 
 <h3 id="api">API</h3>
-<p>#### Layout
+<p>#### General
 <code class="highlighter-rouge">java
-scrollView.setOrientation(Orientation o); //Sets an orientation of the view
+scrollView.setOrientation(DSVOrientation o); //Sets an orientation of the view
 scrollView.setOffscreenItems(count); //Reserve extra space equal to (childSize * count) on each side of the view
+scrollView.setOverScrollEnabled(enabled); //Can also be set using android:overScrollMode xml attribute
 </code>
 #### Related to the current item:
 <code class="highlighter-rouge">java
@@ -694,6 +706,10 @@ scrollView.setItemTransformer(transformer);</p>
     void transformItem(View item, float position); 
 }
 <code class="highlighter-rouge">
+In the above example `view1Position == (currentlySelectedViewPosition - n)` and `view2Position == (currentlySelectedViewPosition + n)`, where `n` defaults to 1 and can be changed using the following API:
+</code>java
+scrollView.setClampTransformProgressAfter(n);
+<code class="highlighter-rouge">
 Because scale transformation is the most common, I included a helper class - ScaleTransformer, here is how to use it:
 </code>java
 cityPicker.setItemTransformer(new ScaleTransformer.Builder()
@@ -705,12 +721,45 @@ cityPicker.setItemTransformer(new ScaleTransformer.Builder()
 ```
 You may see how it works on GIFs.</p>
 
-<h4 id="callbacks">Callbacks</h4>
-<ul>
-  <li>Scroll state changes:
+<h4 id="slide-through-multiple-items">Slide through multiple items</h4>
+
+<p>To allow slide through multiple items call:
+<code class="highlighter-rouge">java
+scrollView.setSlideOnFling(true);
+</code>
+The default threshold is set to 2100. Lower the threshold, more fluid the animation. You can adjust the threshold by calling:
+<code class="highlighter-rouge">java
+scrollView.setSlideOnFlingThreshold(value);
+</code></p>
+
+<h4 id="infinite-scroll">Infinite scroll</h4>
+<p>Infinite scroll is implemented on the adapter level:
+<code class="highlighter-rouge">java
+InfiniteScrollAdapter wrapper = InfiniteScrollAdapter.wrap(yourAdapter);
+scrollView.setAdapter(wrapper);
+</code>
+An instance of <code class="highlighter-rouge">InfiniteScrollAdapter</code> has the following useful methods:
 ```java
-scrollView.setScrollStateChangeListener(listener);</li>
-</ul>
+int getRealItemCount();</p>
+
+<p>int getRealCurrentPosition();</p>
+
+<p>int getRealPosition(int position);</p>
+
+<p>/*
+ * You will probably want this method in the following use case:
+ * int targetAdapterPosition = wrapper.getClosestPosition(targetPosition);
+ * scrollView.smoothScrollTo(targetAdapterPosition);
+ * To scroll the data set for the least required amount to reach targetPosition.
+ */
+int getClosestPosition(int position); 
+<code class="highlighter-rouge">
+Currently `InfiniteScrollAdapter` handles data set changes inefficiently, so your contributions are welcome. 
+#### Callbacks
+* Scroll state changes:
+</code>java
+scrollView.addScrollStateChangeListener(listener);
+scrollView.removeScrollStateChangeListener(listener);</p>
 
 <p>public interface ScrollStateChangeListener<t extends="" viewholder=""> {</t></p>
 
@@ -725,31 +774,36 @@ scrollView.setScrollStateChangeListener(listener);</li>
    * -view1 is on position -1;
    * -currentlySelectedView is on position 0;
    * -view2 is on position 1.
+   * @param currentIndex - index of current view
+   * @param newIndex - index of a view which is becoming the new current
    * @param currentHolder - ViewHolder of a current view
-   * @param newCurrent - ViewHolder of a view that moved closer to the center
+   * @param newCurrent - ViewHolder of a view which is becoming the new current
    */
-  void onScroll(float scrollPosition, @NonNull T currentHolder, @NonNull T newCurrentHolder); 
+  void onScroll(float scrollPosition, int currentIndex, int newIndex, @Nullable T currentHolder, @Nullable T newCurrentHolder); 
 }
 <code class="highlighter-rouge">
 * Scroll:
 </code>java
-scrollView.setScrollListener(listener);</p>
+scrollView.addScrollListener(listener);
+scrollView.removeScrollListener(listener);</p>
 
 <p>public interface ScrollListener<t extends="" viewholder=""> {
   //The same as ScrollStateChangeListener, but for the cases when you are interested only in onScroll()
-  void onScroll(float scrollPosition, @NonNull T currentHolder, @NonNull T newCurrentHolder);
+  void onScroll(float scrollPosition, int currentIndex, int newIndex, @Nullable T currentHolder, @Nullable T newCurrentHolder);
 }
 ```
 * Current selection changes:
 ```java
-scrollView.setOnItemChangedListener(listener);</t></p>
+scrollView.addOnItemChangedListener(listener);
+scrollView.removeOnItemChangedListener(listener);</t></p>
 
 <p>public interface OnItemChangedListener<t extends="" viewholder=""> {
   /**
    * Called when new item is selected. It is similar to the onScrollEnd of ScrollStateChangeListener, except that it is 
    * also called when currently selected item appears on the screen for the first time.
+   * viewHolder will be null, if data set becomes empty 
    */
-  void onCurrentItemChanged(@NonNull T viewHolder, int adapterPosition); 
+  void onCurrentItemChanged(@Nullable T viewHolder, int adapterPosition); 
 }
 ```</t></p>
 

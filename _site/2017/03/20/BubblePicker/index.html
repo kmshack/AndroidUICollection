@@ -505,6 +505,10 @@
                 
               
             
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -550,7 +554,7 @@
             
           <div class="font-tiny">
               <br>
-            &copy; 2017 Android UI OpenSource
+            &copy; 2018 Android UI OpenSource
           </div>
         </div>
       </div>
@@ -654,7 +658,7 @@ allprojects {
 <p>Add the dependency:
 <code class="highlighter-rouge">Groovy
 dependencies {
-	compile 'com.github.igalata:Bubble-Picker:v0.2.1'
+	compile 'com.github.igalata:Bubble-Picker:v0.2.4'
 }
 </code></p>
 
@@ -716,17 +720,22 @@ val titles = resources.getStringArray(R.array.countries)
 val colors = resources.obtainTypedArray(R.array.colors)
 val images = resources.obtainTypedArray(R.array.images)</p>
 
-<p>picker.items = ArrayList()</p>
+<p>picker.adapter = object : BubblePickerAdapter {</p>
 
-<p>titles.forEachIndexed { i, country -&gt;
-            picker.items?.add(PickerItem(country,
-                    gradient = BubbleGradient(colors.getColor((i * 2) % 8, 0), colors.getColor((i * 2) % 8 + 1, 0),
-                            BubbleGradient.VERTICAL),
-                    typeface = mediumTypeface,
-                    textColor = ContextCompat.getColor(this, android.R.color.white),
-                    image = ContextCompat.getDrawable(this, images.getResourceId(i, 0))))
-}
-```</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>        override val totalCount = titles.size
+
+        override fun getItem(position: Int): PickerItem {
+            return PickerItem().apply {
+                title = titles[position]
+                gradient = BubbleGradient(colors.getColor((position * 2) % 8, 0),
+                        colors.getColor((position * 2) % 8 + 1, 0), BubbleGradient.VERTICAL)
+                typeface = mediumTypeface
+                textColor = ContextCompat.getColor(this@DemoActivity, android.R.color.white)
+                backgroundImage = ContextCompat.getDrawable(this@DemoActivity, images.getResourceId(position, 0))
+            }
+        } } ```
+</code></pre>
+</div>
 
 <p>Java
 ```java
@@ -734,14 +743,26 @@ final String[] titles = getResources().getStringArray(R.array.countries);
 final TypedArray colors = getResources().obtainTypedArray(R.array.colors);
 final TypedArray images = getResources().obtainTypedArray(R.array.images);</p>
 
-<p>picker.setItems(new ArrayList<pickeritem>() {{
-      for (int i = 0; i &lt; titles.length; ++i) {
-                add(new PickerItem(titles[i], colors.getColor((i * 2) % 8, 0),
-                        ContextCompat.getColor(TestActivity.this, android.R.color.white),
-                        ContextCompat.getDrawable(TestActivity.this, images.getResourceId(i, 0))));
-      }
-}});
-```</pickeritem></p>
+<p>picker.setAdapter(new BubblePickerAdapter() {
+            @Override
+            public int getTotalCount() {
+                return titles.length;
+            }</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>        @NotNull
+        @Override
+        public PickerItem getItem(int position) {
+            PickerItem item = new PickerItem();
+            item.setTitle(titles[position]);
+            item.setGradient(new BubbleGradient(colors.getColor((position * 2) % 8, 0),
+                    colors.getColor((position * 2) % 8 + 1, 0), BubbleGradient.VERTICAL));
+            item.setTypeface(mediumTypeface);
+            item.setTextColor(ContextCompat.getColor(DemoActivity.this, android.R.color.white));
+            item.setBackgroundImage(ContextCompat.getDrawable(DemoActivity.this, images.getResourceId(position, 0)));
+            return item;
+        } }); ```
+</code></pre>
+</div>
 
 <p>Specify the <code class="highlighter-rouge">BubblePickerListener</code> to get notified about events</p>
 
@@ -778,6 +799,18 @@ picker.setListener(new BubblePickerListener() {
 <p>For more usage examples please review the sample app</p>
 
 <h2 id="changelog">Changelog</h2>
+
+<h3 id="version-024">Version: 0.2.4</h3>
+
+<ul>
+  <li>Added a possibility to setup the <code class="highlighter-rouge">BubblePicker</code> using <code class="highlighter-rouge">BubblePickerAdapter</code></li>
+</ul>
+
+<h3 id="version-023">Version: 0.2.3</h3>
+
+<ul>
+  <li>Fixed black textures issue on some devices</li>
+</ul>
 
 <h3 id="version-021">Version: 0.2.1</h3>
 

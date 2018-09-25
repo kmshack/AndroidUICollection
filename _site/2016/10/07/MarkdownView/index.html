@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Markdown View</title>
-  <meta name="description" content="MarkdownView                       MarkdownView is a simple library that helps you display Markdown text or files on Android as a html page just like Github....">
+  <meta name="description" content="MarkdownView                MarkdownView is a simple library that helps you display Markdown text or files on Android as a html page just like Github.DemoSup...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
@@ -16,18 +16,18 @@
   <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="MarkdownView                       MarkdownView is a simple library that helps you display Markdown text or files on Android as a html page just like Github....">
+  <meta name="description" content="MarkdownView                MarkdownView is a simple library that helps you display Markdown text or files on Android as a html page just like Github.DemoSup...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="Markdown View">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="MarkdownView                       MarkdownView is a simple library that helps you display Markdown text or files on Android as a html page just like Github....">
+  <meta property="og:description" content="MarkdownView                MarkdownView is a simple library that helps you display Markdown text or files on Android as a html page just like Github.DemoSup...">
   <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/10/07/MarkdownView/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="MarkdownView                       MarkdownView is a simple library that helps you display Markdown text or files on Android as a html page just like Github...." />
+  <meta name="twitter:description" content="MarkdownView                MarkdownView is a simple library that helps you display Markdown text or files on Android as a html page just like Github.DemoSup..." />
 
   
   	<!-- Article specific OG data -->
@@ -505,6 +505,10 @@
                 
               
             
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -550,7 +554,7 @@
             
           <div class="font-tiny">
               <br>
-            &copy; 2017 Android UI OpenSource
+            &copy; 2018 Android UI OpenSource
           </div>
         </div>
       </div>
@@ -623,16 +627,26 @@
           <br>
           <h1 align="center">MarkdownView</h1>
 <p align="center">
-  <a href="https://android-arsenal.com/api?level=14"> <img src="https://img.shields.io/badge/API-14%2B-blue.svg?style=flat" /></a>
+  <a class="badge-align" href="https://www.codacy.com/app/mukeshsolanki/MarkdownView-Android?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=mukeshsolanki/MarkdownView-Android&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/58e51bc418d349499b3eac9c3f6f3ef1" /></a>
   <a href="https://jitpack.io/#mukeshsolanki/MarkdownView-Android/"> <img src="https://jitpack.io/v/mukeshsolanki/MarkdownView-Android.svg" /></a>
-  <a href="http://android-arsenal.com/details/1/3980"> <img src="https://img.shields.io/badge/Android%20Arsenal-MarkdownView--Android-brightgreen.svg?style=flat" /></a>
-  <a href="https://travis-ci.org/mukeshsolanki/MarkdownView-Android"> <img src="https://travis-ci.org/mukeshsolanki/MarkdownView-Android.svg?branch=master" /></a>
-  <a href="https://www.paypal.me/mukeshsolanki"> <img src="https://img.shields.io/badge/paypal-donate-yellow.svg" /></a>
-  <br /><br />  
+  <a href="https://circleci.com/gh/mukeshsolanki/MarkdownView-Android/tree/master"> <img src="https://circleci.com/gh/mukeshsolanki/MarkdownView-Android/tree/master.svg?style=shield" /></a>
+  <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" /></a>
+  <br /><br />
     MarkdownView is a simple library that helps you display Markdown text or files on Android as a html page just like Github.
 </p>
 
 <p><a href="https://raw.githubusercontent.com/mukeshsolanki/MarkdownView-Android/master/Screenshots/demo.gif">Demo</a></p>
+
+<h1 id="supporting-markdownview">Supporting MarkdownView</h1>
+
+<p>MarkdownView is an independent project with ongoing development and support made possible thanks to donations made by <a href="BACKERS.md#sponsors">these awesome backers</a>. If you’d like to join them, please consider:</p>
+
+<ul>
+  <li><a href="https://www.patreon.com/mukeshsolanki">Become a backer or sponsor on Patreon</a>.</li>
+  <li><a href="https://www.paypal.me/mukeshsolanki">One-time donation via PayPal</a></li>
+</ul>
+
+<p><a href="https://www.patreon.com/bePatron?c=935498" alt="Become a Patron"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" /></a></p>
 
 <h2 id="getting-started">Getting started</h2>
 <p>Its really simple to integrate <em>MarkdownView</em> in android. All you need to do make the following change to you build gradle under the app module.</p>
@@ -651,7 +665,7 @@
 <p>Step 2. Add the dependency
 <code class="highlighter-rouge">java
 dependencies {
-    compile 'com.github.mukeshsolanki:MarkdownView-Android:1.0.4'
+    implementation 'com.github.mukeshsolanki:MarkdownView-Android:&lt;latest-version&gt;'
 }
 </code></p>
 
@@ -676,6 +690,34 @@ markdownView.loadMarkdownFromAssets("README.md"); //Loads the markdown file from
 File markdownFile=new File("filePath");
 markdownView.loadMarkdownFromFile(markdownFile); //Loads the markdown file.
 </code></p>
+
+<h2 id="author">Author</h2>
+<p>Maintained by <a href="https://www.github.com/mukeshsolanki">Mukesh Solanki</a></p>
+
+<h2 id="contribution">Contribution</h2>
+<p><a href="https://github.com/mukeshsolanki/MarkdownView-Android/graphs/contributors">[GitHub contributors](https://img.shields.io/github/contributors/mukeshsolanki/MarkdownView-Android.svg)</a></p>
+
+<ul>
+  <li>Bug reports and pull requests are welcome.</li>
+  <li>Make sure you use <a href="https://github.com/square/java-code-styles">square/java-code-styles</a> to format your code.</li>
+</ul>
+
+<h2 id="license">License</h2>
+<div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2018 Mukesh Solanki
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</code></pre>
+</div>
 
           <br>
           <div class="post__tags">

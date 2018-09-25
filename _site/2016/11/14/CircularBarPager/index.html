@@ -505,6 +505,10 @@
                 
               
             
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -550,7 +554,7 @@
             
           <div class="font-tiny">
               <br>
-            &copy; 2017 Android UI OpenSource
+            &copy; 2018 Android UI OpenSource
           </div>
         </div>
       </div>
@@ -632,20 +636,18 @@
    //CirclePageIndicator
    compile 'com.viewpagerindicator:library:2.4.1@aar'
    //Animations and progress value easing
-   compile 'com.nineoldandroids:library:2.4.0'
-   compile 'com.daimajia.easing:library:1.0.1@aar'
+   compile 'com.daimajia.easing:library:2.1@aar'
 </code></pre>
 </div>
 
 <p>Starting from version 1.3.10, we are moving to a new package name (we skipped from 1.3.4 to 1.3.10):
 <code class="highlighter-rouge">
    //CircularBarPager
-   compile 'com.github.omadahealth:library:1.3.10@aar'
+   compile 'com.github.omadahealth:library:1.3.11@aar'
    //CirclePageIndicator
    compile 'com.viewpagerindicator:library:2.4.1@aar'
    //Animations and progress value easing
-   compile 'com.nineoldandroids:library:2.4.0'
-   compile 'com.daimajia.easing:library:1.0.1@aar'
+   compile 'com.daimajia.easing:library:2.1@aar'
 </code></p>
 
 <p><a href="app/src/main/res/raw/github_gif.gif">Demo</a></p>
@@ -676,7 +678,7 @@ allprojects {
 
 <h4 id="in-xml">In XML:</h4>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;com.github.OrangeGangsters.circularbarpager.library.CircularBarPager
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;com.github.omadahealth.circularbarpager.library.CircularBarPager
         android:id="@+id/circularBarPager"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
@@ -749,7 +751,6 @@ CirclePageIndicator circlePageIndicator = mCircularBarPager.getCirclePageIndicat
 
 <ul>
   <li>We used ViewPagerIndicator from JakeWharton (https://github.com/JakeWharton/ViewPagerIndicator) for the page indicator at the bottom of the CircularBarPager</li>
-  <li>We used NineOldAndroids from JakeWharton (https://github.com/JakeWharton/NineOldAndroids/) to use beautiful animations on API 10+</li>
   <li>We used AnimationEasingFunctions from daimajia (https://github.com/daimajia/AnimationEasingFunctions) to also use beautiful animations on API 10+</li>
 </ul>
 
@@ -759,7 +760,7 @@ CirclePageIndicator circlePageIndicator = mCircularBarPager.getCirclePageIndicat
 
 <div class="highlighter-rouge"><pre class="highlight"><code>The MIT License (MIT)
 
-Copyright (c) 2015 OrangeGangsters
+Copyright (c) 2017 Omada Health
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

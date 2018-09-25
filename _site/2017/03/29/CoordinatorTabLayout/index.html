@@ -505,6 +505,10 @@
                 
               
             
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -550,7 +554,7 @@
             
           <div class="font-tiny">
               <br>
-            &copy; 2017 Android UI OpenSource
+            &copy; 2018 Android UI OpenSource
           </div>
         </div>
       </div>
@@ -638,16 +642,16 @@ Inherited to the CoordinatorLayout, in the following components used CollapsingT
 <h3 id="step-1">Step 1</h3>
 
 <p>Add the following to your build.gradle:
-<code class="highlighter-rouge">
+<code class="highlighter-rouge">groovy
 dependencies {
-    compile 'cn.hugeterry.coordinatortablayout:coordinatortablayout:1.0.6'
+    compile 'cn.hugeterry.coordinatortablayout:coordinatortablayout:1.2.2'
 }
 </code></p>
 
 <h3 id="step-2">Step 2</h3>
 
 <p>Config in xml:
-```</p>
+```xml</p>
 <cn.hugeterry.coordinatortablayout.coordinatortablayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/coordinatortablayout" android:layout_width="match_parent" android:layout_height="match_parent">
 
     <android.support.v4.view.viewpager android:id="@+id/vp" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior" />
@@ -661,22 +665,21 @@ Use it in your own code:&lt;/br&gt;
 1.`setTitle(String title)`:Set the CoordinatorTabLayout's title.&lt;/br&gt;
 2.`setupWithViewPager(ViewPager viewPager)`:To link the two together.&lt;/br&gt;
 3.`setImageArray(int[] imageArray)`:Set the image array of the header according to the number of tabs and pass it to the control.&lt;/br&gt;
-</code></pre>
-</div>
-<div class="highlighter-rouge"><pre class="highlight"><code>    //Add the fragment to the viewpager
-    initFragments();
-    initViewPager();
-    //Image array
-    mImageArray = new int[]{
-            R.mipmap.bg_android,
-            R.mipmap.bg_ios,
-            R.mipmap.bg_js,
-            R.mipmap.bg_other};
+```java
+        //Add the fragment to the viewpager
+        initFragments();
+        initViewPager();
+        //Image array
+        mImageArray = new int[]{
+                R.mipmap.bg_android,
+                R.mipmap.bg_ios,
+                R.mipmap.bg_js,
+                R.mipmap.bg_other};
 
-    mCoordinatorTabLayout = (CoordinatorTabLayout) findViewById(R.id.coordinatortablayout);
-    mCoordinatorTabLayout.setTitle("Demo")
-            .setImageArray(mImageArray)
-            .setupWithViewPager(mViewPager); ```
+        mCoordinatorTabLayout = (CoordinatorTabLayout) findViewById(R.id.coordinatortablayout);
+        mCoordinatorTabLayout.setTitle("Demo")
+                .setImageArray(mImageArray)
+                .setupWithViewPager(mViewPager);
 </code></pre>
 </div>
 
@@ -689,7 +692,7 @@ Use it in your own code:&lt;/br&gt;
 <p><a href="showUI/show2.gif">show</a></p>
 
 <p><code class="highlighter-rouge">setImageArray(int[] imageArray, int[] colorArray)</code>:Set the color array to use for the content scrim for each tab.
-<code class="highlighter-rouge">
+<code class="highlighter-rouge">java
         mColorArray = new int[]{
                 android.R.color.holo_blue_light,
                 android.R.color.holo_red_light,
@@ -698,9 +701,27 @@ Use it in your own code:&lt;/br&gt;
         mCoordinatorTabLayout.setImageArray(mImageArray, mColorArray);
 </code></p>
 
+<h3 id="set-translucent-status-bar">Set translucent status bar</h3>
+
+<p><a href="showUI/show4.png">show</a></p>
+
+<p><code class="highlighter-rouge">setTranslucentStatusBar(Activity activity)</code>:Set translucent status bar,Support android4.4 and above.
+<code class="highlighter-rouge">java
+mCoordinatorTabLayout.setTranslucentStatusBar(activity);
+</code></p>
+
+<h3 id="set-translucent-navigation-bar">Set translucent navigation bar</h3>
+
+<p><a href="showUI/show5.jpg">show</a></p>
+
+<p><code class="highlighter-rouge">setTranslucentNavigationBar(Activity activity)</code>:Set translucent navigation bar,Support android4.4 and above.
+<code class="highlighter-rouge">java
+mCoordinatorTabLayout.setTranslucentNavigationBar(activity);
+</code></p>
+
 <h3 id="set-back-enable">Set back enable</h3>
 <p><code class="highlighter-rouge">setBackEnable(Boolean canBack)</code>:To enable the Up button for an activity that has a parent activity.
-<code class="highlighter-rouge">
+<code class="highlighter-rouge">java
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         ...
@@ -719,7 +740,7 @@ Use it in your own code:&lt;/br&gt;
 <h3 id="load-header-images-from-network">Load header images from network</h3>
 
 <p><code class="highlighter-rouge">setLoadHeaderImagesListener(LoadHeaderImagesListener loadHeaderImagesListener)</code>:Set the listener that gets the header images.
-<code class="highlighter-rouge">
+<code class="highlighter-rouge">java
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         ...
@@ -741,6 +762,36 @@ Use it in your own code:&lt;/br&gt;
     }
 </code>
 You also can load header images using glide/picasso，<a href="https://github.com/hugeterry/CoordinatorTabLayout/blob/master/sample/src/main/java/cn/hugeterry/coordinatortablayoutdemo/LoadHeaderImageFromNetworkActivity.java">Sample</a></p>
+
+<h3 id="set-the-behavior-mode-for-the-tabs-in-this-layout">Set the behavior mode for the Tabs in this layout</h3>
+
+<p><code class="highlighter-rouge">setTabMode(@TabLayout.Mode int mode)</code>:The valid input options are:MODE_FIXED,MODE_SCROLLABLE
+<code class="highlighter-rouge">java
+mCoordinatorTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
+</code></p>
+
+<h3 id="add-a-coordinatortablayoutontabselectedlistener">Add a CoordinatorTabLayout.OnTabSelectedListener</h3>
+
+<p><code class="highlighter-rouge">addOnTabSelectedListener(OnTabSelectedListener onTabSelectedListener)</code>:Add a CoordinatorTabLayout.OnTabSelectedListener that will be invoked when tab selection changes.
+```java
+mCoordinatorTabLayout.addOnTabSelectedListener(new OnTabSelectedListener() {
+                         @Override
+                         public void onTabSelected(TabLayout.Tab tab) {</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>                     }
+
+                     @Override
+                     public void onTabUnselected(TabLayout.Tab tab) {
+
+                     }
+
+                     @Override
+                     public void onTabReselected(TabLayout.Tab tab) {
+
+                     }
+                 }) ```
+</code></pre>
+</div>
 
 <h3 id="gets-the-child-control">Gets the child control</h3>
 <p><code class="highlighter-rouge">getActionBar()</code>:get the ActionBar<br />

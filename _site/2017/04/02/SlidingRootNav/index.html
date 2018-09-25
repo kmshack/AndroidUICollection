@@ -505,6 +505,10 @@
                 
               
             
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -550,7 +554,7 @@
             
           <div class="font-tiny">
               <br>
-            &copy; 2017 Android UI OpenSource
+            &copy; 2018 Android UI OpenSource
           </div>
         </div>
       </div>
@@ -630,7 +634,7 @@
 <h2 id="gradle">Gradle</h2>
 <p>Add this into your dependencies block.
 <code class="highlighter-rouge">
-compile 'com.yarolegovich:sliding-root-nav:1.0.2'
+compile 'com.yarolegovich:sliding-root-nav:1.1.0'
 </code>
 ## Sample
 Please see the <a href="sample/src/main/java/com/yarolegovich/slidingrootnav/sample">sample app</a> for a library usage example.</p>
@@ -667,14 +671,15 @@ new SlidingRootNavBuilder(this)
   <span class="o">.</span><span class="na">withMenuLocked</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span> <span class="c1">//If true, a user can't open or close the menu. Default == false.</span>
   <span class="o">.</span><span class="na">withGravity</span><span class="o">(</span><span class="n">SlideGravity</span><span class="o">.</span><span class="na">LEFT</span><span class="o">)</span> <span class="c1">//If LEFT you can swipe a menu from left to right, if RIGHT - the direction is opposite. </span>
   <span class="o">.</span><span class="na">withSavedState</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">)</span> <span class="c1">//If you call the method, layout will restore its opened/closed state</span>
-  <span class="o">.</span><span class="na">inject</span><span class="o">();</span>
+  <span class="o">.</span><span class="na">withContentClickableWhenMenuOpened</span><span class="o">(</span><span class="n">isClickable</span><span class="o">)</span> <span class="c1">//Pretty self-descriptive. Builder Default == true</span>
 </code></pre>
 </div>
 <p>#### Controling the layout
 A call to <code class="highlighter-rouge">inject()</code> returns you an interface for controlling the layout.
 <code class="highlighter-rouge">java
 public interface SlidingRootNav {
-    boolean isMenuHidden();
+    boolean isMenuClosed();
+    boolean isMenuOpened();
     boolean isMenuLocked();
     void closeMenu();
     void closeMenu(boolean animated);

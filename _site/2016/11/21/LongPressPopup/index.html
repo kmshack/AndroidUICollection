@@ -505,6 +505,10 @@
                 
               
             
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -550,7 +554,7 @@
             
           <div class="font-tiny">
               <br>
-            &copy; 2017 Android UI OpenSource
+            &copy; 2018 Android UI OpenSource
           </div>
         </div>
       </div>
@@ -638,7 +642,7 @@ and handle the release of the finger over Views <br /></p>
 <p>[Changelog] (CHANGELOG.md)<br /></p>
 
 <h2 id="download">Download</h2>
-<p>####Gradle:
+<p>#### Gradle:
 <code class="highlighter-rouge">groovy
 compile 'com.rm:longpresspopup:1.0.1'
 </code></p>
@@ -647,10 +651,10 @@ compile 'com.rm:longpresspopup:1.0.1'
 <b>Min SDK version: 10 (Android 2.3.3) </b>
 <br /></p>
 
-<p>##Usage</p>
+<h2 id="usage">Usage</h2>
 
-<p>####Basic
-Here’s a basic example <br /></p>
+<h4 id="basic">Basic</h4>
+<p>Here’s a basic example <br /></p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ActivityMain</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
         
@@ -679,8 +683,8 @@ Here’s a basic example <br /></p>
 
 <p><img src="sample_short.gif" title="sample" /></p>
 
-<p>####Advanced
-Here’s a complete example with all the options <br />
+<h4 id="advanced">Advanced</h4>
+<p>Here’s a complete example with all the options <br />
 ```java
 public class ActivityMain extends AppCompatActivity implements PopupInflaterListener,
             PopupStateListener, PopupOnHoverListener, View.OnClickListener {</p>
@@ -809,8 +813,10 @@ public void onHoverChanged(View view, boolean isHovered) {
 
 <p><br /></p>
 
-<p>####Known Bugs
-* This library do not work correctly with ListViews (Use RecyclerViews) <br /></p>
+<h4 id="known-bugs">Known Bugs</h4>
+<ul>
+  <li>This library do not work correctly with ListViews (Use RecyclerViews) <br /></li>
+</ul>
 
 <p><br /><br /></p>
 

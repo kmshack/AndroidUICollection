@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>HorizontalCalendar</title>
-  <meta name="description" content="Horizontal Calendar [Download](https://api.bintray.com/packages/mulham-raee/maven/horizontal-calendar/images/download.svg) [License](https://img.shields.io/b...">
+  <meta name="description" content="Horizontal Calendar[Download](https://api.bintray.com/packages/mulham-raee/maven/horizontal-calendar/images/download.svg) [License](https://img.shields.io/ba...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
@@ -16,18 +16,18 @@
   <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="Horizontal Calendar [Download](https://api.bintray.com/packages/mulham-raee/maven/horizontal-calendar/images/download.svg) [License](https://img.shields.io/b...">
+  <meta name="description" content="Horizontal Calendar[Download](https://api.bintray.com/packages/mulham-raee/maven/horizontal-calendar/images/download.svg) [License](https://img.shields.io/ba...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="HorizontalCalendar">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="Horizontal Calendar [Download](https://api.bintray.com/packages/mulham-raee/maven/horizontal-calendar/images/download.svg) [License](https://img.shields.io/b...">
+  <meta property="og:description" content="Horizontal Calendar[Download](https://api.bintray.com/packages/mulham-raee/maven/horizontal-calendar/images/download.svg) [License](https://img.shields.io/ba...">
   <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2017/03/29/HorizontalCalendar/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="Horizontal Calendar [Download](https://api.bintray.com/packages/mulham-raee/maven/horizontal-calendar/images/download.svg) [License](https://img.shields.io/b..." />
+  <meta name="twitter:description" content="Horizontal Calendar[Download](https://api.bintray.com/packages/mulham-raee/maven/horizontal-calendar/images/download.svg) [License](https://img.shields.io/ba..." />
 
   
   	<!-- Article specific OG data -->
@@ -505,6 +505,10 @@
                 
               
             
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -550,7 +554,7 @@
             
           <div class="font-tiny">
               <br>
-            &copy; 2017 Android UI OpenSource
+            &copy; 2018 Android UI OpenSource
           </div>
         </div>
       </div>
@@ -623,35 +627,38 @@
           <br>
           <h1 id="horizontal-calendar">Horizontal Calendar</h1>
 
-<p><a href="https://bintray.com/mulham-raee/maven/horizontal-calendar/_latestVersion"> [Download](https://api.bintray.com/packages/mulham-raee/maven/horizontal-calendar/images/download.svg) </a>
+<p><a href="https://bintray.com/mulham-raee/maven/horizontal-calendar/_latestVersion">[Download](https://api.bintray.com/packages/mulham-raee/maven/horizontal-calendar/images/download.svg) </a>
 <a href="https://opensource.org/licenses/Apache-2.0">[License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)</a></p>
 
 <p>A material horizontal calendar view for Android based on <code class="highlighter-rouge">RecyclerView</code>.</p>
 
-<p><a href="/art/demo.gif">demo</a></p>
+<p><a href="/art/showCase.png">showcase</a></p>
 
 <h2 id="installation">Installation</h2>
+
 <p>The library is hosted on jcenter, add this to your <strong>build.gradle</strong>:</p>
 
 <pre><code class="language-gradle">repositories {
       jcenter()
     }
     
-    dependencies {
-      compile 'devs.mulham.horizontalcalendar:horizontalcalendar:1.1.0'
+dependencies {
+      compile 'devs.mulham.horizontalcalendar:horizontalcalendar:1.3.4'
     }
 </code></pre>
 
-<p>##Prerequisites
-The minimum API level supported by this library is <strong>API 9 (GINGERBREAD)</strong>.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>The minimum API level supported by this library is <strong>API 14 (ICE_CREAM_SANDWICH)</strong>.</p>
 
 <h2 id="usage">Usage</h2>
+
 <ul>
   <li>Add <code class="highlighter-rouge">HorizontalCalendarView</code> to your layout file, for example:</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;android.support.design.widget.AppBarLayout</span>
-		<span class="err">............</span> <span class="nt">&gt;</span>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;android.support.design.widget.AppBarLayout&gt;</span>
+		............ 
 		
         <span class="nt">&lt;devs.mulham.horizontalcalendar.HorizontalCalendarView</span>
             <span class="na">android:id=</span><span class="s">"@+id/calendarView"</span>
@@ -668,13 +675,13 @@ The minimum API level supported by this library is <strong>API 9 (GINGERBREAD)</
   <li>In your Activity or Fragment, define your <strong>start</strong> and <strong>end</strong> dates to set the range of the calendar:</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="cm">/** end after 1 month from now */</span>
-<span class="n">Calendar</span> <span class="n">endDate</span> <span class="o">=</span> <span class="n">Calendar</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
-<span class="n">endDate</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">MONTH</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
-
-<span class="cm">/** start before 1 month from now */</span>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="cm">/* starts before 1 month from now */</span>
 <span class="n">Calendar</span> <span class="n">startDate</span> <span class="o">=</span> <span class="n">Calendar</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
 <span class="n">startDate</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">MONTH</span><span class="o">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">);</span>
+
+<span class="cm">/* ends after 1 month from now */</span>
+<span class="n">Calendar</span> <span class="n">endDate</span> <span class="o">=</span> <span class="n">Calendar</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+<span class="n">endDate</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">MONTH</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
 </code></pre>
 </div>
 
@@ -683,8 +690,8 @@ The minimum API level supported by this library is <strong>API 9 (GINGERBREAD)</
 </ul>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="n">HorizontalCalendar</span> <span class="n">horizontalCalendar</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HorizontalCalendar</span><span class="o">.</span><span class="na">Builder</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">calendarView</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">startDate</span><span class="o">(</span><span class="n">startDate</span><span class="o">.</span><span class="na">getTime</span><span class="o">())</span>
-                <span class="o">.</span><span class="na">endDate</span><span class="o">(</span><span class="n">endDate</span><span class="o">.</span><span class="na">getTime</span><span class="o">())</span>
+                <span class="o">.</span><span class="na">range</span><span class="o">(</span><span class="n">startDate</span><span class="o">,</span> <span class="n">endDate</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">datesNumberOnScreen</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span>
                 <span class="o">.</span><span class="na">build</span><span class="o">();</span>
 </code></pre>
 </div>
@@ -704,7 +711,7 @@ The minimum API level supported by this library is <strong>API 9 (GINGERBREAD)</
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="n">horizontalCalendar</span><span class="o">.</span><span class="na">setCalendarListener</span><span class="o">(</span><span class="k">new</span> <span class="n">HorizontalCalendarListener</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="n">onDateSelected</span><span class="o">(</span><span class="n">Date</span> <span class="n">date</span><span class="o">,</span> <span class="kt">int</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="n">onDateSelected</span><span class="o">(</span><span class="n">Calendar</span> <span class="n">date</span><span class="o">,</span> <span class="kt">int</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
                 <span class="c1">//do something</span>
             <span class="o">}</span>
         <span class="o">});</span>
@@ -712,12 +719,12 @@ The minimum API level supported by this library is <strong>API 9 (GINGERBREAD)</
 </div>
 
 <ul>
-  <li>You can also listen to <strong>scroll</strong> and <strong>long press</strong> events by overriding each prespective method within <strong>HorizontalCalendarListener</strong>:</li>
+  <li>You can also listen to <strong>scroll</strong> and <strong>long press</strong> events by overriding each perspective method within <strong>HorizontalCalendarListener</strong>:</li>
 </ul>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="n">horizontalCalendar</span><span class="o">.</span><span class="na">setCalendarListener</span><span class="o">(</span><span class="k">new</span> <span class="n">HorizontalCalendarListener</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="n">onDateSelected</span><span class="o">(</span><span class="n">Date</span> <span class="n">date</span><span class="o">,</span> <span class="kt">int</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="n">onDateSelected</span><span class="o">(</span><span class="n">Calendar</span> <span class="n">date</span><span class="o">,</span> <span class="kt">int</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
 
             <span class="o">}</span>
 
@@ -728,7 +735,7 @@ The minimum API level supported by this library is <strong>API 9 (GINGERBREAD)</
             <span class="o">}</span>
 
             <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">boolean</span> <span class="n">onDateLongClicked</span><span class="o">(</span><span class="n">Date</span> <span class="n">date</span><span class="o">,</span> <span class="kt">int</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">public</span> <span class="kt">boolean</span> <span class="n">onDateLongClicked</span><span class="o">(</span><span class="n">Calendar</span> <span class="n">date</span><span class="o">,</span> <span class="kt">int</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
                 <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
             <span class="o">}</span>
         <span class="o">});</span>
@@ -736,65 +743,186 @@ The minimum API level supported by this library is <strong>API 9 (GINGERBREAD)</
 </div>
 
 <h2 id="customization">Customization</h2>
-<p>You can customize it directly inside your layout:</p>
+
+<ul>
+  <li>You can customize it directly inside your <strong>layout</strong>:</li>
+</ul>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;devs.mulham.horizontalcalendar.HorizontalCalendarView</span>
             <span class="na">android:id=</span><span class="s">"@+id/calendarView"</span>
             <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
             <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
-            <span class="na">android:background=</span><span class="s">"@color/colorPrimary"</span>
             <span class="na">app:textColorNormal=</span><span class="s">"#bababa"</span>
             <span class="na">app:textColorSelected=</span><span class="s">"#FFFF"</span>
-            <span class="na">app:selectorColor=</span><span class="s">"#c62828"</span>   <span class="err">//</span> <span class="err">default</span> <span class="err">to</span> <span class="err">colorAccent.</span>
-            <span class="na">app:selectedDateBackground=</span><span class="s">"#00ffffff"</span><span class="nt">/&gt;</span>
+            <span class="na">app:selectorColor=</span><span class="s">"#c62828"</span>  <span class="err">//default</span> <span class="err">to</span> <span class="err">colorAccent</span>
+            <span class="na">app:selectedDateBackground=</span><span class="s">"@drawable/myDrawable"</span><span class="nt">/&gt;</span>
 </code></pre>
 </div>
 
-<p>Or you can do it programmatically in your Activity using the <strong>Builder</strong>:</p>
+<ul>
+  <li>Or you can do it programmatically in your <strong>Activity</strong> or <strong>Fragment</strong> using <code class="highlighter-rouge">HorizontalCalendar.Builder</code>:</li>
+</ul>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="n">HorizontalCalendar</span> <span class="n">horizontalCalendar</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HorizontalCalendar</span><span class="o">.</span><span class="na">Builder</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">calendarView</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">startDate</span><span class="o">(</span><span class="n">startDate</span><span class="o">.</span><span class="na">getTime</span><span class="o">())</span>
-                <span class="o">.</span><span class="na">endDate</span><span class="o">(</span><span class="n">endDate</span><span class="o">.</span><span class="na">getTime</span><span class="o">())</span>
-                <span class="o">.</span><span class="na">datesNumberOnScreen</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span>   <span class="c1">// Number of Dates cells shown on screen (Recommended 5)</span>
-                <span class="o">.</span><span class="na">dayNameFormat</span><span class="o">(</span><span class="s">"EEE"</span><span class="o">)</span>	  <span class="c1">// WeekDay text format</span>
-                <span class="o">.</span><span class="na">dayNumberFormat</span><span class="o">(</span><span class="s">"dd"</span><span class="o">)</span>    <span class="c1">// Date format</span>
-				<span class="o">.</span><span class="na">monthFormat</span><span class="o">(</span><span class="s">"MMM"</span><span class="o">)</span> 	  <span class="c1">// Month format</span>
-				<span class="o">.</span><span class="na">showDayName</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>	  <span class="c1">// Show or Hide dayName text</span>
-				<span class="o">.</span><span class="na">showMonthName</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>	  <span class="c1">// Show or Hide month text</span>
-                <span class="o">.</span><span class="na">textColor</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">LTGRAY</span><span class="o">,</span> <span class="n">Color</span><span class="o">.</span><span class="na">WHITE</span><span class="o">)</span>    <span class="c1">// Text color for none selected Dates, Text color for selected Date.</span>
-                <span class="o">.</span><span class="na">selectedDateBackground</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">TRANSPARENT</span><span class="o">)</span>  <span class="c1">// Background color of the selected date cell.</span>
-                <span class="o">.</span><span class="na">selectorColor</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">RED</span><span class="o">)</span>   <span class="c1">// Color of the selection indicator bar (default to colorAccent).</span>
+                <span class="o">.</span><span class="na">range</span><span class="o">(</span><span class="n">Calendar</span> <span class="n">startDate</span><span class="o">,</span> <span class="n">Calendar</span> <span class="n">endDate</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">datesNumberOnScreen</span><span class="o">(</span><span class="kt">int</span> <span class="n">number</span><span class="o">)</span>   <span class="c1">// Number of Dates cells shown on screen (default to 5).</span>
+                <span class="o">.</span><span class="na">configure</span><span class="o">()</span>    <span class="c1">// starts configuration.</span>
+                    <span class="o">.</span><span class="na">formatTopText</span><span class="o">(</span><span class="n">String</span> <span class="n">dateFormat</span><span class="o">)</span>       <span class="c1">// default to "MMM".</span>
+                    <span class="o">.</span><span class="na">formatMiddleText</span><span class="o">(</span><span class="n">String</span> <span class="n">dateFormat</span><span class="o">)</span>    <span class="c1">// default to "dd".</span>
+                    <span class="o">.</span><span class="na">formatBottomText</span><span class="o">(</span><span class="n">String</span> <span class="n">dateFormat</span><span class="o">)</span>    <span class="c1">// default to "EEE".</span>
+                    <span class="o">.</span><span class="na">showTopText</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">show</span><span class="o">)</span>              <span class="c1">// show or hide TopText (default to true).</span>
+                    <span class="o">.</span><span class="na">showBottomText</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">show</span><span class="o">)</span>           <span class="c1">// show or hide BottomText (default to true).</span>
+                    <span class="o">.</span><span class="na">textColor</span><span class="o">(</span><span class="kt">int</span> <span class="n">normalColor</span><span class="o">,</span> <span class="kt">int</span> <span class="n">selectedColor</span><span class="o">)</span>    <span class="c1">// default to (Color.LTGRAY, Color.WHITE).</span>
+                    <span class="o">.</span><span class="na">selectedDateBackground</span><span class="o">(</span><span class="n">Drawable</span> <span class="n">background</span><span class="o">)</span>      <span class="c1">// set selected date cell background.</span>
+                    <span class="o">.</span><span class="na">selectorColor</span><span class="o">(</span><span class="kt">int</span> <span class="n">color</span><span class="o">)</span>               <span class="c1">// set selection indicator bar's color (default to colorAccent).</span>
+                <span class="o">.</span><span class="na">end</span><span class="o">()</span>          <span class="c1">// ends configuration.</span>
+                <span class="o">.</span><span class="na">defaultSelectedDate</span><span class="o">(</span><span class="n">Calendar</span> <span class="n">date</span><span class="o">)</span>    <span class="c1">// Date to be selected at start (default to current day `Calendar.getInstance()`).</span>
                 <span class="o">.</span><span class="na">build</span><span class="o">();</span>
 </code></pre>
 </div>
 
-<h2 id="features">Features</h2>
+<h4 id="more-customizations">More Customizations</h4>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">builder</span><span class="o">.</span><span class="na">configure</span><span class="o">()</span>
+           <span class="o">.</span><span class="na">textSize</span><span class="o">(</span><span class="kt">float</span> <span class="n">topTextSize</span><span class="o">,</span> <span class="kt">float</span> <span class="n">middleTextSize</span><span class="o">,</span> <span class="kt">float</span> <span class="n">bottomTextSize</span><span class="o">)</span>
+           <span class="o">.</span><span class="na">sizeTopText</span><span class="o">(</span><span class="kt">float</span> <span class="n">size</span><span class="o">)</span>
+           <span class="o">.</span><span class="na">sizeMiddleText</span><span class="o">(</span><span class="kt">float</span> <span class="n">size</span><span class="o">)</span>
+           <span class="o">.</span><span class="na">sizeBottomText</span><span class="o">(</span><span class="kt">float</span> <span class="n">size</span><span class="o">)</span>
+           <span class="o">.</span><span class="na">colorTextTop</span><span class="o">(</span><span class="kt">int</span> <span class="n">normalColor</span><span class="o">,</span> <span class="kt">int</span> <span class="n">selectedColor</span><span class="o">)</span>
+           <span class="o">.</span><span class="na">colorTextMiddle</span><span class="o">(</span><span class="kt">int</span> <span class="n">normalColor</span><span class="o">,</span> <span class="kt">int</span> <span class="n">selectedColor</span><span class="o">)</span>
+           <span class="o">.</span><span class="na">colorTextBottom</span><span class="o">(</span><span class="kt">int</span> <span class="n">normalColor</span><span class="o">,</span> <span class="kt">int</span> <span class="n">selectedColor</span><span class="o">)</span>
+       <span class="o">.</span><span class="na">end</span><span class="o">()</span>
+</code></pre>
+</div>
+
+<h2 id="months-mode">Months Mode</h2>
+<p>HorizontalCalendar can display only <strong>Months</strong> instead of Dates by adding <code class="highlighter-rouge">mode(HorizontalCalendar.Mode.MONTHS)</code> to the builder, for example:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">horizontalCalendar</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HorizontalCalendar</span><span class="o">.</span><span class="na">Builder</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">calendarView</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">range</span><span class="o">(</span><span class="n">Calendar</span> <span class="n">startDate</span><span class="o">,</span> <span class="n">Calendar</span> <span class="n">endDate</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">datesNumberOnScreen</span><span class="o">(</span><span class="kt">int</span> <span class="n">number</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">mode</span><span class="o">(</span><span class="n">HorizontalCalendar</span><span class="o">.</span><span class="na">Mode</span><span class="o">.</span><span class="na">MONTHS</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">configure</span><span class="o">()</span>
+                    <span class="o">.</span><span class="na">formatMiddleText</span><span class="o">(</span><span class="s">"MMM"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">formatBottomText</span><span class="o">(</span><span class="s">"yyyy"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">showTopText</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">showBottomText</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">textColor</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">LTGRAY</span><span class="o">,</span> <span class="n">Color</span><span class="o">.</span><span class="na">WHITE</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">end</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">defaultSelectedDate</span><span class="o">(</span><span class="n">defaultSelectedDate</span><span class="o">)</span>
+</code></pre>
+</div>
+
+<h2 id="events">Events</h2>
+<p>A list of Events can be provided for each Date which will be represented as circle indicators under the Date with:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">builder</span><span class="o">.</span><span class="na">addEvents</span><span class="o">(</span><span class="k">new</span> <span class="n">CalendarEventsPredicate</span><span class="o">()</span> <span class="o">{</span>
+
+                    <span class="nd">@Override</span>
+                    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">CalendarEvent</span><span class="o">&gt;</span> <span class="n">events</span><span class="o">(</span><span class="n">Calendar</span> <span class="n">date</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="c1">// test the date and return a list of CalendarEvent to assosiate with this Date.</span>
+                    <span class="o">}</span>
+                <span class="o">})</span>
+</code></pre>
+</div>
+
+<h2 id="reconfiguration">Reconfiguration</h2>
+<p>HorizontalCalendar configurations can be changed after initialization:</p>
+
 <ul>
   <li>
-    <p>You can select a specific <strong>Date</strong> programmatically with the option whether to play the animation or not, with:
+    <p>Change calendar dates range:
 <code class="highlighter-rouge">java
-horizontalCalendar.selectDate(Date date, boolean immediate); // set immediate to false to ignore animation.
+horizontalCalendar.setRange(Calendar startDate, Calendar endDate);
+</code></p>
+  </li>
+  <li>
+    <p>Change default(not selected) items style:
+<code class="highlighter-rouge">java
+horizontalCalendar.getDefaultStyle()
+      .setColorTopText(int color)
+      .setColorMiddleText(int color)
+      .setColorBottomText(int color)
+      .setBackground(Drawable background);      
+</code></p>
+  </li>
+  <li>
+    <p>Change selected item style:
+<code class="highlighter-rouge">java
+horizontalCalendar.getSelectedItemStyle()
+      .setColorTopText(int color)
+      ..............
+</code></p>
+  </li>
+  <li>
+    <p>Change formats, text sizes and selector color:
+<code class="highlighter-rouge">java
+horizontalCalendar.getConfig()
+      .setSelectorColor(int color)
+      .setFormatTopText(String format)
+      .setSizeTopText(float size)
+      ..............
+</code></p>
+  </li>
+</ul>
+
+<h3 id="important">Important</h3>
+<p><strong>Make sure to call <code class="highlighter-rouge">horizontalCalendar.refresh();</code> when you finish your changes</strong></p>
+
+<h2 id="features">Features</h2>
+
+<ul>
+  <li>
+    <p>Disable specific dates with <code class="highlighter-rouge">HorizontalCalendarPredicate</code>, a unique style for disabled dates can be specified as well with <code class="highlighter-rouge">CalendarItemStyle</code>:
+```java
+builder.disableDates(new HorizontalCalendarPredicate() {
+                         @Override
+                         public boolean test(Calendar date) {
+                             return false;    // return true if this date should be disabled, false otherwise.
+                         }</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>                     @Override
+                     public CalendarItemStyle style() {
+                         return null;     // create and return a new Style for disabled dates, or null if no styling needed.
+                     }
+                 }) ```
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Select a specific <strong>Date</strong> programmatically with the option whether to play the animation or not:
+<code class="highlighter-rouge">java
+horizontalCalendar.selectDate(Calendar date, boolean immediate); // set immediate to false to ignore animation.
   // or simply
 horizontalCalendar.goToday(boolean immediate);
 </code></p>
   </li>
   <li>
-    <p>Check if two dates’ <strong>days</strong> are equal:
+    <p>Check if a date is contained in the Calendar:
 <code class="highlighter-rouge">java
-horizontalCalendar.isDatesDaysEquals(Date date1, Date date2);
+horizontalCalendar.contains(Calendar date);
 </code></p>
   </li>
   <li>
-    <p>Check if a date is contained in the Calendar:
+    <p>Check if two dates are equal (year, month, day of month):
 <code class="highlighter-rouge">java
-horizontalCalendar.contains(Date date);
-</code>
-## Contributing
-Contributions are welcome, feel free to submit a pull request.</p>
+Utils.isSameDate(Calendar date1, Calendar date2);
+</code></p>
+  </li>
+  <li>
+    <p>Get number of <strong>days</strong> between two dates:
+<code class="highlighter-rouge">java
+Utils.daysBetween(Calendar startInclusive, Calendar endExclusive);
+</code></p>
   </li>
 </ul>
 
+<h2 id="contributing">Contributing</h2>
+
+<p>Contributions are welcome, feel free to submit a pull request.</p>
+
 <h2 id="license">License</h2>
+
 <blockquote>
   <p>Copyright 2017  Mulham Raee</p>
 

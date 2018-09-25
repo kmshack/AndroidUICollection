@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>CompactCalendarView</title>
-  <meta name="description" content="CompactCalendarViewCompactCalendarView is a simple calendar view which provides scrolling between months. It’s based on Java’s Date and Calendar classes. It ...">
+  <meta name="description" content="CompactCalendarView [Build Status](https://travis-ci.org/SundeepK/CompactCalendarView.svg?branch=master)CompactCalendarView is a simple calendar view which p...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
@@ -16,18 +16,18 @@
   <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="CompactCalendarViewCompactCalendarView is a simple calendar view which provides scrolling between months. It’s based on Java’s Date and Calendar classes. It ...">
+  <meta name="description" content="CompactCalendarView [Build Status](https://travis-ci.org/SundeepK/CompactCalendarView.svg?branch=master)CompactCalendarView is a simple calendar view which p...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="CompactCalendarView">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="CompactCalendarViewCompactCalendarView is a simple calendar view which provides scrolling between months. It’s based on Java’s Date and Calendar classes. It ...">
+  <meta property="og:description" content="CompactCalendarView [Build Status](https://travis-ci.org/SundeepK/CompactCalendarView.svg?branch=master)CompactCalendarView is a simple calendar view which p...">
   <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/10/12/CompactCalendarView/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="CompactCalendarViewCompactCalendarView is a simple calendar view which provides scrolling between months. It’s based on Java’s Date and Calendar classes. It ..." />
+  <meta name="twitter:description" content="CompactCalendarView [Build Status](https://travis-ci.org/SundeepK/CompactCalendarView.svg?branch=master)CompactCalendarView is a simple calendar view which p..." />
 
   
   	<!-- Article specific OG data -->
@@ -505,6 +505,10 @@
                 
               
             
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -550,7 +554,7 @@
             
           <div class="font-tiny">
               <br>
-            &copy; 2017 Android UI OpenSource
+            &copy; 2018 Android UI OpenSource
           </div>
         </div>
       </div>
@@ -621,14 +625,69 @@
               <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/AndroidUICollection/images/posts/2016-10-12-CompactCalendarView.gif)"></div>
             </div>
           <br>
-          <h1 id="compactcalendarview">CompactCalendarView</h1>
+          <h1 id="compactcalendarview-build-statushttpstravis-ciorgsundeepkcompactcalendarviewsvgbranchmasterhttpstravis-ciorgsundeepkcompactcalendarview">CompactCalendarView <a href="https://travis-ci.org/SundeepK/CompactCalendarView">[Build Status](https://travis-ci.org/SundeepK/CompactCalendarView.svg?branch=master)</a></h1>
 <p>CompactCalendarView is a simple calendar view which provides scrolling between months. It’s based on Java’s Date and Calendar classes. It provides a simple api to query for dates and listeners for specific events.  For example, when the calendar has scrolled to a new month or a day has been selected.
 Still under active development.</p>
 
 <p><img src="https://github.com/SundeepK/CompactCalendarView/blob/master/images/compact-calendar-view-example-multi-events.png" width="500" /></p>
 
 <h1 id="contributing">Contributing</h1>
-<p>Please raise an issue of the requirement so that a discussion can take before any code is written, even if you intend to raise a pull request.</p>
+<p>Please raise an issue of the requirement so that a discussion can take before any code is written, even if you intend to raise a pull request. Please see setup for testing.</p>
+
+<h1 id="testing">Testing</h1>
+<p>CompactCalendarView makes use of screenshot-tests-for-android (https://github.com/facebook/screenshot-tests-for-android). This is for UI testing. Since screenshot-tests-for-android takes screenshots, we need a way to ensure images can be reproduced consistently. To do this, a specific emulator is used to run tests.
+Unfortunately, an older emulator is used for now. New pull requests which change functionality some how should aim to create new screenshot tests or unit tests if possible. To run this locally, run the below commands:</p>
+
+<p>Pre-requisite (Also refer to .travis.yml):
+- Python
+- Python pillow installed 
+- Install android-19 (can be done through android sdk manager or command line).</p>
+
+<p>Android 19 emulator is used because it seems to be a fast enough on travis-ci and because x86 emulators are not supported on travis-ci. Newer android version is possible but build times will increase.</p>
+
+<p>Install the abi and accept:
+ <code class="highlighter-rouge">bash
+$ $ANDROID_HOME/tools/bin/sdkmanager 'system-images;android-22;default;armeabi-v7a'
+</code></p>
+
+<p>Create the emulator:
+<code class="highlighter-rouge">bash
+$ echo no | $ANDROID_HOME/tools/bin/avdmanager create avd --force -n testCompactCalendarEmulator -k "system-images;android-22;default;armeabi-v7a"
+</code></p>
+
+<p>Create sd card (creating in current dir):
+Any problems with sdcard are best solved by deleting and trying again
+<code class="highlighter-rouge">bash
+$ mksdcard -l sdcard 100M sdcard
+</code></p>
+
+<p>Run emulator (with out audio and window):
+<code class="highlighter-rouge">bash
+$ $ANDROID_HOME/emulator/emulator -avd testCompactCalendarEmulator -no-audio -no-window -sdcard sdcard &amp;
+</code></p>
+
+<p>Run emulator and watch(with audio and window):
+<code class="highlighter-rouge">bash
+$ $ANDROID_HOME/emulator/emulator -avd testCompactCalendarEmulator -sdcard sdcard 
+</code></p>
+
+<p>Running the tests to verify that the current tests pass and to check which tests are not producing the same screenshot:
+<code class="highlighter-rouge">bash
+$ ./gradlew verifyMode screenshotTests 
+</code></p>
+
+<p>To generate new screenshots if new tests have been added:
+<code class="highlighter-rouge">bash
+$ ./gradlew recordMode screenshotTests 
+</code></p>
+
+<p>Run the unit tests like below:
+<code class="highlighter-rouge">bash
+$ ./gradlew test
+</code></p>
+
+<h2 id="android-studio-emulator">Android studio emulator</h2>
+<p>It’s possible to test using android studio emulator. However, it must be android 19 and and 480x800 screen resolution. One example is the Nexus S emulator. Just start the emulator and execute the gradle commands to run the tests. Emulator should be found automatically.</p>
 
 <h1 id="openclose-animations">Open/Close animations</h1>
 <p>The library supports opening/closing with or without animations.</p>
@@ -670,7 +729,7 @@ Still under active development.</p>
         <span class="n">compactCalendarView</span><span class="o">.</span><span class="na">setFirstDayOfWeek</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">MONDAY</span><span class="o">);</span>
        
         <span class="c1">// Add event 1 on Sun, 07 Jun 2015 18:20:51 GMT</span>
-        <span class="n">Event</span> <span class="n">ev1</span> <span class="k">new</span> <span class="n">Event</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">GREEN</span><span class="o">,</span> <span class="mi">1433701251000L</span><span class="o">,</span> <span class="s">"Some extra data that I want to store."</span><span class="o">);</span>
+        <span class="n">Event</span> <span class="n">ev1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Event</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">GREEN</span><span class="o">,</span> <span class="mi">1433701251000L</span><span class="o">,</span> <span class="s">"Some extra data that I want to store."</span><span class="o">);</span>
         <span class="n">compactCalendar</span><span class="o">.</span><span class="na">addEvent</span><span class="o">(</span><span class="n">ev1</span><span class="o">);</span>
 
         <span class="c1">// Added event 2 GMT: Sun, 07 Jun 2015 19:10:51 GMT</span>
@@ -720,14 +779,13 @@ Still under active development.</p>
 <p><img src="https://github.com/SundeepK/CompactCalendarView/blob/master/images/chinese-locale-daynames.png" width="400" /></p>
 
 <pre><code class="language-gradle">dependencies {
-    compile 'com.github.sundeepk:compact-calendar-view:2.0.1'
+    compile 'com.github.sundeepk:compact-calendar-view:3.0.0'
 }
-
 </code></pre>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>The MIT License (MIT)
 
-Copyright (c) [2016] [Sundeepk]
+Copyright (c) [2018] [Sundeepk]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

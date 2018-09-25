@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>CardStackView</title>
-  <meta name="description" content="CardStackView[License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)[Download](https://api.bintray.com/packages/yuyakaido/maven/CardStackView/i...">
+  <meta name="description" content="LogoCardStackViewPlatform[License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)[API](https://img.shields.io/badge/API-14%2B-blue.svg?style=fla...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
@@ -16,18 +16,18 @@
   <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="CardStackView[License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)[Download](https://api.bintray.com/packages/yuyakaido/maven/CardStackView/i...">
+  <meta name="description" content="LogoCardStackViewPlatform[License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)[API](https://img.shields.io/badge/API-14%2B-blue.svg?style=fla...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="CardStackView">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="CardStackView[License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)[Download](https://api.bintray.com/packages/yuyakaido/maven/CardStackView/i...">
+  <meta property="og:description" content="LogoCardStackViewPlatform[License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)[API](https://img.shields.io/badge/API-14%2B-blue.svg?style=fla...">
   <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/10/12/CardStackView/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="CardStackView[License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)[Download](https://api.bintray.com/packages/yuyakaido/maven/CardStackView/i..." />
+  <meta name="twitter:description" content="LogoCardStackViewPlatform[License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)[API](https://img.shields.io/badge/API-14%2B-blue.svg?style=fla..." />
 
   
   	<!-- Article specific OG data -->
@@ -505,6 +505,10 @@
                 
               
             
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -550,7 +554,7 @@
             
           <div class="font-tiny">
               <br>
-            &copy; 2017 Android UI OpenSource
+            &copy; 2018 Android UI OpenSource
           </div>
         </div>
       </div>
@@ -621,100 +625,416 @@
               <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/AndroidUICollection/images/posts/2016-10-12-CardStackView.gif)"></div>
             </div>
           <br>
-          <h1 id="cardstackview">CardStackView</h1>
+          <p><a href="https://github.com/yuyakaido/CardStackView/blob/master/images/logo.png">Logo</a></p>
 
-<p><a href="https://opensource.org/licenses/Apache-2.0">[License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)</a>
-<a href="https://bintray.com/yuyakaido/maven/CardStackView/_latestVersion">[Download](https://api.bintray.com/packages/yuyakaido/maven/CardStackView/images/download.svg)</a></p>
+<h1 id="cardstackview">CardStackView</h1>
 
-<p>Tinder like swipeable card view for Android</p>
+<p><a href="http://img.shields.io/badge/platform-android-blue.svg?style=flat">Platform</a>
+<a href="https://opensource.org/licenses/Apache-2.0">[License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)</a>
+<a href="https://android-arsenal.com/api?level=14">[API](https://img.shields.io/badge/API-14%2B-blue.svg?style=flat)</a>
+<a href="https://bintray.com/yuyakaido/maven/CardStackView/_latestVersion">[Download](https://api.bintray.com/packages/yuyakaido/maven/CardStackView/images/download.svg)</a>
+<a href="https://android-arsenal.com/details/1/6075">[AndroidArsenal](https://img.shields.io/badge/Android%20Arsenal-CardStackView-blue.svg?style=flat)</a>
+<a href="https://circleci.com/gh/yuyakaido/CardStackView">[CircleCI](https://circleci.com/gh/yuyakaido/CardStackView.svg?style=svg)</a></p>
 
-<h1 id="sample">Sample</h1>
+<h1 id="overview">Overview</h1>
 
-<h2 id="swipe">Swipe</h2>
+<p><a href="https://github.com/yuyakaido/CardStackView/blob/master/images/overview-github.gif">Overview</a></p>
 
-<p><a href="https://github.com/yuyakaido/CardStackView/blob/master/sample-orverview.gif">Swipe</a></p>
+<h1 id="contents">Contents</h1>
+
+<ul>
+  <li><a href="#features">Features</a>
+    <ul>
+      <li><a href="#manual-swipe">Manual Swipe</a></li>
+      <li><a href="#automatic-swipe">Automatic Swipe</a></li>
+      <li><a href="#move-to-origin">Move to Origin</a></li>
+      <li><a href="#reverse">Reverse</a></li>
+      <li><a href="#stackfrom">StackFrom</a></li>
+      <li><a href="#visiblecount">VisibleCount</a></li>
+      <li><a href="#elevationenabled">ElevationEnabled</a></li>
+      <li><a href="#translationdiff">TranslationDiff</a></li>
+      <li><a href="#scalediff">ScaleDiff</a></li>
+      <li><a href="#overlay">Overlay</a></li>
+      <li><a href="#swipeenabled">SwipeEnabled</a></li>
+      <li><a href="#swipedirection">SwipeDirection</a></li>
+      <li><a href="#swipethreshold">SwipeThreshold</a></li>
+    </ul>
+  </li>
+  <li><a href="#installation">Installation</a></li>
+  <li><a href="#license">License</a></li>
+</ul>
+
+<h1 id="features">Features</h1>
+
+<h2 id="manual-swipe">Manual Swipe</h2>
+
+<p><a href="https://github.com/yuyakaido/CardStackView/blob/master/images/manual-swipe.gif">ManualSwipe</a></p>
+
+<h2 id="automatic-swipe">Automatic Swipe</h2>
+
+<p><a href="https://github.com/yuyakaido/CardStackView/blob/master/images/automatic-swipe.gif">AutomaticSwipe</a></p>
+
+<p>Custom animation is available when automatic swiping</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">CardStackView</span><span class="err">#</span><span class="n">swipe</span><span class="o">(</span><span class="n">SwipeDirection</span><span class="o">,</span> <span class="n">AnimatorSet</span><span class="o">)</span>
+</code></pre>
+</div>
+
+<h2 id="move-to-origin">Move to Origin</h2>
+
+<p><a href="https://github.com/yuyakaido/CardStackView/blob/master/images/move-to-origin.gif">MoveToOrigin</a></p>
 
 <h2 id="reverse">Reverse</h2>
 
-<p><a href="https://github.com/yuyakaido/CardStackView/blob/master/sample-reverse.gif">Reverse</a></p>
+<p><a href="https://github.com/yuyakaido/CardStackView/blob/master/images/reverse.gif">Reverse</a></p>
 
-<h2 id="custom-animation">Custom animation</h2>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">CardStackView</span><span class="err">#</span><span class="n">reverse</span><span class="o">();</span>
+</code></pre>
+</div>
 
-<p><a href="https://github.com/yuyakaido/CardStackView/blob/master/sample-custom-animation.gif">Custom animation</a></p>
+<h2 id="stackfrom">StackFrom</h2>
 
-<h1 id="requirement">Requirement</h1>
-
-<p>Android 4.0+ (API 14+)</p>
-
-<h1 id="usage">Usage</h1>
-
-<h2 id="swipe-1">Swipe</h2>
-
-<p>Add CardStackView in layout file</p>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Default</th>
+      <th style="text-align: center">Value</th>
+      <th style="text-align: center">Sample</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">✅</td>
+      <td style="text-align: center">Top</td>
+      <td style="text-align: center"><a href="https://github.com/yuyakaido/CardStackView/blob/master/images/stack-from-top.png">StackFrom-Top</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">Bottom</td>
+      <td style="text-align: center"><a href="https://github.com/yuyakaido/CardStackView/blob/master/images/stack-from-bottom.png">StackFrom-Bottom</a></td>
+    </tr>
+  </tbody>
+</table>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;com.yuyakaido.android.cardstackview.CardStackView</span>
-    <span class="na">android:id=</span><span class="s">"@+id/activity_main_card_stack"</span>
-    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
-    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
-    <span class="na">android:padding=</span><span class="s">"30dp"</span>
-    <span class="na">android:clipChildren=</span><span class="s">"false"</span>
-    <span class="na">android:clipToPadding=</span><span class="s">"false"</span><span class="nt">/&gt;</span>
+ <span class="err"> </span> <span class="err"> </span><span class="na">app:stackFrom=</span><span class="s">"top"</span>
+    <span class="err">or</span>
+    <span class="na">app:stackFrom=</span><span class="s">"bottom"</span><span class="nt">/&gt;</span>
 </code></pre>
 </div>
 
-<p>Set adapter to CardStackView</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">CardStackView</span> <span class="n">cardStackView</span> <span class="o">=</span> <span class="o">(</span><span class="n">CardStackView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">activity_main_card_stack</span><span class="o">);</span>
-<span class="n">cardStackView</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(</span><span class="n">adapter</span><span class="o">);</span>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">CardStackView</span><span class="err">#</span><span class="n">setStackFrom</span><span class="o">(</span><span class="n">StackFrom</span><span class="o">.</span><span class="na">Top</span><span class="o">);</span>
+<span class="n">or</span>
+<span class="n">CardStackView</span><span class="err">#</span><span class="n">setStackFrom</span><span class="o">(</span><span class="n">StackFrom</span><span class="o">.</span><span class="na">Bottom</span><span class="o">);</span>
 </code></pre>
 </div>
 
-<h2 id="reverse-1">Reverse</h2>
+<h2 id="visiblecount">VisibleCount</h2>
 
-<p>Call reverse method</p>
+<p>This value must be greater than 0.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">final</span> <span class="n">CardStackView</span> <span class="n">cardStackView</span> <span class="o">=</span> <span class="o">(</span><span class="n">CardStackView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">activity_main_card_stack_view</span><span class="o">);</span>
-<span class="n">cardStackView</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(</span><span class="n">adapter</span><span class="o">);</span>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Default</th>
+      <th style="text-align: center">Value</th>
+      <th style="text-align: center">Sample</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">✅</td>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center"><a href="https://github.com/yuyakaido/CardStackView/blob/master/images/visible-count-3.png">VisibleCount-3</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center"><a href="https://github.com/yuyakaido/CardStackView/blob/master/images/visible-count-4.png">VisibleCount-4</a></td>
+    </tr>
+  </tbody>
+</table>
 
-<span class="n">View</span> <span class="n">reverseButton</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">activity_main_reverse_button</span><span class="o">);</span>
-<span class="n">reverseButton</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">cardStackView</span><span class="o">.</span><span class="na">reverse</span><span class="o">();</span>
-    <span class="o">}</span>
-<span class="o">});</span>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;com.yuyakaido.android.cardstackview.CardStackView</span>
+    <span class="na">app:visibleCount=</span><span class="s">"3"</span>
+    <span class="err">or</span>
+    <span class="na">app:visibleCount=</span><span class="s">"4"</span><span class="nt">/&gt;</span>
 </code></pre>
 </div>
 
-<h2 id="custom-animation-1">Custom animation</h2>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">CardStackView</span><span class="err">#</span><span class="n">setVisibleCount</span><span class="o">(</span><span class="mi">3</span><span class="o">);</span>
+<span class="n">or</span>
+<span class="n">CardStackView</span><span class="err">#</span><span class="n">setVisibleCount</span><span class="o">(</span><span class="mi">4</span><span class="o">);</span>
+</code></pre>
+</div>
 
-<p>Call discard mathod with custom animator</p>
+<h2 id="elevationenabled">ElevationEnabled</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">final</span> <span class="n">CardStackView</span> <span class="n">cardStackView</span> <span class="o">=</span> <span class="o">(</span><span class="n">CardStackView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">activity_main_card_stack_view</span><span class="o">);</span>
-<span class="n">cardStackView</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(</span><span class="n">adapter</span><span class="o">);</span>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Default</th>
+      <th style="text-align: center">Value</th>
+      <th style="text-align: center">Sample</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">✅</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center"><a href="https://github.com/yuyakaido/CardStackView/blob/master/images/elevation-enabled.png">ElevationEnabled</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center"><a href="https://github.com/yuyakaido/CardStackView/blob/master/images/elevation-disabled.png">ElevationDisabled</a></td>
+    </tr>
+  </tbody>
+</table>
 
-<span class="n">View</span> <span class="n">customAnimationButton</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">activity_main_custom_animation_button</span><span class="o">);</span>
-<span class="n">customAnimationButton</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">ViewGroup</span> <span class="n">target</span> <span class="o">=</span> <span class="n">cardStackView</span><span class="o">.</span><span class="na">getTopView</span><span class="o">();</span>
-        
-        <span class="n">PropertyValuesHolder</span> <span class="n">holderY</span> <span class="o">=</span> <span class="n">PropertyValuesHolder</span><span class="o">.</span><span class="na">ofFloat</span><span class="o">(</span><span class="s">"translationY"</span><span class="o">,</span> <span class="mi">0</span><span class="o">.</span><span class="na">f</span><span class="o">,</span> <span class="mi">600</span><span class="o">.</span><span class="na">f</span><span class="o">);</span>
-        <span class="n">PropertyValuesHolder</span> <span class="n">holderAlpha</span> <span class="o">=</span> <span class="n">PropertyValuesHolder</span><span class="o">.</span><span class="na">ofFloat</span><span class="o">(</span><span class="s">"alpha"</span><span class="o">,</span> <span class="mf">1.0f</span><span class="o">,</span> <span class="mf">0.8f</span><span class="o">);</span>
-        <span class="n">PropertyValuesHolder</span> <span class="n">holderScaleY</span> <span class="o">=</span> <span class="n">PropertyValuesHolder</span><span class="o">.</span><span class="na">ofFloat</span><span class="o">(</span><span class="s">"scaleY"</span><span class="o">,</span> <span class="mf">1.0f</span><span class="o">,</span> <span class="mf">0.3f</span><span class="o">);</span>
-        <span class="n">PropertyValuesHolder</span> <span class="n">holderScaleX</span> <span class="o">=</span> <span class="n">PropertyValuesHolder</span><span class="o">.</span><span class="na">ofFloat</span><span class="o">(</span><span class="s">"scaleX"</span><span class="o">,</span> <span class="mf">1.0f</span><span class="o">,</span> <span class="mf">0.3f</span><span class="o">);</span>
-        <span class="n">ObjectAnimator</span> <span class="n">animator</span> <span class="o">=</span> <span class="n">ObjectAnimator</span><span class="o">.</span><span class="na">ofPropertyValuesHolder</span><span class="o">(</span><span class="n">target</span><span class="o">,</span> <span class="n">holderY</span><span class="o">,</span> <span class="n">holderScaleY</span><span class="o">,</span> <span class="n">holderScaleX</span><span class="o">,</span> <span class="n">holderAlpha</span><span class="o">);</span>
-        <span class="n">animator</span><span class="o">.</span><span class="na">setDuration</span><span class="o">(</span><span class="mi">500</span><span class="o">);</span>
-        
-        <span class="n">cardStackView</span><span class="o">.</span><span class="na">discard</span><span class="o">(</span><span class="n">animator</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">});</span>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;com.yuyakaido.android.cardstackview.CardStackView</span>
+    <span class="na">app:elevationEnabled=</span><span class="s">"true"</span>
+    <span class="err">or</span>
+    <span class="na">app:elevationEnabled=</span><span class="s">"false"</span><span class="nt">/&gt;</span>
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">CardStackView</span><span class="err">#</span><span class="n">setElevationEnabled</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+<span class="n">or</span>
+<span class="n">CardStackView</span><span class="err">#</span><span class="n">setElevationEnabled</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+</code></pre>
+</div>
+
+<h2 id="translationdiff">TranslationDiff</h2>
+
+<p>The unit of TranslationDiff is <strong>dp</strong>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Default</th>
+      <th style="text-align: center">Value</th>
+      <th style="text-align: center">Sample</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">8dp</td>
+      <td style="text-align: center"><a href="https://github.com/yuyakaido/CardStackView/blob/master/images/translation-diff-8.png">TranslationDiff-18</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">✅</td>
+      <td style="text-align: center">12dp</td>
+      <td style="text-align: center"><a href="https://github.com/yuyakaido/CardStackView/blob/master/images/translation-diff-12.png">TranslationDiff-12</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">16dp</td>
+      <td style="text-align: center"><a href="https://github.com/yuyakaido/CardStackView/blob/master/images/translation-diff-16.png">TranslationDiff-16</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;com.yuyakaido.android.cardstackview.CardStackView</span>
+    <span class="na">app:translationDiff=</span><span class="s">"12"</span><span class="nt">/&gt;</span>
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">CardStackView</span><span class="err">#</span><span class="n">setTranslationDiff</span><span class="o">(</span><span class="mi">12</span><span class="n">f</span><span class="o">);</span>
+</code></pre>
+</div>
+
+<h2 id="scalediff">ScaleDiff</h2>
+
+<p>The range of ScaleDiff is 0.0 - 1.0.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Default</th>
+      <th style="text-align: center">Value</th>
+      <th style="text-align: center">Sample</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">✅</td>
+      <td style="text-align: center">0.02</td>
+      <td style="text-align: center"><a href="https://github.com/yuyakaido/CardStackView/blob/master/images/scale-diff-2.png">ScaleDiff-2</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">0.1</td>
+      <td style="text-align: center"><a href="https://github.com/yuyakaido/CardStackView/blob/master/images/scale-diff-10.png">ScaleDiff-10</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;com.yuyakaido.android.cardstackview.CardStackView</span>
+    <span class="na">app:scaleDiff=</span><span class="s">"0.02"</span><span class="nt">/&gt;</span>
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">CardStackView</span><span class="err">#</span><span class="n">setScaleDiff</span><span class="o">(</span><span class="mf">0.02f</span><span class="o">);</span>
+</code></pre>
+</div>
+
+<h2 id="overlay">Overlay</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Value</th>
+      <th style="text-align: center">Sample</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Left</td>
+      <td style="text-align: center"><a href="https://github.com/yuyakaido/CardStackView/blob/master/images/overlay-left.png">Overlay-Left</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Right</td>
+      <td style="text-align: center"><a href="https://github.com/yuyakaido/CardStackView/blob/master/images/overlay-right.png">Overlay-Right</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;com.yuyakaido.android.cardstackview.CardStackView</span>
+    <span class="na">app:leftOverlay=</span><span class="s">"@layout/overlay_left"</span>
+    <span class="err">or</span>
+    <span class="na">app:rightOverlay=</span><span class="s">"@layout/overlay_right"</span><span class="nt">/&gt;</span>
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">CardStackView</span><span class="err">#</span><span class="n">setLeftOverlay</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">overlay_left</span><span class="o">);</span>
+<span class="n">or</span>
+<span class="n">CardStackView</span><span class="err">#</span><span class="n">setRightOverlay</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">overlay_right</span><span class="o">);</span>
+</code></pre>
+</div>
+
+<h2 id="swipeenabled">SwipeEnabled</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Default</th>
+      <th style="text-align: center">Value</th>
+      <th style="text-align: center">Sample</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">✅</td>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center"><a href="https://github.com/yuyakaido/CardStackView/blob/master/images/swipe-enabled.gif">SwipeEnabled</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center"><a href="https://github.com/yuyakaido/CardStackView/blob/master/images/swipe-disabled.gif">SwipeDisabled</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;com.yuyakaido.android.cardstackview.CardStackView</span>
+    <span class="na">app:swipeEnabled=</span><span class="s">"true"</span>
+    <span class="err">or</span>
+    <span class="na">app:swipeEnabled=</span><span class="s">"false"</span><span class="nt">/&gt;</span>
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">CardStackView</span><span class="err">#</span><span class="n">setSwipeEnabled</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+<span class="n">or</span>
+<span class="n">CardStackView</span><span class="err">#</span><span class="n">setSwipeEnabled</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+</code></pre>
+</div>
+
+<h2 id="swipedirection">SwipeDirection</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Default</th>
+      <th style="text-align: center">Value</th>
+      <th style="text-align: center">Sample</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">✅</td>
+      <td style="text-align: center">Freedom</td>
+      <td style="text-align: center"><a href="https://github.com/yuyakaido/CardStackView/blob/master/images/swipe-direction-freedom.gif">SwipeDirection-Freedom</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">Horizontal</td>
+      <td style="text-align: center"><a href="https://github.com/yuyakaido/CardStackView/blob/master/images/swipe-direction-horizontal.gif">SwipeDirection-Horizontal</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">Vertical</td>
+      <td style="text-align: center"><a href="https://github.com/yuyakaido/CardStackView/blob/master/images/swipe-direction-vertical.gif">SwipeDirection-Vertical</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;com.yuyakaido.android.cardstackview.CardStackView</span>
+    <span class="na">app:swipeDirection=</span><span class="s">"freedom"</span>
+    <span class="err">or</span>
+    <span class="na">app:swipeDirection=</span><span class="s">"horizontal"</span>
+    <span class="err">or</span>
+    <span class="na">app:swipeDirection=</span><span class="s">"vertical"</span><span class="nt">/&gt;</span>
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">CardStackView</span><span class="err">#</span><span class="n">setSwipeDirection</span><span class="o">(</span><span class="n">SwipeDirection</span><span class="o">.</span><span class="na">FREEDOM</span><span class="o">);</span>
+<span class="n">or</span>
+<span class="n">CardStackView</span><span class="err">#</span><span class="n">setSwipeDirection</span><span class="o">(</span><span class="n">SwipeDirection</span><span class="o">.</span><span class="na">HORIZONTAL</span><span class="o">);</span>
+<span class="n">or</span>
+<span class="n">CardStackView</span><span class="err">#</span><span class="n">setSwipeDirection</span><span class="o">(</span><span class="n">SwipeDirection</span><span class="o">.</span><span class="na">VERTICAL</span><span class="o">);</span>
+</code></pre>
+</div>
+
+<h2 id="swipethreshold">SwipeThreshold</h2>
+
+<p>The range of SwipeThreshold is 0.0 - 1.0.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Default</th>
+      <th style="text-align: center">Value</th>
+      <th style="text-align: center">Sample</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">✅</td>
+      <td style="text-align: center">0.75</td>
+      <td style="text-align: center"><a href="https://github.com/yuyakaido/CardStackView/blob/master/images/swipe-threshold-75.gif">SwipeThreshold-75%</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">0.1</td>
+      <td style="text-align: center"><a href="https://github.com/yuyakaido/CardStackView/blob/master/images/swipe-threshold-10.gif">SwipeThreshold-10%</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;com.yuyakaido.android.cardstackview.CardStackView</span>
+    <span class="na">app:swipeThreshold=</span><span class="s">"0.75"</span><span class="nt">/&gt;</span>
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">CardStackView</span><span class="err">#</span><span class="n">setSwipeThreshold</span><span class="o">(</span><span class="mf">0.75f</span><span class="o">);</span>
 </code></pre>
 </div>
 
 <h1 id="installation">Installation</h1>
 
-<p>Latest version is <a href="https://api.bintray.com/packages/yuyakaido/maven/CardStackView/images/download.svg">Download</a></p>
+<p>LatestVersion is <a href="https://api.bintray.com/packages/yuyakaido/maven/CardStackView/images/download.svg">LatestVersion</a></p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
     <span class="n">compile</span> <span class="s2">"com.yuyakaido.android:card-stack-view:${LatestVersion}"</span>
@@ -724,7 +1044,7 @@
 
 <h1 id="license">License</h1>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2016 yuyakaido
+<div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2017 yuyakaido
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

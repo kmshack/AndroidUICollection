@@ -505,6 +505,10 @@
                 
               
             
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -550,7 +554,7 @@
             
           <div class="font-tiny">
               <br>
-            &copy; 2017 Android UI OpenSource
+            &copy; 2018 Android UI OpenSource
           </div>
         </div>
       </div>
@@ -626,9 +630,9 @@
 <p><a href="https://bintray.com/romandanylyk/maven/pageindicatorview/_latestVersion"> [Download](https://api.bintray.com/packages/romandanylyk/maven/pageindicatorview/images/download.svg) </a><a href="https://android-arsenal.com/details/1/4555">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-PageIndicatorView-green.svg?style=true)</a><br />
 <a href="https://android-arsenal.com/api?level=14">[API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)</a></p>
 
-<p><code class="highlighter-rouge">PageIndicatorView</code> will simplify your life while you working with Android <code class="highlighter-rouge">ViewPager</code> and need to indicate selected page. It’s easy to setup and customize as you need with run-time preview rendering.</p>
+<p><code class="highlighter-rouge">PageIndicatorView</code> is light library to indicate ViewPager’s selected page with different animations and ability to customise it as you need.</p>
 
-<p>[](https://github.com/romandanylyk/PageIndicatorView/blob/master/assets/preview_anim_drop.gif?raw=true)</p>
+<p>[](https://raw.githubusercontent.com/romandanylyk/PageIndicatorView/master/assets/preview_anim_drop.gif)</p>
 
 <h3 id="integration"><strong>Integration</strong></h3>
 <p>To add <code class="highlighter-rouge">pageindicatorview</code> to your project, first make sure in root <code class="highlighter-rouge">build.gradle</code> you have specified the following repository:
@@ -637,81 +641,84 @@
         jcenter()
     }
 </code>
-<em>Note: by creating new project in Android Studio it will have <code class="highlighter-rouge">jcenter</code> repository specified by default, so you will not need to add it manually.</em></p>
+&gt;<strong><em>Note</em></strong>: by creating new project in Android Studio it will have <code class="highlighter-rouge">jcenter</code> repository specified by default, so you will not need to add it manually.</p>
 
 <p>Once you make sure you have <code class="highlighter-rouge">jcenter</code> repository in your project, all you need to do is to add the following line in <code class="highlighter-rouge">dependencies</code> section of your project <code class="highlighter-rouge">build.gradle</code>.</p>
 
 <p>See latest library version <a href="https://bintray.com/romandanylyk/maven/pageindicatorview/_latestVersion"> [Download](https://api.bintray.com/packages/romandanylyk/maven/pageindicatorview/images/download.svg) </a>
 <code class="highlighter-rouge">groovy
-compile 'com.romandanylyk:pageindicatorview:X.X.X'
+implementation 'com.romandanylyk:pageindicatorview:X.X.X'
 </code>
 If your project already use <code class="highlighter-rouge">appcompat-v7</code> support library, you can omit <code class="highlighter-rouge">PageIndicatorView</code> dependencies by adding a single .aar file to your project, that will decrease total amount of methods used in your project.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">compile</span> <span class="s1">'com.romandanylyk:pageindicatorview:X.X.X@aar'</span>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">implementation</span> <span class="s1">'com.romandanylyk:pageindicatorview:X.X.X@aar'</span>
 </code></pre>
 </div>
 
 <p>Keep in mind, that <code class="highlighter-rouge">PageIndicatorView</code> has min <a href="https://developer.android.com/about/dashboards/index.html">API level 14</a> and these dependencies:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code> <span class="n">compile</span> <span class="s1">'com.android.support:support-annotations:25.3.0'</span>
- <span class="n">compile</span> <span class="s1">'com.android.support:support-compat:25.3.0'</span>
- <span class="n">compile</span> <span class="s1">'com.android.support:support-core-ui:25.3.0'</span>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">implementation</span> <span class="s1">'com.android.support:appcompat-v7:27.1.1'</span>
+<span class="n">implementation</span> <span class="s1">'com.android.support:recyclerview-v7:27.1.1'</span>
+<span class="n">implementation</span> <span class="s1">'com.android.support:support-core-ui:27.1.1'</span>
 </code></pre>
 </div>
 
 <h3 id="usage-sample"><strong>Usage Sample</strong></h3>
-<p>During implementation of <code class="highlighter-rouge">PageIndicatorView</code> I tried to make it’s setup as easy as possible. 
-After you set adapter to your <code class="highlighter-rouge">ViewPager</code>, all you need to do is to <code class="highlighter-rouge">setViewPager()</code> and that’s it <code class="highlighter-rouge">PageIndicatorView</code> will get count from your adapter and start working with instance of your <code class="highlighter-rouge">ViewPager</code> automatically.</p>
+<p>Usage of <code class="highlighter-rouge">PageIndicatorView</code> is quite simple. All you need to do is to declare a view in your <code class="highlighter-rouge">layout.xml</code>  and call <code class="highlighter-rouge">setSelection</code> method to select specific indicator - that’s it</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">ViewPager</span> <span class="n">viewPager</span> <span class="o">=</span> <span class="o">(</span><span class="n">ViewPager</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">viewPager</span><span class="o">);</span>
-<span class="n">viewPager</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(</span><span class="n">adapter</span><span class="o">);</span>
-<span class="c1">//instance of android.support.v4.view.PagerAdapter adapter</span>
-
-<span class="n">PageIndicatorView</span> <span class="n">pageIndicatorView</span> <span class="o">=</span> <span class="o">(</span><span class="n">PageIndicatorView</span><span class="o">)</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">pageIndicatorView</span><span class="o">);</span>
-<span class="n">pageIndicatorView</span><span class="o">.</span><span class="na">setViewPager</span><span class="o">(</span><span class="n">viewPager</span><span class="o">);</span>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">PageIndicatorView</span> <span class="n">pageIndicatorView</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">pageIndicatorView</span><span class="o">);</span>
+        <span class="n">pageIndicatorView</span><span class="o">.</span><span class="na">setCount</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span> <span class="c1">// specify total count of indicators</span>
+        <span class="n">pageIndicatorView</span><span class="o">.</span><span class="na">setSelection</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
 </code></pre>
 </div>
 
-<p>Keep in mind that all public methods are also exist as attributes, so you can even setup and customize page indicator without any java code.</p>
+<p>But if you’re as lazy as I’m - then there is another option to handle <code class="highlighter-rouge">PageIndicatorView</code></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="nt">&lt;com.rd.PageIndicatorView</span>
+<div class="highlighter-rouge"><pre class="highlight"><code>     <span class="nt">&lt;com.rd.PageIndicatorView</span>
         <span class="na">android:id=</span><span class="s">"@+id/pageIndicatorView"</span>
         <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
         <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
-        <span class="na">attrs:piv_viewPager=</span><span class="s">"@id/viewPager"</span><span class="nt">/&gt;</span>
+        <span class="na">android:layout_centerInParent=</span><span class="s">"true"</span>
+        <span class="na">app:piv_animationType=</span><span class="s">"scale"</span>
+        <span class="na">app:piv_dynamicCount=</span><span class="s">"true"</span>
+        <span class="na">app:piv_interactiveAnimation=</span><span class="s">"true"</span>
+        <span class="na">app:piv_selectedColor=</span><span class="s">"@color/gray_50"</span>
+        <span class="na">app:piv_unselectedColor=</span><span class="s">"@color/gray_300"</span>
+        <span class="na">app:piv_viewPager=</span><span class="s">"@id/viewPager"</span>
+        <span class="na">attrs:piv_padding=</span><span class="s">"12dp"</span>
+        <span class="na">attrs:piv_radius=</span><span class="s">"8dp"</span> <span class="nt">/&gt;</span>
 </code></pre>
 </div>
+<p>All the <code class="highlighter-rouge">piv_</code> attributes here are specific for <code class="highlighter-rouge">PageIndicatorView</code> so you can customise it as you want with attributes - pretty handy.</p>
 
-<h3 id="customization"><strong>Customization</strong></h3>
-<p>One of the most important feature of every custom view is ability to customize its look as user need. By calling the following methods (or attributes) you will be able to customize <code class="highlighter-rouge">PageIndicatorView</code> as you need.</p>
+<p>But what is more important here is  <code class="highlighter-rouge">app:piv_viewPager="@id/viewPager"</code>.
+What it actually do is catch up your <code class="highlighter-rouge">ViewPager</code> and automatically handles all the event’s to selected the right page - so you don’t need to call <code class="highlighter-rouge">setSelection</code> method on your own.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">//set size</span>
-<span class="n">setCount</span><span class="o">(</span><span class="kt">int</span> <span class="n">count</span><span class="o">)</span>
-<span class="n">setDynamicCount</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">dynamicCount</span><span class="o">)</span>
+<p>Another handy options here that works with your <code class="highlighter-rouge">ViewPager</code> as a whole is 
+<code class="highlighter-rouge">app:piv_dynamicCount="true"</code> and ` app:piv_interactiveAnimation=”true”`</p>
 
-<span class="n">setRadius</span><span class="o">(</span><span class="kt">int</span> <span class="n">radiusDp</span><span class="o">)</span>
-<span class="n">setPadding</span><span class="o">(</span><span class="kt">int</span> <span class="n">paddingDp</span><span class="o">)</span>
-<span class="n">setStrokeWidth</span><span class="o">(</span><span class="kt">int</span> <span class="n">strokeDp</span><span class="o">)</span>
+<p>Dynamic count will automatically updates <code class="highlighter-rouge">PageIndicatorView</code> total count as you updates pages count in your <code class="highlighter-rouge">ViewPager</code> - so that’s pretty useful.</p>
 
-<span class="n">setAutoVisibility</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">autoVisibility</span><span class="o">)</span>
-<span class="n">setOrientation</span><span class="o">(</span><span class="n">Orientation</span> <span class="n">orientation</span><span class="o">)</span>
+<p>While interactive animation will progress the animation process within your swipe position, which makes animation more natural and responsive to end user.</p>
 
-<span class="c1">//set color</span>
-<span class="n">setUnselectedColor</span><span class="o">(</span><span class="kt">int</span> <span class="n">color</span><span class="o">)</span>
-<span class="n">setSelectedColor</span><span class="o">(</span><span class="kt">int</span> <span class="n">color</span><span class="o">)</span>
+<blockquote>
+  <p><strong><em>Note</em></strong>:  Because <code class="highlighter-rouge">setViewPagerId</code> uses an instance of <code class="highlighter-rouge">ViewPager</code>, using it in recycler could lead to id conflicts, so <code class="highlighter-rouge">PageIndicatorView</code> will not know properly what is the right <code class="highlighter-rouge">ViewPager</code> to work with. Instead you should handle selected indicators on your own programatically.</p>
+</blockquote>
 
-<span class="c1">//set animation</span>
-<span class="n">setAnimationDuration</span><span class="o">(</span><span class="kt">long</span> <span class="n">duration</span><span class="o">)</span>
-<span class="n">setAnimationType</span><span class="o">(</span><span class="n">AnimationType</span> <span class="n">type</span><span class="o">)</span>
-<span class="n">setInteractiveAnimation</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">isInteractive</span><span class="o">)</span>
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="n">pager</span><span class="o">.</span><span class="na">addOnPageChangeListener</span><span class="o">(</span><span class="k">new</span> <span class="n">ViewPager</span><span class="o">.</span><span class="na">OnPageChangeListener</span><span class="o">()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="n">onPageScrolled</span><span class="o">(</span><span class="kt">int</span> <span class="n">position</span><span class="o">,</span> <span class="kt">float</span> <span class="n">positionOffset</span><span class="o">,</span> <span class="kt">int</span> <span class="n">positionOffsetPixels</span><span class="o">)</span> <span class="o">{</span><span class="cm">/*empty*/</span><span class="o">}</span>
 
-<span class="c1">//set selection</span>
-<span class="n">setProgress</span><span class="o">(</span><span class="kt">int</span> <span class="n">selectingPosition</span><span class="o">,</span> <span class="kt">float</span> <span class="n">progress</span><span class="o">)</span>
-<span class="n">setSelection</span><span class="o">(</span><span class="kt">int</span> <span class="n">position</span><span class="o">)</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="n">onPageSelected</span><span class="o">(</span><span class="kt">int</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">pageIndicatorView</span><span class="o">.</span><span class="na">setSelection</span><span class="o">(</span><span class="n">position</span><span class="o">);</span>
+            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="n">onPageScrollStateChanged</span><span class="o">(</span><span class="kt">int</span> <span class="n">state</span><span class="o">)</span> <span class="o">{</span><span class="cm">/*empty*/</span><span class="o">}</span>
+        <span class="o">});</span>
 </code></pre>
 </div>
-
-<p>[](https://github.com/romandanylyk/PageIndicatorView/blob/master/assets/attributes.gif?raw=true)</p>
 
 <p>Here you can see all the animations <code class="highlighter-rouge">PageIndicatorView</code> support.</p>
 
