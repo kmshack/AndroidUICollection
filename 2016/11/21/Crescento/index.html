@@ -505,6 +505,10 @@
                 
               
             
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -550,7 +554,7 @@
             
           <div class="font-tiny">
               <br>
-            &copy; 2017 Android UI OpenSource
+            &copy; 2018 Android UI OpenSource
           </div>
         </div>
       </div>
@@ -693,42 +697,43 @@ Of course, you can also choose what you want to donate, all donations are awesom
 <h2 id="gradle-integration">Gradle Integration</h2>
 
 <p>If you are using gradle then add these lines in build.gradle file at project level.
-<code class="highlighter-rouge">java
-	allprojects {
-        repositories {
-            ...
-            maven { url "https://jitpack.io" }
-        }
+```java
+allprojects {
+    repositories {
+        …
+        maven { url “https://jitpack.io” }
     }
-</code></p>
+}</p>
 
-<p>Add below lines in build.gradle at app level.
-<code class="highlighter-rouge">java
-	compile 'com.github.developer-shivam:crescento:1.1.0'
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>
+Add below lines in build.gradle at app level.
+```java
+compile 'com.github.developer-shivam:Crescento:1.2.1'
+</code></pre>
+</div>
 
 <h2 id="basic-usage">Basic Usage</h2>
 
 <p><em>For a working implementation, see <code class="highlighter-rouge">/app</code> folder</em></p>
 
-<p><strong>CrescentoImageView</strong></p>
+<p><strong>ImageView</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;developer.shivam.library.CrescentoImageView</span> <span class="na">android:id=</span><span class="s">"@+id/crescentoImageView"</span>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;developer.shivam.crescento.ImageView</span> <span class="na">android:id=</span><span class="s">"@+id/crescentoImageView"</span>
     <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
     <span class="na">android:layout_height=</span><span class="s">"300dp"</span>
     <span class="na">android:elevation=</span><span class="s">"20dp"</span>
     <span class="na">android:scaleType=</span><span class="s">"centerCrop"</span>
     <span class="na">attribute:gravity=</span><span class="s">"top"</span>
     <span class="na">attribute:curvature=</span><span class="s">"50dp"</span>
-    <span class="na">attribute:tintMode=</span><span class="s">"manual"</span>
-    <span class="na">attribute:tintColor=</span><span class="s">"#FFFFFF"</span>
+    <span class="na">attribute:crescentoTintMode=</span><span class="s">"manual"</span>
+    <span class="na">attribute:crescentoTintColor=</span><span class="s">"#FFFFFF"</span>
     <span class="na">attribute:tintAlpha=</span><span class="s">"50"</span> <span class="nt">/&gt;</span>
 </code></pre>
 </div>
 
-<p><strong>CrescentoContainer</strong></p>
+<p><strong>Container</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;developer.shivam.library.CrescentoContainer</span> <span class="na">android:id=</span><span class="s">"@+id/crescentoContainer"</span>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;developer.shivam.crescento.Container</span> <span class="na">android:id=</span><span class="s">"@+id/crescentoContainer"</span>
     <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
     <span class="na">android:layout_height=</span><span class="s">"300dp"</span>
     <span class="na">android:elevation=</span><span class="s">"20dp"</span>
@@ -754,7 +759,7 @@ Of course, you can also choose what you want to donate, all donations are awesom
   <li><strong>gravity</strong> : To set gravity. <strong>TOP</strong> or <strong>BOTTOM</strong>.</li>
 </ul>
 
-<p>#Connect Me</p>
+<h2 id="connect-with-me">Connect With Me</h2>
 
 <p>Shivam Satija (droidsergeant)</p>
 

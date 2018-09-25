@@ -505,6 +505,10 @@
                 
               
             
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -550,7 +554,7 @@
             
           <div class="font-tiny">
               <br>
-            &copy; 2017 Android UI OpenSource
+            &copy; 2018 Android UI OpenSource
           </div>
         </div>
       </div>
@@ -726,244 +730,244 @@ You have to add FinestWebViewActivity in your <code class="highlighter-rouge">An
 
 <h3 id="builder-options">2. Builder Options</h3>
 
-<p><strong>Constructors</strong>
-<code class="highlighter-rouge">java
-Builder(@NonNull Activity activity);
-// If you use context instead of activity, FinestWebView enter animation won't work
-Builder(@NonNull Context context);
-</code></p>
+<h4 id="constructors">Constructors</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">Builder</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">Activity</span> <span class="n">activity</span><span class="o">);</span>
+<span class="c1">// If you use context instead of activity, FinestWebView enter animation won't work</span>
+<span class="n">Builder</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">Context</span> <span class="n">context</span><span class="o">);</span>
+</code></pre>
+</div>
 
-<p><strong>Load data or Show url</strong>
-```java
-load(@StringRes int dataRes);
-load(String data);
-load(String data, String mimeType, String encoding);</p>
+<h4 id="load-data-or-show-url">Load data or Show url</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">load</span><span class="o">(</span><span class="nd">@StringRes</span> <span class="kt">int</span> <span class="n">dataRes</span><span class="o">);</span>
+<span class="n">load</span><span class="o">(</span><span class="n">String</span> <span class="n">data</span><span class="o">);</span>
+<span class="n">load</span><span class="o">(</span><span class="n">String</span> <span class="n">data</span><span class="o">,</span> <span class="n">String</span> <span class="n">mimeType</span><span class="o">,</span> <span class="n">String</span> <span class="n">encoding</span><span class="o">);</span>
 
-<p>show(@StringRes int urlRes);
-show(@NonNull String url);
-```</p>
+<span class="n">show</span><span class="o">(</span><span class="nd">@StringRes</span> <span class="kt">int</span> <span class="n">urlRes</span><span class="o">);</span>
+<span class="n">show</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">String</span> <span class="n">url</span><span class="o">);</span>
+</code></pre>
+</div>
 
-<p><strong>WebView Listener Options</strong>
-<code class="highlighter-rouge">java
-setWebViewListener(WebViewListener listener);
-addWebViewListener(WebViewListener listener);
-removeWebViewListener(WebViewListener listener);
-</code></p>
+<h4 id="webview-listener-options">WebView Listener Options</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">setWebViewListener</span><span class="o">(</span><span class="n">WebViewListener</span> <span class="n">listener</span><span class="o">);</span>
+<span class="n">addWebViewListener</span><span class="o">(</span><span class="n">WebViewListener</span> <span class="n">listener</span><span class="o">);</span>
+<span class="n">removeWebViewListener</span><span class="o">(</span><span class="n">WebViewListener</span> <span class="n">listener</span><span class="o">);</span>
+</code></pre>
+</div>
 
-<p><strong>Right to Left Options</strong>
-<code class="highlighter-rouge">java
-rtl(boolean rtl);
-</code></p>
+<h4 id="right-to-left-options">Right to Left Options</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">rtl</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">rtl</span><span class="o">);</span>
+</code></pre>
+</div>
 
-<p><strong>Theme Options</strong>
-<code class="highlighter-rouge">java
-theme(@StyleRes int theme);
-</code></p>
+<h4 id="theme-options">Theme Options</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">theme</span><span class="o">(</span><span class="nd">@StyleRes</span> <span class="kt">int</span> <span class="n">theme</span><span class="o">);</span>
+</code></pre>
+</div>
 
-<p><strong>StatusBar Options</strong>
-<code class="highlighter-rouge">java
-statusBarColor(@ColorInt int color);
-statusBarColorRes(@ColorRes int color);
-</code></p>
+<h4 id="statusbar-options">StatusBar Options</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">statusBarColor</span><span class="o">(</span><span class="nd">@ColorInt</span> <span class="kt">int</span> <span class="n">color</span><span class="o">);</span>
+<span class="n">statusBarColorRes</span><span class="o">(</span><span class="nd">@ColorRes</span> <span class="kt">int</span> <span class="n">color</span><span class="o">);</span>
+</code></pre>
+</div>
 
-<p><strong>Toolbar Options</strong>
-<code class="highlighter-rouge">java
-toolbarColor(@ColorInt int color);
-toolbarColorRes(@ColorRes int color);
-toolbarScrollFlags(@ScrollFlags int flags);
-</code></p>
+<h4 id="toolbar-options">Toolbar Options</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">toolbarColor</span><span class="o">(</span><span class="nd">@ColorInt</span> <span class="kt">int</span> <span class="n">color</span><span class="o">);</span>
+<span class="n">toolbarColorRes</span><span class="o">(</span><span class="nd">@ColorRes</span> <span class="kt">int</span> <span class="n">color</span><span class="o">);</span>
+<span class="n">toolbarScrollFlags</span><span class="o">(</span><span class="nd">@ScrollFlags</span> <span class="kt">int</span> <span class="n">flags</span><span class="o">);</span>
+</code></pre>
+</div>
 
-<p><strong>Icon Options</strong>
-<code class="highlighter-rouge">java
-iconDefaultColor(@ColorInt int color);
-iconDefaultColorRes(@ColorRes int color);
-iconDisabledColor(@ColorInt int color);
-iconDisabledColorRes(@ColorRes int colorRes);
-iconPressedColor(@ColorInt int color);
-iconPressedColorRes(@ColorRes int colorRes);
-iconSelector(@DrawableRes int selectorRes);
-</code></p>
+<h4 id="icon-options">Icon Options</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">iconDefaultColor</span><span class="o">(</span><span class="nd">@ColorInt</span> <span class="kt">int</span> <span class="n">color</span><span class="o">);</span>
+<span class="n">iconDefaultColorRes</span><span class="o">(</span><span class="nd">@ColorRes</span> <span class="kt">int</span> <span class="n">color</span><span class="o">);</span>
+<span class="n">iconDisabledColor</span><span class="o">(</span><span class="nd">@ColorInt</span> <span class="kt">int</span> <span class="n">color</span><span class="o">);</span>
+<span class="n">iconDisabledColorRes</span><span class="o">(</span><span class="nd">@ColorRes</span> <span class="kt">int</span> <span class="n">colorRes</span><span class="o">);</span>
+<span class="n">iconPressedColor</span><span class="o">(</span><span class="nd">@ColorInt</span> <span class="kt">int</span> <span class="n">color</span><span class="o">);</span>
+<span class="n">iconPressedColorRes</span><span class="o">(</span><span class="nd">@ColorRes</span> <span class="kt">int</span> <span class="n">colorRes</span><span class="o">);</span>
+<span class="n">iconSelector</span><span class="o">(</span><span class="nd">@DrawableRes</span> <span class="kt">int</span> <span class="n">selectorRes</span><span class="o">);</span>
+</code></pre>
+</div>
 
-<p><strong>Icon Options</strong>
-<code class="highlighter-rouge">java
-showIconClose(boolean showIconClose);
-disableIconClose(boolean disableIconClose);
-showIconBack(boolean showIconBack);
-disableIconBack(boolean disableIconBack);
-showIconForward(boolean showIconForward);
-disableIconForward(boolean disableIconForward);
-showIconMenu(boolean showIconMenu);
-disableIconMenu(boolean disableIconMenu);
-</code></p>
+<h4 id="icon-options-1">Icon Options</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">showIconClose</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">showIconClose</span><span class="o">);</span>
+<span class="n">disableIconClose</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">disableIconClose</span><span class="o">);</span>
+<span class="n">showIconBack</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">showIconBack</span><span class="o">);</span>
+<span class="n">disableIconBack</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">disableIconBack</span><span class="o">);</span>
+<span class="n">showIconForward</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">showIconForward</span><span class="o">);</span>
+<span class="n">disableIconForward</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">disableIconForward</span><span class="o">);</span>
+<span class="n">showIconMenu</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">showIconMenu</span><span class="o">);</span>
+<span class="n">disableIconMenu</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">disableIconMenu</span><span class="o">);</span>
+</code></pre>
+</div>
 
-<p><strong>SwipeRefreshLayout Options</strong>
-<code class="highlighter-rouge">java
-showSwipeRefreshLayout(boolean showSwipeRefreshLayout);
-swipeRefreshColor(@ColorInt int color);
-swipeRefreshColorRes(@ColorRes int colorRes);
-swipeRefreshColors(int[] colors);
-swipeRefreshColorsRes(@ArrayRes int colorsRes);
-</code></p>
+<h4 id="swiperefreshlayout-options">SwipeRefreshLayout Options</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">showSwipeRefreshLayout</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">showSwipeRefreshLayout</span><span class="o">);</span>
+<span class="n">swipeRefreshColor</span><span class="o">(</span><span class="nd">@ColorInt</span> <span class="kt">int</span> <span class="n">color</span><span class="o">);</span>
+<span class="n">swipeRefreshColorRes</span><span class="o">(</span><span class="nd">@ColorRes</span> <span class="kt">int</span> <span class="n">colorRes</span><span class="o">);</span>
+<span class="n">swipeRefreshColors</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">colors</span><span class="o">);</span>
+<span class="n">swipeRefreshColorsRes</span><span class="o">(</span><span class="nd">@ArrayRes</span> <span class="kt">int</span> <span class="n">colorsRes</span><span class="o">);</span>
+</code></pre>
+</div>
 
-<p><strong>Divider Options</strong>
-<code class="highlighter-rouge">java
-showDivider(boolean showDivider);
-gradientDivider(boolean gradientDivider);
-dividerColor(@ColorInt int color);
-dividerColorRes(@ColorRes int colorRes);
-dividerHeight(float height);
-dividerHeight(int height);
-dividerHeightRes(@DimenRes int height);
-</code></p>
+<h4 id="divider-options">Divider Options</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">showDivider</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">showDivider</span><span class="o">);</span>
+<span class="n">gradientDivider</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">gradientDivider</span><span class="o">);</span>
+<span class="n">dividerColor</span><span class="o">(</span><span class="nd">@ColorInt</span> <span class="kt">int</span> <span class="n">color</span><span class="o">);</span>
+<span class="n">dividerColorRes</span><span class="o">(</span><span class="nd">@ColorRes</span> <span class="kt">int</span> <span class="n">colorRes</span><span class="o">);</span>
+<span class="n">dividerHeight</span><span class="o">(</span><span class="kt">float</span> <span class="n">height</span><span class="o">);</span>
+<span class="n">dividerHeight</span><span class="o">(</span><span class="kt">int</span> <span class="n">height</span><span class="o">);</span>
+<span class="n">dividerHeightRes</span><span class="o">(</span><span class="nd">@DimenRes</span> <span class="kt">int</span> <span class="n">height</span><span class="o">);</span>
+</code></pre>
+</div>
 
-<p><strong>ProgressBar Options</strong>
-<code class="highlighter-rouge">java
-showProgressBar(boolean showProgressBar);
-progressBarColor(@ColorInt int color);
-progressBarColorRes(@ColorRes int colorRes);
-progressBarHeight(float height);
-progressBarHeight(int height);
-progressBarHeightRes(@DimenRes int height);
-progressBarPosition(@NonNull Position position);
-</code></p>
+<h4 id="progressbar-options">ProgressBar Options</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">showProgressBar</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">showProgressBar</span><span class="o">);</span>
+<span class="n">progressBarColor</span><span class="o">(</span><span class="nd">@ColorInt</span> <span class="kt">int</span> <span class="n">color</span><span class="o">);</span>
+<span class="n">progressBarColorRes</span><span class="o">(</span><span class="nd">@ColorRes</span> <span class="kt">int</span> <span class="n">colorRes</span><span class="o">);</span>
+<span class="n">progressBarHeight</span><span class="o">(</span><span class="kt">float</span> <span class="n">height</span><span class="o">);</span>
+<span class="n">progressBarHeight</span><span class="o">(</span><span class="kt">int</span> <span class="n">height</span><span class="o">);</span>
+<span class="n">progressBarHeightRes</span><span class="o">(</span><span class="nd">@DimenRes</span> <span class="kt">int</span> <span class="n">height</span><span class="o">);</span>
+<span class="n">progressBarPosition</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">Position</span> <span class="n">position</span><span class="o">);</span>
+</code></pre>
+</div>
 
-<p><strong>Title Options</strong>
-<code class="highlighter-rouge">java
-titleDefault(@NonNull String title);
-titleDefaultRes(@StringRes int stringRes);
-updateTitleFromHtml(boolean updateTitleFromHtml);
-titleSize(float titleSize);
-titleSize(int titleSize);
-titleSizeRes(@DimenRes int titleSize);
-titleFont(String titleFont);
-titleColor(@ColorInt int color);
-titleColorRes(@ColorRes int colorRes);
-</code></p>
+<h4 id="title-options">Title Options</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">titleDefault</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">String</span> <span class="n">title</span><span class="o">);</span>
+<span class="n">titleDefaultRes</span><span class="o">(</span><span class="nd">@StringRes</span> <span class="kt">int</span> <span class="n">stringRes</span><span class="o">);</span>
+<span class="n">updateTitleFromHtml</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">updateTitleFromHtml</span><span class="o">);</span>
+<span class="n">titleSize</span><span class="o">(</span><span class="kt">float</span> <span class="n">titleSize</span><span class="o">);</span>
+<span class="n">titleSize</span><span class="o">(</span><span class="kt">int</span> <span class="n">titleSize</span><span class="o">);</span>
+<span class="n">titleSizeRes</span><span class="o">(</span><span class="nd">@DimenRes</span> <span class="kt">int</span> <span class="n">titleSize</span><span class="o">);</span>
+<span class="n">titleFont</span><span class="o">(</span><span class="n">String</span> <span class="n">titleFont</span><span class="o">);</span>
+<span class="n">titleColor</span><span class="o">(</span><span class="nd">@ColorInt</span> <span class="kt">int</span> <span class="n">color</span><span class="o">);</span>
+<span class="n">titleColorRes</span><span class="o">(</span><span class="nd">@ColorRes</span> <span class="kt">int</span> <span class="n">colorRes</span><span class="o">);</span>
+</code></pre>
+</div>
 
-<p><strong>Url Options</strong>
-<code class="highlighter-rouge">java
-showUrl(boolean showUrl);
-urlSize(float urlSize);
-urlSize(int urlSize);
-urlSizeRes(@DimenRes int urlSize);
-urlFont(String urlFont);
-urlColor(@ColorInt int color);
-urlColorRes(@ColorRes int colorRes);
-</code></p>
+<h4 id="url-options">Url Options</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">showUrl</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">showUrl</span><span class="o">);</span>
+<span class="n">urlSize</span><span class="o">(</span><span class="kt">float</span> <span class="n">urlSize</span><span class="o">);</span>
+<span class="n">urlSize</span><span class="o">(</span><span class="kt">int</span> <span class="n">urlSize</span><span class="o">);</span>
+<span class="n">urlSizeRes</span><span class="o">(</span><span class="nd">@DimenRes</span> <span class="kt">int</span> <span class="n">urlSize</span><span class="o">);</span>
+<span class="n">urlFont</span><span class="o">(</span><span class="n">String</span> <span class="n">urlFont</span><span class="o">);</span>
+<span class="n">urlColor</span><span class="o">(</span><span class="nd">@ColorInt</span> <span class="kt">int</span> <span class="n">color</span><span class="o">);</span>
+<span class="n">urlColorRes</span><span class="o">(</span><span class="nd">@ColorRes</span> <span class="kt">int</span> <span class="n">colorRes</span><span class="o">);</span>
+</code></pre>
+</div>
 
-<p><strong>Menu Options</strong>
-```java
-menuColor(@ColorInt int color);
-menuColorRes(@ColorRes int colorRes);
-menuDropShadowColor(@ColorInt int color);
-menuDropShadowColorRes(@ColorRes int colorRes);
-menuDropShadowSize(float menuDropShadowSize);
-menuDropShadowSize(int menuDropShadowSize);
-menuDropShadowSizeRes(@DimenRes int menuDropShadowSize);
-menuSelector(@DrawableRes int selectorRes);</p>
+<h4 id="menu-options">Menu Options</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">menuColor</span><span class="o">(</span><span class="nd">@ColorInt</span> <span class="kt">int</span> <span class="n">color</span><span class="o">);</span>
+<span class="n">menuColorRes</span><span class="o">(</span><span class="nd">@ColorRes</span> <span class="kt">int</span> <span class="n">colorRes</span><span class="o">);</span>
+<span class="n">menuDropShadowColor</span><span class="o">(</span><span class="nd">@ColorInt</span> <span class="kt">int</span> <span class="n">color</span><span class="o">);</span>
+<span class="n">menuDropShadowColorRes</span><span class="o">(</span><span class="nd">@ColorRes</span> <span class="kt">int</span> <span class="n">colorRes</span><span class="o">);</span>
+<span class="n">menuDropShadowSize</span><span class="o">(</span><span class="kt">float</span> <span class="n">menuDropShadowSize</span><span class="o">);</span>
+<span class="n">menuDropShadowSize</span><span class="o">(</span><span class="kt">int</span> <span class="n">menuDropShadowSize</span><span class="o">);</span>
+<span class="n">menuDropShadowSizeRes</span><span class="o">(</span><span class="nd">@DimenRes</span> <span class="kt">int</span> <span class="n">menuDropShadowSize</span><span class="o">);</span>
+<span class="n">menuSelector</span><span class="o">(</span><span class="nd">@DrawableRes</span> <span class="kt">int</span> <span class="n">selectorRes</span><span class="o">);</span>
 
-<p>menuTextSize(float menuTextSize);
-menuTextSize(int menuTextSize);
-menuTextSizeRes(@DimenRes int menuTextSize);
-menuTextFont(String menuTextFont);
-menuTextColor(@ColorInt int color);
-menuTextColorRes(@ColorRes int colorRes);</p>
+<span class="n">menuTextSize</span><span class="o">(</span><span class="kt">float</span> <span class="n">menuTextSize</span><span class="o">);</span>
+<span class="n">menuTextSize</span><span class="o">(</span><span class="kt">int</span> <span class="n">menuTextSize</span><span class="o">);</span>
+<span class="n">menuTextSizeRes</span><span class="o">(</span><span class="nd">@DimenRes</span> <span class="kt">int</span> <span class="n">menuTextSize</span><span class="o">);</span>
+<span class="n">menuTextFont</span><span class="o">(</span><span class="n">String</span> <span class="n">menuTextFont</span><span class="o">);</span>
+<span class="n">menuTextColor</span><span class="o">(</span><span class="nd">@ColorInt</span> <span class="kt">int</span> <span class="n">color</span><span class="o">);</span>
+<span class="n">menuTextColorRes</span><span class="o">(</span><span class="nd">@ColorRes</span> <span class="kt">int</span> <span class="n">colorRes</span><span class="o">);</span>
 
-<p>menuTextGravity(int gravity);
-menuTextPaddingLeft(float menuTextPaddingLeft);
-menuTextPaddingLeft(int menuTextPaddingLeft);
-menuTextPaddingLeftRes(@DimenRes int menuTextPaddingLeft);
-menuTextPaddingRight(float menuTextPaddingRight);
-menuTextPaddingRight(int menuTextPaddingRight);
-menuTextPaddingRightRes(@DimenRes int menuTextPaddingRight);</p>
+<span class="n">menuTextGravity</span><span class="o">(</span><span class="kt">int</span> <span class="n">gravity</span><span class="o">);</span>
+<span class="n">menuTextPaddingLeft</span><span class="o">(</span><span class="kt">float</span> <span class="n">menuTextPaddingLeft</span><span class="o">);</span>
+<span class="n">menuTextPaddingLeft</span><span class="o">(</span><span class="kt">int</span> <span class="n">menuTextPaddingLeft</span><span class="o">);</span>
+<span class="n">menuTextPaddingLeftRes</span><span class="o">(</span><span class="nd">@DimenRes</span> <span class="kt">int</span> <span class="n">menuTextPaddingLeft</span><span class="o">);</span>
+<span class="n">menuTextPaddingRight</span><span class="o">(</span><span class="kt">float</span> <span class="n">menuTextPaddingRight</span><span class="o">);</span>
+<span class="n">menuTextPaddingRight</span><span class="o">(</span><span class="kt">int</span> <span class="n">menuTextPaddingRight</span><span class="o">);</span>
+<span class="n">menuTextPaddingRightRes</span><span class="o">(</span><span class="nd">@DimenRes</span> <span class="kt">int</span> <span class="n">menuTextPaddingRight</span><span class="o">);</span>
 
-<p>showMenuRefresh(boolean showMenuRefresh);
-stringResRefresh(@StringRes int stringResRefresh);
-showMenuFind(boolean showMenuFind);
-stringResFind(@StringRes int stringResFind);
-showMenuShareVia(boolean showMenuShareVia);
-stringResShareVia(@StringRes int stringResShareVia);
-showMenuCopyLink(boolean showMenuCopyLink);
-stringResCopyLink(@StringRes int stringResCopyLink);
-showMenuOpenWith(boolean showMenuOpenWith);
-stringResOpenWith(@StringRes int stringResOpenWith);
-```</p>
+<span class="n">showMenuRefresh</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">showMenuRefresh</span><span class="o">);</span>
+<span class="n">stringResRefresh</span><span class="o">(</span><span class="nd">@StringRes</span> <span class="kt">int</span> <span class="n">stringResRefresh</span><span class="o">);</span>
+<span class="n">showMenuFind</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">showMenuFind</span><span class="o">);</span>
+<span class="n">stringResFind</span><span class="o">(</span><span class="nd">@StringRes</span> <span class="kt">int</span> <span class="n">stringResFind</span><span class="o">);</span>
+<span class="n">showMenuShareVia</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">showMenuShareVia</span><span class="o">);</span>
+<span class="n">stringResShareVia</span><span class="o">(</span><span class="nd">@StringRes</span> <span class="kt">int</span> <span class="n">stringResShareVia</span><span class="o">);</span>
+<span class="n">showMenuCopyLink</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">showMenuCopyLink</span><span class="o">);</span>
+<span class="n">stringResCopyLink</span><span class="o">(</span><span class="nd">@StringRes</span> <span class="kt">int</span> <span class="n">stringResCopyLink</span><span class="o">);</span>
+<span class="n">showMenuOpenWith</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">showMenuOpenWith</span><span class="o">);</span>
+<span class="n">stringResOpenWith</span><span class="o">(</span><span class="nd">@StringRes</span> <span class="kt">int</span> <span class="n">stringResOpenWith</span><span class="o">);</span>
+</code></pre>
+</div>
 
-<p><strong>More Options</strong>
-<code class="highlighter-rouge">java
-setCustomAnimations(@AnimRes int animationOpenEnter,
-                    @AnimRes int animationOpenExit,
-                    @AnimRes int animationCloseEnter,
-                    @AnimRes int animationCloseExit)
-backPressToClose(boolean backPressToClose);
-stringResCopiedToClipboard(@StringRes int stringResCopiedToClipboard);
-</code></p>
+<h4 id="more-options">More Options</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">setCustomAnimations</span><span class="o">(</span><span class="nd">@AnimRes</span> <span class="kt">int</span> <span class="n">animationOpenEnter</span><span class="o">,</span>
+                    <span class="nd">@AnimRes</span> <span class="kt">int</span> <span class="n">animationOpenExit</span><span class="o">,</span>
+                    <span class="nd">@AnimRes</span> <span class="kt">int</span> <span class="n">animationCloseEnter</span><span class="o">,</span>
+                    <span class="nd">@AnimRes</span> <span class="kt">int</span> <span class="n">animationCloseExit</span><span class="o">)</span>
+<span class="n">backPressToClose</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">backPressToClose</span><span class="o">);</span>
+<span class="n">stringResCopiedToClipboard</span><span class="o">(</span><span class="nd">@StringRes</span> <span class="kt">int</span> <span class="n">stringResCopiedToClipboard</span><span class="o">);</span>
+</code></pre>
+</div>
 
-<p><strong>WebView Options</strong>
-```java
-webViewSupportZoom(boolean webViewSupportZoom);
-webViewMediaPlaybackRequiresUserGesture (boolean webViewMediaPlaybackRequiresUserGesture);
-webViewBuiltInZoomControls (boolean webViewBuiltInZoomControls);
-webViewDisplayZoomControls (boolean webViewDisplayZoomControls);
-webViewAllowFileAccess (boolean webViewAllowFileAccess);
-webViewAllowContentAccess (boolean webViewAllowContentAccess);
-webViewLoadWithOverviewMode (boolean webViewLoadWithOverviewMode);
-webViewSaveFormData (boolean webViewSaveFormData);
-webViewTextZoom (int webViewTextZoom);
-webViewUseWideViewPort (boolean webViewUseWideViewPort);
-webViewSupportMultipleWindows (boolean webViewSupportMultipleWindows);
-webViewLayoutAlgorithm (WebSettings.LayoutAlgorithm webViewLayoutAlgorithm);
-webViewStandardFontFamily (String webViewStandardFontFamily);
-webViewFixedFontFamily (String webViewFixedFontFamily);
-webViewSansSerifFontFamily (String webViewSansSerifFontFamily);
-webViewSerifFontFamily (String webViewSerifFontFamily);
-webViewCursiveFontFamily (String webViewCursiveFontFamily);
-webViewFantasyFontFamily (String webViewFantasyFontFamily);
-webViewMinimumFontSize (int webViewMinimumFontSize);
-webViewMinimumLogicalFontSize (int webViewMinimumLogicalFontSize);
-webViewDefaultFontSize (int webViewDefaultFontSize);
-webViewDefaultFixedFontSize (int webViewDefaultFixedFontSize);
-webViewLoadsImagesAutomatically (boolean webViewLoadsImagesAutomatically);
-webViewBlockNetworkImage (boolean webViewBlockNetworkImage);
-webViewBlockNetworkLoads (boolean webViewBlockNetworkLoads);
-webViewJavaScriptEnabled (boolean webViewJavaScriptEnabled);
-webViewAllowUniversalAccessFromFileURLs (boolean webViewAllowUniversalAccessFromFileURLs);
-webViewAllowFileAccessFromFileURLs (boolean webViewAllowFileAccessFromFileURLs);
-webViewGeolocationDatabasePath (String webViewGeolocationDatabasePath);
-webViewAppCacheEnabled (boolean webViewAppCacheEnabled);
-webViewAppCachePath (String webViewAppCachePath);
-webViewDatabaseEnabled (boolean webViewDatabaseEnabled);
-webViewDomStorageEnabled (boolean webViewDomStorageEnabled);
-webViewGeolocationEnabled (boolean webViewGeolocationEnabled);
-webViewJavaScriptCanOpenWindowsAutomatically (boolean webViewJavaScriptCanOpenWindowsAutomatically);
-webViewDefaultTextEncodingName (String webViewDefaultTextEncodingName);
-webViewUserAgentString (String webViewUserAgentString);
-webViewNeedInitialFocus (boolean webViewNeedInitialFocus);
-webViewCacheMode (int webViewCacheMode);
-webViewMixedContentMode (int webViewMixedContentMode);
-webViewOffscreenPreRaster (boolean webViewOffscreenPreRaster);</p>
+<h4 id="webview-options">WebView Options</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">webViewSupportZoom</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">webViewSupportZoom</span><span class="o">);</span>
+<span class="n">webViewMediaPlaybackRequiresUserGesture</span> <span class="o">(</span><span class="kt">boolean</span> <span class="n">webViewMediaPlaybackRequiresUserGesture</span><span class="o">);</span>
+<span class="n">webViewBuiltInZoomControls</span> <span class="o">(</span><span class="kt">boolean</span> <span class="n">webViewBuiltInZoomControls</span><span class="o">);</span>
+<span class="n">webViewDisplayZoomControls</span> <span class="o">(</span><span class="kt">boolean</span> <span class="n">webViewDisplayZoomControls</span><span class="o">);</span>
+<span class="n">webViewAllowFileAccess</span> <span class="o">(</span><span class="kt">boolean</span> <span class="n">webViewAllowFileAccess</span><span class="o">);</span>
+<span class="n">webViewAllowContentAccess</span> <span class="o">(</span><span class="kt">boolean</span> <span class="n">webViewAllowContentAccess</span><span class="o">);</span>
+<span class="n">webViewLoadWithOverviewMode</span> <span class="o">(</span><span class="kt">boolean</span> <span class="n">webViewLoadWithOverviewMode</span><span class="o">);</span>
+<span class="n">webViewSaveFormData</span> <span class="o">(</span><span class="kt">boolean</span> <span class="n">webViewSaveFormData</span><span class="o">);</span>
+<span class="n">webViewTextZoom</span> <span class="o">(</span><span class="kt">int</span> <span class="n">webViewTextZoom</span><span class="o">);</span>
+<span class="n">webViewUseWideViewPort</span> <span class="o">(</span><span class="kt">boolean</span> <span class="n">webViewUseWideViewPort</span><span class="o">);</span>
+<span class="n">webViewSupportMultipleWindows</span> <span class="o">(</span><span class="kt">boolean</span> <span class="n">webViewSupportMultipleWindows</span><span class="o">);</span>
+<span class="n">webViewLayoutAlgorithm</span> <span class="o">(</span><span class="n">WebSettings</span><span class="o">.</span><span class="na">LayoutAlgorithm</span> <span class="n">webViewLayoutAlgorithm</span><span class="o">);</span>
+<span class="n">webViewStandardFontFamily</span> <span class="o">(</span><span class="n">String</span> <span class="n">webViewStandardFontFamily</span><span class="o">);</span>
+<span class="n">webViewFixedFontFamily</span> <span class="o">(</span><span class="n">String</span> <span class="n">webViewFixedFontFamily</span><span class="o">);</span>
+<span class="n">webViewSansSerifFontFamily</span> <span class="o">(</span><span class="n">String</span> <span class="n">webViewSansSerifFontFamily</span><span class="o">);</span>
+<span class="n">webViewSerifFontFamily</span> <span class="o">(</span><span class="n">String</span> <span class="n">webViewSerifFontFamily</span><span class="o">);</span>
+<span class="n">webViewCursiveFontFamily</span> <span class="o">(</span><span class="n">String</span> <span class="n">webViewCursiveFontFamily</span><span class="o">);</span>
+<span class="n">webViewFantasyFontFamily</span> <span class="o">(</span><span class="n">String</span> <span class="n">webViewFantasyFontFamily</span><span class="o">);</span>
+<span class="n">webViewMinimumFontSize</span> <span class="o">(</span><span class="kt">int</span> <span class="n">webViewMinimumFontSize</span><span class="o">);</span>
+<span class="n">webViewMinimumLogicalFontSize</span> <span class="o">(</span><span class="kt">int</span> <span class="n">webViewMinimumLogicalFontSize</span><span class="o">);</span>
+<span class="n">webViewDefaultFontSize</span> <span class="o">(</span><span class="kt">int</span> <span class="n">webViewDefaultFontSize</span><span class="o">);</span>
+<span class="n">webViewDefaultFixedFontSize</span> <span class="o">(</span><span class="kt">int</span> <span class="n">webViewDefaultFixedFontSize</span><span class="o">);</span>
+<span class="n">webViewLoadsImagesAutomatically</span> <span class="o">(</span><span class="kt">boolean</span> <span class="n">webViewLoadsImagesAutomatically</span><span class="o">);</span>
+<span class="n">webViewBlockNetworkImage</span> <span class="o">(</span><span class="kt">boolean</span> <span class="n">webViewBlockNetworkImage</span><span class="o">);</span>
+<span class="n">webViewBlockNetworkLoads</span> <span class="o">(</span><span class="kt">boolean</span> <span class="n">webViewBlockNetworkLoads</span><span class="o">);</span>
+<span class="n">webViewJavaScriptEnabled</span> <span class="o">(</span><span class="kt">boolean</span> <span class="n">webViewJavaScriptEnabled</span><span class="o">);</span>
+<span class="n">webViewAllowUniversalAccessFromFileURLs</span> <span class="o">(</span><span class="kt">boolean</span> <span class="n">webViewAllowUniversalAccessFromFileURLs</span><span class="o">);</span>
+<span class="n">webViewAllowFileAccessFromFileURLs</span> <span class="o">(</span><span class="kt">boolean</span> <span class="n">webViewAllowFileAccessFromFileURLs</span><span class="o">);</span>
+<span class="n">webViewGeolocationDatabasePath</span> <span class="o">(</span><span class="n">String</span> <span class="n">webViewGeolocationDatabasePath</span><span class="o">);</span>
+<span class="n">webViewAppCacheEnabled</span> <span class="o">(</span><span class="kt">boolean</span> <span class="n">webViewAppCacheEnabled</span><span class="o">);</span>
+<span class="n">webViewAppCachePath</span> <span class="o">(</span><span class="n">String</span> <span class="n">webViewAppCachePath</span><span class="o">);</span>
+<span class="n">webViewDatabaseEnabled</span> <span class="o">(</span><span class="kt">boolean</span> <span class="n">webViewDatabaseEnabled</span><span class="o">);</span>
+<span class="n">webViewDomStorageEnabled</span> <span class="o">(</span><span class="kt">boolean</span> <span class="n">webViewDomStorageEnabled</span><span class="o">);</span>
+<span class="n">webViewGeolocationEnabled</span> <span class="o">(</span><span class="kt">boolean</span> <span class="n">webViewGeolocationEnabled</span><span class="o">);</span>
+<span class="n">webViewJavaScriptCanOpenWindowsAutomatically</span> <span class="o">(</span><span class="kt">boolean</span> <span class="n">webViewJavaScriptCanOpenWindowsAutomatically</span><span class="o">);</span>
+<span class="n">webViewDefaultTextEncodingName</span> <span class="o">(</span><span class="n">String</span> <span class="n">webViewDefaultTextEncodingName</span><span class="o">);</span>
+<span class="n">webViewUserAgentString</span> <span class="o">(</span><span class="n">String</span> <span class="n">webViewUserAgentString</span><span class="o">);</span>
+<span class="n">webViewNeedInitialFocus</span> <span class="o">(</span><span class="kt">boolean</span> <span class="n">webViewNeedInitialFocus</span><span class="o">);</span>
+<span class="n">webViewCacheMode</span> <span class="o">(</span><span class="kt">int</span> <span class="n">webViewCacheMode</span><span class="o">);</span>
+<span class="n">webViewMixedContentMode</span> <span class="o">(</span><span class="kt">int</span> <span class="n">webViewMixedContentMode</span><span class="o">);</span>
+<span class="n">webViewOffscreenPreRaster</span> <span class="o">(</span><span class="kt">boolean</span> <span class="n">webViewOffscreenPreRaster</span><span class="o">);</span>
 
-<p>injectJavaScript(String injectJavaScript);
-```</p>
+<span class="n">injectJavaScript</span><span class="o">(</span><span class="n">String</span> <span class="n">injectJavaScript</span><span class="o">);</span>
+</code></pre>
+</div>
 
-<p><strong>Builder Pattern</strong>
-<code class="highlighter-rouge">java
-new FinestWebView.Builder(activity)
-    .titleDefault("Default Title")
-    .toolbarScrollFlags(AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL | AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS)
-    .gradientDivider(false)
-    .dividerHeight(100)
-    .toolbarColorRes(R.color.accent)
-    .dividerColorRes(R.color.black_30)
-    .iconDefaultColorRes(R.color.accent)
-    .iconDisabledColorRes(R.color.gray)
-    .iconPressedColorRes(R.color.black)
-    .progressBarHeight(DipPixelHelper.getPixel(context, 3))
-    .progressBarColorRes(R.color.accent)
-    .backPressToClose(false)
-    .setCustomAnimations(R.anim.activity_open_enter, R.anim.activity_open_exit, R.anim.activity_close_enter, R.anim.activity_close_exit)
-    .show(url);
-</code></p>
+<h4 id="builder-pattern">Builder Pattern</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">new</span> <span class="n">FinestWebView</span><span class="o">.</span><span class="na">Builder</span><span class="o">(</span><span class="n">activity</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">titleDefault</span><span class="o">(</span><span class="s">"Default Title"</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">toolbarScrollFlags</span><span class="o">(</span><span class="n">AppBarLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">.</span><span class="na">SCROLL_FLAG_SCROLL</span> <span class="o">|</span> <span class="n">AppBarLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">.</span><span class="na">SCROLL_FLAG_ENTER_ALWAYS</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">gradientDivider</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">dividerHeight</span><span class="o">(</span><span class="mi">100</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">toolbarColorRes</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">accent</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">dividerColorRes</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">black_30</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">iconDefaultColorRes</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">accent</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">iconDisabledColorRes</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">gray</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">iconPressedColorRes</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">black</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">progressBarHeight</span><span class="o">(</span><span class="n">DipPixelHelper</span><span class="o">.</span><span class="na">getPixel</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="mi">3</span><span class="o">))</span>
+    <span class="o">.</span><span class="na">progressBarColorRes</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">accent</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">backPressToClose</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">setCustomAnimations</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">anim</span><span class="o">.</span><span class="na">activity_open_enter</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">anim</span><span class="o">.</span><span class="na">activity_open_exit</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">anim</span><span class="o">.</span><span class="na">activity_close_enter</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">anim</span><span class="o">.</span><span class="na">activity_close_exit</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">show</span><span class="o">(</span><span class="n">url</span><span class="o">);</span>
+</code></pre>
+</div>
 
 <h2 id="more-customizations">More customizations</h2>
 

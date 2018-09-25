@@ -505,6 +505,10 @@
                 
               
             
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -550,7 +554,7 @@
             
           <div class="font-tiny">
               <br>
-            &copy; 2017 Android UI OpenSource
+            &copy; 2018 Android UI OpenSource
           </div>
         </div>
       </div>
@@ -644,7 +648,7 @@
    <span class="o">}</span>
    
    <span class="n">dependencies</span> <span class="o">{</span>
-         <span class="n">compile</span> <span class="s1">'com.getkeepsafe.taptargetview:taptargetview:1.9.1'</span>
+         <span class="n">implementation</span> <span class="s1">'com.getkeepsafe.taptargetview:taptargetview:1.12.0'</span>
    <span class="o">}</span>
 </code></pre>
 </div>
@@ -688,6 +692,8 @@
 
 <p>Additionally, each color can be specified via a <code class="highlighter-rouge">@ColorRes</code> or a <code class="highlighter-rouge">@ColorInt</code>. Functions that have the suffix <code class="highlighter-rouge">Int</code> take a <code class="highlighter-rouge">@ColorInt</code>.</p>
 
+<p><em>Tip: When targeting a Toolbar item, be careful with Proguard and ensure you’re keeping certain fields. See <a href="https://github.com/KeepSafe/TapTargetView/issues/180">#180</a></em></p>
+
 <h3 id="sequences">Sequences</h3>
 
 <p>You can easily create a sequence of tap targets with <code class="highlighter-rouge">TapTargetSequence</code>:</p>
@@ -727,6 +733,14 @@
 <p>A sequence is started via a call to <code class="highlighter-rouge">start()</code> on the <code class="highlighter-rouge">TapTargetSequence</code> instance</p>
 
 <p>For more examples of usage, please look at the included sample app.</p>
+
+<h2 id="third-party-bindings">Third Party Bindings</h2>
+
+<h3 id="react-native">React Native</h3>
+<p>Thanks to @prscX, you may now use this library with <a href="https://github.com/facebook/react-native">React Native</a> via the module <a href="https://github.com/prscX/react-native-taptargetview">here</a></p>
+
+<h3 id="xamarin">Xamarin</h3>
+<p>Thanks to @btripp, you may now use this library via a Xamarin Binding located <a href="https://www.nuget.org/packages/Xamarin.TapTargetView">here</a>.</p>
 
 <h2 id="license">License</h2>
 

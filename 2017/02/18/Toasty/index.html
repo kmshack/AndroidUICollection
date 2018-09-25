@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Toasty</title>
-  <meta name="description" content="Toasty[API](https://img.shields.io/badge/API-9%2B-blue.svg?style=flat) [](https://jitpack.io/v/GrenderG/Toasty.svg) [Android Arsenal](https://img.shields.io/...">
+  <meta name="description" content="Toasty[API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat) [](https://jitpack.io/v/GrenderG/Toasty.svg) [Android Arsenal](https://img.shi...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
@@ -16,18 +16,18 @@
   <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="Toasty[API](https://img.shields.io/badge/API-9%2B-blue.svg?style=flat) [](https://jitpack.io/v/GrenderG/Toasty.svg) [Android Arsenal](https://img.shields.io/...">
+  <meta name="description" content="Toasty[API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat) [](https://jitpack.io/v/GrenderG/Toasty.svg) [Android Arsenal](https://img.shi...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="Toasty">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="Toasty[API](https://img.shields.io/badge/API-9%2B-blue.svg?style=flat) [](https://jitpack.io/v/GrenderG/Toasty.svg) [Android Arsenal](https://img.shields.io/...">
+  <meta property="og:description" content="Toasty[API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat) [](https://jitpack.io/v/GrenderG/Toasty.svg) [Android Arsenal](https://img.shi...">
   <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2017/02/18/Toasty/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="Toasty[API](https://img.shields.io/badge/API-9%2B-blue.svg?style=flat) [](https://jitpack.io/v/GrenderG/Toasty.svg) [Android Arsenal](https://img.shields.io/..." />
+  <meta name="twitter:description" content="Toasty[API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat) [](https://jitpack.io/v/GrenderG/Toasty.svg) [Android Arsenal](https://img.shi..." />
 
   
   	<!-- Article specific OG data -->
@@ -505,6 +505,10 @@
                 
               
             
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -550,7 +554,7 @@
             
           <div class="font-tiny">
               <br>
-            &copy; 2017 Android UI OpenSource
+            &copy; 2018 Android UI OpenSource
           </div>
         </div>
       </div>
@@ -622,13 +626,15 @@
             </div>
           <br>
           <h1 id="toasty">Toasty</h1>
-<p><a href="https://android-arsenal.com/api?level=9">[API](https://img.shields.io/badge/API-9%2B-blue.svg?style=flat)</a> <a href="https://jitpack.io/#GrenderG/Toasty">[](https://jitpack.io/v/GrenderG/Toasty.svg)</a> <a href="https://android-arsenal.com/details/1/5102">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Toasty-brightgreen.svg?style=flat)</a> <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=XUUEWEHJYFYV2">[Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)</a></p>
+<p><a href="https://android-arsenal.com/api?level=14">[API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)</a> <a href="https://jitpack.io/#GrenderG/Toasty">[](https://jitpack.io/v/GrenderG/Toasty.svg)</a> <a href="https://android-arsenal.com/details/1/5102">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Toasty-brightgreen.svg?style=flat)</a> <a href="https://www.paypal.me/grenderg">[Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)</a></p>
 
 <div align="center">
 	<img src="https://raw.githubusercontent.com/GrenderG/Toasty/master/art/web_hi_res_512.png" width="128" />
 </div>
 
-<p>The usual Toast, but with steroids. <strong>(Screenshots at the end of the file.)</strong></p>
+<p>The usual Toast, but with steroids.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
 
 <p>Add this in your root <code class="highlighter-rouge">build.gradle</code> file (<strong>not</strong> your module <code class="highlighter-rouge">build.gradle</code> file):</p>
 
@@ -646,7 +652,7 @@
 
 <pre><code class="language-gradle">dependencies {
 	...
-	compile 'com.github.GrenderG:Toasty:1.2.2'
+	implementation 'com.github.GrenderG:Toasty:1.3.0'
 }
 </code></pre>
 
@@ -661,7 +667,8 @@
     <span class="o">.</span><span class="na">setWarningColor</span><span class="o">(</span><span class="nd">@ColorInt</span> <span class="kt">int</span> <span class="n">warningColor</span><span class="o">)</span> <span class="c1">// optional</span>
     <span class="o">.</span><span class="na">setTextColor</span><span class="o">(</span><span class="nd">@ColorInt</span> <span class="kt">int</span> <span class="n">textColor</span><span class="o">)</span> <span class="c1">// optional</span>
     <span class="o">.</span><span class="na">tintIcon</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">tintIcon</span><span class="o">)</span> <span class="c1">// optional (apply textColor also to the icon)</span>
-    <span class="o">.</span><span class="na">setToastTypeface</span><span class="o">(</span><span class="n">AssetManager</span> <span class="n">assetManager</span><span class="o">,</span> <span class="n">String</span> <span class="n">fontPath</span><span class="o">)</span> <span class="c1">// optional</span>
+    <span class="o">.</span><span class="na">setToastTypeface</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">Typeface</span> <span class="n">typeface</span><span class="o">)</span> <span class="c1">// optional</span>
+    <span class="o">.</span><span class="na">setTextSize</span><span class="o">(</span><span class="kt">int</span> <span class="n">sizeInSp</span><span class="o">)</span> <span class="c1">// optional</span>
     <span class="o">.</span><span class="na">apply</span><span class="o">();</span> <span class="c1">// required</span>
 </code></pre>
 </div>
@@ -713,9 +720,20 @@ Toasty.custom(yourContext, "I'm a custom Toast", yourIconDrawable, tintColor, du
 shouldTint).show();
 </code>
 ### Extra
-<a href="https://github.com/GrenderG/Toasty/blob/master/app/src/main/java/es/dmoral/toastysample/MainActivity.java#L97-L106">You can pass formatted text to Toasty</a></p>
+<a href="https://github.com/GrenderG/Toasty/blob/master/app/src/main/java/es/dmoral/toastysample/MainActivity.java#L98-L107">You can pass formatted text to Toasty</a></p>
 
 <p><strong>There are variants of each method, feel free to explore this library.</strong></p>
+
+<h2 id="screenshots">Screenshots</h2>
+
+<p><strong>Please click the image below to enlarge.</strong></p>
+
+<p><img src="https://raw.githubusercontent.com/GrenderG/Toasty/master/art/collage.png" /></p>
+
+<h2 id="third-party-bindings">Third Party Bindings</h2>
+
+<h3 id="react-native">React Native</h3>
+<p>You may now use this library with <a href="https://github.com/facebook/react-native">React Native</a> via this <a href="https://github.com/prscX/react-native-toasty">module</a>.</p>
 
 <h2 id="apps-using-toasty">Apps using Toasty</h2>
 
@@ -723,32 +741,82 @@ shouldTint).show();
 
 <table>
 	<tr>
-		<td><img src="https://lh3.googleusercontent.com/vmch41lYF_TKb1MKgtYrSgz2rKQ4T1EnGRCGpWSMqLRSzi_pgNWoZpw9WJE8UV4t614=w300-rw" width="64" /></td>
+        <td><a href="https://play.google.com/store/apps/details?id=com.trivisionzero.chromophoto"><img src="https://lh3.googleusercontent.com/vmch41lYF_TKb1MKgtYrSgz2rKQ4T1EnGRCGpWSMqLRSzi_pgNWoZpw9WJE8UV4t614=w64" /></a></td>
 		<td><a href="https://play.google.com/store/apps/details?id=com.trivisionzero.chromophoto">ChromoPhoto - Colorize B&amp;W</a></td>
 	</tr>
 	<tr>
-		<td><img src="https://lh3.googleusercontent.com/2EYJPs-qBlKJ3L6cy7idQpzKfZkTzA2G4UQfbs-96VGMftQ-7aV4Dvj77ejzZlAAVx_C=w300-rw" width="64" /></td>
+        <td><a href="https://play.google.com/store/apps/details?id=com.serg.chuprin.tageditor"><img src="https://lh3.googleusercontent.com/2EYJPs-qBlKJ3L6cy7idQpzKfZkTzA2G4UQfbs-96VGMftQ-7aV4Dvj77ejzZlAAVx_C=w64" /></a></td>
 		<td><a href="https://play.google.com/store/apps/details?id=com.serg.chuprin.tageditor">AutoTagger - редактор тегов.</a></td>
 	</tr>
 	<tr>
-		<td><img src="https://archive.org/download/ic_launcher_colorhub/ic_launcher_colorhub.png" width="64" /></td>
+        <td><a href="https://play.google.com/store/apps/details?id=cheetatech.com.colorhub"><img src="https://archive.org/download/ic_launcher_colorhub/ic_launcher_colorhub.png" width="64" /></a></td>
 		<td><a href="https://play.google.com/store/apps/details?id=cheetatech.com.colorhub">ColorHub - Color Palette</a></td>
 	</tr>
 	<tr>
-		<td><img src="https://lh3.googleusercontent.com/Z9tz0izoW0CuBS59w9hbxbn3a7cSSwZUeGr1o9TpapngTKb4MKaGunZP-B306CxBAI8=w300-rw" width="64" /></td>
+        <td><a href="https://play.google.com/store/apps/details?id=com.fa.touch.free"><img src="https://lh3.googleusercontent.com/Z9tz0izoW0CuBS59w9hbxbn3a7cSSwZUeGr1o9TpapngTKb4MKaGunZP-B306CxBAI8=w64" /></a></td>
 		<td><a href="https://play.google.com/store/apps/details?id=com.fa.touch.free">Touch for Facebook</a></td>
 	</tr>
 	<tr>
-		<td><img src="https://lh3.googleusercontent.com/rXB22UBHujsK2uYpN-kAkVFBjTcnAp6ltSZYf9-LdYvRkM-kF-xtwPwR8kEInhludA=w300-rw" width="64" /></td>
+        <td><a href="https://play.google.com/store/apps/details?id=com.fa.daily.free"><img src="https://lh3.googleusercontent.com/rXB22UBHujsK2uYpN-kAkVFBjTcnAp6ltSZYf9-LdYvRkM-kF-xtwPwR8kEInhludA=w64" /></a></td>
 		<td><a href="https://play.google.com/store/apps/details?id=com.fa.daily.free">Daily – News flipped around</a></td>
 	</tr>
+	<tr>
+        <td><a href="https://play.google.com/store/apps/details?id=es.jmoral.ozreader"><img src="https://lh3.googleusercontent.com/ISQPSPA__uWU4Csw4N0quI0IPi_WcWN0pY4PK86yljf39vaCObvohT9ak2ubQ7iLDQ=w64" /></a></td>
+		<td><a href="https://play.google.com/store/apps/details?id=es.jmoral.ozreader">Oz Comic Reader</a></td>
+	</tr>
+	<tr>
+        <td><a href="https://play.google.com/store/apps/details?id=com.andreacioccarelli.impactor"><img src="https://lh3.googleusercontent.com/KxzCiu-csleONAW9kfAYBCaCe4iAnhyO1ziuKjKK_yEDE0xPQMfy_-sYVYkj4RBE-Srt=w64" /></a></td>
+		<td><a href="https://play.google.com/store/apps/details?id=com.andreacioccarelli.impactor">Impactor Unroot</a></td>
+	</tr>
+	<tr>
+        <td><a href="https://play.google.com/store/apps/details?id=com.andreacioccarelli.fusemounter"><img src="https://lh3.googleusercontent.com/7e0iTo60TJXz6U-zQl6pXcfgRCLifQaTp_DczwNA5ZSnrEssBwH6K0MU88gC9BzQlMY=w64" /></a></td>
+		<td><a href="https://play.google.com/store/apps/details?id=com.andreacioccarelli.fusemounter">Fusemounter</a></td>
+	</tr>
+	<tr>
+        <td><a href="https://play.google.com/store/apps/details?id=com.thesrb.bluewords"><img src="https://lh3.googleusercontent.com/gdGrQHkHsfRAY9ivf8wt9vgaX9KPxpFHdFq5AXY_zw2P8Wat3KNstvf-BkNaKrNX8Qg=w64" /></a></td>
+		<td><a href="https://play.google.com/store/apps/details?id=com.thesrb.bluewords">BlueWords</a></td>
+	</tr>
+	<tr>
+        <td><a href="https://play.google.com/store/apps/details?id=com.levionsoftware.photos"><img src="https://lh3.googleusercontent.com/ipeHvI63HPVwGK3VmyP-flSbTDoh2q93Fte-xwYKgf4OTsEvjC_wqUfKSejjAWZElS8p=w64" /></a></td>
+		<td><a href="https://play.google.com/store/apps/details?id=com.levionsoftware.photos">Levipic - Photo Gallery &amp; Map</a></td>
+	</tr>
+	<tr>
+        <td><a href="https://play.google.com/store/apps/details?id=com.sunshine.makilite"><img src="https://lh3.googleusercontent.com/RL082J8D9AyVJdyoT8sN8Mb47LUJEn3ssvp8jgrke_K_sWAXgEl9F8tjudqDoL7y5A0=w64" /></a></td>
+		<td><a href="https://play.google.com/store/apps/details?id=com.sunshine.makilite">Maki for Facebook &amp; Twitter</a></td>
+	</tr>
+	<tr>
+        <td><a href="https://play.google.com/store/apps/details?id=com.sunshine.eva"><img src="https://lh3.googleusercontent.com/u4zbQiMobr58biVKT67ka1N-cU_URBAdD6MDU2fGQYsWePvqH9UncMpGnWAFzczfSA=w64" /></a></td>
+		<td><a href="https://play.google.com/store/apps/details?id=com.sunshine.eva">Eva: Everything for Telegram</a></td>
+	</tr>
+	<tr>
+        <td><a href="https://play.google.com/store/apps/details?id=org.imperium.imperious.Pastebin"><img src="https://lh3.googleusercontent.com/zhky42kxZcdlt1u7D6lzc3Mwq0gV0nTiFdm-T3DygQVcNPOofNba3Q2_MWtqoJFgdF8a=w64" /></a></td>
+		<td><a href="https://play.google.com/store/apps/details?id=org.imperium.imperious.Pastebin">Pastebin</a></td>
+	</tr>
+		<tr>
+            <td><a href="https://play.google.com/store/apps/details?id=com.KillerBLS.modpeide"><img src="https://lh3.googleusercontent.com/nyB12hF6cPHBrm532qQQslvj-X-klmPlKuQ4Z0MYKDpt4sPVZmWYRZ_SShEfVcTmhg=w64" /></a></td>
+		<td><a href="https://play.google.com/store/apps/details?id=com.KillerBLS.modpeide">ModPE IDE</a></td>
+	</tr>
+		<tr>
+            <td><a href="https://play.google.com/store/apps/details?id=stream.rocketnotes"><img src="https://lh3.googleusercontent.com/tYGJBG8mc7lwC0ZxQUxif2FVMFI8L8xRkPON0ytkWVPTI67ggkrgDl3JpRu9jW0W3sLJ=w64" /></a></td>
+		<td><a href="https://play.google.com/store/apps/details?id=stream.rocketnotes">Rocket Notes</a></td>
+	</tr>
+	<tr>
+            <td><a href="https://play.google.com/store/apps/details?id=com.thirtydegreesray.openhub"><img src="https://lh3.googleusercontent.com/XP-tvaGf-as9XMQ3kcUjohSZlSD7uyf_AcHsjq6jTI0chXWK1yQrnJJs2Y_Pvbe1FRQ=w64" /></a></td>
+		<td><a href="https://play.google.com/store/apps/details?id=com.thirtydegreesray.openhub">OpenHub for GitHub</a></td>
+	</tr>
+		<tr>
+            <td><a href="https://play.google.com/store/apps/details?id=nl.overnightprojects.wakification"><img src="https://lh3.googleusercontent.com/cRV9ytg3rXnfNPBgpZLe0EJr2C8oF5VmZxipRDgFY0xJAl_cZ6JGxM90r4x_BNZbfsgn=w64" /></a></td>
+		<td><a href="https://play.google.com/store/apps/details?id=nl.overnightprojects.wakification">Wakification</a></td>
+	</tr>
+		<tr>
+            <td><a href="https://play.google.com/store/apps/details?id=com.controle.developer.hipercontrole"><img src="https://lh3.googleusercontent.com/muPax5lA3VC7LLIgFVYkO3zCqvW2qCG-6QVPLZHYDdCqrGAHRmE_-4PQN7zVohh4JnQ=w64" /></a></td>
+		<td><a href="https://play.google.com/store/apps/details?id=com.controle.developer.hipercontrole">AUTO Controle</a></td>
+	</tr>
+	<tr>
+            <td><a href="https://play.google.com/store/apps/details?id=com.mphone.callerplus"><img src="https://lh3.googleusercontent.com/2HGejlGZgASHaLFdgeCjK3wbvRGn-CSdXuAUN3E8dzK61usHjn8TKTxR_V160avI-js7=w64" /></a></td>
+		<td><a href="https://play.google.com/store/apps/details?id=com.mphone.callerplus">Caller+</a></td>
+	</tr>
 </table>
-
-<h2 id="screenshots">Screenshots</h2>
-
-<p><strong>Please click the image below to enlarge.</strong></p>
-
-<p><img src="https://raw.githubusercontent.com/GrenderG/Toasty/master/art/collage.png" /></p>
 
 
           <br>

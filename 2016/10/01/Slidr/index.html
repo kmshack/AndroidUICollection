@@ -505,6 +505,10 @@
                 
               
             
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -550,7 +554,7 @@
             
           <div class="font-tiny">
               <br>
-            &copy; 2017 Android UI OpenSource
+            &copy; 2018 Android UI OpenSource
           </div>
         </div>
       </div>
@@ -640,9 +644,9 @@
 	<span class="kd">public</span> <span class="kt">void</span> <span class="n">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">){</span>
 		<span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
 		<span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_example</span><span class="o">);</span>
-        <span class="kt">int</span> <span class="n">primary</span> <span class="o">=</span> <span class="n">getResources</span><span class="o">().</span><span class="na">getColor</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">primaryDark</span><span class="o">);</span>
-        <span class="kt">int</span> <span class="n">secondary</span> <span class="o">=</span> <span class="n">getResources</span><span class="o">().</span><span class="na">getColor</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">secondaryDark</span><span class="o">);</span>
-        <span class="n">Slidr</span><span class="o">.</span><span class="na">attach</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">primary</span><span class="o">,</span> <span class="n">secondary</span><span class="o">);</span>
+		<span class="kt">int</span> <span class="n">primary</span> <span class="o">=</span> <span class="n">getResources</span><span class="o">().</span><span class="na">getColor</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">primaryDark</span><span class="o">);</span>
+		<span class="kt">int</span> <span class="n">secondary</span> <span class="o">=</span> <span class="n">getResources</span><span class="o">().</span><span class="na">getColor</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">secondaryDark</span><span class="o">);</span>
+		<span class="n">Slidr</span><span class="o">.</span><span class="na">attach</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">primary</span><span class="o">,</span> <span class="n">secondary</span><span class="o">);</span>
 	<span class="o">}</span>
 
 <span class="o">}</span>
@@ -657,12 +661,62 @@
 	<span class="kd">public</span> <span class="kt">void</span> <span class="n">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">){</span>
 		<span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
 		<span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_example</span><span class="o">);</span>
-        <span class="n">Slidr</span><span class="o">.</span><span class="na">attach</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+        	<span class="n">Slidr</span><span class="o">.</span><span class="na">attach</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
 	<span class="o">}</span>
 
 <span class="o">}</span>
 </code></pre>
 </div>
+
+<h2 id="fragments">Fragments</h2>
+<p>The activity must extend FragmentActivity.
+Set the background to the main container of the activity in the xml <code class="highlighter-rouge">background="@android:color/transparent"</code>.
+Add the following code to the Fragment:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// This interface is needed to see if the fragment</span>
+<span class="c1">// is resuming after creation (Slidr to be attached) or</span>
+<span class="c1">// simply from the background (app was paused before).</span>
+<span class="n">SlidrInterface</span> <span class="n">slidrInterface</span><span class="o">;</span>
+
+<span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onResume</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">super</span><span class="o">.</span><span class="na">onResume</span><span class="o">();</span>
+    <span class="k">if</span><span class="o">(</span><span class="n">slidrInterface</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
+        <span class="n">slidrInterface</span> <span class="o">=</span> <span class="n">Slidr</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="n">getView</span><span class="o">().</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">content_container</span><span class="o">),</span> <span class="k">new</span> <span class="n">SlidrConfig</span><span class="o">.</span><span class="na">Builder</span><span class="o">().</span><span class="na">position</span><span class="o">(</span><span class="n">SlidrPosition</span><span class="o">.</span><span class="na">LEFT</span><span class="o">).</span><span class="na">build</span><span class="o">());</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+<p>In the xml of the fragment’s view, the root view must be a FrameLayout with the same background set to the activity before. Add a child viewgroup to it with the id content_container. E.g.:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;FrameLayout</span>
+    <span class="na">android:id=</span><span class="s">"@+id/main_container"</span>
+    <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span>
+    <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:background=</span><span class="s">"@android:color/transparent"</span><span class="nt">&gt;</span>
+    
+    <span class="nt">&lt;android.support.design.widget.CoordinatorLayout</span>
+        <span class="na">android:id=</span><span class="s">"@+id/content_container"</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"match_parent"</span><span class="nt">&gt;</span>
+	
+		...other stuff
+
+    <span class="nt">&lt;/android.support.design.widget.CoordinatorLayout&gt;</span>
+<span class="nt">&lt;/FrameLayout&gt;</span>
+</code></pre>
+</div>
+<p>Remember: you have to add new Fragments with:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">getSupportFragmentManager</span><span class="o">().</span><span class="na">beginTransaction</span><span class="o">()</span>
+	<span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fragment_container</span><span class="o">,</span> <span class="n">YourFragmentClass</span><span class="o">.</span><span class="na">newInstance</span><span class="o">())</span>
+	<span class="o">.</span><span class="na">commit</span><span class="o">();</span>
+</code></pre>
+</div>
+
+<p>where fragment_container is the id of a FrameLayout inside the activity’s xml.</p>
 
 <h2 id="configuring">Configuring</h2>
 
@@ -722,11 +776,12 @@
 
 <p>Include this line in your gradle build file:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">compile</span> <span class="s1">'com.r0adkll:slidableactivity:2.0.5'</span>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">implementation</span> <span class="s1">'com.r0adkll:slidableactivity:2.0.6'</span>
 </code></pre>
 </div>
 
-<p>For Snapshots, include these lines in your gradle files:</p>
+<p>&lt;–<br />
+For Snapshots, include these lines in your gradle files:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="n">repositories</span> <span class="o">{</span>
     <span class="n">jcenter</span><span class="o">()</span>
@@ -736,10 +791,11 @@
 </div>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="n">dependencies</span><span class="o">{</span>
-	<span class="n">compile</span> <span class="s1">'com.r0adkll:slidableactivity:2.0.6-SNAPSHOT'</span>
+	<span class="n">implementation</span> <span class="s1">'com.r0adkll:slidableactivity:2.0.7-SNAPSHOT'</span>
 <span class="o">}</span>
 </code></pre>
 </div>
+<p>–&gt;</p>
 
 <h2 id="author">Author</h2>
 

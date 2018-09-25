@@ -505,6 +505,10 @@
                 
               
             
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -550,7 +554,7 @@
             
           <div class="font-tiny">
               <br>
-            &copy; 2017 Android UI OpenSource
+            &copy; 2018 Android UI OpenSource
           </div>
         </div>
       </div>
@@ -645,12 +649,12 @@
 
 <p>Try the sample apk: <a href="imgs/blurring.apk">blurring.apk</a></p>
 
-<h2 id="adding-to-project">Adding to project</h2>
+<h1 id="adding-to-project">Adding to project</h1>
 
 <p>Add dependencies in your <code class="highlighter-rouge">build.gradle</code>:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>	<span class="n">dependencies</span> <span class="o">{</span>
-	    <span class="n">compile</span> <span class="s1">'com.github.mmin18:realtimeblurview:1.1.0'</span>
+	    <span class="n">compile</span> <span class="s1">'com.github.mmin18:realtimeblurview:1.1.2'</span>
 	<span class="o">}</span>
 	<span class="n">android</span> <span class="o">{</span>
 		<span class="n">buildToolsVersion</span> <span class="s1">'24.0.2'</span>                 <span class="c1">// Use 23.0.3 or higher</span>
@@ -662,6 +666,23 @@
 	<span class="o">}</span>
 </code></pre>
 </div>
+
+<p>Add proguard rules if necessary:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>-keep class android.support.v8.renderscript.** { *; }
+</code></pre>
+</div>
+
+<h1 id="limitations">Limitations</h1>
+
+<ul>
+  <li>
+    <p>Adding multiple RealtimeBlurView (even not visible) may hurt drawing performance, like use it in ListView or RecyclerView.</p>
+  </li>
+  <li>
+    <p>It will not work with SurfaceView / TextureView like VideoView, GoogleMapView</p>
+  </li>
+</ul>
 
 <h1 id="performance">Performance</h1>
 
@@ -675,24 +696,32 @@
 
 <h1 id="changelog">Changelog</h1>
 
-<h3 id="section">1.1.0 (2017-01-02)</h3>
+<h3 id="section">1.1.2 (2018-05-28)</h3>
+
+<p>Bug fix (Draw overlay color in rect).</p>
+
+<h3 id="section-1">1.1.1 (2018-05-22)</h3>
+
+<p>Fix downsample factor issue when blur radius is very big.</p>
+
+<h3 id="section-2">1.1.0 (2017-01-02)</h3>
 
 <p>Some improvements (OOM, resize, window background)</p>
 
-<h3 id="section-1">1.0.8 (2016-11-29)</h3>
+<h3 id="section-3">1.0.8 (2016-11-29)</h3>
 
 <p>Fix view not refreshed issue on PopupWindow</p>
 
-<h3 id="section-2">1.0.6 (2016-11-7)</h3>
+<h3 id="section-4">1.0.6 (2016-11-7)</h3>
 
 <p>Fix crash when view is very small (draw at least 1px)</p>
 
-<h3 id="section-3">1.0.5 (2016-11-5)</h3>
+<h3 id="section-5">1.0.5 (2016-11-5)</h3>
 
 <p>Support Popup Window (Use it as dialog background)
 Ignore UnsatisfiedLinkError if APK is not debuggable.</p>
 
-<h3 id="section-4">1.0.4 (2016-9-28)</h3>
+<h3 id="section-6">1.0.4 (2016-9-28)</h3>
 
 <p>Support custom shape (by override drawBlurredBitmap()), support view in ContextThemeWrapper.</p>
 

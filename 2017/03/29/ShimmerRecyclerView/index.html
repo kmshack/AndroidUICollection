@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>ShimmerRecyclerView</title>
-  <meta name="description" content="">
+  <meta name="description" content="[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ShimmerRecyclerView-brightgreen.svg?style=flat)[Build Status](https://travis-ci.org/sharish/...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
@@ -16,18 +16,18 @@
   <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="">
+  <meta name="description" content="[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ShimmerRecyclerView-brightgreen.svg?style=flat)[Build Status](https://travis-ci.org/sharish/...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="ShimmerRecyclerView">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="">
+  <meta property="og:description" content="[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ShimmerRecyclerView-brightgreen.svg?style=flat)[Build Status](https://travis-ci.org/sharish/...">
   <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2017/03/29/ShimmerRecyclerView/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="" />
+  <meta name="twitter:description" content="[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ShimmerRecyclerView-brightgreen.svg?style=flat)[Build Status](https://travis-ci.org/sharish/..." />
 
   
   	<!-- Article specific OG data -->
@@ -505,6 +505,10 @@
                 
               
             
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -550,7 +554,7 @@
             
           <div class="font-tiny">
               <br>
-            &copy; 2017 Android UI OpenSource
+            &copy; 2018 Android UI OpenSource
           </div>
         </div>
       </div>
@@ -621,7 +625,188 @@
               <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/AndroidUICollection/images/posts/2017-03-29-ShimmerRecyclerView.gif)"></div>
             </div>
           <br>
-          
+          <p><a href="https://android-arsenal.com/details/1/5058">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ShimmerRecyclerView-brightgreen.svg?style=flat)</a>
+<a href="https://travis-ci.org/sharish/ShimmerRecyclerView">[Build Status](https://travis-ci.org/sharish/ShimmerRecyclerView.svg?branch=master)</a></p>
+
+<h1 id="shimmerrecyclerview">ShimmerRecyclerView</h1>
+
+<h2 id="intro">Intro</h2>
+
+<p>A custom recycler view with shimmer views to indicate that views are loading. The recycler view has a built-in adapter to control the shimmer appearance and provide two methods -</p>
+
+<ul>
+  <li>showShimmerAdapter() - set up a demo adapter a predefined number of child demo views.</li>
+  <li>hideShimmerAdapter() - restores your adapter to show the actual child elements.</li>
+</ul>
+
+<h2 id="demo-screen">Demo Screen</h2>
+
+<p>There are two kinds of shimmer animation which you can see here:</p>
+
+<ol>
+  <li>This type of shimmer effect uses the whole ViewHolder item to animate on.</li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th>List Demo</th>
+      <th>Grid Demo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>&lt;img src=’screenshots/list_demo.gif’ height=444 width=250 /&gt;</td>
+      <td>&lt;img src=’screenshots/grid_demo.gif’ height=444 width=250 /&gt;</td>
+    </tr>
+  </tbody>
+</table>
+
+<ol>
+  <li>Here the shimmer effect only applied on for those views which background color is nontransparent.</li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th>List Demo</th>
+      <th>Grid Demo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>&lt;img src=’screenshots/second_list_demo.gif’ height=444 width=250 /&gt;</td>
+      <td>&lt;img src=’screenshots/second_grid_demo.gif’ height=444 width=250 /&gt;</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="shimmer-effect-types">Shimmer effect types</h3>
+
+<ol>
+  <li>As you can see the first demo examples show that the whole ViewHolder item is animated. To achieve the desired effect, the children of the ShimmerLayout should have a nontransparent background.</li>
+  <li>
+    <p>You can achieve the second kind of shimmer effect by adding only one ViewGroup child to the ShimmerLayout with a transparent background. This ViewGroup will have the other views with nontransparent backgrounds on which the effect will be seen.</p>
+
+    <p>You may wonder how can you add background to the root view of the ViewHolder, if you do not have direct access to the ShimmerLayout and the only child has a nontransparent background. The solution for this is to use the <code class="highlighter-rouge">shimmer_demo_view_holder_item_background</code> attribute.</p>
+  </li>
+</ol>
+
+<h3 id="attributes-and-methods">Attributes and Methods</h3>
+
+<p>Following are the attributes and methods to initialise the demo views.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>XML Attributes</th>
+      <th>Java Methods</th>
+      <th>Explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">app:shimmer_demo_child_count</code></td>
+      <td><code class="highlighter-rouge">setDemoChildCount(int)</code></td>
+      <td>Integer value that sets the number of demo views should be present in shimmer adapter.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">app:shimmer_demo_layout</code></td>
+      <td><code class="highlighter-rouge">setDemoLayoutReference(int)</code></td>
+      <td>Layout reference to your demo view. Define your my_demo_view.xml and refer the layout reference here.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">app:shimmer_demo_layout_manager_type</code></td>
+      <td><code class="highlighter-rouge">setDemoLayoutManager(LayoutManagerType)</code></td>
+      <td>Layout manager of demo view. Can be one among linear_vertical or linear_horizontal or grid.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">app:shimmer_demo_shimmer_color</code></td>
+      <td><code class="highlighter-rouge">-</code></td>
+      <td>Color reference or value. It can be used to change the color of the shimmer line.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">app:shimmer_demo_angle</code></td>
+      <td><code class="highlighter-rouge">-</code></td>
+      <td>Integer value between 0 and 30 which can modify the angle of the shimmer line. The default value is zero.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">app:shimmer_demo_mask_width</code></td>
+      <td><code class="highlighter-rouge">setDemoShimmerMaskWidth(float)</code></td>
+      <td>Float value between 0 and 1 which can modify the width of the shimmer line. The default value is 0.5.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">app:shimmer_demo_view_holder_item_background</code></td>
+      <td><code class="highlighter-rouge">-</code></td>
+      <td>Color or an xml drawable for the ViewHolder background if you want to achieve the second type of shimmer effect.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">app:shimmer_demo_reverse_animation</code></td>
+      <td><code class="highlighter-rouge">-</code></td>
+      <td>Defines whether the animation should be reversed. If it is true, then the animation starts from the right side of the View. Default value is false.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="usage">Usage</h2>
+
+<p>Define your xml as:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;com.cooltechworks.views.shimmer.ShimmerRecyclerView</span>
+        <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+        <span class="na">android:id=</span><span class="s">"@+id/shimmer_recycler_view"</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+        <span class="na">app:shimmer_demo_child_count=</span><span class="s">"10"</span>
+        <span class="na">app:shimmer_demo_grid_child_count=</span><span class="s">"2"</span>
+        <span class="na">app:shimmer_demo_layout=</span><span class="s">"@layout/layout_demo_grid"</span>
+        <span class="na">app:shimmer_demo_layout_manager_type=</span><span class="s">"grid"</span>
+        <span class="na">app:shimmer_demo_angle=</span><span class="s">"20"</span>
+        <span class="nt">/&gt;</span>
+
+</code></pre>
+</div>
+<p>where <code class="highlighter-rouge">@layout/layout_demo_grid</code> refers to your sample layout that should be shown during loading spinner. Now on your activity onCreate, initialize the shimmer as below:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">ShimmerRecyclerView</span> <span class="n">shimmerRecycler</span> <span class="o">=</span> <span class="o">(</span><span class="n">ShimmerRecyclerView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">shimmer_recycler_view</span><span class="o">);</span>
+<span class="n">shimmerRecycler</span><span class="o">.</span><span class="na">showShimmerAdapter</span><span class="o">();</span>
+</code></pre>
+</div>
+
+<h2 id="adding-to-your-project">Adding to your project</h2>
+
+<ul>
+  <li>Add the following configuration in your build.gradle file.</li>
+</ul>
+
+<pre><code class="language-gradle">repositories {
+    jcenter()
+    maven { url "https://jitpack.io" }
+}
+
+dependencies {
+    implementation 'com.github.sharish:ShimmerRecyclerView:v1.3'
+}
+</code></pre>
+
+<h2 id="developed-by">Developed By</h2>
+
+<ul>
+  <li>Harish Sridharan - <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#104;&#097;&#114;&#105;&#115;&#104;&#046;&#115;&#114;&#105;&#100;&#104;&#097;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">&#104;&#097;&#114;&#105;&#115;&#104;&#046;&#115;&#114;&#105;&#100;&#104;&#097;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</a></li>
+</ul>
+
+<h2 id="used-libraries">Used libraries</h2>
+
+<ul>
+  <li><a href="https://github.com/team-supercharge/ShimmerLayout">ShimmerLayout</a>: the library which achieves the shimmer effect in a memory efficient way.</li>
+</ul>
+
+<h2 id="license">License</h2>
+<p>The repo is released under following licenses</p>
+
+<p><a href="LICENSE.md">Apache License</a> for ShimmerRecycler<br />
+<a href="https://github.com/team-supercharge/ShimmerLayout/blob/master/LICENSE.md">Apache License</a> for ShimmerLayout</p>
+
 
           <br>
           <div class="post__tags">

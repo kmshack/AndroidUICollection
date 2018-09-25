@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>FolioReader</title>
-  <meta name="description" content="FolioReader logo[Build Status](https://api.travis-ci.org/FolioReader/FolioReader-Android.svg?branch=master)FolioReader-Android is an ePub reader and parser f...">
+  <meta name="description" content="FolioReader logo[Build Status](https://api.travis-ci.org/FolioReader/FolioReader-Android.svg?branch=master)FolioReader-Android is an ePub reader written in J...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
@@ -16,18 +16,18 @@
   <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="FolioReader logo[Build Status](https://api.travis-ci.org/FolioReader/FolioReader-Android.svg?branch=master)FolioReader-Android is an ePub reader and parser f...">
+  <meta name="description" content="FolioReader logo[Build Status](https://api.travis-ci.org/FolioReader/FolioReader-Android.svg?branch=master)FolioReader-Android is an ePub reader written in J...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="FolioReader">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="FolioReader logo[Build Status](https://api.travis-ci.org/FolioReader/FolioReader-Android.svg?branch=master)FolioReader-Android is an ePub reader and parser f...">
+  <meta property="og:description" content="FolioReader logo[Build Status](https://api.travis-ci.org/FolioReader/FolioReader-Android.svg?branch=master)FolioReader-Android is an ePub reader written in J...">
   <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/12/22/FolioReader/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="FolioReader logo[Build Status](https://api.travis-ci.org/FolioReader/FolioReader-Android.svg?branch=master)FolioReader-Android is an ePub reader and parser f..." />
+  <meta name="twitter:description" content="FolioReader logo[Build Status](https://api.travis-ci.org/FolioReader/FolioReader-Android.svg?branch=master)FolioReader-Android is an ePub reader written in J..." />
 
   
   	<!-- Article specific OG data -->
@@ -505,6 +505,10 @@
                 
               
             
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -550,7 +554,7 @@
             
           <div class="font-tiny">
               <br>
-            &copy; 2017 Android UI OpenSource
+            &copy; 2018 Android UI OpenSource
           </div>
         </div>
       </div>
@@ -625,7 +629,7 @@
 
 <p><a href="https://travis-ci.org/FolioReader/FolioReader-Android">[Build Status](https://api.travis-ci.org/FolioReader/FolioReader-Android.svg?branch=master)</a></p>
 
-<p>FolioReader-Android is an ePub reader and parser framework written in Java.</p>
+<p>FolioReader-Android is an ePub reader written in Java.</p>
 
 <h3 id="features">Features</h3>
 
@@ -638,14 +642,17 @@
   <li>[x] Handle Internal and External Links</li>
   <li>[x] Portrait / Landscape</li>
   <li>[x] Reading Time Left / Pages left</li>
-  <li>[ ] In-App Dictionary</li>
+  <li>[x] In-App Dictionary</li>
   <li>[x] Media Overlays (Sync text rendering with audio playback)</li>
   <li>[x] TTS - Text to Speech Support</li>
   <li>[ ] Parse epub cover image</li>
   <li>[ ] PDF support</li>
-  <li>[ ] Book Search</li>
+  <li>[x] Book Search</li>
   <li>[x] Add Notes to a Highlight</li>
   <li>[ ] Better Documentation</li>
+  <li>[x] Last Read Position Listener</li>
+  <li>[x] Horizontal reading</li>
+  <li>[x] Distraction Free Reading</li>
 </ul>
 
 <h2 id="demo">Demo</h2>
@@ -659,40 +666,111 @@
 <a href="https://cloud.githubusercontent.com/assets/1277242/19012908/d61f3ce2-87df-11e6-8652-d72b6a1ad9a3.gif">Media Overlay</a></p>
 
 <h3 id="gradle">Gradle</h3>
-<p>Add following dependency to your app build.gradle
-<code class="highlighter-rouge">java
-compile 'com.folioreader:folioreader:0.2.5'
-</code></p>
+
+<p>Add following dependency to your app module <code class="highlighter-rouge">build.gradle</code> file:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">repositories</span> <span class="o">{</span>
+    <span class="n">maven</span> <span class="o">{</span>
+        <span class="n">url</span> <span class="s1">'http://dl.bintray.com/mobisystech/maven'</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="n">dependencies</span> <span class="o">{</span>
+    <span class="n">implementation</span> <span class="s1">'com.folioreader:folioreader:0.4.3'</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h3 id="androidmanifest">AndroidManifest</h3>
+
+<p>Starting with Android 9.0 (API level 28), cleartext support is disabled by default.</p>
+
+<p>{your-app-module}/res/xml/network_security_config.xml</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;network-security-config&gt;</span>
+    <span class="nt">&lt;domain-config</span> <span class="na">cleartextTrafficPermitted=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;domain</span> <span class="na">includeSubdomains=</span><span class="s">"true"</span><span class="nt">&gt;</span>127.0.0.1<span class="nt">&lt;/domain&gt;</span>
+        <span class="nt">&lt;domain</span> <span class="na">includeSubdomains=</span><span class="s">"true"</span><span class="nt">&gt;</span>localhost<span class="nt">&lt;/domain&gt;</span>
+    <span class="nt">&lt;/domain-config&gt;</span>
+<span class="nt">&lt;/network-security-config&gt;</span>
+</code></pre>
+</div>
+
+<p>Then add network_security_config.xml in your app module’s AndroidManifest.xml</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;manifest</span> <span class="err">...</span><span class="nt">&gt;</span>
+    ...
+    <span class="nt">&lt;application</span> <span class="na">android:networkSecurityConfig=</span><span class="s">"@xml/network_security_config"</span><span class="nt">&gt;</span>
+    ...
+    <span class="nt">&lt;/application&gt;</span>
+<span class="nt">&lt;/manifest&gt;</span>
+</code></pre>
+</div>
 
 <h3 id="usage">Usage</h3>
 
-<p>To use FolioReader, you need to call FolioReaderActivity with following parameters:
-1. INTENT_EPUB_SOURCE_TYPE - your epub can come from raw or assets folder or from SD card. Use enum FolioActivity.EpubSourceType.
-2. INTENT_EPUB_SOURCE_PATH - assets/SD card path of the epub file or raw ID of epub file if epub file is in raw folder</p>
+<p>Get singleton object of <code class="highlighter-rouge">FolioReader</code>:</p>
 
-<p>Reading from assets folder
-<code class="highlighter-rouge">java
-Intent intent = new Intent(HomeActivity.this, FolioActivity.class);
-intent.putExtra(FolioActivity.INTENT_EPUB_SOURCE_TYPE, FolioActivity.EpubSourceType.ASSESTS);
-intent.putExtra(FolioActivity.INTENT_EPUB_SOURCE_PATH, "epub/The Silver Chair.epub");
-startActivity(intent);
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">FolioReader</span> <span class="n">folioReader</span> <span class="o">=</span> <span class="n">FolioReader</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
+</code></pre>
+</div>
 
-<p>Reading from raw folder of resources
-<code class="highlighter-rouge">java
-Intent intent = new Intent(HomeActivity.this, FolioActivity.class);
-intent.putExtra(FolioActivity.INTENT_EPUB_SOURCE_TYPE, FolioActivity.EpubSourceType.RAW);
-intent.putExtra(FolioActivity.INTENT_EPUB_SOURCE_PATH, R.raw.adventures);
-startActivity(intent);
-</code></p>
+<p>Call the function <code class="highlighter-rouge">openBook()</code>:</p>
 
-<p>For reading from SD card, just retrieve absolute path of epub file and pass that in INTENT_EPUB_SOURCE_PATH.</p>
+<h5 id="opening-book-from-assets--">opening book from assets -</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">folioReader</span><span class="o">.</span><span class="na">openBook</span><span class="o">(</span><span class="s">"file:///android_asset/TheSilverChair.epub"</span><span class="o">);</span>
+</code></pre>
+</div>
+<p>##### opening book from raw -</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">folioReader</span><span class="o">.</span><span class="na">openBook</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">raw</span><span class="o">.</span><span class="na">adventures</span><span class="o">);</span>
+</code></pre>
+</div>
+
+<p><br /></p>
+
+<p><strong>Note: From v0.4.1 you don’t need to specify permissions and <code class="highlighter-rouge">FolioActivity</code> tag in AndroidManifest.xml</strong></p>
+
+<p><br /></p>
+
+<h2 id="wiki">WIKI</h2>
+
+<ul>
+  <li><a href="https://github.com/FolioReader/FolioReader-Android/wiki">Home</a></li>
+  <li><a href="https://github.com/FolioReader/FolioReader-Android/wiki/Configuration">Configuration</a>
+    <ul>
+      <li><a href="https://github.com/FolioReader/FolioReader-Android/wiki/Custom-Configuration">Custom Configuration</a></li>
+    </ul>
+  </li>
+  <li><a href="https://github.com/FolioReader/FolioReader-Android/wiki/Highlight">Highlight</a>
+    <ul>
+      <li><a href="https://github.com/FolioReader/FolioReader-Android/wiki/Highlight-Action">Highlight Action</a></li>
+      <li><a href="https://github.com/FolioReader/FolioReader-Android/wiki/Highlight-Event">Highlight Event</a></li>
+      <li><a href="https://github.com/FolioReader/FolioReader-Android/wiki/Providing-External-Highlight">Providing External Highlight</a></li>
+    </ul>
+  </li>
+  <li><a href="https://github.com/FolioReader/FolioReader-Android/wiki/ReadPosition">ReadPosition</a>
+    <ul>
+      <li><a href="https://github.com/FolioReader/FolioReader-Android/wiki/Get-ReadPosition">Get ReadPosition</a></li>
+      <li><a href="https://github.com/FolioReader/FolioReader-Android/wiki/Set-ReadPosition">Set ReadPosition</a></li>
+    </ul>
+  </li>
+  <li><a href="https://github.com/FolioReader/FolioReader-Android/wiki/Clean-up-code">Clean up code</a></li>
+</ul>
+
+<h2 id="reporting-issue">Reporting Issue</h2>
+
+<p>Please follow <a href="https://github.com/FolioReader/FolioReader-Android/blob/master/.github/ISSUE_TEMPLATE.md">Issue Template</a> to report any issue.</p>
 
 <h3 id="credits">Credits</h3>
 <ol>
   <li><a href="https://github.com/daimajia/AndroidSwipeLayout">SwipeLayout</a></li>
-  <li><a href="http://ormlite.com/">ORMLite</a></li>
-  <li><a href="https://github.com/julianharty/new-android-daisy-reader">SMIL parsing</a></li>
+  <li><a href="https://github.com/readium/r2-streamer-java">r2-streamer-java</a></li>
+  <li><a href="http://developer.pearson.com/apis/dictionaries">Pearson Dictionaries</a></li>
+  <li><a href="https://github.com/timdown/rangy">rangy</a></li>
 </ol>
 
 <h3 id="author">Author</h3>
@@ -717,12 +795,12 @@ startActivity(intent);
 <p><strong>PayPal</strong></p>
 
 <ul>
-  <li>[<strong>Donate 5 $</strong>] (https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=hebertialmeida%40gmail%2ecom&amp;lc=US&amp;item_name=FolioReader%20Libraries&amp;amount=5%2e00&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted): Thank’s for creating this project, here’s a tea (or some juice) for you</li>
-  <li>[<strong>Donate 10 $</strong>] (https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=hebertialmeida%40gmail%2ecom&amp;lc=US&amp;item_name=FolioReader%20Libraries&amp;amount=10%2e00&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted): Wow, I am stunned. Let me take you to the movies</li>
-  <li>[<strong>Donate 15 $</strong>] (https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=hebertialmeida%40gmail%2ecom&amp;lc=US&amp;item_name=FolioReader%20Libraries&amp;amount=15%2e00&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted): I really appreciate your work, let’s grab some lunch</li>
-  <li>[<strong>Donate 25 $</strong>] (https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=hebertialmeida%40gmail%2ecom&amp;lc=US&amp;item_name=FolioReader%20Libraries&amp;amount=25%2e00&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted): That’s some awesome stuff you did right there, dinner is on me</li>
-  <li>[<strong>Donate 50 $</strong>] (https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=hebertialmeida%40gmail%2ecom&amp;lc=US&amp;item_name=FolioReader%20Libraries&amp;amount=50%2e00&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted): I really really want to support this project, great job</li>
-  <li>[<strong>Donate 100 $</strong>] (https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=hebertialmeida%40gmail%2ecom&amp;lc=US&amp;item_name=FolioReader%20Libraries&amp;amount=100%2e00&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted): You are the man This project saved me hours (if not days) of struggle and hard work, simply awesome</li>
+  <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=hebertialmeida%40gmail%2ecom&amp;lc=US&amp;item_name=FolioReader%20Libraries&amp;amount=5%2e00&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"><strong>Donate 5 $</strong></a>: Thank’s for creating this project, here’s a tea (or some juice) for you</li>
+  <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=hebertialmeida%40gmail%2ecom&amp;lc=US&amp;item_name=FolioReader%20Libraries&amp;amount=10%2e00&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"><strong>Donate 10 $</strong></a>: Wow, I am stunned. Let me take you to the movies</li>
+  <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=hebertialmeida%40gmail%2ecom&amp;lc=US&amp;item_name=FolioReader%20Libraries&amp;amount=15%2e00&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"><strong>Donate 15 $</strong></a>: I really appreciate your work, let’s grab some lunch</li>
+  <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=hebertialmeida%40gmail%2ecom&amp;lc=US&amp;item_name=FolioReader%20Libraries&amp;amount=25%2e00&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"><strong>Donate 25 $</strong></a>: That’s some awesome stuff you did right there, dinner is on me</li>
+  <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=hebertialmeida%40gmail%2ecom&amp;lc=US&amp;item_name=FolioReader%20Libraries&amp;amount=50%2e00&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"><strong>Donate 50 $</strong></a>: I really really want to support this project, great job</li>
+  <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=hebertialmeida%40gmail%2ecom&amp;lc=US&amp;item_name=FolioReader%20Libraries&amp;amount=100%2e00&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"><strong>Donate 100 $</strong></a>: You are the man This project saved me hours (if not days) of struggle and hard work, simply awesome</li>
   <li>Of course, you can also <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=hebertialmeida%40gmail%2ecom&amp;lc=US&amp;item_name=FolioReader%20Libraries&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"><strong>choose what you want to donate</strong></a>, all donations are awesome</li>
 </ul>
 

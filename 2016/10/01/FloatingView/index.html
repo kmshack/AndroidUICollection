@@ -505,6 +505,10 @@
                 
               
             
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -550,7 +554,7 @@
             
           <div class="font-tiny">
               <br>
-            &copy; 2017 Android UI OpenSource
+            &copy; 2018 Android UI OpenSource
           </div>
         </div>
       </div>
@@ -635,7 +639,7 @@ To API Level 14 or later are supported</p>
 <a href="http://youtu.be/nb8M2p0agF4">SimpleFloating</a></p>
 
 <h2 id="requirements">Requirements</h2>
-<p>Target Sdk Version : 25<br />
+<p>Target Sdk Version : 27<br />
 Min Sdk Version : 14</p>
 
 <h2 id="how-to-use">How to use</h2>
@@ -648,7 +652,7 @@ Min Sdk Version : 14</p>
   }</p>
 
 <p>dependencies {
-    compile ‘com.github.recruit-lifestyle:FloatingView:2.2’
+    implementation ‘com.github.recruit-lifestyle:FloatingView:2.3.2’
   }
   ```</p>
 
@@ -692,6 +696,7 @@ public class ChatHeadService extends Service {
 
 <div class="highlighter-rouge"><pre class="highlight"><code>  
 6) Define the Service to AndroidManifest
+
 example)
 ```java
     &lt;application ...&gt;
@@ -705,21 +710,37 @@ example)
 </code></pre>
 </div>
 
-<p>7) Describe the process to start the Service (example of Fragment)
+<p>7) Describe the process to start the Service (run on foreground)
 <code class="highlighter-rouge">java
-    final Activity activity = getActivity();
-    activity.startService(new Intent(activity, ChatHeadService.class));
+    final Intent intent = new Intent(activity, ChatHeadService.class);
+    ContextCompat.startForegroundService(activity, intent);
 </code></p>
 
-<h2 id="static-options">Static Options</h2>
-<p>It can be set only when displaying for the first time</p>
+<p>8) Create notification channel (targetSdkVersion &gt;= 26)</p>
 
 <p>example)
-<code class="highlighter-rouge">java
+```java
+if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.O) {
+    final String channelId = getString(R.string.default_floatingview_channel_id);
+    final String channelName = getString(R.string.default_floatingview_channel_name);
+    final NotificationChannel defaultChannel = new NotificationChannel(channelId, channelName, NotificationManager.IMPORTANCE_MIN);
+    final NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+    if (manager = null) {
+        manager.createNotificationChannel(defaultChannel);
+    }
+}</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+## Static Options
+It can be set only when displaying for the first time
+  
+example)
+```java
 final FloatingViewManager.Options options = new FloatingViewManager.Options();
 options.overMargin = (int) (16 * metrics.density);
 mFloatingViewManager.addViewToWindow(iconView, options);
-</code></p>
+</code></pre>
+</div>
 
 <table>
   <thead>
@@ -762,7 +783,12 @@ mFloatingViewManager.addViewToWindow(iconView, options);
     </tr>
     <tr>
       <td style="text-align: center">moveDirection</td>
-      <td><code class="highlighter-rouge">FloatingViewManager.MOVE_DIRECTION_DEFAULT</code>:Left end or right end(default)<br /> <code class="highlighter-rouge">FloatingViewManager.MOVE_DIRECTION_LEFT</code>:Left end<br /><code class="highlighter-rouge">FloatingViewManager.MOVE_DIRECTION_RIGHT</code>:Right end<br /><code class="highlighter-rouge">FloatingViewManager.MOVE_DIRECTION_NONE</code>:Not move</td>
+      <td><code class="highlighter-rouge">FloatingViewManager.MOVE_DIRECTION_DEFAULT</code>:Left end or right end(default)<br /> <code class="highlighter-rouge">FloatingViewManager.MOVE_DIRECTION_LEFT</code>:Left end<br /><code class="highlighter-rouge">FloatingViewManager.MOVE_DIRECTION_RIGHT</code>:Right end<br /><code class="highlighter-rouge">FloatingViewManager.MOVE_DIRECTION_NONE</code>:Not move<br /><code class="highlighter-rouge">FloatingViewManager.MOVE_DIRECTION_NEAREST</code>:Move nearest edge<br /><code class="highlighter-rouge">FloatingViewManager.MOVE_DIRECTION_THROWN</code>:Move in the throwing direction (left end or right end)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">usePhysics</td>
+      <td>Use physics-based animation(depends on <code class="highlighter-rouge">moveDirection</code>)<br />(default) true<br />Info:If <code class="highlighter-rouge">MOVE_DIRECTION_NEAREST</code> is set, nothing happens<br />Info:Can not be used before API 16</td>
       <td> </td>
     </tr>
     <tr>
@@ -808,20 +834,6 @@ mFloatingViewManager.setActionTrashIconImage(R.drawable.ic_trash_action);
     </tr>
   </tbody>
 </table>
-
-<h1 id="revisions">Revisions</h1>
-<p>## Update in 2.2.1
-Minor update(sample module only)
-- Change the way to stop the service
-## Update in 2.2
-- Support for large image for FloatingView (not complete, but almost works)(<a href="../../issues/16">#16</a>)
-- Support size specification of FloatingView(<a href="../../issues/16">#16</a>)
-- Fix issue <a href="../../issues/14">#14</a></p>
-
-<h2 id="update-in-21">Update in 2.1</h2>
-<ul>
-  <li>Add <code class="highlighter-rouge">FloatingViewListener#onTouchFinished</code>.This method is called when the touch action is finished.</li>
-</ul>
 
 <h1 id="credits">Credits</h1>
 
