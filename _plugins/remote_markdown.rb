@@ -12,6 +12,8 @@ module Jekyll
     def initialize(tag_name, text, tokens)
       super
     
+      puts "download >> #{text}"
+      
       text.strip!
       check_protocol(text)
       uri = URI(text)
