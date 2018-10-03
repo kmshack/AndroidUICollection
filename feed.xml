@@ -5,9 +5,104 @@
     <description>Collection of OpenSource for Android UI.</description>
     <link>http://kmshack.github.io/AndroidUICollection/</link>
     <atom:link href="http://kmshack.github.io/AndroidUICollection/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 26 Sep 2018 01:56:56 +0900</pubDate>
-    <lastBuildDate>Wed, 26 Sep 2018 01:56:56 +0900</lastBuildDate>
+    <pubDate>Fri, 28 Sep 2018 15:55:23 +0900</pubDate>
+    <lastBuildDate>Fri, 28 Sep 2018 15:55:23 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>InboxRecyclerView</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://youtu.be/aI9wX91m3Qs&quot;&gt;[](https://github.com/saket/InboxRecyclerView/blob/master/images/static_thumbnail.jpg)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;InboxRecyclerView is a library for building expandable descendant navigation, inspired by &lt;a href=&quot;http://androidniceties.tumblr.com/post/100872004063/inbox-by-gmail-google-play-link&quot;&gt;Google Inbox&lt;/a&gt; and &lt;a href=&quot;https://material.io/design/material-studies/reply.html&quot;&gt;Reply&lt;/a&gt;. If you’re interested in learning how it was created, &lt;a href=&quot;https://saket.me/inbox-recyclerview&quot;&gt;here’s a detailed blog post&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;implementation&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;me.saket:inboxrecyclerview:1.0.0-beta3&#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;FYI, &lt;code class=&quot;highlighter-rouge&quot;&gt;InboxRecyclerView&lt;/code&gt; has a dependency on &lt;code class=&quot;highlighter-rouge&quot;&gt;androidx&lt;/code&gt;. If you haven’t &lt;a href=&quot;https://android-developers.googleblog.com/2018/05/hello-world-androidx.html&quot;&gt;migrated&lt;/a&gt; from the support library already, this would be a good opportunity.&lt;/p&gt;
+
+&lt;h3 id=&quot;usage&quot;&gt;Usage&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;InboxRecyclerView&lt;/code&gt; can be dropped in existing projects without requiring any effort. You can take a look at the &lt;a href=&quot;https://github.com/saket/InboxRecyclerView/tree/master/sample&quot;&gt;sample app&lt;/a&gt; for best practices or &lt;a href=&quot;https://github.com/saket/InboxRecyclerView/releases&quot;&gt;download its APK&lt;/a&gt; for trying it out on your phone.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Layout&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;me.saket.inboxrecyclerview.InboxRecyclerView&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;--&lt;/span&gt;
+  &lt;span class=&quot;err&quot;&gt;It&#39;s&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;recommended&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;that&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;content&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;page&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;has&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;higher&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;z-index&lt;/span&gt;
+  &lt;span class=&quot;err&quot;&gt;than&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;list.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;This&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;can&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;be&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;achieved&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;either&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;giving&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;a&lt;/span&gt;
+  &lt;span class=&quot;err&quot;&gt;higher&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;view&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;position&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;higher&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;elevation.&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;me.saket.inboxrecyclerview.page.ExpandablePageLayout&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Expanding content&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;recyclerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setExpandablePage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;contentPage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;recyclerViewAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;itemClickListener&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clickedItem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;expandableFragment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;loadContent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clickedItem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;recyclerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;expandItem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clickedItem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;adapterId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;how-do-i&quot;&gt;How do I…&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/saket/InboxRecyclerView/wiki/Item-animations&quot;&gt;customize item expand animations?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/saket/InboxRecyclerView/wiki/Pull-to-collapse&quot;&gt;control the pull-to-collapse gesture?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/saket/InboxRecyclerView/wiki/Background-tint&quot;&gt;change the background tint?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/saket/InboxRecyclerView/wiki/Page-callbacks&quot;&gt;listen to state changes?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;pull-collapsible-activities&quot;&gt;Pull collapsible activities&lt;/h3&gt;
+
+&lt;p&gt;To maintain consistency across the whole app, this library also includes a &lt;code class=&quot;highlighter-rouge&quot;&gt;PullCollapsibleActivity&lt;/code&gt; that brings the same animations and gesture to activities with little effort.&lt;/p&gt;
+
+&lt;p&gt;Step 1. Extend &lt;code class=&quot;highlighter-rouge&quot;&gt;PullCollapsibleActivity&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Step 2. Add these attributes to the activity’s theme:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;item&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;“android:windowIsTranslucent”&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;true&lt;span class=&quot;nt&quot;&gt;&amp;lt;/item&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;item&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;“android:colorBackgroundCacheHint”&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;@null&lt;span class=&quot;nt&quot;&gt;&amp;lt;/item&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;license&quot;&gt;License&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2018 Saket Narayan.
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Fri, 28 Sep 2018 00:00:00 +0900</pubDate>
+        <link>http://kmshack.github.io/AndroidUICollection/2018/09/28/InboxRecyclerView/</link>
+        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2018/09/28/InboxRecyclerView/</guid>
+        
+        <category>RecyclerView</category>
+        
+        <category>Inbox</category>
+        
+        
+      </item>
     
       <item>
         <title>SequenceLayout</title>
@@ -477,7 +572,9 @@ See &lt;a href=&quot;./LICENSE.md&quot;&gt;LICENSE&lt;/a&gt; for details.&lt;/p&
     
       <item>
         <title>MaterialChipsInput</title>
-        <description>&lt;h1 id=&quot;materialchipsinput&quot;&gt;MaterialChipsInput&lt;/h1&gt;
+        <description>&lt;h2 id=&quot;not-currently-maintained&quot;&gt;[NOT CURRENTLY MAINTAINED]&lt;/h2&gt;
+
+&lt;h1 id=&quot;materialchipsinput&quot;&gt;MaterialChipsInput&lt;/h1&gt;
 
 &lt;p&gt;Implementation of Material Design &lt;a href=&quot;https://material.io/guidelines/components/chips.html&quot;&gt;Chips&lt;/a&gt; component for Android. The library provides two views : &lt;a href=&quot;#chipsinput&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ChipsInput&lt;/code&gt;&lt;/a&gt; and &lt;a href=&quot;#chipview&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ChipView&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
 
@@ -1726,335 +1823,6 @@ dependencies {
         <category>RecyclerView</category>
         
         <category>Shimmer</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>HorizontalCalendar</title>
-        <description>&lt;h1 id=&quot;horizontal-calendar&quot;&gt;Horizontal Calendar&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://bintray.com/mulham-raee/maven/horizontal-calendar/_latestVersion&quot;&gt;[Download](https://api.bintray.com/packages/mulham-raee/maven/horizontal-calendar/images/download.svg) &lt;/a&gt;
-&lt;a href=&quot;https://opensource.org/licenses/Apache-2.0&quot;&gt;[License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;A material horizontal calendar view for Android based on &lt;code class=&quot;highlighter-rouge&quot;&gt;RecyclerView&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/art/showCase.png&quot;&gt;showcase&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
-
-&lt;p&gt;The library is hosted on jcenter, add this to your &lt;strong&gt;build.gradle&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-gradle&quot;&gt;repositories {
-      jcenter()
-    }
-    
-dependencies {
-      compile &#39;devs.mulham.horizontalcalendar:horizontalcalendar:1.3.4&#39;
-    }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;/h2&gt;
-
-&lt;p&gt;The minimum API level supported by this library is &lt;strong&gt;API 14 (ICE_CREAM_SANDWICH)&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Add &lt;code class=&quot;highlighter-rouge&quot;&gt;HorizontalCalendarView&lt;/code&gt; to your layout file, for example:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;android.support.design.widget.AppBarLayout&amp;gt;&lt;/span&gt;
-		............ 
-		
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;devs.mulham.horizontalcalendar.HorizontalCalendarView&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/calendarView&quot;&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;android:background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/colorPrimary&quot;&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;app:textColorSelected=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#FFFF&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-            
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/android.support.design.widget.AppBarLayout&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;In your Activity or Fragment, define your &lt;strong&gt;start&lt;/strong&gt; and &lt;strong&gt;end&lt;/strong&gt; dates to set the range of the calendar:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/* starts before 1 month from now */&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Calendar&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;startDate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;startDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;MONTH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;cm&quot;&gt;/* ends after 1 month from now */&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Calendar&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endDate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;endDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;MONTH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Then setup &lt;code class=&quot;highlighter-rouge&quot;&gt;HorizontalCalendar&lt;/code&gt; in your &lt;strong&gt;Activity&lt;/strong&gt; through its Builder:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;HorizontalCalendar&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;horizontalCalendar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HorizontalCalendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Builder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;calendarView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;startDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;datesNumberOnScreen&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Or if you are using a &lt;strong&gt;Fragment&lt;/strong&gt;:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;HorizontalCalendar&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;horizontalCalendar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HorizontalCalendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Builder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rootView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;calendarView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;...................&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;To listen to date change events you need to set a listener:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;horizontalCalendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setCalendarListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HorizontalCalendarListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-            &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onDateSelected&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Calendar&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;c1&quot;&gt;//do something&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;You can also listen to &lt;strong&gt;scroll&lt;/strong&gt; and &lt;strong&gt;long press&lt;/strong&gt; events by overriding each perspective method within &lt;strong&gt;HorizontalCalendarListener&lt;/strong&gt;:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;horizontalCalendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setCalendarListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HorizontalCalendarListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-            &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onDateSelected&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Calendar&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-            &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-            &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onCalendarScroll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HorizontalCalendarView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;calendarView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; 
-            &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dx&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-                
-            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-            &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-            &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onDateLongClicked&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Calendar&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;customization&quot;&gt;Customization&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;You can customize it directly inside your &lt;strong&gt;layout&lt;/strong&gt;:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;devs.mulham.horizontalcalendar.HorizontalCalendarView&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/calendarView&quot;&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;app:textColorNormal=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#bababa&quot;&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;app:textColorSelected=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#FFFF&quot;&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;app:selectorColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#c62828&quot;&lt;/span&gt;  &lt;span class=&quot;err&quot;&gt;//default&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;colorAccent&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;app:selectedDateBackground=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@drawable/myDrawable&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Or you can do it programmatically in your &lt;strong&gt;Activity&lt;/strong&gt; or &lt;strong&gt;Fragment&lt;/strong&gt; using &lt;code class=&quot;highlighter-rouge&quot;&gt;HorizontalCalendar.Builder&lt;/code&gt;:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;HorizontalCalendar&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;horizontalCalendar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HorizontalCalendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Builder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;calendarView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Calendar&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;startDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Calendar&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;datesNumberOnScreen&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;// Number of Dates cells shown on screen (default to 5).&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;configure&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// starts configuration.&lt;/span&gt;
-                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;formatTopText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dateFormat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;       &lt;span class=&quot;c1&quot;&gt;// default to &quot;MMM&quot;.&lt;/span&gt;
-                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;formatMiddleText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dateFormat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// default to &quot;dd&quot;.&lt;/span&gt;
-                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;formatBottomText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dateFormat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// default to &quot;EEE&quot;.&lt;/span&gt;
-                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;showTopText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;              &lt;span class=&quot;c1&quot;&gt;// show or hide TopText (default to true).&lt;/span&gt;
-                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;showBottomText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;           &lt;span class=&quot;c1&quot;&gt;// show or hide BottomText (default to true).&lt;/span&gt;
-                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;textColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;normalColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;selectedColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// default to (Color.LTGRAY, Color.WHITE).&lt;/span&gt;
-                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;selectedDateBackground&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Drawable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;      &lt;span class=&quot;c1&quot;&gt;// set selected date cell background.&lt;/span&gt;
-                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;selectorColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;               &lt;span class=&quot;c1&quot;&gt;// set selection indicator bar&#39;s color (default to colorAccent).&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;          &lt;span class=&quot;c1&quot;&gt;// ends configuration.&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;defaultSelectedDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Calendar&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// Date to be selected at start (default to current day `Calendar.getInstance()`).&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;more-customizations&quot;&gt;More Customizations&lt;/h4&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;builder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;configure&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-           &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;textSize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;topTextSize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;middleTextSize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bottomTextSize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-           &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;sizeTopText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-           &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;sizeMiddleText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-           &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;sizeBottomText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-           &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;colorTextTop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;normalColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;selectedColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-           &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;colorTextMiddle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;normalColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;selectedColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-           &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;colorTextBottom&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;normalColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;selectedColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;months-mode&quot;&gt;Months Mode&lt;/h2&gt;
-&lt;p&gt;HorizontalCalendar can display only &lt;strong&gt;Months&lt;/strong&gt; instead of Dates by adding &lt;code class=&quot;highlighter-rouge&quot;&gt;mode(HorizontalCalendar.Mode.MONTHS)&lt;/code&gt; to the builder, for example:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;horizontalCalendar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HorizontalCalendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Builder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;calendarView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Calendar&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;startDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Calendar&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;datesNumberOnScreen&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;mode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HorizontalCalendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Mode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;MONTHS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;configure&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;formatMiddleText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;MMM&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;formatBottomText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;yyyy&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;showTopText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;showBottomText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;textColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LTGRAY&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;WHITE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;defaultSelectedDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;defaultSelectedDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;events&quot;&gt;Events&lt;/h2&gt;
-&lt;p&gt;A list of Events can be provided for each Date which will be represented as circle indicators under the Date with:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;builder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addEvents&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CalendarEventsPredicate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-                    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-                    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CalendarEvent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;events&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Calendar&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-                        &lt;span class=&quot;c1&quot;&gt;// test the date and return a list of CalendarEvent to assosiate with this Date.&lt;/span&gt;
-                    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;reconfiguration&quot;&gt;Reconfiguration&lt;/h2&gt;
-&lt;p&gt;HorizontalCalendar configurations can be changed after initialization:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Change calendar dates range:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-horizontalCalendar.setRange(Calendar startDate, Calendar endDate);
-&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Change default(not selected) items style:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-horizontalCalendar.getDefaultStyle()
-      .setColorTopText(int color)
-      .setColorMiddleText(int color)
-      .setColorBottomText(int color)
-      .setBackground(Drawable background);      
-&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Change selected item style:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-horizontalCalendar.getSelectedItemStyle()
-      .setColorTopText(int color)
-      ..............
-&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Change formats, text sizes and selector color:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-horizontalCalendar.getConfig()
-      .setSelectorColor(int color)
-      .setFormatTopText(String format)
-      .setSizeTopText(float size)
-      ..............
-&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;important&quot;&gt;Important&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Make sure to call &lt;code class=&quot;highlighter-rouge&quot;&gt;horizontalCalendar.refresh();&lt;/code&gt; when you finish your changes&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Disable specific dates with &lt;code class=&quot;highlighter-rouge&quot;&gt;HorizontalCalendarPredicate&lt;/code&gt;, a unique style for disabled dates can be specified as well with &lt;code class=&quot;highlighter-rouge&quot;&gt;CalendarItemStyle&lt;/code&gt;:
-```java
-builder.disableDates(new HorizontalCalendarPredicate() {
-                         @Override
-                         public boolean test(Calendar date) {
-                             return false;    // return true if this date should be disabled, false otherwise.
-                         }&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;                     @Override
-                     public CalendarItemStyle style() {
-                         return null;     // create and return a new Style for disabled dates, or null if no styling needed.
-                     }
-                 }) ```
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Select a specific &lt;strong&gt;Date&lt;/strong&gt; programmatically with the option whether to play the animation or not:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-horizontalCalendar.selectDate(Calendar date, boolean immediate); // set immediate to false to ignore animation.
-  // or simply
-horizontalCalendar.goToday(boolean immediate);
-&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Check if a date is contained in the Calendar:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-horizontalCalendar.contains(Calendar date);
-&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Check if two dates are equal (year, month, day of month):
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-Utils.isSameDate(Calendar date1, Calendar date2);
-&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Get number of &lt;strong&gt;days&lt;/strong&gt; between two dates:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-Utils.daysBetween(Calendar startInclusive, Calendar endExclusive);
-&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;contributing&quot;&gt;Contributing&lt;/h2&gt;
-
-&lt;p&gt;Contributions are welcome, feel free to submit a pull request.&lt;/p&gt;
-
-&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Copyright 2017  Mulham Raee&lt;/p&gt;
-
-  &lt;p&gt;Licensed under the Apache License, Version 2.0 (the “License”);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-       http://www.apache.org/licenses/LICENSE-2.0&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an “AS IS” BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the &lt;a href=&quot;/LICENSE&quot;&gt;License&lt;/a&gt; for the specific language governing
-permissions and limitations under the License.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-</description>
-        <pubDate>Wed, 29 Mar 2017 00:00:00 +0900</pubDate>
-        <link>http://kmshack.github.io/AndroidUICollection/2017/03/29/HorizontalCalendar/</link>
-        <guid isPermaLink="true">http://kmshack.github.io/AndroidUICollection/2017/03/29/HorizontalCalendar/</guid>
-        
-        <category>Horizontal</category>
-        
-        <category>Calendar</category>
         
         
       </item>
