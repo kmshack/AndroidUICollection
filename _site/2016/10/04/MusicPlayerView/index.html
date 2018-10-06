@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/10/04/MusicPlayerView/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/10/04/MusicPlayerView/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="MusicPlayerView[Build Status](https://api.travis-ci.org/iammert/MusicPlayerView.svg)[Join the chat at https://gitter.im/iammert/MusicPlayerView](https://img....">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="Music Player View">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="MusicPlayerView[Build Status](https://api.travis-ci.org/iammert/MusicPlayerView.svg)[Join the chat at https://gitter.im/iammert/MusicPlayerView](https://img....">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/10/04/MusicPlayerView/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/10/04/MusicPlayerView/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="MusicPlayerView[Build Status](https://api.travis-ci.org/iammert/MusicPlayerView.svg)[Join the chat at https://gitter.im/iammert/MusicPlayerView](https://img...." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-10-04-MusicPlayerView.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-10-04-MusicPlayerView.gif">
         
 
         <header class="post__header">
@@ -663,9 +667,8 @@
 <p>You can define values on you XML file or you can make it programmatically. We have 5 values to customize
 our player view.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">mpv</span> <span class="o">=</span> <span class="o">(</span><span class="n">MusicPlayerView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">mpv</span><span class="o">);</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mpv</span> <span class="o">=</span> <span class="o">(</span><span class="n">MusicPlayerView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">mpv</span><span class="o">);</span>
+</code></pre></div></div>
 
 <p><code class="highlighter-rouge">buttonColor</code>  play/pause button background.
 <code class="highlighter-rouge">progressEmptyColor</code> progress bar color(Left Seconds)
@@ -675,7 +678,7 @@ our player view.</p>
 
 <h2 id="xml-usage">XML Usage</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;co.mobiwise.library.MusicPlayerView</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;co.mobiwise.library.MusicPlayerView</span>
         <span class="na">android:id=</span><span class="s">"@+id/mpv"</span>
         <span class="na">android:layout_width=</span><span class="s">"250dp"</span>
         <span class="na">android:layout_height=</span><span class="s">"250dp"</span>
@@ -685,86 +688,73 @@ our player view.</p>
         <span class="na">app:progressLoadedColor =</span> <span class="s">"#00815E"</span>
         <span class="na">app:progressEmptyColor =</span> <span class="s">"#20FFFFFF"</span>
         <span class="na">app:cover =</span> <span class="s">"@drawable/mycover"</span><span class="nt">/&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="java-usage">Java Usage</h2>
 
-<p>You can customize UI view programmatically
-<code class="highlighter-rouge">java
-mpv.setButtonColor(Color.DKGRAY);
-mpv.setCoverDrawable(R.drawable.mycover);
-mpv.setProgressEmptyColor(Color.GRAY);
-mpv.setProgressLoadedColor(Color.BLUE);
-mpv.setTimeColor(Color.WHITE);
-</code></p>
+<p>You can customize UI view programmatically</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mpv</span><span class="o">.</span><span class="na">setButtonColor</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">DKGRAY</span><span class="o">);</span>
+<span class="n">mpv</span><span class="o">.</span><span class="na">setCoverDrawable</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">mycover</span><span class="o">);</span>
+<span class="n">mpv</span><span class="o">.</span><span class="na">setProgressEmptyColor</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">GRAY</span><span class="o">);</span>
+<span class="n">mpv</span><span class="o">.</span><span class="na">setProgressLoadedColor</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">BLUE</span><span class="o">);</span>
+<span class="n">mpv</span><span class="o">.</span><span class="na">setTimeColor</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">WHITE</span><span class="o">);</span>
+</code></pre></div></div>
 
 <h2 id="methods">Methods</h2>
 
-<p>You can also load image from URL
-<code class="highlighter-rouge">java
-mpv.setCoverURL("YOUR_IMAGE_URL");
-</code></p>
+<p>You can also load image from URL</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mpv</span><span class="o">.</span><span class="na">setCoverURL</span><span class="o">(</span><span class="s">"YOUR_IMAGE_URL"</span><span class="o">);</span>
+</code></pre></div></div>
 
-<p>You need to set music time in seconds otherwise default value 100 seconds will be used.
-<code class="highlighter-rouge">java
-mpv.setMax(320);
-</code></p>
+<p>You need to set music time in seconds otherwise default value 100 seconds will be used.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mpv</span><span class="o">.</span><span class="na">setMax</span><span class="o">(</span><span class="mi">320</span><span class="o">);</span>
+</code></pre></div></div>
 
-<p>Progress will start from 0. But you can also set progress.
-<code class="highlighter-rouge">java
-mpv.setProgress(10);
-</code></p>
+<p>Progress will start from 0. But you can also set progress.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mpv</span><span class="o">.</span><span class="na">setProgress</span><span class="o">(</span><span class="mi">10</span><span class="o">);</span>
+</code></pre></div></div>
 
-<p>To start playing
-<code class="highlighter-rouge">java
-mpv.start();
-</code></p>
+<p>To start playing</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mpv</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+</code></pre></div></div>
 
-<p>To stop playing
-<code class="highlighter-rouge">java
-mpv.stop();
-</code></p>
+<p>To stop playing</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mpv</span><span class="o">.</span><span class="na">stop</span><span class="o">();</span>
+</code></pre></div></div>
 
-<p>Check if it is rotating(Playing)
-<code class="highlighter-rouge">java
-mpv.isRotating();
-</code></p>
+<p>Check if it is rotating(Playing)</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mpv</span><span class="o">.</span><span class="na">isRotating</span><span class="o">();</span>
+</code></pre></div></div>
 
 <p>When you call <code class="highlighter-rouge">start()</code> method, image will start rotating and progress(seconds) will start counting 
 automatically. when you call <code class="highlighter-rouge">stop()</code> method, rotating will be stopped, time too. You may want to handle
-progress yourself. You can disable progress thread.
-<code class="highlighter-rouge">java
-mpv.setAutoProgress(false);
-</code></p>
+progress yourself. You can disable progress thread.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mpv</span><span class="o">.</span><span class="na">setAutoProgress</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+</code></pre></div></div>
 
-<p>You can also change velocity of turning album cover.(Default value is 1 which is ideal -my idea-)
-<code class="highlighter-rouge">java
-mpv.setVelocity(2);
-</code></p>
+<p>You can also change velocity of turning album cover.(Default value is 1 which is ideal -my idea-)</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mpv</span><span class="o">.</span><span class="na">setVelocity</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+</code></pre></div></div>
 
-<p>If you have live player then you don’t have progress. You can also disable progress view.
-<code class="highlighter-rouge">java
-mpv.setProgressVisibility(false);
-</code></p>
+<p>If you have live player then you don’t have progress. You can also disable progress view.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mpv</span><span class="o">.</span><span class="na">setProgressVisibility</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+</code></pre></div></div>
 
 <h1 id="import">Import</h1>
 <p>Project build.gradle</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>repositories {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>repositories {
     maven {
         url "https://jitpack.io"
     }
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<p>Module build.gradle
-<code class="highlighter-rouge">
-dependencies {
+<p>Module build.gradle</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dependencies {
   compile 'com.github.iammert:MusicPlayerView:e3b937c729'
 }
-</code></p>
+</code></pre></div></div>
 
 <p>It will be available on maven repo soon.</p>
 
@@ -780,7 +770,7 @@ dependencies {
 
 <h2 id="license">License</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2015 Mert Şimşek.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright 2015 Mert Şimşek.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -793,8 +783,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
           <br>
@@ -826,17 +815,17 @@ limitations under the License.
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Music Player View&url=http://kmshack.github.io/AndroidUICollection/2016/10/04/MusicPlayerView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Music Player View&url=http://localhost:4000/AndroidUICollection/2016/10/04/MusicPlayerView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/10/04/MusicPlayerView/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/10/04/MusicPlayerView/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/10/04/MusicPlayerView/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/10/04/MusicPlayerView/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -867,7 +856,7 @@ limitations under the License.
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/10/04/MusicPlayerView/";
+    this.page.url = "http://localhost:4000/2016/10/04/MusicPlayerView/";
   };
 
   (function() {

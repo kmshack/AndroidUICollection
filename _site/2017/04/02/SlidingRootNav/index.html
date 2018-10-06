@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2017/04/02/SlidingRootNav/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2017/04/02/SlidingRootNav/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="SlidingRootNavThe library is a DrawerLayout-like ViewGroup, where a “drawer” is hidden under the content view, which can be shifted to make the drawer visibl...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="SlidingRootNav">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="SlidingRootNavThe library is a DrawerLayout-like ViewGroup, where a “drawer” is hidden under the content view, which can be shifted to make the drawer visibl...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2017/04/02/SlidingRootNav/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2017/04/02/SlidingRootNav/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="SlidingRootNavThe library is a DrawerLayout-like ViewGroup, where a “drawer” is hidden under the content view, which can be shifted to make the drawer visibl..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2017-04-02-SlidingRootNav.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2017-04-02-SlidingRootNav.gif">
         
 
         <header class="post__header">
@@ -654,63 +658,61 @@
 <p><a href="art/sample.gif">GifSample</a></p>
 
 <h2 id="gradle">Gradle</h2>
-<p>Add this into your dependencies block.
-<code class="highlighter-rouge">
-compile 'com.yarolegovich:sliding-root-nav:1.1.0'
-</code>
-## Sample
-Please see the <a href="sample/src/main/java/com/yarolegovich/slidingrootnav/sample">sample app</a> for a library usage example.</p>
+<p>Add this into your dependencies block.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>compile 'com.yarolegovich:sliding-root-nav:1.1.0'
+</code></pre></div></div>
+<h2 id="sample">Sample</h2>
+<p>Please see the <a href="sample/src/main/java/com/yarolegovich/slidingrootnav/sample">sample app</a> for a library usage example.</p>
 
 <h2 id="wiki">Wiki</h2>
-<p>#### Usage:
- 1. Create your content_view.xml (<a href="sample/src/main/res/layout/activity_main.xml">example</a>) or construct a <code class="highlighter-rouge">View</code> programatically.
- 2. Set the content view (for example, using <code class="highlighter-rouge">setContentView</code> in your activity).
- 3. Create your menu.xml (<a href="sample/src/main/res/layout/menu_left_drawer.xml">example</a>) or construct a <code class="highlighter-rouge">View</code> programatically.
- 4. Now you need to inject the menu in your <code class="highlighter-rouge">onCreate</code>. You can specify transformations of a content view or use the default ones. 
-<code class="highlighter-rouge">java
-new SlidingRootNavBuilder(this)
-  .withMenuLayout(R.layout.menu_left_drawer)
-  .inject();
-</code></p>
+<h4 id="usage">Usage:</h4>
+<ol>
+  <li>Create your content_view.xml (<a href="sample/src/main/res/layout/activity_main.xml">example</a>) or construct a <code class="highlighter-rouge">View</code> programatically.</li>
+  <li>Set the content view (for example, using <code class="highlighter-rouge">setContentView</code> in your activity).</li>
+  <li>Create your menu.xml (<a href="sample/src/main/res/layout/menu_left_drawer.xml">example</a>) or construct a <code class="highlighter-rouge">View</code> programatically.</li>
+  <li>Now you need to inject the menu in your <code class="highlighter-rouge">onCreate</code>. You can specify transformations of a content view or use the default ones.
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="n">SlidingRootNavBuilder</span><span class="o">(</span><span class="k">this</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">withMenuLayout</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">menu_left_drawer</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">inject</span><span class="o">();</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
 
 <h3 id="api">API</h3>
-<p>#### Transformations
-You can specify root transformations using <code class="highlighter-rouge">SlidingRootNavBuilder</code>.
-<code class="highlighter-rouge">java
-new SlidingRootNavBuilder(this)
-  .withDragDistance(140) //Horizontal translation of a view. Default == 180dp
-  .withRootViewScale(0.7f) //Content view's scale will be interpolated between 1f and 0.7f. Default == 0.65f;
-  .withRootViewElevation(10) //Content view's elevation will be interpolated between 0 and 10dp. Default == 8.
-  .withRootViewYTranslation(4) //Content view's translationY will be interpolated between 0 and 4. Default == 0
-  .addRootTransformation(customTransformation)
-  .inject();
-</code>
-<code class="highlighter-rouge">customTransformation</code> in the above example is a user-created class that implements <code class="highlighter-rouge">RootTransformation</code> interface. For an example, refer to the <a href="library/src/main/java/com/yarolegovich/slidingrootnav/transform">default transformations</a>.</p>
+<h4 id="transformations">Transformations</h4>
+<p>You can specify root transformations using <code class="highlighter-rouge">SlidingRootNavBuilder</code>.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="n">SlidingRootNavBuilder</span><span class="o">(</span><span class="k">this</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">withDragDistance</span><span class="o">(</span><span class="mi">140</span><span class="o">)</span> <span class="c1">//Horizontal translation of a view. Default == 180dp</span>
+  <span class="o">.</span><span class="na">withRootViewScale</span><span class="o">(</span><span class="mf">0.7f</span><span class="o">)</span> <span class="c1">//Content view's scale will be interpolated between 1f and 0.7f. Default == 0.65f;</span>
+  <span class="o">.</span><span class="na">withRootViewElevation</span><span class="o">(</span><span class="mi">10</span><span class="o">)</span> <span class="c1">//Content view's elevation will be interpolated between 0 and 10dp. Default == 8.</span>
+  <span class="o">.</span><span class="na">withRootViewYTranslation</span><span class="o">(</span><span class="mi">4</span><span class="o">)</span> <span class="c1">//Content view's translationY will be interpolated between 0 and 4. Default == 0</span>
+  <span class="o">.</span><span class="na">addRootTransformation</span><span class="o">(</span><span class="n">customTransformation</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">inject</span><span class="o">();</span>
+</code></pre></div></div>
+<p><code class="highlighter-rouge">customTransformation</code> in the above example is a user-created class that implements <code class="highlighter-rouge">RootTransformation</code> interface. For an example, refer to the <a href="library/src/main/java/com/yarolegovich/slidingrootnav/transform">default transformations</a>.</p>
 
 <h4 id="menu-behavior">Menu behavior</h4>
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">new</span> <span class="nf">SlidingRootNavBuilder</span><span class="p">(</span><span class="k">this</span><span class="o">)</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="n">SlidingRootNavBuilder</span><span class="o">(</span><span class="k">this</span><span class="o">)</span>
   <span class="o">.</span><span class="na">withMenuOpened</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="c1">//Initial menu opened/closed state. Default == false</span>
   <span class="o">.</span><span class="na">withMenuLocked</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span> <span class="c1">//If true, a user can't open or close the menu. Default == false.</span>
   <span class="o">.</span><span class="na">withGravity</span><span class="o">(</span><span class="n">SlideGravity</span><span class="o">.</span><span class="na">LEFT</span><span class="o">)</span> <span class="c1">//If LEFT you can swipe a menu from left to right, if RIGHT - the direction is opposite. </span>
   <span class="o">.</span><span class="na">withSavedState</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">)</span> <span class="c1">//If you call the method, layout will restore its opened/closed state</span>
   <span class="o">.</span><span class="na">withContentClickableWhenMenuOpened</span><span class="o">(</span><span class="n">isClickable</span><span class="o">)</span> <span class="c1">//Pretty self-descriptive. Builder Default == true</span>
-</code></pre>
-</div>
-<p>#### Controling the layout
-A call to <code class="highlighter-rouge">inject()</code> returns you an interface for controlling the layout.
-<code class="highlighter-rouge">java
-public interface SlidingRootNav {
-    boolean isMenuClosed();
-    boolean isMenuOpened();
-    boolean isMenuLocked();
-    void closeMenu();
-    void closeMenu(boolean animated);
-    void openMenu();
-    void openMenu(boolean animated);
-    void setMenuLocked(boolean locked);
-    SlidingRootNavLayout getLayout(); //If for some reason you need to work directly with layout - you can
-}
-</code></p>
+</code></pre></div></div>
+<h4 id="controling-the-layout">Controling the layout</h4>
+<p>A call to <code class="highlighter-rouge">inject()</code> returns you an interface for controlling the layout.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">SlidingRootNav</span> <span class="o">{</span>
+    <span class="kt">boolean</span> <span class="nf">isMenuClosed</span><span class="o">();</span>
+    <span class="kt">boolean</span> <span class="nf">isMenuOpened</span><span class="o">();</span>
+    <span class="kt">boolean</span> <span class="nf">isMenuLocked</span><span class="o">();</span>
+    <span class="kt">void</span> <span class="nf">closeMenu</span><span class="o">();</span>
+    <span class="kt">void</span> <span class="nf">closeMenu</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">animated</span><span class="o">);</span>
+    <span class="kt">void</span> <span class="nf">openMenu</span><span class="o">();</span>
+    <span class="kt">void</span> <span class="nf">openMenu</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">animated</span><span class="o">);</span>
+    <span class="kt">void</span> <span class="nf">setMenuLocked</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">locked</span><span class="o">);</span>
+    <span class="n">SlidingRootNavLayout</span> <span class="nf">getLayout</span><span class="o">();</span> <span class="c1">//If for some reason you need to work directly with layout - you can</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
 <h4 id="callbacks">Callbacks</h4>
 <ul>
@@ -723,7 +725,7 @@ builder.addDragListener(listener);</li>
   void onDrag(float progress); //Float between 0 and 1, where 1 is a fully visible menu
 }</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>* Drag state changes:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* Drag state changes:
 ```java
 builder.addDragStateListener(listener);
 
@@ -731,22 +733,21 @@ public interface DragStateListener {
   void onDragStart();
   void onDragEnd(boolean isMenuOpened);
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>Compatibility with <code class="highlighter-rouge">DrawerLayout.DrawerListener</code>:
-<code class="highlighter-rouge">java
-DrawerListenerAdapter adapter = new DrawerListenerAdapter(yourDrawerListener, viewToPassAsDrawer);
-builder.addDragListener(listenerAdapter).addDragStateListener(listenerAdapter);
-</code></li>
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">DrawerListenerAdapter</span> <span class="n">adapter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DrawerListenerAdapter</span><span class="o">(</span><span class="n">yourDrawerListener</span><span class="o">,</span> <span class="n">viewToPassAsDrawer</span><span class="o">);</span>
+<span class="n">builder</span><span class="o">.</span><span class="na">addDragListener</span><span class="o">(</span><span class="n">listenerAdapter</span><span class="o">).</span><span class="na">addDragStateListener</span><span class="o">(</span><span class="n">listenerAdapter</span><span class="o">);</span>
+</code></pre></div>    </div>
+  </li>
 </ul>
 
 <h2 id="special-thanks">Special thanks</h2>
 <p>Thanks to <a href="https://www.behance.net/yurkivt">Tayisiya Yurkiv</a> for a beautiful GIF.</p>
 
 <h2 id="license">License</h2>
-<div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2017 Yaroslav Shevchuk
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright 2017 Yaroslav Shevchuk
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -759,8 +760,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
           <br>
@@ -790,17 +790,17 @@ limitations under the License.
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=SlidingRootNav&url=http://kmshack.github.io/AndroidUICollection/2017/04/02/SlidingRootNav/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=SlidingRootNav&url=http://localhost:4000/AndroidUICollection/2017/04/02/SlidingRootNav/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2017/04/02/SlidingRootNav/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2017/04/02/SlidingRootNav/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2017/04/02/SlidingRootNav/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2017/04/02/SlidingRootNav/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -831,7 +831,7 @@ limitations under the License.
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2017/04/02/SlidingRootNav/";
+    this.page.url = "http://localhost:4000/2017/04/02/SlidingRootNav/";
   };
 
   (function() {

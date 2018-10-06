@@ -14,7 +14,7 @@ url:              'http://kmshack.github.io' # The base hostname & protocol for 
 github_username:  kmshack
 twitter_username: kmshack_kr
 
-markdown:  kramdown
+markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: false

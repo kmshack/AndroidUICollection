@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/10/06/RealtimeBlurView/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/10/06/RealtimeBlurView/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="RealtimeBlurViewIt’s just a realtime blurring overlay like iOS UIVisualEffectView.IMGJust put the view in the layout xml, no Java code is required.// Views t...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="RealtimeBlurView">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="RealtimeBlurViewIt’s just a realtime blurring overlay like iOS UIVisualEffectView.IMGJust put the view in the layout xml, no Java code is required.// Views t...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/10/06/RealtimeBlurView/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/10/06/RealtimeBlurView/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="RealtimeBlurViewIt’s just a realtime blurring overlay like iOS UIVisualEffectView.IMGJust put the view in the layout xml, no Java code is required.// Views t..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-10-06-RealtimeBlurView.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-10-06-RealtimeBlurView.gif">
         
 
         <header class="post__header">
@@ -655,7 +659,7 @@
 
 <p>Just put the view in the layout xml, no Java code is required.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>// Views to be blurred
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Views to be blurred
 &lt;ImageView ../&gt;
 
 &lt;com.github.mmin18.widget.RealtimeBlurView
@@ -666,8 +670,7 @@
 
 // Views above blurring overlay
 &lt;Button ../&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Try the sample apk: <a href="imgs/blurring.apk">blurring.apk</a></p>
 
@@ -675,7 +678,7 @@
 
 <p>Add dependencies in your <code class="highlighter-rouge">build.gradle</code>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>	<span class="n">dependencies</span> <span class="o">{</span>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="n">dependencies</span> <span class="o">{</span>
 	    <span class="n">compile</span> <span class="s1">'com.github.mmin18:realtimeblurview:1.1.2'</span>
 	<span class="o">}</span>
 	<span class="n">android</span> <span class="o">{</span>
@@ -686,14 +689,12 @@
 			<span class="n">renderscriptSupportModeEnabled</span> <span class="kc">true</span>    <span class="c1">// Enable RS support</span>
 		<span class="o">}</span>
 	<span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Add proguard rules if necessary:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>-keep class android.support.v8.renderscript.** { *; }
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-keep class android.support.v8.renderscript.** { *; }
+</code></pre></div></div>
 
 <h1 id="limitations">Limitations</h1>
 
@@ -718,32 +719,32 @@
 
 <h1 id="changelog">Changelog</h1>
 
-<h3 id="section">1.1.2 (2018-05-28)</h3>
+<h3 id="112-2018-05-28">1.1.2 (2018-05-28)</h3>
 
 <p>Bug fix (Draw overlay color in rect).</p>
 
-<h3 id="section-1">1.1.1 (2018-05-22)</h3>
+<h3 id="111-2018-05-22">1.1.1 (2018-05-22)</h3>
 
 <p>Fix downsample factor issue when blur radius is very big.</p>
 
-<h3 id="section-2">1.1.0 (2017-01-02)</h3>
+<h3 id="110-2017-01-02">1.1.0 (2017-01-02)</h3>
 
 <p>Some improvements (OOM, resize, window background)</p>
 
-<h3 id="section-3">1.0.8 (2016-11-29)</h3>
+<h3 id="108-2016-11-29">1.0.8 (2016-11-29)</h3>
 
 <p>Fix view not refreshed issue on PopupWindow</p>
 
-<h3 id="section-4">1.0.6 (2016-11-7)</h3>
+<h3 id="106-2016-11-7">1.0.6 (2016-11-7)</h3>
 
 <p>Fix crash when view is very small (draw at least 1px)</p>
 
-<h3 id="section-5">1.0.5 (2016-11-5)</h3>
+<h3 id="105-2016-11-5">1.0.5 (2016-11-5)</h3>
 
 <p>Support Popup Window (Use it as dialog background)
 Ignore UnsatisfiedLinkError if APK is not debuggable.</p>
 
-<h3 id="section-6">1.0.4 (2016-9-28)</h3>
+<h3 id="104-2016-9-28">1.0.4 (2016-9-28)</h3>
 
 <p>Support custom shape (by override drawBlurredBitmap()), support view in ContextThemeWrapper.</p>
 
@@ -773,17 +774,17 @@ Ignore UnsatisfiedLinkError if APK is not debuggable.</p>
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=RealtimeBlurView&url=http://kmshack.github.io/AndroidUICollection/2016/10/06/RealtimeBlurView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=RealtimeBlurView&url=http://localhost:4000/AndroidUICollection/2016/10/06/RealtimeBlurView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/10/06/RealtimeBlurView/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/10/06/RealtimeBlurView/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/10/06/RealtimeBlurView/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/10/06/RealtimeBlurView/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -814,7 +815,7 @@ Ignore UnsatisfiedLinkError if APK is not debuggable.</p>
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/10/06/RealtimeBlurView/";
+    this.page.url = "http://localhost:4000/2016/10/06/RealtimeBlurView/";
   };
 
   (function() {

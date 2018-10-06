@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/10/05/groupie/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/10/05/groupie/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="groupieGroupie is a simple, flexible library for complex RecyclerView layouts.Groupie lets you treat your content as logical groups and handles change notifi...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="Groupie">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="groupieGroupie is a simple, flexible library for complex RecyclerView layouts.Groupie lets you treat your content as logical groups and handles change notifi...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/10/05/groupie/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/10/05/groupie/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="groupieGroupie is a simple, flexible library for complex RecyclerView layouts.Groupie lets you treat your content as logical groups and handles change notifi..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-10-05-groupie.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-10-05-groupie.gif">
         
 
         <header class="post__header">
@@ -657,20 +661,20 @@
 
 <h1 id="try-it-out">Try it out:</h1>
 
-<pre><code class="language-gradle">compile 'com.xwray:groupie:2.1.0'
-</code></pre>
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">compile</span> <span class="s1">'com.xwray:groupie:2.1.0'</span>
+</code></pre></div></div>
 
 <p>Groupie includes a module for Kotlin and Kotlin Android extensions. Never write a ViewHolder again—Kotlin generates view references and Groupie uses a generic holder. <a href="#kotlin">Setup here.</a></p>
 
-<pre><code class="language-gradle">compile 'com.xwray:groupie:2.1.0'
-compile 'com.xwray:groupie-kotlin-android-extensions:2.1.0'
-</code></pre>
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">compile</span> <span class="s1">'com.xwray:groupie:2.1.0'</span>
+<span class="n">compile</span> <span class="s1">'com.xwray:groupie-kotlin-android-extensions:2.1.0'</span>
+</code></pre></div></div>
 
 <p>Groupie also supports Android’s <a href="https://developer.android.com/topic/libraries/data-binding/index.html">data binding</a> to generate view holders. <a href="#data-binding">Setup here.</a></p>
 
-<pre><code class="language-gradle">compile 'com.xwray:groupie:2.1.0'
-compile 'com.xwray:groupie-databinding:2.1.0' 
-</code></pre>
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">compile</span> <span class="s1">'com.xwray:groupie:2.1.0'</span>
+<span class="n">compile</span> <span class="s1">'com.xwray:groupie-databinding:2.1.0'</span> 
+</code></pre></div></div>
 
 <p>You can also use Groupie with Java and your existing ViewHolders.</p>
 
@@ -680,36 +684,35 @@ compile 'com.xwray:groupie-databinding:2.1.0'
 
 <p>Use a <code class="highlighter-rouge">GroupAdapter</code> anywhere you would normally use a <code class="highlighter-rouge">RecyclerView.Adapter</code>, and attach it to your RecyclerView as usual.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">GroupAdapter</span> <span class="n">adapter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GroupAdapter</span><span class="o">();</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">GroupAdapter</span> <span class="n">adapter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GroupAdapter</span><span class="o">();</span>
 <span class="n">recyclerView</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(</span><span class="n">adapter</span><span class="o">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="groups">Groups</h2>
 
 <p>Groups are the building block of Groupie.  An individual <code class="highlighter-rouge">Item</code> (the unit which an adapter inflates and recycles) is a Group of 1.  You can add Groups and Items interchangeably to the adapter.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">groupAdapter</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">HeaderItem</span><span class="o">());</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">groupAdapter</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">HeaderItem</span><span class="o">());</span>
 <span class="n">groupAdapter</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">CommentItem</span><span class="o">());</span>
 
 <span class="n">Section</span> <span class="n">section</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Section</span><span class="o">();</span>
 <span class="n">section</span><span class="o">.</span><span class="na">setHeader</span><span class="o">(</span><span class="k">new</span> <span class="n">HeaderItem</span><span class="o">());</span>
 <span class="n">section</span><span class="o">.</span><span class="na">addAll</span><span class="o">(</span><span class="n">bodyItems</span><span class="o">);</span>
 <span class="n">groupAdapter</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">section</span><span class="o">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Modifying the contents of the GroupAdapter in any way automatically sends change notifications.  Adding an item calls <code class="highlighter-rouge">notifyItemAdded()</code>; adding a group calls <code class="highlighter-rouge">notifyItemRangeAdded()</code>, etc.</p>
 
 <p>Modifying the contents of a Group automatically notifies its parent.  When notifications reach the GroupAdapter, it dispatches final change notifications.  There’s never a need to manually notify or keep track of indices, no matter how you structure your data.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">section</span><span class="o">.</span><span class="na">removeHeader</span><span class="o">();</span> <span class="c1">// results in a remove event for 1 item in the adapter, at position 2</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">section</span><span class="o">.</span><span class="na">removeHeader</span><span class="o">();</span> <span class="c1">// results in a remove event for 1 item in the adapter, at position 2</span>
+</code></pre></div></div>
 
-<p>There are a few simple implementations of Groups within the library:
-- <code class="highlighter-rouge">Section</code>, a list of body content with an optional header group and footer group.  It supports diffing and animating moves, updates and other changes
-- <code class="highlighter-rouge">ExpandableGroup</code>, a single parent group with a list of body content that can be toggled hidden or shown.</p>
+<p>There are a few simple implementations of Groups within the library:</p>
+<ul>
+  <li><code class="highlighter-rouge">Section</code>, a list of body content with an optional header group and footer group.  It supports diffing and animating moves, updates and other changes</li>
+  <li><code class="highlighter-rouge">ExpandableGroup</code>, a single parent group with a list of body content that can be toggled hidden or shown.</li>
+</ul>
 
 <p>Groupie tries not to assume what features your groups require.  Instead, groups are flexible and composable.  They can be combined and nested to arbitrary depth.</p>
 
@@ -725,48 +728,46 @@ compile 'com.xwray:groupie-databinding:2.1.0'
 
 <p>The <code class="highlighter-rouge">Item</code> class gives you simple callbacks to bind your model object to the generated fields.  Because of Kotlin Android extensions, there’s no need to write a view holder.</p>
 
-<pre><code class="language-kotlin">import com.xwray.groupie.kotlinandroidextensions.Item
-import com.xwray.groupie.kotlinandroidextensions.ViewHolder
-import kotlinx.android.synthetic.main.song.*
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">com.xwray.groupie.kotlinandroidextensions.Item</span>
+<span class="k">import</span> <span class="nn">com.xwray.groupie.kotlinandroidextensions.ViewHolder</span>
+<span class="k">import</span> <span class="nn">kotlinx.android.synthetic.main.song.*</span>
 
-class SongItem constructor(private val song: Song) : Item() {
+<span class="kd">class</span> <span class="nc">SongItem</span> <span class="k">constructor</span><span class="p">(</span><span class="k">private</span> <span class="kd">val</span> <span class="py">song</span><span class="p">:</span> <span class="n">Song</span><span class="p">)</span> <span class="p">:</span> <span class="n">Item</span><span class="p">()</span> <span class="p">{</span>
 
-    override fun getLayout() = R.layout.song
+    <span class="k">override</span> <span class="k">fun</span> <span class="n">getLayout</span><span class="p">()</span> <span class="p">=</span> <span class="n">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">song</span>
 
-    override fun bind(viewHolder: ViewHolder, position: Int) {
-        viewHolder.title.text = song.title
-        viewHolder.title.artist = song.artist
-    }
-}
-</code></pre>
+    <span class="k">override</span> <span class="k">fun</span> <span class="n">bind</span><span class="p">(</span><span class="n">viewHolder</span><span class="p">:</span> <span class="n">ViewHolder</span><span class="p">,</span> <span class="n">position</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">viewHolder</span><span class="p">.</span><span class="n">title</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="n">song</span><span class="p">.</span><span class="n">title</span>
+        <span class="n">viewHolder</span><span class="p">.</span><span class="n">title</span><span class="p">.</span><span class="n">artist</span> <span class="p">=</span> <span class="n">song</span><span class="p">.</span><span class="n">artist</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <h3 id="item-with-data-binding">Item with data binding:</h3>
 
 <p>The <code class="highlighter-rouge">Item</code> class gives you simple callbacks to bind your model object to the generated binding.  Because of data binding, there’s no need to write a view holder.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SongItem</span> <span class="kd">extends</span> <span class="n">BindableItem</span><span class="o">&lt;</span><span class="n">SongBinding</span><span class="o">&gt;</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SongItem</span> <span class="kd">extends</span> <span class="n">BindableItem</span><span class="o">&lt;</span><span class="n">SongBinding</span><span class="o">&gt;</span> <span class="o">{</span>
 
-    <span class="kd">public</span> <span class="n">SongItem</span><span class="o">(</span><span class="n">Song</span> <span class="n">song</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nf">SongItem</span><span class="o">(</span><span class="n">Song</span> <span class="n">song</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">this</span><span class="o">(</span><span class="n">song</span><span class="o">);</span>
     <span class="o">}</span>    
 
-    <span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">void</span> <span class="n">bind</span><span class="o">(</span><span class="n">SongBinding</span> <span class="n">binding</span><span class="o">,</span> <span class="kt">int</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">bind</span><span class="o">(</span><span class="n">SongBinding</span> <span class="n">binding</span><span class="o">,</span> <span class="kt">int</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">binding</span><span class="o">.</span><span class="na">setSong</span><span class="o">(</span><span class="n">song</span><span class="o">);</span>
     <span class="o">}</span>
 
-    <span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">int</span> <span class="n">getLayout</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getLayout</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">song</span><span class="o">;</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<p>If you’re converting existing ViewHolders, you can reference any named views (e.g. <code class="highlighter-rouge">R.id.title</code>) directly from the binding instead. 
-<code class="highlighter-rouge">java
-    @Override public void bind(SongBinding binding, int position) {
-        binding.title.setText(song.getTitle());
-    }
-</code></p>
+<p>If you’re converting existing ViewHolders, you can reference any named views (e.g. <code class="highlighter-rouge">R.id.title</code>) directly from the binding instead.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">bind</span><span class="o">(</span><span class="n">SongBinding</span> <span class="n">binding</span><span class="o">,</span> <span class="kt">int</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">binding</span><span class="o">.</span><span class="na">title</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">song</span><span class="o">.</span><span class="na">getTitle</span><span class="o">());</span>
+    <span class="o">}</span>
+</code></pre></div></div>
 
 <p>You can also mix and match <code class="highlighter-rouge">BindableItem</code> and other <code class="highlighter-rouge">Items</code> in the adapter, so you can leave legacy viewholders as they are by making an <code class="highlighter-rouge">Item&lt;MyExistingViewHolder&gt;</code>.</p>
 
@@ -775,12 +776,11 @@ class SongItem constructor(private val song: Song) : Item() {
 
 <p>Finally, in your <code class="highlighter-rouge">Item&lt;MyExistingViewHolder&gt;</code>, override</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">MyExistingViewHolder</span> <span class="n">createViewHolder</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">View</span> <span class="n">itemView</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="n">MyExistingViewHolder</span><span class="o">(</span><span class="n">itemView</span><span class="o">);</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">MyExistingViewHolder</span> <span class="nf">createViewHolder</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">View</span> <span class="n">itemView</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">MyExistingViewHolder</span><span class="o">(</span><span class="n">itemView</span><span class="o">);</span>
     <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="note">Note:</h3>
 
@@ -792,70 +792,77 @@ class SongItem constructor(private val song: Song) : Item() {
 
 <p>In your app build.gradle file, include:</p>
 
-<pre><code class="language-gradle">apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">apply</span> <span class="nl">plugin:</span> <span class="s1">'kotlin-android'</span>
+<span class="n">apply</span> <span class="nl">plugin:</span> <span class="s1">'kotlin-android-extensions'</span>
 
-buildscript {
-    ext.kotlin_version = '1.2.10'
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
-    }
-}
+<span class="k">buildscript</span> <span class="o">{</span>
+    <span class="n">ext</span><span class="o">.</span><span class="na">kotlin_version</span> <span class="o">=</span> <span class="s1">'1.2.10'</span>
+    <span class="k">repositories</span> <span class="o">{</span>
+        <span class="n">jcenter</span><span class="o">()</span>
+    <span class="o">}</span>
+    <span class="k">dependencies</span> <span class="o">{</span>
+        <span class="n">classpath</span> <span class="s2">"org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"</span>
+        <span class="n">classpath</span> <span class="s2">"org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
-// IMPORTANT  Enables view caching in viewholders.
-// See: https://github.com/Kotlin/KEEP/blob/master/proposals/android-extensions-entity-caching.md
-androidExtensions {
-    experimental = true
-}
+<span class="c1">// IMPORTANT  Enables view caching in viewholders.</span>
+<span class="c1">// See: https://github.com/Kotlin/KEEP/blob/master/proposals/android-extensions-entity-caching.md</span>
+<span class="n">androidExtensions</span> <span class="o">{</span>
+    <span class="n">experimental</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="o">}</span>
 
-dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    implementation 'com.xwray:groupie:2.0.3'
-    implementation 'com.xwray:groupie-kotlin-android-extensions:2.0.3'
-}
-</code></pre>
+<span class="k">dependencies</span> <span class="o">{</span>
+    <span class="n">implementation</span> <span class="s2">"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"</span>
+    <span class="n">implementation</span> <span class="s1">'com.xwray:groupie:2.0.3'</span>
+    <span class="n">implementation</span> <span class="s1">'com.xwray:groupie-kotlin-android-extensions:2.0.3'</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
-<p>Remember to include 
-<code class="highlighter-rouge">kotlin
-import kotlinx.android.synthetic.main.my_item_layout.*
-</code>
-in the corresponding Item class for generated view references.</p>
+<p>Remember to include</p>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">kotlinx.android.synthetic.main.my_item_layout.*</span>
+</code></pre></div></div>
+<p>in the corresponding Item class for generated view references.</p>
 
 <h2 id="data-binding">Data binding</h2>
 
 <p>Add to your app module’s build.gradle:</p>
 
-<pre><code class="language-gradle">android {
-    dataBinding {
-        enabled = true
-    }
-}
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">android</span> <span class="o">{</span>
+    <span class="n">dataBinding</span> <span class="o">{</span>
+        <span class="n">enabled</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
-dependencies {
-    compile 'com.xwray:groupie-databinding:2.0.3'
-}
-</code></pre>
+<span class="k">dependencies</span> <span class="o">{</span>
+    <span class="n">compile</span> <span class="s1">'com.xwray:groupie-databinding:2.0.3'</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
 <p>Then, just wrap each item layout in <code class="highlighter-rouge">&lt;layout&gt;</code> tags.  (The <code class="highlighter-rouge">&lt;data&gt;</code> section is optional.)</p>
 
-<p><code class="highlighter-rouge">layout/item_song.xml</code>
-```xml</p>
-<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
-    <data>
-        <variable name="song" type="com.example.Song" />
-    </data>
+<p><code class="highlighter-rouge">layout/item_song.xml</code></p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;layout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span> 
+    <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;data&gt;</span>
+        <span class="nt">&lt;variable</span> <span class="na">name=</span><span class="s">"song"</span> <span class="na">type=</span><span class="s">"com.example.Song"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/data&gt;</span>
 
-    <framelayout android:layout_width="match_parent" android:layout_height="wrap_content">
+    <span class="nt">&lt;FrameLayout</span> 
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span> <span class="nt">&gt;</span>
 
-        <textview android:id="@+id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="@{song.title}" tools:text="A Song Title" />
+        <span class="nt">&lt;TextView</span>
+            <span class="na">android:id=</span><span class="s">"@+id/title"</span>
+            <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:layout_gravity=</span><span class="s">"center"</span>
+            <span class="na">android:text=</span><span class="s">"@{song.title}"</span>
+            <span class="na">tools:text=</span><span class="s">"A Song Title"</span> <span class="nt">/&gt;</span>
 
-    </framelayout>
-</layout>
-<p>```</p>
+    <span class="nt">&lt;/FrameLayout&gt;</span>
+<span class="nt">&lt;/layout&gt;</span>
+</code></pre></div></div>
 
 <p>Bindings are only generated for layouts wrapped with <layout></layout> tags, so there’s no need to convert the rest of your project (unless you want to).</p>
 
@@ -871,7 +878,8 @@ dependencies {
 <ul>
   <li>If at all possible, please attach a <em>minimal</em> sample project or code which reproduces the bug.</li>
   <li>Screenshots are also a huge help if the problem is visual.
-### Send a pull request</li>
+    <h3 id="send-a-pull-request">Send a pull request</h3>
+  </li>
   <li>If you’re fixing a bug, please add a failing test or code that can reproduce the issue.</li>
 </ul>
 
@@ -906,17 +914,17 @@ dependencies {
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Groupie&url=http://kmshack.github.io/AndroidUICollection/2016/10/05/groupie/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Groupie&url=http://localhost:4000/AndroidUICollection/2016/10/05/groupie/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/10/05/groupie/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/10/05/groupie/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/10/05/groupie/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/10/05/groupie/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -947,7 +955,7 @@ dependencies {
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/10/05/groupie/";
+    this.page.url = "http://localhost:4000/2016/10/05/groupie/";
   };
 
   (function() {

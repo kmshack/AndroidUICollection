@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2017/01/02/snowfall/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2017/01/02/snowfall/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="Android-Snowfall[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Android–Snowfall-brightgreen.svg?style=flat)[Release](https://jitpack.io/v/j...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="Snowfall">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="Android-Snowfall[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Android–Snowfall-brightgreen.svg?style=flat)[Release](https://jitpack.io/v/j...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2017/01/02/snowfall/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2017/01/02/snowfall/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="Android-Snowfall[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Android–Snowfall-brightgreen.svg?style=flat)[Release](https://jitpack.io/v/j..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2017-01-02-snowfall.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2017-01-02-snowfall.gif">
         
 
         <header class="post__header">
@@ -669,36 +673,33 @@
 
 <p>Add it in your root build.gradle at the end of repositories:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">allprojects</span> <span class="o">{</span>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">allprojects</span> <span class="o">{</span>
     <span class="n">repositories</span> <span class="o">{</span>
         <span class="o">...</span>
         <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s2">"https://jitpack.io"</span> <span class="o">}</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Add the dependency</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
     <span class="n">compile</span> <span class="s1">'com.github.jetradarmobile:android-snowfall:1.2.0'</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="usage">Usage</h2>
 
 <p>Default implementation with round snowflakes:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;com.jetradarmobile.snowfall.SnowfallView</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;com.jetradarmobile.snowfall.SnowfallView</span>
       <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
       <span class="na">android:layout_height=</span><span class="s">"match_parent"</span><span class="nt">/&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Fully customized implementation:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;com.jetradarmobile.snowfall.SnowfallView</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;com.jetradarmobile.snowfall.SnowfallView</span>
       <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
       <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
       <span class="na">app:snowflakesNum=</span><span class="s">"250"</span>
@@ -712,12 +713,11 @@
       <span class="na">app:snowflakesFadingEnabled=</span><span class="s">"true"</span>
       <span class="na">app:snowflakesAlreadyFalling=</span><span class="s">"false"</span>
       <span class="na">app:snowflakeImage=</span><span class="s">"@drawable/snowflake"</span><span class="nt">/&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="license">License</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2016 JetRadar
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright 2016 JetRadar
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -730,8 +730,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
           <br>
@@ -759,17 +758,17 @@ limitations under the License.
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Snowfall&url=http://kmshack.github.io/AndroidUICollection/2017/01/02/snowfall/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Snowfall&url=http://localhost:4000/AndroidUICollection/2017/01/02/snowfall/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2017/01/02/snowfall/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2017/01/02/snowfall/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2017/01/02/snowfall/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2017/01/02/snowfall/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -800,7 +799,7 @@ limitations under the License.
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2017/01/02/snowfall/";
+    this.page.url = "http://localhost:4000/2017/01/02/snowfall/";
   };
 
   (function() {

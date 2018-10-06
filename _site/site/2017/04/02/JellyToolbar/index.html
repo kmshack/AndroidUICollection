@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>JellyToolbar</title>
+  <meta name="description" content="JellyToolbar[License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)[](https://jitpack.io/v/yalantis/jellytoolbar.svg)[Yalantis](https://raw.g...">
+  <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
+  <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
+    
+  <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2017/04/02/JellyToolbar/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
+    
+  <meta name="description" content="JellyToolbar[License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)[](https://jitpack.io/v/yalantis/jellytoolbar.svg)[Yalantis](https://raw.g...">
+
+
+  <meta name="author" content="kmshack" />
+
+  <meta property="og:title" content="JellyToolbar">
+  <meta property="og:site_name" content="Android UI OpenSource" />
+  <meta property="og:description" content="JellyToolbar[License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)[](https://jitpack.io/v/yalantis/jellytoolbar.svg)[Yalantis](https://raw.g...">
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2017/04/02/JellyToolbar/" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:site" content="@kmshack" />
+  <meta name="twitter:description" content="JellyToolbar[License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)[](https://jitpack.io/v/yalantis/jellytoolbar.svg)[Yalantis](https://raw.g..." />
+
+  
+  	<!-- Article specific OG data -->
+  	<meta property="og:type" content="article" />
+  	<meta property="article:published_time" content="2017-04-02 00:00:00 +0900" />
+  	
+  	<meta property="article:author" content="http://facebook.com/kmshack" />
+    <meta property="article:publisher" content="https://www.facebook.com/kmshack" />
+  	<meta property="article:section" content="" />
+  	
+
+  	<meta name="twitter:card" content="summary_large_image" />
+  	<meta name="twitter:creator" content="@kmshack_kr" />
+  	<meta name="twitter:title" content="JellyToolbar" />
+	
+	  	<meta property="og:image" content="/images/posts/2017-04-02-JellyToolbar.gif" />
+	  	<meta name="twitter:image" content="/images/posts/2017-04-02-JellyToolbar.gif" />
+  	
+
+  
+
+  <script>
+    var base_url = "/AndroidUICollection";
+  </script>
+    
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9975139260149901",
+    enable_page_level_ads: true
+  });
+</script>
+    
+</head>
+
+<body>
+
+  <!-- Google Analytics Code -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85072530-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  <div class="off-canvas-container">
+    <div class="sidebar">
+  <div class="row">
+
+    <div class="column small-10 large-12">
+      <br>
+      <h1 class="sidebar__logo logo"><a href="/AndroidUICollection/">Android UI OpenSource</a></h1>
+      <div class="sidebar__description font-tiny">Collection of OpenSource for Android UI.</div>
+    </div>
+
+    <label class="off-canvas-toggle"><span data-icon="ei-navicon" data-size="s"></span></label>
+
+    <div class="off-canvas-content">
+
+      <div class="column small-12 large-12">
+        <nav class="navigation">
+          <ul class="list-bare text-center">
+            
+              
+            
+              
+                
+                  <li>
+                    <a class="page-link" href="/AndroidUICollection/about.html">About</a>
+                  </li>
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+            <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="column small-12 large-12">
+        <ul class="social-nav social-icons">
+
+          
+          <li>
+            <a href="http://www.github.com/kmshack" target="_blank">
+              <span data-icon="ei-sc-github" data-size="s"></span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="http://www.twitter.com/kmshack_kr" target="_blank">
+              <span data-icon="ei-sc-twitter" data-size="s"></span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="mailto:kmshack@naver.com" target="_blank">
+              <span data-icon="ei-envelope" data-size="s"></span>
+            </a>
+          </li>
+          
+
+          <li>
+            <a class="toggle-search-button" href="#">
+              <span data-icon="ei-search" data-size="s"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+        
+      <div class="sidebar__bottom">
+        <div class="column small-12 large-12">
+            
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- androidui -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:250px;height:250px"
+                 data-ad-client="ca-pub-9975139260149901"
+                 data-ad-slot="5123612274"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+
+          <div class="font-tiny">
+              <br>
+            &copy; 2018 Android UI OpenSource
+          </div>
+        </div>
+      </div>
+        
+    </div> <!-- off-canvas-content -->
+      
+
+
+  </div>
+    
+
+    
+</div>
+
+<div class="search-form-container">
+
+  <form class="search-form">
+    <fieldset class="search-form__fieldset">
+      <div class="row">
+        <div class="column column--center large-8">
+          <input class="search-form__field" placeholder="Type to search" autofocus>
+          <input class="search-form__submit" type="submit" value="search">
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+  <div class="row">
+    <div class="column column--center large-8">
+      <div class="search-results"></div>
+    </div>
+  </div>
+
+  <div data-icon="ei-close" data-size="s" class="close-search-button search-form-container__close"></div>
+
+</div>
+
+    
+
+
+
+<div class="wrapper">
+  <div class="row row--full">
+
+    <div class="column column--center medium-12 large-12">
+      <div class="grey-bg CoverImage FlexEmbed FlexEmbed--16by9" style="background-image: url(/AndroidUICollection/images/posts/2017-04-02-JellyToolbar.gif)"></div>
+        
+    </div>
+      
+    <div class="column column--center medium-12 large-10">
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+        
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2017-04-02-JellyToolbar.gif">
+        
+
+        <header class="post__header">
+          <h2 class="post__title" itemprop="name headline">JellyToolbar</h2>
+          
+          <h3 class="post__date">
+            <a href="https://github.com/Yalantis/JellyToolbar" target="_blank"><span data-icon="ei-sc-github" data-size="s"></span>https://github.com/Yalantis/JellyToolbar</a>
+          </h3>
+        </header>
+
+        <div class="post-content" itemprop="articleBody">
+            
+            <div class="column column--center medium-12 large-4">
+              <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/AndroidUICollection/images/posts/2017-04-02-JellyToolbar.gif)"></div>
+            </div>
+          <br>
+          <h1 id="jellytoolbar">JellyToolbar</h1>
+
+<p><a href="">[License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)</a>
+<a href="https://jitpack.io/#yalantis/jellytoolbar">[](https://jitpack.io/v/yalantis/jellytoolbar.svg)</a>
+<a href="https://yalantis.com/?utm_source=github">[Yalantis](https://raw.githubusercontent.com/Yalantis/PullToRefresh/develop/PullToRefreshDemo/Resources/badge_dark.png)</a></p>
+
+<p><a href="https://play.google.com/store/apps/details?id=com.yalantis.jellyanimation.demo"><img alt="Android app on Google Play" src="https://developer.android.com/images/brand/en_app_rgb_wo_60.png" /></a></p>
+
+<p>Check this <a href="https://dribbble.com/shots/2092541-Search-Bar-Animation">project on dribbble</a></p>
+
+<p><img src="gif.gif" /></p>
+
+<h2 id="requirements">Requirements</h2>
+<ul>
+  <li>Android SDK 16+</li>
+</ul>
+
+<h2 id="usage">Usage</h2>
+
+<p>Add to your root build.gradle:</p>
+<pre><code class="language-Groovy">allprojects {
+	repositories {
+	  ...
+	  maven { url "https://jitpack.io" }
+	}
+}
+</code></pre>
+
+<p>Add the dependency:</p>
+<pre><code class="language-Groovy">dependencies {
+  compile 'com.github.yalantis:jellytoolbar:v1.0'
+}
+</code></pre>
+
+<h2 id="how-to-use-this-library-in-your-project">How to use this library in your project?</h2>
+
+<p>First of all, add <code class="highlighter-rouge">JellyToolbar</code> to the xml layout of your activity, so it looks like that:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;LinearLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:orientation=</span><span class="s">"vertical"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;com.yalantis.jellytoolbar.widget.JellyToolbar</span>
+        <span class="na">android:id=</span><span class="s">"@+id/toolbar"</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:background=</span><span class="s">"@color/colorPrimary"</span>
+        <span class="na">android:paddingLeft=</span><span class="s">"@dimen/activity_horizontal_margin"</span>
+        <span class="na">android:paddingStart=</span><span class="s">"@dimen/activity_horizontal_margin"</span>
+        <span class="na">app:cancelIcon=</span><span class="s">"@drawable/ic_close"</span>
+        <span class="na">app:endColor=</span><span class="s">"@color/colorEnd"</span>
+        <span class="na">app:icon=</span><span class="s">"@drawable/ic_search"</span>
+        <span class="na">app:startColor=</span><span class="s">"@color/colorStart"</span>
+        <span class="na">app:title=</span><span class="s">"@string/str_news_feed"</span>
+        <span class="na">app:titleTextColor=</span><span class="s">"@android:color/white"</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/LinearLayout&gt;</span>
+</code></pre></div></div>
+
+<p>After that pass an instance of the <code class="highlighter-rouge">JellyListener</code> and content view 
+(the view which would be inserted to the toolbar) to the <code class="highlighter-rouge">JellyToolbar</code>. 
+<code class="highlighter-rouge">JellyToolbar</code> has <code class="highlighter-rouge">getToolbar()</code> method to let you use all the methods of the standard <code class="highlighter-rouge">Toolbar</code>.</p>
+
+<pre><code class="language-Java">public class MainActivity extends AppCompatActivity {
+
+    private JellyToolbar toolbar;
+    private AppCompatEditText editText;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        toolbar = (JellyToolbar) findViewById(R.id.toolbar);
+        toolbar.getToolbar().setNavigationIcon(R.drawable.ic_menu);
+        toolbar.setJellyListener(jellyListener);
+
+        editText = (AppCompatEditText) LayoutInflater.from(this).inflate(R.layout.edit_text, null);
+        editText.setBackgroundResource(R.color.colorTransparent);
+        toolbar.setContentView(editText);
+    }
+
+    private JellyListener jellyListener = new JellyListener() {
+        @Override
+        public void onCancelIconClicked() {
+            if (TextUtils.isEmpty(editText.getText())) {
+                toolbar.collapse();
+            } else {
+                editText.getText().clear();
+            }
+        }
+    };
+
+}
+</code></pre>
+
+<p>To control the animation flow use <code class="highlighter-rouge">collapse()</code> and <code class="highlighter-rouge">expand()</code> methods.</p>
+
+<p>Override <code class="highlighter-rouge">onToolbarExpandingStarted()</code>, <code class="highlighter-rouge">onToolbarCollapsingStarted()</code>, <code class="highlighter-rouge">onToolbarExpanded()</code> and <code class="highlighter-rouge">onToolbarCollapsed()</code>
+methods of the <code class="highlighter-rouge">JellyListener</code> to get all the animation events.</p>
+
+<h2 id="let-us-know">Let us know</h2>
+
+<p>We’d be really happy if you sent us links to your projects where you use our component. Just send an email to github@yalantis.com And do let us know if you have any questions or suggestion regarding the animation.</p>
+
+<p>P.S. We’re going to publish more awesomeness wrapped in code and a tutorial on how to make UI for iOS (Android) better than better. Stay tuned</p>
+
+<h2 id="license">License</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The MIT License (MIT)
+
+Copyright © 2017 Yalantis, https://yalantis.com
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+</code></pre></div></div>
+
+
+          <br>
+          <div class="post__tags">
+            
+              <a href="/AndroidUICollection/tag/Toolbar">Toolbar</a>
+            
+          </div>
+            
+        </div>
+          
+          <br>
+          <hr>
+          <br>  
+          <div class="post-content"  itemprop="articleBody">
+            
+          </div>
+          <br>
+          <hr>
+          <br>
+
+        
+
+        
+
+<ul class="share-list">
+  <li>
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=JellyToolbar&url=http://localhost:4000/AndroidUICollection/2017/04/02/JellyToolbar/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+      <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
+    </a>
+  </li>
+  <li>
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2017/04/02/JellyToolbar/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
+    </a>
+  </li>
+  <li>
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2017/04/02/JellyToolbar/" rel="nofollow" target="_blank" title="Share on Google+">
+    <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
+    </a>
+  </li>
+</ul>
+
+        <h5 class="separator">
+  <span class="separator__title">Newsletter</span>
+</h5>
+
+<div class="box box--news-letter">
+  <form action="//aspirethemes.us12.list-manage.com/subscribe/post?u=9723f3c5c3a2637fbba3bc673&amp;id=7b50db9989" method="post" target="_blank">
+    <div class="row">
+      <div class="column medium-9 large-9">
+        <input type="email" name="EMAIL" placeholder="Your email address">
+      </div>
+      <div class="column medium-3 large-3">
+        <input type="submit" class="button button--expand" value="SIGN UP">
+      </div>
+    </div>
+  </form>
+</div>
+
+        <section class="disqus">
+  <h5 class="separator">
+    <span class="separator__title">Comments</span>
+  </h5>
+  <div id="disqus_thread"></div>
+
+<script>
+  var disqus_config = function () {
+    this.page.url = "http://localhost:4000/2017/04/02/JellyToolbar/";
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//android-kmshack-kr.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</section>
+      </article>
+    </div>
+
+  </div> <!-- row-->
+</div> <!-- wrapper -->
+  </div>
+
+  <script src="/AndroidUICollection/js/jquery-2.1.4.min.js"></script>
+  <script src="/AndroidUICollection/js/evil-icons.min.js"></script>
+  <script src="/AndroidUICollection/js/jquery.fitvids.js"></script>
+  <script src="/AndroidUICollection/js/jquery.ghostHunter.min.js"></script>
+  <script src="/AndroidUICollection/js/script.js"></script>
+</body>
+
+</html>

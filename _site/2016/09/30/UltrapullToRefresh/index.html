@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/09/30/UltrapullToRefresh/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/09/30/UltrapullToRefresh/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="Welcome to follow me on GitHub or TwitterGitHub: https://github.com/liaohuqiuTwitter: https://twitter.com/liaohuqiu[Build Status](https://travis-ci.org/liaoh...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="Ultra Pull To Refresh">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="Welcome to follow me on GitHub or TwitterGitHub: https://github.com/liaohuqiuTwitter: https://twitter.com/liaohuqiu[Build Status](https://travis-ci.org/liaoh...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/09/30/UltrapullToRefresh/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/09/30/UltrapullToRefresh/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="Welcome to follow me on GitHub or TwitterGitHub: https://github.com/liaohuqiuTwitter: https://twitter.com/liaohuqiu[Build Status](https://travis-ci.org/liaoh..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-09-30-UltrapullToRefresh.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-09-30-UltrapullToRefresh.gif">
         
 
         <header class="post__header">
@@ -658,7 +662,7 @@
 <p><a href="https://travis-ci.org/liaohuqiu/android-Ultra-Pull-To-Refresh">[Build Status](https://travis-ci.org/liaohuqiu/android-Ultra-Pull-To-Refresh.svg?branch=master)</a>
 <a href="https://android-arsenal.com/details/1/1180">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Ultra%20Pull%20To%20Refresh-brightgreen.svg?style=flat)</a></p>
 
-<h4 id="httpsgithubcomliaohuqiuandroid-ultra-pull-to-refreshblobmasterreadme-cnmd"><a href="https://github.com/liaohuqiu/android-Ultra-Pull-To-Refresh/blob/master/README-cn.md">中文版文档</a></h4>
+<h4 id="中文版文档"><a href="https://github.com/liaohuqiu/android-Ultra-Pull-To-Refresh/blob/master/README-cn.md">中文版文档</a></h4>
 
 <p>Wanna auto-load-more? This will be what you want: https://github.com/liaohuqiu/android-cube-app</p>
 
@@ -725,21 +729,19 @@
 
 <p>The latest version: <code class="highlighter-rouge">1.0.11</code>, has been published to: https://oss.sonatype.org/content/repositories/snapshots, in gradle:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>maven {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>maven {
     url 'https://oss.sonatype.org/content/repositories/snapshots'
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The stable version: <code class="highlighter-rouge">1.0.11</code>, https://oss.sonatype.org/content/repositories/releases, in gradle:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>mavenCentral()
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mavenCentral()
+</code></pre></div></div>
 
 <p>pom.xml, latest version:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;dependency&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>in.srain.cube<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>ultra-ptr<span class="nt">&lt;/artifactId&gt;</span>
     <span class="nt">&lt;type&gt;</span>aar<span class="nt">&lt;/type&gt;</span>
@@ -747,12 +749,11 @@
     <span class="nt">&lt;--</span> <span class="err">&lt;type</span><span class="nt">&gt;</span>apklib<span class="nt">&lt;/type&gt;</span> --&gt;
     <span class="nt">&lt;version&gt;</span>1.0.11<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>pom.xml, stable version:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;dependency&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>in.srain.cube<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>ultra-ptr<span class="nt">&lt;/artifactId&gt;</span>
     <span class="nt">&lt;type&gt;</span>aar<span class="nt">&lt;/type&gt;</span>
@@ -760,20 +761,17 @@
     <span class="nt">&lt;--</span> <span class="err">&lt;type</span><span class="nt">&gt;</span>apklib<span class="nt">&lt;/type&gt;</span> --&gt;
     <span class="nt">&lt;version&gt;</span>1.0.11<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>gradle, latest version:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>compile 'in.srain.cube:ultra-ptr:1.0.11'
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>compile 'in.srain.cube:ultra-ptr:1.0.11'
+</code></pre></div></div>
 
 <p>gradle, stable version:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>compile 'in.srain.cube:ultra-ptr:1.0.11'
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>compile 'in.srain.cube:ultra-ptr:1.0.11'
+</code></pre></div></div>
 
 <h4 id="config">Config</h4>
 
@@ -814,7 +812,7 @@
 
 <h5 id="config-in-xml">Config in xml</h5>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;in.srain.cube.views.ptr.PtrFrameLayout</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;in.srain.cube.views.ptr.PtrFrameLayout</span>
     <span class="na">android:id=</span><span class="s">"@+id/store_house_ptr_frame"</span>
     <span class="na">xmlns:cube_ptr=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
     <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
@@ -842,12 +840,11 @@
     <span class="nt">&lt;/LinearLayout&gt;</span>
 
 <span class="nt">&lt;/in.srain.cube.views.ptr.PtrFrameLayout&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="or-config-in-java-code">Or config in java code</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// the following are default settings</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// the following are default settings</span>
 <span class="n">mPtrFrame</span><span class="o">.</span><span class="na">setResistance</span><span class="o">(</span><span class="mf">1.7f</span><span class="o">);</span>
 <span class="n">mPtrFrame</span><span class="o">.</span><span class="na">setRatioOfHeaderHeightToRefresh</span><span class="o">(</span><span class="mf">1.2f</span><span class="o">);</span>
 <span class="n">mPtrFrame</span><span class="o">.</span><span class="na">setDurationToClose</span><span class="o">(</span><span class="mi">200</span><span class="o">);</span>
@@ -856,8 +853,7 @@
 <span class="n">mPtrFrame</span><span class="o">.</span><span class="na">setPullToRefresh</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
 <span class="c1">// default is true</span>
 <span class="n">mPtrFrame</span><span class="o">.</span><span class="na">setKeepHeaderWhenRefresh</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="other-config">Other Config</h3>
 
@@ -875,7 +871,7 @@
   <li>Config using string:</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// header</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// header</span>
 <span class="kd">final</span> <span class="n">StoreHouseHeader</span> <span class="n">header</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StoreHouseHeader</span><span class="o">(</span><span class="n">getContext</span><span class="o">());</span>
 <span class="n">header</span><span class="o">.</span><span class="na">setPadding</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">LocalDisplay</span><span class="o">.</span><span class="na">dp2px</span><span class="o">(</span><span class="mi">15</span><span class="o">),</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
 
@@ -884,20 +880,18 @@
  * you can add more letters by {@link in.srain.cube.views.ptr.header.StoreHousePath#addChar}
  */</span>
 <span class="n">header</span><span class="o">.</span><span class="na">initWithString</span><span class="o">(</span><span class="err">'</span><span class="n">Alibaba</span><span class="err">'</span><span class="o">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>Config using string array from xml:</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">header</span><span class="o">.</span><span class="na">initWithStringArray</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">array</span><span class="o">.</span><span class="na">storehouse</span><span class="o">);</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">header</span><span class="o">.</span><span class="na">initWithStringArray</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">array</span><span class="o">.</span><span class="na">storehouse</span><span class="o">);</span>
+</code></pre></div></div>
 
 <p>And in <code class="highlighter-rouge">res/values/arrays.xml</code>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;resources&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;resources&gt;</span>
     <span class="nt">&lt;string-array</span> <span class="na">name=</span><span class="s">"storehouse"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item&gt;</span>0,35,12,42,<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;item&gt;</span>12,42,24,35,<span class="nt">&lt;/item&gt;</span>
@@ -915,14 +909,13 @@
         <span class="nt">&lt;item&gt;</span>0,7,12,0,<span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/string-array&gt;</span>
 <span class="nt">&lt;/resources&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h1 id="process-refresh">Process Refresh</h1>
 
 <p>There is a <code class="highlighter-rouge">PtrHandler</code>, by which you can refresh the data.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>public interface PtrHandler {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public interface PtrHandler {
 
     /**
      * Check can do refresh or not. For example the content is empty or the first child is in view.
@@ -938,64 +931,61 @@
      */
     public void onRefreshBegin(final PtrFrameLayout frame);
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>An example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">ptrFrame</span><span class="o">.</span><span class="na">setPtrHandler</span><span class="o">(</span><span class="k">new</span> <span class="n">PtrHandler</span><span class="o">()</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ptrFrame</span><span class="o">.</span><span class="na">setPtrHandler</span><span class="o">(</span><span class="k">new</span> <span class="n">PtrHandler</span><span class="o">()</span> <span class="o">{</span>
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onRefreshBegin</span><span class="o">(</span><span class="n">PtrFrameLayout</span> <span class="n">frame</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRefreshBegin</span><span class="o">(</span><span class="n">PtrFrameLayout</span> <span class="n">frame</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">frame</span><span class="o">.</span><span class="na">postDelayed</span><span class="o">(</span><span class="k">new</span> <span class="n">Runnable</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="n">run</span><span class="o">()</span> <span class="o">{</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
                 <span class="n">ptrFrame</span><span class="o">.</span><span class="na">refreshComplete</span><span class="o">();</span>
             <span class="o">}</span>
         <span class="o">},</span> <span class="mi">1800</span><span class="o">);</span>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="n">checkCanDoRefresh</span><span class="o">(</span><span class="n">PtrFrameLayout</span> <span class="n">frame</span><span class="o">,</span> <span class="n">View</span> <span class="n">content</span><span class="o">,</span> <span class="n">View</span> <span class="n">header</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">checkCanDoRefresh</span><span class="o">(</span><span class="n">PtrFrameLayout</span> <span class="n">frame</span><span class="o">,</span> <span class="n">View</span> <span class="n">content</span><span class="o">,</span> <span class="n">View</span> <span class="n">header</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">PtrDefaultHandler</span><span class="o">.</span><span class="na">checkContentCanBePulledDown</span><span class="o">(</span><span class="n">frame</span><span class="o">,</span> <span class="n">content</span><span class="o">,</span> <span class="n">header</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h1 id="customize">Customize</h1>
 
 <p>You can add a <code class="highlighter-rouge">PtrUIHandler</code> to <code class="highlighter-rouge">PtrFrameLayout</code> to implement any UI effect you want.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">PtrUIHandler</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">PtrUIHandler</span> <span class="o">{</span>
 
     <span class="cm">/**
      * When the content view has reached top and refresh has been completed, view will be reset.
      *
      * @param frame
      */</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onUIReset</span><span class="o">(</span><span class="n">PtrFrameLayout</span> <span class="n">frame</span><span class="o">);</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onUIReset</span><span class="o">(</span><span class="n">PtrFrameLayout</span> <span class="n">frame</span><span class="o">);</span>
 
     <span class="cm">/**
      * prepare for loading
      *
      * @param frame
      */</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onUIRefreshPrepare</span><span class="o">(</span><span class="n">PtrFrameLayout</span> <span class="n">frame</span><span class="o">);</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onUIRefreshPrepare</span><span class="o">(</span><span class="n">PtrFrameLayout</span> <span class="n">frame</span><span class="o">);</span>
 
     <span class="cm">/**
      * perform refreshing UI
      */</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onUIRefreshBegin</span><span class="o">(</span><span class="n">PtrFrameLayout</span> <span class="n">frame</span><span class="o">);</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onUIRefreshBegin</span><span class="o">(</span><span class="n">PtrFrameLayout</span> <span class="n">frame</span><span class="o">);</span>
 
     <span class="cm">/**
      * perform UI after refresh
      */</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onUIRefreshComplete</span><span class="o">(</span><span class="n">PtrFrameLayout</span> <span class="n">frame</span><span class="o">);</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onUIRefreshComplete</span><span class="o">(</span><span class="n">PtrFrameLayout</span> <span class="n">frame</span><span class="o">);</span>
 
-    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onUIPositionChange</span><span class="o">(</span><span class="n">PtrFrameLayout</span> <span class="n">frame</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">isUnderTouch</span><span class="o">,</span> <span class="kt">byte</span> <span class="n">status</span><span class="o">,</span> <span class="kt">int</span> <span class="n">oldPosition</span><span class="o">,</span> <span class="kt">int</span> <span class="n">currentPosition</span><span class="o">,</span> <span class="kt">float</span> <span class="n">oldPercent</span><span class="o">,</span> <span class="kt">float</span> <span class="n">currentPercent</span><span class="o">);</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onUIPositionChange</span><span class="o">(</span><span class="n">PtrFrameLayout</span> <span class="n">frame</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">isUnderTouch</span><span class="o">,</span> <span class="kt">byte</span> <span class="n">status</span><span class="o">,</span> <span class="kt">int</span> <span class="n">oldPosition</span><span class="o">,</span> <span class="kt">int</span> <span class="n">currentPosition</span><span class="o">,</span> <span class="kt">float</span> <span class="n">oldPercent</span><span class="o">,</span> <span class="kt">float</span> <span class="n">currentPercent</span><span class="o">);</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h1 id="q--a">Q &amp; A</h1>
 
@@ -1061,17 +1051,17 @@
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Ultra Pull To Refresh&url=http://kmshack.github.io/AndroidUICollection/2016/09/30/UltrapullToRefresh/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Ultra Pull To Refresh&url=http://localhost:4000/AndroidUICollection/2016/09/30/UltrapullToRefresh/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/09/30/UltrapullToRefresh/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/09/30/UltrapullToRefresh/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/09/30/UltrapullToRefresh/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/09/30/UltrapullToRefresh/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -1102,7 +1092,7 @@
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/09/30/UltrapullToRefresh/";
+    this.page.url = "http://localhost:4000/2016/09/30/UltrapullToRefresh/";
   };
 
   (function() {

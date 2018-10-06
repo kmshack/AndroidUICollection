@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2017/04/17/MaterialChipsInput/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2017/04/17/MaterialChipsInput/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="[NOT CURRENTLY MAINTAINED]MaterialChipsInputImplementation of Material Design Chips component for Android. The library provides two views : ChipsInput and Ch...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="MaterialChipsInput">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="[NOT CURRENTLY MAINTAINED]MaterialChipsInputImplementation of Material Design Chips component for Android. The library provides two views : ChipsInput and Ch...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2017/04/17/MaterialChipsInput/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2017/04/17/MaterialChipsInput/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="[NOT CURRENTLY MAINTAINED]MaterialChipsInputImplementation of Material Design Chips component for Android. The library provides two views : ChipsInput and Ch..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2017-04-17-MaterialChipsInput.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2017-04-17-MaterialChipsInput.gif">
         
 
         <header class="post__header">
@@ -664,60 +668,71 @@
 
 <p>To use this library your <code class="highlighter-rouge">minSdkVersion</code> must be &gt;= 15.</p>
 
-<p>In your project level build.gradle :
-<code class="highlighter-rouge">java
-allprojects {
-    repositories {
-        ...
-        maven { url "https://jitpack.io" }
-    }
-}       
-</code></p>
+<p>In your project level build.gradle :</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">allprojects</span> <span class="o">{</span>
+    <span class="n">repositories</span> <span class="o">{</span>
+        <span class="o">...</span>
+        <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s">"https://jitpack.io"</span> <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>       
+</code></pre></div></div>
 
-<p>In your app level build.gradle :
-<code class="highlighter-rouge">java
-dependencies {
-    compile 'com.github.pchmn:MaterialChipsInput:1.0.8'
-}      
-</code>
-<br /><br />
-## ChipsInput
-This view implements the Material Design <a href="https://material.io/guidelines/components/chips.html#chips-contact-chips">Contact chips component</a>.</p>
+<p>In your app level build.gradle :</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
+    <span class="n">compile</span> <span class="err">'</span><span class="n">com</span><span class="o">.</span><span class="na">github</span><span class="o">.</span><span class="na">pchmn</span><span class="o">:</span><span class="nl">MaterialChipsInput:</span><span class="mf">1.0</span><span class="o">.</span><span class="mi">8</span><span class="err">'</span>
+<span class="o">}</span>      
+</code></pre></div></div>
+<p><br /><br /></p>
+<h2 id="chipsinput">ChipsInput</h2>
+<p>This view implements the Material Design <a href="https://material.io/guidelines/components/chips.html#chips-contact-chips">Contact chips component</a>.</p>
 
 <p>It is composed of a collection of chips (<code class="highlighter-rouge">ChipView</code>) and an input (<code class="highlighter-rouge">EditText</code>). Touching a chip open a full detailed view (if non disable). The <a href="#materialchipsinput">GIF</a> above describes the behavior of the <code class="highlighter-rouge">ChipsInput</code> view.</p>
 
-<p>But everything is configurable (optional avatar icon, optional full detailed view, …) so you can use the <code class="highlighter-rouge">ChipsInput</code> view for non contact chips.
-### Basic Usage</p>
+<p>But everything is configurable (optional avatar icon, optional full detailed view, …) so you can use the <code class="highlighter-rouge">ChipsInput</code> view for non contact chips.</p>
+<h3 id="basic-usage">Basic Usage</h3>
 
 <h4 id="xml">XML</h4>
 <p>Use the ChipsInput view in your layout with default options  :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;com.pchmn.materialchips.ChipsInput</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;com.pchmn.materialchips.ChipsInput</span>
         <span class="na">android:id=</span><span class="s">"@+id/chips_input"</span>
         <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
         <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
         <span class="na">app:hint=</span><span class="s">"Enter a name"</span> <span class="nt">/&gt;</span>
-</code></pre>
-</div>
-<p>You can also customize it (<a href="#chipsinput-attributes">see</a> all attributes) :
-```xml</p>
-<com.pchmn.materialchips.chipsinput android:id="@+id/chips_input" android:layout_width="match_parent" android:layout_height="wrap_content" app:hint="Enter a name" app:hintcolor="@color/customColor" app:textcolor="@color/customColor" app:maxrows="3" app:chip_labelcolor="@color/customColor" app:chip_hasavataricon="true" app:chip_backgroundcolor="@color/customColor" app:chip_deletable="false" app:chip_deleteiconcolor="@color/customColor" app:chip_detailed_textcolor="@color/customColor" app:chip_detailed_backgroundcolor="@color/customColor" app:chip_detailed_deleteiconcolor="@color/customColor" app:filterable_list_backgroundcolor="@color/customColor" app:filterable_list_textcolor="@color/customColor" />
+</code></pre></div></div>
+<p>You can also customize it (<a href="#chipsinput-attributes">see</a> all attributes) :</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;com.pchmn.materialchips.ChipsInput</span>
+        <span class="na">android:id=</span><span class="s">"@+id/chips_input"</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">app:hint=</span><span class="s">"Enter a name"</span>
+        <span class="na">app:hintColor=</span><span class="s">"@color/customColor"</span>
+        <span class="na">app:textColor=</span><span class="s">"@color/customColor"</span>
+        <span class="na">app:maxRows=</span><span class="s">"3"</span>
+        <span class="na">app:chip_labelColor=</span><span class="s">"@color/customColor"</span>
+        <span class="na">app:chip_hasAvatarIcon=</span><span class="s">"true"</span>
+        <span class="na">app:chip_backgroundColor=</span><span class="s">"@color/customColor"</span>
+        <span class="na">app:chip_deletable=</span><span class="s">"false"</span>
+        <span class="na">app:chip_deleteIconColor=</span><span class="s">"@color/customColor"</span>
+        <span class="na">app:chip_detailed_textColor=</span><span class="s">"@color/customColor"</span>
+        <span class="na">app:chip_detailed_backgroundColor=</span><span class="s">"@color/customColor"</span>
+        <span class="na">app:chip_detailed_deleteIconColor=</span><span class="s">"@color/customColor"</span>
+        <span class="na">app:filterable_list_backgroundColor=</span><span class="s">"@color/customColor"</span>
+        <span class="na">app:filterable_list_textColor=</span><span class="s">"@color/customColor"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
-#### Suggestions
-You can pass a `List&lt;? extends ChipInterface&gt;` object, which represents your suggestions, to the `ChipsInput` view, so it will work as a
-`MultiAutoCompleteTextView` :
+<h4 id="suggestions">Suggestions</h4>
+<p>You can pass a <code class="highlighter-rouge">List&lt;? extends ChipInterface&gt;</code> object, which represents your suggestions, to the <code class="highlighter-rouge">ChipsInput</code> view, so it will work as a
+<code class="highlighter-rouge">MultiAutoCompleteTextView</code> :</p>
 
-##### 1. Create a class that implements `ChipInterface` (or use directly the [`Chip`](https://github.com/pchmn/MaterialChipsInput/blob/master/library/src/main/java/com/pchmn/materialchips/model/Chip.java) class included in the library) :
-```java
-public class ContactChip implements ChipInterface {
-    ...
-}
-</code></pre>
-</div>
+<h5 id="1-create-a-class-that-implements-chipinterface-or-use-directly-the-chip-class-included-in-the-library-">1. Create a class that implements <code class="highlighter-rouge">ChipInterface</code> (or use directly the <a href="https://github.com/pchmn/MaterialChipsInput/blob/master/library/src/main/java/com/pchmn/materialchips/model/Chip.java"><code class="highlighter-rouge">Chip</code></a> class included in the library) :</h5>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ContactChip</span> <span class="kd">implements</span> <span class="n">ChipInterface</span> <span class="o">{</span>
+    <span class="o">...</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
-<h5 id="then-in-your-activity-or-anything-else-build-your-suggestion-list-of-contactchip-or-chip-and-pass-it-to-the-chipsinput-view-">2. Then in your activity, or anything else, build your suggestion list of <code class="highlighter-rouge">ContactChip</code> (or <code class="highlighter-rouge">Chip</code>) and pass it to the <code class="highlighter-rouge">ChipsInput</code> view :</h5>
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// get ChipsInput view</span>
+<h5 id="2-then-in-your-activity-or-anything-else-build-your-suggestion-list-of-contactchip-or-chip-and-pass-it-to-the-chipsinput-view-">2. Then in your activity, or anything else, build your suggestion list of <code class="highlighter-rouge">ContactChip</code> (or <code class="highlighter-rouge">Chip</code>) and pass it to the <code class="highlighter-rouge">ChipsInput</code> view :</h5>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// get ChipsInput view</span>
 <span class="n">ChipsInput</span> <span class="n">chipsInput</span> <span class="o">=</span> <span class="o">(</span><span class="n">ChipsInput</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">chips_input</span><span class="o">);</span>
 
 <span class="c1">// build the ContactChip list</span>
@@ -727,86 +742,78 @@ public class ContactChip implements ChipInterface {
 
 <span class="c1">// pass the ContactChip list</span>
 <span class="n">chipsInput</span><span class="o">.</span><span class="na">setFilterableList</span><span class="o">(</span><span class="n">contactList</span><span class="o">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="get-the-selected-list">Get the selected list</h4>
-<p>When you want you can get the current list of chips selected by the user :
-<code class="highlighter-rouge">java
-// get the list
-List&lt;ContactChip&gt; contactsSelected = (List&lt;ContactChip&gt;) chipsInput.getSelectedChipList();
-</code></p>
+<p>When you want you can get the current list of chips selected by the user :</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// get the list</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">ContactChip</span><span class="o">&gt;</span> <span class="n">contactsSelected</span> <span class="o">=</span> <span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">ContactChip</span><span class="o">&gt;)</span> <span class="n">chipsInput</span><span class="o">.</span><span class="na">getSelectedChipList</span><span class="o">();</span>
+</code></pre></div></div>
 
 <p>That’s it, there is nothing more to do.
-<br /><br />
-### Advanced Usage
-#### ChipsListener
-The <code class="highlighter-rouge">ChipsInput</code> view provides a listener to interact with the input :
-```java
-chipsInput.addChipsListener(new ChipsInput.ChipsListener() {
-            @Override
-            public void onChipAdded(ChipInterface chip, int newSize) {
-                // chip added
-                // newSize is the size of the updated selected chip list
-            }</p>
+<br /><br /></p>
+<h3 id="advanced-usage">Advanced Usage</h3>
+<h4 id="chipslistener">ChipsListener</h4>
+<p>The <code class="highlighter-rouge">ChipsInput</code> view provides a listener to interact with the input :</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">chipsInput</span><span class="o">.</span><span class="na">addChipsListener</span><span class="o">(</span><span class="k">new</span> <span class="n">ChipsInput</span><span class="o">.</span><span class="na">ChipsListener</span><span class="o">()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onChipAdded</span><span class="o">(</span><span class="n">ChipInterface</span> <span class="n">chip</span><span class="o">,</span> <span class="kt">int</span> <span class="n">newSize</span><span class="o">)</span> <span class="o">{</span>
+                <span class="c1">// chip added</span>
+                <span class="c1">// newSize is the size of the updated selected chip list</span>
+            <span class="o">}</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>        @Override
-        public void onChipRemoved(ChipInterface chip, int newSize) {
-            // chip removed
-            // newSize is the size of the updated selected chip list
-        }
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onChipRemoved</span><span class="o">(</span><span class="n">ChipInterface</span> <span class="n">chip</span><span class="o">,</span> <span class="kt">int</span> <span class="n">newSize</span><span class="o">)</span> <span class="o">{</span>
+                <span class="c1">// chip removed</span>
+                <span class="c1">// newSize is the size of the updated selected chip list</span>
+            <span class="o">}</span>
 
-        @Override
-        public void onTextChanged(CharSequence text) {
-            // text changed
-        }
-    }); ```
-</code></pre>
-</div>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onTextChanged</span><span class="o">(</span><span class="n">CharSequence</span> <span class="n">text</span><span class="o">)</span> <span class="o">{</span>
+                <span class="c1">// text changed</span>
+            <span class="o">}</span>
+        <span class="o">});</span>
+</code></pre></div></div>
 
 <h4 id="add-and-remove-chips-manually">Add and remove chips manually</h4>
 <p>You don’t have to pass a <code class="highlighter-rouge">List&lt;? extends ChipInterface&gt;</code> to the <code class="highlighter-rouge">ChipsInput</code> view and you can do the trick manually. Thanks to the <code class="highlighter-rouge">ChipsListener</code> you can be notified when the user is typing and do your own work.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">ChipsInput</span> <span class="n">chipsInput</span> <span class="o">=</span> <span class="o">(</span><span class="n">ChipsInput</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">chips_input</span><span class="o">);</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ChipsInput</span> <span class="n">chipsInput</span> <span class="o">=</span> <span class="o">(</span><span class="n">ChipsInput</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">chips_input</span><span class="o">);</span>
+</code></pre></div></div>
 
 <h5 id="add-a-chip">Add a chip</h5>
-<p>There are multiple implementations :
-<code class="highlighter-rouge">java
-chipsInput.addChip(ChipInterface chip);
-// or
-chipsInput.addChip(Object id, Drawable icon, String label, String info);
-// or
-chipsInput.addChip(Drawable icon, String label, String info);
-// or
-chipsInput.addChip(Object id, Uri iconUri, String label, String info);
-// or
-chipsInput.addChip(Uri iconUri, String label, String info);
-// or
-chipsInput.addChip(String label, String info);
-</code></p>
+<p>There are multiple implementations :</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">chipsInput</span><span class="o">.</span><span class="na">addChip</span><span class="o">(</span><span class="n">ChipInterface</span> <span class="n">chip</span><span class="o">);</span>
+<span class="c1">// or</span>
+<span class="n">chipsInput</span><span class="o">.</span><span class="na">addChip</span><span class="o">(</span><span class="n">Object</span> <span class="n">id</span><span class="o">,</span> <span class="n">Drawable</span> <span class="n">icon</span><span class="o">,</span> <span class="n">String</span> <span class="n">label</span><span class="o">,</span> <span class="n">String</span> <span class="n">info</span><span class="o">);</span>
+<span class="c1">// or</span>
+<span class="n">chipsInput</span><span class="o">.</span><span class="na">addChip</span><span class="o">(</span><span class="n">Drawable</span> <span class="n">icon</span><span class="o">,</span> <span class="n">String</span> <span class="n">label</span><span class="o">,</span> <span class="n">String</span> <span class="n">info</span><span class="o">);</span>
+<span class="c1">// or</span>
+<span class="n">chipsInput</span><span class="o">.</span><span class="na">addChip</span><span class="o">(</span><span class="n">Object</span> <span class="n">id</span><span class="o">,</span> <span class="n">Uri</span> <span class="n">iconUri</span><span class="o">,</span> <span class="n">String</span> <span class="n">label</span><span class="o">,</span> <span class="n">String</span> <span class="n">info</span><span class="o">);</span>
+<span class="c1">// or</span>
+<span class="n">chipsInput</span><span class="o">.</span><span class="na">addChip</span><span class="o">(</span><span class="n">Uri</span> <span class="n">iconUri</span><span class="o">,</span> <span class="n">String</span> <span class="n">label</span><span class="o">,</span> <span class="n">String</span> <span class="n">info</span><span class="o">);</span>
+<span class="c1">// or</span>
+<span class="n">chipsInput</span><span class="o">.</span><span class="na">addChip</span><span class="o">(</span><span class="n">String</span> <span class="n">label</span><span class="o">,</span> <span class="n">String</span> <span class="n">info</span><span class="o">);</span>
+</code></pre></div></div>
 
 <h5 id="remove-a-chip">Remove a chip</h5>
-<p>There are multiple implementations :
-<code class="highlighter-rouge">java
-chipsInput.removeChip(ChipInterface chip);
-// or
-chipsInput.removeChipById(Object id);
-// or
-chipsInput.removeChipByLabel(String label);
-// or
-chipsInput.removeChipByInfo(String info);
-</code></p>
+<p>There are multiple implementations :</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">chipsInput</span><span class="o">.</span><span class="na">removeChip</span><span class="o">(</span><span class="n">ChipInterface</span> <span class="n">chip</span><span class="o">);</span>
+<span class="c1">// or</span>
+<span class="n">chipsInput</span><span class="o">.</span><span class="na">removeChipById</span><span class="o">(</span><span class="n">Object</span> <span class="n">id</span><span class="o">);</span>
+<span class="c1">// or</span>
+<span class="n">chipsInput</span><span class="o">.</span><span class="na">removeChipByLabel</span><span class="o">(</span><span class="n">String</span> <span class="n">label</span><span class="o">);</span>
+<span class="c1">// or</span>
+<span class="n">chipsInput</span><span class="o">.</span><span class="na">removeChipByInfo</span><span class="o">(</span><span class="n">String</span> <span class="n">info</span><span class="o">);</span>
+</code></pre></div></div>
 
 <p>After you added or removed a chip the <code class="highlighter-rouge">ChipsListener</code> will be triggered.</p>
 
 <h5 id="get-the-selected-list-1">Get the selected list</h5>
-<p>When you want you can get the current list of chips selected by the user :
-<code class="highlighter-rouge">java
-// get the list
-List&lt;ChipInterface&gt; contactsSelected = chipsInput.getSelectedChipList();
-</code></p>
+<p>When you want you can get the current list of chips selected by the user :</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// get the list</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">ChipInterface</span><span class="o">&gt;</span> <span class="n">contactsSelected</span> <span class="o">=</span> <span class="n">chipsInput</span><span class="o">.</span><span class="na">getSelectedChipList</span><span class="o">();</span>
+</code></pre></div></div>
 
 <h3 id="chipsinput-attributes">ChipsInput attributes</h3>
 
@@ -913,14 +920,14 @@ List&lt;ChipInterface&gt; contactsSelected = chipsInput.getSelectedChipList();
   </tbody>
 </table>
 
-<p><br /><br />
-## ChipView
-This view implements the chip component according to the <a href="https://material.io/guidelines/components/chips.html#chips-usage">Material Design guidelines</a> with configurable options (background color, text color, …).</p>
+<p><br /><br /></p>
+<h2 id="chipview">ChipView</h2>
+<p>This view implements the chip component according to the <a href="https://material.io/guidelines/components/chips.html#chips-usage">Material Design guidelines</a> with configurable options (background color, text color, …).</p>
 
 <p><img src="https://github.com/pchmn/MaterialChipsInput/blob/master/docs/chips-examples.png" alt="Chips examples" width="50%" /></p>
 
 <h3 id="usage">Usage</h3>
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;com.pchmn.materialchips.ChipView</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;com.pchmn.materialchips.ChipView</span>
             <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
             <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
             <span class="na">app:label=</span><span class="s">"Chip 1"</span> <span class="nt">/&gt;</span>
@@ -941,8 +948,7 @@ This view implements the chip component according to the <a href="https://materi
                 <span class="na">app:deletable=</span><span class="s">"true"</span>
                 <span class="na">app:deleteIconColor=</span><span class="s">"@android:color/white"</span> <span class="nt">/&gt;</span>
     
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="chipview-attributes">ChipView attributes</h3>
 
@@ -1002,31 +1008,28 @@ This view implements the chip component according to the <a href="https://materi
 </table>
 
 <h3 id="listeners">Listeners</h3>
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">ChipView</span> <span class="n">chip</span> <span class="o">=</span> <span class="o">(</span><span class="n">ChipView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">chip_view</span><span class="o">);</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ChipView</span> <span class="n">chip</span> <span class="o">=</span> <span class="o">(</span><span class="n">ChipView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">chip_view</span><span class="o">);</span>
+</code></pre></div></div>
 
-<p>On chip click listener :
-<code class="highlighter-rouge">java
-chip.setOnChipClicked(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-        // handle click    
-    }
-});
-</code></p>
+<p>On chip click listener :</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">chip</span><span class="o">.</span><span class="na">setOnChipClicked</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">view</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// handle click    </span>
+    <span class="o">}</span>
+<span class="o">});</span>
+</code></pre></div></div>
 
-<p>On delete button click listener :
-<code class="highlighter-rouge">java
-chip.setOnDeleteClicked(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-        // handle click     
-    }
-});
-</code>
-<br /><br />
-## Sample</p>
+<p>On delete button click listener :</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">chip</span><span class="o">.</span><span class="na">setOnDeleteClicked</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">view</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// handle click     </span>
+    <span class="o">}</span>
+<span class="o">});</span>
+</code></pre></div></div>
+<p><br /><br /></p>
+<h2 id="sample">Sample</h2>
 
 <p>A sample app with some use cases of the library is available on this <a href="https://github.com/pchmn/MaterialChipsInput/tree/master/sample">link</a></p>
 
@@ -1042,7 +1045,7 @@ chip.setOnDeleteClicked(new View.OnClickListener() {
 
 <h2 id="license">License</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2017 pchmn
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright 2017 pchmn
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -1055,8 +1058,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
           <br>
@@ -1088,17 +1090,17 @@ limitations under the License.
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=MaterialChipsInput&url=http://kmshack.github.io/AndroidUICollection/2017/04/17/MaterialChipsInput/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=MaterialChipsInput&url=http://localhost:4000/AndroidUICollection/2017/04/17/MaterialChipsInput/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2017/04/17/MaterialChipsInput/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2017/04/17/MaterialChipsInput/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2017/04/17/MaterialChipsInput/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2017/04/17/MaterialChipsInput/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -1129,7 +1131,7 @@ limitations under the License.
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2017/04/17/MaterialChipsInput/";
+    this.page.url = "http://localhost:4000/2017/04/17/MaterialChipsInput/";
   };
 
   (function() {

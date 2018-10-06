@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2017/03/20/AutoplayVideos/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2017/03/20/AutoplayVideos/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="AutoplayVideos[API](https://img.shields.io/badge/API-16%2B-brightgreen.svg) [Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AutoPlay%20Video...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="AutoplayVideos">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="AutoplayVideos[API](https://img.shields.io/badge/API-16%2B-brightgreen.svg) [Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AutoPlay%20Video...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2017/03/20/AutoplayVideos/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2017/03/20/AutoplayVideos/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="AutoplayVideos[API](https://img.shields.io/badge/API-16%2B-brightgreen.svg) [Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AutoPlay%20Video..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2017-03-20-AutoplayVideos.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2017-03-20-AutoplayVideos.gif">
         
 
         <header class="post__header">
@@ -682,214 +686,224 @@
 
 <p><strong>Step 1.</strong> Add the jCenter repository to your project-level build.gradle file</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">allprojects</span> <span class="o">{</span>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">allprojects</span> <span class="o">{</span>
 	<span class="n">repositories</span> <span class="o">{</span>
 		<span class="n">jcenter</span><span class="o">()</span>
 	<span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Step 2.</strong> Add the dependency to your app-level build.gradle file:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
 	 <span class="n">compile</span> <span class="s1">'com.allattentionhere:autoplayvideos:0.2.0'</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<p><strong>Or Maven</strong>
-``` groovy</p>
-<dependency>
-  <groupid>com.allattentionhere</groupid>
-  <artifactid>autoplayvideos</artifactid>
-  <version>0.2.0</version>
-  <type>pom</type>
-</dependency>
-<div class="highlighter-rouge"><pre class="highlight"><code>
-# Permissions
+<p><strong>Or Maven</strong></p>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">com</span><span class="o">.</span><span class="na">allattentionhere</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">autoplayvideos</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span><span class="mf">0.2</span><span class="o">.</span><span class="mi">0</span><span class="o">&lt;/</span><span class="n">version</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">type</span><span class="o">&gt;</span><span class="n">pom</span><span class="o">&lt;/</span><span class="n">type</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
-Add below permissions to `AndroidManifest.xml`
-</code></pre>
-</div>
-<uses-permission android:name="android.permission.INTERNET" />
+<h1 id="permissions">Permissions</h1>
 
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<p>Add below permissions to <code class="highlighter-rouge">AndroidManifest.xml</code></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;uses-permission android:name="android.permission.INTERNET" /&gt;
+&lt;uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /&gt;
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
-# Usage
+<h1 id="usage">Usage</h1>
 
-Add `AAH_VideoImage` to your xml file for single list item `single_card.xml`:
-</code></pre>
-</div>
-<?xml version="1.0" encoding="utf-8"?>
-<linearlayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:card_view="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="wrap_content">
+<p>Add <code class="highlighter-rouge">AAH_VideoImage</code> to your xml file for single list item <code class="highlighter-rouge">single_card.xml</code>:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;LinearLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">xmlns:card_view=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span><span class="nt">&gt;</span>
 
-    <android.support.v7.widget.cardview android:id="@+id/card_view" android:layout_width="wrap_content" android:layout_height="wrap_content">
+    <span class="nt">&lt;android.support.v7.widget.CardView</span>
+        <span class="na">android:id=</span><span class="s">"@+id/card_view"</span>
+        <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span><span class="nt">&gt;</span>
        
-       <linearlayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
+       <span class="nt">&lt;LinearLayout</span>
+            <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:orientation=</span><span class="s">"vertical"</span><span class="nt">&gt;</span>
 
-             <framelayout android:layout_width="300dp" android:layout_height="150dp">
+             <span class="nt">&lt;FrameLayout</span>
+                <span class="na">android:layout_width=</span><span class="s">"300dp"</span>
+                <span class="na">android:layout_height=</span><span class="s">"150dp"</span><span class="nt">&gt;</span>
 
-                <com.allattentionhere.autoplayvideos.aah_videoimage android:layout_width="match_parent" android:layout_height="match_parent" />
+                <span class="nt">&lt;com.allattentionhere.autoplayvideos.AAH_VideoImage</span>
+                    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+                    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span> <span class="nt">/&gt;</span>
 
-                <imageview android:id="@+id/img_vol" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="right|bottom" android:layout_margin="8dp" android:src="@drawable/ic_unmute" />
-            </framelayout>
+                <span class="nt">&lt;ImageView</span>
+                    <span class="na">android:id=</span><span class="s">"@+id/img_vol"</span>
+                    <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+                    <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+                    <span class="na">android:layout_gravity=</span><span class="s">"right|bottom"</span>
+                    <span class="na">android:layout_margin=</span><span class="s">"8dp"</span>
+                    <span class="na">android:src=</span><span class="s">"@drawable/ic_unmute"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/FrameLayout&gt;</span>
 
-            <textview android:id="@+id/tv" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" />
+            <span class="nt">&lt;TextView</span>
+                <span class="na">android:id=</span><span class="s">"@+id/tv"</span>
+                <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+                <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+                <span class="na">android:gravity=</span><span class="s">"center"</span> <span class="nt">/&gt;</span>
 		
-        </linearlayout>
-    </android.support.v7.widget.cardview>
-</linearlayout>
-<div class="highlighter-rouge"><pre class="highlight"><code>
-Add `AAH_CustomRecyclerView` to your Activity layout xml `MainActivity.xml`:
-</code></pre>
-</div>
-<?xml version="1.0" encoding="utf-8"?>
-<linearlayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+        <span class="nt">&lt;/LinearLayout&gt;</span>
+    <span class="nt">&lt;/android.support.v7.widget.CardView&gt;</span>
+<span class="nt">&lt;/LinearLayout&gt;</span>
+</code></pre></div></div>
 
-    <com.allattentionhere.autoplayvideos.aah_customrecyclerview android:id="@+id/rv_home" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+<p>Add <code class="highlighter-rouge">AAH_CustomRecyclerView</code> to your Activity layout xml <code class="highlighter-rouge">MainActivity.xml</code>:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;LinearLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:orientation=</span><span class="s">"vertical"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;com.allattentionhere.autoplayvideos.AAH_CustomRecyclerView</span>
+        <span class="na">android:id=</span><span class="s">"@+id/rv_home"</span>
+        <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span> <span class="nt">/&gt;</span>
 	
-</linearlayout>
-<div class="highlighter-rouge"><pre class="highlight"><code>
-Set Adapter with following specifics:
+<span class="nt">&lt;/LinearLayout&gt;</span>
+</code></pre></div></div>
 
-1. Adapter should extend `AAH_VideosAdapter`.
-2. ViewHolder should extend `AAH_CustomViewHolder`.
-3. Set thumbnail image url and video url in `onBindViewHolder` method.
-</code></pre>
-</div>
-<p>public class MyVideosAdapter extends AAH_VideosAdapter {</p>
+<p>Set Adapter with following specifics:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>private List&lt;MyModel&gt; list;
-Picasso picasso;
+<ol>
+  <li>Adapter should extend <code class="highlighter-rouge">AAH_VideosAdapter</code>.</li>
+  <li>ViewHolder should extend <code class="highlighter-rouge">AAH_CustomViewHolder</code>.</li>
+  <li>Set thumbnail image url and video url in <code class="highlighter-rouge">onBindViewHolder</code> method.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public class MyVideosAdapter extends AAH_VideosAdapter {
 
-public class MyViewHolder extends AAH_CustomViewHolder {
-    final TextView tv;
-final ImageView img_vol,img_playback;
-    boolean isMuted; //to mute/un-mute video (optional)
+ private List&lt;MyModel&gt; list;
+ Picasso picasso;
 
-    public MyViewHolder(View x) {
-        super(x);
-        tv = ButterKnife.findById(x, R.id.tv);
-    img_vol = ButterKnife.findById(x, R.id.img_vol);
-    img_playback = ButterKnife.findById(x, R.id.img_playback);
-    }
+ public class MyViewHolder extends AAH_CustomViewHolder {
+     final TextView tv;
+ final ImageView img_vol,img_playback;
+     boolean isMuted; //to mute/un-mute video (optional)
+	
+     public MyViewHolder(View x) {
+         super(x);
+         tv = ButterKnife.findById(x, R.id.tv);
+     img_vol = ButterKnife.findById(x, R.id.img_vol);
+     img_playback = ButterKnife.findById(x, R.id.img_playback);
+     }
+ }
+
+ public MyVideosAdapter(List&lt;MyModel&gt; list_urls, Picasso p) {
+     this.list = list_urls;
+     this.picasso = p;
+ }
+
+ @Override
+ public AAH_CustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+     View itemView = LayoutInflater.from(parent.getContext())
+             .inflate(R.layout.single_card, parent, false);
+     return new MyViewHolder(itemView);
+ }
+
+ @Override
+ public void onBindViewHolder(AAH_CustomViewHolder holder, int position) {
+     ((MyViewHolder) holder).tv.setText(list.get(position).getName());
+
+     //todo
+     holder.setImageUrl(list.get(position).getImage_url());
+     holder.setVideoUrl(list.get(position).getVideo_url());
+     //load image/thumbnail into imageview
+     if (list.get(position).getImage_url() = null &amp;&amp; list.get(position).getImage_url().isEmpty())
+         picasso.load(holder.getImageUrl()).config(Bitmap.Config.RGB_565).into(holder.getAAH_ImageView());
+ }
+    
+ @Override
+ public int getItemCount() {
+     return list.size();
+ }
+
+ @Override
+ public int getItemViewType(int position) {
+     return 0;
+ }
 }
+</code></pre></div>    </div>
+  </li>
+</ol>
 
-public MyVideosAdapter(List&lt;MyModel&gt; list_urls, Picasso p) {
-    this.list = list_urls;
-    this.picasso = p;
-}
-
-@Override
-public AAH_CustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-    View itemView = LayoutInflater.from(parent.getContext())
-            .inflate(R.layout.single_card, parent, false);
-    return new MyViewHolder(itemView);
-}
-
-@Override
-public void onBindViewHolder(AAH_CustomViewHolder holder, int position) {
-    ((MyViewHolder) holder).tv.setText(list.get(position).getName());
-
-    //todo
-    holder.setImageUrl(list.get(position).getImage_url());
-    holder.setVideoUrl(list.get(position).getVideo_url());
-    //load image/thumbnail into imageview
-    if (list.get(position).getImage_url() = null &amp;&amp; list.get(position).getImage_url().isEmpty())
-        picasso.load(holder.getImageUrl()).config(Bitmap.Config.RGB_565).into(holder.getAAH_ImageView());
-}
-
-@Override
-public int getItemCount() {
-    return list.size();
-}
-
-@Override
-public int getItemViewType(int position) {
-    return 0;
-} } ```
-</code></pre>
-</div>
-
-<p>Finally <code class="highlighter-rouge">setActivity</code> in your Activity before setting the adapter and (Optional) scroll programmatically to initiate videos on initial screen:
-<code class="highlighter-rouge">
-    recyclerView.setActivity(this); //todo before setAdapter
+<p>Finally <code class="highlighter-rouge">setActivity</code> in your Activity before setting the adapter and (Optional) scroll programmatically to initiate videos on initial screen:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    recyclerView.setActivity(this); //todo before setAdapter
     recyclerView.setAdapter(mAdapter);
-</code></p>
+</code></pre></div></div>
 
 <h3 id="play-videos-initially-optional">Play videos initially (Optional)</h3>
-<p>Call these two functions to start video playback when the screen launches and user hasn’t scrolled.
-<code class="highlighter-rouge">
-recyclerView.smoothScrollBy(0,1);
+<p>Call these two functions to start video playback when the screen launches and user hasn’t scrolled.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>recyclerView.smoothScrollBy(0,1);
 recyclerView.smoothScrollBy(0,-1);
-</code></p>
+</code></pre></div></div>
 
 <h3 id="play-only-1st-video-optional">Play only 1st video (Optional)</h3>
-<p>Setting this parameter will play video only in 1st completely visible RecyclerView ViewHolder.
-<code class="highlighter-rouge">
-recyclerView.setPlayOnlyFirstVideo(true); // false by default
-</code></p>
+<p>Setting this parameter will play video only in 1st completely visible RecyclerView ViewHolder.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>recyclerView.setPlayOnlyFirstVideo(true); // false by default
+</code></pre></div></div>
 
 <h3 id="download-videos-to-local-storage-optional">Download videos to local storage (Optional)</h3>
-<p>You can start downloading video in background on viewholder loaded. You can change download path.
-<code class="highlighter-rouge">
-recyclerView.setDownloadPath(Environment.getExternalStorageDirectory() + "/MyVideo"); //optional
+<p>You can start downloading video in background on viewholder loaded. You can change download path.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>recyclerView.setDownloadPath(Environment.getExternalStorageDirectory() + "/MyVideo"); //optional
 recyclerView.setDownloadVideos(true); // false by default
-</code>
-Optionally you can start pre-downloading all the videos by passing list of URLs to function as below:
-<code class="highlighter-rouge">
-List&lt;String&gt; urls = new ArrayList&lt;&gt;();
+</code></pre></div></div>
+<p>Optionally you can start pre-downloading all the videos by passing list of URLs to function as below:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>List&lt;String&gt; urls = new ArrayList&lt;&gt;();
  for (MyModel object : modelList) {
      if (object.getVideo_url() = null &amp;&amp; object.getVideo_url().endsWith(".mp4"))
          urls.add(object.getVideo_url());
  }
 recyclerView.preDownload(urls);
-</code>
-Add below permission to <code class="highlighter-rouge">AndroidManifest.xml</code>. Ask for runtime permission in devices on Marshmallow and above.
-```</p>
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+</code></pre></div></div>
+<p>Add below permission to <code class="highlighter-rouge">AndroidManifest.xml</code>. Ask for runtime permission in devices on Marshmallow and above.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /&gt;
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
-
-### Remove check for .mp4 (Optional)
-By default it checks for url to end with `.mp4` else it is not considered as video URL. You can override this by setting parameter as below. Please use this with caution and make sure you provide video URL only.
-</code></pre>
-</div>
-<p>recyclerView.setCheckForMp4(false); // true by default
-```</p>
+<h3 id="remove-check-for-mp4-optional">Remove check for .mp4 (Optional)</h3>
+<p>By default it checks for url to end with <code class="highlighter-rouge">.mp4</code> else it is not considered as video URL. You can override this by setting parameter as below. Please use this with caution and make sure you provide video URL only.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>recyclerView.setCheckForMp4(false); // true by default
+</code></pre></div></div>
 
 <h3 id="pause-videos-manually-optional">Pause videos manually (Optional)</h3>
-<p>Call the following method to stop the videos when Activity/Fragment stops (User receives call, minimizes app etc)
-<code class="highlighter-rouge">
-    @Override
+<p>Call the following method to stop the videos when Activity/Fragment stops (User receives call, minimizes app etc)</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    @Override
     protected void onStop() {
         super.onStop();
         recyclerView.stopVideos();
     }
-</code></p>
+</code></pre></div></div>
 
 <h3 id="resume-videos-when-app-resumes-optional">Resume videos when app resumes (Optional)</h3>
-<p>Call the following method to resume videos when App resumes (opening app after minimizing it, etc)
-<code class="highlighter-rouge">
-    @Override
+<p>Call the following method to resume videos when App resumes (opening app after minimizing it, etc)</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    @Override
     protected void onResume() {
         super.onResume();
         recyclerView.playAvailableVideos(0);
     }
-</code></p>
+</code></pre></div></div>
 
 <h3 id="play-partially-visible-video-optional">Play partially visible video (Optional)</h3>
-<p>Call the following method to set the percentage of view that needs to be visible for video to start playing.
-<code class="highlighter-rouge">
-    recyclerView.setVisiblePercent(50);
-</code></p>
+<p>Call the following method to set the percentage of view that needs to be visible for video to start playing.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    recyclerView.setVisiblePercent(50);
+</code></pre></div></div>
 
 <h3 id="get-callbacks-when-videos-starts-and-pauses">Get callbacks when videos starts and pauses</h3>
-<p>You can override the below methods of <code class="highlighter-rouge">AAH_CustomViewHolder</code> to get callback when video starts to play or pauses.
-<code class="highlighter-rouge">
-	@Override
+<p>You can override the below methods of <code class="highlighter-rouge">AAH_CustomViewHolder</code> to get callback when video starts to play or pauses.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	@Override
         public void videoStarted() {
             super.videoStarted();
             img_playback.setImageResource(R.drawable.ic_pause);
@@ -906,12 +920,11 @@ By default it checks for url to end with `.mp4` else it is not considered as vid
             super.pauseVideo();
             img_playback.setImageResource(R.drawable.ic_play);
         }
-</code></p>
+</code></pre></div></div>
 
 <h3 id="play-or-pause-videos-manually">Play or pause videos manually</h3>
-<p>You can allow the user to play or pause any video by adding below code in <code class="highlighter-rouge">onBindViewHolder</code>:
-<code class="highlighter-rouge">
-	((MyViewHolder) holder).img_playback.setOnClickListener(new View.OnClickListener() {
+<p>You can allow the user to play or pause any video by adding below code in <code class="highlighter-rouge">onBindViewHolder</code>:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	((MyViewHolder) holder).img_playback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (holder.isPlaying()) {
@@ -923,12 +936,11 @@ By default it checks for url to end with `.mp4` else it is not considered as vid
                 }
             }
         });
-</code></p>
+</code></pre></div></div>
 
 <h3 id="mute-or-unmute-the-videos">Mute or Unmute the videos</h3>
-<p>Video can be muted/unmuted by adding below code in <code class="highlighter-rouge">onBindViewHolder</code>:
-<code class="highlighter-rouge">
-	holder.getAah_vi().setOnClickListener(new View.OnClickListener() {
+<p>Video can be muted/unmuted by adding below code in <code class="highlighter-rouge">onBindViewHolder</code>:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	holder.getAah_vi().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (((MyViewHolder) holder).isMuted) {
@@ -941,13 +953,12 @@ By default it checks for url to end with `.mp4` else it is not considered as vid
                 ((MyViewHolder) holder).isMuted = ((MyViewHolder) holder).isMuted;
             }
         });
-</code></p>
+</code></pre></div></div>
 
 <h3 id="set-looping-on-videos">Set looping on videos</h3>
-<p>Set looping on videos by adding below code in <code class="highlighter-rouge">onBindViewHolder</code>:
-<code class="highlighter-rouge">
-holder.setLooping(true); //optional - true by default
-</code></p>
+<p>Set looping on videos by adding below code in <code class="highlighter-rouge">onBindViewHolder</code>:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>holder.setLooping(true); //optional - true by default
+</code></pre></div></div>
 
 <h1 id="cache-videos-optional">Cache Videos (Optional)</h1>
 
@@ -955,28 +966,26 @@ holder.setLooping(true); //optional - true by default
 Here is how you can use it along with our library:</p>
 
 <h3 id="initilize-httpproxycacheserver">Initilize HttpProxyCacheServer</h3>
-<p>Initilize <code class="highlighter-rouge">HttpProxyCacheServer</code> in your Application class and register Application class in your Manifest file.
-```
-public class MyApplication extends Application {
-	private static HttpProxyCacheServer proxy;</p>
+<p>Initilize <code class="highlighter-rouge">HttpProxyCacheServer</code> in your Application class and register Application class in your Manifest file.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public class MyApplication extends Application {
+	private static HttpProxyCacheServer proxy;
 
-<div class="highlighter-rouge"><pre class="highlight"><code>public static HttpProxyCacheServer getProxy() {
-    return proxy;
-}
+	public static HttpProxyCacheServer getProxy() {
+	    return proxy;
+	}
 
-@Override
-public void onCreate() {
-    super.onCreate();
-    proxy = new HttpProxyCacheServer(this);
-} }	 ```
-</code></pre>
-</div>
+	@Override
+	public void onCreate() {
+	    super.onCreate();
+	    proxy = new HttpProxyCacheServer(this);
+	}
+}	
+</code></pre></div></div>
 
 <h3 id="set-proxy-video-url">Set proxy video URL</h3>
-<p>In your VideosAdapter, set the Video URL as follows:
-<code class="highlighter-rouge">
-holder.setVideoUrl(MyApplication.getProxy().getProxyUrl(list.get(position).getVideo_url()+"")); // url should not be null
-</code></p>
+<p>In your VideosAdapter, set the Video URL as follows:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>holder.setVideoUrl(MyApplication.getProxy().getProxyUrl(list.get(position).getVideo_url()+"")); // url should not be null
+</code></pre></div></div>
 
 <p>You can also use advanced options for caching that the library supports. Refer to their documentation for the same.</p>
 
@@ -1040,17 +1049,17 @@ limitations under the License.</p>
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=AutoplayVideos&url=http://kmshack.github.io/AndroidUICollection/2017/03/20/AutoplayVideos/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=AutoplayVideos&url=http://localhost:4000/AndroidUICollection/2017/03/20/AutoplayVideos/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2017/03/20/AutoplayVideos/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2017/03/20/AutoplayVideos/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2017/03/20/AutoplayVideos/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2017/03/20/AutoplayVideos/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -1081,7 +1090,7 @@ limitations under the License.</p>
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2017/03/20/AutoplayVideos/";
+    this.page.url = "http://localhost:4000/2017/03/20/AutoplayVideos/";
   };
 
   (function() {

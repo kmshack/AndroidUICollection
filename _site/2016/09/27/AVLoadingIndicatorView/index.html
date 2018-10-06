@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/09/27/AVLoadingIndicatorView/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/09/27/AVLoadingIndicatorView/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="PLEASE NOTE, THIS PROJECT IS NO LONGER BEING MAINTAINED[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AVLoadingIndicatorView-green.svg?styl...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="AVLoadingIndicatorView">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="PLEASE NOTE, THIS PROJECT IS NO LONGER BEING MAINTAINED[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AVLoadingIndicatorView-green.svg?styl...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/09/27/AVLoadingIndicatorView/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/09/27/AVLoadingIndicatorView/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="PLEASE NOTE, THIS PROJECT IS NO LONGER BEING MAINTAINED[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AVLoadingIndicatorView-green.svg?styl..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-09-27-AVLoadingIndicatorView.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-09-27-AVLoadingIndicatorView.gif">
         
 
         <header class="post__header">
@@ -671,12 +675,11 @@
 
 <h3 id="step-1">Step 1</h3>
 
-<p>Add dependencies in build.gradle.
-<code class="highlighter-rouge">groovy
-    dependencies {
-       compile 'com.wang.avi:library:2.1.3'
-    }
-</code></p>
+<p>Add dependencies in build.gradle.</p>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">dependencies</span> <span class="o">{</span>
+       <span class="n">compile</span> <span class="s1">'com.wang.avi:library:2.1.3'</span>
+    <span class="o">}</span>
+</code></pre></div></div>
 
 <h3 id="step-2">Step 2</h3>
 
@@ -684,17 +687,16 @@
 
 <p>Simple</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="o">&lt;</span><span class="n">com</span><span class="o">.</span><span class="na">wang</span><span class="o">.</span><span class="na">avi</span><span class="o">.</span><span class="na">AVLoadingIndicatorView</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="o">&lt;</span><span class="n">com</span><span class="o">.</span><span class="na">wang</span><span class="o">.</span><span class="na">avi</span><span class="o">.</span><span class="na">AVLoadingIndicatorView</span>
         <span class="nl">android:</span><span class="n">layout_width</span><span class="o">=</span><span class="s">"wrap_content"</span>  
         <span class="nl">android:</span><span class="n">layout_height</span><span class="o">=</span><span class="s">"wrap_content"</span>
         <span class="nl">app:</span><span class="n">indicatorName</span><span class="o">=</span><span class="s">"BallPulseIndicator"</span>
         <span class="o">/&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Advance</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="o">&lt;</span><span class="n">com</span><span class="o">.</span><span class="na">wang</span><span class="o">.</span><span class="na">avi</span><span class="o">.</span><span class="na">AVLoadingIndicatorView</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="o">&lt;</span><span class="n">com</span><span class="o">.</span><span class="na">wang</span><span class="o">.</span><span class="na">avi</span><span class="o">.</span><span class="na">AVLoadingIndicatorView</span>
         <span class="nl">android:</span><span class="n">id</span><span class="o">=</span><span class="s">"@+id/avi"</span>
         <span class="nl">android:</span><span class="n">layout_width</span><span class="o">=</span><span class="s">"wrap_content"</span>  <span class="c1">//or your custom size</span>
         <span class="nl">android:</span><span class="n">layout_height</span><span class="o">=</span><span class="s">"wrap_content"</span>  <span class="c1">//or your custom size</span>
@@ -703,37 +705,34 @@
         <span class="nl">app:</span><span class="n">indicatorName</span><span class="o">=</span><span class="s">"BallPulseIndicator"</span><span class="c1">//Indicator Name</span>
         <span class="nl">app:</span><span class="n">indicatorColor</span><span class="o">=</span><span class="s">"your color"</span>
         <span class="o">/&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="step-3">Step 3</h3>
 
-<p>It’s very simple use just like .
-```java
-   void startAnim(){
-        avi.show();
-        // or avi.smoothToShow();
-   }</p>
+<p>It’s very simple use just like .</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="kt">void</span> <span class="nf">startAnim</span><span class="o">(){</span>
+        <span class="n">avi</span><span class="o">.</span><span class="na">show</span><span class="o">();</span>
+        <span class="c1">// or avi.smoothToShow();</span>
+   <span class="o">}</span>
+   
+   <span class="kt">void</span> <span class="nf">stopAnim</span><span class="o">(){</span>
+        <span class="n">avi</span><span class="o">.</span><span class="na">hide</span><span class="o">();</span>
+        <span class="c1">// or avi.smoothToHide();</span>
+   <span class="o">}</span>
+   
+</code></pre></div></div>
 
-<p>void stopAnim(){
-        avi.hide();
-        // or avi.smoothToHide();
-   }</p>
+<h2 id="custom-indicator">Custom Indicator</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
-## Custom Indicator
+<p>See <a href="https://github.com/81813780/AVLoadingIndicatorView/blob/master/app/src/main/java/com/wang/avi/sample/MyCustomIndicator.java">MyCustomIndicator</a> in Sample .</p>
 
-See [MyCustomIndicator](https://github.com/81813780/AVLoadingIndicatorView/blob/master/app/src/main/java/com/wang/avi/sample/MyCustomIndicator.java) in Sample .
+<h2 id="proguard">Proguard</h2>
 
-## Proguard
+<p>When using proguard need add rules:</p>
 
-When using proguard need add rules:
-
-</code></pre>
-</div>
-<p>-keep class com.wang.avi.** { *; }
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-keep class com.wang.avi.** { *; }
 -keep class com.wang.avi.indicators.** { *; }
-```</p>
+</code></pre></div></div>
 
 <p>Indicators is load from class names, proguard may change it (rename).</p>
 
@@ -741,50 +740,66 @@ When using proguard need add rules:
 
 <p>As seen above in the <strong>Demo</strong>, the indicators are as follows:</p>
 
-<p><strong>Row 1</strong>
- * <code class="highlighter-rouge">BallPulseIndicator</code>
- * <code class="highlighter-rouge">BallGridPulseIndicator</code>
- * <code class="highlighter-rouge">BallClipRotateIndicator</code>
- * <code class="highlighter-rouge">BallClipRotatePulseIndicator</code></p>
+<p><strong>Row 1</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">BallPulseIndicator</code></li>
+  <li><code class="highlighter-rouge">BallGridPulseIndicator</code></li>
+  <li><code class="highlighter-rouge">BallClipRotateIndicator</code></li>
+  <li><code class="highlighter-rouge">BallClipRotatePulseIndicator</code></li>
+</ul>
 
-<p><strong>Row 2</strong>
- * <code class="highlighter-rouge">SquareSpinIndicator</code>
- * <code class="highlighter-rouge">BallClipRotateMultipleIndicator</code>
- * <code class="highlighter-rouge">BallPulseRiseIndicator</code>
- * <code class="highlighter-rouge">BallRotateIndicator</code></p>
+<p><strong>Row 2</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">SquareSpinIndicator</code></li>
+  <li><code class="highlighter-rouge">BallClipRotateMultipleIndicator</code></li>
+  <li><code class="highlighter-rouge">BallPulseRiseIndicator</code></li>
+  <li><code class="highlighter-rouge">BallRotateIndicator</code></li>
+</ul>
 
-<p><strong>Row 3</strong>
- * <code class="highlighter-rouge">CubeTransitionIndicator</code>
- * <code class="highlighter-rouge">BallZigZagIndicator</code>
- * <code class="highlighter-rouge">BallZigZagDeflectIndicator</code>
- * <code class="highlighter-rouge">BallTrianglePathIndicator</code></p>
+<p><strong>Row 3</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">CubeTransitionIndicator</code></li>
+  <li><code class="highlighter-rouge">BallZigZagIndicator</code></li>
+  <li><code class="highlighter-rouge">BallZigZagDeflectIndicator</code></li>
+  <li><code class="highlighter-rouge">BallTrianglePathIndicator</code></li>
+</ul>
 
-<p><strong>Row 4</strong>
- * <code class="highlighter-rouge">BallScaleIndicator</code>
- * <code class="highlighter-rouge">LineScaleIndicator</code>
- * <code class="highlighter-rouge">LineScalePartyIndicator</code>
- * <code class="highlighter-rouge">BallScaleMultipleIndicator</code></p>
+<p><strong>Row 4</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">BallScaleIndicator</code></li>
+  <li><code class="highlighter-rouge">LineScaleIndicator</code></li>
+  <li><code class="highlighter-rouge">LineScalePartyIndicator</code></li>
+  <li><code class="highlighter-rouge">BallScaleMultipleIndicator</code></li>
+</ul>
 
-<p><strong>Row 5</strong>
- * <code class="highlighter-rouge">BallPulseSyncIndicator</code>
- * <code class="highlighter-rouge">BallBeatIndicator</code>
- * <code class="highlighter-rouge">LineScalePulseOutIndicator</code>
- * <code class="highlighter-rouge">LineScalePulseOutRapidIndicator</code></p>
+<p><strong>Row 5</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">BallPulseSyncIndicator</code></li>
+  <li><code class="highlighter-rouge">BallBeatIndicator</code></li>
+  <li><code class="highlighter-rouge">LineScalePulseOutIndicator</code></li>
+  <li><code class="highlighter-rouge">LineScalePulseOutRapidIndicator</code></li>
+</ul>
 
-<p><strong>Row 6</strong>
- * <code class="highlighter-rouge">BallScaleRippleIndicator</code>
- * <code class="highlighter-rouge">BallScaleRippleMultipleIndicator</code>
- * <code class="highlighter-rouge">BallSpinFadeLoaderIndicator</code>
- * <code class="highlighter-rouge">LineSpinFadeLoaderIndicator</code></p>
+<p><strong>Row 6</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">BallScaleRippleIndicator</code></li>
+  <li><code class="highlighter-rouge">BallScaleRippleMultipleIndicator</code></li>
+  <li><code class="highlighter-rouge">BallSpinFadeLoaderIndicator</code></li>
+  <li><code class="highlighter-rouge">LineSpinFadeLoaderIndicator</code></li>
+</ul>
 
-<p><strong>Row 7</strong>
- * <code class="highlighter-rouge">TriangleSkewSpinIndicator</code>
- * <code class="highlighter-rouge">PacmanIndicator</code>
- * <code class="highlighter-rouge">BallGridBeatIndicator</code>
- * <code class="highlighter-rouge">SemiCircleSpinIndicator</code></p>
+<p><strong>Row 7</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">TriangleSkewSpinIndicator</code></li>
+  <li><code class="highlighter-rouge">PacmanIndicator</code></li>
+  <li><code class="highlighter-rouge">BallGridBeatIndicator</code></li>
+  <li><code class="highlighter-rouge">SemiCircleSpinIndicator</code></li>
+</ul>
 
-<p><strong>Row 8</strong>
- * <code class="highlighter-rouge">com.wang.avi.sample.MyCustomIndicator</code></p>
+<p><strong>Row 8</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">com.wang.avi.sample.MyCustomIndicator</code></li>
+</ul>
 
 <h2 id="thanks">Thanks</h2>
 <ul>
@@ -796,14 +811,14 @@ When using proguard need add rules:
 
 <p>If you have a better idea or way on this project, please let me know, thanks :)</p>
 
-<p><a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#056;&#049;&#056;&#049;&#051;&#055;&#056;&#048;&#064;&#113;&#113;&#046;&#099;&#111;&#109;">Email</a></p>
+<p><a href="mailto:81813780@qq.com">Email</a></p>
 
 <p><a href="http://weibo.com/601265161">Weibo</a></p>
 
 <p><a href="http://hlong.xyz">My Blog</a></p>
 
 <h3 id="license">License</h3>
-<div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2015 jack wang
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright 2015 jack wang
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -816,8 +831,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
           <br>
@@ -849,17 +863,17 @@ limitations under the License.
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=AVLoadingIndicatorView&url=http://kmshack.github.io/AndroidUICollection/2016/09/27/AVLoadingIndicatorView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=AVLoadingIndicatorView&url=http://localhost:4000/AndroidUICollection/2016/09/27/AVLoadingIndicatorView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/09/27/AVLoadingIndicatorView/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/09/27/AVLoadingIndicatorView/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/09/27/AVLoadingIndicatorView/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/09/27/AVLoadingIndicatorView/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -890,7 +904,7 @@ limitations under the License.
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/09/27/AVLoadingIndicatorView/";
+    this.page.url = "http://localhost:4000/2016/09/27/AVLoadingIndicatorView/";
   };
 
   (function() {

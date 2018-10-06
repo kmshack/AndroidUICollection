@@ -7,27 +7,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>InstaCropper</title>
-  <meta name="description" content="InstaCropperA View for cropping images that is similar to Instagram’s crop. Also an Activity for cropping is included.alt tagUsageAdd the dependency:Groovyde...">
+  <meta name="description" content="InstaCropperA View for cropping images that is similar to Instagram’s crop. Also an Activity for cropping is included.alt tagUsageAdd the dependency:dependen...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2017/03/12/InstaCropper/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2017/03/12/InstaCropper/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="InstaCropperA View for cropping images that is similar to Instagram’s crop. Also an Activity for cropping is included.alt tagUsageAdd the dependency:Groovyde...">
+  <meta name="description" content="InstaCropperA View for cropping images that is similar to Instagram’s crop. Also an Activity for cropping is included.alt tagUsageAdd the dependency:dependen...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="InstaCropper">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="InstaCropperA View for cropping images that is similar to Instagram’s crop. Also an Activity for cropping is included.alt tagUsageAdd the dependency:Groovyde...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2017/03/12/InstaCropper/" />
+  <meta property="og:description" content="InstaCropperA View for cropping images that is similar to Instagram’s crop. Also an Activity for cropping is included.alt tagUsageAdd the dependency:dependen...">
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2017/03/12/InstaCropper/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="InstaCropperA View for cropping images that is similar to Instagram’s crop. Also an Activity for cropping is included.alt tagUsageAdd the dependency:Groovyde..." />
+  <meta name="twitter:description" content="InstaCropperA View for cropping images that is similar to Instagram’s crop. Also an Activity for cropping is included.alt tagUsageAdd the dependency:dependen..." />
 
   
   	<!-- Article specific OG data -->
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2017-03-12-InstaCropper.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2017-03-12-InstaCropper.gif">
         
 
         <header class="post__header">
@@ -654,18 +658,17 @@
 
 <h2 id="usage">Usage</h2>
 
-<p>Add the dependency:
-<code class="highlighter-rouge">Groovy
-dependencies {
+<p>Add the dependency:</p>
+<pre><code class="language-Groovy">dependencies {
 	compile 'com.yashoid:instacropper:1.0.6'
 }
-</code></p>
+</code></pre>
 
 <h2 id="how-to-use-this-library">How to use this library</h2>
 
 <p>Add <code class="highlighter-rouge">InstaCropperView</code> to your xml layout</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
 <span class="nt">&lt;FrameLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
     <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
     <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
@@ -678,57 +681,46 @@ dependencies {
         <span class="na">app:backgroundColor=</span><span class="s">"@android:color/white"</span> <span class="nt">/&gt;</span>
 
 <span class="nt">&lt;/FrameLayout&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<p>InstaCropperView receives only Uri but any Uri is possible.
-<code class="highlighter-rouge">java
-mInstaCropper.setImageUri(imageUri);
-</code></p>
+<p>InstaCropperView receives only Uri but any Uri is possible.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mInstaCropper</span><span class="o">.</span><span class="na">setImageUri</span><span class="o">(</span><span class="n">imageUri</span><span class="o">);</span>
+</code></pre></div></div>
 
-<p>You can specify three size ratios for the crop. The narrowest allowed, the widest allowed and the ideal ratio. The View will adjust its size by the ideal ratio.
-<code class="highlighter-rouge">java
-mInstaCropper.setRatios(defaultRatio, minimumRatio, maximumRatio);
-</code></p>
+<p>You can specify three size ratios for the crop. The narrowest allowed, the widest allowed and the ideal ratio. The View will adjust its size by the ideal ratio.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mInstaCropper</span><span class="o">.</span><span class="na">setRatios</span><span class="o">(</span><span class="n">defaultRatio</span><span class="o">,</span> <span class="n">minimumRatio</span><span class="o">,</span> <span class="n">maximumRatio</span><span class="o">);</span>
+</code></pre></div></div>
 
-<p>The cropped image is returned in a callback. You can specify MeasureSpec to adjust the width and height of the returned Bitmap.
-```java
-mInstaCropper.crop(
-        View.MeasureSpec.makeMeasureSpec(1024, View.MeasureSpec.AT_MOST),
-        View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
-        new InstaCropperView.BitmapCallback() {</p>
+<p>The cropped image is returned in a callback. You can specify MeasureSpec to adjust the width and height of the returned Bitmap.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mInstaCropper</span><span class="o">.</span><span class="na">crop</span><span class="o">(</span>
+        <span class="n">View</span><span class="o">.</span><span class="na">MeasureSpec</span><span class="o">.</span><span class="na">makeMeasureSpec</span><span class="o">(</span><span class="mi">1024</span><span class="o">,</span> <span class="n">View</span><span class="o">.</span><span class="na">MeasureSpec</span><span class="o">.</span><span class="na">AT_MOST</span><span class="o">),</span>
+        <span class="n">View</span><span class="o">.</span><span class="na">MeasureSpec</span><span class="o">.</span><span class="na">makeMeasureSpec</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">View</span><span class="o">.</span><span class="na">MeasureSpec</span><span class="o">.</span><span class="na">UNSPECIFIED</span><span class="o">),</span>
+        <span class="k">new</span> <span class="n">InstaCropperView</span><span class="o">.</span><span class="na">BitmapCallback</span><span class="o">()</span> <span class="o">{</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>        @Override
-        public void onBitmapReady(Bitmap bitmap) {
-            // Do something.
-        }
-        
-    } ); ```
-</code></pre>
-</div>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onBitmapReady</span><span class="o">(</span><span class="n">Bitmap</span> <span class="n">bitmap</span><span class="o">)</span> <span class="o">{</span>
+                <span class="c1">// Do something.</span>
+            <span class="o">}</span>
+            
+        <span class="o">}</span>
+<span class="o">);</span>
+</code></pre></div></div>
 
-<p>It is also possible to use the crop feature via an Intent call. There are various <code class="highlighter-rouge">getIntent()</code> methods defined on <code class="highlighter-rouge">InstaCropperActivity</code>. You will then receive the crop result in <code class="highlighter-rouge">data.getData()</code>.
-<code class="highlighter-rouge">java
-Intent intent = InstaCropperActivity.getIntent(context, srcUri, dstUri, maxWidth, outputQuality);
-startActivityForResult(intent, REQUEST_CROP);
-</code></p>
+<p>It is also possible to use the crop feature via an Intent call. There are various <code class="highlighter-rouge">getIntent()</code> methods defined on <code class="highlighter-rouge">InstaCropperActivity</code>. You will then receive the crop result in <code class="highlighter-rouge">data.getData()</code>.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="n">InstaCropperActivity</span><span class="o">.</span><span class="na">getIntent</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="n">srcUri</span><span class="o">,</span> <span class="n">dstUri</span><span class="o">,</span> <span class="n">maxWidth</span><span class="o">,</span> <span class="n">outputQuality</span><span class="o">);</span>
+<span class="n">startActivityForResult</span><span class="o">(</span><span class="n">intent</span><span class="o">,</span> <span class="n">REQUEST_CROP</span><span class="o">);</span>
+</code></pre></div></div>
 
-<p>You can modify the crop Activity’s apprearance by overriding the following resouce values:
-```xml</p>
-<string name="instacropper_title">Crop</string>
-<p>&lt;– Title of toolbar –&gt;</p>
-<string name="instacropper_crop">Crop</string>
-<p>&lt;– Title of crop action in toolbar –&gt;</p>
+<p>You can modify the crop Activity’s apprearance by overriding the following resouce values:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;string</span> <span class="na">name=</span><span class="s">"instacropper_title"</span><span class="nt">&gt;</span>Crop<span class="nt">&lt;/string&gt;</span> <span class="nt">&lt;--</span> <span class="err">Title</span> <span class="err">of</span> <span class="err">toolbar</span> <span class="err">--</span><span class="nt">&gt;</span>
+<span class="nt">&lt;string</span> <span class="na">name=</span><span class="s">"instacropper_crop"</span><span class="nt">&gt;</span>Crop<span class="nt">&lt;/string&gt;</span> <span class="nt">&lt;--</span> <span class="err">Title</span> <span class="err">of</span> <span class="err">crop</span> <span class="err">action</span> <span class="err">in</span> <span class="err">toolbar</span> <span class="err">--</span><span class="nt">&gt;</span>
 
-<color name="instacropper_cropper_background">@android:color/white</color>
-<p>&lt;– Background color of InstaCropperView in the activity –&gt;</p>
-<color name="instacropper_crop_color">@android:color/black</color>
-<p>&lt;– Color of crop action in toolbar –&gt;</p>
+<span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">"instacropper_cropper_background"</span><span class="nt">&gt;</span>@android:color/white<span class="nt">&lt;/color&gt;</span> <span class="nt">&lt;--</span> <span class="err">Background</span> <span class="err">color</span> <span class="err">of</span> <span class="err">InstaCropperView</span> <span class="err">in</span> <span class="err">the</span> <span class="err">activity</span> <span class="err">--</span><span class="nt">&gt;</span>
+<span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">"instacropper_crop_color"</span><span class="nt">&gt;</span>@android:color/black<span class="nt">&lt;/color&gt;</span> <span class="nt">&lt;--</span> <span class="err">Color</span> <span class="err">of</span> <span class="err">crop</span> <span class="err">action</span> <span class="err">in</span> <span class="err">toolbar</span> <span class="err">--</span><span class="nt">&gt;</span>
 
-<style name="InstaCropper" parent="android:style/Theme.DeviceDefault.Light"> <-- Style of crop Activity -->
-```
+<span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"InstaCropper"</span> <span class="na">parent=</span><span class="s">"android:style/Theme.DeviceDefault.Light"</span><span class="nt">/&gt;</span> <span class="nt">&lt;--</span> <span class="err">Style</span> <span class="err">of</span> <span class="err">crop</span> <span class="err">Activity</span> <span class="err">--</span><span class="nt">&gt;</span>
+</code></pre></div></div>
 
-</style>
 
           <br>
           <div class="post__tags">
@@ -755,17 +747,17 @@ startActivityForResult(intent, REQUEST_CROP);
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=InstaCropper&url=http://kmshack.github.io/AndroidUICollection/2017/03/12/InstaCropper/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=InstaCropper&url=http://localhost:4000/AndroidUICollection/2017/03/12/InstaCropper/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2017/03/12/InstaCropper/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2017/03/12/InstaCropper/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2017/03/12/InstaCropper/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2017/03/12/InstaCropper/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -796,7 +788,7 @@ startActivityForResult(intent, REQUEST_CROP);
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2017/03/12/InstaCropper/";
+    this.page.url = "http://localhost:4000/2017/03/12/InstaCropper/";
   };
 
   (function() {

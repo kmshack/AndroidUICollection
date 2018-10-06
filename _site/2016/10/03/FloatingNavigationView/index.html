@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/10/03/FloatingNavigationView/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/10/03/FloatingNavigationView/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="[License Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=true)minSdkVersion 21compileSdkVersion 27[maven-central](https://img.sh...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="Floating Navigation View">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="[License Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=true)minSdkVersion 21compileSdkVersion 27[maven-central](https://img.sh...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/10/03/FloatingNavigationView/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/10/03/FloatingNavigationView/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="[License Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=true)minSdkVersion 21compileSdkVersion 27[maven-central](https://img.sh..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-10-02-FloatingNavigationView.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-10-02-FloatingNavigationView.gif">
         
 
         <header class="post__header">
@@ -669,26 +673,24 @@
 
 <p>Include the library in your <code class="highlighter-rouge">build.gradle</code></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">dependencies</span><span class="o">{</span>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dependencies</span><span class="o">{</span>
     <span class="n">compile</span> <span class="s1">'com.github.andremion:floatingnavigationview:1.1.1'</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>or in your <code class="highlighter-rouge">pom.xml</code> if you are using Maven</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;dependency&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;dependency&gt;</span>
   <span class="nt">&lt;groupId&gt;</span>com.github.andremion<span class="nt">&lt;/groupId&gt;</span>
   <span class="nt">&lt;artifactId&gt;</span>floatingnavigationview<span class="nt">&lt;/artifactId&gt;</span>
   <span class="nt">&lt;version&gt;</span>1.1.1<span class="nt">&lt;/version&gt;</span>
   <span class="nt">&lt;type&gt;</span>aar<span class="nt">&lt;/type&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="usage">Usage</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
 <span class="nt">&lt;android.support.design.widget.CoordinatorLayout</span>
     <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
     <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
@@ -710,8 +712,7 @@
         <span class="na">app:menu=</span><span class="s">"@menu/menu_navigation_view"</span> <span class="nt">/&gt;</span>
 
 <span class="nt">&lt;/android.support.design.widget.CoordinatorLayout&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>###Custom attributes</p>
 
@@ -732,17 +733,15 @@
 
 <p>The recommended way to customize the background color is by using the <code class="highlighter-rouge">app:backgroundTint</code> attribute in <code class="highlighter-rouge">xml</code> or <code class="highlighter-rouge">setBackgroundTintList</code> in <code class="highlighter-rouge">Java</code></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;com.andremion.floatingnavigationview.FloatingNavigationView</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;com.andremion.floatingnavigationview.FloatingNavigationView</span>
         <span class="na">android:id=</span><span class="s">"@+id/floating_navigation_view"</span>
         <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
         <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
         <span class="na">app:backgroundTint=</span><span class="s">"#009688"</span> <span class="nt">/&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">mNavigationView</span><span class="o">.</span><span class="na">setBackgroundTintList</span><span class="o">(</span><span class="n">ColorStateList</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">parseColor</span><span class="o">(</span><span class="s">"#009688"</span><span class="o">)));</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mNavigationView</span><span class="o">.</span><span class="na">setBackgroundTintList</span><span class="o">(</span><span class="n">ColorStateList</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">parseColor</span><span class="o">(</span><span class="s">"#009688"</span><span class="o">)));</span>
+</code></pre></div></div>
 
 <p>See more at the <a href="https://github.com/andremion/Floating-Navigation-View/tree/master/sample">sample</a></p>
 
@@ -757,7 +756,7 @@ VectAlign is a developer’s tool which aligns two VectorDrawable “pathData”
 
 <h2 id="license">License</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2016 André Mion
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright 2016 André Mion
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -770,8 +769,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-</code></pre>
-</div>
+</code></pre></div></div>
 
           <br>
           <div class="post__tags">
@@ -802,17 +800,17 @@ limitations under the License.
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Floating Navigation View&url=http://kmshack.github.io/AndroidUICollection/2016/10/03/FloatingNavigationView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Floating Navigation View&url=http://localhost:4000/AndroidUICollection/2016/10/03/FloatingNavigationView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/10/03/FloatingNavigationView/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/10/03/FloatingNavigationView/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/10/03/FloatingNavigationView/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/10/03/FloatingNavigationView/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -843,7 +841,7 @@ limitations under the License.
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/10/03/FloatingNavigationView/";
+    this.page.url = "http://localhost:4000/2016/10/03/FloatingNavigationView/";
   };
 
   (function() {

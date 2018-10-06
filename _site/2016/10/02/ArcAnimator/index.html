@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/10/02/ArcAnimator/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/10/02/ArcAnimator/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="ArcAnimatorArcAnimator helps to create arc transition animation: 14+                                    ArcAnimator Demo      TransitionLoop Demo*      *Tran...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="ArcAnimator">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="ArcAnimatorArcAnimator helps to create arc transition animation: 14+                                    ArcAnimator Demo      TransitionLoop Demo*      *Tran...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/10/02/ArcAnimator/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/10/02/ArcAnimator/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="ArcAnimatorArcAnimator helps to create arc transition animation: 14+                                    ArcAnimator Demo      TransitionLoop Demo*      *Tran..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-10-02-ArcAnimator.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-10-02-ArcAnimator.gif">
         
 
         <header class="post__header">
@@ -676,23 +680,21 @@
 </ul>
 
 <h1 id="usage">Usage</h1>
-<p>Add the library to your project:
-<code class="highlighter-rouge">groovy
-  compile 'com.github.asyl.animation:arcanimator:1.0.0'
-</code></p>
+<p>Add the library to your project:</p>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">compile</span> <span class="s1">'com.github.asyl.animation:arcanimator:1.0.0'</span>
+</code></pre></div></div>
 
-<p>Then use it in your project code:
-```java
-  //set up clipView and coordinates where clipView will move
-  ArcAnimator.createArcAnimator(clipView, endX, endY, DEGREE, SIDE)
-                    .setDuration(500)
-                    .start();</p>
-
-<p>//or specify nestView for clipView. Animator will take center x,y coordinates of nestView
-  ArcAnimator.createArcAnimator(clipView, nestView, DEGREE, SIDE)
-                    .setDuration(500)
-                    .start();
-```</p>
+<p>Then use it in your project code:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">//set up clipView and coordinates where clipView will move</span>
+  <span class="n">ArcAnimator</span><span class="o">.</span><span class="na">createArcAnimator</span><span class="o">(</span><span class="n">clipView</span><span class="o">,</span> <span class="n">endX</span><span class="o">,</span> <span class="n">endY</span><span class="o">,</span> <span class="n">DEGREE</span><span class="o">,</span> <span class="n">SIDE</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">setDuration</span><span class="o">(</span><span class="mi">500</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">start</span><span class="o">();</span>
+  
+  <span class="c1">//or specify nestView for clipView. Animator will take center x,y coordinates of nestView</span>
+  <span class="n">ArcAnimator</span><span class="o">.</span><span class="na">createArcAnimator</span><span class="o">(</span><span class="n">clipView</span><span class="o">,</span> <span class="n">nestView</span><span class="o">,</span> <span class="n">DEGREE</span><span class="o">,</span> <span class="n">SIDE</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">setDuration</span><span class="o">(</span><span class="mi">500</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">start</span><span class="o">();</span>
+</code></pre></div></div>
 
 <h1 id="download">Download</h1>
 
@@ -700,14 +702,14 @@
 
 <p>To include this library in your project add to your build.gradle:</p>
 
-<pre><code class="language-gradle">	repositories {
-	    maven { url "https://jitpack.io" }
-	}
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="k">repositories</span> <span class="o">{</span>
+	    <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s2">"https://jitpack.io"</span> <span class="o">}</span>
+	<span class="o">}</span>
 	
-	dependencies {
-	    compile 'com.github.asyl:ArcAnimator:v1.0.0'
-	}
-</code></pre>
+	<span class="k">dependencies</span> <span class="o">{</span>
+	    <span class="n">compile</span> <span class="s1">'com.github.asyl:ArcAnimator:v1.0.0'</span>
+	<span class="o">}</span>
+</code></pre></div></div>
 
 <h1 id="dependency">Dependency</h1>
 <ul>
@@ -719,7 +721,7 @@
 
 <h2 id="license">License</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>The MIT License (MIT)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The MIT License (MIT)
 
 Copyright (c) 2015 Asylbek Isakov
 
@@ -740,8 +742,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-</code></pre>
-</div>
+</code></pre></div></div>
 
           <br>
           <div class="post__tags">
@@ -770,17 +771,17 @@ THE SOFTWARE.
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=ArcAnimator&url=http://kmshack.github.io/AndroidUICollection/2016/10/02/ArcAnimator/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=ArcAnimator&url=http://localhost:4000/AndroidUICollection/2016/10/02/ArcAnimator/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/10/02/ArcAnimator/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/10/02/ArcAnimator/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/10/02/ArcAnimator/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/10/02/ArcAnimator/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -811,7 +812,7 @@ THE SOFTWARE.
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/10/02/ArcAnimator/";
+    this.page.url = "http://localhost:4000/2016/10/02/ArcAnimator/";
   };
 
   (function() {

@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2018/09/26/ExpandingCollection/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2018/09/26/ExpandingCollection/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="headerExpandingCollection for Android[Twitter](https://img.shields.io/badge/Twitter-@Ramotion-blue.svg?style=flat)[Donate](https://img.shields.io/badge/Donat...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="ExpandingCollection">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="headerExpandingCollection for Android[Twitter](https://img.shields.io/badge/Twitter-@Ramotion-blue.svg?style=flat)[Donate](https://img.shields.io/badge/Donat...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2018/09/26/ExpandingCollection/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2018/09/26/ExpandingCollection/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="headerExpandingCollection for Android[Twitter](https://img.shields.io/badge/Twitter-@Ramotion-blue.svg?style=flat)[Donate](https://img.shields.io/badge/Donat..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2018-09-26-ExpandingCollection.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2018-09-26-ExpandingCollection.gif">
         
 
         <header class="post__header">
@@ -668,59 +672,59 @@ This project is maintained by Ramotion, Inc. We specialize in the designing and 
 <p>The <a href="https://store.ramotion.com/product/htc-one-a9-mockup?utm_source=gthb&amp;utm_medium=special&amp;utm_campaign=expanding-collection-android">Android mockup</a> available <a href="https://store.ramotion.com?utm_source=gthb&amp;utm_medium=special&amp;utm_campaign=expanding-collection-android">here</a>.</p>
 
 <h2 id="requirements">Requirements</h2>
-<p>​
-- Android 4.0 IceCreamSandwich (API lvl 14) or greater
-- Your favorite IDE</p>
+<p>​</p>
+<ul>
+  <li>Android 4.0 IceCreamSandwich (API lvl 14) or greater</li>
+  <li>Your favorite IDE</li>
+</ul>
 
 <h2 id="installation">Installation</h2>
 <p>​
 maven repo:</p>
 
-<p>Gradle:
-<code class="highlighter-rouge">groovy
-'com.ramotion.expandingcollection:expanding-collection:0.9.0'
-</code>
-SBT:
-<code class="highlighter-rouge">scala
-libraryDependencies += "com.ramotion.expandingcollection" % "expanding-collection" % "0.9.0"
-</code>
-Maven:
-```xml</p>
-<dependency>
-	<groupid>com.ramotion.expandingcollection</groupid>
-	<artifactid>expanding-collection</artifactid>
-	<version>0.9.0</version>
-</dependency>
-<div class="highlighter-rouge"><pre class="highlight"><code>
-## Basic usage
- ​
-1. Add a background switcher element `ECBackgroundSwitcherView` and a main pager element `ECPagerView` to your layout. `ECPagerView` should always have `match_parent` width and `wrap_content` height. You can adjust the vertical position yourself using **alignment/gravity** or **top margin**. `ECBackgroundSwitcherView` is the dynamic background switcher, so you probably want it to be as big as its parent.
+<p>Gradle:</p>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'com.ramotion.expandingcollection:expanding-collection:0.9.0'</span>
+</code></pre></div></div>
+<p>SBT:</p>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">libraryDependencies</span> <span class="o">+=</span> <span class="s">"com.ramotion.expandingcollection"</span> <span class="o">%</span> <span class="s">"expanding-collection"</span> <span class="o">%</span> <span class="s">"0.9.0"</span>
+</code></pre></div></div>
+<p>Maven:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;dependency&gt;</span>
+	<span class="nt">&lt;groupId&gt;</span>com.ramotion.expandingcollection<span class="nt">&lt;/groupId&gt;</span>
+	<span class="nt">&lt;artifactId&gt;</span>expanding-collection<span class="nt">&lt;/artifactId&gt;</span>
+	<span class="nt">&lt;version&gt;</span>0.9.0<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div></div>
 
-```xml
-&lt;RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"&gt;
+<h2 id="basic-usage">Basic usage</h2>
+<p>​</p>
+<ol>
+  <li>Add a background switcher element <code class="highlighter-rouge">ECBackgroundSwitcherView</code> and a main pager element <code class="highlighter-rouge">ECPagerView</code> to your layout. <code class="highlighter-rouge">ECPagerView</code> should always have <code class="highlighter-rouge">match_parent</code> width and <code class="highlighter-rouge">wrap_content</code> height. You can adjust the vertical position yourself using <strong>alignment/gravity</strong> or <strong>top margin</strong>. <code class="highlighter-rouge">ECBackgroundSwitcherView</code> is the dynamic background switcher, so you probably want it to be as big as its parent.</li>
+</ol>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;RelativeLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span><span class="nt">&gt;</span>
     
-    &lt;com.ramotion.expandingcollection.ECBackgroundSwitcherView
-        android:id="@+id/ec_bg_switcher_element"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" /&gt;
+    <span class="nt">&lt;com.ramotion.expandingcollection.ECBackgroundSwitcherView</span>
+        <span class="na">android:id=</span><span class="s">"@+id/ec_bg_switcher_element"</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"match_parent"</span> <span class="nt">/&gt;</span>
         
-    &lt;com.ramotion.expandingcollection.ECPagerView
-        android:id="@+id/ec_pager_element"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"/&gt;
+    <span class="nt">&lt;com.ramotion.expandingcollection.ECPagerView</span>
+        <span class="na">android:id=</span><span class="s">"@+id/ec_pager_element"</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_centerInParent=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
         
-&lt;/RelativeLayout&gt;
-</code></pre>
-</div>
+<span class="nt">&lt;/RelativeLayout&gt;</span>
+</code></pre></div></div>
 
 <ol>
   <li>Tune <code class="highlighter-rouge">ECPagerView</code>: setup size of card in collapsed state and height of header in expanded state.</li>
 </ol>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;com.ramotion.expandingcollection.ECPagerView</span> <span class="na">xmlns:ec=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;com.ramotion.expandingcollection.ECPagerView</span> <span class="na">xmlns:ec=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
     <span class="na">android:id=</span><span class="s">"@+id/ec_pager_element"</span>
     <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
     <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
@@ -728,14 +732,13 @@ Maven:
     <span class="na">ec:cardHeaderHeightExpanded=</span><span class="s">"150dp"</span>
     <span class="na">ec:cardHeight=</span><span class="s">"200dp"</span>
     <span class="na">ec:cardWidth=</span><span class="s">"250dp"</span> <span class="nt">/&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ol>
   <li>Expanded card contains two parts: a header part with a background (initially visible when card is collapsed) and a ListView element as content (visible only when card is expanded), so you need an xml layout for the list items.</li>
 </ol>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;FrameLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;FrameLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
     <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
     <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span><span class="nt">&gt;</span>
     
@@ -748,22 +751,21 @@ Maven:
         <span class="na">android:textAlignment=</span><span class="s">"center"</span> <span class="nt">/&gt;</span>
         
 <span class="nt">&lt;/FrameLayout&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ol>
   <li>Also, you need to implement a custom list adapter for the list items by extending the parametrized <code class="highlighter-rouge">com.ramotion.expandingcollection.ECCardContentListItemAdapter.java</code> class,  where <code class="highlighter-rouge">T</code> is type of datasource object for list items inside the card. In the example below, <code class="highlighter-rouge">T</code> is just a string object. It’s a pretty straightforward implementation with a common view holder pattern.</li>
 </ol>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CardListItemAdapter</span> <span class="kd">extends</span> <span class="n">ECCardContentListItemAdapter</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CardListItemAdapter</span> <span class="kd">extends</span> <span class="n">ECCardContentListItemAdapter</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="o">{</span>
 
-    <span class="kd">public</span> <span class="n">CardListItemAdapter</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="nd">@NonNull</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">objects</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nf">CardListItemAdapter</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="nd">@NonNull</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">objects</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">list_item</span><span class="o">,</span> <span class="n">objects</span><span class="o">);</span>
     <span class="o">}</span>
 
     <span class="nd">@NonNull</span>
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">View</span> <span class="n">getView</span><span class="o">(</span><span class="kt">int</span> <span class="n">position</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">View</span> <span class="n">convertView</span><span class="o">,</span> <span class="nd">@NonNull</span> <span class="n">ViewGroup</span> <span class="n">parent</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">View</span> <span class="nf">getView</span><span class="o">(</span><span class="kt">int</span> <span class="n">position</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">View</span> <span class="n">convertView</span><span class="o">,</span> <span class="nd">@NonNull</span> <span class="n">ViewGroup</span> <span class="n">parent</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">ViewHolder</span> <span class="n">viewHolder</span><span class="o">;</span>
         <span class="n">View</span> <span class="n">rowView</span> <span class="o">=</span> <span class="n">convertView</span><span class="o">;</span>
 
@@ -789,13 +791,12 @@ Maven:
     <span class="o">}</span>
 
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <ol>
   <li>Your data class must implement the <code class="highlighter-rouge">com.ramotion.expandingcollection.ECCardData.java</code> interface where <code class="highlighter-rouge">T</code> is type of datasource object for list items inside the card.</li>
 </ol>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CardDataImpl</span> <span class="kd">implements</span> <span class="n">ECCardData</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CardDataImpl</span> <span class="kd">implements</span> <span class="n">ECCardData</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="o">{</span>
 
     <span class="kd">private</span> <span class="n">String</span> <span class="n">cardTitle</span><span class="o">;</span>
     <span class="kd">private</span> <span class="n">Integer</span> <span class="n">mainBackgroundResource</span><span class="o">;</span>
@@ -803,33 +804,32 @@ Maven:
     <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">listItems</span><span class="o">;</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">Integer</span> <span class="n">getMainBackgroundResource</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">Integer</span> <span class="nf">getMainBackgroundResource</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">mainBackgroundResource</span><span class="o">;</span>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">Integer</span> <span class="n">getHeadBackgroundResource</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">Integer</span> <span class="nf">getHeadBackgroundResource</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">headBackgroundResource</span><span class="o">;</span>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">getListItems</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">getListItems</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">listItems</span><span class="o">;</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ol>
   <li>Almost done The last thing we need to do is provide our dataset to a pager element through a pager adapter. It’s just an implementation of the abstract class <code class="highlighter-rouge">com.ramotion.expandingcollection.ECPagerViewAdapter.java</code> with one abstract method, so it can be easily implemented inside your activity.</li>
 </ol>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span> <span class="kd">extends</span> <span class="n">Activity</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span> <span class="kd">extends</span> <span class="n">Activity</span> <span class="o">{</span>
 
    <span class="kd">private</span> <span class="n">ECPagerView</span> <span class="n">ecPagerView</span><span class="o">;</span>
 
    <span class="nd">@Override</span>
-   <span class="kd">protected</span> <span class="kt">void</span> <span class="n">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+   <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_main</span><span class="o">);</span>
 
@@ -842,7 +842,7 @@ Maven:
        <span class="c1">// Implement pager adapter and attach it to pager view</span>
        <span class="n">ecPagerView</span><span class="o">.</span><span class="na">setPagerViewAdapter</span><span class="o">(</span><span class="k">new</span> <span class="n">ECPagerViewAdapter</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">(),</span> <span class="n">dataset</span><span class="o">)</span> <span class="o">{</span>
            <span class="nd">@Override</span>
-           <span class="kd">public</span> <span class="kt">void</span> <span class="n">instantiateCard</span><span class="o">(</span><span class="n">LayoutInflater</span> <span class="n">inflaterService</span><span class="o">,</span> <span class="n">ViewGroup</span> <span class="n">head</span><span class="o">,</span> <span class="n">ListView</span> <span class="n">list</span><span class="o">,</span> <span class="n">ECCardData</span> <span class="n">data</span><span class="o">)</span> <span class="o">{</span>
+           <span class="kd">public</span> <span class="kt">void</span> <span class="nf">instantiateCard</span><span class="o">(</span><span class="n">LayoutInflater</span> <span class="n">inflaterService</span><span class="o">,</span> <span class="n">ViewGroup</span> <span class="n">head</span><span class="o">,</span> <span class="n">ListView</span> <span class="n">list</span><span class="o">,</span> <span class="n">ECCardData</span> <span class="n">data</span><span class="o">)</span> <span class="o">{</span>
                <span class="c1">// Data object for current card</span>
                <span class="n">CardDataImpl</span> <span class="n">cardData</span> <span class="o">=</span> <span class="o">(</span><span class="n">CardDataImpl</span><span class="o">)</span> <span class="n">data</span><span class="o">;</span>
 
@@ -862,7 +862,7 @@ Maven:
                <span class="c1">// Card toggling by click on head element</span>
                <span class="n">head</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
                    <span class="nd">@Override</span>
-                   <span class="kd">public</span> <span class="kt">void</span> <span class="n">onClick</span><span class="o">(</span><span class="kd">final</span> <span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+                   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="kd">final</span> <span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
                        <span class="n">ecPagerView</span><span class="o">.</span><span class="na">toggle</span><span class="o">();</span>
                    <span class="o">}</span>
                <span class="o">});</span>
@@ -876,14 +876,13 @@ Maven:
 
    <span class="c1">// Card collapse on back pressed</span>
    <span class="nd">@Override</span>
-   <span class="kd">public</span> <span class="kt">void</span> <span class="n">onBackPressed</span><span class="o">()</span> <span class="o">{</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onBackPressed</span><span class="o">()</span> <span class="o">{</span>
        <span class="k">if</span> <span class="o">(</span><span class="n">ecPagerView</span><span class="o">.</span><span class="na">collapse</span><span class="o">())</span>
            <span class="kd">super</span><span class="o">.</span><span class="na">onBackPressed</span><span class="o">();</span>
    <span class="o">}</span>
 
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>You can find this and other, more complex, examples in this repository ​</p>
 
@@ -943,17 +942,17 @@ See <a href="./LICENSE.md">LICENSE</a> for details.</p>
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=ExpandingCollection&url=http://kmshack.github.io/AndroidUICollection/2018/09/26/ExpandingCollection/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=ExpandingCollection&url=http://localhost:4000/AndroidUICollection/2018/09/26/ExpandingCollection/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2018/09/26/ExpandingCollection/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2018/09/26/ExpandingCollection/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2018/09/26/ExpandingCollection/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2018/09/26/ExpandingCollection/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -984,7 +983,7 @@ See <a href="./LICENSE.md">LICENSE</a> for details.</p>
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2018/09/26/ExpandingCollection/";
+    this.page.url = "http://localhost:4000/2018/09/26/ExpandingCollection/";
   };
 
   (function() {

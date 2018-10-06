@@ -7,27 +7,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>RecyclerTreeView</title>
-  <meta name="description" content="RecyclerTreeView[](https://jitpack.io/v/TellH/RecyclerTreeView.svg)&lt;/br&gt;TreeView implement in Android with RecyclerView..Effect[](https://raw.githubuse...">
+  <meta name="description" content="RecyclerTreeView[](https://jitpack.io/v/TellH/RecyclerTreeView.svg)&lt;/br&gt;TreeView implement in Android with RecyclerView..EffectUsageSetuproot build.gra...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/10/07/RecyclerTreeView/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/10/07/RecyclerTreeView/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="RecyclerTreeView[](https://jitpack.io/v/TellH/RecyclerTreeView.svg)&lt;/br&gt;TreeView implement in Android with RecyclerView..Effect[](https://raw.githubuse...">
+  <meta name="description" content="RecyclerTreeView[](https://jitpack.io/v/TellH/RecyclerTreeView.svg)&lt;/br&gt;TreeView implement in Android with RecyclerView..EffectUsageSetuproot build.gra...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="RecyclerTreeView">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="RecyclerTreeView[](https://jitpack.io/v/TellH/RecyclerTreeView.svg)&lt;/br&gt;TreeView implement in Android with RecyclerView..Effect[](https://raw.githubuse...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/10/07/RecyclerTreeView/" />
+  <meta property="og:description" content="RecyclerTreeView[](https://jitpack.io/v/TellH/RecyclerTreeView.svg)&lt;/br&gt;TreeView implement in Android with RecyclerView..EffectUsageSetuproot build.gra...">
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/10/07/RecyclerTreeView/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="RecyclerTreeView[](https://jitpack.io/v/TellH/RecyclerTreeView.svg)&lt;/br&gt;TreeView implement in Android with RecyclerView..Effect[](https://raw.githubuse..." />
+  <meta name="twitter:description" content="RecyclerTreeView[](https://jitpack.io/v/TellH/RecyclerTreeView.svg)&lt;/br&gt;TreeView implement in Android with RecyclerView..EffectUsageSetuproot build.gra..." />
 
   
   	<!-- Article specific OG data -->
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-10-07-RecyclerTreeView.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-10-07-RecyclerTreeView.gif">
         
 
         <header class="post__header">
@@ -652,25 +656,23 @@
 TreeView implement in Android with RecyclerView..</p>
 
 <h2 id="effect">Effect</h2>
-<p>[](https://raw.githubusercontent.com/TellH/RecyclerTreeView/master/raw/effect.gif)</p>
+<p><a href="https://raw.githubusercontent.com/TellH/RecyclerTreeView/master/raw/effect.gif"></a></p>
 
 <h2 id="usage">Usage</h2>
-<p>### Setup
-root build.gradle
-<code class="highlighter-rouge">groovy
-allprojects {
-    repositories {
-        jcenter()
-        maven { url "https://jitpack.io" }
-    }
-}
-</code>
-app build.gradle
-<code class="highlighter-rouge">groovy
-dependencies {
-    compile 'com.github.TellH:RecyclerTreeView:1.2.0'
-}
-</code></p>
+<h3 id="setup">Setup</h3>
+<p>root build.gradle</p>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">allprojects</span> <span class="o">{</span>
+    <span class="n">repositories</span> <span class="o">{</span>
+        <span class="n">jcenter</span><span class="o">()</span>
+        <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s2">"https://jitpack.io"</span> <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>app build.gradle</p>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
+    <span class="n">compile</span> <span class="s1">'com.github.TellH:RecyclerTreeView:1.2.0'</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
 <h3 id="quick-start">Quick Start</h3>
 
@@ -678,60 +680,58 @@ dependencies {
   <li>Create a Java bean class and  implement the LayoutItemType, to attach item layout id to it.</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dir</span> <span class="kd">implements</span> <span class="n">LayoutItemType</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dir</span> <span class="kd">implements</span> <span class="n">LayoutItemType</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="n">String</span> <span class="n">dirName</span><span class="o">;</span>
 
-    <span class="kd">public</span> <span class="n">Dir</span><span class="o">(</span><span class="n">String</span> <span class="n">dirName</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nf">Dir</span><span class="o">(</span><span class="n">String</span> <span class="n">dirName</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">this</span><span class="o">.</span><span class="na">dirName</span> <span class="o">=</span> <span class="n">dirName</span><span class="o">;</span>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="n">getLayoutId</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getLayoutId</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">item_dir</span><span class="o">;</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>Create a ViewBinder to bind view with the data bean. As you see, <code class="highlighter-rouge">provideViewHolder(View itemView)</code> corresponds for <code class="highlighter-rouge">onCreateViewHolder</code> in RecyclerView, and <code class="highlighter-rouge">bindView</code> corresponds for <code class="highlighter-rouge">onBindViewHolder</code> in RecyclerView.</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">FileNodeBinder</span> <span class="kd">extends</span> <span class="n">TreeViewBinder</span><span class="o">&lt;</span><span class="n">FileNodeBinder</span><span class="o">.</span><span class="na">ViewHolder</span><span class="o">&gt;</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">FileNodeBinder</span> <span class="kd">extends</span> <span class="n">TreeViewBinder</span><span class="o">&lt;</span><span class="n">FileNodeBinder</span><span class="o">.</span><span class="na">ViewHolder</span><span class="o">&gt;</span> <span class="o">{</span>
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">ViewHolder</span> <span class="n">provideViewHolder</span><span class="o">(</span><span class="n">View</span> <span class="n">itemView</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="n">ViewHolder</span><span class="o">(</span><span class="n">itemView</span><span class="o">);</span>
+    <span class="kd">public</span> <span class="n">ViewHolder</span> <span class="nf">provideViewHolder</span><span class="o">(</span><span class="n">View</span> <span class="n">itemView</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">ViewHolder</span><span class="o">(</span><span class="n">itemView</span><span class="o">);</span>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="n">bindView</span><span class="o">(</span><span class="n">ViewHolder</span> <span class="n">holder</span><span class="o">,</span> <span class="kt">int</span> <span class="n">position</span><span class="o">,</span> <span class="n">TreeNode</span> <span class="n">node</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">bindView</span><span class="o">(</span><span class="n">ViewHolder</span> <span class="n">holder</span><span class="o">,</span> <span class="kt">int</span> <span class="n">position</span><span class="o">,</span> <span class="n">TreeNode</span> <span class="n">node</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">File</span> <span class="n">fileNode</span> <span class="o">=</span> <span class="o">(</span><span class="n">File</span><span class="o">)</span> <span class="n">node</span><span class="o">.</span><span class="na">getContent</span><span class="o">();</span>
         <span class="n">holder</span><span class="o">.</span><span class="na">tvName</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">fileNode</span><span class="o">.</span><span class="na">fileName</span><span class="o">);</span>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="n">getLayoutId</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getLayoutId</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">item_file</span><span class="o">;</span>
     <span class="o">}</span>
 
     <span class="kd">public</span> <span class="kd">class</span> <span class="nc">ViewHolder</span> <span class="kd">extends</span> <span class="n">TreeViewBinder</span><span class="o">.</span><span class="na">ViewHolder</span> <span class="o">{</span>
         <span class="kd">public</span> <span class="n">TextView</span> <span class="n">tvName</span><span class="o">;</span>
 
-        <span class="kd">public</span> <span class="n">ViewHolder</span><span class="o">(</span><span class="n">View</span> <span class="n">rootView</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">public</span> <span class="nf">ViewHolder</span><span class="o">(</span><span class="n">View</span> <span class="n">rootView</span><span class="o">)</span> <span class="o">{</span>
             <span class="kd">super</span><span class="o">(</span><span class="n">rootView</span><span class="o">);</span>
             <span class="k">this</span><span class="o">.</span><span class="na">tvName</span> <span class="o">=</span> <span class="o">(</span><span class="n">TextView</span><span class="o">)</span> <span class="n">rootView</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">tv_name</span><span class="o">);</span>
         <span class="o">}</span>
 
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>Add TreeNode to TreeViewAdapter.</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>        <span class="n">List</span><span class="o">&lt;</span><span class="n">TreeNode</span><span class="o">&gt;</span> <span class="n">nodes</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="n">List</span><span class="o">&lt;</span><span class="n">TreeNode</span><span class="o">&gt;</span> <span class="n">nodes</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
         <span class="n">TreeNode</span><span class="o">&lt;</span><span class="n">Dir</span><span class="o">&gt;</span> <span class="n">app</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeNode</span><span class="o">&lt;&gt;(</span><span class="k">new</span> <span class="n">Dir</span><span class="o">(</span><span class="s">"app"</span><span class="o">));</span>
         <span class="n">nodes</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">app</span><span class="o">);</span>
         <span class="n">app</span><span class="o">.</span><span class="na">addChild</span><span class="o">(</span>
@@ -766,16 +766,15 @@ dependencies {
         <span class="o">);</span>
         <span class="n">TreeViewAdapter</span> <span class="n">adapter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeViewAdapter</span><span class="o">(</span><span class="n">nodes</span><span class="o">,</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="k">new</span> <span class="n">FileNodeBinder</span><span class="o">(),</span> <span class="k">new</span> <span class="n">DirectoryNodeBinder</span><span class="o">()));</span>
         <span class="n">rv</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(</span><span class="n">adapter</span><span class="o">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>set TreeNodeListener to TreeViewAdapter</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>        <span class="n">adapter</span><span class="o">.</span><span class="na">setOnTreeNodeListener</span><span class="o">(</span><span class="k">new</span> <span class="n">TreeViewAdapter</span><span class="o">.</span><span class="na">OnTreeNodeListener</span><span class="o">()</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="n">adapter</span><span class="o">.</span><span class="na">setOnTreeNodeListener</span><span class="o">(</span><span class="k">new</span> <span class="n">TreeViewAdapter</span><span class="o">.</span><span class="na">OnTreeNodeListener</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">boolean</span> <span class="n">onClick</span><span class="o">(</span><span class="n">TreeNode</span> <span class="n">node</span><span class="o">,</span> <span class="n">RecyclerView</span><span class="o">.</span><span class="na">ViewHolder</span> <span class="n">holder</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">TreeNode</span> <span class="n">node</span><span class="o">,</span> <span class="n">RecyclerView</span><span class="o">.</span><span class="na">ViewHolder</span> <span class="n">holder</span><span class="o">)</span> <span class="o">{</span>
                 <span class="k">if</span> <span class="o">(</span><span class="n">node</span><span class="o">.</span><span class="na">isLeaf</span><span class="o">())</span> <span class="o">{</span>
                     <span class="c1">//Update and toggle the node.</span>
                     <span class="n">onToggle</span><span class="o">(</span><span class="n">node</span><span class="o">.</span><span class="na">isExpand</span><span class="o">(),</span> <span class="n">holder</span><span class="o">);</span>
@@ -784,7 +783,7 @@ dependencies {
             <span class="o">}</span>
 
             <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="n">onToggle</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">isExpand</span><span class="o">,</span> <span class="n">RecyclerView</span><span class="o">.</span><span class="na">ViewHolder</span> <span class="n">holder</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onToggle</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">isExpand</span><span class="o">,</span> <span class="n">RecyclerView</span><span class="o">.</span><span class="na">ViewHolder</span> <span class="n">holder</span><span class="o">)</span> <span class="o">{</span>
                 <span class="n">DirectoryNodeBinder</span><span class="o">.</span><span class="na">ViewHolder</span> <span class="n">dirViewHolder</span> <span class="o">=</span> <span class="o">(</span><span class="n">DirectoryNodeBinder</span><span class="o">.</span><span class="na">ViewHolder</span><span class="o">)</span> <span class="n">holder</span><span class="o">;</span>
                 <span class="kd">final</span> <span class="n">ImageView</span> <span class="n">ivArrow</span> <span class="o">=</span> <span class="n">dirViewHolder</span><span class="o">.</span><span class="na">getIvArrow</span><span class="o">();</span>
                 <span class="kt">int</span> <span class="n">rotateDegree</span> <span class="o">=</span> <span class="n">isExpand</span> <span class="o">?</span> <span class="mi">90</span> <span class="o">:</span> <span class="o">-</span><span class="mi">90</span><span class="o">;</span>
@@ -792,8 +791,7 @@ dependencies {
                         <span class="o">.</span><span class="na">start</span><span class="o">();</span>
             <span class="o">}</span>
         <span class="o">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Please check out the Demo and source code for more information. If you have any question, feel free to raise an issue. Thanks a lot</p>
 
@@ -824,17 +822,17 @@ dependencies {
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=RecyclerTreeView&url=http://kmshack.github.io/AndroidUICollection/2016/10/07/RecyclerTreeView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=RecyclerTreeView&url=http://localhost:4000/AndroidUICollection/2016/10/07/RecyclerTreeView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/10/07/RecyclerTreeView/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/10/07/RecyclerTreeView/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/10/07/RecyclerTreeView/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/10/07/RecyclerTreeView/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -865,7 +863,7 @@ dependencies {
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/10/07/RecyclerTreeView/";
+    this.page.url = "http://localhost:4000/2016/10/07/RecyclerTreeView/";
   };
 
   (function() {

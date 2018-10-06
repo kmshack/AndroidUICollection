@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/09/30/RoadRunner/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/09/30/RoadRunner/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="Road Runner[Download](https://api.bintray.com/packages/glomadrian/maven/RoadRunner/images/download.svg) [Hex.pm](https://img.shields.io/hexpm/l/plug.svg) [Pl...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="Road Runner">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="Road Runner[Download](https://api.bintray.com/packages/glomadrian/maven/RoadRunner/images/download.svg) [Hex.pm](https://img.shields.io/hexpm/l/plug.svg) [Pl...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/09/30/RoadRunner/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/09/30/RoadRunner/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="Road Runner[Download](https://api.bintray.com/packages/glomadrian/maven/RoadRunner/images/download.svg) [Hex.pm](https://img.shields.io/hexpm/l/plug.svg) [Pl..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-09-30-RoadRunner.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-09-30-RoadRunner.gif">
         
 
         <header class="post__header">
@@ -726,15 +730,15 @@ width="512"
 #### Two way
 
 ``` xml
-<com.github.glomadrian.roadrunner.indeterminateroadrunner android:id="@+id/two_way" android:layout_width="match_parent" android:layout_height="match_parent" lib:movement_loop_time="4000" lib:movement_direction="counter_clockwise" lib:path_color="@color/two_way" lib:line_size="0.05" lib:stroke_width="3sp" lib:left_line_animation_time="2800" lib:left_line_max_size="0.5" lib:left_line_animation_start_delay="2500" lib:right_line_animation_start_delay="2000" lib:right_line_max_size="0.5" lib:right_line_animation_time="2000" lib:path_data="@string/github" lib:path_original_width="@integer/github_original_width" lib:path_original_height="@integer/github_original_height" lib:path_animation_type="twoWay" />
+<com.github.glomadrian.roadrunner.IndeterminateRoadRunner android:id="@+id/two_way" android:layout_width="match_parent" android:layout_height="match_parent" lib:movement_loop_time="4000" lib:movement_direction="counter_clockwise" lib:path_color="@color/two_way" lib:line_size="0.05" lib:stroke_width="3sp" lib:left_line_animation_time="2800" lib:left_line_max_size="0.5" lib:left_line_animation_start_delay="2500" lib:right_line_animation_start_delay="2000" lib:right_line_max_size="0.5" lib:right_line_animation_time="2000" lib:path_data="@string/github" lib:path_original_width="@integer/github_original_width" lib:path_original_height="@integer/github_original_height" lib:path_animation_type="twoWay" />
 ```
 #### Material
 ``` xml
-<com.github.glomadrian.roadrunner.indeterminateroadrunner android:id="@+id/material" android:layout_width="match_parent" android:layout_height="match_parent" lib:movement_direction="counter_clockwise" lib:path_color="#FFFFFF" lib:stroke_width="3sp" lib:path_data="@string/twitter" lib:path_original_width="@integer/twitter_original_width" lib:path_original_height="@integer/twitter_original_height" lib:path_animation_type="material" />
+<com.github.glomadrian.roadrunner.IndeterminateRoadRunner android:id="@+id/material" android:layout_width="match_parent" android:layout_height="match_parent" lib:movement_direction="counter_clockwise" lib:path_color="#FFFFFF" lib:stroke_width="3sp" lib:path_data="@string/twitter" lib:path_original_width="@integer/twitter_original_width" lib:path_original_height="@integer/twitter_original_height" lib:path_animation_type="material" />
 ```
 #### Determinate Two way
 ``` xml
-<com.github.glomadrian.roadrunner.determinateroadrunner android:id="@+id/determinate" android:layout_width="match_parent" android:layout_height="match_parent" lib:min="0" lib:max="100" lib:movement_direction="counter_clockwise" lib:path_color="@color/colorAccent" lib:stroke_width="2sp" lib:movement_loop_time="1500" lib:path_data="@string/clip" lib:path_original_width="@integer/clip_original_width" lib:path_original_height="@integer/clip_original_height" lib:animate_on_start="false" />
+<com.github.glomadrian.roadrunner.DeterminateRoadRunner android:id="@+id/determinate" android:layout_width="match_parent" android:layout_height="match_parent" lib:min="0" lib:max="100" lib:movement_direction="counter_clockwise" lib:path_color="@color/colorAccent" lib:stroke_width="2sp" lib:movement_loop_time="1500" lib:path_data="@string/clip" lib:path_original_width="@integer/clip_original_width" lib:path_original_height="@integer/clip_original_height" lib:animate_on_start="false" />
 ```
 
 ## Custom attributes
@@ -849,17 +853,17 @@ License
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Road Runner&url=http://kmshack.github.io/AndroidUICollection/2016/09/30/RoadRunner/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Road Runner&url=http://localhost:4000/AndroidUICollection/2016/09/30/RoadRunner/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/09/30/RoadRunner/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/09/30/RoadRunner/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/09/30/RoadRunner/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/09/30/RoadRunner/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -890,7 +894,7 @@ License
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/09/30/RoadRunner/";
+    this.page.url = "http://localhost:4000/2016/09/30/RoadRunner/";
   };
 
   (function() {

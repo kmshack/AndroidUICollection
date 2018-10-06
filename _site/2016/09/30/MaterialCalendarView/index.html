@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/09/30/MaterialCalendarView/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/09/30/MaterialCalendarView/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="Material Calendar View[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Material%20Calendar%20View-blue.svg?style=flat) [](https://jitpack.io/...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="Material Calendar View">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="Material Calendar View[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Material%20Calendar%20View-blue.svg?style=flat) [](https://jitpack.io/...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/09/30/MaterialCalendarView/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/09/30/MaterialCalendarView/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="Material Calendar View[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Material%20Calendar%20View-blue.svg?style=flat) [](https://jitpack.io/..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-09-30-MaterialCalendarView.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-09-30-MaterialCalendarView.gif">
         
 
         <header class="post__header">
@@ -661,22 +665,20 @@ and feel, rather than 100% parity with the platform’s implementation.</p>
 
 <p>Step 1. Add the JitPack repository to your build file</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">allprojects</span> <span class="o">{</span>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">allprojects</span> <span class="o">{</span>
   <span class="n">repositories</span> <span class="o">{</span>
     <span class="o">...</span>
     <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s1">'https://jitpack.io'</span> <span class="o">}</span>
   <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Step 2. Add the dependency</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
   <span class="n">implementation</span> <span class="s1">'com.github.prolificinteractive:material-calendarview:${version}'</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="usage">Usage</h2>
 
@@ -689,7 +691,7 @@ and feel, rather than 100% parity with the platform’s implementation.</p>
 
 <p>Example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;com.prolificinteractive.materialcalendarview.MaterialCalendarView</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;com.prolificinteractive.materialcalendarview.MaterialCalendarView</span>
     <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
     <span class="na">android:id=</span><span class="s">"@+id/calendarView"</span>
     <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
@@ -697,8 +699,7 @@ and feel, rather than 100% parity with the platform’s implementation.</p>
     <span class="na">app:mcv_showOtherDates=</span><span class="s">"all"</span>
     <span class="na">app:mcv_selectionColor=</span><span class="s">"#00F"</span>
     <span class="nt">/&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="documentation">Documentation</h2>
 
@@ -744,15 +745,14 @@ Please refer to the installation section for more details.</p>
   <li>
     <p>Breaking Change: <code class="highlighter-rouge">setFirstDayOfWeek</code>, <code class="highlighter-rouge">setMin/MaxDate</code>, and <code class="highlighter-rouge">setCalendarDisplayMode</code> are moved to a <code class="highlighter-rouge">State</code> object. This was necessary because it was unclear that these were not simple setters–individually, they were side effecting and triggered full adapter/date range recalculations. Typical usage of the view involves setting all these invariants up front during <code class="highlighter-rouge">onCreate</code> and it was unknown to the user that setting all 4 of these would create a lot of waste. Not to mention certain things were side effecting–some would reset the current day or selected date. As a result, the same 4 methods called in a different order could result in a different state, which is bad.</p>
 
-    <p>For most cases you will simply need to replace setting those invariants with: 
-<code class="highlighter-rouge">java
-mcv.state().edit()
-  .setFirstDayOfWeek(Calendar.WEDNESDAY)
-  .setMinimumDate(CalendarDay.from(2016, 4, 3))
-  .setMaximumDate(CalendarDay.from(2016, 5, 12))
-  .setCalendarDisplayMode(CalendarMode.WEEKS)
-  .commit();
-</code></p>
+    <p>For most cases you will simply need to replace setting those invariants with:</p>
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mcv</span><span class="o">.</span><span class="na">state</span><span class="o">().</span><span class="na">edit</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">setFirstDayOfWeek</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">WEDNESDAY</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">setMinimumDate</span><span class="o">(</span><span class="n">CalendarDay</span><span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="mi">2016</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">3</span><span class="o">))</span>
+  <span class="o">.</span><span class="na">setMaximumDate</span><span class="o">(</span><span class="n">CalendarDay</span><span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="mi">2016</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">12</span><span class="o">))</span>
+  <span class="o">.</span><span class="na">setCalendarDisplayMode</span><span class="o">(</span><span class="n">CalendarMode</span><span class="o">.</span><span class="na">WEEKS</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">commit</span><span class="o">();</span>
+</code></pre></div>    </div>
 
     <p><code class="highlighter-rouge">mcv.state().edit()</code> will retain previously set values; <code class="highlighter-rouge">mcv.newState()</code> will create a new state using default values. Calling <code class="highlighter-rouge">commit</code> will trigger the rebuild of adapters and date ranges. It is recommended these state changes occur as the first modification to MCV (before configuring anything else like current date or selected date); we make no guarantee those modifications will be retained when the state is modified.</p>
 
@@ -808,17 +808,17 @@ mcv.state().edit()
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Material Calendar View&url=http://kmshack.github.io/AndroidUICollection/2016/09/30/MaterialCalendarView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Material Calendar View&url=http://localhost:4000/AndroidUICollection/2016/09/30/MaterialCalendarView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/09/30/MaterialCalendarView/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/09/30/MaterialCalendarView/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/09/30/MaterialCalendarView/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/09/30/MaterialCalendarView/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -849,7 +849,7 @@ mcv.state().edit()
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/09/30/MaterialCalendarView/";
+    this.page.url = "http://localhost:4000/2016/09/30/MaterialCalendarView/";
   };
 
   (function() {

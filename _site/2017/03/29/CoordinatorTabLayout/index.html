@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2017/03/29/CoordinatorTabLayout/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2017/03/29/CoordinatorTabLayout/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="CoordinatorTabLayout[License](https://img.shields.io/badge/license-Apache%202.0-green.svg)[Download](https://api.bintray.com/packages/hugeterry/CoordinatorTa...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="CoordinatorTabLayout">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="CoordinatorTabLayout[License](https://img.shields.io/badge/license-Apache%202.0-green.svg)[Download](https://api.bintray.com/packages/hugeterry/CoordinatorTa...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2017/03/29/CoordinatorTabLayout/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2017/03/29/CoordinatorTabLayout/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="CoordinatorTabLayout[License](https://img.shields.io/badge/license-Apache%202.0-green.svg)[Download](https://api.bintray.com/packages/hugeterry/CoordinatorTa..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2017-03-29-CoordinatorTabLayout.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2017-03-29-CoordinatorTabLayout.gif">
         
 
         <header class="post__header">
@@ -663,47 +667,51 @@ Inherited to the CoordinatorLayout, in the following components used CollapsingT
 
 <h3 id="step-1">Step 1</h3>
 
-<p>Add the following to your build.gradle:
-<code class="highlighter-rouge">groovy
-dependencies {
-    compile 'cn.hugeterry.coordinatortablayout:coordinatortablayout:1.2.2'
-}
-</code></p>
+<p>Add the following to your build.gradle:</p>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
+    <span class="n">compile</span> <span class="s1">'cn.hugeterry.coordinatortablayout:coordinatortablayout:1.2.2'</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
 <h3 id="step-2">Step 2</h3>
 
-<p>Config in xml:
-```xml</p>
-<cn.hugeterry.coordinatortablayout.coordinatortablayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/coordinatortablayout" android:layout_width="match_parent" android:layout_height="match_parent">
+<p>Config in xml:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;cn.hugeterry.coordinatortablayout.CoordinatorTabLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+    <span class="na">android:id=</span><span class="s">"@+id/coordinatortablayout"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span><span class="nt">&gt;</span>
 
-    <android.support.v4.view.viewpager android:id="@+id/vp" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-</cn.hugeterry.coordinatortablayout.coordinatortablayout>
-<div class="highlighter-rouge"><pre class="highlight"><code>
+    <span class="nt">&lt;android.support.v4.view.ViewPager</span>
+        <span class="na">android:id=</span><span class="s">"@+id/vp"</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+        <span class="na">app:layout_behavior=</span><span class="s">"@string/appbar_scrolling_view_behavior"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/cn.hugeterry.coordinatortablayout.CoordinatorTabLayout&gt;</span>
+</code></pre></div></div>
 
-### Step 3
+<h3 id="step-3">Step 3</h3>
 
-[show](showUI/show3.gif)&lt;/br&gt;
+<p><a href="showUI/show3.gif">show</a>&lt;/br&gt;
 Use it in your own code:&lt;/br&gt;
-1.`setTitle(String title)`:Set the CoordinatorTabLayout's title.&lt;/br&gt;
-2.`setupWithViewPager(ViewPager viewPager)`:To link the two together.&lt;/br&gt;
-3.`setImageArray(int[] imageArray)`:Set the image array of the header according to the number of tabs and pass it to the control.&lt;/br&gt;
-```java
-        //Add the fragment to the viewpager
-        initFragments();
-        initViewPager();
-        //Image array
-        mImageArray = new int[]{
-                R.mipmap.bg_android,
-                R.mipmap.bg_ios,
-                R.mipmap.bg_js,
-                R.mipmap.bg_other};
+1.<code class="highlighter-rouge">setTitle(String title)</code>:Set the CoordinatorTabLayout’s title.&lt;/br&gt;
+2.<code class="highlighter-rouge">setupWithViewPager(ViewPager viewPager)</code>:To link the two together.&lt;/br&gt;
+3.<code class="highlighter-rouge">setImageArray(int[] imageArray)</code>:Set the image array of the header according to the number of tabs and pass it to the control.&lt;/br&gt;</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="c1">//Add the fragment to the viewpager</span>
+        <span class="n">initFragments</span><span class="o">();</span>
+        <span class="n">initViewPager</span><span class="o">();</span>
+        <span class="c1">//Image array</span>
+        <span class="n">mImageArray</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]{</span>
+                <span class="n">R</span><span class="o">.</span><span class="na">mipmap</span><span class="o">.</span><span class="na">bg_android</span><span class="o">,</span>
+                <span class="n">R</span><span class="o">.</span><span class="na">mipmap</span><span class="o">.</span><span class="na">bg_ios</span><span class="o">,</span>
+                <span class="n">R</span><span class="o">.</span><span class="na">mipmap</span><span class="o">.</span><span class="na">bg_js</span><span class="o">,</span>
+                <span class="n">R</span><span class="o">.</span><span class="na">mipmap</span><span class="o">.</span><span class="na">bg_other</span><span class="o">};</span>
 
-        mCoordinatorTabLayout = (CoordinatorTabLayout) findViewById(R.id.coordinatortablayout);
-        mCoordinatorTabLayout.setTitle("Demo")
-                .setImageArray(mImageArray)
-                .setupWithViewPager(mViewPager);
-</code></pre>
-</div>
+        <span class="n">mCoordinatorTabLayout</span> <span class="o">=</span> <span class="o">(</span><span class="n">CoordinatorTabLayout</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">coordinatortablayout</span><span class="o">);</span>
+        <span class="n">mCoordinatorTabLayout</span><span class="o">.</span><span class="na">setTitle</span><span class="o">(</span><span class="s">"Demo"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">setImageArray</span><span class="o">(</span><span class="n">mImageArray</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">setupWithViewPager</span><span class="o">(</span><span class="n">mViewPager</span><span class="o">);</span>
+</code></pre></div></div>
 
 <p>Finish, enjoy it.</p>
 
@@ -713,107 +721,99 @@ Use it in your own code:&lt;/br&gt;
 
 <p><a href="showUI/show2.gif">show</a></p>
 
-<p><code class="highlighter-rouge">setImageArray(int[] imageArray, int[] colorArray)</code>:Set the color array to use for the content scrim for each tab.
-<code class="highlighter-rouge">java
-        mColorArray = new int[]{
-                android.R.color.holo_blue_light,
-                android.R.color.holo_red_light,
-                android.R.color.holo_orange_light,
-                android.R.color.holo_green_light};
-        mCoordinatorTabLayout.setImageArray(mImageArray, mColorArray);
-</code></p>
+<p><code class="highlighter-rouge">setImageArray(int[] imageArray, int[] colorArray)</code>:Set the color array to use for the content scrim for each tab.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="n">mColorArray</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]{</span>
+                <span class="n">android</span><span class="o">.</span><span class="na">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">holo_blue_light</span><span class="o">,</span>
+                <span class="n">android</span><span class="o">.</span><span class="na">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">holo_red_light</span><span class="o">,</span>
+                <span class="n">android</span><span class="o">.</span><span class="na">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">holo_orange_light</span><span class="o">,</span>
+                <span class="n">android</span><span class="o">.</span><span class="na">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">holo_green_light</span><span class="o">};</span>
+        <span class="n">mCoordinatorTabLayout</span><span class="o">.</span><span class="na">setImageArray</span><span class="o">(</span><span class="n">mImageArray</span><span class="o">,</span> <span class="n">mColorArray</span><span class="o">);</span>
+</code></pre></div></div>
 
 <h3 id="set-translucent-status-bar">Set translucent status bar</h3>
 
 <p><a href="showUI/show4.png">show</a></p>
 
-<p><code class="highlighter-rouge">setTranslucentStatusBar(Activity activity)</code>:Set translucent status bar,Support android4.4 and above.
-<code class="highlighter-rouge">java
-mCoordinatorTabLayout.setTranslucentStatusBar(activity);
-</code></p>
+<p><code class="highlighter-rouge">setTranslucentStatusBar(Activity activity)</code>:Set translucent status bar,Support android4.4 and above.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mCoordinatorTabLayout</span><span class="o">.</span><span class="na">setTranslucentStatusBar</span><span class="o">(</span><span class="n">activity</span><span class="o">);</span>
+</code></pre></div></div>
 
 <h3 id="set-translucent-navigation-bar">Set translucent navigation bar</h3>
 
 <p><a href="showUI/show5.jpg">show</a></p>
 
-<p><code class="highlighter-rouge">setTranslucentNavigationBar(Activity activity)</code>:Set translucent navigation bar,Support android4.4 and above.
-<code class="highlighter-rouge">java
-mCoordinatorTabLayout.setTranslucentNavigationBar(activity);
-</code></p>
+<p><code class="highlighter-rouge">setTranslucentNavigationBar(Activity activity)</code>:Set translucent navigation bar,Support android4.4 and above.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mCoordinatorTabLayout</span><span class="o">.</span><span class="na">setTranslucentNavigationBar</span><span class="o">(</span><span class="n">activity</span><span class="o">);</span>
+</code></pre></div></div>
 
 <h3 id="set-back-enable">Set back enable</h3>
-<p><code class="highlighter-rouge">setBackEnable(Boolean canBack)</code>:To enable the Up button for an activity that has a parent activity.
-<code class="highlighter-rouge">java
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        ...
-        mCoordinatorTabLayout.setBackEnable(true);
-        ...
-    }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            finish();
-        }
-        return super.onOptionsItemSelected(item);
-    }
-</code></p>
+<p><code class="highlighter-rouge">setBackEnable(Boolean canBack)</code>:To enable the Up button for an activity that has a parent activity.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="o">...</span>
+        <span class="n">mCoordinatorTabLayout</span><span class="o">.</span><span class="na">setBackEnable</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+        <span class="o">...</span>
+    <span class="o">}</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onOptionsItemSelected</span><span class="o">(</span><span class="n">MenuItem</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">item</span><span class="o">.</span><span class="na">getItemId</span><span class="o">()</span> <span class="o">==</span> <span class="n">android</span><span class="o">.</span><span class="na">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">home</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">finish</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="kd">super</span><span class="o">.</span><span class="na">onOptionsItemSelected</span><span class="o">(</span><span class="n">item</span><span class="o">);</span>
+    <span class="o">}</span>
+</code></pre></div></div>
 
 <h3 id="load-header-images-from-network">Load header images from network</h3>
 
-<p><code class="highlighter-rouge">setLoadHeaderImagesListener(LoadHeaderImagesListener loadHeaderImagesListener)</code>:Set the listener that gets the header images.
-<code class="highlighter-rouge">java
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        ...
-        mCoordinatorTabLayout.setTitle("Demo")
-                .setBackEnable(true)
-                .setContentScrimColorArray(mColorArray)
-                .setLoadHeaderImagesListener(new LoadHeaderImagesListener() {
-                    @Override
-                    public void loadHeaderImages(ImageView imageView, TabLayout.Tab tab) {
-                        switch (tab.getPosition()) {
-                            case 0:
-                                //load header images
-                                break;
-                            ...
-                        }
-                    }
-                })
-                .setupWithViewPager(mViewPager);
-    }
-</code>
-You also can load header images using glide/picasso，<a href="https://github.com/hugeterry/CoordinatorTabLayout/blob/master/sample/src/main/java/cn/hugeterry/coordinatortablayoutdemo/LoadHeaderImageFromNetworkActivity.java">Sample</a></p>
+<p><code class="highlighter-rouge">setLoadHeaderImagesListener(LoadHeaderImagesListener loadHeaderImagesListener)</code>:Set the listener that gets the header images.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="o">...</span>
+        <span class="n">mCoordinatorTabLayout</span><span class="o">.</span><span class="na">setTitle</span><span class="o">(</span><span class="s">"Demo"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">setBackEnable</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">setContentScrimColorArray</span><span class="o">(</span><span class="n">mColorArray</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">setLoadHeaderImagesListener</span><span class="o">(</span><span class="k">new</span> <span class="n">LoadHeaderImagesListener</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="nd">@Override</span>
+                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">loadHeaderImages</span><span class="o">(</span><span class="n">ImageView</span> <span class="n">imageView</span><span class="o">,</span> <span class="n">TabLayout</span><span class="o">.</span><span class="na">Tab</span> <span class="n">tab</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="k">switch</span> <span class="o">(</span><span class="n">tab</span><span class="o">.</span><span class="na">getPosition</span><span class="o">())</span> <span class="o">{</span>
+                            <span class="k">case</span> <span class="mi">0</span><span class="o">:</span>
+                                <span class="c1">//load header images</span>
+                                <span class="k">break</span><span class="o">;</span>
+                            <span class="o">...</span>
+                        <span class="o">}</span>
+                    <span class="o">}</span>
+                <span class="o">})</span>
+                <span class="o">.</span><span class="na">setupWithViewPager</span><span class="o">(</span><span class="n">mViewPager</span><span class="o">);</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+<p>You also can load header images using glide/picasso，<a href="https://github.com/hugeterry/CoordinatorTabLayout/blob/master/sample/src/main/java/cn/hugeterry/coordinatortablayoutdemo/LoadHeaderImageFromNetworkActivity.java">Sample</a></p>
 
 <h3 id="set-the-behavior-mode-for-the-tabs-in-this-layout">Set the behavior mode for the Tabs in this layout</h3>
 
-<p><code class="highlighter-rouge">setTabMode(@TabLayout.Mode int mode)</code>:The valid input options are:MODE_FIXED,MODE_SCROLLABLE
-<code class="highlighter-rouge">java
-mCoordinatorTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
-</code></p>
+<p><code class="highlighter-rouge">setTabMode(@TabLayout.Mode int mode)</code>:The valid input options are:MODE_FIXED,MODE_SCROLLABLE</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mCoordinatorTabLayout</span><span class="o">.</span><span class="na">setTabMode</span><span class="o">(</span><span class="n">TabLayout</span><span class="o">.</span><span class="na">MODE_SCROLLABLE</span><span class="o">);</span>
+</code></pre></div></div>
 
 <h3 id="add-a-coordinatortablayoutontabselectedlistener">Add a CoordinatorTabLayout.OnTabSelectedListener</h3>
 
-<p><code class="highlighter-rouge">addOnTabSelectedListener(OnTabSelectedListener onTabSelectedListener)</code>:Add a CoordinatorTabLayout.OnTabSelectedListener that will be invoked when tab selection changes.
-```java
-mCoordinatorTabLayout.addOnTabSelectedListener(new OnTabSelectedListener() {
-                         @Override
-                         public void onTabSelected(TabLayout.Tab tab) {</p>
+<p><code class="highlighter-rouge">addOnTabSelectedListener(OnTabSelectedListener onTabSelectedListener)</code>:Add a CoordinatorTabLayout.OnTabSelectedListener that will be invoked when tab selection changes.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mCoordinatorTabLayout</span><span class="o">.</span><span class="na">addOnTabSelectedListener</span><span class="o">(</span><span class="k">new</span> <span class="n">OnTabSelectedListener</span><span class="o">()</span> <span class="o">{</span>
+                         <span class="nd">@Override</span>
+                         <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onTabSelected</span><span class="o">(</span><span class="n">TabLayout</span><span class="o">.</span><span class="na">Tab</span> <span class="n">tab</span><span class="o">)</span> <span class="o">{</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>                     }
+                         <span class="o">}</span>
 
-                     @Override
-                     public void onTabUnselected(TabLayout.Tab tab) {
+                         <span class="nd">@Override</span>
+                         <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onTabUnselected</span><span class="o">(</span><span class="n">TabLayout</span><span class="o">.</span><span class="na">Tab</span> <span class="n">tab</span><span class="o">)</span> <span class="o">{</span>
 
-                     }
+                         <span class="o">}</span>
 
-                     @Override
-                     public void onTabReselected(TabLayout.Tab tab) {
+                         <span class="nd">@Override</span>
+                         <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onTabReselected</span><span class="o">(</span><span class="n">TabLayout</span><span class="o">.</span><span class="na">Tab</span> <span class="n">tab</span><span class="o">)</span> <span class="o">{</span>
 
-                     }
-                 }) ```
-</code></pre>
-</div>
+                         <span class="o">}</span>
+                     <span class="o">})</span>
+</code></pre></div></div>
 
 <h3 id="gets-the-child-control">Gets the child control</h3>
 <p><code class="highlighter-rouge">getActionBar()</code>:get the ActionBar<br />
@@ -833,7 +833,7 @@ mCoordinatorTabLayout.addOnTabSelectedListener(new OnTabSelectedListener() {
 <p><a href="http://fir.im/ctlayout">http://fir.im/ctlayout</a></p>
 
 <h2 id="license">LICENSE</h2>
-<div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2017 HugeTerry.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright 2017 HugeTerry.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -845,8 +845,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
           <br>
@@ -876,17 +875,17 @@ limitations under the License.
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=CoordinatorTabLayout&url=http://kmshack.github.io/AndroidUICollection/2017/03/29/CoordinatorTabLayout/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=CoordinatorTabLayout&url=http://localhost:4000/AndroidUICollection/2017/03/29/CoordinatorTabLayout/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2017/03/29/CoordinatorTabLayout/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2017/03/29/CoordinatorTabLayout/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2017/03/29/CoordinatorTabLayout/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2017/03/29/CoordinatorTabLayout/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -917,7 +916,7 @@ limitations under the License.
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2017/03/29/CoordinatorTabLayout/";
+    this.page.url = "http://localhost:4000/2017/03/29/CoordinatorTabLayout/";
   };
 
   (function() {

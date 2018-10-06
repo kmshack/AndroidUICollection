@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/10/01/Slidr/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/10/01/Slidr/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="Slidr[Maven Central](https://maven-badges.herokuapp.com/maven-central/com.r0adkll/slidableactivity/badge.svg?style=flat) [Android Arsenal](https://img.shield...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="Slidr">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="Slidr[Maven Central](https://maven-badges.herokuapp.com/maven-central/com.r0adkll/slidableactivity/badge.svg?style=flat) [Android Arsenal](https://img.shield...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/10/01/Slidr/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/10/01/Slidr/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="Slidr[Maven Central](https://maven-badges.herokuapp.com/maven-central/com.r0adkll/slidableactivity/badge.svg?style=flat) [Android Arsenal](https://img.shield..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-10-01-Slidr.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-10-01-Slidr.gif">
         
 
         <header class="post__header">
@@ -660,10 +664,10 @@
 
 <p>An example usage:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleActivity</span> <span class="kd">extends</span> <span class="o">&lt;</span><span class="n">Activity</span><span class="o">|</span><span class="n">FragmentActivity</span><span class="o">|</span><span class="n">ActionBarActivity</span><span class="o">&gt;</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleActivity</span> <span class="kd">extends</span> <span class="o">&lt;</span><span class="n">Activity</span><span class="o">|</span><span class="n">FragmentActivity</span><span class="o">|</span><span class="n">ActionBarActivity</span><span class="o">&gt;</span> <span class="o">{</span>
 
 	<span class="nd">@Override</span>
-	<span class="kd">public</span> <span class="kt">void</span> <span class="n">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">){</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">){</span>
 		<span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
 		<span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_example</span><span class="o">);</span>
 		<span class="kt">int</span> <span class="n">primary</span> <span class="o">=</span> <span class="n">getResources</span><span class="o">().</span><span class="na">getColor</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">primaryDark</span><span class="o">);</span>
@@ -672,45 +676,42 @@
 	<span class="o">}</span>
 
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>or</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleActivity</span> <span class="kd">extends</span> <span class="o">&lt;</span><span class="n">Activity</span><span class="o">|</span><span class="n">FragmentActivity</span><span class="o">|</span><span class="n">ActionBarActivity</span><span class="o">&gt;</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleActivity</span> <span class="kd">extends</span> <span class="o">&lt;</span><span class="n">Activity</span><span class="o">|</span><span class="n">FragmentActivity</span><span class="o">|</span><span class="n">ActionBarActivity</span><span class="o">&gt;</span> <span class="o">{</span>
 
 	<span class="nd">@Override</span>
-	<span class="kd">public</span> <span class="kt">void</span> <span class="n">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">){</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">){</span>
 		<span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
 		<span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_example</span><span class="o">);</span>
         	<span class="n">Slidr</span><span class="o">.</span><span class="na">attach</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
 	<span class="o">}</span>
 
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="fragments">Fragments</h2>
 <p>The activity must extend FragmentActivity.
 Set the background to the main container of the activity in the xml <code class="highlighter-rouge">background="@android:color/transparent"</code>.
 Add the following code to the Fragment:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// This interface is needed to see if the fragment</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// This interface is needed to see if the fragment</span>
 <span class="c1">// is resuming after creation (Slidr to be attached) or</span>
 <span class="c1">// simply from the background (app was paused before).</span>
 <span class="n">SlidrInterface</span> <span class="n">slidrInterface</span><span class="o">;</span>
 
 <span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onResume</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onResume</span><span class="o">()</span> <span class="o">{</span>
     <span class="kd">super</span><span class="o">.</span><span class="na">onResume</span><span class="o">();</span>
     <span class="k">if</span><span class="o">(</span><span class="n">slidrInterface</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
         <span class="n">slidrInterface</span> <span class="o">=</span> <span class="n">Slidr</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="n">getView</span><span class="o">().</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">content_container</span><span class="o">),</span> <span class="k">new</span> <span class="n">SlidrConfig</span><span class="o">.</span><span class="na">Builder</span><span class="o">().</span><span class="na">position</span><span class="o">(</span><span class="n">SlidrPosition</span><span class="o">.</span><span class="na">LEFT</span><span class="o">).</span><span class="na">build</span><span class="o">());</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>In the xml of the fragment’s view, the root view must be a FrameLayout with the same background set to the activity before. Add a child viewgroup to it with the id content_container. E.g.:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;FrameLayout</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;FrameLayout</span>
     <span class="na">android:id=</span><span class="s">"@+id/main_container"</span>
     <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
     <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span>
@@ -728,21 +729,19 @@ Add the following code to the Fragment:</p>
 
     <span class="nt">&lt;/android.support.design.widget.CoordinatorLayout&gt;</span>
 <span class="nt">&lt;/FrameLayout&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>Remember: you have to add new Fragments with:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">getSupportFragmentManager</span><span class="o">().</span><span class="na">beginTransaction</span><span class="o">()</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">getSupportFragmentManager</span><span class="o">().</span><span class="na">beginTransaction</span><span class="o">()</span>
 	<span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fragment_container</span><span class="o">,</span> <span class="n">YourFragmentClass</span><span class="o">.</span><span class="na">newInstance</span><span class="o">())</span>
 	<span class="o">.</span><span class="na">commit</span><span class="o">();</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>where fragment_container is the id of a FrameLayout inside the activity’s xml.</p>
 
 <h2 id="configuring">Configuring</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">SlidrConfig</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SlidrConfig</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SlidrConfig</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SlidrConfig</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
 	<span class="o">.</span><span class="na">primaryColor</span><span class="o">(</span><span class="n">getResources</span><span class="o">().</span><span class="na">getColor</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">primary</span><span class="o">)</span>
 	<span class="o">.</span><span class="na">secondaryColor</span><span class="o">(</span><span class="n">getResources</span><span class="o">().</span><span class="na">getColor</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">secondary</span><span class="o">)</span>
 	<span class="o">.</span><span class="na">position</span><span class="o">(</span><span class="n">SlidrPosition</span><span class="o">.</span><span class="na">LEFT</span><span class="o">|</span><span class="n">RIGHT</span><span class="o">|</span><span class="n">TOP</span><span class="o">|</span><span class="n">BOTTOM</span><span class="o">|</span><span class="n">VERTICAL</span><span class="o">|</span><span class="n">HORIZONTAL</span><span class="o">)</span>
@@ -759,30 +758,27 @@ Add the following code to the Fragment:</p>
 
 <span class="n">Slidr</span><span class="o">.</span><span class="na">attach</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">config</span><span class="o">);</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <hr />
 
 <p><code class="highlighter-rouge">Slidr.attach(...)</code> will return a <code class="highlighter-rouge">SlidrInterface</code> which gives you access to two methods:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">SlidrInterface</span><span class="o">.</span><span class="na">lock</span><span class="o">();</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SlidrInterface</span><span class="o">.</span><span class="na">lock</span><span class="o">();</span>
 <span class="n">SlidrInterface</span><span class="o">.</span><span class="na">unlock</span><span class="o">();</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>These methods lock or unlock the slidable touch interface.</p>
 
 <p>The theme that you use for your sliding activity must have these attributes set:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"android:windowIsTranslucent"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>  
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"android:windowIsTranslucent"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>  
 <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"android:windowBackground"</span><span class="nt">&gt;</span>@android:color/transparent<span class="nt">&lt;/item&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Then in the layout of your activity you must give it a background like this;</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;LinearLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;LinearLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
     <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span>
     <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
     <span class="na">android:orientation=</span><span class="s">"vertical"</span>
@@ -791,32 +787,28 @@ Add the following code to the Fragment:</p>
     <span class="na">android:background=</span><span class="s">"@color/background_material_light"</span><span class="nt">&gt;</span>
 
     ...
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="including-in-your-project">Including in your project</h2>
 
 <p>Include this line in your gradle build file:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">implementation</span> <span class="s1">'com.r0adkll:slidableactivity:2.0.6'</span>
-</code></pre>
-</div>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">implementation</span> <span class="s1">'com.r0adkll:slidableactivity:2.0.6'</span>
+</code></pre></div></div>
 
 <p>&lt;–<br />
 For Snapshots, include these lines in your gradle files:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">repositories</span> <span class="o">{</span>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">repositories</span> <span class="o">{</span>
     <span class="n">jcenter</span><span class="o">()</span>
     <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s2">"https://oss.sonatype.org/content/repositories/snapshots/"</span> <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">dependencies</span><span class="o">{</span>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dependencies</span><span class="o">{</span>
 	<span class="n">implementation</span> <span class="s1">'com.r0adkll:slidableactivity:2.0.7-SNAPSHOT'</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>–&gt;</p>
 
 <h2 id="author">Author</h2>
@@ -827,7 +819,7 @@ For Snapshots, include these lines in your gradle files:</p>
 
 <h2 id="license">License</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Copyright (c) 2014 Drew Heavner
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright (c) 2014 Drew Heavner
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -840,8 +832,7 @@ software distributed under the License is distributed on an
 "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
 either express or implied. See the License for the specific
 language governing permissions and limitations under the License.
-</code></pre>
-</div>
+</code></pre></div></div>
 
           <br>
           <div class="post__tags">
@@ -868,17 +859,17 @@ language governing permissions and limitations under the License.
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Slidr&url=http://kmshack.github.io/AndroidUICollection/2016/10/01/Slidr/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Slidr&url=http://localhost:4000/AndroidUICollection/2016/10/01/Slidr/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/10/01/Slidr/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/10/01/Slidr/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/10/01/Slidr/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/10/01/Slidr/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -909,7 +900,7 @@ language governing permissions and limitations under the License.
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/10/01/Slidr/";
+    this.page.url = "http://localhost:4000/2016/10/01/Slidr/";
   };
 
   (function() {

@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/11/14/CircularBarPager/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/11/14/CircularBarPager/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="CircularBarPager [Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-CircularBarPager-brightgreen.svg?style=flat)A Lollipop material design styl...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="CircularBarPager">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="CircularBarPager [Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-CircularBarPager-brightgreen.svg?style=flat)A Lollipop material design styl...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/11/14/CircularBarPager/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/11/14/CircularBarPager/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="CircularBarPager [Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-CircularBarPager-brightgreen.svg?style=flat)A Lollipop material design styl..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-11-14-CircularBarPager.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-11-14-CircularBarPager.gif">
         
 
         <header class="post__header">
@@ -647,36 +651,34 @@
               <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/AndroidUICollection/images/posts/2016-11-14-CircularBarPager.gif)"></div>
             </div>
           <br>
-          <h1 id="circularbarpager-android-arsenalhttpsimgshieldsiobadgeandroid20arsenal-circularbarpager-brightgreensvgstyleflathttpsandroid-arsenalcomdetails11426">CircularBarPager <a href="https://android-arsenal.com/details/1/1426">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-CircularBarPager-brightgreen.svg?style=flat)</a></h1>
+          <h1 id="circularbarpager-android-arsenalhttpsimgshieldsiobadgeandroid20arsenal-circularbarpager-brightgreensvgstyleflat">CircularBarPager <a href="https://android-arsenal.com/details/1/1426">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-CircularBarPager-brightgreen.svg?style=flat)</a></h1>
 
 <p>A Lollipop material design styled CircularBarPager library (API 10+).</p>
 
 <p>To include in your project, add this to your build.gradle file:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>   //CircularBarPager
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   //CircularBarPager
    compile 'com.github.orangegangsters:library:1.3.4@aar'
    //CirclePageIndicator
    compile 'com.viewpagerindicator:library:2.4.1@aar'
    //Animations and progress value easing
    compile 'com.daimajia.easing:library:2.1@aar'
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<p>Starting from version 1.3.10, we are moving to a new package name (we skipped from 1.3.4 to 1.3.10):
-<code class="highlighter-rouge">
-   //CircularBarPager
+<p>Starting from version 1.3.10, we are moving to a new package name (we skipped from 1.3.4 to 1.3.10):</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   //CircularBarPager
    compile 'com.github.omadahealth:library:1.3.11@aar'
    //CirclePageIndicator
    compile 'com.viewpagerindicator:library:2.4.1@aar'
    //Animations and progress value easing
    compile 'com.daimajia.easing:library:2.1@aar'
-</code></p>
+</code></pre></div></div>
 
 <p><a href="app/src/main/res/raw/github_gif.gif">Demo</a></p>
 
-<p>========
-### By
-Developers:
+<p>========</p>
+<h3 id="by">By</h3>
+<p>Developers:
         <a href="https://github.com/olivierg13">Olivier Goutay</a> and <a href="https://github.com/StoyanD">Stoyan Dimitrov</a></p>
 
 <p>Designers:
@@ -688,19 +690,18 @@ Developers:
 
 <h4 id="preparing-dependencies">Preparing dependencies</h4>
 
-<p>In order to use the CirclePageIndicator by Square, you need to add a repo to your main build.gradle file:
-<code class="highlighter-rouge">
-allprojects {
+<p>In order to use the CirclePageIndicator by Square, you need to add a repo to your main build.gradle file:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>allprojects {
     repositories {
         maven { url 'http://dl.bintray.com/populov/maven/' }
         jcenter()
     }
 }
-</code></p>
+</code></pre></div></div>
 
 <h4 id="in-xml">In XML:</h4>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;com.github.omadahealth.circularbarpager.library.CircularBarPager
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;com.github.omadahealth.circularbarpager.library.CircularBarPager
         android:id="@+id/circularBarPager"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
@@ -708,12 +709,11 @@ allprojects {
         android:paddingRight="30dp"
         android:layout_centerInParent="true"
         style="@style/CircularBarPagerStyle"/&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="in-stylesxml">In styles.xml</h4>
 
-<div class="highlighter-rouge"><pre class="highlight"><code> &lt;style name="CircularBarPagerStyle"&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &lt;style name="CircularBarPagerStyle"&gt;
         &lt;item name="android:layout_height"&gt;match_parent&lt;/item&gt;
         &lt;item name="android:layout_width"&gt;match_parent&lt;/item&gt;
 
@@ -731,8 +731,7 @@ allprojects {
         &lt;item name="progress_pager_on_click_enabled"&gt;true&lt;/item&gt;
         &lt;item name="progress_pager_fill_circle_color"&gt;#00000000&lt;/item&gt;
 &lt;/style&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>========</p>
 
@@ -760,12 +759,11 @@ allprojects {
 
 <p>You can access every components programmatically by getting the CircularBarPager object:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>CircularBarPager mCircularBarPager = (CircularBarPager) findViewById(R.id.circularBarPager);
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CircularBarPager mCircularBarPager = (CircularBarPager) findViewById(R.id.circularBarPager);
 CircularBar circularBar = mCircularBarPager.getCircularBar();
 ViewPager viewPager = mCircularBarPager.getViewPager();
 CirclePageIndicator circlePageIndicator = mCircularBarPager.getCirclePageIndicator();
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>========</p>
 
@@ -780,7 +778,7 @@ CirclePageIndicator circlePageIndicator = mCircularBarPager.getCirclePageIndicat
 
 <h3 id="license">License</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>The MIT License (MIT)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The MIT License (MIT)
 
 Copyright (c) 2017 Omada Health
 
@@ -801,8 +799,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
           <br>
@@ -832,17 +829,17 @@ SOFTWARE.
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=CircularBarPager&url=http://kmshack.github.io/AndroidUICollection/2016/11/14/CircularBarPager/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=CircularBarPager&url=http://localhost:4000/AndroidUICollection/2016/11/14/CircularBarPager/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/11/14/CircularBarPager/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/11/14/CircularBarPager/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/11/14/CircularBarPager/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/11/14/CircularBarPager/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -873,7 +870,7 @@ SOFTWARE.
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/11/14/CircularBarPager/";
+    this.page.url = "http://localhost:4000/2016/11/14/CircularBarPager/";
   };
 
   (function() {

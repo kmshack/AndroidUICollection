@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/10/12/SwipeActionView/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/10/12/SwipeActionView/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="Swipe Action View[Build Status](https://travis-ci.org/Tunous/SwipeActionView.svg?branch=master)[Release](https://jitpack.io/v/Tunous/SwipeActionView.svg)[And...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="SwipeActionView">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="Swipe Action View[Build Status](https://travis-ci.org/Tunous/SwipeActionView.svg?branch=master)[Release](https://jitpack.io/v/Tunous/SwipeActionView.svg)[And...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/10/12/SwipeActionView/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/10/12/SwipeActionView/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="Swipe Action View[Build Status](https://travis-ci.org/Tunous/SwipeActionView.svg?branch=master)[Release](https://jitpack.io/v/Tunous/SwipeActionView.svg)[And..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-10-12-SwipeActionView.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-10-12-SwipeActionView.gif">
         
 
         <header class="post__header">
@@ -691,35 +695,33 @@
   <li><a href="#license">License</a></li>
 </ul>
 
-<h1 id="a-idpreviewpreviewa"><a id="preview">Preview</a></h1>
+<h1 id="preview"><a id="preview">Preview</a></h1>
 
 <p><a href="art/preview.gif">Preview</a></p>
 
-<h1 id="a-idinstallationinstallationa"><a id="installation">Installation</a></h1>
+<h1 id="installation"><a id="installation">Installation</a></h1>
 
-<p>Add the JitPack repository to your root <code class="highlighter-rouge">build.gradle</code>:
-<code class="highlighter-rouge">groovy
-allprojects {
-    repositories {
-        maven { url "https://jitpack.io" }
-    }
-}
-</code></p>
+<p>Add the JitPack repository to your root <code class="highlighter-rouge">build.gradle</code>:</p>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">allprojects</span> <span class="o">{</span>
+    <span class="n">repositories</span> <span class="o">{</span>
+        <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s2">"https://jitpack.io"</span> <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
-<p>And add the dependency in your module’s <code class="highlighter-rouge">build.gradle</code>:
-<code class="highlighter-rouge">groovy
-dependencies {
-    compile 'com.github.Tunous:SwipeActionView:VERSION_HERE'
-}
-</code>
-Replace <code class="highlighter-rouge">VERISION_HERE</code> with the version you want to use. <em>See the tags on the top of this file to see the latest available version.</em></p>
+<p>And add the dependency in your module’s <code class="highlighter-rouge">build.gradle</code>:</p>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
+    <span class="n">compile</span> <span class="s1">'com.github.Tunous:SwipeActionView:VERSION_HERE'</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>Replace <code class="highlighter-rouge">VERISION_HERE</code> with the version you want to use. <em>See the tags on the top of this file to see the latest available version.</em></p>
 
-<h1 id="a-idquick-examplequick-examplea"><a id="quick-example">Quick example</a></h1>
+<h1 id="quick-example"><a id="quick-example">Quick example</a></h1>
 
 <p>Adding <code class="highlighter-rouge">SwipeActionView</code> to your projects requires only adding it to XML and setting up <code class="highlighter-rouge">SwipeGestureListener</code>.
 Below example will create <code class="highlighter-rouge">TextView</code> that can be swiped both to the left or right side with two icons behind.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;me.thanel.swipeactionview.SwipeActionView</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;me.thanel.swipeactionview.SwipeActionView</span>
     <span class="na">android:id=</span><span class="s">"@+id/swipe_view"</span>
     <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
     <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
@@ -742,41 +744,39 @@ Below example will create <code class="highlighter-rouge">TextView</code> that c
         <span class="na">android:padding=</span><span class="s">"16dp"</span>
         <span class="na">android:text=</span><span class="s">"Swipe me"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/me.thanel.swipeactionview.SwipeActionView&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">SwipeActionView</span> <span class="n">swipeView</span> <span class="o">=</span> <span class="o">(</span><span class="n">SwipeActionView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">swipe_view</span><span class="o">);</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SwipeActionView</span> <span class="n">swipeView</span> <span class="o">=</span> <span class="o">(</span><span class="n">SwipeActionView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">swipe_view</span><span class="o">);</span>
 
 <span class="n">swipeView</span><span class="o">.</span><span class="na">setSwipeGestureListener</span><span class="o">(</span><span class="k">new</span> <span class="n">SwipeGestureListener</span><span class="o">()</span> <span class="o">{</span>
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="n">onSwipedLeft</span><span class="o">(</span><span class="nd">@NotNull</span> <span class="n">SwipeActionView</span> <span class="n">swipeActionView</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onSwipedLeft</span><span class="o">(</span><span class="nd">@NotNull</span> <span class="n">SwipeActionView</span> <span class="n">swipeActionView</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">showToast</span><span class="o">(</span><span class="s">"Swiped left"</span><span class="o">);</span>
         <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="n">onSwipedRight</span><span class="o">(</span><span class="nd">@NotNull</span> <span class="n">SwipeActionView</span> <span class="n">swipeActionView</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onSwipedRight</span><span class="o">(</span><span class="nd">@NotNull</span> <span class="n">SwipeActionView</span> <span class="n">swipeActionView</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">showToast</span><span class="o">(</span><span class="s">"Swiped right"</span><span class="o">);</span>
         <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
     <span class="o">}</span>
 <span class="o">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<h1 id="a-idsamplesamplea"><a id="sample">Sample</a></h1>
+<h1 id="sample"><a id="sample">Sample</a></h1>
 <p>For an example implementation of <code class="highlighter-rouge">SwipeActionView</code> see the included <a href="https://github.com/Tunous/SwipeActionView/tree/master/sample">sample</a> project.</p>
 
 <p>You can manually compile the apk using source code or download from the <a href="https://github.com/Tunous/SwipeActionView/releases">releases page</a> of this repository.</p>
 
-<h1 id="a-idideathe-ideaa"><a id="idea">The idea</a></h1>
+<h1 id="the-idea"><a id="idea">The idea</a></h1>
 <p>The main idea behind this library is a concept of <a href="#container">container</a> and <a href="#bg-views">background views</a>. It allows for complete control over the look of the created views.</p>
 
 <p>In the <a href="#quick-example">quick example</a> section you can see that the <code class="highlighter-rouge">SwipeActionView</code> has three child views. The first two are <a href="#bg-views">background views</a>, and the last one is the <a href="#container">container</a>. To create working version of <code class="highlighter-rouge">SwipeActionView</code>, you are only required to specify single background view and container. Second background view can be added when you want to be able to swipe in both directions.</p>
 
-<h3 id="a-idcontainercontainera"><a id="container">Container</a></h3>
+<h3 id="container"><a id="container">Container</a></h3>
 <p>The container is a view which is drawn above other views. In the default state, this is the only visible view, and it is what gets moved when users perform swipe gestures. It can be either a simple <code class="highlighter-rouge">TextView</code>, custom view or even some sort of view group like <code class="highlighter-rouge">LinearLayout</code>. There is no limit for that, which allows you to gain complete control over the look of your views.</p>
 
-<h3 id="a-idbg-viewsbackground-viewsa"><a id="bg-views">Background views</a></h3>
+<h3 id="background-views"><a id="bg-views">Background views</a></h3>
 <p>Background views are the mostly invisible part of <code class="highlighter-rouge">SwipeActionView</code>. They get revealed only when users start performing swipe gestures.</p>
 
 <p>You can specify for which swipe direction each of them corresponds by setting their <code class="highlighter-rouge">layout_gravity</code> attribute. 
@@ -786,9 +786,9 @@ Default value or setting it to either <code class="highlighter-rouge">left</code
 
 <p><strong>Note:</strong> There can be only one view for each direction. This means that if one of them is placed on the left side, the second one must be put on the right side to avoid errors.</p>
 
-<h3 id="a-ididea-exampleexamplea"><a id="idea-example">Example</a></h3>
+<h3 id="example"><a id="idea-example">Example</a></h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;me.thanel.swipeactionview.SwipeActionView</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;me.thanel.swipeactionview.SwipeActionView</span>
     <span class="na">android:id=</span><span class="s">"@+id/swipe_view"</span>
     <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
     <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
@@ -819,10 +819,9 @@ Default value or setting it to either <code class="highlighter-rouge">left</code
         <span class="na">android:padding=</span><span class="s">"16dp"</span>
         <span class="na">android:text=</span><span class="s">"Swipe me"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/me.thanel.swipeactionview.SwipeActionView&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<h1 id="a-idgesture-listenergesture-listenera"><a id="gesture-listener">Gesture listener</a></h1>
+<h1 id="gesture-listener"><a id="gesture-listener">Gesture listener</a></h1>
 <p>In order to be able to perform actions when users swipe the <code class="highlighter-rouge">SwipeActionView</code> you have to setup the listener with the <code class="highlighter-rouge">setSwipeGestureListener(SwipeGestureListener)</code> method. It takes <code class="highlighter-rouge">SwipeGestureListener</code> as a parameter.</p>
 
 <p><code class="highlighter-rouge">SwipeGestureListener</code> consists of two methods. One for performing an action when the view is swiped to the left and one when it is swiped to the right side.</p>
@@ -831,9 +830,9 @@ Default value or setting it to either <code class="highlighter-rouge">left</code
 
 <p>To return the view to its original position you can call the <code class="highlighter-rouge">moveToOriginalPosition()</code> method at any time.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">swipeView</span><span class="o">.</span><span class="na">setSwipeGestureListener</span><span class="o">(</span><span class="k">new</span> <span class="n">SwipeGestureListener</span><span class="o">()</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">swipeView</span><span class="o">.</span><span class="na">setSwipeGestureListener</span><span class="o">(</span><span class="k">new</span> <span class="n">SwipeGestureListener</span><span class="o">()</span> <span class="o">{</span>
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="n">onSwipedLeft</span><span class="o">(</span><span class="nd">@NotNull</span> <span class="n">SwipeActionView</span> <span class="n">swipeActionView</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onSwipedLeft</span><span class="o">(</span><span class="nd">@NotNull</span> <span class="n">SwipeActionView</span> <span class="n">swipeActionView</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">showToast</span><span class="o">(</span><span class="s">"Swiped left"</span><span class="o">);</span>
 
         <span class="c1">// Returning true automatically moves view to original position</span>
@@ -841,7 +840,7 @@ Default value or setting it to either <code class="highlighter-rouge">left</code
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="n">onSwipedRight</span><span class="o">(</span><span class="nd">@NotNull</span> <span class="n">SwipeActionView</span> <span class="n">swipeActionView</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onSwipedRight</span><span class="o">(</span><span class="nd">@NotNull</span> <span class="n">SwipeActionView</span> <span class="n">swipeActionView</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">showToast</span><span class="o">(</span><span class="s">"Swiped right"</span><span class="o">);</span>
         
         <span class="c1">// Returning false requires calling moveToOriginalPosition() manually to</span>
@@ -854,69 +853,66 @@ Default value or setting it to either <code class="highlighter-rouge">left</code
         <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
     <span class="o">}</span>
 <span class="o">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<h1 id="a-iddisabling-gesturesdisabling-gesturesa"><a id="disabling-gestures">Disabling gestures</a></h1>
+<h1 id="disabling-gestures"><a id="disabling-gestures">Disabling gestures</a></h1>
 <p>If you want to dynamically enable or disable gesture in a specific direction you can use the <code class="highlighter-rouge">setDirectionEnabled(SwipeDirection, Boolean)</code> method.</p>
 
 <p><strong>Note:</strong> The gesture enabling part is controlled by presence and visibility of background views. This method is only provided for convenience since it can also be changed by switching visibility of background views. It was coded like this so the specific swipe directions can be disabled by default from XML using <code class="highlighter-rouge">visibility</code> attribute on views corresponding to these directions.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">swipeView</span><span class="o">.</span><span class="na">setDirectionEnabled</span><span class="o">(</span><span class="n">SwipeDirection</span><span class="o">.</span><span class="na">Left</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">swipeView</span><span class="o">.</span><span class="na">setDirectionEnabled</span><span class="o">(</span><span class="n">SwipeDirection</span><span class="o">.</span><span class="na">Left</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+</code></pre></div></div>
 
-<h1 id="a-idripple-animationsripple-animationsa"><a id="ripple-animations">Ripple animations</a></h1>
+<h1 id="ripple-animations"><a id="ripple-animations">Ripple animations</a></h1>
 <p><code class="highlighter-rouge">SwipeActionView</code> comes with optional support for displaying ripple animations when gestures are performed. All you have to do to enable them is to give them a color from XML or code. To do so from the code, you can use the <code class="highlighter-rouge">setRippleColor(SwipeDirection, Int)</code> method.</p>
 
 <p>To disable ripple animations you can enter <code class="highlighter-rouge">-1</code> as value for color.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">swipeView</span><span class="o">.</span><span class="na">setRippleColor</span><span class="o">(</span><span class="n">SwipeDirection</span><span class="o">.</span><span class="na">Right</span><span class="o">,</span> <span class="n">Color</span><span class="o">.</span><span class="na">BLUE</span><span class="o">);</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">swipeView</span><span class="o">.</span><span class="na">setRippleColor</span><span class="o">(</span><span class="n">SwipeDirection</span><span class="o">.</span><span class="na">Right</span><span class="o">,</span> <span class="n">Color</span><span class="o">.</span><span class="na">BLUE</span><span class="o">);</span>
+</code></pre></div></div>
 
-<h1 id="a-idclick-listenersclick-listenersa"><a id="click-listeners">Click listeners</a></h1>
+<h1 id="click-listeners"><a id="click-listeners">Click listeners</a></h1>
 <p><code class="highlighter-rouge">SwipeActionView</code> makes sure that any click listeners will work correctly. You can use <code class="highlighter-rouge">setClickListener(View.OnClickListener)</code> as usual and they should work, including views located in the container.</p>
 
 <p>The only exception is that you shouldn’t add click listeners for background views. This library wasn’t designed to add support for this behavior. If it’s possible then, that’s only a positive side effect. You are better of with using libraries such as <a href="https://github.com/daimajia/AndroidSwipeLayout">AndroidSwipeLayout</a> instead.</p>
 
-<h1 id="a-idattrattributesa"><a id="attr">Attributes</a></h1>
+<h1 id="attributes"><a id="attr">Attributes</a></h1>
 
-<h4 id="a-idattr-alwaysdrawbackgroundappsavalwaysdrawbackgroundtruefalsea"><a id="attr-alwaysDrawBackground"><code class="highlighter-rouge">app:sav_alwaysDrawBackground="true|false"</code></a></h4>
+<h4 id="appsav_alwaysdrawbackgroundtruefalse"><a id="attr-alwaysDrawBackground"><code class="highlighter-rouge">app:sav_alwaysDrawBackground="true|false"</code></a></h4>
 <p>To reduce overdraw <code class="highlighter-rouge">SwipeActionView</code> only draws parts of the main background and background views which become visible due to swipe gesture. This is not always what you want as it could break any container views with transparency. A good example where you would want to use this attribute is when you had <code class="highlighter-rouge">CardView</code> as your container.</p>
 
-<h4 id="a-idattr-rippletakespaddingappsavrippletakespaddingtruefalsea"><a id="attr-rippleTakesPadding"><code class="highlighter-rouge">app:sav_rippleTakesPadding="true|false"</code></a></h4>
+<h4 id="appsav_rippletakespaddingtruefalse"><a id="attr-rippleTakesPadding"><code class="highlighter-rouge">app:sav_rippleTakesPadding="true|false"</code></a></h4>
 <p>If you want ripple effect to take padding together with container view you can set this attribute to true.</p>
 
-<h4 id="a-idattr-swipeleftripplecolorappsavswipeleftripplecolorcolora"><a id="attr-swipeLeftRippleColor"><code class="highlighter-rouge">app:sav_swipeLeftRippleColor="@color"</code></a></h4>
+<h4 id="appsav_swipeleftripplecolorcolor"><a id="attr-swipeLeftRippleColor"><code class="highlighter-rouge">app:sav_swipeLeftRippleColor="@color"</code></a></h4>
 <p>Sets color for ripple displayed when users swipe left.</p>
 
-<h4 id="a-idattr-swiperightripplecolorappsavswiperightripplecolorcolora"><a id="attr-swipeRightRippleColor"><code class="highlighter-rouge">app:sav_swipeRightRippleColor="@color"</code></a></h4>
+<h4 id="appsav_swiperightripplecolorcolor"><a id="attr-swipeRightRippleColor"><code class="highlighter-rouge">app:sav_swipeRightRippleColor="@color"</code></a></h4>
 <p>Sets color for ripple displayed when users swipe right.</p>
 
-<h2 id="a-idattr-toolstools-attributesa"><a id="attr-tools">Tools attributes</a></h2>
+<h2 id="tools-attributes"><a id="attr-tools">Tools attributes</a></h2>
 <p><code class="highlighter-rouge">SwipeActionView</code> has special attributes used only in the editor mode. They make it possible to preview ripples or contents of background views without worrying about side effects. They are entirely ignored when running on the device.</p>
 
-<h4 id="a-idattr-tools-previewbackgroundappsavtoolspreviewbackgroundswipeleftswiperighta"><a id="attr-tools-previewBackground"><code class="highlighter-rouge">app:sav_tools_previewBackground="swipeLeft|swipeRight"</code></a></h4>
+<h4 id="appsav_tools_previewbackgroundswipeleftswiperight"><a id="attr-tools-previewBackground"><code class="highlighter-rouge">app:sav_tools_previewBackground="swipeLeft|swipeRight"</code></a></h4>
 <p>Shows background view for swipe left or right gesture.</p>
 
-<h4 id="a-idattr-tools-previewrippleappsavtoolspreviewrippleswipelefta"><a id="attr-tools-previewRipple"><code class="highlighter-rouge">app:sav_tools_previewRipple="swipeLeft"</code></a></h4>
+<h4 id="appsav_tools_previewrippleswipeleft"><a id="attr-tools-previewRipple"><code class="highlighter-rouge">app:sav_tools_previewRipple="swipeLeft"</code></a></h4>
 <p>Shows ripple for swipe left or right gesture.</p>
 
-<h1 id="a-idanimationsanimationsa"><a id="animations">Animations</a></h1>
+<h1 id="animations"><a id="animations">Animations</a></h1>
 <p><code class="highlighter-rouge">SwipeActionView</code> also comes with support for custom animations. There are two listeners that you can set in your code. They will be called with current swipe progress while users perform swipe gesture.</p>
 
 <p>By default, there is only one animator included which scales the background views. You can use it as an example of how to implement custom animations or use it directly if it’s good enough for you.</p>
 
-<h1 id="a-idcreditscreditsa"><a id="credits">Credits</a></h1>
+<h1 id="credits"><a id="credits">Credits</a></h1>
 <p>This library wouldn’t be created without help and work of <a href="https://github.com/brianrobles204">Brian Robles</a>.</p>
 
 <p>His <a href="https://play.google.com/store/apps/details?id=com.brianrobles204.karmamachine">KarmaMachine</a> Reddit application was my direct inspiration when I was creating it for my application.
 He also created <code class="highlighter-rouge">SwipeRippleDrawable</code> and allowed me to <a href="https://github.com/Tunous/SwipeActionView/blob/master/library/src/main/kotlin/me/thanel/swipeactionview/SwipeRippleDrawable.kt">reimplement</a> it for purposes of this library.
 <strong>Huge thanks</strong></p>
 
-<h1 id="a-idlicenselicensea"><a id="license">License</a></h1>
-<div class="highlighter-rouge"><pre class="highlight"><code>Copyright © 2016-2017 Łukasz Rutkowski
+<h1 id="license"><a id="license">License</a></h1>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright © 2016-2017 Łukasz Rutkowski
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -929,8 +925,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
           <br>
@@ -958,17 +953,17 @@ limitations under the License.
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=SwipeActionView&url=http://kmshack.github.io/AndroidUICollection/2016/10/12/SwipeActionView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=SwipeActionView&url=http://localhost:4000/AndroidUICollection/2016/10/12/SwipeActionView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/10/12/SwipeActionView/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/10/12/SwipeActionView/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/10/12/SwipeActionView/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/10/12/SwipeActionView/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -999,7 +994,7 @@ limitations under the License.
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/10/12/SwipeActionView/";
+    this.page.url = "http://localhost:4000/2016/10/12/SwipeActionView/";
   };
 
   (function() {

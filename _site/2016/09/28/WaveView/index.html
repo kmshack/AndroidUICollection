@@ -7,27 +7,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>WaveView</title>
-  <meta name="description" content="中文介绍WaveViewA view to display wave effect.ScreenshotScreenshotIntegrationimplementation 'com.gelitenight.waveview:waveview:1.0.0'Setter methods: * setWaveShi...">
+  <meta name="description" content="中文介绍WaveViewA view to display wave effect.ScreenshotScreenshotIntegrationimplementation 'com.gelitenight.waveview:waveview:1.0.0'Setter methods:  setWaveShif...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/09/28/WaveView/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/09/28/WaveView/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="中文介绍WaveViewA view to display wave effect.ScreenshotScreenshotIntegrationimplementation 'com.gelitenight.waveview:waveview:1.0.0'Setter methods: * setWaveShi...">
+  <meta name="description" content="中文介绍WaveViewA view to display wave effect.ScreenshotScreenshotIntegrationimplementation 'com.gelitenight.waveview:waveview:1.0.0'Setter methods:  setWaveShif...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="WaveView">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="中文介绍WaveViewA view to display wave effect.ScreenshotScreenshotIntegrationimplementation 'com.gelitenight.waveview:waveview:1.0.0'Setter methods: * setWaveShi...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/09/28/WaveView/" />
+  <meta property="og:description" content="中文介绍WaveViewA view to display wave effect.ScreenshotScreenshotIntegrationimplementation 'com.gelitenight.waveview:waveview:1.0.0'Setter methods:  setWaveShif...">
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/09/28/WaveView/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="中文介绍WaveViewA view to display wave effect.ScreenshotScreenshotIntegrationimplementation 'com.gelitenight.waveview:waveview:1.0.0'Setter methods: * setWaveShi..." />
+  <meta name="twitter:description" content="中文介绍WaveViewA view to display wave effect.ScreenshotScreenshotIntegrationimplementation 'com.gelitenight.waveview:waveview:1.0.0'Setter methods:  setWaveShif..." />
 
   
   	<!-- Article specific OG data -->
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-09-28-WaveView.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-09-28-WaveView.gif">
         
 
         <header class="post__header">
@@ -656,61 +660,68 @@
 <p><a href="screenshot.gif">Screenshot</a></p>
 
 <h2 id="integration">Integration</h2>
-<div class="highlighter-rouge"><pre class="highlight"><code>implementation 'com.gelitenight.waveview:waveview:1.0.0'
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>implementation 'com.gelitenight.waveview:waveview:1.0.0'
+</code></pre></div></div>
 
-<p>Setter methods:
- * <code class="highlighter-rouge">setWaveShiftRatio</code> - Shift the wave horizontally.
- * <code class="highlighter-rouge">setWaterLevelRatio</code> - Set water level.
- * <code class="highlighter-rouge">setAmplitudeRatio</code>  - Set vertical size of wave.
- * <code class="highlighter-rouge">setWaveLengthRatio</code> - Set horizontal size of wave.</p>
+<p>Setter methods:</p>
+<ul>
+  <li><code class="highlighter-rouge">setWaveShiftRatio</code> - Shift the wave horizontally.</li>
+  <li><code class="highlighter-rouge">setWaterLevelRatio</code> - Set water level.</li>
+  <li><code class="highlighter-rouge">setAmplitudeRatio</code>  - Set vertical size of wave.</li>
+  <li><code class="highlighter-rouge">setWaveLengthRatio</code> - Set horizontal size of wave.</li>
+</ul>
 
-<p>You can use <a href="https://developer.android.com/guide/topics/graphics/prop-animation.html">Property Animation</a> to animate WaveView.
-```
-// horizontal animation.
+<p>You can use <a href="https://developer.android.com/guide/topics/graphics/prop-animation.html">Property Animation</a> to animate WaveView.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// horizontal animation.
 // wave waves infinitely.
 ObjectAnimator waveShiftAnim = ObjectAnimator.ofFloat(
-        mWaveView, “waveShiftRatio”, 0f, 1f);
+        mWaveView, "waveShiftRatio", 0f, 1f);
 waveShiftAnim.setRepeatCount(ValueAnimator.INFINITE);
 waveShiftAnim.setDuration(1000);
-waveShiftAnim.setInterpolator(new LinearInterpolator());</p>
+waveShiftAnim.setInterpolator(new LinearInterpolator());
 
-<p>// vertical animation.
+// vertical animation.
 // water level increases from 0 to center of WaveView
 ObjectAnimator waterLevelAnim = ObjectAnimator.ofFloat(
-        mWaveView, “waterLevelRatio”, 0f, 0.5f);
+        mWaveView, "waterLevelRatio", 0f, 0.5f);
 waterLevelAnim.setDuration(10000);
 waterLevelAnim.setInterpolator(new DecelerateInterpolator());
-animators.add(waterLevelAnim);</p>
+animators.add(waterLevelAnim);
 
-<p>// amplitude animation.
+// amplitude animation.
 // wave grows big then grows small, repeatedly
 ObjectAnimator amplitudeAnim = ObjectAnimator.ofFloat(
-        mWaveView, “amplitudeRatio”, 0f, 0.05f);
+        mWaveView, "amplitudeRatio", 0f, 0.05f);
 amplitudeAnim.setRepeatCount(ValueAnimator.INFINITE);
 amplitudeAnim.setRepeatMode(ValueAnimator.REVERSE);
 amplitudeAnim.setDuration(5000);
 amplitudeAnim.setInterpolator(new LinearInterpolator());
 animators.add(amplitudeAnim);
-```</p>
+</code></pre></div></div>
 
 <hr />
 
-<h3 id="section">打个广告</h3>
+<h3 id="打个广告">打个广告</h3>
 <p>美团平台及酒旅事业群招人啦，欢迎加入我们！
-我可以帮忙内推，简历请发到我邮箱<a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#103;&#101;&#108;&#105;&#116;&#101;&#110;&#105;&#103;&#104;&#116;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">&#103;&#101;&#108;&#105;&#116;&#101;&#110;&#105;&#103;&#104;&#116;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</a>
-&gt;【美团网】高级Android开发工程师
-&gt; 工作内容: 负责美团酒店、旅游产品 Android 客户端的设计、开发与改进。
-&gt; 1. 3年以上工作经验，2年以上Android开发经验；
-&gt; 2. 熟悉Android系统，熟悉Android软件的开发、测试、分发流程；
-&gt; 3. 良好的编程风格，扎实的编程基础和数据结构算法基础；
-&gt; 4. 熟悉移动网络的特性，对网络编程和常用网络协议有较深刻理解和经验；
-&gt; 5. 有一定的架构设计能力，良好的编码能力，编写文档能力；
-&gt; 6. 热爱互联网和新技术，具有极强的快速学习能力；
-&gt; 7. 有以下特征优先考虑：
-&gt;     * 有开源作品或技术博客（需原创技术文章）；
-&gt;     * 熟悉Socket编程。</p>
+我可以帮忙内推，简历请发到我邮箱<a href="mailto:gelitenight@gmail.com">gelitenight@gmail.com</a></p>
+<blockquote>
+  <p>【美团网】高级Android开发工程师
+工作内容: 负责美团酒店、旅游产品 Android 客户端的设计、开发与改进。</p>
+  <ol>
+    <li>3年以上工作经验，2年以上Android开发经验；</li>
+    <li>熟悉Android系统，熟悉Android软件的开发、测试、分发流程；</li>
+    <li>良好的编程风格，扎实的编程基础和数据结构算法基础；</li>
+    <li>熟悉移动网络的特性，对网络编程和常用网络协议有较深刻理解和经验；</li>
+    <li>有一定的架构设计能力，良好的编码能力，编写文档能力；</li>
+    <li>热爱互联网和新技术，具有极强的快速学习能力；</li>
+    <li>有以下特征优先考虑：
+      <ul>
+        <li>有开源作品或技术博客（需原创技术文章）；</li>
+        <li>熟悉Socket编程。</li>
+      </ul>
+    </li>
+  </ol>
+</blockquote>
 
 <p>北京、上海、厦门、成都都有职位，更多职位请见<a href="https://job.meituan.com/job-list?city=001001&amp;department=5&amp;jobFamily=26&amp;pageNo=1">职位列表</a>。</p>
 
@@ -741,17 +752,17 @@ animators.add(amplitudeAnim);
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=WaveView&url=http://kmshack.github.io/AndroidUICollection/2016/09/28/WaveView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=WaveView&url=http://localhost:4000/AndroidUICollection/2016/09/28/WaveView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/09/28/WaveView/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/09/28/WaveView/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/09/28/WaveView/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/09/28/WaveView/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -782,7 +793,7 @@ animators.add(amplitudeAnim);
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/09/28/WaveView/";
+    this.page.url = "http://localhost:4000/2016/09/28/WaveView/";
   };
 
   (function() {

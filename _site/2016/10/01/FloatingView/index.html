@@ -7,27 +7,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Floating View</title>
-  <meta name="description" content="FloatingViewThe Android project is View to display information such as chat in front.To API Level 14 or later are supportedScreenshots[](./screenshot/animati...">
+  <meta name="description" content="FloatingViewThe Android project is View to display information such as chat in front.To API Level 14 or later are supportedScreenshotsWatch YouTube videoSimp...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/10/01/FloatingView/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/10/01/FloatingView/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="FloatingViewThe Android project is View to display information such as chat in front.To API Level 14 or later are supportedScreenshots[](./screenshot/animati...">
+  <meta name="description" content="FloatingViewThe Android project is View to display information such as chat in front.To API Level 14 or later are supportedScreenshotsWatch YouTube videoSimp...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="Floating View">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="FloatingViewThe Android project is View to display information such as chat in front.To API Level 14 or later are supportedScreenshots[](./screenshot/animati...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/10/01/FloatingView/" />
+  <meta property="og:description" content="FloatingViewThe Android project is View to display information such as chat in front.To API Level 14 or later are supportedScreenshotsWatch YouTube videoSimp...">
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/10/01/FloatingView/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="FloatingViewThe Android project is View to display information such as chat in front.To API Level 14 or later are supportedScreenshots[](./screenshot/animati..." />
+  <meta name="twitter:description" content="FloatingViewThe Android project is View to display information such as chat in front.To API Level 14 or later are supportedScreenshotsWatch YouTube videoSimp..." />
 
   
   	<!-- Article specific OG data -->
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-10-01-FloatingView.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-10-01-FloatingView.gif">
         
 
         <header class="post__header">
@@ -652,7 +656,7 @@
 To API Level 14 or later are supported</p>
 
 <h2 id="screenshots">Screenshots</h2>
-<p>[](./screenshot/animation.gif)<br />
+<p><a href="./screenshot/animation.gif"></a><br />
 <img src="./screenshot/ss01.png" width="200" />
 <img src="./screenshot/ss02.png" width="200" />
 <img src="./screenshot/ss03.png" width="200" /></p>
@@ -665,104 +669,93 @@ To API Level 14 or later are supported</p>
 Min Sdk Version : 14</p>
 
 <h2 id="how-to-use">How to use</h2>
-<p>1) Add this to your <strong>build.gradle</strong>.
-  ```java
-  repositories {
-      maven {
-          url “https://jitpack.io”
-      }
-  }</p>
+<p>1) Add this to your <strong>build.gradle</strong>.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">repositories</span> <span class="o">{</span>
+      <span class="n">maven</span> <span class="o">{</span>
+          <span class="n">url</span> <span class="s">"https://jitpack.io"</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
 
-<p>dependencies {
-    implementation ‘com.github.recruit-lifestyle:FloatingView:2.3.2’
-  }
-  ```</p>
+  <span class="n">dependencies</span> <span class="o">{</span>
+    <span class="n">implementation</span> <span class="err">'</span><span class="n">com</span><span class="o">.</span><span class="na">github</span><span class="o">.</span><span class="na">recruit</span><span class="o">-</span><span class="nl">lifestyle:FloatingView:</span><span class="mf">2.3</span><span class="o">.</span><span class="mi">2</span><span class="err">'</span>
+  <span class="o">}</span>
+</code></pre></div></div>
 
-<p>2) Implement Service for displaying FloatingView
-<code class="highlighter-rouge">java
-public class ChatHeadService extends Service {
-  ... ...
-}
-</code></p>
+<p>2) Implement Service for displaying FloatingView</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ChatHeadService</span> <span class="kd">extends</span> <span class="n">Service</span> <span class="o">{</span>
+  <span class="o">...</span> <span class="o">...</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
-<p>3) You will do the setting of the View to be displayed in the FloatingView(Sample have a set in onStartCommand)
-<code class="highlighter-rouge">java
-  final LayoutInflater inflater = LayoutInflater.from(this);
-  final ImageView iconView = (ImageView) inflater.inflate(R.layout.widget_chathead, null, false);
-  iconView.setOnClickListener(......);
-</code></p>
+<p>3) You will do the setting of the View to be displayed in the FloatingView(Sample have a set in onStartCommand)</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">final</span> <span class="n">LayoutInflater</span> <span class="n">inflater</span> <span class="o">=</span> <span class="n">LayoutInflater</span><span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+  <span class="kd">final</span> <span class="n">ImageView</span> <span class="n">iconView</span> <span class="o">=</span> <span class="o">(</span><span class="n">ImageView</span><span class="o">)</span> <span class="n">inflater</span><span class="o">.</span><span class="na">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">widget_chathead</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+  <span class="n">iconView</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(......);</span>
+</code></pre></div></div>
 
-<p>4) Use the FloatingViewManager, make the setting of FloatingView
-<code class="highlighter-rouge">java
-  mFloatingViewManager = new FloatingViewManager(this, this);
-  mFloatingViewManager.setFixedTrashIconImage(R.drawable.ic_trash_fixed);
-  mFloatingViewManager.setActionTrashIconImage(R.drawable.ic_trash_action);
-  final FloatingViewManager.Options options = new FloatingViewManager.Options();
-  options.overMargin = (int) (16 * metrics.density);
-  mFloatingViewManager.addViewToWindow(iconView, options);
-</code></p>
+<p>4) Use the FloatingViewManager, make the setting of FloatingView</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">mFloatingViewManager</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FloatingViewManager</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="k">this</span><span class="o">);</span>
+  <span class="n">mFloatingViewManager</span><span class="o">.</span><span class="na">setFixedTrashIconImage</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">ic_trash_fixed</span><span class="o">);</span>
+  <span class="n">mFloatingViewManager</span><span class="o">.</span><span class="na">setActionTrashIconImage</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">ic_trash_action</span><span class="o">);</span>
+  <span class="kd">final</span> <span class="n">FloatingViewManager</span><span class="o">.</span><span class="na">Options</span> <span class="n">options</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FloatingViewManager</span><span class="o">.</span><span class="na">Options</span><span class="o">();</span>
+  <span class="n">options</span><span class="o">.</span><span class="na">overMargin</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="o">(</span><span class="mi">16</span> <span class="o">*</span> <span class="n">metrics</span><span class="o">.</span><span class="na">density</span><span class="o">);</span>
+  <span class="n">mFloatingViewManager</span><span class="o">.</span><span class="na">addViewToWindow</span><span class="o">(</span><span class="n">iconView</span><span class="o">,</span> <span class="n">options</span><span class="o">);</span>
+</code></pre></div></div>
 
 <p>The second argument of <code class="highlighter-rouge">FloatingViewManager</code> is <code class="highlighter-rouge">FloatingViewListener</code></p>
 
-<p>Describe the process (<code class="highlighter-rouge">onFinishFloatingView</code>) that is called when you exit the FloatingView
-<code class="highlighter-rouge">java
-    @Override
-    public void onFinishFloatingView() {
-        stopSelf();
-    }
-</code></p>
+<p>Describe the process (<code class="highlighter-rouge">onFinishFloatingView</code>) that is called when you exit the FloatingView</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onFinishFloatingView</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">stopSelf</span><span class="o">();</span>
+    <span class="o">}</span>
+</code></pre></div></div>
 
-<p>5) Add the permission to AndroidManifest
-```xml</p>
-<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+<p>5) Add the permission to AndroidManifest</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.SYSTEM_ALERT_WINDOW"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  
-6) Define the Service to AndroidManifest
+<p>6) Define the Service to AndroidManifest</p>
 
-example)
-```java
-    &lt;application ...&gt;
-        ...
-        &lt;-- Demo --&gt;
-        &lt;service
-            android:name="jp.co.recruit_lifestyle.sample.service.ChatHeadService"
-            android:exported="false"/&gt;
-        ...
-    &lt;/application&gt;
-</code></pre>
-</div>
+<p>example)</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="o">&lt;</span><span class="n">application</span> <span class="o">...&gt;</span>
+        <span class="o">...</span>
+        <span class="o">&lt;--</span> <span class="n">Demo</span> <span class="o">--&gt;</span>
+        <span class="o">&lt;</span><span class="n">service</span>
+            <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"jp.co.recruit_lifestyle.sample.service.ChatHeadService"</span>
+            <span class="nl">android:</span><span class="n">exported</span><span class="o">=</span><span class="s">"false"</span><span class="o">/&gt;</span>
+        <span class="o">...</span>
+    <span class="o">&lt;/</span><span class="n">application</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
-<p>7) Describe the process to start the Service (run on foreground)
-<code class="highlighter-rouge">java
-    final Intent intent = new Intent(activity, ChatHeadService.class);
-    ContextCompat.startForegroundService(activity, intent);
-</code></p>
+<p>7) Describe the process to start the Service (run on foreground)</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">final</span> <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">activity</span><span class="o">,</span> <span class="n">ChatHeadService</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+    <span class="n">ContextCompat</span><span class="o">.</span><span class="na">startForegroundService</span><span class="o">(</span><span class="n">activity</span><span class="o">,</span> <span class="n">intent</span><span class="o">);</span>
+</code></pre></div></div>
 
 <p>8) Create notification channel (targetSdkVersion &gt;= 26)</p>
 
-<p>example)
-```java
-if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.O) {
-    final String channelId = getString(R.string.default_floatingview_channel_id);
-    final String channelName = getString(R.string.default_floatingview_channel_name);
-    final NotificationChannel defaultChannel = new NotificationChannel(channelId, channelName, NotificationManager.IMPORTANCE_MIN);
-    final NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-    if (manager = null) {
-        manager.createNotificationChannel(defaultChannel);
-    }
-}</p>
+<p>example)</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">(</span><span class="n">Build</span><span class="o">.</span><span class="na">VERSION</span><span class="o">.</span><span class="na">SDK_INT</span> <span class="o">&gt;=</span> <span class="n">Build</span><span class="o">.</span><span class="na">VERSION_CODES</span><span class="o">.</span><span class="na">O</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">final</span> <span class="n">String</span> <span class="n">channelId</span> <span class="o">=</span> <span class="n">getString</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">default_floatingview_channel_id</span><span class="o">);</span>
+    <span class="kd">final</span> <span class="n">String</span> <span class="n">channelName</span> <span class="o">=</span> <span class="n">getString</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">default_floatingview_channel_name</span><span class="o">);</span>
+    <span class="kd">final</span> <span class="n">NotificationChannel</span> <span class="n">defaultChannel</span> <span class="o">=</span> <span class="k">new</span> <span class="n">NotificationChannel</span><span class="o">(</span><span class="n">channelId</span><span class="o">,</span> <span class="n">channelName</span><span class="o">,</span> <span class="n">NotificationManager</span><span class="o">.</span><span class="na">IMPORTANCE_MIN</span><span class="o">);</span>
+    <span class="kd">final</span> <span class="n">NotificationManager</span> <span class="n">manager</span> <span class="o">=</span> <span class="o">(</span><span class="n">NotificationManager</span><span class="o">)</span> <span class="n">getSystemService</span><span class="o">(</span><span class="n">NOTIFICATION_SERVICE</span><span class="o">);</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">manager</span> <span class="o">=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">manager</span><span class="o">.</span><span class="na">createNotificationChannel</span><span class="o">(</span><span class="n">defaultChannel</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
-## Static Options
-It can be set only when displaying for the first time
-  
-example)
-```java
-final FloatingViewManager.Options options = new FloatingViewManager.Options();
-options.overMargin = (int) (16 * metrics.density);
-mFloatingViewManager.addViewToWindow(iconView, options);
-</code></pre>
-</div>
+</code></pre></div></div>
+
+<h2 id="static-options">Static Options</h2>
+<p>It can be set only when displaying for the first time</p>
+
+<p>example)</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">final</span> <span class="n">FloatingViewManager</span><span class="o">.</span><span class="na">Options</span> <span class="n">options</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FloatingViewManager</span><span class="o">.</span><span class="na">Options</span><span class="o">();</span>
+<span class="n">options</span><span class="o">.</span><span class="na">overMargin</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="o">(</span><span class="mi">16</span> <span class="o">*</span> <span class="n">metrics</span><span class="o">.</span><span class="na">density</span><span class="o">);</span>
+<span class="n">mFloatingViewManager</span><span class="o">.</span><span class="na">addViewToWindow</span><span class="o">(</span><span class="n">iconView</span><span class="o">,</span> <span class="n">options</span><span class="o">);</span>
+</code></pre></div></div>
 
 <table>
   <thead>
@@ -824,11 +817,10 @@ mFloatingViewManager.addViewToWindow(iconView, options);
 <h2 id="dynamic-options">Dynamic Options</h2>
 <p>It can be set any time</p>
 
-<p>example)
-<code class="highlighter-rouge">java
-mFloatingViewManager.setFixedTrashIconImage(R.drawable.ic_trash_fixed);
-mFloatingViewManager.setActionTrashIconImage(R.drawable.ic_trash_action);
-</code></p>
+<p>example)</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mFloatingViewManager</span><span class="o">.</span><span class="na">setFixedTrashIconImage</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">ic_trash_fixed</span><span class="o">);</span>
+<span class="n">mFloatingViewManager</span><span class="o">.</span><span class="na">setActionTrashIconImage</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">ic_trash_action</span><span class="o">);</span>
+</code></pre></div></div>
 
 <table>
   <thead>
@@ -865,7 +857,7 @@ mFloatingViewManager.setActionTrashIconImage(R.drawable.ic_trash_action);
 
 <h1 id="license">License</h1>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2015 RECRUIT LIFESTYLE CO., LTD.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright 2015 RECRUIT LIFESTYLE CO., LTD.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -878,8 +870,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
           <br>
@@ -907,17 +898,17 @@ limitations under the License.
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Floating View&url=http://kmshack.github.io/AndroidUICollection/2016/10/01/FloatingView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Floating View&url=http://localhost:4000/AndroidUICollection/2016/10/01/FloatingView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/10/01/FloatingView/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/10/01/FloatingView/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/10/01/FloatingView/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/10/01/FloatingView/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -948,7 +939,7 @@ limitations under the License.
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/10/01/FloatingView/";
+    this.page.url = "http://localhost:4000/2016/10/01/FloatingView/";
   };
 
   (function() {

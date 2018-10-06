@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/10/22/PageIndicatorView/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/10/22/PageIndicatorView/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="PageIndicatorView [Download](https://api.bintray.com/packages/romandanylyk/maven/pageindicatorview/images/download.svg) [Android Arsenal](https://img.shields...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="PageIndicatorView">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="PageIndicatorView [Download](https://api.bintray.com/packages/romandanylyk/maven/pageindicatorview/images/download.svg) [Android Arsenal](https://img.shields...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/10/22/PageIndicatorView/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/10/22/PageIndicatorView/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="PageIndicatorView [Download](https://api.bintray.com/packages/romandanylyk/maven/pageindicatorview/images/download.svg) [Android Arsenal](https://img.shields..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-10-22-PageIndicatorView.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-10-22-PageIndicatorView.gif">
         
 
         <header class="post__header">
@@ -654,49 +658,46 @@
 
 <p><code class="highlighter-rouge">PageIndicatorView</code> is light library to indicate ViewPager’s selected page with different animations and ability to customise it as you need.</p>
 
-<p>[](https://raw.githubusercontent.com/romandanylyk/PageIndicatorView/master/assets/preview_anim_drop.gif)</p>
+<p><a href="https://raw.githubusercontent.com/romandanylyk/PageIndicatorView/master/assets/preview_anim_drop.gif"></a></p>
 
 <h3 id="integration"><strong>Integration</strong></h3>
-<p>To add <code class="highlighter-rouge">pageindicatorview</code> to your project, first make sure in root <code class="highlighter-rouge">build.gradle</code> you have specified the following repository:
-<code class="highlighter-rouge">groovy
-    repositories {
-        jcenter()
-    }
-</code>
-&gt;<strong><em>Note</em></strong>: by creating new project in Android Studio it will have <code class="highlighter-rouge">jcenter</code> repository specified by default, so you will not need to add it manually.</p>
+<p>To add <code class="highlighter-rouge">pageindicatorview</code> to your project, first make sure in root <code class="highlighter-rouge">build.gradle</code> you have specified the following repository:</p>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">repositories</span> <span class="o">{</span>
+        <span class="n">jcenter</span><span class="o">()</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+<blockquote>
+  <p><strong><em>Note</em></strong>: by creating new project in Android Studio it will have <code class="highlighter-rouge">jcenter</code> repository specified by default, so you will not need to add it manually.</p>
+</blockquote>
 
 <p>Once you make sure you have <code class="highlighter-rouge">jcenter</code> repository in your project, all you need to do is to add the following line in <code class="highlighter-rouge">dependencies</code> section of your project <code class="highlighter-rouge">build.gradle</code>.</p>
 
-<p>See latest library version <a href="https://bintray.com/romandanylyk/maven/pageindicatorview/_latestVersion"> [Download](https://api.bintray.com/packages/romandanylyk/maven/pageindicatorview/images/download.svg) </a>
-<code class="highlighter-rouge">groovy
-implementation 'com.romandanylyk:pageindicatorview:X.X.X'
-</code>
-If your project already use <code class="highlighter-rouge">appcompat-v7</code> support library, you can omit <code class="highlighter-rouge">PageIndicatorView</code> dependencies by adding a single .aar file to your project, that will decrease total amount of methods used in your project.</p>
+<p>See latest library version <a href="https://bintray.com/romandanylyk/maven/pageindicatorview/_latestVersion"> [Download](https://api.bintray.com/packages/romandanylyk/maven/pageindicatorview/images/download.svg) </a></p>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">implementation</span> <span class="s1">'com.romandanylyk:pageindicatorview:X.X.X'</span>
+</code></pre></div></div>
+<p>If your project already use <code class="highlighter-rouge">appcompat-v7</code> support library, you can omit <code class="highlighter-rouge">PageIndicatorView</code> dependencies by adding a single .aar file to your project, that will decrease total amount of methods used in your project.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">implementation</span> <span class="s1">'com.romandanylyk:pageindicatorview:X.X.X@aar'</span>
-</code></pre>
-</div>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">implementation</span> <span class="s1">'com.romandanylyk:pageindicatorview:X.X.X@aar'</span>
+</code></pre></div></div>
 
 <p>Keep in mind, that <code class="highlighter-rouge">PageIndicatorView</code> has min <a href="https://developer.android.com/about/dashboards/index.html">API level 14</a> and these dependencies:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">implementation</span> <span class="s1">'com.android.support:appcompat-v7:27.1.1'</span>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">implementation</span> <span class="s1">'com.android.support:appcompat-v7:27.1.1'</span>
 <span class="n">implementation</span> <span class="s1">'com.android.support:recyclerview-v7:27.1.1'</span>
 <span class="n">implementation</span> <span class="s1">'com.android.support:support-core-ui:27.1.1'</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="usage-sample"><strong>Usage Sample</strong></h3>
 <p>Usage of <code class="highlighter-rouge">PageIndicatorView</code> is quite simple. All you need to do is to declare a view in your <code class="highlighter-rouge">layout.xml</code>  and call <code class="highlighter-rouge">setSelection</code> method to select specific indicator - that’s it</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">PageIndicatorView</span> <span class="n">pageIndicatorView</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">pageIndicatorView</span><span class="o">);</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">PageIndicatorView</span> <span class="n">pageIndicatorView</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">pageIndicatorView</span><span class="o">);</span>
         <span class="n">pageIndicatorView</span><span class="o">.</span><span class="na">setCount</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span> <span class="c1">// specify total count of indicators</span>
         <span class="n">pageIndicatorView</span><span class="o">.</span><span class="na">setSelection</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>But if you’re as lazy as I’m - then there is another option to handle <code class="highlighter-rouge">PageIndicatorView</code></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>     <span class="nt">&lt;com.rd.PageIndicatorView</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     <span class="nt">&lt;com.rd.PageIndicatorView</span>
         <span class="na">android:id=</span><span class="s">"@+id/pageIndicatorView"</span>
         <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
         <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
@@ -709,8 +710,7 @@ If your project already use <code class="highlighter-rouge">appcompat-v7</code> 
         <span class="na">app:piv_viewPager=</span><span class="s">"@id/viewPager"</span>
         <span class="na">attrs:piv_padding=</span><span class="s">"12dp"</span>
         <span class="na">attrs:piv_radius=</span><span class="s">"8dp"</span> <span class="nt">/&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>All the <code class="highlighter-rouge">piv_</code> attributes here are specific for <code class="highlighter-rouge">PageIndicatorView</code> so you can customise it as you want with attributes - pretty handy.</p>
 
 <p>But what is more important here is  <code class="highlighter-rouge">app:piv_viewPager="@id/viewPager"</code>.
@@ -727,20 +727,19 @@ What it actually do is catch up your <code class="highlighter-rouge">ViewPager</
   <p><strong><em>Note</em></strong>:  Because <code class="highlighter-rouge">setViewPagerId</code> uses an instance of <code class="highlighter-rouge">ViewPager</code>, using it in recycler could lead to id conflicts, so <code class="highlighter-rouge">PageIndicatorView</code> will not know properly what is the right <code class="highlighter-rouge">ViewPager</code> to work with. Instead you should handle selected indicators on your own programatically.</p>
 </blockquote>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="n">pager</span><span class="o">.</span><span class="na">addOnPageChangeListener</span><span class="o">(</span><span class="k">new</span> <span class="n">ViewPager</span><span class="o">.</span><span class="na">OnPageChangeListener</span><span class="o">()</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">pager</span><span class="o">.</span><span class="na">addOnPageChangeListener</span><span class="o">(</span><span class="k">new</span> <span class="n">ViewPager</span><span class="o">.</span><span class="na">OnPageChangeListener</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="n">onPageScrolled</span><span class="o">(</span><span class="kt">int</span> <span class="n">position</span><span class="o">,</span> <span class="kt">float</span> <span class="n">positionOffset</span><span class="o">,</span> <span class="kt">int</span> <span class="n">positionOffsetPixels</span><span class="o">)</span> <span class="o">{</span><span class="cm">/*empty*/</span><span class="o">}</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onPageScrolled</span><span class="o">(</span><span class="kt">int</span> <span class="n">position</span><span class="o">,</span> <span class="kt">float</span> <span class="n">positionOffset</span><span class="o">,</span> <span class="kt">int</span> <span class="n">positionOffsetPixels</span><span class="o">)</span> <span class="o">{</span><span class="cm">/*empty*/</span><span class="o">}</span>
 
             <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="n">onPageSelected</span><span class="o">(</span><span class="kt">int</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onPageSelected</span><span class="o">(</span><span class="kt">int</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
                 <span class="n">pageIndicatorView</span><span class="o">.</span><span class="na">setSelection</span><span class="o">(</span><span class="n">position</span><span class="o">);</span>
             <span class="o">}</span>
 
             <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="n">onPageScrollStateChanged</span><span class="o">(</span><span class="kt">int</span> <span class="n">state</span><span class="o">)</span> <span class="o">{</span><span class="cm">/*empty*/</span><span class="o">}</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onPageScrollStateChanged</span><span class="o">(</span><span class="kt">int</span> <span class="n">state</span><span class="o">)</span> <span class="o">{</span><span class="cm">/*empty*/</span><span class="o">}</span>
         <span class="o">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Here you can see all the animations <code class="highlighter-rouge">PageIndicatorView</code> support.</p>
 
@@ -806,7 +805,7 @@ What it actually do is catch up your <code class="highlighter-rouge">ViewPager</
 
 <h3 id="license"><strong>License</strong></h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2017 Roman Danylyk
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright 2017 Roman Danylyk
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -819,8 +818,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
           <br>
@@ -848,17 +846,17 @@ limitations under the License.
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=PageIndicatorView&url=http://kmshack.github.io/AndroidUICollection/2016/10/22/PageIndicatorView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=PageIndicatorView&url=http://localhost:4000/AndroidUICollection/2016/10/22/PageIndicatorView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/10/22/PageIndicatorView/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/10/22/PageIndicatorView/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/10/22/PageIndicatorView/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/10/22/PageIndicatorView/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -889,7 +887,7 @@ limitations under the License.
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/10/22/PageIndicatorView/";
+    this.page.url = "http://localhost:4000/2016/10/22/PageIndicatorView/";
   };
 
   (function() {

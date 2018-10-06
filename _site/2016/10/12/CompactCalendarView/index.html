@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/10/12/CompactCalendarView/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/10/12/CompactCalendarView/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="CompactCalendarView [Build Status](https://travis-ci.org/SundeepK/CompactCalendarView.svg?branch=master)CompactCalendarView is a simple calendar view which p...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="CompactCalendarView">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="CompactCalendarView [Build Status](https://travis-ci.org/SundeepK/CompactCalendarView.svg?branch=master)CompactCalendarView is a simple calendar view which p...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/10/12/CompactCalendarView/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/10/12/CompactCalendarView/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="CompactCalendarView [Build Status](https://travis-ci.org/SundeepK/CompactCalendarView.svg?branch=master)CompactCalendarView is a simple calendar view which p..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-10-12-CompactCalendarView.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-10-12-CompactCalendarView.gif">
         
 
         <header class="post__header">
@@ -647,7 +651,7 @@
               <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/AndroidUICollection/images/posts/2016-10-12-CompactCalendarView.gif)"></div>
             </div>
           <br>
-          <h1 id="compactcalendarview-build-statushttpstravis-ciorgsundeepkcompactcalendarviewsvgbranchmasterhttpstravis-ciorgsundeepkcompactcalendarview">CompactCalendarView <a href="https://travis-ci.org/SundeepK/CompactCalendarView">[Build Status](https://travis-ci.org/SundeepK/CompactCalendarView.svg?branch=master)</a></h1>
+          <h1 id="compactcalendarview-build-statushttpstravis-ciorgsundeepkcompactcalendarviewsvgbranchmaster">CompactCalendarView <a href="https://travis-ci.org/SundeepK/CompactCalendarView">[Build Status](https://travis-ci.org/SundeepK/CompactCalendarView.svg?branch=master)</a></h1>
 <p>CompactCalendarView is a simple calendar view which provides scrolling between months. It’s based on Java’s Date and Calendar classes. It provides a simple api to query for dates and listeners for specific events.  For example, when the calendar has scrolled to a new month or a day has been selected.
 Still under active development.</p>
 
@@ -660,53 +664,47 @@ Still under active development.</p>
 <p>CompactCalendarView makes use of screenshot-tests-for-android (https://github.com/facebook/screenshot-tests-for-android). This is for UI testing. Since screenshot-tests-for-android takes screenshots, we need a way to ensure images can be reproduced consistently. To do this, a specific emulator is used to run tests.
 Unfortunately, an older emulator is used for now. New pull requests which change functionality some how should aim to create new screenshot tests or unit tests if possible. To run this locally, run the below commands:</p>
 
-<p>Pre-requisite (Also refer to .travis.yml):
-- Python
-- Python pillow installed 
-- Install android-19 (can be done through android sdk manager or command line).</p>
+<p>Pre-requisite (Also refer to .travis.yml):</p>
+<ul>
+  <li>Python</li>
+  <li>Python pillow installed</li>
+  <li>Install android-19 (can be done through android sdk manager or command line).</li>
+</ul>
 
 <p>Android 19 emulator is used because it seems to be a fast enough on travis-ci and because x86 emulators are not supported on travis-ci. Newer android version is possible but build times will increase.</p>
 
-<p>Install the abi and accept:
- <code class="highlighter-rouge">bash
-$ $ANDROID_HOME/tools/bin/sdkmanager 'system-images;android-22;default;armeabi-v7a'
-</code></p>
+<p>Install the abi and accept:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ $ANDROID_HOME</span>/tools/bin/sdkmanager <span class="s1">'system-images;android-22;default;armeabi-v7a'</span>
+</code></pre></div></div>
 
-<p>Create the emulator:
-<code class="highlighter-rouge">bash
-$ echo no | $ANDROID_HOME/tools/bin/avdmanager create avd --force -n testCompactCalendarEmulator -k "system-images;android-22;default;armeabi-v7a"
-</code></p>
+<p>Create the emulator:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo </span>no | <span class="nv">$ANDROID_HOME</span>/tools/bin/avdmanager create avd <span class="nt">--force</span> <span class="nt">-n</span> testCompactCalendarEmulator <span class="nt">-k</span> <span class="s2">"system-images;android-22;default;armeabi-v7a"</span>
+</code></pre></div></div>
 
 <p>Create sd card (creating in current dir):
-Any problems with sdcard are best solved by deleting and trying again
-<code class="highlighter-rouge">bash
-$ mksdcard -l sdcard 100M sdcard
-</code></p>
+Any problems with sdcard are best solved by deleting and trying again</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>mksdcard <span class="nt">-l</span> sdcard 100M sdcard
+</code></pre></div></div>
 
-<p>Run emulator (with out audio and window):
-<code class="highlighter-rouge">bash
-$ $ANDROID_HOME/emulator/emulator -avd testCompactCalendarEmulator -no-audio -no-window -sdcard sdcard &amp;
-</code></p>
+<p>Run emulator (with out audio and window):</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ $ANDROID_HOME</span>/emulator/emulator <span class="nt">-avd</span> testCompactCalendarEmulator <span class="nt">-no-audio</span> <span class="nt">-no-window</span> <span class="nt">-sdcard</span> sdcard &amp;
+</code></pre></div></div>
 
-<p>Run emulator and watch(with audio and window):
-<code class="highlighter-rouge">bash
-$ $ANDROID_HOME/emulator/emulator -avd testCompactCalendarEmulator -sdcard sdcard 
-</code></p>
+<p>Run emulator and watch(with audio and window):</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ $ANDROID_HOME</span>/emulator/emulator <span class="nt">-avd</span> testCompactCalendarEmulator <span class="nt">-sdcard</span> sdcard 
+</code></pre></div></div>
 
-<p>Running the tests to verify that the current tests pass and to check which tests are not producing the same screenshot:
-<code class="highlighter-rouge">bash
-$ ./gradlew verifyMode screenshotTests 
-</code></p>
+<p>Running the tests to verify that the current tests pass and to check which tests are not producing the same screenshot:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./gradlew verifyMode screenshotTests 
+</code></pre></div></div>
 
-<p>To generate new screenshots if new tests have been added:
-<code class="highlighter-rouge">bash
-$ ./gradlew recordMode screenshotTests 
-</code></p>
+<p>To generate new screenshots if new tests have been added:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./gradlew recordMode screenshotTests 
+</code></pre></div></div>
 
-<p>Run the unit tests like below:
-<code class="highlighter-rouge">bash
-$ ./gradlew test
-</code></p>
+<p>Run the unit tests like below:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./gradlew <span class="nb">test</span>
+</code></pre></div></div>
 
 <h2 id="android-studio-emulator">Android studio emulator</h2>
 <p>It’s possible to test using android studio emulator. However, it must be android 19 and and 480x800 screen resolution. One example is the Nexus S emulator. Just start the emulator and execute the gradle commands to run the tests. Emulator should be found automatically.</p>
@@ -719,7 +717,7 @@ $ ./gradlew test
 <h1 id="example-usage">Example usage</h1>
 <p>It is possible to change the appearance of the view via a few properties. This includes the background color, text color, textsize color of the current day and the color of the first day of the month.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="nt">&lt;com.github.sundeepk.compactcalendarview.CompactCalendarView</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;com.github.sundeepk.compactcalendarview.CompactCalendarView</span>
         <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
         <span class="na">android:id=</span><span class="s">"@+id/compactcalendar_view"</span>
         <span class="na">android:layout_width=</span><span class="s">"fill_parent"</span>
@@ -735,14 +733,13 @@ $ ./gradlew test
         <span class="na">app:compactCalendarMultiEventIndicatorColor=</span><span class="s">"#fff"</span>
         <span class="nt">/&gt;</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Please see Sample app for full example.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="c1">// ... code omitted for brevity         </span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">// ... code omitted for brevity         </span>
     <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="n">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
         <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_main</span><span class="o">);</span>
         <span class="kd">final</span> <span class="n">CompactCalendarView</span> <span class="n">compactCalendarView</span> <span class="o">=</span> <span class="o">(</span><span class="n">CompactCalendarView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">compactcalendar_view</span><span class="o">);</span>
@@ -769,20 +766,19 @@ $ ./gradlew test
         <span class="c1">// define a listener to receive callbacks when certain events happen.</span>
         <span class="n">compactCalendarView</span><span class="o">.</span><span class="na">setListener</span><span class="o">(</span><span class="k">new</span> <span class="n">CompactCalendarView</span><span class="o">.</span><span class="na">CompactCalendarViewListener</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="n">onDayClick</span><span class="o">(</span><span class="n">Date</span> <span class="n">dateClicked</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDayClick</span><span class="o">(</span><span class="n">Date</span> <span class="n">dateClicked</span><span class="o">)</span> <span class="o">{</span>
                 <span class="n">List</span><span class="o">&lt;</span><span class="n">Event</span><span class="o">&gt;</span> <span class="n">events</span> <span class="o">=</span> <span class="n">compactCalendarView</span><span class="o">.</span><span class="na">getEvents</span><span class="o">(</span><span class="n">dateClicked</span><span class="o">);</span>
                 <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="n">TAG</span><span class="o">,</span> <span class="s">"Day was clicked: "</span> <span class="o">+</span> <span class="n">dateClicked</span> <span class="o">+</span> <span class="s">" with events "</span> <span class="o">+</span> <span class="n">events</span><span class="o">);</span>
             <span class="o">}</span>
 
             <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="n">onMonthScroll</span><span class="o">(</span><span class="n">Date</span> <span class="n">firstDayOfNewMonth</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onMonthScroll</span><span class="o">(</span><span class="n">Date</span> <span class="n">firstDayOfNewMonth</span><span class="o">)</span> <span class="o">{</span>
                 <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="n">TAG</span><span class="o">,</span> <span class="s">"Month was scrolled to: "</span> <span class="o">+</span> <span class="n">firstDayOfNewMonth</span><span class="o">);</span>
             <span class="o">}</span>
         <span class="o">});</span>
     <span class="o">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>You can modify indicators using a preset of styles, below is an example, but few other combinations are also possible:</p>
 
@@ -791,21 +787,20 @@ $ ./gradlew test
 <p>Note that the calendar makes no attempt to de-duplicate events for the same exact DateTime. This is something that you must handle your self if it is important to your use case.</p>
 
 <h1 id="locale-specific-settings">Locale specific settings</h1>
-<p>It’s possible to set the locale so that weekday column names are automatically set by the calendar.
-<code class="highlighter-rouge">java
-        CompactCalendarView compactCalendarView = (CompactCalendarView) findViewById(R.id.compactcalendar_view);
-        compactCalendarView.setLocale(Locale.CHINESE);
-        compactCalendarView.setUseThreeLetterAbbreviation(true);
-</code></p>
+<p>It’s possible to set the locale so that weekday column names are automatically set by the calendar.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="n">CompactCalendarView</span> <span class="n">compactCalendarView</span> <span class="o">=</span> <span class="o">(</span><span class="n">CompactCalendarView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">compactcalendar_view</span><span class="o">);</span>
+        <span class="n">compactCalendarView</span><span class="o">.</span><span class="na">setLocale</span><span class="o">(</span><span class="n">Locale</span><span class="o">.</span><span class="na">CHINESE</span><span class="o">);</span>
+        <span class="n">compactCalendarView</span><span class="o">.</span><span class="na">setUseThreeLetterAbbreviation</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+</code></pre></div></div>
 
 <p><img src="https://github.com/SundeepK/CompactCalendarView/blob/master/images/chinese-locale-daynames.png" width="400" /></p>
 
-<pre><code class="language-gradle">dependencies {
-    compile 'com.github.sundeepk:compact-calendar-view:3.0.0'
-}
-</code></pre>
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">dependencies</span> <span class="o">{</span>
+    <span class="n">compile</span> <span class="s1">'com.github.sundeepk:compact-calendar-view:3.0.0'</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>The MIT License (MIT)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The MIT License (MIT)
 
 Copyright (c) [2018] [Sundeepk]
 
@@ -826,8 +821,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
           <br>
@@ -855,17 +849,17 @@ SOFTWARE.
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=CompactCalendarView&url=http://kmshack.github.io/AndroidUICollection/2016/10/12/CompactCalendarView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=CompactCalendarView&url=http://localhost:4000/AndroidUICollection/2016/10/12/CompactCalendarView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/10/12/CompactCalendarView/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/10/12/CompactCalendarView/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/10/12/CompactCalendarView/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/10/12/CompactCalendarView/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -896,7 +890,7 @@ SOFTWARE.
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/10/12/CompactCalendarView/";
+    this.page.url = "http://localhost:4000/2016/10/12/CompactCalendarView/";
   };
 
   (function() {

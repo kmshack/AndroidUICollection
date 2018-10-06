@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/11/14/ChipsLayoutManager/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/11/14/ChipsLayoutManager/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="ChipsLayoutManager  [minSdk for ChipsLayoutManager](https://img.shields.io/badge/minSdk-15-green.svg) [Android Arsenal](https://img.shields.io/badge/Android%...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="PageIndicatorView">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="ChipsLayoutManager  [minSdk for ChipsLayoutManager](https://img.shields.io/badge/minSdk-15-green.svg) [Android Arsenal](https://img.shields.io/badge/Android%...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/11/14/ChipsLayoutManager/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/11/14/ChipsLayoutManager/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="ChipsLayoutManager  [minSdk for ChipsLayoutManager](https://img.shields.io/badge/minSdk-15-green.svg) [Android Arsenal](https://img.shields.io/badge/Android%..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-11-14-ChipsLayoutManager.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-11-14-ChipsLayoutManager.gif">
         
 
         <header class="post__header">
@@ -647,7 +651,7 @@
               <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/AndroidUICollection/images/posts/2016-11-14-ChipsLayoutManager.gif)"></div>
             </div>
           <br>
-          <h1 id="chipslayoutmanager-img-altchipslayoutmanager-is-an-android-library-srchttpswwwcleveroadcompubliccomerciallabel-androidsvg-height19-minsdk-for-chipslayoutmanagerhttpsimgshieldsiobadgeminsdk-15-greensvg-android-arsenalhttpsimgshieldsiobadgeandroid20arsenal-chipslayoutmanager-brightgreensvgstyleflathttpsandroid-arsenalcomdetails14568">ChipsLayoutManager <img alt="ChipsLayoutManager is an android library" src="https://www.cleveroad.com/public/comercial/label-android.svg" height="19" /> <a href="#">[minSdk for ChipsLayoutManager](https://img.shields.io/badge/minSdk-15-green.svg)</a> <a href="https://android-arsenal.com/details/1/4568#">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ChipsLayoutManager-brightgreen.svg?style=flat)</a></h1>
+          <h1 id="chipslayoutmanager--minsdk-for-chipslayoutmanagerhttpsimgshieldsiobadgeminsdk-15-greensvg-android-arsenalhttpsimgshieldsiobadgeandroid20arsenal-chipslayoutmanager-brightgreensvgstyleflat">ChipsLayoutManager <img alt="ChipsLayoutManager is an android library" src="https://www.cleveroad.com/public/comercial/label-android.svg" height="19" /> <a href="#">[minSdk for ChipsLayoutManager](https://img.shields.io/badge/minSdk-15-green.svg)</a> <a href="https://android-arsenal.com/details/1/4568#">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ChipsLayoutManager-brightgreen.svg?style=flat)</a></h1>
 <p><a href="/images/header.png">ChipsLayoutManager for RecyclerView. Custom layout manager for RecyclerView</a></p>
 
 <h2 id="this-is-chipslayoutmanager---custom-recycler-views-layoutmanager-which-moves-item-to-the-next-line-when-no-space-left-on-the-current">This is ChipsLayoutManager - custom Recycler View’s LayoutManager which moves item to the next line when no space left on the current</h2>
@@ -661,21 +665,19 @@ but with support of CRUD animations i decided to make such stuff and share it.</
 </p>
 
 <h2 id="setup-and-usage">Setup and usage</h2>
-<p>### Installation <a href="https://bintray.com/beloo/widget/ChipsLayoutManager/_latestVersion"> [Download](https://api.bintray.com/packages/beloo/widget/ChipsLayoutManager/images/download.svg) </a></p>
+<h3 id="installation--downloadhttpsapibintraycompackagesbeloowidgetchipslayoutmanagerimagesdownloadsvg-">Installation <a href="https://bintray.com/beloo/widget/ChipsLayoutManager/_latestVersion"> [Download](https://api.bintray.com/packages/beloo/widget/ChipsLayoutManager/images/download.svg) </a></h3>
 
-<p>with gradle
-<code class="highlighter-rouge">GRADLE 
-compile 'com.beloo.widget:ChipsLayoutManager:0.3.7@aar'
-</code></p>
+<p>with gradle</p>
+<pre><code class="language-GRADLE">compile 'com.beloo.widget:ChipsLayoutManager:0.3.7@aar'
+</code></pre>
 
-<p>Assuming you have installed jCenter provider:
-<code class="highlighter-rouge">GRADLE
-allprojects {
+<p>Assuming you have installed jCenter provider:</p>
+<pre><code class="language-GRADLE">allprojects {
     repositories {
         jcenter()
     }
 }
-</code></p>
+</code></pre>
 
 <p>or just import <code class="highlighter-rouge">ChipsLayoutManager</code> module to your project.</p>
 
@@ -779,23 +781,24 @@ You have to call <code class="highlighter-rouge">notifyItemChanged</code> on <co
 
 <p><strong>Device current direction</strong> have been chosen by default.
 You can manipulate with layout direction (<strong>LTR</strong> or <strong>RTL</strong>)<br />
-<em>On Api &gt;= 17:</em>
-```XML</p>
-<android.support.v7.widget.recyclerview android:layout_width="match_parent" android:layout_height="match_parent" android:layoutdirection="rtl" />
-
-<div class="highlighter-rouge"><pre class="highlight"><code>or programmatically (_on all supported Api:_):
-```JAVA
-ViewCompat.setLayoutDirection(recyclerView, ViewCompat.LAYOUT_DIRECTION_RTL);
+<em>On Api &gt;= 17:</em></p>
+<pre><code class="language-XML">&lt;android.support.v7.widget.RecyclerView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layoutDirection="rtl"
+       /&gt;
 </code></pre>
-</div>
+<p>or programmatically (<em>on all supported Api:</em>):</p>
+<pre><code class="language-JAVA">ViewCompat.setLayoutDirection(recyclerView, ViewCompat.LAYOUT_DIRECTION_RTL);
+</code></pre>
 
 <p>For example look at sample application.
-<br />
-### Bonus
-You may need an <code class="highlighter-rouge">RecyclerView.ItemDecoration</code> to work with <code class="highlighter-rouge">ChipsLayoutManager</code> for fast setup as showed in sample. <br />
+<br /></p>
+<h3 id="bonus">Bonus</h3>
+<p>You may need an <code class="highlighter-rouge">RecyclerView.ItemDecoration</code> to work with <code class="highlighter-rouge">ChipsLayoutManager</code> for fast setup as showed in sample. <br />
 It contained in same package and named <code class="highlighter-rouge">SpacingItemDecoration</code>.</p>
 
-<h2 id="support--maintainedhttpsimgshieldsiomaintenanceyes2017svg-httpsgithubcombelooschipslayoutmanagertreedev">Support <a href="https://github.com/BelooS/ChipsLayoutManager/tree/dev"> [Maintained](https://img.shields.io/maintenance/yes/2017.svg) </a></h2>
+<h2 id="support--maintainedhttpsimgshieldsiomaintenanceyes2017svg-">Support <a href="https://github.com/BelooS/ChipsLayoutManager/tree/dev"> [Maintained](https://img.shields.io/maintenance/yes/2017.svg) </a></h2>
 <p>BETA is going.
 I respond to your founded issues. Just create a ticket if you found something goes wrong.<br />
 Thanks for testing, guys. I’m really appreciate it.</p>
@@ -810,9 +813,9 @@ I appreciate any help and contributors will be mentioned here.</p>
 <p>I create issues in tracking board of known problems.
 These issues are going to be fixed in next versions.</p>
 
-<h3 id="license--license-for-chipslayoutmanagerhttpsimgshieldsiohexpmlplugsvg-httpsgithubcombelooschipslayoutmanagerblobdevlicense">License <a href="https://github.com/BelooS/ChipsLayoutManager/blob/dev/LICENSE"> [license for ChipsLayoutManager](https://img.shields.io/hexpm/l/plug.svg) </a></h3>
+<h3 id="license--license-for-chipslayoutmanagerhttpsimgshieldsiohexpmlplugsvg-">License <a href="https://github.com/BelooS/ChipsLayoutManager/blob/dev/LICENSE"> [license for ChipsLayoutManager](https://img.shields.io/hexpm/l/plug.svg) </a></h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2016 Beloy Oleg, Ukraine.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright 2016 Beloy Oleg, Ukraine.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -825,8 +828,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
           <br>
@@ -854,17 +856,17 @@ limitations under the License.
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=PageIndicatorView&url=http://kmshack.github.io/AndroidUICollection/2016/11/14/ChipsLayoutManager/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=PageIndicatorView&url=http://localhost:4000/AndroidUICollection/2016/11/14/ChipsLayoutManager/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/11/14/ChipsLayoutManager/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/11/14/ChipsLayoutManager/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/11/14/ChipsLayoutManager/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/11/14/ChipsLayoutManager/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -895,7 +897,7 @@ limitations under the License.
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/11/14/ChipsLayoutManager/";
+    this.page.url = "http://localhost:4000/2016/11/14/ChipsLayoutManager/";
   };
 
   (function() {

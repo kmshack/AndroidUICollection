@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2018/09/26/SequenceLayout/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2018/09/26/SequenceLayout/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="sequence-layout [](https://jitpack.io/v/transferwise/sequence-layout.svg)A vertical sequence UI component for Android.Animates a progress bar to the first ac...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="SequenceLayout">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="sequence-layout [](https://jitpack.io/v/transferwise/sequence-layout.svg)A vertical sequence UI component for Android.Animates a progress bar to the first ac...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2018/09/26/SequenceLayout/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2018/09/26/SequenceLayout/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="sequence-layout [](https://jitpack.io/v/transferwise/sequence-layout.svg)A vertical sequence UI component for Android.Animates a progress bar to the first ac..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2018-09-26-SequenceLayout.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2018-09-26-SequenceLayout.gif">
         
 
         <header class="post__header">
@@ -647,7 +651,7 @@
               <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/AndroidUICollection/images/posts/2018-09-26-SequenceLayout.gif)"></div>
             </div>
           <br>
-          <h1 id="sequence-layout-httpsjitpackiovtransferwisesequence-layoutsvghttpsjitpackiotransferwisesequence-layout">sequence-layout <a href="https://jitpack.io/#transferwise/sequence-layout">[](https://jitpack.io/v/transferwise/sequence-layout.svg)</a></h1>
+          <h1 id="sequence-layout-httpsjitpackiovtransferwisesequence-layoutsvg">sequence-layout <a href="https://jitpack.io/#transferwise/sequence-layout">[](https://jitpack.io/v/transferwise/sequence-layout.svg)</a></h1>
 <p><img align="right" src="https://media.giphy.com/media/TGaDOPfTrX749uhD0L/giphy.gif" />
 A vertical sequence UI component for Android.</p>
 
@@ -655,22 +659,20 @@ A vertical sequence UI component for Android.</p>
 
 <h2 id="setup">Setup</h2>
 
-<p>Add the JitPack maven repository to your root <code class="highlighter-rouge">build.gradle</code>:
-<code class="highlighter-rouge">groovy
-allprojects {
-    repositories {
-      maven { url "https://jitpack.io" }
-    }
-}
-</code></p>
+<p>Add the JitPack maven repository to your root <code class="highlighter-rouge">build.gradle</code>:</p>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">allprojects</span> <span class="o">{</span>
+    <span class="n">repositories</span> <span class="o">{</span>
+      <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s2">"https://jitpack.io"</span> <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
 <p>And then the actual library dependency to your module’s <code class="highlighter-rouge">build.gradle</code>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
     <span class="n">implementation</span> <span class="s1">'com.github.transferwise:sequence-layout:1.0.7'</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="usage">Usage</h2>
 
@@ -679,7 +681,7 @@ allprojects {
 <h3 id="in-xml-layout">In XML layout</h3>
 <p>You can define steps in your XML layout:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;com.transferwise.sequencelayout.SequenceLayout</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;com.transferwise.sequencelayout.SequenceLayout</span>
     <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
     <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span><span class="nt">&gt;</span>
 
@@ -714,8 +716,7 @@ allprojects {
         <span class="na">app:anchor=</span><span class="s">"2 Dec"</span>
         <span class="na">app:title=</span><span class="s">"Fifth step"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/com.transferwise.sequencelayout.SequenceLayout&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Custom attributes for <code class="highlighter-rouge">SequenceLayout</code>:</p>
 
@@ -783,39 +784,39 @@ allprojects {
 
 <p>Alternatively, define an adapter that extends <code class="highlighter-rouge">SequenceAdapter&lt;T&gt;</code>, like this:</p>
 
-<pre><code class="language-kotlin">class MyAdapter(private val items: List&lt;MyItem&gt;) : SequenceAdapter&lt;MyAdapter.MyItem&gt;() {
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">MyAdapter</span><span class="p">(</span><span class="k">private</span> <span class="kd">val</span> <span class="py">items</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">MyItem</span><span class="p">&gt;)</span> <span class="p">:</span> <span class="n">SequenceAdapter</span><span class="p">&lt;</span><span class="n">MyAdapter</span><span class="p">.</span><span class="n">MyItem</span><span class="p">&gt;()</span> <span class="p">{</span>
 
-    override fun getCount(): Int {
-        return items.size
-    }
+    <span class="k">override</span> <span class="k">fun</span> <span class="n">getCount</span><span class="p">():</span> <span class="n">Int</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">items</span><span class="p">.</span><span class="n">size</span>
+    <span class="p">}</span>
 
-    override fun getItem(position: Int): MyItem {
-        return items[position]
-    }
+    <span class="k">override</span> <span class="k">fun</span> <span class="n">getItem</span><span class="p">(</span><span class="n">position</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">MyItem</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">items</span><span class="p">[</span><span class="n">position</span><span class="p">]</span>
+    <span class="p">}</span>
 
-    override fun bindView(sequenceStep: SequenceStep, item: MyItem) {
-        with(sequenceStep) {
-            setActive(item.isActive)
-            setAnchor(item.formattedDate)
-            setAnchorTextAppearance(...)
-            setTitle(item.title)
-            setTitleTextAppearance()
-            setSubtitle(...)
-            setSubtitleTextAppearance(...)
-        }
-    }
+    <span class="k">override</span> <span class="k">fun</span> <span class="n">bindView</span><span class="p">(</span><span class="n">sequenceStep</span><span class="p">:</span> <span class="n">SequenceStep</span><span class="p">,</span> <span class="n">item</span><span class="p">:</span> <span class="n">MyItem</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">with</span><span class="p">(</span><span class="n">sequenceStep</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">setActive</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">isActive</span><span class="p">)</span>
+            <span class="n">setAnchor</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">formattedDate</span><span class="p">)</span>
+            <span class="n">setAnchorTextAppearance</span><span class="p">(</span><span class="o">..</span><span class="p">.)</span>
+            <span class="n">setTitle</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">title</span><span class="p">)</span>
+            <span class="n">setTitleTextAppearance</span><span class="p">()</span>
+            <span class="n">setSubtitle</span><span class="p">(</span><span class="o">..</span><span class="p">.)</span>
+            <span class="n">setSubtitleTextAppearance</span><span class="p">(</span><span class="o">..</span><span class="p">.)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 
-    data class MyItem(val isActive: Boolean,
-                      val formattedDate: String,
-                      val title: String)
-}
-</code></pre>
+    <span class="kd">data class</span> <span class="nc">MyItem</span><span class="p">(</span><span class="kd">val</span> <span class="py">isActive</span><span class="p">:</span> <span class="n">Boolean</span><span class="p">,</span>
+                      <span class="kd">val</span> <span class="py">formattedDate</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span>
+                      <span class="kd">val</span> <span class="py">title</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <p>… and use it for a <code class="highlighter-rouge">SequenceLayout</code>:</p>
 
-<pre><code class="language-kotlin">val items = listOf(MyItem(...), MyItem(...), MyItem(...))
-sequenceLayout.setAdapter(MyAdapter(items))
-</code></pre>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">items</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">(</span><span class="n">MyItem</span><span class="p">(</span><span class="o">..</span><span class="p">.),</span> <span class="n">MyItem</span><span class="p">(</span><span class="o">..</span><span class="p">.),</span> <span class="n">MyItem</span><span class="p">(</span><span class="o">..</span><span class="p">.))</span>
+<span class="n">sequenceLayout</span><span class="p">.</span><span class="n">setAdapter</span><span class="p">(</span><span class="n">MyAdapter</span><span class="p">(</span><span class="n">items</span><span class="p">))</span>
+</code></pre></div></div>
 
 
           <br>
@@ -845,17 +846,17 @@ sequenceLayout.setAdapter(MyAdapter(items))
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=SequenceLayout&url=http://kmshack.github.io/AndroidUICollection/2018/09/26/SequenceLayout/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=SequenceLayout&url=http://localhost:4000/AndroidUICollection/2018/09/26/SequenceLayout/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2018/09/26/SequenceLayout/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2018/09/26/SequenceLayout/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2018/09/26/SequenceLayout/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2018/09/26/SequenceLayout/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -886,7 +887,7 @@ sequenceLayout.setAdapter(MyAdapter(items))
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2018/09/26/SequenceLayout/";
+    this.page.url = "http://localhost:4000/2018/09/26/SequenceLayout/";
   };
 
   (function() {

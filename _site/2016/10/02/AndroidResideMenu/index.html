@@ -7,27 +7,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Android Reside Menu</title>
-  <meta name="description" content="#AndroidResideMenu### 中文说明请点击 这里The idea of ResideMenu is from Dribble 1 and 2. It has come true and run in iOS devices. iOS ResideMenuThis project is the Re...">
+  <meta name="description" content="#AndroidResideMenu中文说明请点击 这里The idea of ResideMenu is from Dribble 1 and 2. It has come true and run in iOS devices. iOS ResideMenuThis project is the Refsid...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/10/02/AndroidResideMenu/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/10/02/AndroidResideMenu/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="#AndroidResideMenu### 中文说明请点击 这里The idea of ResideMenu is from Dribble 1 and 2. It has come true and run in iOS devices. iOS ResideMenuThis project is the Re...">
+  <meta name="description" content="#AndroidResideMenu中文说明请点击 这里The idea of ResideMenu is from Dribble 1 and 2. It has come true and run in iOS devices. iOS ResideMenuThis project is the Refsid...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="Android Reside Menu">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="#AndroidResideMenu### 中文说明请点击 这里The idea of ResideMenu is from Dribble 1 and 2. It has come true and run in iOS devices. iOS ResideMenuThis project is the Re...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/10/02/AndroidResideMenu/" />
+  <meta property="og:description" content="#AndroidResideMenu中文说明请点击 这里The idea of ResideMenu is from Dribble 1 and 2. It has come true and run in iOS devices. iOS ResideMenuThis project is the Refsid...">
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/10/02/AndroidResideMenu/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="#AndroidResideMenu### 中文说明请点击 这里The idea of ResideMenu is from Dribble 1 and 2. It has come true and run in iOS devices. iOS ResideMenuThis project is the Re..." />
+  <meta name="twitter:description" content="#AndroidResideMenu中文说明请点击 这里The idea of ResideMenu is from Dribble 1 and 2. It has come true and run in iOS devices. iOS ResideMenuThis project is the Refsid..." />
 
   
   	<!-- Article specific OG data -->
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-10-02-AndroidResideMenu.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-10-02-AndroidResideMenu.gif">
         
 
         <header class="post__header">
@@ -648,7 +652,7 @@
             </div>
           <br>
           <h2 id="androidresidemenu">#AndroidResideMenu</h2>
-<p>### 中文说明请点击 <a href="https://github.com/SpecialCyCi/AndroidResideMenu/blob/master/README_CN.md">这里</a></p>
+<h3 id="中文说明请点击-这里">中文说明请点击 <a href="https://github.com/SpecialCyCi/AndroidResideMenu/blob/master/README_CN.md">这里</a></h3>
 
 <p>The idea of ResideMenu is from Dribble <a href="http://dribbble.com/shots/1116265-Instasave-iPhone-App">1</a> and <a href="http://dribbble.com/shots/1114754-Social-Feed-iOS7">2</a>. It has come true and run in iOS devices. <a href="https://github.com/romaonthego/RESideMenu">iOS ResideMenu</a>
 This project is the RefsideMenu Android version. The visual effect is partly referred to iOS version of ResideMenu.
@@ -657,9 +661,9 @@ And thanks to the authors for the above idea and contribution.
 <img src="https://github.com/SpecialCyCi/AndroidResideMenu/raw/master/2.gif" width="320" height="568" /></p>
 
 <p>Now with 3D support 
-<img src="https://github.com/SpecialCyCi/AndroidResideMenu/raw/master/3Dsupport.png" width="320" height="568" />
-## DEMO
-This copy is the demo.</p>
+<img src="https://github.com/SpecialCyCi/AndroidResideMenu/raw/master/3Dsupport.png" width="320" height="568" /></p>
+<h2 id="demo">DEMO</h2>
+<p>This copy is the demo.</p>
 
 <h2 id="version-migration">Version Migration</h2>
 
@@ -667,12 +671,11 @@ This copy is the demo.</p>
 
 <p>Duplicate the followed code in dispatchTouchEvent() of Activity, replace the old <code class="highlighter-rouge">dispatchTouchEvent()</code> code.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="n">dispatchTouchEvent</span><span class="o">(</span><span class="n">MotionEvent</span> <span class="n">ev</span><span class="o">)</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">dispatchTouchEvent</span><span class="o">(</span><span class="n">MotionEvent</span> <span class="n">ev</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">resideMenu</span><span class="o">.</span><span class="na">dispatchTouchEvent</span><span class="o">(</span><span class="n">ev</span><span class="o">);</span>
     <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="requirements">Requirements</h2>
 
@@ -682,13 +685,13 @@ This copy is the demo.</p>
 
 <h3 id="gradle">Gradle</h3>
 
-<pre><code class="language-gradle">repositories {
-    mavenCentral()
-}
-dependencies {
-    compile 'com.specyci:residemenu:1.6+'
-}
-</code></pre>
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">repositories</span> <span class="o">{</span>
+    <span class="n">mavenCentral</span><span class="o">()</span>
+<span class="o">}</span>
+<span class="k">dependencies</span> <span class="o">{</span>
+    <span class="n">compile</span> <span class="s1">'com.specyci:residemenu:1.6+'</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
 <h3 id="other">Other</h3>
 
@@ -710,88 +713,82 @@ dependencies {
 </ol>
 
 <h2 id="usage">Usage</h2>
-<p>init ResideMenu: write these code in Activity onCreate()
-```java
-        // attach to current activity;
-        resideMenu = new ResideMenu(this);
-        resideMenu.setBackground(R.drawable.menu_background);
-        resideMenu.attachToActivity(this);</p>
+<p>init ResideMenu: write these code in Activity onCreate()</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="c1">// attach to current activity;</span>
+        <span class="n">resideMenu</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ResideMenu</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+        <span class="n">resideMenu</span><span class="o">.</span><span class="na">setBackground</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">menu_background</span><span class="o">);</span>
+        <span class="n">resideMenu</span><span class="o">.</span><span class="na">attachToActivity</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    // create menu items;
-    String titles[] = { "Home", "Profile", "Calendar", "Settings" };
-    int icon[] = { R.drawable.icon_home, R.drawable.icon_profile, R.drawable.icon_calendar, R.drawable.icon_settings };
+        <span class="c1">// create menu items;</span>
+        <span class="n">String</span> <span class="n">titles</span><span class="o">[]</span> <span class="o">=</span> <span class="o">{</span> <span class="s">"Home"</span><span class="o">,</span> <span class="s">"Profile"</span><span class="o">,</span> <span class="s">"Calendar"</span><span class="o">,</span> <span class="s">"Settings"</span> <span class="o">};</span>
+        <span class="kt">int</span> <span class="n">icon</span><span class="o">[]</span> <span class="o">=</span> <span class="o">{</span> <span class="n">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">icon_home</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">icon_profile</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">icon_calendar</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">icon_settings</span> <span class="o">};</span>
 
-    for (int i = 0; i &lt; titles.length; i++){
-        ResideMenuItem item = new ResideMenuItem(this, icon[i], titles[i]);
-        item.setOnClickListener(this);
-        resideMenu.addMenuItem(item,  ResideMenu.DIRECTION_LEFT); // or  ResideMenu.DIRECTION_RIGHT
-    } ``` If you want to use slipping gesture to operate(lock/unlock) the menu, override this code in Acitivity dispatchTouchEvent() (please duplicate the followed code in dispatchTouchEvent() of Activity. ```java
-@Override
-public boolean dispatchTouchEvent(MotionEvent ev) {
-    return resideMenu.dispatchTouchEvent(ev);
-} ``` **On some occasions, the slipping gesture function for locking/unlocking menu, may have conflicts with your widgets, such as viewpager. By then you can add the viewpager to ignored view, please refer to next chapter – Ignored Views.**
-</code></pre>
-</div>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">titles</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+            <span class="n">ResideMenuItem</span> <span class="n">item</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ResideMenuItem</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">icon</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="n">titles</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+            <span class="n">item</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+            <span class="n">resideMenu</span><span class="o">.</span><span class="na">addMenuItem</span><span class="o">(</span><span class="n">item</span><span class="o">,</span>  <span class="n">ResideMenu</span><span class="o">.</span><span class="na">DIRECTION_LEFT</span><span class="o">);</span> <span class="c1">// or  ResideMenu.DIRECTION_RIGHT</span>
+        <span class="o">}</span>
+</code></pre></div></div>
+<p>If you want to use slipping gesture to operate(lock/unlock) the menu, override this code in Acitivity dispatchTouchEvent() (please duplicate the followed code in dispatchTouchEvent() of Activity.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">dispatchTouchEvent</span><span class="o">(</span><span class="n">MotionEvent</span> <span class="n">ev</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">resideMenu</span><span class="o">.</span><span class="na">dispatchTouchEvent</span><span class="o">(</span><span class="n">ev</span><span class="o">);</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+<p><strong>On some occasions, the slipping gesture function for locking/unlocking menu, may have conflicts with your widgets, such as viewpager. By then you can add the viewpager to ignored view, please refer to next chapter – Ignored Views.</strong></p>
 
-<p>open/close menu
-<code class="highlighter-rouge">java
-resideMenu.openMenu(ResideMenu.DIRECTION_LEFT); // or ResideMenu.DIRECTION_RIGHT
-resideMenu.closeMenu();
-</code></p>
+<p>open/close menu</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">resideMenu</span><span class="o">.</span><span class="na">openMenu</span><span class="o">(</span><span class="n">ResideMenu</span><span class="o">.</span><span class="na">DIRECTION_LEFT</span><span class="o">);</span> <span class="c1">// or ResideMenu.DIRECTION_RIGHT</span>
+<span class="n">resideMenu</span><span class="o">.</span><span class="na">closeMenu</span><span class="o">();</span>
+</code></pre></div></div>
 
-<p>listen in the menu state
-```java
-    resideMenu.setMenuListener(menuListener);
-    private ResideMenu.OnMenuListener menuListener = new ResideMenu.OnMenuListener() {
-        @Override
-        public void openMenu() {
-            Toast.makeText(mContext, “Menu is opened”, Toast.LENGTH_SHORT).show();
-        }</p>
+<p>listen in the menu state</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">resideMenu</span><span class="o">.</span><span class="na">setMenuListener</span><span class="o">(</span><span class="n">menuListener</span><span class="o">);</span>
+    <span class="kd">private</span> <span class="n">ResideMenu</span><span class="o">.</span><span class="na">OnMenuListener</span> <span class="n">menuListener</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ResideMenu</span><span class="o">.</span><span class="na">OnMenuListener</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">openMenu</span><span class="o">()</span> <span class="o">{</span>
+            <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">mContext</span><span class="o">,</span> <span class="s">"Menu is opened"</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+        <span class="o">}</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    @Override
-    public void closeMenu() {
-        Toast.makeText(mContext, "Menu is closed", Toast.LENGTH_SHORT).show();
-    }
-}; ```
-</code></pre>
-</div>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">closeMenu</span><span class="o">()</span> <span class="o">{</span>
+            <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">mContext</span><span class="o">,</span> <span class="s">"Menu is closed"</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">};</span>
+</code></pre></div></div>
 
-<p>disable a swipe direction
-<code class="highlighter-rouge">java
-  resideMenu.setSwipeDirectionDisable(ResideMenu.DIRECTION_RIGHT);
-</code></p>
+<p>disable a swipe direction</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">resideMenu</span><span class="o">.</span><span class="na">setSwipeDirectionDisable</span><span class="o">(</span><span class="n">ResideMenu</span><span class="o">.</span><span class="na">DIRECTION_RIGHT</span><span class="o">);</span>
+</code></pre></div></div>
 
 <h2 id="custom-usage">Custom Usage</h2>
 
 <p>Do your reside menu configurations, by creating an instance of ResideMenu with your custom layout’s resource Ids. If you want to use default layout, just pass that variable as -1.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>        <span class="n">resideMenu</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ResideMenu</span><span class="o">(</span><span class="n">activity</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">menu_left</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">menu_right</span><span class="o">);</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="n">resideMenu</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ResideMenu</span><span class="o">(</span><span class="n">activity</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">menu_left</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">menu_right</span><span class="o">);</span>
         <span class="n">resideMenu</span><span class="o">.</span><span class="na">setBackground</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">menu_background</span><span class="o">);</span>
         <span class="n">resideMenu</span><span class="o">.</span><span class="na">attachToActivity</span><span class="o">(</span><span class="n">activity</span><span class="o">);</span>
         <span class="n">resideMenu</span><span class="o">.</span><span class="na">setScaleValue</span><span class="o">(</span><span class="mf">0.5f</span><span class="o">);</span>
 
         <span class="n">resideMenu</span><span class="o">.</span><span class="na">setSwipeDirectionDisable</span><span class="o">(</span><span class="n">ResideMenu</span><span class="o">.</span><span class="na">DIRECTION_RIGHT</span><span class="o">);</span>
         <span class="n">resideMenu</span><span class="o">.</span><span class="na">setSwipeDirectionDisable</span><span class="o">(</span><span class="n">ResideMenu</span><span class="o">.</span><span class="na">DIRECTION_LEFT</span><span class="o">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>As your configuration’s completed, now you can customize side menus by getting instances of them as following:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>        <span class="n">View</span> <span class="n">leftMenu</span> <span class="o">=</span> <span class="n">resideMenu</span><span class="o">.</span><span class="na">getLeftMenuView</span><span class="o">();</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="n">View</span> <span class="n">leftMenu</span> <span class="o">=</span> <span class="n">resideMenu</span><span class="o">.</span><span class="na">getLeftMenuView</span><span class="o">();</span>
         <span class="c1">// TODO: Do whatever you need to with leftMenu</span>
         <span class="n">View</span> <span class="n">rightMenu</span> <span class="o">=</span> <span class="n">resideMenu</span><span class="o">.</span><span class="na">getRightMenuView</span><span class="o">();</span>
         <span class="c1">// TODO: Do whatever you need to with rightMenu</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>##Ignored Views
-On some occasions, the slipping gesture function for locking/unlocking menu, may have conflicts with your widgets such as viewpager.By then you can add the viewpager to ignored view.
-<code class="highlighter-rouge">java
-        // add gesture operation's ignored views
-        FrameLayout ignored_view = (FrameLayout) findViewById(R.id.ignored_view);
-        resideMenu.addIgnoredView(ignored_view);
-</code>
-So that in ignored view’s workplace, the slipping gesture will not be allowed to operate menu.</p>
+On some occasions, the slipping gesture function for locking/unlocking menu, may have conflicts with your widgets such as viewpager.By then you can add the viewpager to ignored view.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="c1">// add gesture operation's ignored views</span>
+        <span class="n">FrameLayout</span> <span class="n">ignored_view</span> <span class="o">=</span> <span class="o">(</span><span class="n">FrameLayout</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">ignored_view</span><span class="o">);</span>
+        <span class="n">resideMenu</span><span class="o">.</span><span class="na">addIgnoredView</span><span class="o">(</span><span class="n">ignored_view</span><span class="o">);</span>
+</code></pre></div></div>
+<p>So that in ignored view’s workplace, the slipping gesture will not be allowed to operate menu.</p>
 
 <p>##About me
 A student from SCAU China.<br />
@@ -827,17 +824,17 @@ Email: specialcyci#gmail.com</p>
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Android Reside Menu&url=http://kmshack.github.io/AndroidUICollection/2016/10/02/AndroidResideMenu/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Android Reside Menu&url=http://localhost:4000/AndroidUICollection/2016/10/02/AndroidResideMenu/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/10/02/AndroidResideMenu/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/10/02/AndroidResideMenu/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/10/02/AndroidResideMenu/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/10/02/AndroidResideMenu/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -868,7 +865,7 @@ Email: specialcyci#gmail.com</p>
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/10/02/AndroidResideMenu/";
+    this.page.url = "http://localhost:4000/2016/10/02/AndroidResideMenu/";
   };
 
   (function() {

@@ -7,27 +7,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Text Decorator</title>
-  <meta name="description" content="Text Decorator[Build Status](https://travis-ci.org/nntuyen/text-decorator.svg?branch=master)Decorate your TextView easily[](screenshot/screenshot2.gif)UsageT...">
+  <meta name="description" content="Text Decorator[Build Status](https://travis-ci.org/nntuyen/text-decorator.svg?branch=master)Decorate your TextView easilyUsageTextDecorator        .decorate(...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2017/01/02/text_decorator/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2017/01/02/text_decorator/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="Text Decorator[Build Status](https://travis-ci.org/nntuyen/text-decorator.svg?branch=master)Decorate your TextView easily[](screenshot/screenshot2.gif)UsageT...">
+  <meta name="description" content="Text Decorator[Build Status](https://travis-ci.org/nntuyen/text-decorator.svg?branch=master)Decorate your TextView easilyUsageTextDecorator        .decorate(...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="Text Decorator">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="Text Decorator[Build Status](https://travis-ci.org/nntuyen/text-decorator.svg?branch=master)Decorate your TextView easily[](screenshot/screenshot2.gif)UsageT...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2017/01/02/text_decorator/" />
+  <meta property="og:description" content="Text Decorator[Build Status](https://travis-ci.org/nntuyen/text-decorator.svg?branch=master)Decorate your TextView easilyUsageTextDecorator        .decorate(...">
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2017/01/02/text_decorator/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="Text Decorator[Build Status](https://travis-ci.org/nntuyen/text-decorator.svg?branch=master)Decorate your TextView easily[](screenshot/screenshot2.gif)UsageT..." />
+  <meta name="twitter:description" content="Text Decorator[Build Status](https://travis-ci.org/nntuyen/text-decorator.svg?branch=master)Decorate your TextView easilyUsageTextDecorator        .decorate(..." />
 
   
   	<!-- Article specific OG data -->
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2017-01-02-text_decorator.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2017-01-02-text_decorator.gif">
         
 
         <header class="post__header">
@@ -652,11 +656,11 @@
 
 <p>Decorate your TextView easily</p>
 
-<p>[](screenshot/screenshot2.gif)</p>
+<p><a href="screenshot/screenshot2.gif"></a></p>
 
 <h2 id="usage">Usage</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">TextDecorator</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">TextDecorator</span>
         <span class="o">.</span><span class="na">decorate</span><span class="o">(</span><span class="n">textView</span><span class="o">,</span> <span class="n">text</span><span class="o">)</span>
         <span class="o">.</span><span class="na">setTextColor</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">colorAccent</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">5</span><span class="o">)</span>
         <span class="o">.</span><span class="na">setBackgroundColor</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">colorPrimary</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">11</span><span class="o">)</span>
@@ -668,16 +672,15 @@
         <span class="o">.</span><span class="na">underline</span><span class="o">(</span><span class="mi">120</span><span class="o">,</span> <span class="mi">200</span><span class="o">)</span>
         <span class="o">.</span><span class="na">blur</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="n">BlurMaskFilter</span><span class="o">.</span><span class="na">Blur</span><span class="o">.</span><span class="na">NORMAL</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">2</span><span class="o">)</span>
         <span class="o">.</span><span class="na">makeTextClickable</span><span class="o">(</span><span class="k">new</span> <span class="n">OnTextClickListener</span><span class="o">()</span> <span class="o">{</span>
-          <span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">void</span> <span class="n">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">view</span><span class="o">,</span> <span class="n">String</span> <span class="n">text</span><span class="o">)</span> <span class="o">{</span>
+          <span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">view</span><span class="o">,</span> <span class="n">String</span> <span class="n">text</span><span class="o">)</span> <span class="o">{</span>
             <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">MainActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="n">text</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
           <span class="o">}</span>
         <span class="o">},</span> <span class="mi">250</span><span class="o">,</span> <span class="mi">270</span><span class="o">,</span> <span class="kc">false</span><span class="o">)</span>
         <span class="o">.</span><span class="na">build</span><span class="o">();</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>or</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">TextDecorator</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">TextDecorator</span>
         <span class="o">.</span><span class="na">decorate</span><span class="o">(</span><span class="n">textView</span><span class="o">,</span> <span class="n">text</span><span class="o">)</span>
         <span class="o">.</span><span class="na">setTextColor</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">colorAccent</span><span class="o">,</span> <span class="s">"Lorem"</span><span class="o">,</span> <span class="s">"amet"</span><span class="o">)</span>
         <span class="o">.</span><span class="na">setBackgroundColor</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">colorPrimary</span><span class="o">,</span> <span class="s">"dolor"</span><span class="o">,</span> <span class="s">"elit"</span><span class="o">)</span>
@@ -685,27 +688,25 @@
         <span class="o">.</span><span class="na">underline</span><span class="o">(</span><span class="s">"sodales"</span><span class="o">,</span> <span class="s">"quam"</span><span class="o">)</span>
         <span class="o">.</span><span class="na">setSubscript</span><span class="o">(</span><span class="s">"vitae"</span><span class="o">)</span>
         <span class="o">.</span><span class="na">makeTextClickable</span><span class="o">(</span><span class="k">new</span> <span class="n">OnTextClickListener</span><span class="o">()</span> <span class="o">{</span>
-          <span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">void</span> <span class="n">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">view</span><span class="o">,</span> <span class="n">String</span> <span class="n">text</span><span class="o">)</span> <span class="o">{</span>
+          <span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">view</span><span class="o">,</span> <span class="n">String</span> <span class="n">text</span><span class="o">)</span> <span class="o">{</span>
             <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">MainActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="n">text</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
           <span class="o">}</span>
         <span class="o">},</span> <span class="kc">false</span><span class="o">,</span> <span class="s">"porta"</span><span class="o">,</span> <span class="s">"commodo"</span><span class="o">,</span> <span class="s">"tempor venenatis nulla"</span><span class="o">)</span>
         <span class="o">.</span><span class="na">setTextColor</span><span class="o">(</span><span class="n">android</span><span class="o">.</span><span class="na">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">holo_green_light</span><span class="o">,</span> <span class="s">"porta"</span><span class="o">,</span> <span class="s">"commodo"</span><span class="o">,</span> <span class="s">"tempor venenatis nulla"</span><span class="o">)</span>
         <span class="o">.</span><span class="na">build</span><span class="o">();</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="download">Download</h2>
 <p>Gradle</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">dependencies</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">dependencies</span> <span class="p">{</span>
     <span class="nx">compile</span> <span class="s1">'com.tuyenmonkey:text-decorator:1.0.0'</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="license">License</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2016 Tuyen Monkey
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright 2016 Tuyen Monkey
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -718,8 +719,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
           <br>
@@ -749,17 +749,17 @@ limitations under the License.
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Text Decorator&url=http://kmshack.github.io/AndroidUICollection/2017/01/02/text_decorator/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Text Decorator&url=http://localhost:4000/AndroidUICollection/2017/01/02/text_decorator/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2017/01/02/text_decorator/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2017/01/02/text_decorator/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2017/01/02/text_decorator/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2017/01/02/text_decorator/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -790,7 +790,7 @@ limitations under the License.
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2017/01/02/text_decorator/";
+    this.page.url = "http://localhost:4000/2017/01/02/text_decorator/";
   };
 
   (function() {

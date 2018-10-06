@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2017/03/29/ExcelPanel/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2017/03/29/ExcelPanel/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="excelPanelA two-dimensional RecyclerView. Not only can load historical data, but also can load future data.demo_gifdemo_gif_adjust_heightIncluding in your pr...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="ExcelPanel">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="excelPanelA two-dimensional RecyclerView. Not only can load historical data, but also can load future data.demo_gifdemo_gif_adjust_heightIncluding in your pr...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2017/03/29/ExcelPanel/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2017/03/29/ExcelPanel/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="excelPanelA two-dimensional RecyclerView. Not only can load historical data, but also can load future data.demo_gifdemo_gif_adjust_heightIncluding in your pr..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2017-03-29-ExcelPanel.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2017-03-29-ExcelPanel.gif">
         
 
         <header class="post__header">
@@ -655,88 +659,84 @@
 
 <h1 id="including-in-your-project">Including in your project</h1>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>compile 'cn.zhouchaoyuan:excelpanel:1.0.4'
-</code></pre>
-</div>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>compile 'cn.zhouchaoyuan:excelpanel:1.0.4'
+</code></pre></div></div>
 
 <h1 id="usage">Usage</h1>
 
 <p>###1、Write in xml</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;cn.zhouchaoyuan.excelpanel.ExcelPanel</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;cn.zhouchaoyuan.excelpanel.ExcelPanel</span>
         <span class="na">android:id=</span><span class="s">"@+id/content_container"</span>
         <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
         <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
         <span class="na">app:left_cell_width=</span><span class="s">"@dimen/room_status_cell_length"</span>
         <span class="na">app:normal_cell_width=</span><span class="s">"@dimen/room_status_cell_length"</span>
         <span class="na">app:top_cell_height=</span><span class="s">"@dimen/room_status_cell_length"</span> <span class="nt">/&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Configure using xml attributes</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 app:left_cell_width     //left header cell's width, not support wrap_content
 app:normal_cell_width   //container cell's width, not support wrap_content
 app:top_cell_height     //top header cell's height, not support wrap_content
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>###2、Define your Custom Adapter
 Your adapter must extends BaseExcelPanelAdapter and override seven methods show as follow:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Adapter</span> <span class="kd">extends</span> <span class="n">BaseExcelPanelAdapter</span><span class="o">&lt;</span><span class="n">RowTitle</span><span class="o">,</span> <span class="n">ColTitle</span><span class="o">,</span> <span class="n">Cell</span><span class="o">&gt;{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Adapter</span> <span class="kd">extends</span> <span class="n">BaseExcelPanelAdapter</span><span class="o">&lt;</span><span class="n">RowTitle</span><span class="o">,</span> <span class="n">ColTitle</span><span class="o">,</span> <span class="n">Cell</span><span class="o">&gt;{</span>
 
-    <span class="kd">public</span> <span class="n">Adapter</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nf">Adapter</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
     <span class="o">}</span>
 
     <span class="c1">//=========================================normal cell=========================================</span>
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">RecyclerView</span><span class="o">.</span><span class="na">ViewHolder</span> <span class="n">onCreateCellViewHolder</span><span class="o">(</span><span class="n">ViewGroup</span> <span class="n">parent</span><span class="o">,</span> <span class="kt">int</span> <span class="n">viewType</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">RecyclerView</span><span class="o">.</span><span class="na">ViewHolder</span> <span class="nf">onCreateCellViewHolder</span><span class="o">(</span><span class="n">ViewGroup</span> <span class="n">parent</span><span class="o">,</span> <span class="kt">int</span> <span class="n">viewType</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onBindCellViewHolder</span><span class="o">(</span><span class="n">RecyclerView</span><span class="o">.</span><span class="na">ViewHolder</span> <span class="n">holder</span><span class="o">,</span> <span class="kt">int</span> <span class="n">verticalPosition</span><span class="o">,</span> <span class="kt">int</span> <span class="n">horizontalPosition</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onBindCellViewHolder</span><span class="o">(</span><span class="n">RecyclerView</span><span class="o">.</span><span class="na">ViewHolder</span> <span class="n">holder</span><span class="o">,</span> <span class="kt">int</span> <span class="n">verticalPosition</span><span class="o">,</span> <span class="kt">int</span> <span class="n">horizontalPosition</span><span class="o">)</span> <span class="o">{</span>
 
     <span class="o">}</span>
 
     <span class="c1">//=========================================top cell===========================================</span>
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">RecyclerView</span><span class="o">.</span><span class="na">ViewHolder</span> <span class="n">onCreateTopViewHolder</span><span class="o">(</span><span class="n">ViewGroup</span> <span class="n">parent</span><span class="o">,</span> <span class="kt">int</span> <span class="n">viewType</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">RecyclerView</span><span class="o">.</span><span class="na">ViewHolder</span> <span class="nf">onCreateTopViewHolder</span><span class="o">(</span><span class="n">ViewGroup</span> <span class="n">parent</span><span class="o">,</span> <span class="kt">int</span> <span class="n">viewType</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onBindTopViewHolder</span><span class="o">(</span><span class="n">RecyclerView</span><span class="o">.</span><span class="na">ViewHolder</span> <span class="n">holder</span><span class="o">,</span> <span class="kt">int</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onBindTopViewHolder</span><span class="o">(</span><span class="n">RecyclerView</span><span class="o">.</span><span class="na">ViewHolder</span> <span class="n">holder</span><span class="o">,</span> <span class="kt">int</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
 
     <span class="o">}</span>
 
     <span class="c1">//=========================================left cell===========================================</span>
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">RecyclerView</span><span class="o">.</span><span class="na">ViewHolder</span> <span class="n">onCreateLeftViewHolder</span><span class="o">(</span><span class="n">ViewGroup</span> <span class="n">parent</span><span class="o">,</span> <span class="kt">int</span> <span class="n">viewType</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">RecyclerView</span><span class="o">.</span><span class="na">ViewHolder</span> <span class="nf">onCreateLeftViewHolder</span><span class="o">(</span><span class="n">ViewGroup</span> <span class="n">parent</span><span class="o">,</span> <span class="kt">int</span> <span class="n">viewType</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onBindLeftViewHolder</span><span class="o">(</span><span class="n">RecyclerView</span><span class="o">.</span><span class="na">ViewHolder</span> <span class="n">holder</span><span class="o">,</span> <span class="kt">int</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onBindLeftViewHolder</span><span class="o">(</span><span class="n">RecyclerView</span><span class="o">.</span><span class="na">ViewHolder</span> <span class="n">holder</span><span class="o">,</span> <span class="kt">int</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
 
     <span class="o">}</span>
 
     <span class="c1">//=========================================top left cell=======================================</span>
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">View</span> <span class="n">onCreateTopLeftView</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">View</span> <span class="nf">onCreateTopLeftView</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>###3、Use your Adapter</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">//==============================</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//==============================</span>
 <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">RowTitle</span><span class="o">&gt;</span> <span class="n">rowTitles</span><span class="o">;</span>
 <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">ColTitle</span><span class="o">&gt;</span> <span class="n">colTitles</span><span class="o">;</span>
 <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Cell</span><span class="o">&gt;&gt;</span> <span class="n">cells</span><span class="o">;</span>
@@ -751,8 +751,7 @@ Your adapter must extends BaseExcelPanelAdapter and override seven methods show 
 <span class="n">adapter</span><span class="o">.</span><span class="na">setAllData</span><span class="o">(</span><span class="n">colTitles</span><span class="o">,</span> <span class="n">rowTitles</span><span class="o">,</span> <span class="n">cells</span><span class="o">);</span>
 <span class="n">adapter</span><span class="o">.</span><span class="na">enableFooter</span><span class="o">();</span><span class="c1">//load more, you can also call disableFooter()----default</span>
 <span class="n">adapter</span><span class="o">.</span><span class="na">enableHeader</span><span class="o">();</span><span class="c1">//load history, you can also call disableHeader()----default</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>If using setOnLoadMoreListener(…) and enableHeader() you must call addHistorySize(int) to tell ExcelPanel how many data have been added.</p>
 
@@ -767,7 +766,7 @@ Your adapter must extends BaseExcelPanelAdapter and override seven methods show 
 
 <p>#License</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
    Copyright 2017 zhouchaoyuan
 
    Licensed under the Apache License, Version 2.0 (the "License");
@@ -782,8 +781,7 @@ Your adapter must extends BaseExcelPanelAdapter and override seven methods show 
    See the License for the specific language governing permissions and
    limitations under the License.
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
           <br>
           <div class="post__tags">
@@ -812,17 +810,17 @@ Your adapter must extends BaseExcelPanelAdapter and override seven methods show 
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=ExcelPanel&url=http://kmshack.github.io/AndroidUICollection/2017/03/29/ExcelPanel/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=ExcelPanel&url=http://localhost:4000/AndroidUICollection/2017/03/29/ExcelPanel/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2017/03/29/ExcelPanel/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2017/03/29/ExcelPanel/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2017/03/29/ExcelPanel/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2017/03/29/ExcelPanel/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -853,7 +851,7 @@ Your adapter must extends BaseExcelPanelAdapter and override seven methods show 
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2017/03/29/ExcelPanel/";
+    this.page.url = "http://localhost:4000/2017/03/29/ExcelPanel/";
   };
 
   (function() {

@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2017/03/20/BubblePicker/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2017/03/20/BubblePicker/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="Bubble-Picker[License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)[](https://jitpack.io/v/igalata/Bubble-Picker.svg)Check this project on d...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="BubblePicker">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="Bubble-Picker[License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)[](https://jitpack.io/v/igalata/Bubble-Picker.svg)Check this project on d...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2017/03/20/BubblePicker/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2017/03/20/BubblePicker/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="Bubble-Picker[License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)[](https://jitpack.io/v/igalata/Bubble-Picker.svg)Check this project on d..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2017-03-20-BubblePicker.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2017-03-20-BubblePicker.gif">
         
 
         <header class="post__header">
@@ -667,28 +671,26 @@
 
 <h2 id="usage">Usage</h2>
 
-<p>Add to your root build.gradle:
-<code class="highlighter-rouge">Groovy
-allprojects {
+<p>Add to your root build.gradle:</p>
+<pre><code class="language-Groovy">allprojects {
 	repositories {
 	...
 	maven { url "https://jitpack.io" }
 	}
 }
-</code></p>
+</code></pre>
 
-<p>Add the dependency:
-<code class="highlighter-rouge">Groovy
-dependencies {
+<p>Add the dependency:</p>
+<pre><code class="language-Groovy">dependencies {
 	compile 'com.github.igalata:Bubble-Picker:v0.2.4'
 }
-</code></p>
+</code></pre>
 
 <h2 id="how-to-use-this-library">How to use this library</h2>
 
 <p>Add <code class="highlighter-rouge">BubblePicker</code> to your xml layout</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
 <span class="nt">&lt;FrameLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
     <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
     <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
@@ -701,120 +703,113 @@ dependencies {
         <span class="na">app:backgroundColor=</span><span class="s">"@android:color/white"</span> <span class="nt">/&gt;</span>
 
 <span class="nt">&lt;/FrameLayout&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Override onResume() and onPause() methods to call the same methods from the <code class="highlighter-rouge">BubblePicker</code></p>
 
-<p>Kotlin
-```kotlin
-override fun onResume() {
-      super.onResume()
-      picker.onResume()
-}</p>
+<p>Kotlin</p>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="k">fun</span> <span class="n">onResume</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">super</span><span class="p">.</span><span class="n">onResume</span><span class="p">()</span>
+      <span class="n">picker</span><span class="p">.</span><span class="n">onResume</span><span class="p">()</span>
+<span class="p">}</span>
 
-<p>override fun onPause() {
-      super.onPause()
-      picker.onPause()
-}
-```</p>
+<span class="k">override</span> <span class="k">fun</span> <span class="n">onPause</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">super</span><span class="p">.</span><span class="n">onPause</span><span class="p">()</span>
+      <span class="n">picker</span><span class="p">.</span><span class="n">onPause</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
-<p>Java
-```java
-@Override
-protected void onResume() {
-      super.onResume();
-      picker.onResume();
-}</p>
+<p>Java</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Override</span>
+<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onResume</span><span class="o">()</span> <span class="o">{</span>
+      <span class="kd">super</span><span class="o">.</span><span class="na">onResume</span><span class="o">();</span>
+      <span class="n">picker</span><span class="o">.</span><span class="na">onResume</span><span class="o">();</span>
+<span class="o">}</span>
 
-<p>@Override
-protected void onPause() {
-      super.onPause();
-      picker.onPause();
-}
-```</p>
+<span class="nd">@Override</span>
+<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onPause</span><span class="o">()</span> <span class="o">{</span>
+      <span class="kd">super</span><span class="o">.</span><span class="na">onPause</span><span class="o">();</span>
+      <span class="n">picker</span><span class="o">.</span><span class="na">onPause</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
 <p>Pass the <code class="highlighter-rouge">PickerItem</code> list to the <code class="highlighter-rouge">BubblePicker</code></p>
 
-<p>Kotlin
-```kotlin
-val titles = resources.getStringArray(R.array.countries)
-val colors = resources.obtainTypedArray(R.array.colors)
-val images = resources.obtainTypedArray(R.array.images)</p>
+<p>Kotlin</p>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">titles</span> <span class="p">=</span> <span class="n">resources</span><span class="p">.</span><span class="n">getStringArray</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="n">array</span><span class="p">.</span><span class="n">countries</span><span class="p">)</span>
+<span class="kd">val</span> <span class="py">colors</span> <span class="p">=</span> <span class="n">resources</span><span class="p">.</span><span class="n">obtainTypedArray</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="n">array</span><span class="p">.</span><span class="n">colors</span><span class="p">)</span>
+<span class="kd">val</span> <span class="py">images</span> <span class="p">=</span> <span class="n">resources</span><span class="p">.</span><span class="n">obtainTypedArray</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="n">array</span><span class="p">.</span><span class="n">images</span><span class="p">)</span>
 
-<p>picker.adapter = object : BubblePickerAdapter {</p>
+<span class="n">picker</span><span class="p">.</span><span class="n">adapter</span> <span class="p">=</span> <span class="kd">object</span> <span class="err">: </span><span class="nc">BubblePickerAdapter</span> <span class="p">{</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>        override val totalCount = titles.size
+            <span class="k">override</span> <span class="kd">val</span> <span class="py">totalCount</span> <span class="p">=</span> <span class="n">titles</span><span class="p">.</span><span class="n">size</span>
 
-        override fun getItem(position: Int): PickerItem {
-            return PickerItem().apply {
-                title = titles[position]
-                gradient = BubbleGradient(colors.getColor((position * 2) % 8, 0),
-                        colors.getColor((position * 2) % 8 + 1, 0), BubbleGradient.VERTICAL)
-                typeface = mediumTypeface
-                textColor = ContextCompat.getColor(this@DemoActivity, android.R.color.white)
-                backgroundImage = ContextCompat.getDrawable(this@DemoActivity, images.getResourceId(position, 0))
-            }
-        } } ```
-</code></pre>
-</div>
+            <span class="k">override</span> <span class="k">fun</span> <span class="n">getItem</span><span class="p">(</span><span class="n">position</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">PickerItem</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="n">PickerItem</span><span class="p">().</span><span class="n">apply</span> <span class="p">{</span>
+                    <span class="n">title</span> <span class="p">=</span> <span class="n">titles</span><span class="p">[</span><span class="n">position</span><span class="p">]</span>
+                    <span class="n">gradient</span> <span class="p">=</span> <span class="n">BubbleGradient</span><span class="p">(</span><span class="n">colors</span><span class="p">.</span><span class="n">getColor</span><span class="p">((</span><span class="n">position</span> <span class="p">*</span> <span class="m">2</span><span class="p">)</span> <span class="p">%</span> <span class="m">8</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span>
+                            <span class="n">colors</span><span class="p">.</span><span class="n">getColor</span><span class="p">((</span><span class="n">position</span> <span class="p">*</span> <span class="m">2</span><span class="p">)</span> <span class="p">%</span> <span class="m">8</span> <span class="p">+</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">BubbleGradient</span><span class="p">.</span><span class="n">VERTICAL</span><span class="p">)</span>
+                    <span class="n">typeface</span> <span class="p">=</span> <span class="n">mediumTypeface</span>
+                    <span class="n">textColor</span> <span class="p">=</span> <span class="n">ContextCompat</span><span class="p">.</span><span class="n">getColor</span><span class="p">(</span><span class="k">this</span><span class="n">@DemoActivity</span><span class="p">,</span> <span class="n">android</span><span class="p">.</span><span class="n">R</span><span class="p">.</span><span class="n">color</span><span class="p">.</span><span class="n">white</span><span class="p">)</span>
+                    <span class="n">backgroundImage</span> <span class="p">=</span> <span class="n">ContextCompat</span><span class="p">.</span><span class="n">getDrawable</span><span class="p">(</span><span class="k">this</span><span class="n">@DemoActivity</span><span class="p">,</span> <span class="n">images</span><span class="p">.</span><span class="n">getResourceId</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
-<p>Java
-```java
-final String[] titles = getResources().getStringArray(R.array.countries);
-final TypedArray colors = getResources().obtainTypedArray(R.array.colors);
-final TypedArray images = getResources().obtainTypedArray(R.array.images);</p>
+<p>Java</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">final</span> <span class="n">String</span><span class="o">[]</span> <span class="n">titles</span> <span class="o">=</span> <span class="n">getResources</span><span class="o">().</span><span class="na">getStringArray</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">array</span><span class="o">.</span><span class="na">countries</span><span class="o">);</span>
+<span class="kd">final</span> <span class="n">TypedArray</span> <span class="n">colors</span> <span class="o">=</span> <span class="n">getResources</span><span class="o">().</span><span class="na">obtainTypedArray</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">array</span><span class="o">.</span><span class="na">colors</span><span class="o">);</span>
+<span class="kd">final</span> <span class="n">TypedArray</span> <span class="n">images</span> <span class="o">=</span> <span class="n">getResources</span><span class="o">().</span><span class="na">obtainTypedArray</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">array</span><span class="o">.</span><span class="na">images</span><span class="o">);</span>
 
-<p>picker.setAdapter(new BubblePickerAdapter() {
-            @Override
-            public int getTotalCount() {
-                return titles.length;
-            }</p>
+<span class="n">picker</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(</span><span class="k">new</span> <span class="n">BubblePickerAdapter</span><span class="o">()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getTotalCount</span><span class="o">()</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="n">titles</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+            <span class="o">}</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>        @NotNull
-        @Override
-        public PickerItem getItem(int position) {
-            PickerItem item = new PickerItem();
-            item.setTitle(titles[position]);
-            item.setGradient(new BubbleGradient(colors.getColor((position * 2) % 8, 0),
-                    colors.getColor((position * 2) % 8 + 1, 0), BubbleGradient.VERTICAL));
-            item.setTypeface(mediumTypeface);
-            item.setTextColor(ContextCompat.getColor(DemoActivity.this, android.R.color.white));
-            item.setBackgroundImage(ContextCompat.getDrawable(DemoActivity.this, images.getResourceId(position, 0)));
-            return item;
-        } }); ```
-</code></pre>
-</div>
+            <span class="nd">@NotNull</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="n">PickerItem</span> <span class="nf">getItem</span><span class="o">(</span><span class="kt">int</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">PickerItem</span> <span class="n">item</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PickerItem</span><span class="o">();</span>
+                <span class="n">item</span><span class="o">.</span><span class="na">setTitle</span><span class="o">(</span><span class="n">titles</span><span class="o">[</span><span class="n">position</span><span class="o">]);</span>
+                <span class="n">item</span><span class="o">.</span><span class="na">setGradient</span><span class="o">(</span><span class="k">new</span> <span class="n">BubbleGradient</span><span class="o">(</span><span class="n">colors</span><span class="o">.</span><span class="na">getColor</span><span class="o">((</span><span class="n">position</span> <span class="o">*</span> <span class="mi">2</span><span class="o">)</span> <span class="o">%</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">0</span><span class="o">),</span>
+                        <span class="n">colors</span><span class="o">.</span><span class="na">getColor</span><span class="o">((</span><span class="n">position</span> <span class="o">*</span> <span class="mi">2</span><span class="o">)</span> <span class="o">%</span> <span class="mi">8</span> <span class="o">+</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">0</span><span class="o">),</span> <span class="n">BubbleGradient</span><span class="o">.</span><span class="na">VERTICAL</span><span class="o">));</span>
+                <span class="n">item</span><span class="o">.</span><span class="na">setTypeface</span><span class="o">(</span><span class="n">mediumTypeface</span><span class="o">);</span>
+                <span class="n">item</span><span class="o">.</span><span class="na">setTextColor</span><span class="o">(</span><span class="n">ContextCompat</span><span class="o">.</span><span class="na">getColor</span><span class="o">(</span><span class="n">DemoActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="n">android</span><span class="o">.</span><span class="na">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">white</span><span class="o">));</span>
+                <span class="n">item</span><span class="o">.</span><span class="na">setBackgroundImage</span><span class="o">(</span><span class="n">ContextCompat</span><span class="o">.</span><span class="na">getDrawable</span><span class="o">(</span><span class="n">DemoActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="n">images</span><span class="o">.</span><span class="na">getResourceId</span><span class="o">(</span><span class="n">position</span><span class="o">,</span> <span class="mi">0</span><span class="o">)));</span>
+                <span class="k">return</span> <span class="n">item</span><span class="o">;</span>
+            <span class="o">}</span>
+<span class="o">});</span>
+</code></pre></div></div>
 
 <p>Specify the <code class="highlighter-rouge">BubblePickerListener</code> to get notified about events</p>
 
-<p>Kotlin
-```kotlin
-picker.listener = object : BubblePickerListener {
-            override fun onBubbleSelected(item: PickerItem) {</p>
+<p>Kotlin</p>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">picker</span><span class="p">.</span><span class="n">listener</span> <span class="p">=</span> <span class="kd">object</span> <span class="err">: </span><span class="nc">BubblePickerListener</span> <span class="p">{</span>
+            <span class="k">override</span> <span class="k">fun</span> <span class="n">onBubbleSelected</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">PickerItem</span><span class="p">)</span> <span class="p">{</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>        }
+            <span class="p">}</span>
 
-        override fun onBubbleDeselected(item: PickerItem) {
+            <span class="k">override</span> <span class="k">fun</span> <span class="n">onBubbleDeselected</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">PickerItem</span><span class="p">)</span> <span class="p">{</span>
 
-        } } ```
-</code></pre>
-</div>
+            <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
-<p>Java
-```java
-picker.setListener(new BubblePickerListener() {
-            @Override
-            public void onBubbleSelected(@NotNull PickerItem item) {</p>
+<p>Java</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">picker</span><span class="o">.</span><span class="na">setListener</span><span class="o">(</span><span class="k">new</span> <span class="n">BubblePickerListener</span><span class="o">()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onBubbleSelected</span><span class="o">(</span><span class="nd">@NotNull</span> <span class="n">PickerItem</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
+                
+            <span class="o">}</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>        }
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onBubbleDeselected</span><span class="o">(</span><span class="nd">@NotNull</span> <span class="n">PickerItem</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
 
-        @Override
-        public void onBubbleDeselected(@NotNull PickerItem item) {
-
-        } }); ```
-</code></pre>
-</div>
+            <span class="o">}</span>
+<span class="o">});</span>
+</code></pre></div></div>
 
 <p>To get all selected items use <code class="highlighter-rouge">picker.selectedItems</code> variable in Kotlin or <code class="highlighter-rouge">picker.getSelectedItems()</code> method in Java.</p>
 
@@ -909,17 +904,17 @@ SOFTWARE.</p>
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=BubblePicker&url=http://kmshack.github.io/AndroidUICollection/2017/03/20/BubblePicker/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=BubblePicker&url=http://localhost:4000/AndroidUICollection/2017/03/20/BubblePicker/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2017/03/20/BubblePicker/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2017/03/20/BubblePicker/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2017/03/20/BubblePicker/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2017/03/20/BubblePicker/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -950,7 +945,7 @@ SOFTWARE.</p>
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2017/03/20/BubblePicker/";
+    this.page.url = "http://localhost:4000/2017/03/20/BubblePicker/";
   };
 
   (function() {

@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2017/04/10/spruce/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2017/04/10/spruce/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="Spruce LogoSpruce Android Animation Library (and iOS)[CircleCI Build Status](https://circleci.com/gh/willowtreeapps/spruce-android.svg?style=shield)[License ...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="spruce">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="Spruce LogoSpruce Android Animation Library (and iOS)[CircleCI Build Status](https://circleci.com/gh/willowtreeapps/spruce-android.svg?style=shield)[License ...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2017/04/10/spruce/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2017/04/10/spruce/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="Spruce LogoSpruce Android Animation Library (and iOS)[CircleCI Build Status](https://circleci.com/gh/willowtreeapps/spruce-android.svg?style=shield)[License ..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2017-04-10-spruce.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2017-04-10-spruce.gif">
         
 
         <header class="post__header">
@@ -649,7 +653,7 @@
           <br>
           <p><a href="https://github.com/willowtreeapps/spruce-android/blob/master/imgs/header_image.png">Spruce Logo</a></p>
 
-<h1 id="spruce-android-animation-library-and-ioshttpsgithubcomwillowtreeappsspruce-ios">Spruce Android Animation Library (and <a href="https://github.com/willowtreeapps/spruce-ios">iOS</a>)</h1>
+<h1 id="spruce-android-animation-library-and-ios">Spruce Android Animation Library (and <a href="https://github.com/willowtreeapps/spruce-ios">iOS</a>)</h1>
 <p><a href="https://circleci.com/gh/willowtreeapps/spruce-android">[CircleCI Build Status](https://circleci.com/gh/willowtreeapps/spruce-android.svg?style=shield)</a>
 <a href="">[License MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)</a>
 <a href="">[Public Yes](https://img.shields.io/badge/Public-yes-green.svg?style=flat)</a></p>
@@ -664,22 +668,21 @@
 <h3 id="gradle">Gradle</h3>
 <p>Add the following to your project’s build.gradle file</p>
 
-<pre><code class="language-gradle">dependencies {
-    compile 'com.willowtreeapps.spruce:spruce-android:1.0.1'
-}
-</code></pre>
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">dependencies</span> <span class="o">{</span>
+    <span class="n">compile</span> <span class="s1">'com.willowtreeapps.spruce:spruce-android:1.0.1'</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
 <h2 id="documentation">Documentation</h2>
 <p>For javadocs checkout <a href="https://willowtreeapps.github.io/spruce-android/">the documentation</a> for more information.</p>
 
 <h2 id="basic-usage">Basic Usage</h2>
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">Animator</span> <span class="n">spruceAnimator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Spruce</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Animator</span> <span class="n">spruceAnimator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Spruce</span>
         <span class="o">.</span><span class="na">SpruceBuilder</span><span class="o">(</span><span class="n">parentViewGroup</span><span class="o">)</span>
         <span class="o">.</span><span class="na">sortWith</span><span class="o">(</span><span class="k">new</span> <span class="n">Default</span><span class="o">(</span><span class="cm">/*interObjectDelay=*/</span><span class="mi">50L</span><span class="o">))</span>
         <span class="o">.</span><span class="na">animateWith</span><span class="o">(</span><span class="k">new</span> <span class="n">Animator</span><span class="o">[]</span> <span class="o">{</span><span class="n">DefaultAnimations</span><span class="o">.</span><span class="na">shrinkAnimator</span><span class="o">(</span><span class="n">parentViewGroup</span><span class="o">,</span> <span class="cm">/*duration=*/</span><span class="mi">800</span><span class="o">)})</span>
         <span class="o">.</span><span class="na">start</span><span class="o">();</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Checkout <a href="https://willowtreeapps.github.io/spruce-android/com/willowtreeapps/spruce/Spruce.SpruceBuilder.html">the builder documentation</a> for more information.</p>
 
@@ -691,31 +694,28 @@ If you want a view to fade in, then you need to make sure that it is already fad
 
 <p>Use the following command to run a basic animation on your view.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">Animator</span> <span class="n">spruceAnimator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Spruce</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Animator</span> <span class="n">spruceAnimator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Spruce</span>
         <span class="o">.</span><span class="na">SpruceBuilder</span><span class="o">(</span><span class="n">parentViewGroup</span><span class="o">)</span>
         <span class="o">.</span><span class="na">sortWith</span><span class="o">(</span><span class="k">new</span> <span class="n">DefaultSort</span><span class="o">(</span><span class="cm">/*interObjectDelay=*/</span><span class="mi">50L</span><span class="o">))</span>
         <span class="o">.</span><span class="na">animateWith</span><span class="o">(</span><span class="n">animators</span><span class="o">)</span>
         <span class="o">.</span><span class="na">start</span><span class="o">();</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Checkout <a href="https://willowtreeapps.github.io/spruce-android/com/willowtreeapps/spruce/animation/DefaultAnimations.html">default animation documentation</a> for more information.</p>
 
 <h2 id="using-a-sortfunction">Using a SortFunction</h2>
 <p>Luckily, Spruce comes with 8 <code class="highlighter-rouge">SortFunction</code> implementations with a wide open possibility to make more Use the <code class="highlighter-rouge">SortFunction</code> to change the order in which views animate. Consider the following example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">LinearSort</span> <span class="n">sort</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinearSort</span><span class="o">(</span><span class="cm">/*interObjectDelay=*/</span><span class="mi">100L</span><span class="o">,</span> <span class="cm">/*reversed=*/</span><span class="kc">false</span><span class="o">,</span> <span class="n">LinearSort</span><span class="o">.</span><span class="na">Direction</span><span class="o">.</span><span class="na">TOP_TO_BOTTOM</span><span class="o">);</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">LinearSort</span> <span class="n">sort</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinearSort</span><span class="o">(</span><span class="cm">/*interObjectDelay=*/</span><span class="mi">100L</span><span class="o">,</span> <span class="cm">/*reversed=*/</span><span class="kc">false</span><span class="o">,</span> <span class="n">LinearSort</span><span class="o">.</span><span class="na">Direction</span><span class="o">.</span><span class="na">TOP_TO_BOTTOM</span><span class="o">);</span>
+</code></pre></div></div>
 <p>In this example we have created a <code class="highlighter-rouge">LinearSort</code> which will have views animate in from the top to bottom. We can change the look and feel of the animation by using a <code class="highlighter-rouge">RadialSort</code> instead which will have the views animate in a circular fashion. If we wanted to use this <code class="highlighter-rouge">sort</code> in an actual Spruce <code class="highlighter-rouge">start()</code> call then that would look something like:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">Animator</span> <span class="n">spruceAnimator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Spruce</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Animator</span> <span class="n">spruceAnimator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Spruce</span>
         <span class="o">.</span><span class="na">SpruceBuilder</span><span class="o">(</span><span class="n">parentViewGroup</span><span class="o">)</span>
         <span class="o">.</span><span class="na">sortWith</span><span class="o">(</span><span class="k">new</span> <span class="n">LinearSort</span><span class="o">(</span><span class="cm">/*interObjectDelay=*/</span><span class="mi">100L</span><span class="o">,</span> <span class="cm">/*reversed=*/</span><span class="kc">false</span><span class="o">,</span> <span class="n">LinearSort</span><span class="o">.</span><span class="na">Direction</span><span class="o">.</span><span class="na">TOP_TO_BOTTOM</span><span class="o">))</span>
         <span class="o">.</span><span class="na">animateWith</span><span class="o">(</span><span class="n">DefaultAnimations</span><span class="o">.</span><span class="na">shrinkAnimator</span><span class="o">(</span><span class="n">parentViewGroup</span><span class="o">,</span> <span class="cm">/*duration=*/</span><span class="mi">800</span><span class="o">))</span>
         <span class="o">.</span><span class="na">start</span><span class="o">();</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>Definitely play around with the stock <code class="highlighter-rouge">SortFunction</code> implementations until you find the one that is perfect for you Check out the example app if you want to get previews of what each <code class="highlighter-rouge">SortFunction</code> will look like.</p>
 
 <h3 id="the-animators">The Animators</h3>
@@ -730,11 +730,10 @@ If you want a view to fade in, then you need to make sure that it is already fad
 <h3 id="the-sortfunction-interface">The SortFunction Interface</h3>
 <p>A very simple interface that requires classes to extend the following class</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">SortFunction</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">abstract</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">SpruceTimedView</span><span class="o">&gt;</span> <span class="n">getViewListWithTimeOffsets</span><span class="o">(</span><span class="n">ViewGroup</span> <span class="n">parent</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;</span> <span class="n">children</span><span class="o">);</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">SortFunction</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">SpruceTimedView</span><span class="o">&gt;</span> <span class="nf">getViewListWithTimeOffsets</span><span class="o">(</span><span class="n">ViewGroup</span> <span class="n">parent</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;</span> <span class="n">children</span><span class="o">);</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>What the above class needs to do is take in a <code class="highlighter-rouge">ViewGroup</code> parent and a <code class="highlighter-rouge">List</code> of <code class="highlighter-rouge">View</code> children or subviews to generate a list of subviews and their animation offsets. Once the list of subviews has been generated, you can define your own sort metric to determine in which order the <code class="highlighter-rouge">View</code>’s should animate. To do so, you need to create a <code class="highlighter-rouge">List</code> of <code class="highlighter-rouge">SpruceTimedView</code>’s. This special class has two properties: (1) <code class="highlighter-rouge">View view</code> and (2) <code class="highlighter-rouge">long timeOffset</code>. Your <code class="highlighter-rouge">SortFunction</code> can define the <code class="highlighter-rouge">timeOffset</code> however it likes, but the animators will use this to determine how long it should delay the start of that specific view from animating. The best way to learn, is to play around. So why not have some fun and make your own <code class="highlighter-rouge">SortFunction</code></p>
 
@@ -818,17 +817,17 @@ If you want a view to fade in, then you need to make sure that it is already fad
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=spruce&url=http://kmshack.github.io/AndroidUICollection/2017/04/10/spruce/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=spruce&url=http://localhost:4000/AndroidUICollection/2017/04/10/spruce/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2017/04/10/spruce/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2017/04/10/spruce/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2017/04/10/spruce/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2017/04/10/spruce/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -859,7 +858,7 @@ If you want a view to fade in, then you need to make sure that it is already fad
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2017/04/10/spruce/";
+    this.page.url = "http://localhost:4000/2017/04/10/spruce/";
   };
 
   (function() {

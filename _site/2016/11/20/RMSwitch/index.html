@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/11/20/RMSwitch/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/11/20/RMSwitch/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="RMSwitchA simple View that works like a switch, but with more customizations. With the option to choose between two or three states. (from v1.1.0) ** If you’...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="RMSwitch">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="RMSwitchA simple View that works like a switch, but with more customizations. With the option to choose between two or three states. (from v1.1.0) ** If you’...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/11/20/RMSwitch/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/11/20/RMSwitch/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="RMSwitchA simple View that works like a switch, but with more customizations. With the option to choose between two or three states. (from v1.1.0) ** If you’..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-11-20-RMSwitch.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-11-20-RMSwitch.gif">
         
 
         <header class="post__header">
@@ -654,10 +658,10 @@
 <p>A simple View that works like a switch, but with more customizations. <br />
 With the option to choose between two or three states. (from v1.1.0) <br /><br /></p>
 
-<h5 id="if-youre-upgrading-from-a-version--120-check-the-changelog-of-the-120-version-there-are-breaking-changes-br-">** If you’re upgrading from a version &lt; 1.2.0, check the changelog of the 1.2.0 version, there are breaking changes <br /></h5>
+<h5 id="-if-youre-upgrading-from-a-version--120-check-the-changelog-of-the-120-version-there-are-breaking-changes-">** If you’re upgrading from a version &lt; 1.2.0, check the changelog of the 1.2.0 version, there are breaking changes <br /></h5>
 <p>[Changelog] (CHANGELOG.md)</p>
 
-<h5 id="from-version-120-you-can-choose-between-three-switch-design-br-">From version 1.2.0 you can choose between three switch design: <br /></h5>
+<h5 id="from-version-120-you-can-choose-between-three-switch-design-">From version 1.2.0 you can choose between three switch design: <br /></h5>
 <p>-“Slim” <br />
 -“Large” <br />
 -“Android” <br /></p>
@@ -665,10 +669,9 @@ With the option to choose between two or three states. (from v1.1.0) <br /><br /
 <p><img src="switch_design_samples.png" title="design_sample" /></p>
 
 <h2 id="download">Download</h2>
-<p>#### Gradle:
-<code class="highlighter-rouge">groovy
-compile 'com.rm:rmswitch:1.2.2'
-</code></p>
+<h4 id="gradle">Gradle:</h4>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">compile</span> <span class="s1">'com.rm:rmswitch:1.2.2'</span>
+</code></pre></div></div>
 
 <p><br />
 <b>Min API level: 16 (Android 4.1) </b>
@@ -678,7 +681,7 @@ compile 'com.rm:rmswitch:1.2.2'
 
 <p>To use them, just add this to your layout file</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="nt">&lt;--</span> <span class="err">Two</span> <span class="err">states</span> <span class="err">switch</span> <span class="err">--</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;--</span> <span class="err">Two</span> <span class="err">states</span> <span class="err">switch</span> <span class="err">--</span><span class="nt">&gt;</span>
     <span class="nt">&lt;com.rm.rmswitch.RMSwitch</span>
                 <span class="na">android:id=</span><span class="s">"@+id/your_id"</span>
                 <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
@@ -714,102 +717,99 @@ compile 'com.rm:rmswitch:1.2.2'
                 <span class="na">app:switchToggleMiddleImage=</span><span class="s">"@drawable/neutral"</span>
                 <span class="na">app:switchToggleRightColor=</span><span class="s">"@color/green"</span>
                 <span class="na">app:switchToggleRightImage=</span><span class="s">"@drawable/happy"</span><span class="nt">/&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<p>… if you need to use this View’s custom xml attributes (shown in a table below or in the example above) do not forget to add this to your root layout
-<code class="highlighter-rouge">
-xmlns:app="http://schemas.android.com/apk/res-auto"
-</code></p>
+<p>… if you need to use this View’s custom xml attributes (shown in a table below or in the example above) do not forget to add this to your root layout</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xmlns:app="http://schemas.android.com/apk/res-auto"
+</code></pre></div></div>
 
 <p>To see how it looks in the preview screen of Android Studio, build your project first</p>
 
-<p>And this in your Activity
-```java
-public class MainActivity extends AppCompatActivity {
-    RMSwitch mSwitch;
-    RMTristateSwitch mTristateSwitch;</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>@Override
-protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
+<p>And this in your Activity</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
+    <span class="n">RMSwitch</span> <span class="n">mSwitch</span><span class="o">;</span>
+    <span class="n">RMTristateSwitch</span> <span class="n">mTristateSwitch</span><span class="o">;</span>
     
-    mSwitch = (RMSwitch) findViewById(R.id.your_id);
-    mTristateSwitch = (RMTristateSwitch) findViewById(R.id.your_id2);
-    
-    
-    // Setup the switch
-    mSwitch.setChecked(true);
-    mSwitch.setEnabled(true);
-    mSwitch.setForceAspectRatio(false);
-    mSwitch.setSwitchBkgCheckedColor(Color.GREEN);
-    mSwitch.setSwitchBkgNotCheckedColor(Color.RED);
-    mSwitch.setSwitchToggleCheckedColor(Color.BLACK);
-    mSwitch.setSwitchToggleNotCheckedColor(Color.BLACK);
-    mSwitch.setSwitchDesign(RMTristateSwitch.DESIGN_ANDROID);
-    
-    
-    // You can choose if use drawable or drawable resource
-    //mSwitch.setSwitchToggleCheckedDrawableRes(android.R.drawable.ic_media_next);
-    mSwitch.setSwitchToggleCheckedDrawable(ContextCompat.getDrawable(this, android.R.drawable.ic_media_next));
-    
-    //mSwitch.setSwitchToggleNotCheckedDrawableRes(android.R.drawable.ic_media_previous);
-    mSwitch.setSwitchToggleNotCheckedDrawable(ContextCompat.getDrawable(this, android.R.drawable.ic_media_previous));
-    
-    
-    // Setup the tristate switch
-    mTristateSwitch.setState(RMTristateSwitch.STATE_LEFT);
-    mTristateSwitch.setForceAspectRatio(true);
-    mTristateSwitch.setEnabled(true);
-    mTristateSwitch.setRightToLeft(false);
-    mTristateSwitch.setSwitchDesign(RMTristateSwitch.DESIGN_LARGE);
-    mTristateSwitch.setSwitchToggleLeftColor(Color.DKGRAY);
-    mTristateSwitch.setSwitchToggleMiddleColor(Color.DKGRAY);
-    mTristateSwitch.setSwitchToggleRightColor(Color.DKGRAY);
-    mTristateSwitch.setSwitchBkgLeftColor(Color.LTGRAY);
-    mTristateSwitch.setSwitchBkgMiddleColor(Color.LTGRAY);
-    mTristateSwitch.setSwitchBkgRightColor(Color.LTGRAY);
-    
-    
-    // You can choose if use drawable or drawable resource
-    //mTristateSwitch.setSwitchToggleLeftDrawableRes(android.R.drawable.ic_media_previous);
-    mTristateSwitch.setSwitchToggleLeftDrawable(ContextCompat.getDrawable(this, android.R.drawable.ic_media_previous));
-    
-    //mTristateSwitch.setSwitchToggleMiddleDrawableRes(android.R.drawable.ic_media_play);
-    mTristateSwitch.setSwitchToggleMiddleDrawable(ContextCompat.getDrawable(this, android.R.drawable.ic_media_play));
-    
-    //mTristateSwitch.setSwitchToggleRightDrawableRes(android.R.drawable.ic_media_next);
-    mTristateSwitch.setSwitchToggleRightDrawable(ContextCompat.getDrawable(this, android.R.drawable.ic_media_next));
-    
-    
-    // Add a Switch state observer
-    mSwitch.addSwitchObserver(new RMSwitch.RMSwitchObserver() {
-        @Override
-        public void onCheckStateChange(RMSwitch switchView, boolean isChecked) {
-                            Toast.makeText(MainActivity.this, 
-                                    "Switch state: " + 
-                                    (isChecked ? "checked" : "not checked"), Toast.LENGTH_LONG)
-                                    .show();
-        }
-    });
-    
-    mTristateSwitch.addSwitchObserver(new RMTristateSwitch.RMTristateSwitchObserver() {
-        @Override
-        public void onCheckStateChange(RMTristateSwitch switchView, @RMTristateSwitch.State int state) {
-            Toast
-                    .makeText(MainActivity.this,
-                            state == RMTristateSwitch.STATE_LEFT ?
-                                    "Left" :
-                                    state == RMTristateSwitch.STATE_MIDDLE ?
-                                            "Middle" :
-                                            "Right",
-                            Toast.LENGTH_SHORT).show();
-        }
-    });
-} } ```
-</code></pre>
-</div>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_main</span><span class="o">);</span>
+        
+        <span class="n">mSwitch</span> <span class="o">=</span> <span class="o">(</span><span class="n">RMSwitch</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">your_id</span><span class="o">);</span>
+        <span class="n">mTristateSwitch</span> <span class="o">=</span> <span class="o">(</span><span class="n">RMTristateSwitch</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">your_id2</span><span class="o">);</span>
+        
+        
+        <span class="c1">// Setup the switch</span>
+        <span class="n">mSwitch</span><span class="o">.</span><span class="na">setChecked</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+        <span class="n">mSwitch</span><span class="o">.</span><span class="na">setEnabled</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+        <span class="n">mSwitch</span><span class="o">.</span><span class="na">setForceAspectRatio</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+        <span class="n">mSwitch</span><span class="o">.</span><span class="na">setSwitchBkgCheckedColor</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">GREEN</span><span class="o">);</span>
+        <span class="n">mSwitch</span><span class="o">.</span><span class="na">setSwitchBkgNotCheckedColor</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">RED</span><span class="o">);</span>
+        <span class="n">mSwitch</span><span class="o">.</span><span class="na">setSwitchToggleCheckedColor</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">BLACK</span><span class="o">);</span>
+        <span class="n">mSwitch</span><span class="o">.</span><span class="na">setSwitchToggleNotCheckedColor</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">BLACK</span><span class="o">);</span>
+        <span class="n">mSwitch</span><span class="o">.</span><span class="na">setSwitchDesign</span><span class="o">(</span><span class="n">RMTristateSwitch</span><span class="o">.</span><span class="na">DESIGN_ANDROID</span><span class="o">);</span>
+        
+        
+        <span class="c1">// You can choose if use drawable or drawable resource</span>
+        <span class="c1">//mSwitch.setSwitchToggleCheckedDrawableRes(android.R.drawable.ic_media_next);</span>
+        <span class="n">mSwitch</span><span class="o">.</span><span class="na">setSwitchToggleCheckedDrawable</span><span class="o">(</span><span class="n">ContextCompat</span><span class="o">.</span><span class="na">getDrawable</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">android</span><span class="o">.</span><span class="na">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">ic_media_next</span><span class="o">));</span>
+        
+        <span class="c1">//mSwitch.setSwitchToggleNotCheckedDrawableRes(android.R.drawable.ic_media_previous);</span>
+        <span class="n">mSwitch</span><span class="o">.</span><span class="na">setSwitchToggleNotCheckedDrawable</span><span class="o">(</span><span class="n">ContextCompat</span><span class="o">.</span><span class="na">getDrawable</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">android</span><span class="o">.</span><span class="na">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">ic_media_previous</span><span class="o">));</span>
+        
+        
+        <span class="c1">// Setup the tristate switch</span>
+        <span class="n">mTristateSwitch</span><span class="o">.</span><span class="na">setState</span><span class="o">(</span><span class="n">RMTristateSwitch</span><span class="o">.</span><span class="na">STATE_LEFT</span><span class="o">);</span>
+        <span class="n">mTristateSwitch</span><span class="o">.</span><span class="na">setForceAspectRatio</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+        <span class="n">mTristateSwitch</span><span class="o">.</span><span class="na">setEnabled</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+        <span class="n">mTristateSwitch</span><span class="o">.</span><span class="na">setRightToLeft</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+        <span class="n">mTristateSwitch</span><span class="o">.</span><span class="na">setSwitchDesign</span><span class="o">(</span><span class="n">RMTristateSwitch</span><span class="o">.</span><span class="na">DESIGN_LARGE</span><span class="o">);</span>
+        <span class="n">mTristateSwitch</span><span class="o">.</span><span class="na">setSwitchToggleLeftColor</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">DKGRAY</span><span class="o">);</span>
+        <span class="n">mTristateSwitch</span><span class="o">.</span><span class="na">setSwitchToggleMiddleColor</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">DKGRAY</span><span class="o">);</span>
+        <span class="n">mTristateSwitch</span><span class="o">.</span><span class="na">setSwitchToggleRightColor</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">DKGRAY</span><span class="o">);</span>
+        <span class="n">mTristateSwitch</span><span class="o">.</span><span class="na">setSwitchBkgLeftColor</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">LTGRAY</span><span class="o">);</span>
+        <span class="n">mTristateSwitch</span><span class="o">.</span><span class="na">setSwitchBkgMiddleColor</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">LTGRAY</span><span class="o">);</span>
+        <span class="n">mTristateSwitch</span><span class="o">.</span><span class="na">setSwitchBkgRightColor</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">LTGRAY</span><span class="o">);</span>
+        
+        
+        <span class="c1">// You can choose if use drawable or drawable resource</span>
+        <span class="c1">//mTristateSwitch.setSwitchToggleLeftDrawableRes(android.R.drawable.ic_media_previous);</span>
+        <span class="n">mTristateSwitch</span><span class="o">.</span><span class="na">setSwitchToggleLeftDrawable</span><span class="o">(</span><span class="n">ContextCompat</span><span class="o">.</span><span class="na">getDrawable</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">android</span><span class="o">.</span><span class="na">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">ic_media_previous</span><span class="o">));</span>
+        
+        <span class="c1">//mTristateSwitch.setSwitchToggleMiddleDrawableRes(android.R.drawable.ic_media_play);</span>
+        <span class="n">mTristateSwitch</span><span class="o">.</span><span class="na">setSwitchToggleMiddleDrawable</span><span class="o">(</span><span class="n">ContextCompat</span><span class="o">.</span><span class="na">getDrawable</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">android</span><span class="o">.</span><span class="na">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">ic_media_play</span><span class="o">));</span>
+        
+        <span class="c1">//mTristateSwitch.setSwitchToggleRightDrawableRes(android.R.drawable.ic_media_next);</span>
+        <span class="n">mTristateSwitch</span><span class="o">.</span><span class="na">setSwitchToggleRightDrawable</span><span class="o">(</span><span class="n">ContextCompat</span><span class="o">.</span><span class="na">getDrawable</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">android</span><span class="o">.</span><span class="na">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">ic_media_next</span><span class="o">));</span>
+        
+        
+        <span class="c1">// Add a Switch state observer</span>
+        <span class="n">mSwitch</span><span class="o">.</span><span class="na">addSwitchObserver</span><span class="o">(</span><span class="k">new</span> <span class="n">RMSwitch</span><span class="o">.</span><span class="na">RMSwitchObserver</span><span class="o">()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCheckStateChange</span><span class="o">(</span><span class="n">RMSwitch</span> <span class="n">switchView</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">isChecked</span><span class="o">)</span> <span class="o">{</span>
+                                <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">MainActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> 
+                                        <span class="s">"Switch state: "</span> <span class="o">+</span> 
+                                        <span class="o">(</span><span class="n">isChecked</span> <span class="o">?</span> <span class="s">"checked"</span> <span class="o">:</span> <span class="s">"not checked"</span><span class="o">),</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_LONG</span><span class="o">)</span>
+                                        <span class="o">.</span><span class="na">show</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">});</span>
+        
+        <span class="n">mTristateSwitch</span><span class="o">.</span><span class="na">addSwitchObserver</span><span class="o">(</span><span class="k">new</span> <span class="n">RMTristateSwitch</span><span class="o">.</span><span class="na">RMTristateSwitchObserver</span><span class="o">()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCheckStateChange</span><span class="o">(</span><span class="n">RMTristateSwitch</span> <span class="n">switchView</span><span class="o">,</span> <span class="nd">@RMTristateSwitch</span><span class="o">.</span><span class="na">State</span> <span class="kt">int</span> <span class="n">state</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">Toast</span>
+                        <span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">MainActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span>
+                                <span class="n">state</span> <span class="o">==</span> <span class="n">RMTristateSwitch</span><span class="o">.</span><span class="na">STATE_LEFT</span> <span class="o">?</span>
+                                        <span class="s">"Left"</span> <span class="o">:</span>
+                                        <span class="n">state</span> <span class="o">==</span> <span class="n">RMTristateSwitch</span><span class="o">.</span><span class="na">STATE_MIDDLE</span> <span class="o">?</span>
+                                                <span class="s">"Middle"</span> <span class="o">:</span>
+                                                <span class="s">"Right"</span><span class="o">,</span>
+                                <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">});</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
 <h4 id="supported-attributes">Supported Attributes</h4>
 <p>RMSwitch
@@ -854,7 +854,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
 <h2 id="license">License</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2017 Riccardo Moro.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright 2017 Riccardo Moro.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -867,8 +867,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and 
 limitations under the License.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
           <br>
@@ -896,17 +895,17 @@ limitations under the License.
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=RMSwitch&url=http://kmshack.github.io/AndroidUICollection/2016/11/20/RMSwitch/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=RMSwitch&url=http://localhost:4000/AndroidUICollection/2016/11/20/RMSwitch/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/11/20/RMSwitch/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/11/20/RMSwitch/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/11/20/RMSwitch/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/11/20/RMSwitch/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -937,7 +936,7 @@ limitations under the License.
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/11/20/RMSwitch/";
+    this.page.url = "http://localhost:4000/2016/11/20/RMSwitch/";
   };
 
   (function() {

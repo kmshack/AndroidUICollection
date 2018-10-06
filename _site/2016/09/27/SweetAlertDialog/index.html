@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/09/27/SweetAlertDialog/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/09/27/SweetAlertDialog/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="Sweet Alert DialogSweetAlert for Android, a beautiful and clever alert dialog[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Sweet%20Alert%2...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="Sweet Alert Dialog">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="Sweet Alert DialogSweetAlert for Android, a beautiful and clever alert dialog[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Sweet%20Alert%2...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/09/27/SweetAlertDialog/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/09/27/SweetAlertDialog/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="Sweet Alert DialogSweetAlert for Android, a beautiful and clever alert dialog[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Sweet%20Alert%2..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-09-27-SweetAlertDialog.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-09-27-SweetAlertDialog.gif">
         
 
         <header class="post__header">
@@ -666,61 +670,60 @@
 
 <p><strong>Maven</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;dependency&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;dependency&gt;
   &lt;groupId&gt;cn.pedant.sweetalert&lt;/groupId&gt;
   &lt;artifactId&gt;library&lt;/artifactId&gt;
   &lt;version&gt;1.3&lt;/version&gt;
   &lt;type&gt;aar&lt;/type&gt;
 &lt;/dependency&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Gradle</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>repositories {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>repositories {
     mavenCentral()
 }
 
 dependencies {
     compile 'cn.pedant.sweetalert:library:1.3'
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="usage">Usage</h2>
 
 <p>show material progress</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>SweetAlertDialog pDialog = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SweetAlertDialog pDialog = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);
 pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
 pDialog.setTitleText("Loading");
 pDialog.setCancelable(false);
 pDialog.show();
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><a href="https://github.com/pedant/sweet-alert-dialog/raw/master/play_progress.gif">image</a></p>
 
-<p>You can customize progress bar dynamically with materialish-progress methods via <strong>SweetAlertDialog.getProgressHelper()</strong>:
-- resetCount()
-- isSpinning()
-- spin()
-- stopSpinning()
-- getProgress()
-- setProgress(float progress)
-- setInstantProgress(float progress)
-- getCircleRadius()
-- setCircleRadius(int circleRadius)
-- getBarWidth()
-- setBarWidth(int barWidth)
-- getBarColor()
-- setBarColor(int barColor)
-- getRimWidth()
-- setRimWidth(int rimWidth)
-- getRimColor()
-- setRimColor(int rimColor)
-- getSpinSpeed()
-- setSpinSpeed(float spinSpeed)</p>
+<p>You can customize progress bar dynamically with materialish-progress methods via <strong>SweetAlertDialog.getProgressHelper()</strong>:</p>
+<ul>
+  <li>resetCount()</li>
+  <li>isSpinning()</li>
+  <li>spin()</li>
+  <li>stopSpinning()</li>
+  <li>getProgress()</li>
+  <li>setProgress(float progress)</li>
+  <li>setInstantProgress(float progress)</li>
+  <li>getCircleRadius()</li>
+  <li>setCircleRadius(int circleRadius)</li>
+  <li>getBarWidth()</li>
+  <li>setBarWidth(int barWidth)</li>
+  <li>getBarColor()</li>
+  <li>setBarColor(int barColor)</li>
+  <li>getRimWidth()</li>
+  <li>setRimWidth(int rimWidth)</li>
+  <li>getRimColor()</li>
+  <li>setRimColor(int rimColor)</li>
+  <li>getSpinSpeed()</li>
+  <li>setSpinSpeed(float spinSpeed)</li>
+</ul>
 
 <p>thanks to the project <a href="https://github.com/pnikosis/materialish-progress">materialish-progress</a> and <a href="https://github.com/croccio">@croccio</a> participation.</p>
 
@@ -728,62 +731,56 @@ pDialog.show();
 
 <p>A basic message：</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>new SweetAlertDialog(this)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>new SweetAlertDialog(this)
     .setTitleText("Here's a message")
     .show();
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>A title with a text under：</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>new SweetAlertDialog(this)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>new SweetAlertDialog(this)
     .setTitleText("Here's a message")
     .setContentText("It's pretty, isn't it?")
     .show();
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>A error message：</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>new SweetAlertDialog(this, SweetAlertDialog.ERROR_TYPE)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>new SweetAlertDialog(this, SweetAlertDialog.ERROR_TYPE)
     .setTitleText("Oops...")
     .setContentText("Something went wrong")
     .show();
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>A warning message：</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
     .setTitleText("Are you sure?")
     .setContentText("Won't be able to recover this file")
     .setConfirmText("Yes,delete it")
     .show();
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>A success message：</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>new SweetAlertDialog(this, SweetAlertDialog.SUCCESS_TYPE)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>new SweetAlertDialog(this, SweetAlertDialog.SUCCESS_TYPE)
     .setTitleText("Good job")
     .setContentText("You clicked the button")
     .show();
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>A message with a custom icon：</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>new SweetAlertDialog(this, SweetAlertDialog.CUSTOM_IMAGE_TYPE)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>new SweetAlertDialog(this, SweetAlertDialog.CUSTOM_IMAGE_TYPE)
     .setTitleText("Sweet")
     .setContentText("Here's a custom image.")
     .setCustomImage(R.drawable.custom_img)
     .show();
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Bind the listener to confirm button：</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
     .setTitleText("Are you sure?")
     .setContentText("Won't be able to recover this file")
     .setConfirmText("Yes,delete it")
@@ -794,12 +791,11 @@ pDialog.show();
         }
     })
     .show();
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Show the cancel button and bind listener to it：</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
     .setTitleText("Are you sure?")
     .setContentText("Won't be able to recover this file")
     .setCancelText("No,cancel plx")
@@ -812,12 +808,11 @@ pDialog.show();
         }
     })
     .show();
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Change</strong> the dialog style upon confirming：</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
     .setTitleText("Are you sure?")
     .setContentText("Won't be able to recover this file")
     .setConfirmText("Yes,delete it")
@@ -833,14 +828,13 @@ pDialog.show();
         }
     })
     .show();
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><a href="http://www.pedant.cn">more android tech shares: pedant.cn</a></p>
 
 <h2 id="license">License</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>The MIT License (MIT)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The MIT License (MIT)
 
 Copyright (c) 2014 Pedant(http://pedant.cn)
 
@@ -861,8 +855,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
           <br>
@@ -892,17 +885,17 @@ SOFTWARE.
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Sweet Alert Dialog&url=http://kmshack.github.io/AndroidUICollection/2016/09/27/SweetAlertDialog/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Sweet Alert Dialog&url=http://localhost:4000/AndroidUICollection/2016/09/27/SweetAlertDialog/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/09/27/SweetAlertDialog/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/09/27/SweetAlertDialog/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/09/27/SweetAlertDialog/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/09/27/SweetAlertDialog/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -933,7 +926,7 @@ SOFTWARE.
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/09/27/SweetAlertDialog/";
+    this.page.url = "http://localhost:4000/2016/09/27/SweetAlertDialog/";
   };
 
   (function() {

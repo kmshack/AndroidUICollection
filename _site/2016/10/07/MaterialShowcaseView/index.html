@@ -7,27 +7,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>MaterialShowcaseView</title>
-  <meta name="description" content="MaterialShowcaseViewA Material Design themed ShowcaseView for AndroidThis library is heavily inspired by the original ShowcaseView library.Since Google intro...">
+  <meta name="description" content="Looking for collaborators to help maintain this library, drop me a line at me@deanwild.co.uk if you want to help.MaterialShowcaseViewA Material Design themed...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/10/07/MaterialShowcaseView/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/10/07/MaterialShowcaseView/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="MaterialShowcaseViewA Material Design themed ShowcaseView for AndroidThis library is heavily inspired by the original ShowcaseView library.Since Google intro...">
+  <meta name="description" content="Looking for collaborators to help maintain this library, drop me a line at me@deanwild.co.uk if you want to help.MaterialShowcaseViewA Material Design themed...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="MaterialShowcaseView">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="MaterialShowcaseViewA Material Design themed ShowcaseView for AndroidThis library is heavily inspired by the original ShowcaseView library.Since Google intro...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/10/07/MaterialShowcaseView/" />
+  <meta property="og:description" content="Looking for collaborators to help maintain this library, drop me a line at me@deanwild.co.uk if you want to help.MaterialShowcaseViewA Material Design themed...">
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/10/07/MaterialShowcaseView/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="MaterialShowcaseViewA Material Design themed ShowcaseView for AndroidThis library is heavily inspired by the original ShowcaseView library.Since Google intro..." />
+  <meta name="twitter:description" content="Looking for collaborators to help maintain this library, drop me a line at me@deanwild.co.uk if you want to help.MaterialShowcaseViewA Material Design themed..." />
 
   
   	<!-- Article specific OG data -->
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-10-07-MaterialShowcaseView.png">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-10-07-MaterialShowcaseView.png">
         
 
         <header class="post__header">
@@ -647,7 +651,9 @@
               <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/AndroidUICollection/images/posts/2016-10-07-MaterialShowcaseView.png)"></div>
             </div>
           <br>
-          <h1 id="materialshowcaseview">MaterialShowcaseView</h1>
+          <p><em>Looking for collaborators to help maintain this library, drop me a line at me@deanwild.co.uk if you want to help.</em></p>
+
+<h1 id="materialshowcaseview">MaterialShowcaseView</h1>
 <p>A Material Design themed ShowcaseView for Android</p>
 
 <p>This library is heavily inspired by the original <a href="https://github.com/amlcurran/ShowcaseView">ShowcaseView library</a>.</p>
@@ -665,33 +671,30 @@
 
 <p>Add the jitpack repo to your your project’s build.gradle at the end of repositories <a href="#why-jitpack">Why?</a></p>
 
-<p>/build.gradle
-<code class="highlighter-rouge">groovy
-allprojects {
-	repositories {
-		jcenter()
-		maven { url "https://jitpack.io" }
-	}
-}
-</code></p>
+<p>/build.gradle</p>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">allprojects</span> <span class="o">{</span>
+	<span class="n">repositories</span> <span class="o">{</span>
+		<span class="n">jcenter</span><span class="o">()</span>
+		<span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s2">"https://jitpack.io"</span> <span class="o">}</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
 <p>Then add the dependency to your module’s build.gradle:</p>
 
-<p>/app/build.gradle
-<code class="highlighter-rouge">groovy
-compile 'com.github.deano2390:MaterialShowcaseView:1.2.0'
-</code></p>
+<p>/app/build.gradle</p>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">compile</span> <span class="s1">'com.github.deano2390:MaterialShowcaseView:1.2.0'</span>
+</code></pre></div></div>
 
-<p>NOTE: Some people have mentioned that they needed to add the @aar suffix to get it to resolve from JitPack:
-<code class="highlighter-rouge">groovy
-compile 'com.github.deano2390:MaterialShowcaseView:1.2.0@aar'
-</code></p>
+<p>NOTE: Some people have mentioned that they needed to add the @aar suffix to get it to resolve from JitPack:</p>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">compile</span> <span class="s1">'com.github.deano2390:MaterialShowcaseView:1.2.0@aar'</span>
+</code></pre></div></div>
 
 <h1 id="how-to-use">How to use</h1>
 <hr />
 <p>This is the basic usage of a single showcase view, you should check out the sample app for more advanced usage.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 	<span class="c1">// single example</span>
 	<span class="k">new</span> <span class="n">MaterialShowcaseView</span><span class="o">.</span><span class="na">Builder</span><span class="o">(</span><span class="k">this</span><span class="o">)</span>
 		<span class="o">.</span><span class="na">setTarget</span><span class="o">(</span><span class="n">mButtonShow</span><span class="o">)</span>
@@ -723,8 +726,7 @@ compile 'com.github.deano2390:MaterialShowcaseView:1.2.0@aar'
 
 	<span class="n">sequence</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
                 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h1 id="why-jitpack">Why Jitpack</h1>
 <hr />
@@ -744,7 +746,7 @@ compile 'com.github.deano2390:MaterialShowcaseView:1.2.0@aar'
 <h1 id="license">License</h1>
 <hr />
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2015 Dean Wild
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright 2015 Dean Wild
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -757,8 +759,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
           <br>
@@ -790,17 +791,17 @@ limitations under the License.
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=MaterialShowcaseView&url=http://kmshack.github.io/AndroidUICollection/2016/10/07/MaterialShowcaseView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=MaterialShowcaseView&url=http://localhost:4000/AndroidUICollection/2016/10/07/MaterialShowcaseView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/10/07/MaterialShowcaseView/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/10/07/MaterialShowcaseView/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/10/07/MaterialShowcaseView/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/10/07/MaterialShowcaseView/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -831,7 +832,7 @@ limitations under the License.
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/10/07/MaterialShowcaseView/";
+    this.page.url = "http://localhost:4000/2016/10/07/MaterialShowcaseView/";
   };
 
   (function() {

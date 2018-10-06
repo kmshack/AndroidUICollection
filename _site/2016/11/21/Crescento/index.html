@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/11/21/Crescento/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/11/21/Crescento/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="CrescentoAndroid library that adds a curve at the below of image views and relative layouts. CrescentoImageView and CrescentoContainer are the image view and...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="Crescento">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="CrescentoAndroid library that adds a curve at the below of image views and relative layouts. CrescentoImageView and CrescentoContainer are the image view and...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/11/21/Crescento/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/11/21/Crescento/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="CrescentoAndroid library that adds a curve at the below of image views and relative layouts. CrescentoImageView and CrescentoContainer are the image view and..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-11-21-Crescento.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-11-21-Crescento.gif">
         
 
         <header class="post__header">
@@ -676,7 +680,7 @@
 
 <p><a href="/art/sample2.gif">Sample Image 1</a></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">developer</span><span class="o">.</span><span class="na">shivam</span><span class="o">.</span><span class="na">library</span><span class="o">.</span><span class="na">CrescentoContainer</span> <span class="nl">android:</span><span class="n">id</span><span class="o">=</span><span class="s">"@+id/crescentoContainer"</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">developer</span><span class="o">.</span><span class="na">shivam</span><span class="o">.</span><span class="na">library</span><span class="o">.</span><span class="na">CrescentoContainer</span> <span class="nl">android:</span><span class="n">id</span><span class="o">=</span><span class="s">"@+id/crescentoContainer"</span>
         <span class="nl">android:</span><span class="n">layout_width</span><span class="o">=</span><span class="s">"match_parent"</span>
         <span class="nl">android:</span><span class="n">layout_height</span><span class="o">=</span><span class="s">"300dp"</span>
         <span class="nl">android:</span><span class="n">elevation</span><span class="o">=</span><span class="s">"20dp"</span>
@@ -688,8 +692,7 @@
             <span class="nl">android:</span><span class="n">layout_height</span><span class="o">=</span><span class="s">"match_parent"</span>
             <span class="nl">android:</span><span class="n">src</span><span class="o">=</span><span class="s">"@drawable/wallpaper2"</span> <span class="o">/&gt;</span>
 <span class="o">&lt;/</span><span class="n">developer</span><span class="o">.</span><span class="na">shivam</span><span class="o">.</span><span class="na">library</span><span class="o">.</span><span class="na">CrescentoContainer</span><span class="o">&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="donations">Donations</h2>
 
@@ -718,21 +721,19 @@ Of course, you can also choose what you want to donate, all donations are awesom
 
 <h2 id="gradle-integration">Gradle Integration</h2>
 
-<p>If you are using gradle then add these lines in build.gradle file at project level.
-```java
-allprojects {
-    repositories {
-        …
-        maven { url “https://jitpack.io” }
-    }
-}</p>
+<p>If you are using gradle then add these lines in build.gradle file at project level.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">allprojects</span> <span class="o">{</span>
+    <span class="n">repositories</span> <span class="o">{</span>
+        <span class="o">...</span>
+        <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s">"https://jitpack.io"</span> <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+    
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
-Add below lines in build.gradle at app level.
-```java
-compile 'com.github.developer-shivam:Crescento:1.2.1'
-</code></pre>
-</div>
+<p>Add below lines in build.gradle at app level.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">compile</span> <span class="err">'</span><span class="n">com</span><span class="o">.</span><span class="na">github</span><span class="o">.</span><span class="na">developer</span><span class="o">-</span><span class="nl">shivam:Crescento:</span><span class="mf">1.2</span><span class="o">.</span><span class="mi">1</span><span class="err">'</span>
+</code></pre></div></div>
 
 <h2 id="basic-usage">Basic Usage</h2>
 
@@ -740,7 +741,7 @@ compile 'com.github.developer-shivam:Crescento:1.2.1'
 
 <p><strong>ImageView</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;developer.shivam.crescento.ImageView</span> <span class="na">android:id=</span><span class="s">"@+id/crescentoImageView"</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;developer.shivam.crescento.ImageView</span> <span class="na">android:id=</span><span class="s">"@+id/crescentoImageView"</span>
     <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
     <span class="na">android:layout_height=</span><span class="s">"300dp"</span>
     <span class="na">android:elevation=</span><span class="s">"20dp"</span>
@@ -750,12 +751,11 @@ compile 'com.github.developer-shivam:Crescento:1.2.1'
     <span class="na">attribute:crescentoTintMode=</span><span class="s">"manual"</span>
     <span class="na">attribute:crescentoTintColor=</span><span class="s">"#FFFFFF"</span>
     <span class="na">attribute:tintAlpha=</span><span class="s">"50"</span> <span class="nt">/&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Container</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;developer.shivam.crescento.Container</span> <span class="na">android:id=</span><span class="s">"@+id/crescentoContainer"</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;developer.shivam.crescento.Container</span> <span class="na">android:id=</span><span class="s">"@+id/crescentoContainer"</span>
     <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
     <span class="na">android:layout_height=</span><span class="s">"300dp"</span>
     <span class="na">android:elevation=</span><span class="s">"20dp"</span>
@@ -764,8 +764,7 @@ compile 'com.github.developer-shivam:Crescento:1.2.1'
     <span class="nt">&lt;--</span> <span class="err">Your</span> <span class="err">code</span> <span class="err">here</span> <span class="err">--</span><span class="nt">&gt;</span>
 
 <span class="nt">&lt;/developer.shivam.library.CrescentoContainer&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="attributes">Attributes</h2>
 
@@ -800,7 +799,7 @@ compile 'com.github.developer-shivam:Crescento:1.2.1'
 
 <h2 id="license">License</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>MIT License
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MIT License
 
 Copyright (c) 2016 Shivam Satija
 
@@ -821,8 +820,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
           <br>
@@ -850,17 +848,17 @@ SOFTWARE.
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Crescento&url=http://kmshack.github.io/AndroidUICollection/2016/11/21/Crescento/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Crescento&url=http://localhost:4000/AndroidUICollection/2016/11/21/Crescento/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/11/21/Crescento/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/11/21/Crescento/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/11/21/Crescento/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/11/21/Crescento/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -891,7 +889,7 @@ SOFTWARE.
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/11/21/Crescento/";
+    this.page.url = "http://localhost:4000/2016/11/21/Crescento/";
   };
 
   (function() {

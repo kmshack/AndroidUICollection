@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/10/07/PinOtpView/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/10/07/PinOtpView/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="Android PinView/OtpView                A custom control to enter a four digit code usually in cases of authentication.         Supporting Android PinView/Otp...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="OTP/PIN View">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="Android PinView/OtpView                A custom control to enter a four digit code usually in cases of authentication.         Supporting Android PinView/Otp...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/10/07/PinOtpView/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/10/07/PinOtpView/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="Android PinView/OtpView                A custom control to enter a four digit code usually in cases of authentication.         Supporting Android PinView/Otp..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-10-07-PinOtpView.png">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-10-07-PinOtpView.png">
         
 
         <header class="post__header">
@@ -677,25 +681,23 @@
 
 <p>Step 1. Add the JitPack repository to your build file. Add it in your root build.gradle at the end of repositories:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">allprojects</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">allprojects</span> <span class="o">{</span>
   <span class="n">repositories</span> <span class="o">{</span>
     <span class="o">...</span>
     <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s">"https://jitpack.io"</span> <span class="o">}</span>
   <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
-<p>Step 2. Add the dependency
-<code class="highlighter-rouge">java
-dependencies {
-        implementation 'com.github.mukeshsolanki:android-otpview-pinview:&lt;latest-version&gt;'
-}
-</code></p>
+</code></pre></div></div>
+<p>Step 2. Add the dependency</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
+        <span class="n">implementation</span> <span class="err">'</span><span class="n">com</span><span class="o">.</span><span class="na">github</span><span class="o">.</span><span class="na">mukeshsolanki</span><span class="o">:</span><span class="n">android</span><span class="o">-</span><span class="n">otpview</span><span class="o">-</span><span class="nl">pinview:</span><span class="o">&lt;</span><span class="n">latest</span><span class="o">-</span><span class="n">version</span><span class="o">&gt;</span><span class="err">'</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
 <h2 id="how-to-use-the-library">How to use the library?</h2>
 <p>Okay seems like you integrated the library in your project but <strong>how do you use it</strong>? Well its really easy just add the following to your xml design to show the otpview</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.....
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.....
  <span class="nt">&lt;com.mukesh.OtpView</span>
       <span class="na">android:id=</span><span class="s">"@+id/otp_view"</span>
       <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
@@ -709,22 +711,20 @@ dependencies {
       <span class="na">app:viewType=</span><span class="s">"line"</span>
       <span class="nt">/&gt;</span>
 .....
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>To get a callback when the user enters the otp make use of <code class="highlighter-rouge">OnOtpCompletionListener</code> like wise</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code> <span class="kd">private</span> <span class="n">OtpView</span> <span class="n">otpView</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">private</span> <span class="n">OtpView</span> <span class="n">otpView</span><span class="o">;</span>
  <span class="n">otpView</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">otp_view</span><span class="o">);</span>
  <span class="n">otpView</span><span class="o">.</span><span class="na">setListener</span><span class="o">(</span><span class="k">new</span> <span class="n">OnOtpCompletionListener</span><span class="o">()</span> <span class="o">{</span>
-   <span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">void</span> <span class="n">onOtpCompleted</span><span class="o">(</span><span class="n">String</span> <span class="n">otp</span><span class="o">)</span> <span class="o">{</span>
+   <span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onOtpCompleted</span><span class="o">(</span><span class="n">String</span> <span class="n">otp</span><span class="o">)</span> <span class="o">{</span>
 
      <span class="c1">// do Stuff</span>
      <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">"onOtpCompleted=&gt;"</span><span class="o">,</span> <span class="n">otp</span><span class="o">);</span>
    <span class="o">}</span>
  <span class="o">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>That’s pretty much it and your all wrapped up.</p>
 
@@ -758,7 +758,7 @@ dependencies {
 </ul>
 
 <h2 id="license">License</h2>
-<div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2018 Mukesh Solanki
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright 2018 Mukesh Solanki
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -771,8 +771,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-</code></pre>
-</div>
+</code></pre></div></div>
 
           <br>
           <div class="post__tags">
@@ -801,17 +800,17 @@ limitations under the License.
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=OTP/PIN View&url=http://kmshack.github.io/AndroidUICollection/2016/10/07/PinOtpView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=OTP/PIN View&url=http://localhost:4000/AndroidUICollection/2016/10/07/PinOtpView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/10/07/PinOtpView/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/10/07/PinOtpView/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/10/07/PinOtpView/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/10/07/PinOtpView/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -842,7 +841,7 @@ limitations under the License.
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/10/07/PinOtpView/";
+    this.page.url = "http://localhost:4000/2016/10/07/PinOtpView/";
   };
 
   (function() {

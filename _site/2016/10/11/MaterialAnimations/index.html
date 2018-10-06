@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/10/11/MaterialAnimations/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/10/11/MaterialAnimations/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="UNMAINTAINEDNo maintainance is intended. The content is still valid as a reference but it won’t contain the latest new stuff[Android Arsenal](https://img.shi...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="Material Animations">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="UNMAINTAINEDNo maintainance is intended. The content is still valid as a reference but it won’t contain the latest new stuff[Android Arsenal](https://img.shi...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/10/11/MaterialAnimations/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/10/11/MaterialAnimations/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="UNMAINTAINEDNo maintainance is intended. The content is still valid as a reference but it won’t contain the latest new stuff[Android Arsenal](https://img.shi..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-10-11-MaterialAnimations.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-10-11-MaterialAnimations.gif">
         
 
         <header class="post__header">
@@ -661,7 +665,7 @@ The content is still valid as a reference but it won’t contain the latest new 
   <li>Animate view changes within same activity.</li>
 </ol>
 
-<h2 id="transitions-between-activities">1. Transitions between Activities</h2>
+<h2 id="1-transitions-between-activities">1. Transitions between Activities</h2>
 
 <p>Animate existing activity layout <strong>content</strong></p>
 
@@ -696,23 +700,21 @@ All these transitions track changes to the visibility of target views in activit
   <p>res/transition/activity_fade.xml</p>
 </blockquote>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
 <span class="nt">&lt;fade</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/"</span>
     <span class="na">android:duration=</span><span class="s">"1000"</span><span class="nt">/&gt;</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
   <p>res/transition/activity_slide.xml</p>
 </blockquote>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
 <span class="nt">&lt;slide</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/"</span>
     <span class="na">android:duration=</span><span class="s">"1000"</span><span class="nt">/&gt;</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>To use these transitions you need to inflate them using <code class="highlighter-rouge">TransitionInflater</code></p>
 
@@ -720,39 +722,37 @@ All these transitions track changes to the visibility of target views in activit
   <p>MainActivity.java</p>
 </blockquote>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>	<span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="n">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
         <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_transition</span><span class="o">);</span>
         <span class="n">setupWindowAnimations</span><span class="o">();</span>
     <span class="o">}</span>
 
-    <span class="kd">private</span> <span class="kt">void</span> <span class="n">setupWindowAnimations</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">setupWindowAnimations</span><span class="o">()</span> <span class="o">{</span>
         <span class="n">Slide</span> <span class="n">slide</span> <span class="o">=</span> <span class="n">TransitionInflater</span><span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="k">this</span><span class="o">).</span><span class="na">inflateTransition</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">transition</span><span class="o">.</span><span class="na">activity_slide</span><span class="o">);</span>
         <span class="n">getWindow</span><span class="o">().</span><span class="na">setExitTransition</span><span class="o">(</span><span class="n">slide</span><span class="o">);</span>
     <span class="o">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
   <p>TransitionActivity.java</p>
 </blockquote>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>	<span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="n">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
         <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_transition</span><span class="o">);</span>
         <span class="n">setupWindowAnimations</span><span class="o">();</span>
     <span class="o">}</span>
 
-    <span class="kd">private</span> <span class="kt">void</span> <span class="n">setupWindowAnimations</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">setupWindowAnimations</span><span class="o">()</span> <span class="o">{</span>
         <span class="n">Fade</span> <span class="n">fade</span> <span class="o">=</span> <span class="n">TransitionInflater</span><span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="k">this</span><span class="o">).</span><span class="na">inflateTransition</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">transition</span><span class="o">.</span><span class="na">activity_fade</span><span class="o">);</span>
         <span class="n">getWindow</span><span class="o">().</span><span class="na">setEnterTransition</span><span class="o">(</span><span class="n">fade</span><span class="o">);</span>
     <span class="o">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="programmatically">Programmatically</h3>
 
@@ -760,41 +760,39 @@ All these transitions track changes to the visibility of target views in activit
   <p>MainActivity.java</p>
 </blockquote>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>	<span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="n">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
         <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_transition</span><span class="o">);</span>
         <span class="n">setupWindowAnimations</span><span class="o">();</span>
     <span class="o">}</span>
 
-    <span class="kd">private</span> <span class="kt">void</span> <span class="n">setupWindowAnimations</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">setupWindowAnimations</span><span class="o">()</span> <span class="o">{</span>
         <span class="n">Slide</span> <span class="n">slide</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Slide</span><span class="o">();</span>
         <span class="n">slide</span><span class="o">.</span><span class="na">setDuration</span><span class="o">(</span><span class="mi">1000</span><span class="o">);</span>
         <span class="n">getWindow</span><span class="o">().</span><span class="na">setExitTransition</span><span class="o">(</span><span class="n">slide</span><span class="o">);</span>
     <span class="o">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
   <p>TransitionActivity.java</p>
 </blockquote>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>	<span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="n">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
         <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_transition</span><span class="o">);</span>
         <span class="n">setupWindowAnimations</span><span class="o">();</span>
     <span class="o">}</span>
 
-    <span class="kd">private</span> <span class="kt">void</span> <span class="n">setupWindowAnimations</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">setupWindowAnimations</span><span class="o">()</span> <span class="o">{</span>
         <span class="n">Fade</span> <span class="n">fade</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Fade</span><span class="o">();</span>
         <span class="n">fade</span><span class="o">.</span><span class="na">setDuration</span><span class="o">(</span><span class="mi">1000</span><span class="o">);</span>
         <span class="n">getWindow</span><span class="o">().</span><span class="na">setEnterTransition</span><span class="o">(</span><span class="n">fade</span><span class="o">);</span>
     <span class="o">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="any-of-those-produce-this-result">Any of those produce this result:</h4>
 
@@ -830,14 +828,14 @@ All these transitions track changes to the visibility of target views in activit
   <p>TransitionActivity.java</p>
 </blockquote>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>	<span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="n">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
         <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_transition</span><span class="o">);</span>
         <span class="n">setupWindowAnimations</span><span class="o">();</span>
     <span class="o">}</span>
 
-    <span class="kd">private</span> <span class="kt">void</span> <span class="n">setupWindowAnimations</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">setupWindowAnimations</span><span class="o">()</span> <span class="o">{</span>
         <span class="n">Fade</span> <span class="n">fade</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Fade</span><span class="o">();</span>
         <span class="n">fade</span><span class="o">.</span><span class="na">setDuration</span><span class="o">(</span><span class="mi">1000</span><span class="o">);</span>
         <span class="n">getWindow</span><span class="o">().</span><span class="na">setEnterTransition</span><span class="o">(</span><span class="n">fade</span><span class="o">);</span>
@@ -847,8 +845,7 @@ All these transitions track changes to the visibility of target views in activit
         <span class="n">getWindow</span><span class="o">().</span><span class="na">setReturnTransition</span><span class="o">(</span><span class="n">slide</span><span class="o">);</span>        
     <span class="o">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Observe that if no Return Transition is defined then a reversed Enter Transition is executed.
 If a Return Transition is defined that one is executed instead.</p>
@@ -876,7 +873,7 @@ If a Return Transition is defined that one is executed instead.</p>
   </tbody>
 </table>
 
-<h2 id="shared-elements-between-activities">2. Shared elements between Activities</h2>
+<h2 id="2-shared-elements-between-activities">2. Shared elements between Activities</h2>
 
 <p>The idea behind this is having two different views in two different layouts and link them somehow with an animation.</p>
 
@@ -894,17 +891,16 @@ If a Return Transition is defined that one is executed instead.</p>
   <p>values/styles.xml</p>
 </blockquote>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"MaterialAnimations"</span> <span class="na">parent=</span><span class="s">"@style/Theme.AppCompat.Light.NoActionBar"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"MaterialAnimations"</span> <span class="na">parent=</span><span class="s">"@style/Theme.AppCompat.Light.NoActionBar"</span><span class="nt">&gt;</span>
     ...
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"android:windowContentTransitions"</span><span class="nt">&gt;</span>true<span class="err">&lt;</span>/item
     ...
 <span class="nt">&lt;/style&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Here you can also specify default enter, exit and shared element transitions for the whole app if you want</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"MaterialAnimations"</span> <span class="na">parent=</span><span class="s">"@style/Theme.AppCompat.Light.NoActionBar"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"MaterialAnimations"</span> <span class="na">parent=</span><span class="s">"@style/Theme.AppCompat.Light.NoActionBar"</span><span class="nt">&gt;</span>
     ...
     <span class="nt">&lt;--</span> <span class="err">specify</span> <span class="err">enter</span> <span class="err">and</span> <span class="err">exit</span> <span class="err">transitions</span> <span class="err">--</span><span class="nt">&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"android:windowEnterTransition"</span><span class="nt">&gt;</span>@transition/explode<span class="nt">&lt;/item&gt;</span>
@@ -915,8 +911,7 @@ If a Return Transition is defined that one is executed instead.</p>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"android:windowSharedElementExitTransition"</span><span class="nt">&gt;</span>@transition/changebounds<span class="nt">&lt;/item&gt;</span>
     ...
 <span class="nt">&lt;/style&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="b-define-a-common-transition-name">b) Define a common transition name</h3>
 
@@ -926,25 +921,23 @@ If a Return Transition is defined that one is executed instead.</p>
   <p>layout/activity_a.xml</p>
 </blockquote>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;ImageView</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ImageView</span>
         <span class="na">android:id=</span><span class="s">"@+id/small_blue_icon"</span>
         <span class="na">style=</span><span class="s">"@style/MaterialAnimations.Icon.Small"</span>
         <span class="na">android:src=</span><span class="s">"@drawable/circle"</span>
         <span class="na">android:transitionName=</span><span class="s">"@string/blue_name"</span> <span class="nt">/&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
   <p>layout/activity_b.xml</p>
 </blockquote>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;ImageView</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ImageView</span>
         <span class="na">android:id=</span><span class="s">"@+id/big_blue_icon"</span>
         <span class="na">style=</span><span class="s">"@style/MaterialAnimations.Icon.Big"</span>
         <span class="na">android:src=</span><span class="s">"@drawable/circle"</span>
         <span class="na">android:transitionName=</span><span class="s">"@string/blue_name"</span> <span class="nt">/&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="c-start-an-activity-with-a-shared-element">c) Start an activity with a shared element</h3>
 
@@ -954,10 +947,10 @@ If a Return Transition is defined that one is executed instead.</p>
   <p>MainActivity.java</p>
 </blockquote>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="n">blueIconImageView</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">Intent</span> <span class="n">i</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">MainActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="n">SharedElementActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
 
         <span class="n">View</span> <span class="n">sharedView</span> <span class="o">=</span> <span class="n">blueIconImageView</span><span class="o">;</span>
@@ -968,8 +961,7 @@ If a Return Transition is defined that one is executed instead.</p>
     <span class="o">}</span>
 <span class="o">});</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Just that code will produce this beautiful transition animation:</p>
 
@@ -989,13 +981,12 @@ If a Return Transition is defined that one is executed instead.</p>
   <p>values/styles.xml</p>
 </blockquote>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"MaterialAnimations"</span> <span class="na">parent=</span><span class="s">"@style/Theme.AppCompat.Light.NoActionBar"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"MaterialAnimations"</span> <span class="na">parent=</span><span class="s">"@style/Theme.AppCompat.Light.NoActionBar"</span><span class="nt">&gt;</span>
     ...
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"android:windowContentTransitions"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
     ...
 <span class="nt">&lt;/style&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="b-define-a-common-transition-name-1">b) Define a common transition name</h3>
 
@@ -1003,31 +994,29 @@ If a Return Transition is defined that one is executed instead.</p>
   <p>layout/fragment_a.xml</p>
 </blockquote>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;ImageView</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ImageView</span>
         <span class="na">android:id=</span><span class="s">"@+id/small_blue_icon"</span>
         <span class="na">style=</span><span class="s">"@style/MaterialAnimations.Icon.Small"</span>
         <span class="na">android:src=</span><span class="s">"@drawable/circle"</span>
         <span class="na">android:transitionName=</span><span class="s">"@string/blue_name"</span> <span class="nt">/&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
   <p>layout/fragment_b.xml</p>
 </blockquote>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;ImageView</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ImageView</span>
         <span class="na">android:id=</span><span class="s">"@+id/big_blue_icon"</span>
         <span class="na">style=</span><span class="s">"@style/MaterialAnimations.Icon.Big"</span>
         <span class="na">android:src=</span><span class="s">"@drawable/circle"</span>
         <span class="na">android:transitionName=</span><span class="s">"@string/blue_name"</span> <span class="nt">/&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="c-start-a-fragment-with-a-shared-element">c) Start a fragment with a shared element</h3>
 
 <p>To do this you need to include shared element transition information as part of the <strong><code class="highlighter-rouge">FragmentTransaction</code></strong> process.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">FragmentB</span> <span class="n">fragmentB</span> <span class="o">=</span> <span class="n">FragmentB</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span><span class="n">sample</span><span class="o">);</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">FragmentB</span> <span class="n">fragmentB</span> <span class="o">=</span> <span class="n">FragmentB</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span><span class="n">sample</span><span class="o">);</span>
 
 <span class="c1">// Defines enter transition for all fragment views</span>
 <span class="n">Slide</span> <span class="n">slideTransition</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Slide</span><span class="o">(</span><span class="n">Gravity</span><span class="o">.</span><span class="na">RIGHT</span><span class="o">);</span>
@@ -1042,8 +1031,7 @@ If a Return Transition is defined that one is executed instead.</p>
         <span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">content</span><span class="o">,</span> <span class="n">fragmentB</span><span class="o">)</span>
         <span class="o">.</span><span class="na">addSharedElement</span><span class="o">(</span><span class="n">blueView</span><span class="o">,</span> <span class="n">getString</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">blue_name</span><span class="o">))</span>
         <span class="o">.</span><span class="na">commit</span><span class="o">();</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>And this is the final result:</p>
 
@@ -1053,14 +1041,16 @@ If a Return Transition is defined that one is executed instead.</p>
 
 <p>You can define if enter and exit transitions can overlap each other.</p>
 
-<p>From <a href="http://developer.android.com/intl/ko/reference/android/app/Fragment.html#getAllowEnterTransitionOverlap()">Android documentation</a>:
-&gt; When <strong>true</strong>, the enter transition will start as soon as possible. 
-&gt; 
-&gt; When <strong>false</strong>, the enter transition will wait until the exit transition completes before starting.</p>
+<p>From <a href="http://developer.android.com/intl/ko/reference/android/app/Fragment.html#getAllowEnterTransitionOverlap()">Android documentation</a>:</p>
+<blockquote>
+  <p>When <strong>true</strong>, the enter transition will start as soon as possible.</p>
+
+  <p>When <strong>false</strong>, the enter transition will wait until the exit transition completes before starting.</p>
+</blockquote>
 
 <p>This works for both Fragments and Activities shared element transitions.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">FragmentB</span> <span class="n">fragmentB</span> <span class="o">=</span> <span class="n">FragmentB</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span><span class="n">sample</span><span class="o">);</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">FragmentB</span> <span class="n">fragmentB</span> <span class="o">=</span> <span class="n">FragmentB</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span><span class="n">sample</span><span class="o">);</span>
 
 <span class="c1">// Defines enter transition for all fragment views</span>
 <span class="n">Slide</span> <span class="n">slideTransition</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Slide</span><span class="o">(</span><span class="n">Gravity</span><span class="o">.</span><span class="na">RIGHT</span><span class="o">);</span>
@@ -1079,8 +1069,7 @@ If a Return Transition is defined that one is executed instead.</p>
         <span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">content</span><span class="o">,</span> <span class="n">fragmentB</span><span class="o">)</span>
         <span class="o">.</span><span class="na">addSharedElement</span><span class="o">(</span><span class="n">blueView</span><span class="o">,</span> <span class="n">getString</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">blue_name</span><span class="o">))</span>
         <span class="o">.</span><span class="na">commit</span><span class="o">();</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>It is very easy to spot the difference in this example:</p>
 
@@ -1103,14 +1092,14 @@ If a Return Transition is defined that one is executed instead.</p>
   </tbody>
 </table>
 
-<h2 id="animate-view-layout-elements">3. Animate view layout elements</h2>
+<h2 id="3-animate-view-layout-elements">3. Animate view layout elements</h2>
 
 <h3 id="scenes">Scenes</h3>
 <p>Transition Framework can also be used to animate element changes within current activity layout.</p>
 
 <p>Transitions happen between scenes. A scene is just a regular layout which <strong>defines a static state of our UI</strong>. You can transition from one scene to another and Transition Framework will animate views in between.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">scene1</span> <span class="o">=</span> <span class="n">Scene</span><span class="o">.</span><span class="na">getSceneForLayout</span><span class="o">(</span><span class="n">sceneRoot</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_animations_scene1</span><span class="o">,</span> <span class="k">this</span><span class="o">);</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scene1</span> <span class="o">=</span> <span class="n">Scene</span><span class="o">.</span><span class="na">getSceneForLayout</span><span class="o">(</span><span class="n">sceneRoot</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_animations_scene1</span><span class="o">,</span> <span class="k">this</span><span class="o">);</span>
 <span class="n">scene2</span> <span class="o">=</span> <span class="n">Scene</span><span class="o">.</span><span class="na">getSceneForLayout</span><span class="o">(</span><span class="n">sceneRoot</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_animations_scene2</span><span class="o">,</span> <span class="k">this</span><span class="o">);</span>
 <span class="n">scene3</span> <span class="o">=</span> <span class="n">Scene</span><span class="o">.</span><span class="na">getSceneForLayout</span><span class="o">(</span><span class="n">sceneRoot</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_animations_scene3</span><span class="o">,</span> <span class="k">this</span><span class="o">);</span>
 <span class="n">scene4</span> <span class="o">=</span> <span class="n">Scene</span><span class="o">.</span><span class="na">getSceneForLayout</span><span class="o">(</span><span class="n">sceneRoot</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_animations_scene4</span><span class="o">,</span> <span class="k">this</span><span class="o">);</span>
@@ -1118,7 +1107,7 @@ If a Return Transition is defined that one is executed instead.</p>
 <span class="o">(...)</span>
 
 <span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="p">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">switch</span> <span class="o">(</span><span class="n">v</span><span class="o">.</span><span class="na">getId</span><span class="o">())</span> <span class="o">{</span>
         <span class="k">case</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">button1</span><span class="o">:</span>
             <span class="n">TransitionManager</span><span class="o">.</span><span class="na">go</span><span class="o">(</span><span class="n">scene1</span><span class="o">,</span> <span class="k">new</span> <span class="n">ChangeBounds</span><span class="o">());</span>
@@ -1134,8 +1123,7 @@ If a Return Transition is defined that one is executed instead.</p>
             <span class="k">break</span><span class="o">;</span>  
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>That code would produce transition between four scenes in the same activity. Each transition has a different animation defined.</p>
 
@@ -1151,23 +1139,21 @@ If a Return Transition is defined that one is executed instead.</p>
 
 <p>With just this line of code we are telling the framework we are going to perform some UI changes that it will need to animate.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">TransitionManager</span><span class="o">.</span><span class="na">beginDelayedTransition</span><span class="o">(</span><span class="n">sceneRoot</span><span class="o">);</span>
-</code></pre>
-</div>
-<p>#### b) Change view layout properties</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">TransitionManager</span><span class="o">.</span><span class="na">beginDelayedTransition</span><span class="o">(</span><span class="n">sceneRoot</span><span class="o">);</span>
+</code></pre></div></div>
+<h4 id="b-change-view-layout-properties">b) Change view layout properties</h4>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">ViewGroup</span><span class="o">.</span><span class="na">LayoutParams</span> <span class="n">params</span> <span class="o">=</span> <span class="n">greenIconView</span><span class="o">.</span><span class="na">getLayoutParams</span><span class="o">();</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ViewGroup</span><span class="o">.</span><span class="na">LayoutParams</span> <span class="n">params</span> <span class="o">=</span> <span class="n">greenIconView</span><span class="o">.</span><span class="na">getLayoutParams</span><span class="o">();</span>
 <span class="n">params</span><span class="o">.</span><span class="na">width</span> <span class="o">=</span> <span class="mi">200</span><span class="o">;</span>
 <span class="n">greenIconView</span><span class="o">.</span><span class="na">setLayoutParams</span><span class="o">(</span><span class="n">params</span><span class="o">);</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Changing view width attribute to make it smaller will trigger a <code class="highlighter-rouge">layoutMeasure</code>. At that point the Transition framework will record start and ending values and will create an animation to transition from one to another.</p>
 
 <p><a href="https://raw.githubusercontent.com/lgvalle/Material-Animations/master/screenshots/view_layout_anim.gif">view layout animation</a></p>
 
-<h2 id="bonus-shared-elements--circular-reveal">4. (Bonus) Shared elements + Circular Reveal</h2>
+<h2 id="4-bonus-shared-elements--circular-reveal">4. (Bonus) Shared elements + Circular Reveal</h2>
 <p>Circular Reveal is just an animation to show or hide a group of UI elements. It is available since API 21 in <code class="highlighter-rouge">ViewAnimationUtils</code> class.</p>
 
 <p>Circular Reveal animation can be used in combination of Shared Element Transition to create meaningful animations that smoothly teach the user what is happening in the app.</p>
@@ -1190,11 +1176,11 @@ If a Return Transition is defined that one is executed instead.</p>
   <p>Listen to shared element enter transition end</p>
 </blockquote>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">Transition</span> <span class="n">transition</span> <span class="o">=</span> <span class="n">TransitionInflater</span><span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="k">this</span><span class="o">).</span><span class="na">inflateTransition</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">transition</span><span class="o">.</span><span class="na">changebounds_with_arcmotion</span><span class="o">);</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Transition</span> <span class="n">transition</span> <span class="o">=</span> <span class="n">TransitionInflater</span><span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="k">this</span><span class="o">).</span><span class="na">inflateTransition</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">transition</span><span class="o">.</span><span class="na">changebounds_with_arcmotion</span><span class="o">);</span>
 <span class="n">getWindow</span><span class="o">().</span><span class="na">setSharedElementEnterTransition</span><span class="o">(</span><span class="n">transition</span><span class="o">);</span>
 <span class="n">transition</span><span class="o">.</span><span class="na">addListener</span><span class="o">(</span><span class="k">new</span> <span class="n">Transition</span><span class="o">.</span><span class="na">TransitionListener</span><span class="o">()</span> <span class="o">{</span>
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onTransitionEnd</span><span class="o">(</span><span class="n">Transition</span> <span class="n">transition</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onTransitionEnd</span><span class="o">(</span><span class="n">Transition</span> <span class="n">transition</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">animateRevealShow</span><span class="o">(</span><span class="n">toolbar</span><span class="o">);</span>
         <span class="n">animateButtonsIn</span><span class="o">();</span>
     <span class="o">}</span>
@@ -1203,14 +1189,13 @@ If a Return Transition is defined that one is executed instead.</p>
 
 <span class="o">});</span>
         
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
   <p>Reveal Toolbar</p>
 </blockquote>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="kt">void</span> <span class="nf">animateRevealShow</span><span class="p">(</span><span class="n">View</span> <span class="n">viewRoot</span><span class="o">)</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kt">void</span> <span class="nf">animateRevealShow</span><span class="o">(</span><span class="n">View</span> <span class="n">viewRoot</span><span class="o">)</span> <span class="o">{</span>
     <span class="kt">int</span> <span class="n">cx</span> <span class="o">=</span> <span class="o">(</span><span class="n">viewRoot</span><span class="o">.</span><span class="na">getLeft</span><span class="o">()</span> <span class="o">+</span> <span class="n">viewRoot</span><span class="o">.</span><span class="na">getRight</span><span class="o">())</span> <span class="o">/</span> <span class="mi">2</span><span class="o">;</span>
     <span class="kt">int</span> <span class="n">cy</span> <span class="o">=</span> <span class="o">(</span><span class="n">viewRoot</span><span class="o">.</span><span class="na">getTop</span><span class="o">()</span> <span class="o">+</span> <span class="n">viewRoot</span><span class="o">.</span><span class="na">getBottom</span><span class="o">())</span> <span class="o">/</span> <span class="mi">2</span><span class="o">;</span>
     <span class="kt">int</span> <span class="n">finalRadius</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">viewRoot</span><span class="o">.</span><span class="na">getWidth</span><span class="o">(),</span> <span class="n">viewRoot</span><span class="o">.</span><span class="na">getHeight</span><span class="o">());</span>
@@ -1221,14 +1206,13 @@ If a Return Transition is defined that one is executed instead.</p>
     <span class="n">anim</span><span class="o">.</span><span class="na">setInterpolator</span><span class="o">(</span><span class="k">new</span> <span class="n">AccelerateInterpolator</span><span class="o">());</span>
     <span class="n">anim</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
   <p>Scale up activity layout views</p>
 </blockquote>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="kt">void</span> <span class="nf">animateButtonsIn</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kt">void</span> <span class="nf">animateButtonsIn</span><span class="o">()</span> <span class="o">{</span>
     <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">bgViewGroup</span><span class="o">.</span><span class="na">getChildCount</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
         <span class="n">View</span> <span class="n">child</span> <span class="o">=</span> <span class="n">bgViewGroup</span><span class="o">.</span><span class="na">getChildAt</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
         <span class="n">child</span><span class="o">.</span><span class="na">animate</span><span class="o">()</span>
@@ -1239,8 +1223,7 @@ If a Return Transition is defined that one is executed instead.</p>
                 <span class="o">.</span><span class="na">scaleY</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="more-circular-reveal-animations">More circular reveal animations</h3>
 
@@ -1250,21 +1233,20 @@ If a Return Transition is defined that one is executed instead.</p>
 
 <p><a href="https://raw.githubusercontent.com/lgvalle/Material-Animations/master/screenshots/reveal_green.gif">reveal_green</a></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="n">cx</span> <span class="o">=</span> <span class="o">(</span><span class="n">viewRoot</span><span class="o">.</span><span class="na">getLeft</span><span class="o">()</span> <span class="o">+</span> <span class="n">viewRoot</span><span class="o">.</span><span class="na">getRight</span><span class="o">())</span> <span class="o">/</span> <span class="mi">2</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">cx</span> <span class="o">=</span> <span class="o">(</span><span class="n">viewRoot</span><span class="o">.</span><span class="na">getLeft</span><span class="o">()</span> <span class="o">+</span> <span class="n">viewRoot</span><span class="o">.</span><span class="na">getRight</span><span class="o">())</span> <span class="o">/</span> <span class="mi">2</span><span class="o">;</span>
 <span class="kt">int</span> <span class="n">cy</span> <span class="o">=</span> <span class="n">viewRoot</span><span class="o">.</span><span class="na">getTop</span><span class="o">();</span>
 <span class="kt">int</span> <span class="n">finalRadius</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">viewRoot</span><span class="o">.</span><span class="na">getWidth</span><span class="o">(),</span> <span class="n">viewRoot</span><span class="o">.</span><span class="na">getHeight</span><span class="o">());</span>
 
 <span class="n">Animator</span> <span class="n">anim</span> <span class="o">=</span> <span class="n">ViewAnimationUtils</span><span class="o">.</span><span class="na">createCircularReveal</span><span class="o">(</span><span class="n">viewRoot</span><span class="o">,</span> <span class="n">cx</span><span class="o">,</span> <span class="n">cy</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">finalRadius</span><span class="o">);</span>
 <span class="n">viewRoot</span><span class="o">.</span><span class="na">setBackgroundColor</span><span class="o">(</span><span class="n">color</span><span class="o">);</span>
 <span class="n">anim</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="circular-reveal-from-top-of-target-view--animations">Circular Reveal from top of target view + animations</h4>
 
 <p><a href="https://raw.githubusercontent.com/lgvalle/Material-Animations/master/screenshots/reveal_blue.gif">reveal_blue</a></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="n">cx</span> <span class="o">=</span> <span class="o">(</span><span class="n">viewRoot</span><span class="o">.</span><span class="na">getLeft</span><span class="o">()</span> <span class="o">+</span> <span class="n">viewRoot</span><span class="o">.</span><span class="na">getRight</span><span class="o">())</span> <span class="o">/</span> <span class="mi">2</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">cx</span> <span class="o">=</span> <span class="o">(</span><span class="n">viewRoot</span><span class="o">.</span><span class="na">getLeft</span><span class="o">()</span> <span class="o">+</span> <span class="n">viewRoot</span><span class="o">.</span><span class="na">getRight</span><span class="o">())</span> <span class="o">/</span> <span class="mi">2</span><span class="o">;</span>
 <span class="kt">int</span> <span class="n">cy</span> <span class="o">=</span> <span class="o">(</span><span class="n">viewRoot</span><span class="o">.</span><span class="na">getTop</span><span class="o">()</span> <span class="o">+</span> <span class="n">viewRoot</span><span class="o">.</span><span class="na">getBottom</span><span class="o">())</span> <span class="o">/</span> <span class="mi">2</span><span class="o">;</span>
 <span class="kt">int</span> <span class="n">finalRadius</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">viewRoot</span><span class="o">.</span><span class="na">getWidth</span><span class="o">(),</span> <span class="n">viewRoot</span><span class="o">.</span><span class="na">getHeight</span><span class="o">());</span>
 
@@ -1272,20 +1254,19 @@ If a Return Transition is defined that one is executed instead.</p>
 <span class="n">viewRoot</span><span class="o">.</span><span class="na">setBackgroundColor</span><span class="o">(</span><span class="n">color</span><span class="o">);</span>
 <span class="n">anim</span><span class="o">.</span><span class="na">addListener</span><span class="o">(</span><span class="k">new</span> <span class="n">AnimatorListenerAdapter</span><span class="o">()</span> <span class="o">{</span>
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onAnimationEnd</span><span class="o">(</span><span class="n">Animator</span> <span class="n">animation</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onAnimationEnd</span><span class="o">(</span><span class="n">Animator</span> <span class="n">animation</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">animateButtonsIn</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">});</span>
 <span class="n">anim</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="circular-reveal-from-touch-point">Circular Reveal from touch point</h4>
 
 <p><a href="https://raw.githubusercontent.com/lgvalle/Material-Animations/master/screenshots/reveal_yellow.gif">reveal_yellow</a></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onTouch</span><span class="p">(</span><span class="n">View</span> <span class="n">view</span><span class="o">,</span> <span class="n">MotionEvent</span> <span class="n">motionEvent</span><span class="o">)</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onTouch</span><span class="o">(</span><span class="n">View</span> <span class="n">view</span><span class="o">,</span> <span class="n">MotionEvent</span> <span class="n">motionEvent</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">if</span> <span class="o">(</span><span class="n">motionEvent</span><span class="o">.</span><span class="na">getAction</span><span class="o">()</span> <span class="o">==</span> <span class="n">MotionEvent</span><span class="o">.</span><span class="na">ACTION_DOWN</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">if</span> <span class="o">(</span><span class="n">view</span><span class="o">.</span><span class="na">getId</span><span class="o">()</span> <span class="o">==</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">square_yellow</span><span class="o">)</span> <span class="o">{</span>
             <span class="n">revealFromCoordinates</span><span class="o">(</span><span class="n">motionEvent</span><span class="o">.</span><span class="na">getRawX</span><span class="o">(),</span> <span class="n">motionEvent</span><span class="o">.</span><span class="na">getRawY</span><span class="o">());</span>
@@ -1293,27 +1274,25 @@ If a Return Transition is defined that one is executed instead.</p>
     <span class="o">}</span>
     <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="n">Animator</span> <span class="nf">animateRevealColorFromCoordinates</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">)</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="n">Animator</span> <span class="nf">animateRevealColorFromCoordinates</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">)</span> <span class="o">{</span>
     <span class="kt">float</span> <span class="n">finalRadius</span> <span class="o">=</span> <span class="o">(</span><span class="kt">float</span><span class="o">)</span> <span class="n">Math</span><span class="o">.</span><span class="na">hypot</span><span class="o">(</span><span class="n">viewRoot</span><span class="o">.</span><span class="na">getWidth</span><span class="o">(),</span> <span class="n">viewRoot</span><span class="o">.</span><span class="na">getHeight</span><span class="o">());</span>
 
     <span class="n">Animator</span> <span class="n">anim</span> <span class="o">=</span> <span class="n">ViewAnimationUtils</span><span class="o">.</span><span class="na">createCircularReveal</span><span class="o">(</span><span class="n">viewRoot</span><span class="o">,</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">finalRadius</span><span class="o">);</span>
     <span class="n">viewRoot</span><span class="o">.</span><span class="na">setBackgroundColor</span><span class="o">(</span><span class="n">color</span><span class="o">);</span>
     <span class="n">anim</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="animate-and-reveal">Animate and Reveal</h4>
 
 <p><a href="https://raw.githubusercontent.com/lgvalle/Material-Animations/master/screenshots/reveal_red.gif">reveal_red</a></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">Transition</span> <span class="n">transition</span> <span class="o">=</span> <span class="n">TransitionInflater</span><span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="k">this</span><span class="o">).</span><span class="na">inflateTransition</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">transition</span><span class="o">.</span><span class="na">changebounds_with_arcmotion</span><span class="o">);</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Transition</span> <span class="n">transition</span> <span class="o">=</span> <span class="n">TransitionInflater</span><span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="k">this</span><span class="o">).</span><span class="na">inflateTransition</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">transition</span><span class="o">.</span><span class="na">changebounds_with_arcmotion</span><span class="o">);</span>
 <span class="n">transition</span><span class="o">.</span><span class="na">addListener</span><span class="o">(</span><span class="k">new</span> <span class="n">Transition</span><span class="o">.</span><span class="na">TransitionListener</span><span class="o">()</span> <span class="o">{</span>
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onTransitionEnd</span><span class="o">(</span><span class="n">Transition</span> <span class="n">transition</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onTransitionEnd</span><span class="o">(</span><span class="n">Transition</span> <span class="n">transition</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">animateRevealColor</span><span class="o">(</span><span class="n">bgViewGroup</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">red</span><span class="o">);</span>
     <span class="o">}</span>
     <span class="o">(...)</span>
@@ -1323,8 +1302,7 @@ If a Return Transition is defined that one is executed instead.</p>
 <span class="n">RelativeLayout</span><span class="o">.</span><span class="na">LayoutParams</span> <span class="n">layoutParams</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RelativeLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">(</span><span class="n">RelativeLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">.</span><span class="na">WRAP_CONTENT</span><span class="o">,</span> <span class="n">RelativeLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">.</span><span class="na">WRAP_CONTENT</span><span class="o">);</span>
 <span class="n">layoutParams</span><span class="o">.</span><span class="na">addRule</span><span class="o">(</span><span class="n">RelativeLayout</span><span class="o">.</span><span class="na">CENTER_IN_PARENT</span><span class="o">);</span>
 <span class="n">btnRed</span><span class="o">.</span><span class="na">setLayoutParams</span><span class="o">(</span><span class="n">layoutParams</span><span class="o">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h1 id="sample-source-code">Sample source code</h1>
 
@@ -1366,17 +1344,17 @@ If a Return Transition is defined that one is executed instead.</p>
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Material Animations&url=http://kmshack.github.io/AndroidUICollection/2016/10/11/MaterialAnimations/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Material Animations&url=http://localhost:4000/AndroidUICollection/2016/10/11/MaterialAnimations/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/10/11/MaterialAnimations/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/10/11/MaterialAnimations/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/10/11/MaterialAnimations/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/10/11/MaterialAnimations/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -1407,7 +1385,7 @@ If a Return Transition is defined that one is executed instead.</p>
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/10/11/MaterialAnimations/";
+    this.page.url = "http://localhost:4000/2016/10/11/MaterialAnimations/";
   };
 
   (function() {

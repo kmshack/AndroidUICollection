@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/10/01/FlowingDrawer/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/10/01/FlowingDrawer/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="FlowingDrawer[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-FlowingDrawer-green.svg?style=flat)[travis-ic](https://travis-ci.org/mxn21/Flow...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="Flowing Drawer">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="FlowingDrawer[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-FlowingDrawer-green.svg?style=flat)[travis-ic](https://travis-ci.org/mxn21/Flow...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/10/01/FlowingDrawer/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/10/01/FlowingDrawer/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="FlowingDrawer[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-FlowingDrawer-green.svg?style=flat)[travis-ic](https://travis-ci.org/mxn21/Flow..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-10-01-FlowingDrawer.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-10-01-FlowingDrawer.gif">
         
 
         <header class="post__header">
@@ -685,7 +689,7 @@
 
 <p>activity_main.xml:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="nt">&lt;com.mxn.soul.flowingdrawer_core.FlowingDrawer</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;com.mxn.soul.flowingdrawer_core.FlowingDrawer</span>
             <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
             <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
             <span class="na">android:id=</span><span class="s">"@+id/drawerlayout"</span>
@@ -717,8 +721,7 @@
         <span class="nt">&lt;/com.mxn.soul.flowingdrawer_core.FlowingMenuLayout&gt;</span>
 
     <span class="nt">&lt;/com.mxn.soul.flowingdrawer_core.FlowingDrawer&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>To use a FlowingDrawer, position FlowingDrawer as the root , position your primary content view as the
 first child with width and height of match_parent . Add FlowingMenuLayout as child views after the main
@@ -739,23 +742,22 @@ to emerge from: left or right.Left menu : edPosition =1 ; Right menu: edPosition
 
 <p>MainActivity:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>     <span class="n">mDrawer</span> <span class="o">=</span> <span class="o">(</span><span class="n">FlowingDrawer</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">drawerlayout</span><span class="o">);</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     <span class="n">mDrawer</span> <span class="o">=</span> <span class="o">(</span><span class="n">FlowingDrawer</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">drawerlayout</span><span class="o">);</span>
      <span class="n">mDrawer</span><span class="o">.</span><span class="na">setTouchMode</span><span class="o">(</span><span class="n">ElasticDrawer</span><span class="o">.</span><span class="na">TOUCH_MODE_BEZEL</span><span class="o">);</span>
      <span class="n">mDrawer</span><span class="o">.</span><span class="na">setOnDrawerStateChangeListener</span><span class="o">(</span><span class="k">new</span> <span class="n">ElasticDrawer</span><span class="o">.</span><span class="na">OnDrawerStateChangeListener</span><span class="o">()</span> <span class="o">{</span>
                  <span class="nd">@Override</span>
-                 <span class="kd">public</span> <span class="kt">void</span> <span class="n">onDrawerStateChange</span><span class="o">(</span><span class="kt">int</span> <span class="n">oldState</span><span class="o">,</span> <span class="kt">int</span> <span class="n">newState</span><span class="o">)</span> <span class="o">{</span>
+                 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDrawerStateChange</span><span class="o">(</span><span class="kt">int</span> <span class="n">oldState</span><span class="o">,</span> <span class="kt">int</span> <span class="n">newState</span><span class="o">)</span> <span class="o">{</span>
                      <span class="k">if</span> <span class="o">(</span><span class="n">newState</span> <span class="o">==</span> <span class="n">ElasticDrawer</span><span class="o">.</span><span class="na">STATE_CLOSED</span><span class="o">)</span> <span class="o">{</span>
                          <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">"MainActivity"</span><span class="o">,</span> <span class="s">"Drawer STATE_CLOSED"</span><span class="o">);</span>
                      <span class="o">}</span>
                  <span class="o">}</span>
 
                  <span class="nd">@Override</span>
-                 <span class="kd">public</span> <span class="kt">void</span> <span class="n">onDrawerSlide</span><span class="o">(</span><span class="kt">float</span> <span class="n">openRatio</span><span class="o">,</span> <span class="kt">int</span> <span class="n">offsetPixels</span><span class="o">)</span> <span class="o">{</span>
+                 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDrawerSlide</span><span class="o">(</span><span class="kt">float</span> <span class="n">openRatio</span><span class="o">,</span> <span class="kt">int</span> <span class="n">offsetPixels</span><span class="o">)</span> <span class="o">{</span>
                      <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">"MainActivity"</span><span class="o">,</span> <span class="s">"openRatio="</span> <span class="o">+</span> <span class="n">openRatio</span> <span class="o">+</span> <span class="s">" ,offsetPixels="</span> <span class="o">+</span> <span class="n">offsetPixels</span><span class="o">);</span>
                  <span class="o">}</span>
              <span class="o">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>setTouchMode can allows the drawer to be opened by dragging the edge or the entire screen.
 setOnDrawerStateChangeListener can be used to monitor the state and motion of drawer views.
 Avoid performing expensive operations such as layout during animation as it can cause stuttering.
@@ -763,7 +765,7 @@ ElasticDrawer.OnDrawerStateChangeListener offers default/no-op implementations o
 
 <h1 id="license">License</h1>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2015 soul.mxn
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright 2015 soul.mxn
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -776,8 +778,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
           <br>
@@ -805,17 +806,17 @@ limitations under the License.
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Flowing Drawer&url=http://kmshack.github.io/AndroidUICollection/2016/10/01/FlowingDrawer/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Flowing Drawer&url=http://localhost:4000/AndroidUICollection/2016/10/01/FlowingDrawer/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/10/01/FlowingDrawer/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/10/01/FlowingDrawer/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/10/01/FlowingDrawer/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/10/01/FlowingDrawer/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -846,7 +847,7 @@ limitations under the License.
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/10/01/FlowingDrawer/";
+    this.page.url = "http://localhost:4000/2016/10/01/FlowingDrawer/";
   };
 
   (function() {

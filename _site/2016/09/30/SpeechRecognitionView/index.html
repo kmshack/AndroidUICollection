@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/09/30/SpeechRecognitionView/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/09/30/SpeechRecognitionView/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="SpeechRecognitionView[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SpeechRecognitionView-brightgreen.svg?style=flat)[Release](https://jitp...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="Speech Recognition View">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="SpeechRecognitionView[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SpeechRecognitionView-brightgreen.svg?style=flat)[Release](https://jitp...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/09/30/SpeechRecognitionView/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/09/30/SpeechRecognitionView/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="SpeechRecognitionView[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SpeechRecognitionView-brightgreen.svg?style=flat)[Release](https://jitp..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-09-30-SpeechRecognitionView.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-09-30-SpeechRecognitionView.gif">
         
 
         <header class="post__header">
@@ -664,22 +668,20 @@
 
 <p>Add it in your root build.gradle at the end of repositories:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">allprojects</span> <span class="o">{</span>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">allprojects</span> <span class="o">{</span>
     <span class="n">repositories</span> <span class="o">{</span>
         <span class="o">...</span>
         <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s2">"https://jitpack.io"</span> <span class="o">}</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Add the dependency</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
     <span class="n">compile</span> <span class="s1">'com.github.zagum:SpeechRecognitionView:1.2.2'</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="usage">Usage</h2>
 
@@ -689,119 +691,109 @@
 
 <p>Simply add view to your layout:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;com.github.zagum.speechrecognitionview.RecognitionProgressView</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;com.github.zagum.speechrecognitionview.RecognitionProgressView</span>
 	<span class="na">android:id=</span><span class="s">"@+id/recognition_view"</span>
 	<span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
 	<span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
 	<span class="na">android:layout_gravity=</span><span class="s">"center"</span><span class="nt">/&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <ul>
   <li>Initialization:</li>
 </ul>
 
-<p>Init speech recognizer:
-<code class="highlighter-rouge">java
-SpeechRecognizer speechRecognizer = SpeechRecognizer.createSpeechRecognizer(context);
-</code></p>
+<p>Init speech recognizer:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SpeechRecognizer</span> <span class="n">speechRecognizer</span> <span class="o">=</span> <span class="n">SpeechRecognizer</span><span class="o">.</span><span class="na">createSpeechRecognizer</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
+</code></pre></div></div>
 
-<p>Init RecognitionProgressView:
-<code class="highlighter-rouge">java
-RecognitionProgressView recognitionProgressView = (RecognitionProgressView) findViewById(R.id.recognition_view);
-recognitionProgressView.setSpeechRecognizer(speechRecognizer);
-recognitionProgressView.setRecognitionListener(new RecognitionListenerAdapter() {
-        @Override
-        public void onResults(Bundle results) {
-	        showResults(results);
-        }
-});
-</code></p>
+<p>Init RecognitionProgressView:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">RecognitionProgressView</span> <span class="n">recognitionProgressView</span> <span class="o">=</span> <span class="o">(</span><span class="n">RecognitionProgressView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">recognition_view</span><span class="o">);</span>
+<span class="n">recognitionProgressView</span><span class="o">.</span><span class="na">setSpeechRecognizer</span><span class="o">(</span><span class="n">speechRecognizer</span><span class="o">);</span>
+<span class="n">recognitionProgressView</span><span class="o">.</span><span class="na">setRecognitionListener</span><span class="o">(</span><span class="k">new</span> <span class="n">RecognitionListenerAdapter</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onResults</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">results</span><span class="o">)</span> <span class="o">{</span>
+	        <span class="n">showResults</span><span class="o">(</span><span class="n">results</span><span class="o">);</span>
+        <span class="o">}</span>
+<span class="o">});</span>
+</code></pre></div></div>
 
-<p>When SpeechRecognizer and RecognitionProgressView inited, use your speech recognizer as usual:
-``` java
-listen.setOnClickListener(new View.OnClickListener() {
-	@Override
-	public void onClick(View v) {
-		startRecognition();
-	}
-});</p>
+<p>When SpeechRecognizer and RecognitionProgressView inited, use your speech recognizer as usual:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">listen</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">startRecognition</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="o">});</span>
 
-<p>private void startRecognition() {
-	Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-	intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, getPackageName());
-	intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
-	speechRecognizer.startListening(intent);
-}
-```</p>
+<span class="kd">private</span> <span class="kt">void</span> <span class="nf">startRecognition</span><span class="o">()</span> <span class="o">{</span>
+	<span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">RecognizerIntent</span><span class="o">.</span><span class="na">ACTION_RECOGNIZE_SPEECH</span><span class="o">);</span>
+	<span class="n">intent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">RecognizerIntent</span><span class="o">.</span><span class="na">EXTRA_CALLING_PACKAGE</span><span class="o">,</span> <span class="n">getPackageName</span><span class="o">());</span>
+	<span class="n">intent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">RecognizerIntent</span><span class="o">.</span><span class="na">EXTRA_LANGUAGE_MODEL</span><span class="o">,</span> <span class="n">RecognizerIntent</span><span class="o">.</span><span class="na">LANGUAGE_MODEL_FREE_FORM</span><span class="o">);</span>
+	<span class="n">speechRecognizer</span><span class="o">.</span><span class="na">startListening</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
-<p>Start and stop RecognitionProgressView animation:
-``` java
-recognitionProgressView.play();</p>
+<p>Start and stop RecognitionProgressView animation:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">recognitionProgressView</span><span class="o">.</span><span class="na">play</span><span class="o">();</span>
 
-<p>recognitionProgressView.stop();
-```</p>
+<span class="n">recognitionProgressView</span><span class="o">.</span><span class="na">stop</span><span class="o">();</span>
+</code></pre></div></div>
 
 <ul>
   <li>Customization:</li>
 </ul>
 
-<p>Set custom colors: 
-<code class="highlighter-rouge">java
-int[] colors = {
-		ContextCompat.getColor(this, R.color.color1),
-		ContextCompat.getColor(this, R.color.color2),
-		ContextCompat.getColor(this, R.color.color3),
-		ContextCompat.getColor(this, R.color.color4),
-		ContextCompat.getColor(this, R.color.color5)
-};
-recognitionProgressView.setColors(colors);
-</code></p>
+<p>Set custom colors:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span><span class="o">[]</span> <span class="n">colors</span> <span class="o">=</span> <span class="o">{</span>
+		<span class="n">ContextCompat</span><span class="o">.</span><span class="na">getColor</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">color1</span><span class="o">),</span>
+		<span class="n">ContextCompat</span><span class="o">.</span><span class="na">getColor</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">color2</span><span class="o">),</span>
+		<span class="n">ContextCompat</span><span class="o">.</span><span class="na">getColor</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">color3</span><span class="o">),</span>
+		<span class="n">ContextCompat</span><span class="o">.</span><span class="na">getColor</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">color4</span><span class="o">),</span>
+		<span class="n">ContextCompat</span><span class="o">.</span><span class="na">getColor</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">color5</span><span class="o">)</span>
+<span class="o">};</span>
+<span class="n">recognitionProgressView</span><span class="o">.</span><span class="na">setColors</span><span class="o">(</span><span class="n">colors</span><span class="o">);</span>
+</code></pre></div></div>
 
-<p>Set custom bars heights: 
-<code class="highlighter-rouge">java
-int[] heights = {60, 76, 58, 80, 55};
-recognitionProgressView.setBarMaxHeightsInDp(heights);
-</code></p>
+<p>Set custom bars heights:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span><span class="o">[]</span> <span class="n">heights</span> <span class="o">=</span> <span class="o">{</span><span class="mi">60</span><span class="o">,</span> <span class="mi">76</span><span class="o">,</span> <span class="mi">58</span><span class="o">,</span> <span class="mi">80</span><span class="o">,</span> <span class="mi">55</span><span class="o">};</span>
+<span class="n">recognitionProgressView</span><span class="o">.</span><span class="na">setBarMaxHeightsInDp</span><span class="o">(</span><span class="n">heights</span><span class="o">);</span>
+</code></pre></div></div>
 
-<p>Set custom circle radius/spacing between circles/idle animation amolitude size/rotation animation radius: 
-<code class="highlighter-rouge">java
-recognitionProgressView.setCircleRadiusInDp(2);
-recognitionProgressView.setSpacingInDp(2);
-recognitionProgressView.setIdleStateAmplitudeInDp(2);
-recognitionProgressView.setRotationRadiusInDp(10);
-</code>
-Don’t forget to add permission to your AndroidManifest.xml file
-``` xml</p>
-<uses-permission android:name="android.permission.RECORD_AUDIO" />
+<p>Set custom circle radius/spacing between circles/idle animation amolitude size/rotation animation radius:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">recognitionProgressView</span><span class="o">.</span><span class="na">setCircleRadiusInDp</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+<span class="n">recognitionProgressView</span><span class="o">.</span><span class="na">setSpacingInDp</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+<span class="n">recognitionProgressView</span><span class="o">.</span><span class="na">setIdleStateAmplitudeInDp</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+<span class="n">recognitionProgressView</span><span class="o">.</span><span class="na">setRotationRadiusInDp</span><span class="o">(</span><span class="mi">10</span><span class="o">);</span>
+</code></pre></div></div>
+<p>Don’t forget to add permission to your AndroidManifest.xml file</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.RECORD_AUDIO"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<ul>
+  <li>Warning</li>
+</ul>
 
-* Warning
+<p>From <a href="http://developer.android.com/reference/android/speech/RecognitionListener.html#onRmsChanged(float)">Android Documentation</a>
+For <code class="highlighter-rouge">java public abstract void onRmsChanged (float rmsdB)</code> callback <code class="highlighter-rouge">There is no guarantee that this method will be called.</code>, 
+so if this callback does not return values the Bars animation will be skipped.</p>
 
-From [Android Documentation](http://developer.android.com/reference/android/speech/RecognitionListener.html#onRmsChanged(float))
-For ```java public abstract void onRmsChanged (float rmsdB)``` callback ```There is no guarantee that this method will be called.```, 
-so if this callback does not return values the Bars animation will be skipped. 
-
-I found some hack to make it working every time you want to start speech recognition:
-``` java
-listen.setOnClickListener(new View.OnClickListener() {
-	@Override
-	public void onClick(View v) {
-		startRecognition();
-		recognitionProgressView.postDelayed(new Runnable() {
-			@Override
-			public void run() {
-				startRecognition();
-			}
-		}, 50);
-	}
-});
-</code></pre>
-</div>
+<p>I found some hack to make it working every time you want to start speech recognition:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">listen</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">startRecognition</span><span class="o">();</span>
+		<span class="n">recognitionProgressView</span><span class="o">.</span><span class="na">postDelayed</span><span class="o">(</span><span class="k">new</span> <span class="n">Runnable</span><span class="o">()</span> <span class="o">{</span>
+			<span class="nd">@Override</span>
+			<span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+				<span class="n">startRecognition</span><span class="o">();</span>
+			<span class="o">}</span>
+		<span class="o">},</span> <span class="mi">50</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">});</span>
+</code></pre></div></div>
 
 <h2 id="license">License</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2016 Evgenii Zagumennyi
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright 2016 Evgenii Zagumennyi
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -814,8 +806,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
           <br>
@@ -843,17 +834,17 @@ limitations under the License.
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Speech Recognition View&url=http://kmshack.github.io/AndroidUICollection/2016/09/30/SpeechRecognitionView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Speech Recognition View&url=http://localhost:4000/AndroidUICollection/2016/09/30/SpeechRecognitionView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/09/30/SpeechRecognitionView/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/09/30/SpeechRecognitionView/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/09/30/SpeechRecognitionView/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/09/30/SpeechRecognitionView/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -884,7 +875,7 @@ limitations under the License.
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/09/30/SpeechRecognitionView/";
+    this.page.url = "http://localhost:4000/2016/09/30/SpeechRecognitionView/";
   };
 
   (function() {

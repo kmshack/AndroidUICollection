@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Music Player View</title>
+  <meta name="description" content="MusicPlayerView[Build Status](https://api.travis-ci.org/iammert/MusicPlayerView.svg)[Join the chat at https://gitter.im/iammert/MusicPlayerView](https://img....">
+  <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
+  <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
+    
+  <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/10/04/MusicPlayerView/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
+    
+  <meta name="description" content="MusicPlayerView[Build Status](https://api.travis-ci.org/iammert/MusicPlayerView.svg)[Join the chat at https://gitter.im/iammert/MusicPlayerView](https://img....">
+
+
+  <meta name="author" content="kmshack" />
+
+  <meta property="og:title" content="Music Player View">
+  <meta property="og:site_name" content="Android UI OpenSource" />
+  <meta property="og:description" content="MusicPlayerView[Build Status](https://api.travis-ci.org/iammert/MusicPlayerView.svg)[Join the chat at https://gitter.im/iammert/MusicPlayerView](https://img....">
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/10/04/MusicPlayerView/" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:site" content="@kmshack" />
+  <meta name="twitter:description" content="MusicPlayerView[Build Status](https://api.travis-ci.org/iammert/MusicPlayerView.svg)[Join the chat at https://gitter.im/iammert/MusicPlayerView](https://img...." />
+
+  
+  	<!-- Article specific OG data -->
+  	<meta property="og:type" content="article" />
+  	<meta property="article:published_time" content="2016-10-04 00:00:00 +0900" />
+  	
+  	<meta property="article:author" content="http://facebook.com/kmshack" />
+    <meta property="article:publisher" content="https://www.facebook.com/kmshack" />
+  	<meta property="article:section" content="" />
+  	
+
+  	<meta name="twitter:card" content="summary_large_image" />
+  	<meta name="twitter:creator" content="@kmshack_kr" />
+  	<meta name="twitter:title" content="Music Player View" />
+	
+	  	<meta property="og:image" content="/images/posts/2016-10-04-MusicPlayerView.gif" />
+	  	<meta name="twitter:image" content="/images/posts/2016-10-04-MusicPlayerView.gif" />
+  	
+
+  
+
+  <script>
+    var base_url = "/AndroidUICollection";
+  </script>
+    
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9975139260149901",
+    enable_page_level_ads: true
+  });
+</script>
+    
+</head>
+
+<body>
+
+  <!-- Google Analytics Code -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85072530-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  <div class="off-canvas-container">
+    <div class="sidebar">
+  <div class="row">
+
+    <div class="column small-10 large-12">
+      <br>
+      <h1 class="sidebar__logo logo"><a href="/AndroidUICollection/">Android UI OpenSource</a></h1>
+      <div class="sidebar__description font-tiny">Collection of OpenSource for Android UI.</div>
+    </div>
+
+    <label class="off-canvas-toggle"><span data-icon="ei-navicon" data-size="s"></span></label>
+
+    <div class="off-canvas-content">
+
+      <div class="column small-12 large-12">
+        <nav class="navigation">
+          <ul class="list-bare text-center">
+            
+              
+            
+              
+                
+                  <li>
+                    <a class="page-link" href="/AndroidUICollection/about.html">About</a>
+                  </li>
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+            <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="column small-12 large-12">
+        <ul class="social-nav social-icons">
+
+          
+          <li>
+            <a href="http://www.github.com/kmshack" target="_blank">
+              <span data-icon="ei-sc-github" data-size="s"></span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="http://www.twitter.com/kmshack_kr" target="_blank">
+              <span data-icon="ei-sc-twitter" data-size="s"></span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="mailto:kmshack@naver.com" target="_blank">
+              <span data-icon="ei-envelope" data-size="s"></span>
+            </a>
+          </li>
+          
+
+          <li>
+            <a class="toggle-search-button" href="#">
+              <span data-icon="ei-search" data-size="s"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+        
+      <div class="sidebar__bottom">
+        <div class="column small-12 large-12">
+            
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- androidui -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:250px;height:250px"
+                 data-ad-client="ca-pub-9975139260149901"
+                 data-ad-slot="5123612274"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+
+          <div class="font-tiny">
+              <br>
+            &copy; 2018 Android UI OpenSource
+          </div>
+        </div>
+      </div>
+        
+    </div> <!-- off-canvas-content -->
+      
+
+
+  </div>
+    
+
+    
+</div>
+
+<div class="search-form-container">
+
+  <form class="search-form">
+    <fieldset class="search-form__fieldset">
+      <div class="row">
+        <div class="column column--center large-8">
+          <input class="search-form__field" placeholder="Type to search" autofocus>
+          <input class="search-form__submit" type="submit" value="search">
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+  <div class="row">
+    <div class="column column--center large-8">
+      <div class="search-results"></div>
+    </div>
+  </div>
+
+  <div data-icon="ei-close" data-size="s" class="close-search-button search-form-container__close"></div>
+
+</div>
+
+    
+
+
+
+<div class="wrapper">
+  <div class="row row--full">
+
+    <div class="column column--center medium-12 large-12">
+      <div class="grey-bg CoverImage FlexEmbed FlexEmbed--16by9" style="background-image: url(/AndroidUICollection/images/posts/2016-10-04-MusicPlayerView.gif)"></div>
+        
+    </div>
+      
+    <div class="column column--center medium-12 large-10">
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+        
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-10-04-MusicPlayerView.gif">
+        
+
+        <header class="post__header">
+          <h2 class="post__title" itemprop="name headline">Music Player View</h2>
+          
+          <h3 class="post__date">
+            <a href="https://github.com/iammert/MusicPlayerView" target="_blank"><span data-icon="ei-sc-github" data-size="s"></span>https://github.com/iammert/MusicPlayerView</a>
+          </h3>
+        </header>
+
+        <div class="post-content" itemprop="articleBody">
+            
+            <div class="column column--center medium-12 large-4">
+              <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/AndroidUICollection/images/posts/2016-10-04-MusicPlayerView.gif)"></div>
+            </div>
+          <br>
+          <h1 id="musicplayerview">MusicPlayerView</h1>
+<p><a href="https://travis-ci.org/iammert/MusicPlayerView">[Build Status](https://api.travis-ci.org/iammert/MusicPlayerView.svg)</a>
+<a href="https://gitter.im/iammert/MusicPlayerView">[Join the chat at https://gitter.im/iammert/MusicPlayerView](https://img.shields.io/badge/GITTER-join%20chat-green.svg)</a> <a href="https://android-arsenal.com/details/1/2167">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-MusicPlayerView-green.svg?style=flat)</a></p>
+
+<p>Android custom view and progress for music player.</p>
+
+<h1 id="screen">Screen</h1>
+<p><img src="https://raw.githubusercontent.com/iammert/MusicPlayerView/master/art/art2.gif" /></p>
+
+<p><a href="https://www.youtube.com/watch?v=HASd7XvMKbk">Youtube Video Link</a></p>
+
+<h1 id="usage">Usage</h1>
+
+<p>You can define values on you XML file or you can make it programmatically. We have 5 values to customize
+our player view.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mpv</span> <span class="o">=</span> <span class="o">(</span><span class="n">MusicPlayerView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">mpv</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">buttonColor</code>  play/pause button background.
+<code class="highlighter-rouge">progressEmptyColor</code> progress bar color(Left Seconds)
+<code class="highlighter-rouge">progressLoadedColor</code> progress bar color(Passed Seconds)
+<code class="highlighter-rouge">textColor</code> music minutes(Left and passed time) color
+<code class="highlighter-rouge">textSize</code> music minutes(Left and passed time) size</p>
+
+<h2 id="xml-usage">XML Usage</h2>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;co.mobiwise.library.MusicPlayerView</span>
+        <span class="na">android:id=</span><span class="s">"@+id/mpv"</span>
+        <span class="na">android:layout_width=</span><span class="s">"250dp"</span>
+        <span class="na">android:layout_height=</span><span class="s">"250dp"</span>
+        <span class="na">app:textSize =</span> <span class="s">"14sp"</span>
+        <span class="na">app:textColor =</span> <span class="s">"#80FFFFFF"</span>
+        <span class="na">app:buttonColor =</span> <span class="s">"#FF0028"</span>
+        <span class="na">app:progressLoadedColor =</span> <span class="s">"#00815E"</span>
+        <span class="na">app:progressEmptyColor =</span> <span class="s">"#20FFFFFF"</span>
+        <span class="na">app:cover =</span> <span class="s">"@drawable/mycover"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h2 id="java-usage">Java Usage</h2>
+
+<p>You can customize UI view programmatically</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mpv</span><span class="o">.</span><span class="na">setButtonColor</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">DKGRAY</span><span class="o">);</span>
+<span class="n">mpv</span><span class="o">.</span><span class="na">setCoverDrawable</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">mycover</span><span class="o">);</span>
+<span class="n">mpv</span><span class="o">.</span><span class="na">setProgressEmptyColor</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">GRAY</span><span class="o">);</span>
+<span class="n">mpv</span><span class="o">.</span><span class="na">setProgressLoadedColor</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">BLUE</span><span class="o">);</span>
+<span class="n">mpv</span><span class="o">.</span><span class="na">setTimeColor</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">WHITE</span><span class="o">);</span>
+</code></pre></div></div>
+
+<h2 id="methods">Methods</h2>
+
+<p>You can also load image from URL</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mpv</span><span class="o">.</span><span class="na">setCoverURL</span><span class="o">(</span><span class="s">"YOUR_IMAGE_URL"</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>You need to set music time in seconds otherwise default value 100 seconds will be used.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mpv</span><span class="o">.</span><span class="na">setMax</span><span class="o">(</span><span class="mi">320</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>Progress will start from 0. But you can also set progress.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mpv</span><span class="o">.</span><span class="na">setProgress</span><span class="o">(</span><span class="mi">10</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>To start playing</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mpv</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+</code></pre></div></div>
+
+<p>To stop playing</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mpv</span><span class="o">.</span><span class="na">stop</span><span class="o">();</span>
+</code></pre></div></div>
+
+<p>Check if it is rotating(Playing)</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mpv</span><span class="o">.</span><span class="na">isRotating</span><span class="o">();</span>
+</code></pre></div></div>
+
+<p>When you call <code class="highlighter-rouge">start()</code> method, image will start rotating and progress(seconds) will start counting 
+automatically. when you call <code class="highlighter-rouge">stop()</code> method, rotating will be stopped, time too. You may want to handle
+progress yourself. You can disable progress thread.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mpv</span><span class="o">.</span><span class="na">setAutoProgress</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>You can also change velocity of turning album cover.(Default value is 1 which is ideal -my idea-)</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mpv</span><span class="o">.</span><span class="na">setVelocity</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>If you have live player then you don’t have progress. You can also disable progress view.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mpv</span><span class="o">.</span><span class="na">setProgressVisibility</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+</code></pre></div></div>
+
+<h1 id="import">Import</h1>
+<p>Project build.gradle</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>repositories {
+    maven {
+        url "https://jitpack.io"
+    }
+}
+</code></pre></div></div>
+
+<p>Module build.gradle</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dependencies {
+  compile 'com.github.iammert:MusicPlayerView:e3b937c729'
+}
+</code></pre></div></div>
+
+<p>It will be available on maven repo soon.</p>
+
+<h1 id="libraries-used">Libraries Used</h1>
+
+<p><a href="http://square.github.io/picasso/">Picasso by Square</a></p>
+
+<p><a href="https://github.com/alexjlockwood/material-pause-play-animation">Material Play/Pause Animation</a> by <a href="https://github.com/alexjlockwood">Alex</a></p>
+
+<h1 id="design-owner">Design Owner</h1>
+
+<p><a href="https://dribbble.com/shots/2133878-Music-animations-part4-share?list=users&amp;offset=12?list=users">Design</a> is created by [Xiang lili] (https://twitter.com/xiang_lili)</p>
+
+<h2 id="license">License</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright 2015 Mert Şimşek.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</code></pre></div></div>
+
+
+          <br>
+          <div class="post__tags">
+            
+              <a href="/AndroidUICollection/tag/view">view</a>
+            
+              <a href="/AndroidUICollection/tag/music">music</a>
+            
+              <a href="/AndroidUICollection/tag/player">player</a>
+            
+          </div>
+            
+        </div>
+          
+          <br>
+          <hr>
+          <br>  
+          <div class="post-content"  itemprop="articleBody">
+            
+          </div>
+          <br>
+          <hr>
+          <br>
+
+        
+
+        
+
+<ul class="share-list">
+  <li>
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Music Player View&url=http://localhost:4000/AndroidUICollection/2016/10/04/MusicPlayerView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+      <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
+    </a>
+  </li>
+  <li>
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/10/04/MusicPlayerView/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
+    </a>
+  </li>
+  <li>
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/10/04/MusicPlayerView/" rel="nofollow" target="_blank" title="Share on Google+">
+    <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
+    </a>
+  </li>
+</ul>
+
+        <h5 class="separator">
+  <span class="separator__title">Newsletter</span>
+</h5>
+
+<div class="box box--news-letter">
+  <form action="//aspirethemes.us12.list-manage.com/subscribe/post?u=9723f3c5c3a2637fbba3bc673&amp;id=7b50db9989" method="post" target="_blank">
+    <div class="row">
+      <div class="column medium-9 large-9">
+        <input type="email" name="EMAIL" placeholder="Your email address">
+      </div>
+      <div class="column medium-3 large-3">
+        <input type="submit" class="button button--expand" value="SIGN UP">
+      </div>
+    </div>
+  </form>
+</div>
+
+        <section class="disqus">
+  <h5 class="separator">
+    <span class="separator__title">Comments</span>
+  </h5>
+  <div id="disqus_thread"></div>
+
+<script>
+  var disqus_config = function () {
+    this.page.url = "http://localhost:4000/2016/10/04/MusicPlayerView/";
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//android-kmshack-kr.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</section>
+      </article>
+    </div>
+
+  </div> <!-- row-->
+</div> <!-- wrapper -->
+  </div>
+
+  <script src="/AndroidUICollection/js/jquery-2.1.4.min.js"></script>
+  <script src="/AndroidUICollection/js/evil-icons.min.js"></script>
+  <script src="/AndroidUICollection/js/jquery.fitvids.js"></script>
+  <script src="/AndroidUICollection/js/jquery.ghostHunter.min.js"></script>
+  <script src="/AndroidUICollection/js/script.js"></script>
+</body>
+
+</html>

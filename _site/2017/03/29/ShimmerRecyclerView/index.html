@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2017/03/29/ShimmerRecyclerView/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2017/03/29/ShimmerRecyclerView/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ShimmerRecyclerView-brightgreen.svg?style=flat)[Build Status](https://travis-ci.org/sharish/...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="ShimmerRecyclerView">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ShimmerRecyclerView-brightgreen.svg?style=flat)[Build Status](https://travis-ci.org/sharish/...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2017/03/29/ShimmerRecyclerView/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2017/03/29/ShimmerRecyclerView/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ShimmerRecyclerView-brightgreen.svg?style=flat)[Build Status](https://travis-ci.org/sharish/..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2017-03-29-ShimmerRecyclerView.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2017-03-29-ShimmerRecyclerView.gif">
         
 
         <header class="post__header">
@@ -774,7 +778,7 @@
 
 <p>Define your xml as:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;com.cooltechworks.views.shimmer.ShimmerRecyclerView</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;com.cooltechworks.views.shimmer.ShimmerRecyclerView</span>
         <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
         <span class="na">android:id=</span><span class="s">"@+id/shimmer_recycler_view"</span>
         <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
@@ -786,14 +790,12 @@
         <span class="na">app:shimmer_demo_angle=</span><span class="s">"20"</span>
         <span class="nt">/&gt;</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>where <code class="highlighter-rouge">@layout/layout_demo_grid</code> refers to your sample layout that should be shown during loading spinner. Now on your activity onCreate, initialize the shimmer as below:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">ShimmerRecyclerView</span> <span class="n">shimmerRecycler</span> <span class="o">=</span> <span class="o">(</span><span class="n">ShimmerRecyclerView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">shimmer_recycler_view</span><span class="o">);</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ShimmerRecyclerView</span> <span class="n">shimmerRecycler</span> <span class="o">=</span> <span class="o">(</span><span class="n">ShimmerRecyclerView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">shimmer_recycler_view</span><span class="o">);</span>
 <span class="n">shimmerRecycler</span><span class="o">.</span><span class="na">showShimmerAdapter</span><span class="o">();</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="adding-to-your-project">Adding to your project</h2>
 
@@ -801,20 +803,20 @@
   <li>Add the following configuration in your build.gradle file.</li>
 </ul>
 
-<pre><code class="language-gradle">repositories {
-    jcenter()
-    maven { url "https://jitpack.io" }
-}
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">repositories</span> <span class="o">{</span>
+    <span class="n">jcenter</span><span class="o">()</span>
+    <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s2">"https://jitpack.io"</span> <span class="o">}</span>
+<span class="o">}</span>
 
-dependencies {
-    implementation 'com.github.sharish:ShimmerRecyclerView:v1.3'
-}
-</code></pre>
+<span class="k">dependencies</span> <span class="o">{</span>
+    <span class="n">implementation</span> <span class="s1">'com.github.sharish:ShimmerRecyclerView:v1.3'</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
 <h2 id="developed-by">Developed By</h2>
 
 <ul>
-  <li>Harish Sridharan - <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#104;&#097;&#114;&#105;&#115;&#104;&#046;&#115;&#114;&#105;&#100;&#104;&#097;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">&#104;&#097;&#114;&#105;&#115;&#104;&#046;&#115;&#114;&#105;&#100;&#104;&#097;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</a></li>
+  <li>Harish Sridharan - <a href="mailto:harish.sridhar@gmail.com">harish.sridhar@gmail.com</a></li>
 </ul>
 
 <h2 id="used-libraries">Used libraries</h2>
@@ -857,17 +859,17 @@ dependencies {
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=ShimmerRecyclerView&url=http://kmshack.github.io/AndroidUICollection/2017/03/29/ShimmerRecyclerView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=ShimmerRecyclerView&url=http://localhost:4000/AndroidUICollection/2017/03/29/ShimmerRecyclerView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2017/03/29/ShimmerRecyclerView/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2017/03/29/ShimmerRecyclerView/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2017/03/29/ShimmerRecyclerView/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2017/03/29/ShimmerRecyclerView/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -898,7 +900,7 @@ dependencies {
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2017/03/29/ShimmerRecyclerView/";
+    this.page.url = "http://localhost:4000/2017/03/29/ShimmerRecyclerView/";
   };
 
   (function() {

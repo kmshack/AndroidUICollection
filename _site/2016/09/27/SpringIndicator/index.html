@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/09/27/SpringIndicator/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/09/27/SpringIndicator/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="SpringIndicatoriconAn indicator like Morning Routine guide.It was originally based on BezierDemo.The sample app: click megif#UsageAdd the dependency to your ...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="SpringIndicator">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="SpringIndicatoriconAn indicator like Morning Routine guide.It was originally based on BezierDemo.The sample app: click megif#UsageAdd the dependency to your ...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/09/27/SpringIndicator/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/09/27/SpringIndicator/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="SpringIndicatoriconAn indicator like Morning Routine guide.It was originally based on BezierDemo.The sample app: click megif#UsageAdd the dependency to your ..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-09-27-SpringIndicator.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-09-27-SpringIndicator.gif">
         
 
         <header class="post__header">
@@ -657,15 +661,14 @@
 <p><a href="https://raw.githubusercontent.com/chenupt/SpringIndicator/master/img/si_1.0.0.gif">gif</a></p>
 
 <h2 id="usage">#Usage</h2>
-<p>Add the dependency to your build.gradle.
-<code class="highlighter-rouge">
-dependencies {
+<p>Add the dependency to your build.gradle.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dependencies {
     compile 'com.github.chenupt.android:springindicator:1.0.2@aar'
 }
-</code>
-Add the indicator to your layout.</p>
+</code></pre></div></div>
+<p>Add the indicator to your layout.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;github.chenupt.springindicator.SpringIndicator
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;github.chenupt.springindicator.SpringIndicator
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:siTextSize="18sp"
     app:siIndicatorColors="@array/indicator_colors"
@@ -675,17 +678,15 @@ Add the indicator to your layout.</p>
     android:id="@+id/indicator"
     android:layout_width="match_parent"
     android:layout_height="56dp"/&gt;
-</code></pre>
-</div>
-<p>Setup with your viewPager.
-<code class="highlighter-rouge">
-springIndicator.setViewPager(viewPager);
-</code>
-<a href="https://github.com/chenupt/SpringIndicator/blob/master/lib%2Fsrc%2Fmain%2Fres%2Fvalues%2Fattrs.xml">All xml attributes.</a></p>
+</code></pre></div></div>
+<p>Setup with your viewPager.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>springIndicator.setViewPager(viewPager);
+</code></pre></div></div>
+<p><a href="https://github.com/chenupt/SpringIndicator/blob/master/lib%2Fsrc%2Fmain%2Fres%2Fvalues%2Fattrs.xml">All xml attributes.</a></p>
 
 <h2 id="developed-by">Developed By</h2>
 <ul>
-  <li>Chenupt - <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#104;&#101;&#110;&#117;&#112;&#116;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">&#099;&#104;&#101;&#110;&#117;&#112;&#116;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</a></li>
+  <li>Chenupt - <a href="mailto:chenupt@gmail.com">chenupt@gmail.com</a></li>
   <li>G+ <a href="https://plus.google.com/u/0/109194013506774756478">chenupt</a></li>
   <li>微博：<a href="http://weibo.com/p/1005052159173535/home">chenupt</a></li>
   <li>QQ：753785666</li>
@@ -693,7 +694,7 @@ springIndicator.setViewPager(viewPager);
 
 <h2 id="license">License</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2015 chenupt
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright 2015 chenupt
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -706,8 +707,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
           <br>
@@ -737,17 +737,17 @@ limitations under the License.
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=SpringIndicator&url=http://kmshack.github.io/AndroidUICollection/2016/09/27/SpringIndicator/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=SpringIndicator&url=http://localhost:4000/AndroidUICollection/2016/09/27/SpringIndicator/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/09/27/SpringIndicator/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/09/27/SpringIndicator/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/09/27/SpringIndicator/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/09/27/SpringIndicator/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -778,7 +778,7 @@ limitations under the License.
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/09/27/SpringIndicator/";
+    this.page.url = "http://localhost:4000/2016/09/27/SpringIndicator/";
   };
 
   (function() {

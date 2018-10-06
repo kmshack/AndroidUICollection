@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/10/07/RecyclerRefreshLayout/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/10/07/RecyclerRefreshLayout/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="RecyclerRefreshLayout[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-RecyclerRefreshLayout-green.svg?style=true)            English      中文版...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="RecyclerRefreshLayout">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="RecyclerRefreshLayout[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-RecyclerRefreshLayout-green.svg?style=true)            English      中文版...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/10/07/RecyclerRefreshLayout/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/10/07/RecyclerRefreshLayout/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="RecyclerRefreshLayout[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-RecyclerRefreshLayout-green.svg?style=true)            English      中文版..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-10-07-RecyclerRefreshLayout.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-10-07-RecyclerRefreshLayout.gif">
         
 
         <header class="post__header">
@@ -678,26 +682,26 @@ progress animation, call <code class="highlighter-rouge">setEnabled(false)</code
   <p>Note: The <code class="highlighter-rouge">RecyclerRefreshLayout</code> supports all of the views: <code class="highlighter-rouge">ListView</code>, <code class="highlighter-rouge">GridView</code>, <code class="highlighter-rouge">ScrollView</code>, <code class="highlighter-rouge">FrameLayout</code>, or Even a single <code class="highlighter-rouge">TextView</code></p>
 </blockquote>
 
-<p>[](https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutNormal.gif?width=300)
-[](https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutFloat.gif?width=300)
-[](https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutPinned.gif?width=300)<br />
-[](https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutLoadMore.gif?width=300)
-[](https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutNoData.gif?width=300)
-[](https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutLoadError.gif?width=300)<br /></p>
+<p><a href="https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutNormal.gif?width=300"></a>
+<a href="https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutFloat.gif?width=300"></a>
+<a href="https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutPinned.gif?width=300"></a><br />
+<a href="https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutLoadMore.gif?width=300"></a>
+<a href="https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutNoData.gif?width=300"></a>
+<a href="https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutLoadError.gif?width=300"></a><br /></p>
 
 <h2 id="installation">Installation</h2>
 
 <p>Add the following dependency to your build.gradle file:</p>
 
-<pre><code class="language-gradle">    dependencies {
-        compile 'com.dinuscxj:recyclerrefreshlayout:2.0.5'
-    }
-</code></pre>
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">dependencies</span> <span class="o">{</span>
+        <span class="n">compile</span> <span class="s1">'com.dinuscxj:recyclerrefreshlayout:2.0.5'</span>
+    <span class="o">}</span>
+</code></pre></div></div>
 
 <h2 id="usage">Usage</h2>
 
 <h4 id="config-in-xml">Config in xml</h4>
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
 <span class="nt">&lt;com.dinuscxj.refresh.RecyclerRefreshLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
  <span class="na">android:id=</span><span class="s">"@+id/refresh_layout"</span>
  <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
@@ -707,110 +711,96 @@ progress animation, call <code class="highlighter-rouge">setEnabled(false)</code
      <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
      <span class="na">android:layout_height=</span><span class="s">"match_parent"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/app.dinus.com.refresh.RecyclerRefreshLayout&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="configure-the-attributes-must">Configure the attributes(* must)</h4>
-<p>Set the listener to be notified when a refresh is triggered via the swipe gesture. 
-<code class="highlighter-rouge">java
-RecyclerRefreshLayout.setOnRefreshListener(OnRefreshListener);
-</code></p>
+<p>Set the listener to be notified when a refresh is triggered via the swipe gesture.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">RecyclerRefreshLayout</span><span class="o">.</span><span class="na">setOnRefreshListener</span><span class="o">(</span><span class="n">OnRefreshListener</span><span class="o">);</span>
+</code></pre></div></div>
 
 <p>Notify the widget that refresh state has changed. Do not call this 
-when refresh is triggered by a swipe gesture.
-<code class="highlighter-rouge">java
-RecyclerRefreshLayout.setRefreshing(boolean);
-</code></p>
+when refresh is triggered by a swipe gesture.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">RecyclerRefreshLayout</span><span class="o">.</span><span class="na">setRefreshing</span><span class="o">(</span><span class="kt">boolean</span><span class="o">);</span>
+</code></pre></div></div>
 
 <h4 id="configure-the-attributesoptional">Configure the attributes(optional)</h4>
 <p>Set the interpolator used by the animation that move the refresh view 
-the release point to the refreshing point.
-<code class="highlighter-rouge">java
-RecyclerRefreshLayout.setAnimateToRefreshInterpolator(Interpolator);
-</code></p>
+the release point to the refreshing point.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">RecyclerRefreshLayout</span><span class="o">.</span><span class="na">setAnimateToRefreshInterpolator</span><span class="o">(</span><span class="n">Interpolator</span><span class="o">);</span>
+</code></pre></div></div>
 
 <p>Set the interpolator used by the animation that move the refresh view 
-from the refreshing point or (the release point) to the start point.
-<code class="highlighter-rouge">java
-RecyclerRefreshLayout.setAnimateToStartInterpolator(Interpolator);
-</code></p>
+from the refreshing point or (the release point) to the start point.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">RecyclerRefreshLayout</span><span class="o">.</span><span class="na">setAnimateToStartInterpolator</span><span class="o">(</span><span class="n">Interpolator</span><span class="o">);</span>
+</code></pre></div></div>
 
 <p>Set the duration used by the animation that move the refresh view 
-the release point to the refreshing point.
-<code class="highlighter-rouge">java
-RecyclerRefreshLayout.setAnimateToRefreshDuration(int);
-</code></p>
+the release point to the refreshing point.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">RecyclerRefreshLayout</span><span class="o">.</span><span class="na">setAnimateToRefreshDuration</span><span class="o">(</span><span class="kt">int</span><span class="o">);</span>
+</code></pre></div></div>
 
 <p>Set the duration used by the animation that move the refresh view 
-from the refreshing point or (the release point) to the start point.
-<code class="highlighter-rouge">java
-RecyclerRefreshLayout.setAnimateToStartDuration(int);
-</code></p>
+from the refreshing point or (the release point) to the start point.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">RecyclerRefreshLayout</span><span class="o">.</span><span class="na">setAnimateToStartDuration</span><span class="o">(</span><span class="kt">int</span><span class="o">);</span>
+</code></pre></div></div>
 
-<p>Set the top position of the RefreshView relative to its parent.
-<code class="highlighter-rouge">java
-RecyclerRefreshLayoutsetRefreshInitialOffset(float)
-</code></p>
+<p>Set the top position of the RefreshView relative to its parent.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">RecyclerRefreshLayoutsetRefreshInitialOffset</span><span class="o">(</span><span class="kt">float</span><span class="o">)</span>
+</code></pre></div></div>
 
-<p>Set The minimum distance that trigger refresh
-<code class="highlighter-rouge">java
-RecyclerRefreshLayout.setRefreshTargetOffset(float)
-</code></p>
+<p>Set The minimum distance that trigger refresh</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">RecyclerRefreshLayout</span><span class="o">.</span><span class="na">setRefreshTargetOffset</span><span class="o">(</span><span class="kt">float</span><span class="o">)</span>
+</code></pre></div></div>
 
-<p>Set the style of the RefreshView
-<code class="highlighter-rouge">java
-RecyclerRefreshLayout.setRefreshStyle(@NonNull RefreshStyle) 
-</code></p>
+<p>Set the style of the RefreshView</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">RecyclerRefreshLayout</span><span class="o">.</span><span class="na">setRefreshStyle</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">RefreshStyle</span><span class="o">)</span> 
+</code></pre></div></div>
 
 <h2 id="customize">Customize</h2>
 
-<p>Customize a refresh view (need to implements <code class="highlighter-rouge">IRefreshStatus</code>) for <code class="highlighter-rouge">RecyclerRefreshLayout</code>.
-<code class="highlighter-rouge">java
-public interface IRefreshStatus {
-/**
+<p>Customize a refresh view (need to implements <code class="highlighter-rouge">IRefreshStatus</code>) for <code class="highlighter-rouge">RecyclerRefreshLayout</code>.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">IRefreshStatus</span> <span class="o">{</span>
+<span class="cm">/**
 * When the content view has reached top and refresh has been completed, view will be reset.
-*/
-void reset();
-/**
+*/</span>
+<span class="kt">void</span> <span class="nf">reset</span><span class="o">();</span>
+<span class="cm">/**
 * Refresh View is refreshing
-*/
-void refreshing();
-/**
+*/</span>
+<span class="kt">void</span> <span class="nf">refreshing</span><span class="o">();</span>
+<span class="cm">/**
 * Refresh View is dropped down to the refresh point
-*/
-void pullToRefresh();
-/**
+*/</span>
+<span class="kt">void</span> <span class="nf">pullToRefresh</span><span class="o">();</span>
+<span class="cm">/**
 * Refresh View is released into the refresh point
-*/
-void releaseToRefresh();
-/**
+*/</span>
+<span class="kt">void</span> <span class="nf">releaseToRefresh</span><span class="o">();</span>
+<span class="cm">/**
 * @param pullDistance The drop-down distance of the refresh View
 * @param pullProgress The drop-down progress of the refresh View and the pullProgress may be more than 1.0f
 *                     pullProgress = pullDistance / refreshTargetOffset
-*/
-void pullProgress(float pullDistance, float pullProgress);
-}
-</code>
-<code class="highlighter-rouge">java 
-RecyclerRefreshLayout.setRefreshView(View, LayoutParams);
-</code>
-Eg. <a href="https://github.com/dinuscxj/RecyclerRefreshLayout/blob/master/recyclerrefreshlayout/src/main/java/com/dinuscxj/refresh/RefreshView.java">RefreshView</a> or <a href="https://github.com/dinuscxj/RecyclerRefreshLayout/tree/master/app/src/main/java/com/dinuscxj/example/demo/RefreshViewEg.java">RefreshViewEg</a></p>
+*/</span>
+<span class="kt">void</span> <span class="nf">pullProgress</span><span class="o">(</span><span class="kt">float</span> <span class="n">pullDistance</span><span class="o">,</span> <span class="kt">float</span> <span class="n">pullProgress</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">RecyclerRefreshLayout</span><span class="o">.</span><span class="na">setRefreshView</span><span class="o">(</span><span class="n">View</span><span class="o">,</span> <span class="n">LayoutParams</span><span class="o">);</span>
+</code></pre></div></div>
+<p>Eg. <a href="https://github.com/dinuscxj/RecyclerRefreshLayout/blob/master/recyclerrefreshlayout/src/main/java/com/dinuscxj/refresh/RefreshView.java">RefreshView</a> or <a href="https://github.com/dinuscxj/RecyclerRefreshLayout/tree/master/app/src/main/java/com/dinuscxj/example/demo/RefreshViewEg.java">RefreshViewEg</a></p>
 
-<p>Customize a drag distance converter (need to implements <code class="highlighter-rouge">IDragDistanceConverter</code>) for <code class="highlighter-rouge">RecyclerRefreshLayout</code>.
-<code class="highlighter-rouge">java
-public interface IDragDistanceConverter {
- /**
+<p>Customize a drag distance converter (need to implements <code class="highlighter-rouge">IDragDistanceConverter</code>) for <code class="highlighter-rouge">RecyclerRefreshLayout</code>.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">IDragDistanceConverter</span> <span class="o">{</span>
+ <span class="cm">/**
   * @param scrollDistance the distance between the ACTION_DOWN point and the ACTION_MOVE point
   * @param refreshDistance the distance between the refresh point and the start point
   * @return the real distance of the refresh view moved
-  */
- float convert(float scrollDistance, float refreshDistance);
-}
-</code>
-<code class="highlighter-rouge">java
-RecyclerRefreshLayout.setDragDistanceConverter(@NonNull IDragDistanceConverter) 
-</code>
-Eg. <a href="https://github.com/dinuscxj/RecyclerRefreshLayout/blob/master/recyclerrefreshlayout/src/main/java/com/dinuscxj/refresh/MaterialDragDistanceConverter.java">MaterialDragDistanceConverter</a> or <a href="https://github.com/dinuscxj/RecyclerRefreshLayout/tree/master/app/src/main/java/com/dinuscxj/example/demo/DragDistanceConverterEg.java">DragDistanceConverterEg</a></p>
+  */</span>
+ <span class="kt">float</span> <span class="nf">convert</span><span class="o">(</span><span class="kt">float</span> <span class="n">scrollDistance</span><span class="o">,</span> <span class="kt">float</span> <span class="n">refreshDistance</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">RecyclerRefreshLayout</span><span class="o">.</span><span class="na">setDragDistanceConverter</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">IDragDistanceConverter</span><span class="o">)</span> 
+</code></pre></div></div>
+<p>Eg. <a href="https://github.com/dinuscxj/RecyclerRefreshLayout/blob/master/recyclerrefreshlayout/src/main/java/com/dinuscxj/refresh/MaterialDragDistanceConverter.java">MaterialDragDistanceConverter</a> or <a href="https://github.com/dinuscxj/RecyclerRefreshLayout/tree/master/app/src/main/java/com/dinuscxj/example/demo/DragDistanceConverterEg.java">DragDistanceConverterEg</a></p>
 
 <h2 id="misc">Misc</h2>
 
@@ -818,7 +808,7 @@ Eg. <a href="https://github.com/dinuscxj/RecyclerRefreshLayout/blob/master/recyc
 
 <h2 id="license">License</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2015-2019 dinus
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright 2015-2019 dinus
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -831,8 +821,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-</code></pre>
-</div>
+</code></pre></div></div>
 
           <br>
           <div class="post__tags">
@@ -861,17 +850,17 @@ limitations under the License.
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=RecyclerRefreshLayout&url=http://kmshack.github.io/AndroidUICollection/2016/10/07/RecyclerRefreshLayout/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=RecyclerRefreshLayout&url=http://localhost:4000/AndroidUICollection/2016/10/07/RecyclerRefreshLayout/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/10/07/RecyclerRefreshLayout/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/10/07/RecyclerRefreshLayout/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/10/07/RecyclerRefreshLayout/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/10/07/RecyclerRefreshLayout/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -902,7 +891,7 @@ limitations under the License.
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/10/07/RecyclerRefreshLayout/";
+    this.page.url = "http://localhost:4000/2016/10/07/RecyclerRefreshLayout/";
   };
 
   (function() {

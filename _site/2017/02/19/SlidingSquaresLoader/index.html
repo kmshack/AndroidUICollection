@@ -7,27 +7,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>SlidingSquaresLoader</title>
-  <meta name="description" content="[](https://jitpack.io/v/biodunalfet/SlidingSquaresLoader.svg)# SlidingSquaresLoaderSliding Square Loader - A simple progress loader inspired by Can you Code ...">
+  <meta name="description" content="[](https://jitpack.io/v/biodunalfet/SlidingSquaresLoader.svg)SlidingSquaresLoaderSliding Square Loader - A simple progress loader inspired by Can you Code th...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2017/02/19/SlidingSquaresLoader/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2017/02/19/SlidingSquaresLoader/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="[](https://jitpack.io/v/biodunalfet/SlidingSquaresLoader.svg)# SlidingSquaresLoaderSliding Square Loader - A simple progress loader inspired by Can you Code ...">
+  <meta name="description" content="[](https://jitpack.io/v/biodunalfet/SlidingSquaresLoader.svg)SlidingSquaresLoaderSliding Square Loader - A simple progress loader inspired by Can you Code th...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="SlidingSquaresLoader">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="[](https://jitpack.io/v/biodunalfet/SlidingSquaresLoader.svg)# SlidingSquaresLoaderSliding Square Loader - A simple progress loader inspired by Can you Code ...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2017/02/19/SlidingSquaresLoader/" />
+  <meta property="og:description" content="[](https://jitpack.io/v/biodunalfet/SlidingSquaresLoader.svg)SlidingSquaresLoaderSliding Square Loader - A simple progress loader inspired by Can you Code th...">
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2017/02/19/SlidingSquaresLoader/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="[](https://jitpack.io/v/biodunalfet/SlidingSquaresLoader.svg)# SlidingSquaresLoaderSliding Square Loader - A simple progress loader inspired by Can you Code ..." />
+  <meta name="twitter:description" content="[](https://jitpack.io/v/biodunalfet/SlidingSquaresLoader.svg)SlidingSquaresLoaderSliding Square Loader - A simple progress loader inspired by Can you Code th..." />
 
   
   	<!-- Article specific OG data -->
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2017-02-19-SlidingSquaresLoader.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2017-02-19-SlidingSquaresLoader.gif">
         
 
         <header class="post__header">
@@ -647,8 +651,8 @@
               <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/AndroidUICollection/images/posts/2017-02-19-SlidingSquaresLoader.gif)"></div>
             </div>
           <br>
-          <p><a href="https://jitpack.io/#biodunalfet/SlidingSquaresLoader">[](https://jitpack.io/v/biodunalfet/SlidingSquaresLoader.svg)</a>
-# SlidingSquaresLoader</p>
+          <p><a href="https://jitpack.io/#biodunalfet/SlidingSquaresLoader">[](https://jitpack.io/v/biodunalfet/SlidingSquaresLoader.svg)</a></p>
+<h1 id="slidingsquaresloader">SlidingSquaresLoader</h1>
 
 <p>Sliding Square Loader - A simple progress loader inspired by <a href="https://stories.uplabs.com/can-you-code-this-ui-volume-6-7bd09fa6dd92#.nyh2zhpvb">Can you Code this UI? Volume 6</a></p>
 
@@ -658,21 +662,19 @@
 
 <p><strong>Step 1.</strong> Add the JitPack repository to your build file</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">allprojects</span> <span class="o">{</span>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">allprojects</span> <span class="o">{</span>
 	<span class="n">repositories</span> <span class="o">{</span>
 		<span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s1">'https://jitpack.io'</span> <span class="o">}</span>
 	<span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Step 2.</strong> Add the dependency</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
 	<span class="n">compile</span> <span class="s2">"com.github.biodunalfet:SlidingSquaresLoader:1.0"</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="usage">Usage</h2>
 
@@ -680,7 +682,7 @@
   <li>In XML Layout</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;com.hamza.slidingsquaresloaderview.SlidingSquareLoaderView</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;com.hamza.slidingsquaresloaderview.SlidingSquareLoaderView</span>
     <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
     <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
     <span class="na">app:sslv_start=</span><span class="s">"true"</span>
@@ -691,8 +693,7 @@
     <span class="na">app:sslv_color=</span><span class="s">"@color/colorPrimary"</span>
     <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
     <span class="nt">/&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ol>
   <li><code class="highlighter-rouge">sslv_start</code> = <code class="highlighter-rouge">boolean</code> that determines if the loader should start sliding. Default value is <code class="highlighter-rouge">true</code>.</li>
@@ -707,14 +708,13 @@
   <li>In Java</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">SlidingSquareLoaderView</span> <span class="n">slidingview2</span> <span class="o">=</span> <span class="o">(</span><span class="n">SlidingSquareLoaderView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">sliding_view2</span><span class="o">);</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SlidingSquareLoaderView</span> <span class="n">slidingview2</span> <span class="o">=</span> <span class="o">(</span><span class="n">SlidingSquareLoaderView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">sliding_view2</span><span class="o">);</span>
 <span class="n">slidingview</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>    <span class="c1">// starts the sliding</span>
 <span class="n">slidingview</span><span class="o">.</span><span class="na">stop</span><span class="o">();</span>     <span class="c1">// stops the sliding</span>
 <span class="n">slidingview</span><span class="o">.</span><span class="na">setDuration</span><span class="o">(</span><span class="n">xxx</span><span class="o">);</span>   <span class="c1">// sets duration of sliding</span>
 <span class="n">slidingview</span><span class="o">.</span><span class="na">setDelay</span><span class="o">(</span><span class="n">xxx</span><span class="o">);</span>  <span class="c1">// sets delay period before sliding</span>
 <span class="n">slidingview</span><span class="o">.</span><span class="na">setColor</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">parseColor</span><span class="o">(</span><span class="s">"#2196F3"</span><span class="o">));</span>  <span class="c1">// sets the color of the squares</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="license">License</h2>
 <p>The contents of this repository are covered under the <a href="https://github.com/biodunalfet/SlidingSquareLoader/blob/master/LICENSE">MIT License</a></p>
@@ -747,17 +747,17 @@
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=SlidingSquaresLoader&url=http://kmshack.github.io/AndroidUICollection/2017/02/19/SlidingSquaresLoader/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=SlidingSquaresLoader&url=http://localhost:4000/AndroidUICollection/2017/02/19/SlidingSquaresLoader/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2017/02/19/SlidingSquaresLoader/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2017/02/19/SlidingSquaresLoader/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2017/02/19/SlidingSquaresLoader/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2017/02/19/SlidingSquaresLoader/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -788,7 +788,7 @@
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2017/02/19/SlidingSquaresLoader/";
+    this.page.url = "http://localhost:4000/2017/02/19/SlidingSquaresLoader/";
   };
 
   (function() {

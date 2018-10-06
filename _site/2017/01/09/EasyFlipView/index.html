@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2017/01/09/EasyFlipView/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2017/01/09/EasyFlipView/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="EasyFlipView[Codacy Badge](https://api.codacy.com/project/badge/Grade/b6f4c512c5cf4705a41a04fe101a6c6e)[Build Status](https://travis-ci.org/wajahatkarim3/Eas...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="EasyFlipView">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="EasyFlipView[Codacy Badge](https://api.codacy.com/project/badge/Grade/b6f4c512c5cf4705a41a04fe101a6c6e)[Build Status](https://travis-ci.org/wajahatkarim3/Eas...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2017/01/09/EasyFlipView/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2017/01/09/EasyFlipView/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="EasyFlipView[Codacy Badge](https://api.codacy.com/project/badge/Grade/b6f4c512c5cf4705a41a04fe101a6c6e)[Build Status](https://travis-ci.org/wajahatkarim3/Eas..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2017-01-09-EasyFlipView.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2017-01-09-EasyFlipView.gif">
         
 
         <header class="post__header">
@@ -653,66 +657,70 @@
 
 <p>A quick and easy flip view through which you can create views with two sides like credit cards, poker cards etc.</p>
 
-<p>[](https://github.com/wajahatkarim3/EasyFlipView/blob/master/Art/demo.gif)</p>
+<p><a href="https://github.com/wajahatkarim3/EasyFlipView/blob/master/Art/demo.gif"></a></p>
 
 <h1 id="changelog">Changelog</h1>
 <p>Changes exist in the <a href="https://github.com/wajahatkarim3/EasyFlipView/releases">releases</a> tab.</p>
 
 <h1 id="installation">Installation</h1>
-<p>Add this in your app’s build.gradle file:
-<code class="highlighter-rouge">groovy
-dependencies {
-  implementation 'com.wajahatkarim3.EasyFlipView:EasyFlipView:2.1.0'
-}
-</code></p>
+<p>Add this in your app’s build.gradle file:</p>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
+  <span class="n">implementation</span> <span class="s1">'com.wajahatkarim3.EasyFlipView:EasyFlipView:2.1.0'</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
 <p>Or add EasyFlipView as a new dependency inside your pom.xml</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;dependency&gt;</span> 
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;dependency&gt;</span> 
   <span class="nt">&lt;groupId&gt;</span>com.wajahatkarim3.EasyFlipView<span class="nt">&lt;/groupId&gt;</span>
   <span class="nt">&lt;artifactId&gt;</span>EasyFlipView<span class="nt">&lt;/artifactId&gt;</span> 
   <span class="nt">&lt;version&gt;</span>2.1.0<span class="nt">&lt;/version&gt;</span>
   <span class="nt">&lt;type&gt;</span>pom<span class="nt">&lt;/type&gt;</span> 
 <span class="nt">&lt;/dependency&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>Usage
 =====</p>
 
 <h2 id="xml">XML</h2>
-<p>EasyFlipView In XML layouts(“Vertical”)
-```xml</p>
-<com.wajahatkarim3.easyflipview.easyflipview android:layout_width="match_parent" android:layout_height="wrap_content" app:flipontouch="true" app:flipenabled="true" app:flipduration="400" app:fliptype="vertical" app:flipfrom="front">
+<p>EasyFlipView In XML layouts(“Vertical”)</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;com.wajahatkarim3.easyflipview.EasyFlipView</span>
+	<span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+	<span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+	<span class="na">app:flipOnTouch=</span><span class="s">"true"</span>
+	<span class="na">app:flipEnabled=</span><span class="s">"true"</span>
+	<span class="na">app:flipDuration=</span><span class="s">"400"</span>
+	<span class="na">app:flipType=</span><span class="s">"vertical"</span>
+	<span class="na">app:flipFrom=</span><span class="s">"front"</span>
+	<span class="nt">&gt;</span>
 
-	&lt;-- Back Layout Goes Here --&gt;
-	<include layout="@layout/flash_card_layout_back" />
+	<span class="nt">&lt;--</span> <span class="err">Back</span> <span class="err">Layout</span> <span class="err">Goes</span> <span class="err">Here</span> <span class="err">--</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;include</span> <span class="na">layout=</span><span class="s">"@layout/flash_card_layout_back"</span><span class="nt">/&gt;</span>
         
-	&lt;-- Front Layout Goes Here --&gt;
-	<include layout="@layout/flash_card_layout_front" />
+	<span class="nt">&lt;--</span> <span class="err">Front</span> <span class="err">Layout</span> <span class="err">Goes</span> <span class="err">Here</span> <span class="err">--</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;include</span> <span class="na">layout=</span><span class="s">"@layout/flash_card_layout_front"</span><span class="nt">/&gt;</span>
 
-</com.wajahatkarim3.easyflipview.easyflipview>
-<div class="highlighter-rouge"><pre class="highlight"><code>
-EasyFlipView In XML layouts("Horizontal")
-```xml
-&lt;com.wajahatkarim3.easyflipview.EasyFlipView
-	android:layout_width="match_parent"
-	android:layout_height="wrap_content"
-	app:flipOnTouch="true"
-	app:flipEnabled="true"
-	app:flipDuration="400"
-	app:flipFrom="right"
-	app:flipType="horizontal"
-	&gt;
+<span class="nt">&lt;/com.wajahatkarim3.easyflipview.EasyFlipView&gt;</span>
+</code></pre></div></div>
 
-	&lt;-- Back Layout Goes Here --&gt;
-	&lt;include layout="@layout/flash_card_layout_back"/&gt;
+<p>EasyFlipView In XML layouts(“Horizontal”)</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;com.wajahatkarim3.easyflipview.EasyFlipView</span>
+	<span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+	<span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+	<span class="na">app:flipOnTouch=</span><span class="s">"true"</span>
+	<span class="na">app:flipEnabled=</span><span class="s">"true"</span>
+	<span class="na">app:flipDuration=</span><span class="s">"400"</span>
+	<span class="na">app:flipFrom=</span><span class="s">"right"</span>
+	<span class="na">app:flipType=</span><span class="s">"horizontal"</span>
+	<span class="nt">&gt;</span>
 
-	&lt;-- Front Layout Goes Here --&gt;
-	&lt;include layout="@layout/flash_card_layout_front"/&gt;
+	<span class="nt">&lt;--</span> <span class="err">Back</span> <span class="err">Layout</span> <span class="err">Goes</span> <span class="err">Here</span> <span class="err">--</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;include</span> <span class="na">layout=</span><span class="s">"@layout/flash_card_layout_back"</span><span class="nt">/&gt;</span>
 
-&lt;/com.wajahatkarim3.easyflipview.EasyFlipView&gt;
-</code></pre>
-</div>
+	<span class="nt">&lt;--</span> <span class="err">Front</span> <span class="err">Layout</span> <span class="err">Goes</span> <span class="err">Here</span> <span class="err">--</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;include</span> <span class="na">layout=</span><span class="s">"@layout/flash_card_layout_front"</span><span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/com.wajahatkarim3.easyflipview.EasyFlipView&gt;</span>
+</code></pre></div></div>
 
 <p>All customizable attributes for EasyFlipView</p>
 <table>
@@ -754,7 +762,7 @@ EasyFlipView In XML layouts("Horizontal")
     </table>
 
 <h2 id="in-code-java">In Code (Java)</h2>
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// Flips the view with or without animation</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Flips the view with or without animation</span>
 <span class="n">mYourFlipView</span><span class="o">.</span><span class="na">flipTheView</span><span class="o">();</span>
 <span class="n">mYourFlipView</span><span class="o">.</span><span class="na">flipTheView</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
 
@@ -785,14 +793,13 @@ EasyFlipView In XML layouts("Horizontal")
 <span class="kt">boolean</span> <span class="n">isVertical</span> <span class="o">=</span> <span class="n">mYourFlipView</span><span class="o">.</span><span class="na">isVerticalType</span><span class="o">();</span>
 <span class="n">mYourFlipView</span><span class="o">.</span><span class="na">setToVerticalType</span><span class="o">();</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="flip-animation-listener">Flip Animation Listener</h2>
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">EasyFlipView</span> <span class="n">easyFlipView</span> <span class="o">=</span> <span class="o">(</span><span class="n">EasyFlipView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">easyFlipView</span><span class="o">);</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">EasyFlipView</span> <span class="n">easyFlipView</span> <span class="o">=</span> <span class="o">(</span><span class="n">EasyFlipView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">easyFlipView</span><span class="o">);</span>
 <span class="n">easyFlipView</span><span class="o">.</span><span class="na">setOnFlipListener</span><span class="o">(</span><span class="k">new</span> <span class="n">EasyFlipView</span><span class="o">.</span><span class="na">OnFlipAnimationListener</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="n">onViewFlipCompleted</span><span class="o">(</span><span class="n">EasyFlipView</span> <span class="n">flipView</span><span class="o">,</span> <span class="n">EasyFlipView</span><span class="o">.</span><span class="na">FlipState</span> <span class="n">newCurrentSide</span><span class="o">)</span> 
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onViewFlipCompleted</span><span class="o">(</span><span class="n">EasyFlipView</span> <span class="n">flipView</span><span class="o">,</span> <span class="n">EasyFlipView</span><span class="o">.</span><span class="na">FlipState</span> <span class="n">newCurrentSide</span><span class="o">)</span> 
             <span class="o">{</span>
                 
                 <span class="c1">// ...</span>
@@ -801,8 +808,7 @@ EasyFlipView In XML layouts("Horizontal")
                 
             <span class="o">}</span>
         <span class="o">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h1 id="donations">Donations</h1>
 
@@ -823,9 +829,8 @@ EasyFlipView In XML layouts("Horizontal")
 <p>Of course, you can also choose what you want to donate, all donations are awesome</p>
 
 <h1 id="developed-by">Developed By</h1>
-<div class="highlighter-rouge"><pre class="highlight"><code>Wajahat Karim
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Wajahat Karim
+</code></pre></div></div>
 <ul>
   <li>Website (http://wajahatkarim.com)</li>
   <li>Twitter (http://twitter.com/wajahatkarim)</li>
@@ -851,7 +856,7 @@ EasyFlipView In XML layouts("Horizontal")
 
 <h1 id="license">License</h1>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2017 Wajahat Karim
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright 2017 Wajahat Karim
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -864,8 +869,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
           <br>
@@ -893,17 +897,17 @@ limitations under the License.
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=EasyFlipView&url=http://kmshack.github.io/AndroidUICollection/2017/01/09/EasyFlipView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=EasyFlipView&url=http://localhost:4000/AndroidUICollection/2017/01/09/EasyFlipView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2017/01/09/EasyFlipView/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2017/01/09/EasyFlipView/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2017/01/09/EasyFlipView/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2017/01/09/EasyFlipView/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -934,7 +938,7 @@ limitations under the License.
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2017/01/09/EasyFlipView/";
+    this.page.url = "http://localhost:4000/2017/01/09/EasyFlipView/";
   };
 
   (function() {

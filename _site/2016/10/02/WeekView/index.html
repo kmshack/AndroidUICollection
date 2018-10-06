@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/10/02/WeekView/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/10/02/WeekView/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="Android Week View[Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)Android Week View is an android library to display calendars (week view or day vi...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="AndroidWeekView">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="Android Week View[Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)Android Week View is an android library to display calendars (week view or day vi...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/10/02/WeekView/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/10/02/WeekView/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="Android Week View[Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)Android Week View is an android library to display calendars (week view or day vi..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-10-02-WeekView.png">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-10-02-WeekView.png">
         
 
         <header class="post__header">
@@ -653,7 +657,7 @@
 
 <p><strong>Android Week View</strong> is an android library to display calendars (week view or day view) within the app. It supports custom styling.</p>
 
-<p>[](images/screen-shot.png)</p>
+<p><a href="images/screen-shot.png"></a></p>
 
 <h2 id="features">Features</h2>
 
@@ -670,7 +674,7 @@
 
 <ul>
   <li><a href="https://play.google.com/store/apps/details?id=com.alamkanak.seriesaddict">Series Addict</a></li>
-  <li>Using the library? Just <a href="https://twitter.com/alamkanak">tweet me</a> or <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#097;&#108;&#097;&#109;&#046;&#107;&#097;&#110;&#097;&#107;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">send me an email</a>.</li>
+  <li>Using the library? Just <a href="https://twitter.com/alamkanak">tweet me</a> or <a href="mailto:alam.kanak@gmail.com">send me an email</a>.</li>
 </ul>
 
 <h2 id="usage">Usage</h2>
@@ -681,45 +685,56 @@
       <li>Grab via maven</li>
     </ul>
 
-    <p>```xml</p>
-    <dependency>
-   <groupid>com.github.alamkanak</groupid>
-   <artifactid>android-week-view</artifactid>
-   <version>1.2.6</version>
-   <type>aar</type>
- </dependency>
-    <p>```
-  * Grab via gradle</p>
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;dependency&gt;</span>
+   <span class="nt">&lt;groupId&gt;</span>com.github.alamkanak<span class="nt">&lt;/groupId&gt;</span>
+   <span class="nt">&lt;artifactId&gt;</span>android-week-view<span class="nt">&lt;/artifactId&gt;</span>
+   <span class="nt">&lt;version&gt;</span>1.2.6<span class="nt">&lt;/version&gt;</span>
+   <span class="nt">&lt;type&gt;</span>aar<span class="nt">&lt;/type&gt;</span>
+ <span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     * Grab via gradle
+</code></pre></div>    </div>
 
-    <p><code class="highlighter-rouge">groovy
- compile 'com.github.alamkanak:android-week-view:1.2.6'
-</code></p>
+    <div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">compile</span> <span class="s1">'com.github.alamkanak:android-week-view:1.2.6'</span>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Add WeekView in your xml layout.</p>
 
-    <p>```xml</p>
-    <com.alamkanak.weekview.weekview android:id="@+id/weekView" android:layout_width="match_parent" android:layout_height="match_parent" app:eventtextcolor="@android:color/white" app:textsize="12sp" app:hourheight="60dp" app:headercolumnpadding="8dp" app:headercolumntextcolor="#8f000000" app:headerrowpadding="12dp" app:columngap="8dp" app:noofvisibledays="3" app:headerrowbackgroundcolor="#ffefefef" app:daybackgroundcolor="#05000000" app:todaybackgroundcolor="#1848adff" app:headercolumnbackground="#ffffffff" />
-
-    <p>```</p>
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;com.alamkanak.weekview.WeekView</span>
+         <span class="na">android:id=</span><span class="s">"@+id/weekView"</span>
+         <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+         <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+         <span class="na">app:eventTextColor=</span><span class="s">"@android:color/white"</span>
+         <span class="na">app:textSize=</span><span class="s">"12sp"</span>
+         <span class="na">app:hourHeight=</span><span class="s">"60dp"</span>
+         <span class="na">app:headerColumnPadding=</span><span class="s">"8dp"</span>
+         <span class="na">app:headerColumnTextColor=</span><span class="s">"#8f000000"</span>
+         <span class="na">app:headerRowPadding=</span><span class="s">"12dp"</span>
+         <span class="na">app:columnGap=</span><span class="s">"8dp"</span>
+         <span class="na">app:noOfVisibleDays=</span><span class="s">"3"</span>
+         <span class="na">app:headerRowBackgroundColor=</span><span class="s">"#ffefefef"</span>
+         <span class="na">app:dayBackgroundColor=</span><span class="s">"#05000000"</span>
+         <span class="na">app:todayBackgroundColor=</span><span class="s">"#1848adff"</span>
+         <span class="na">app:headerColumnBackground=</span><span class="s">"#ffffffff"</span><span class="nt">/&gt;</span>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Write the following code in your java file.</p>
 
-    <p>```java
- // Get a reference for the week view in the layout.
- mWeekView = (WeekView) findViewById(R.id.weekView);</p>
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1">// Get a reference for the week view in the layout.</span>
+ <span class="n">mWeekView</span> <span class="o">=</span> <span class="o">(</span><span class="n">WeekView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">weekView</span><span class="o">);</span>
 
-    <p>// Set an action when any event is clicked.
- mWeekView.setOnEventClickListener(mEventClickListener);</p>
+ <span class="c1">// Set an action when any event is clicked.</span>
+ <span class="n">mWeekView</span><span class="o">.</span><span class="na">setOnEventClickListener</span><span class="o">(</span><span class="n">mEventClickListener</span><span class="o">);</span>
 
-    <p>// The week view has infinite scrolling horizontally. We have to provide the events of a
- // month every time the month changes on the week view.
- mWeekView.setMonthChangeListener(mMonthChangeListener);</p>
+ <span class="c1">// The week view has infinite scrolling horizontally. We have to provide the events of a</span>
+ <span class="c1">// month every time the month changes on the week view.</span>
+ <span class="n">mWeekView</span><span class="o">.</span><span class="na">setMonthChangeListener</span><span class="o">(</span><span class="n">mMonthChangeListener</span><span class="o">);</span>
 
-    <p>// Set long press listener for events.
- mWeekView.setEventLongPressListener(mEventLongPressListener);
- ```</p>
+ <span class="c1">// Set long press listener for events.</span>
+ <span class="n">mWeekView</span><span class="o">.</span><span class="na">setEventLongPressListener</span><span class="o">(</span><span class="n">mEventLongPressListener</span><span class="o">);</span>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Implement <code class="highlighter-rouge">WeekView.MonthChangeListener</code>, <code class="highlighter-rouge">WeekView.EventClickListener</code>, <code class="highlighter-rouge">WeekView.EventLongPressListener</code> according to your need.</p>
@@ -727,16 +742,15 @@
   <li>
     <p>Provide the events for the <code class="highlighter-rouge">WeekView</code> in <code class="highlighter-rouge">WeekView.MonthChangeListener.onMonthChange()</code> callback. Please remember that the calendar pre-loads events of three consecutive months to enable lag-free scrolling.</p>
 
-    <p><code class="highlighter-rouge">java
- MonthLoader.MonthChangeListener mMonthChangeListener = new MonthLoader.MonthChangeListener() {
-     @Override
-     public List&lt;WeekViewEvent&gt; onMonthChange(int newYear, int newMonth) {
-         // Populate the week view with some events.
-         List&lt;WeekViewEvent&gt; events = getEvents(newYear, newMonth);
-         return events;
-     }
- };
-</code></p>
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">MonthLoader</span><span class="o">.</span><span class="na">MonthChangeListener</span> <span class="n">mMonthChangeListener</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MonthLoader</span><span class="o">.</span><span class="na">MonthChangeListener</span><span class="o">()</span> <span class="o">{</span>
+     <span class="nd">@Override</span>
+     <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">WeekViewEvent</span><span class="o">&gt;</span> <span class="nf">onMonthChange</span><span class="o">(</span><span class="kt">int</span> <span class="n">newYear</span><span class="o">,</span> <span class="kt">int</span> <span class="n">newMonth</span><span class="o">)</span> <span class="o">{</span>
+         <span class="c1">// Populate the week view with some events.</span>
+         <span class="n">List</span><span class="o">&lt;</span><span class="n">WeekViewEvent</span><span class="o">&gt;</span> <span class="n">events</span> <span class="o">=</span> <span class="n">getEvents</span><span class="o">(</span><span class="n">newYear</span><span class="o">,</span> <span class="n">newMonth</span><span class="o">);</span>
+         <span class="k">return</span> <span class="n">events</span><span class="o">;</span>
+     <span class="o">}</span>
+ <span class="o">};</span>
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -906,7 +920,7 @@
 
 <h2 id="license">License</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2014 Raquib-ul-Alam
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright 2014 Raquib-ul-Alam
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -919,8 +933,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
           <br>
@@ -950,17 +963,17 @@ limitations under the License.
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=AndroidWeekView&url=http://kmshack.github.io/AndroidUICollection/2016/10/02/WeekView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=AndroidWeekView&url=http://localhost:4000/AndroidUICollection/2016/10/02/WeekView/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/10/02/WeekView/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/10/02/WeekView/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/10/02/WeekView/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/10/02/WeekView/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -991,7 +1004,7 @@ limitations under the License.
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/10/02/WeekView/";
+    this.page.url = "http://localhost:4000/2016/10/02/WeekView/";
   };
 
   (function() {

@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2017/02/20/Alerter/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2017/02/20/Alerter/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="Alerter - An Android Alerter Library, now in KotlinThis library aims to overcome the limitations of Toasts and Snackbars, while reducing thecomplexity of you...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="Alerter">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="Alerter - An Android Alerter Library, now in KotlinThis library aims to overcome the limitations of Toasts and Snackbars, while reducing thecomplexity of you...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2017/02/20/Alerter/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2017/02/20/Alerter/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="Alerter - An Android Alerter Library, now in KotlinThis library aims to overcome the limitations of Toasts and Snackbars, while reducing thecomplexity of you..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2017-02-20-Alerter.gif">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2017-02-20-Alerter.gif">
         
 
         <header class="post__header">
@@ -663,11 +667,14 @@ A customisable Alert view is dynamically added to the Decor View of the Window, 
 
 <h2 id="gradle">Gradle</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
-    <span class="n">implementation</span> <span class="s1">'com.tapadoo.android:alerter:3.0.0'</span>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
+    <span class="n">implementation</span> <span class="s1">'com.tapadoo.android:alerter:3.0.1'</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
+
+<h2 id="kotlin">Kotlin</h2>
+
+<p>Version 3.0.0 and above requires Kotlin</p>
 
 <h1 id="usage">Usage</h1>
 
@@ -675,172 +682,172 @@ A customisable Alert view is dynamically added to the Decor View of the Window, 
 
 <p>From an Activity -</p>
 
-<pre><code class="language-kotlin">Alerter.create(this@DemoActivity)
-       .setTitle("Alert Title")
-       .setText("Alert text...")
-       .show()
-</code></pre>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Alerter</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="k">this</span><span class="n">@DemoActivity</span><span class="p">)</span>
+       <span class="p">.</span><span class="n">setTitle</span><span class="p">(</span><span class="s">"Alert Title"</span><span class="p">)</span>
+       <span class="p">.</span><span class="n">setText</span><span class="p">(</span><span class="s">"Alert text..."</span><span class="p">)</span>
+       <span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
 
 <p>Or from a Fragment -</p>
 
-<pre><code class="language-kotlin">Alerter.create(activity)
-       .setTitle("Alert Title")
-       .setText("Alert text...")
-       .show()
-</code></pre>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Alerter</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="n">activity</span><span class="p">)</span>
+       <span class="p">.</span><span class="n">setTitle</span><span class="p">(</span><span class="s">"Alert Title"</span><span class="p">)</span>
+       <span class="p">.</span><span class="n">setText</span><span class="p">(</span><span class="s">"Alert text..."</span><span class="p">)</span>
+       <span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
 
 <p>To check if an alert is showing -</p>
 
-<pre><code class="language-kotlin">Alerter.isShowing()
-</code></pre>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Alerter</span><span class="p">.</span><span class="n">isShowing</span><span class="p">()</span>
+</code></pre></div></div>
 
 <p>To hide a currently showing Alert -</p>
 
-<pre><code class="language-kotlin">Alerter.hide()
-</code></pre>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Alerter</span><span class="p">.</span><span class="n">hide</span><span class="p">()</span>
+</code></pre></div></div>
 
 <h1 id="customisation">Customisation</h1>
 
 <h3 id="background-colour">Background Colour</h3>
 
-<pre><code class="language-kotlin">Alerter.create(this@DemoActivity)
-       .setTitle("Alert Title")
-       .setText("Alert text...")
-       .setBackgroundColorRes(R.color.colorAccent) // or setBackgroundColorInt(Color.CYAN)
-       .show()
-</code></pre>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Alerter</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="k">this</span><span class="n">@DemoActivity</span><span class="p">)</span>
+       <span class="p">.</span><span class="n">setTitle</span><span class="p">(</span><span class="s">"Alert Title"</span><span class="p">)</span>
+       <span class="p">.</span><span class="n">setText</span><span class="p">(</span><span class="s">"Alert text..."</span><span class="p">)</span>
+       <span class="p">.</span><span class="n">setBackgroundColorRes</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="n">color</span><span class="p">.</span><span class="n">colorAccent</span><span class="p">)</span> <span class="c1">// or setBackgroundColorInt(Color.CYAN)</span>
+       <span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
 
 <p><a href="./documentation/alert_coloured.gif">Coloured Alert</a></p>
 
 <h3 id="icon">Icon</h3>
 
-<pre><code class="language-kotlin">Alerter.create(this@DemoActivity)
-       .setText("Alert text...")
-       .setIcon(R.drawable.alerter_ic_mail_outline)
-       .setIconColorFilter(0) // Optional - Removes white tint
-       .show()
-</code></pre>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Alerter</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="k">this</span><span class="n">@DemoActivity</span><span class="p">)</span>
+       <span class="p">.</span><span class="n">setText</span><span class="p">(</span><span class="s">"Alert text..."</span><span class="p">)</span>
+       <span class="p">.</span><span class="n">setIcon</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="n">drawable</span><span class="p">.</span><span class="n">alerter_ic_mail_outline</span><span class="p">)</span>
+       <span class="p">.</span><span class="n">setIconColorFilter</span><span class="p">(</span><span class="m">0</span><span class="p">)</span> <span class="c1">// Optional - Removes white tint</span>
+       <span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
 
 <p><a href="./documentation/alert_icon.gif">Custom Icon Alert</a></p>
 
 <h3 id="on-screen-duration-in-milliseconds">On screen duration, in milliseconds</h3>
 
-<pre><code class="language-kotlin">Alerter.create(this@DemoActivity)
-       .setTitle("Alert Title")
-       .setText("Alert text...")
-       .setDuration(10000)
-       .show()
-</code></pre>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Alerter</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="k">this</span><span class="n">@DemoActivity</span><span class="p">)</span>
+       <span class="p">.</span><span class="n">setTitle</span><span class="p">(</span><span class="s">"Alert Title"</span><span class="p">)</span>
+       <span class="p">.</span><span class="n">setText</span><span class="p">(</span><span class="s">"Alert text..."</span><span class="p">)</span>
+       <span class="p">.</span><span class="n">setDuration</span><span class="p">(</span><span class="m">10000</span><span class="p">)</span>
+       <span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
 
 <h3 id="without-title">Without title</h3>
 
-<pre><code class="language-kotlin">Alerter.create(this@DemoActivity)
-       .setText("Alert text...")
-       .show()
-</code></pre>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Alerter</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="k">this</span><span class="n">@DemoActivity</span><span class="p">)</span>
+       <span class="p">.</span><span class="n">setText</span><span class="p">(</span><span class="s">"Alert text..."</span><span class="p">)</span>
+       <span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
 
 <p><a href="./documentation/alert_text_only.gif">Text Only Alert</a></p>
 
 <h3 id="adding-an-on-click-listener">Adding an On Click Listener</h3>
 
-<pre><code class="language-kotlin"> Alerter.create(this@DemoActivity)
-        .setTitle("Alert Title")
-        .setText("Alert text...")
-        .setDuration(10000)
-        .setOnClickListener(View.OnClickListener {
-            Toast.makeText(this@DemoActivity, "OnClick Called", Toast.LENGTH_LONG).show();
-        })
-        .show()
-</code></pre>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">Alerter</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="k">this</span><span class="n">@DemoActivity</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">setTitle</span><span class="p">(</span><span class="s">"Alert Title"</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">setText</span><span class="p">(</span><span class="s">"Alert text..."</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">setDuration</span><span class="p">(</span><span class="m">10000</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">setOnClickListener</span><span class="p">(</span><span class="n">View</span><span class="p">.</span><span class="n">OnClickListener</span> <span class="p">{</span>
+            <span class="n">Toast</span><span class="p">.</span><span class="n">makeText</span><span class="p">(</span><span class="k">this</span><span class="n">@DemoActivity</span><span class="p">,</span> <span class="s">"OnClick Called"</span><span class="p">,</span> <span class="n">Toast</span><span class="p">.</span><span class="n">LENGTH_LONG</span><span class="p">).</span><span class="n">show</span><span class="p">();</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
 
 <p><a href="./documentation/alert_on_click.gif">On Click Alert</a></p>
 
 <h3 id="verbose-text">Verbose text</h3>
 
-<pre><code class="language-kotlin"> Alerter.create(this@DemoActivity)
-        .setTitle("Alert Title")
-        .setText("The alert scales to accommodate larger bodies of text. " +
-                 "The alert scales to accommodate larger bodies of text. " +
-                 "The alert scales to accommodate larger bodies of text.")
-        .show()
-</code></pre>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">Alerter</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="k">this</span><span class="n">@DemoActivity</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">setTitle</span><span class="p">(</span><span class="s">"Alert Title"</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">setText</span><span class="p">(</span><span class="s">"The alert scales to accommodate larger bodies of text. "</span> <span class="p">+</span>
+                 <span class="s">"The alert scales to accommodate larger bodies of text. "</span> <span class="p">+</span>
+                 <span class="s">"The alert scales to accommodate larger bodies of text."</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
 
 <p><a href="./documentation/alert_verbose.gif">Verbose Alert</a></p>
 
 <h3 id="custom-enterexit-animations">Custom Enter/Exit Animations</h3>
 
-<pre><code class="language-kotlin">  Alerter.create(this@KotlinDemoActivity)
-         .setTitle("Alert Title")
-         .setText("Alert text...")
-         .setEnterAnimation(R.anim.alerter_slide_in_from_left)
-         .setExitAnimation(R.anim.alerter_slide_out_to_right)
-         .show()
-</code></pre>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">Alerter</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="k">this</span><span class="n">@KotlinDemoActivity</span><span class="p">)</span>
+         <span class="p">.</span><span class="n">setTitle</span><span class="p">(</span><span class="s">"Alert Title"</span><span class="p">)</span>
+         <span class="p">.</span><span class="n">setText</span><span class="p">(</span><span class="s">"Alert text..."</span><span class="p">)</span>
+         <span class="p">.</span><span class="n">setEnterAnimation</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="n">anim</span><span class="p">.</span><span class="n">alerter_slide_in_from_left</span><span class="p">)</span>
+         <span class="p">.</span><span class="n">setExitAnimation</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="n">anim</span><span class="p">.</span><span class="n">alerter_slide_out_to_right</span><span class="p">)</span>
+         <span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
 
 <h3 id="visibility-callbacks">Visibility Callbacks</h3>
 
-<pre><code class="language-kotlin"> Alerter.create(this@KotlinDemoActivity)
-        .setTitle("Alert Title")
-        .setText("Alert text...")
-        .setDuration(10000)
-        .setOnShowListener(OnShowAlertListener {
-            Toast.makeText(this@KotlinDemoActivity, "Show Alert", Toast.LENGTH_LONG).show()
-        })
-        .setOnHideListener(OnHideAlertListener {
-            Toast.makeText(this@KotlinDemoActivity, "Hide Alert", Toast.LENGTH_LONG).show()
-        })
-        .show()
-</code></pre>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">Alerter</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="k">this</span><span class="n">@KotlinDemoActivity</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">setTitle</span><span class="p">(</span><span class="s">"Alert Title"</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">setText</span><span class="p">(</span><span class="s">"Alert text..."</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">setDuration</span><span class="p">(</span><span class="m">10000</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">setOnShowListener</span><span class="p">(</span><span class="n">OnShowAlertListener</span> <span class="p">{</span>
+            <span class="n">Toast</span><span class="p">.</span><span class="n">makeText</span><span class="p">(</span><span class="k">this</span><span class="n">@KotlinDemoActivity</span><span class="p">,</span> <span class="s">"Show Alert"</span><span class="p">,</span> <span class="n">Toast</span><span class="p">.</span><span class="n">LENGTH_LONG</span><span class="p">).</span><span class="n">show</span><span class="p">()</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="n">setOnHideListener</span><span class="p">(</span><span class="n">OnHideAlertListener</span> <span class="p">{</span>
+            <span class="n">Toast</span><span class="p">.</span><span class="n">makeText</span><span class="p">(</span><span class="k">this</span><span class="n">@KotlinDemoActivity</span><span class="p">,</span> <span class="s">"Hide Alert"</span><span class="p">,</span> <span class="n">Toast</span><span class="p">.</span><span class="n">LENGTH_LONG</span><span class="p">).</span><span class="n">show</span><span class="p">()</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
 
 <h3 id="custom-fonts-and-text-appearance">Custom Fonts and Text Appearance</h3>
 
-<pre><code class="language-kotlin"> Alerter.create(this@DemoActivity)
-        .setTitle("Alert Title")
-        .setTitleAppearance(R.style.AlertTextAppearance_Title)
-        .setTitleTypeface(Typeface.createFromAsset(getAssets(), "Pacifico-Regular.ttf"))
-        .setText("Alert text...")
-        .setTextAppearance(R.style.AlertTextAppearance_Text)
-        .setTextTypeface(Typeface.createFromAsset(getAssets(), "ScopeOne-Regular.ttf"))
-        .show()
-</code></pre>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">Alerter</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="k">this</span><span class="n">@DemoActivity</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">setTitle</span><span class="p">(</span><span class="s">"Alert Title"</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">setTitleAppearance</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="n">style</span><span class="p">.</span><span class="n">AlertTextAppearance_Title</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">setTitleTypeface</span><span class="p">(</span><span class="n">Typeface</span><span class="p">.</span><span class="n">createFromAsset</span><span class="p">(</span><span class="n">getAssets</span><span class="p">(),</span> <span class="s">"Pacifico-Regular.ttf"</span><span class="p">))</span>
+        <span class="p">.</span><span class="n">setText</span><span class="p">(</span><span class="s">"Alert text..."</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">setTextAppearance</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="n">style</span><span class="p">.</span><span class="n">AlertTextAppearance_Text</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">setTextTypeface</span><span class="p">(</span><span class="n">Typeface</span><span class="p">.</span><span class="n">createFromAsset</span><span class="p">(</span><span class="n">getAssets</span><span class="p">(),</span> <span class="s">"ScopeOne-Regular.ttf"</span><span class="p">))</span>
+        <span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
 
 <p><a href="./documentation/alert_custom_font.gif">Verbose Alert</a></p>
 
 <h3 id="swipe-to-dismiss">Swipe to Dismiss</h3>
 
-<pre><code class="language-kotlin"> Alerter.create(this@DemoActivity)
-        .setTitle("Alert Title")
-        .setText("Alert text...")
-        .enableSwipeToDismiss()
-        .show()
-</code></pre>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">Alerter</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="k">this</span><span class="n">@DemoActivity</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">setTitle</span><span class="p">(</span><span class="s">"Alert Title"</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">setText</span><span class="p">(</span><span class="s">"Alert text..."</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">enableSwipeToDismiss</span><span class="p">()</span>
+        <span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
 <p><a href="./documentation/alert_swipe_to_dismiss.gif">Verbose Alert</a></p>
 
 <h3 id="progress-bar">Progress Bar</h3>
 
-<pre><code class="language-kotlin"> Alerter.create(this@DemoActivity)
-        .setTitle("Alert Title")
-        .setText("Alert text...")
-        .enableProgress(true)
-        .setProgressColorRes(R.color.colorAccent)
-        .show()
-</code></pre>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">Alerter</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="k">this</span><span class="n">@DemoActivity</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">setTitle</span><span class="p">(</span><span class="s">"Alert Title"</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">setText</span><span class="p">(</span><span class="s">"Alert text..."</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">enableProgress</span><span class="p">(</span><span class="k">true</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">setProgressColorRes</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="n">color</span><span class="p">.</span><span class="n">colorAccent</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
 
 <p><a href="./documentation/alert_progress_bar.gif">Verbose Alert</a></p>
 
 <h3 id="with-buttons">With Buttons</h3>
 
-<pre><code class="language-kotlin"> Alerter.create(this@KotlinDemoActivity)
-        .setTitle(R.string.title_activity_example)
-        .setText("Alert text...")
-        .addButton("Okay", R.style.AlertButton, View.OnClickListener {
-            Toast.makeText(this@KotlinDemoActivity, "Okay Clicked", Toast.LENGTH_LONG).show()
-        })
-        .addButton("No", R.style.AlertButton, View.OnClickListener {
-            Toast.makeText(this@KotlinDemoActivity, "No Clicked", Toast.LENGTH_LONG).show()
-        })
-        .show()
-</code></pre>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">Alerter</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="k">this</span><span class="n">@KotlinDemoActivity</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">setTitle</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="n">string</span><span class="p">.</span><span class="n">title_activity_example</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">setText</span><span class="p">(</span><span class="s">"Alert text..."</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">addButton</span><span class="p">(</span><span class="s">"Okay"</span><span class="p">,</span> <span class="n">R</span><span class="p">.</span><span class="n">style</span><span class="p">.</span><span class="n">AlertButton</span><span class="p">,</span> <span class="n">View</span><span class="p">.</span><span class="n">OnClickListener</span> <span class="p">{</span>
+            <span class="n">Toast</span><span class="p">.</span><span class="n">makeText</span><span class="p">(</span><span class="k">this</span><span class="n">@KotlinDemoActivity</span><span class="p">,</span> <span class="s">"Okay Clicked"</span><span class="p">,</span> <span class="n">Toast</span><span class="p">.</span><span class="n">LENGTH_LONG</span><span class="p">).</span><span class="n">show</span><span class="p">()</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="n">addButton</span><span class="p">(</span><span class="s">"No"</span><span class="p">,</span> <span class="n">R</span><span class="p">.</span><span class="n">style</span><span class="p">.</span><span class="n">AlertButton</span><span class="p">,</span> <span class="n">View</span><span class="p">.</span><span class="n">OnClickListener</span> <span class="p">{</span>
+            <span class="n">Toast</span><span class="p">.</span><span class="n">makeText</span><span class="p">(</span><span class="k">this</span><span class="n">@KotlinDemoActivity</span><span class="p">,</span> <span class="s">"No Clicked"</span><span class="p">,</span> <span class="n">Toast</span><span class="p">.</span><span class="n">LENGTH_LONG</span><span class="p">).</span><span class="n">show</span><span class="p">()</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
 
 <p><a href="./documentation/alert_with_buttons.gif">Verbose Alert</a></p>
 
@@ -882,17 +889,17 @@ A customisable Alert view is dynamically added to the Decor View of the Window, 
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Alerter&url=http://kmshack.github.io/AndroidUICollection/2017/02/20/Alerter/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Alerter&url=http://localhost:4000/AndroidUICollection/2017/02/20/Alerter/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2017/02/20/Alerter/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2017/02/20/Alerter/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2017/02/20/Alerter/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2017/02/20/Alerter/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -923,7 +930,7 @@ A customisable Alert view is dynamically added to the Decor View of the Window, 
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2017/02/20/Alerter/";
+    this.page.url = "http://localhost:4000/2017/02/20/Alerter/";
   };
 
   (function() {

@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/10/07/Json2View/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/10/07/Json2View/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="json2view  travis-cijson2view is a simple library that can convert a compatible JSON file to an Android view so you can load dynamically the view in your And...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="Json2View">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="json2view  travis-cijson2view is a simple library that can convert a compatible JSON file to an Android view so you can load dynamically the view in your And...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/10/07/Json2View/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/10/07/Json2View/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="json2view  travis-cijson2view is a simple library that can convert a compatible JSON file to an Android view so you can load dynamically the view in your And..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-10-07-Json2View.png">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-10-07-Json2View.png">
         
 
         <header class="post__header">
@@ -647,7 +651,7 @@
               <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/AndroidUICollection/images/posts/2016-10-07-Json2View.png)"></div>
             </div>
           <br>
-          <h1 id="json2view--travis-cihttpstravis-ciorgavocarrotjson2viewsvg">json2view  <a href="https://travis-ci.org/Avocarrot/json2view.svg">travis-ci</a></h1>
+          <h1 id="json2view--travis-ci">json2view  <a href="https://travis-ci.org/Avocarrot/json2view.svg">travis-ci</a></h1>
 
 <p><strong>json2view</strong> is a simple library that can convert a compatible JSON file to an Android view so you can load dynamically the view in your Android app without the need to update the APK.</p>
 
@@ -710,27 +714,20 @@
 
 <h2 id="installation">Installation</h2>
 <ul>
-  <li>
-    <p>Download project
-<code class="highlighter-rouge">
-git clone https://github.com/Avocarrot/json2view.git
-</code></p>
+  <li>Download project
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/Avocarrot/json2view.git
+</code></pre></div>    </div>
   </li>
-  <li>
-    <p>add json2view in your project by adding in your settings.gradle
-<code class="highlighter-rouge">
-include ':json2view'
+  <li>add json2view in your project by adding in your settings.gradle
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>include ':json2view'
 project(':json2view'*).projectDir = new File(settingsDir, '$(json2viewPath)/json2view/json2view')
-</code></p>
+</code></pre></div>    </div>
   </li>
-  <li>
-    <p>add in build.gradle of application module (not project build.gradle) in <code class="highlighter-rouge">dependencies</code> section</p>
-  </li>
+  <li>add in build.gradle of application module (not project build.gradle) in <code class="highlighter-rouge">dependencies</code> section</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>compile project(':json2view')
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>compile project(':json2view')
+</code></pre></div></div>
 
 <h2 id="getting-started">Getting started</h2>
 
@@ -743,24 +740,22 @@ project(':json2view'*).projectDir = new File(settingsDir, '$(json2viewPath)/json
   <li><code class="highlighter-rouge">views</code> : children views for ViewGroup <em>(optional)</em></li>
 </ul>
 
-<p>eg. JSON to create a empty TextView
-<code class="highlighter-rouge">javascript
-{
-    "widget": "android.widgetTextView",
-	"properties": []
-}
-</code></p>
+<p>eg. JSON to create a empty TextView</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+    <span class="s2">"widget"</span><span class="p">:</span> <span class="s2">"android.widgetTextView"</span><span class="p">,</span>
+	<span class="s2">"properties"</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
-<p>eg. JSON to create a TextView with textSize : 12sp and text : “Hello Avocarrot”
-<code class="highlighter-rouge">javascript
-{
-    "widget": "TextView",
-	"properties": [
-	    {"name":"textSize", "type": "dimen", "value":"13sp"},
-	    {"name":"text", "type": "string", "value":"Hello Avocarrot"}
-	]
-}
-</code></p>
+<p>eg. JSON to create a TextView with textSize : 12sp and text : “Hello Avocarrot”</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+    <span class="s2">"widget"</span><span class="p">:</span> <span class="s2">"TextView"</span><span class="p">,</span>
+	<span class="s2">"properties"</span><span class="p">:</span> <span class="p">[</span>
+	    <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"textSize"</span><span class="p">,</span> <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"dimen"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">:</span><span class="s2">"13sp"</span><span class="p">},</span>
+	    <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"text"</span><span class="p">,</span> <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">:</span><span class="s2">"Hello Avocarrot"</span><span class="p">}</span>
+	<span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <p>You can find some examples for xml to JSON conversions in the wiki <a href="https://github.com/Avocarrot/json2view/wiki/Xml-2-JSON-Examples">here</a></p>
 
@@ -768,18 +763,16 @@ project(':json2view'*).projectDir = new File(settingsDir, '$(json2viewPath)/json
 <em>(the script needs further development to create a valid JSON for <b>every</b> case)</em> <br />
 try : <br /></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>./gradlew runScript -Pxml=./pathToInputXmlFile.xml
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./gradlew runScript -Pxml=./pathToInputXmlFile.xml
+</code></pre></div></div>
 <p>from the root folder of the project</p>
 
 <h3 id="loading-dynamic-layout">Loading dynamic layout</h3>
-<p>create and attach view in the specific Parent (created from xml) <br />
-<code class="highlighter-rouge">java
-ViewParent viewParent = (ViewParent) findViewById(R.id.parent_view_id)
-JSONObject jsonObject = ... // load from network, sdcard etc
-View sampleView = DynamicView.createView(this, jsonObject, viewParent);
-</code></p>
+<p>create and attach view in the specific Parent (created from xml) <br /></p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ViewParent</span> <span class="n">viewParent</span> <span class="o">=</span> <span class="o">(</span><span class="n">ViewParent</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">parent_view_id</span><span class="o">)</span>
+<span class="n">JSONObject</span> <span class="n">jsonObject</span> <span class="o">=</span> <span class="o">...</span> <span class="c1">// load from network, sdcard etc</span>
+<span class="n">View</span> <span class="n">sampleView</span> <span class="o">=</span> <span class="n">DynamicView</span><span class="o">.</span><span class="na">createView</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">jsonObject</span><span class="o">,</span> <span class="n">viewParent</span><span class="o">);</span>
+</code></pre></div></div>
 
 <p>You can check some example use cases in the wiki <a href="https://github.com/Avocarrot/json2view/wiki/Creating-Dynamic-Layouts">here</a></p>
 
@@ -826,17 +819,17 @@ View sampleView = DynamicView.createView(this, jsonObject, viewParent);
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Json2View&url=http://kmshack.github.io/AndroidUICollection/2016/10/07/Json2View/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Json2View&url=http://localhost:4000/AndroidUICollection/2016/10/07/Json2View/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/10/07/Json2View/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/10/07/Json2View/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/10/07/Json2View/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/10/07/Json2View/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -867,7 +860,7 @@ View sampleView = DynamicView.createView(this, jsonObject, viewParent);
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/10/07/Json2View/";
+    this.page.url = "http://localhost:4000/2016/10/07/Json2View/";
   };
 
   (function() {

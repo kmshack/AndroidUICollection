@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>FolioReader</title>
+  <meta name="description" content="FolioReader logo[Build Status](https://api.travis-ci.org/FolioReader/FolioReader-Android.svg?branch=master)FolioReader-Android is an ePub reader written in J...">
+  <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
+  <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
+    
+  <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/12/22/FolioReader/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
+    
+  <meta name="description" content="FolioReader logo[Build Status](https://api.travis-ci.org/FolioReader/FolioReader-Android.svg?branch=master)FolioReader-Android is an ePub reader written in J...">
+
+
+  <meta name="author" content="kmshack" />
+
+  <meta property="og:title" content="FolioReader">
+  <meta property="og:site_name" content="Android UI OpenSource" />
+  <meta property="og:description" content="FolioReader logo[Build Status](https://api.travis-ci.org/FolioReader/FolioReader-Android.svg?branch=master)FolioReader-Android is an ePub reader written in J...">
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/12/22/FolioReader/" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:site" content="@kmshack" />
+  <meta name="twitter:description" content="FolioReader logo[Build Status](https://api.travis-ci.org/FolioReader/FolioReader-Android.svg?branch=master)FolioReader-Android is an ePub reader written in J..." />
+
+  
+  	<!-- Article specific OG data -->
+  	<meta property="og:type" content="article" />
+  	<meta property="article:published_time" content="2016-12-22 00:00:00 +0900" />
+  	
+  	<meta property="article:author" content="http://facebook.com/kmshack" />
+    <meta property="article:publisher" content="https://www.facebook.com/kmshack" />
+  	<meta property="article:section" content="" />
+  	
+
+  	<meta name="twitter:card" content="summary_large_image" />
+  	<meta name="twitter:creator" content="@kmshack_kr" />
+  	<meta name="twitter:title" content="FolioReader" />
+	
+	  	<meta property="og:image" content="/images/posts/2016-12-22-FolioReader.gif" />
+	  	<meta name="twitter:image" content="/images/posts/2016-12-22-FolioReader.gif" />
+  	
+
+  
+
+  <script>
+    var base_url = "/AndroidUICollection";
+  </script>
+    
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9975139260149901",
+    enable_page_level_ads: true
+  });
+</script>
+    
+</head>
+
+<body>
+
+  <!-- Google Analytics Code -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85072530-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  <div class="off-canvas-container">
+    <div class="sidebar">
+  <div class="row">
+
+    <div class="column small-10 large-12">
+      <br>
+      <h1 class="sidebar__logo logo"><a href="/AndroidUICollection/">Android UI OpenSource</a></h1>
+      <div class="sidebar__description font-tiny">Collection of OpenSource for Android UI.</div>
+    </div>
+
+    <label class="off-canvas-toggle"><span data-icon="ei-navicon" data-size="s"></span></label>
+
+    <div class="off-canvas-content">
+
+      <div class="column small-12 large-12">
+        <nav class="navigation">
+          <ul class="list-bare text-center">
+            
+              
+            
+              
+                
+                  <li>
+                    <a class="page-link" href="/AndroidUICollection/about.html">About</a>
+                  </li>
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+            <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="column small-12 large-12">
+        <ul class="social-nav social-icons">
+
+          
+          <li>
+            <a href="http://www.github.com/kmshack" target="_blank">
+              <span data-icon="ei-sc-github" data-size="s"></span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="http://www.twitter.com/kmshack_kr" target="_blank">
+              <span data-icon="ei-sc-twitter" data-size="s"></span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="mailto:kmshack@naver.com" target="_blank">
+              <span data-icon="ei-envelope" data-size="s"></span>
+            </a>
+          </li>
+          
+
+          <li>
+            <a class="toggle-search-button" href="#">
+              <span data-icon="ei-search" data-size="s"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+        
+      <div class="sidebar__bottom">
+        <div class="column small-12 large-12">
+            
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- androidui -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:250px;height:250px"
+                 data-ad-client="ca-pub-9975139260149901"
+                 data-ad-slot="5123612274"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+
+          <div class="font-tiny">
+              <br>
+            &copy; 2018 Android UI OpenSource
+          </div>
+        </div>
+      </div>
+        
+    </div> <!-- off-canvas-content -->
+      
+
+
+  </div>
+    
+
+    
+</div>
+
+<div class="search-form-container">
+
+  <form class="search-form">
+    <fieldset class="search-form__fieldset">
+      <div class="row">
+        <div class="column column--center large-8">
+          <input class="search-form__field" placeholder="Type to search" autofocus>
+          <input class="search-form__submit" type="submit" value="search">
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+  <div class="row">
+    <div class="column column--center large-8">
+      <div class="search-results"></div>
+    </div>
+  </div>
+
+  <div data-icon="ei-close" data-size="s" class="close-search-button search-form-container__close"></div>
+
+</div>
+
+    
+
+
+
+<div class="wrapper">
+  <div class="row row--full">
+
+    <div class="column column--center medium-12 large-12">
+      <div class="grey-bg CoverImage FlexEmbed FlexEmbed--16by9" style="background-image: url(/AndroidUICollection/images/posts/2016-12-22-FolioReader.gif)"></div>
+        
+    </div>
+      
+    <div class="column column--center medium-12 large-10">
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+        
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-12-22-FolioReader.gif">
+        
+
+        <header class="post__header">
+          <h2 class="post__title" itemprop="name headline">FolioReader</h2>
+          
+          <h3 class="post__date">
+            <a href="https://github.com/FolioReader/FolioReader-Android" target="_blank"><span data-icon="ei-sc-github" data-size="s"></span>https://github.com/FolioReader/FolioReader-Android</a>
+          </h3>
+        </header>
+
+        <div class="post-content" itemprop="articleBody">
+            
+            <div class="column column--center medium-12 large-4">
+              <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/AndroidUICollection/images/posts/2016-12-22-FolioReader.gif)"></div>
+            </div>
+          <br>
+          <p><a href="https://raw.githubusercontent.com/FolioReader/FolioReaderKit/assets/folioreader.png">FolioReader logo</a></p>
+
+<p><a href="https://travis-ci.org/FolioReader/FolioReader-Android">[Build Status](https://api.travis-ci.org/FolioReader/FolioReader-Android.svg?branch=master)</a></p>
+
+<p>FolioReader-Android is an ePub reader written in Java.</p>
+
+<h3 id="features">Features</h3>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Custom Fonts</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Custom Text Size</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Themes / Day mode / Night mode</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Text Highlighting</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />List / Edit / Delete Highlights</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Handle Internal and External Links</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Portrait / Landscape</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Reading Time Left / Pages left</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />In-App Dictionary</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Media Overlays (Sync text rendering with audio playback)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />TTS - Text to Speech Support</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Parse epub cover image</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />PDF support</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Book Search</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Add Notes to a Highlight</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Better Documentation</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Last Read Position Listener</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Horizontal reading</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Distraction Free Reading</li>
+</ul>
+
+<h2 id="demo">Demo</h2>
+<h5 id="custom-fonts">Custom Fonts</h5>
+<p><a href="https://cloud.githubusercontent.com/assets/1277242/19012915/0661c7b2-87e0-11e6-81d6-8c71051e1074.gif">Custom fonts</a></p>
+<h5 id="day-and-night-mode">Day and Night Mode</h5>
+<p><a href="https://cloud.githubusercontent.com/assets/1277242/19012914/f42059c4-87df-11e6-97f8-29e61a79e8aa.gif">Day night mode</a></p>
+<h5 id="text-highlighting">Text Highlighting</h5>
+<p><a href="https://cloud.githubusercontent.com/assets/1277242/19012904/c2700c3a-87df-11e6-97ed-507765b3ddf0.gif">Highlight</a></p>
+<h5 id="media-overlays">Media Overlays</h5>
+<p><a href="https://cloud.githubusercontent.com/assets/1277242/19012908/d61f3ce2-87df-11e6-8652-d72b6a1ad9a3.gif">Media Overlay</a></p>
+
+<h3 id="gradle">Gradle</h3>
+
+<p>Add following dependency to your app module <code class="highlighter-rouge">build.gradle</code> file:</p>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">repositories</span> <span class="o">{</span>
+    <span class="n">maven</span> <span class="o">{</span>
+        <span class="n">url</span> <span class="s1">'http://dl.bintray.com/mobisystech/maven'</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="n">dependencies</span> <span class="o">{</span>
+    <span class="n">implementation</span> <span class="s1">'com.folioreader:folioreader:0.4.4'</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="androidmanifest">AndroidManifest</h3>
+
+<p>Starting with Android 9.0 (API level 28), cleartext support is disabled by default.</p>
+
+<p>{your-app-module}/res/xml/network_security_config.xml</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;network-security-config&gt;</span>
+    <span class="nt">&lt;domain-config</span> <span class="na">cleartextTrafficPermitted=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;domain</span> <span class="na">includeSubdomains=</span><span class="s">"true"</span><span class="nt">&gt;</span>127.0.0.1<span class="nt">&lt;/domain&gt;</span>
+        <span class="nt">&lt;domain</span> <span class="na">includeSubdomains=</span><span class="s">"true"</span><span class="nt">&gt;</span>localhost<span class="nt">&lt;/domain&gt;</span>
+    <span class="nt">&lt;/domain-config&gt;</span>
+<span class="nt">&lt;/network-security-config&gt;</span>
+</code></pre></div></div>
+
+<p>Then add network_security_config.xml in your app module’s AndroidManifest.xml</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;manifest</span> <span class="err">...</span><span class="nt">&gt;</span>
+    ...
+    <span class="nt">&lt;application</span> <span class="na">android:networkSecurityConfig=</span><span class="s">"@xml/network_security_config"</span><span class="nt">&gt;</span>
+    ...
+    <span class="nt">&lt;/application&gt;</span>
+<span class="nt">&lt;/manifest&gt;</span>
+</code></pre></div></div>
+
+<h3 id="usage">Usage</h3>
+
+<p>Get singleton object of <code class="highlighter-rouge">FolioReader</code>:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">FolioReader</span> <span class="n">folioReader</span> <span class="o">=</span> <span class="n">FolioReader</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
+</code></pre></div></div>
+
+<p>Call the function <code class="highlighter-rouge">openBook()</code>:</p>
+
+<h5 id="opening-book-from-assets--">opening book from assets -</h5>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">folioReader</span><span class="o">.</span><span class="na">openBook</span><span class="o">(</span><span class="s">"file:///android_asset/TheSilverChair.epub"</span><span class="o">);</span>
+</code></pre></div></div>
+<h5 id="opening-book-from-raw--">opening book from raw -</h5>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">folioReader</span><span class="o">.</span><span class="na">openBook</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">raw</span><span class="o">.</span><span class="na">adventures</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p><strong>Note: From v0.4.1 you don’t need to specify permissions and <code class="highlighter-rouge">FolioActivity</code> tag in AndroidManifest.xml</strong></p>
+
+<p><br /></p>
+
+<h2 id="wiki">WIKI</h2>
+
+<ul>
+  <li><a href="https://github.com/FolioReader/FolioReader-Android/wiki">Home</a></li>
+  <li><a href="https://github.com/FolioReader/FolioReader-Android/wiki/Configuration">Configuration</a>
+    <ul>
+      <li><a href="https://github.com/FolioReader/FolioReader-Android/wiki/Custom-Configuration">Custom Configuration</a></li>
+    </ul>
+  </li>
+  <li><a href="https://github.com/FolioReader/FolioReader-Android/wiki/Highlight">Highlight</a>
+    <ul>
+      <li><a href="https://github.com/FolioReader/FolioReader-Android/wiki/Highlight-Action">Highlight Action</a></li>
+      <li><a href="https://github.com/FolioReader/FolioReader-Android/wiki/Highlight-Event">Highlight Event</a></li>
+      <li><a href="https://github.com/FolioReader/FolioReader-Android/wiki/Providing-External-Highlight">Providing External Highlight</a></li>
+    </ul>
+  </li>
+  <li><a href="https://github.com/FolioReader/FolioReader-Android/wiki/ReadPosition">ReadPosition</a>
+    <ul>
+      <li><a href="https://github.com/FolioReader/FolioReader-Android/wiki/Get-ReadPosition">Get ReadPosition</a></li>
+      <li><a href="https://github.com/FolioReader/FolioReader-Android/wiki/Set-ReadPosition">Set ReadPosition</a></li>
+    </ul>
+  </li>
+  <li><a href="https://github.com/FolioReader/FolioReader-Android/wiki/Clean-up-code">Clean up code</a></li>
+</ul>
+
+<h2 id="reporting-issue">Reporting Issue</h2>
+
+<p>Please follow <a href="https://github.com/FolioReader/FolioReader-Android/blob/master/.github/ISSUE_TEMPLATE.md">Issue Template</a> to report any issue.</p>
+
+<h3 id="credits">Credits</h3>
+<ol>
+  <li><a href="https://github.com/daimajia/AndroidSwipeLayout">SwipeLayout</a></li>
+  <li><a href="https://github.com/readium/r2-streamer-java">r2-streamer-java</a></li>
+  <li><a href="http://developer.pearson.com/apis/dictionaries">Pearson Dictionaries</a></li>
+  <li><a href="https://github.com/timdown/rangy">rangy</a></li>
+</ol>
+
+<h3 id="author">Author</h3>
+<p><a href="https://github.com/hebertialmeida"><strong>Heberti Almeida</strong></a></p>
+
+<ul>
+  <li>Follow me on <strong>Twitter</strong>: <a href="https://twitter.com/hebertialmeida"><strong>@hebertialmeida</strong></a></li>
+  <li>Contact me on <strong>LinkedIn</strong>: <a href="http://linkedin.com/in/hebertialmeida"><strong>hebertialmeida</strong></a></li>
+</ul>
+
+<p><a href="https://github.com/codetoart"><strong>CodeToArt Technology</strong></a></p>
+
+<ul>
+  <li>Follow us on <strong>Twitter</strong>: <a href="https://twitter.com/codetoart"><strong>@codetoart</strong></a></li>
+  <li>Contact us on <strong>Website</strong>: <a href="http://www.codetoart.com"><strong>codetoart</strong></a></li>
+</ul>
+
+<h2 id="donations">Donations</h2>
+
+<p><strong>This project needs you</strong> If you would like to support this project’s further development, the creator of this project or the continuous maintenance of this project, <strong>feel free to donate</strong>. Your donation is highly appreciated. Thank you</p>
+
+<p><strong>PayPal</strong></p>
+
+<ul>
+  <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=hebertialmeida%40gmail%2ecom&amp;lc=US&amp;item_name=FolioReader%20Libraries&amp;amount=5%2e00&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"><strong>Donate 5 $</strong></a>: Thank’s for creating this project, here’s a tea (or some juice) for you</li>
+  <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=hebertialmeida%40gmail%2ecom&amp;lc=US&amp;item_name=FolioReader%20Libraries&amp;amount=10%2e00&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"><strong>Donate 10 $</strong></a>: Wow, I am stunned. Let me take you to the movies</li>
+  <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=hebertialmeida%40gmail%2ecom&amp;lc=US&amp;item_name=FolioReader%20Libraries&amp;amount=15%2e00&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"><strong>Donate 15 $</strong></a>: I really appreciate your work, let’s grab some lunch</li>
+  <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=hebertialmeida%40gmail%2ecom&amp;lc=US&amp;item_name=FolioReader%20Libraries&amp;amount=25%2e00&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"><strong>Donate 25 $</strong></a>: That’s some awesome stuff you did right there, dinner is on me</li>
+  <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=hebertialmeida%40gmail%2ecom&amp;lc=US&amp;item_name=FolioReader%20Libraries&amp;amount=50%2e00&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"><strong>Donate 50 $</strong></a>: I really really want to support this project, great job</li>
+  <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=hebertialmeida%40gmail%2ecom&amp;lc=US&amp;item_name=FolioReader%20Libraries&amp;amount=100%2e00&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"><strong>Donate 100 $</strong></a>: You are the man This project saved me hours (if not days) of struggle and hard work, simply awesome</li>
+  <li>Of course, you can also <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=hebertialmeida%40gmail%2ecom&amp;lc=US&amp;item_name=FolioReader%20Libraries&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"><strong>choose what you want to donate</strong></a>, all donations are awesome</li>
+</ul>
+
+<h2 id="license">License</h2>
+<p>FolioReaderKit is available under the BSD license. See the <a href="https://github.com/FolioReader/FolioReader-Android/blob/master/License.md">LICENSE</a> file.</p>
+
+
+          <br>
+          <div class="post__tags">
+            
+              <a href="/AndroidUICollection/tag/reader">reader</a>
+            
+              <a href="/AndroidUICollection/tag/view">view</a>
+            
+          </div>
+            
+        </div>
+          
+          <br>
+          <hr>
+          <br>  
+          <div class="post-content"  itemprop="articleBody">
+            
+          </div>
+          <br>
+          <hr>
+          <br>
+
+        
+
+        
+
+<ul class="share-list">
+  <li>
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=FolioReader&url=http://localhost:4000/AndroidUICollection/2016/12/22/FolioReader/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+      <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
+    </a>
+  </li>
+  <li>
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/12/22/FolioReader/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
+    </a>
+  </li>
+  <li>
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/12/22/FolioReader/" rel="nofollow" target="_blank" title="Share on Google+">
+    <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
+    </a>
+  </li>
+</ul>
+
+        <h5 class="separator">
+  <span class="separator__title">Newsletter</span>
+</h5>
+
+<div class="box box--news-letter">
+  <form action="//aspirethemes.us12.list-manage.com/subscribe/post?u=9723f3c5c3a2637fbba3bc673&amp;id=7b50db9989" method="post" target="_blank">
+    <div class="row">
+      <div class="column medium-9 large-9">
+        <input type="email" name="EMAIL" placeholder="Your email address">
+      </div>
+      <div class="column medium-3 large-3">
+        <input type="submit" class="button button--expand" value="SIGN UP">
+      </div>
+    </div>
+  </form>
+</div>
+
+        <section class="disqus">
+  <h5 class="separator">
+    <span class="separator__title">Comments</span>
+  </h5>
+  <div id="disqus_thread"></div>
+
+<script>
+  var disqus_config = function () {
+    this.page.url = "http://localhost:4000/2016/12/22/FolioReader/";
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//android-kmshack-kr.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</section>
+      </article>
+    </div>
+
+  </div> <!-- row-->
+</div> <!-- wrapper -->
+  </div>
+
+  <script src="/AndroidUICollection/js/jquery-2.1.4.min.js"></script>
+  <script src="/AndroidUICollection/js/evil-icons.min.js"></script>
+  <script src="/AndroidUICollection/js/jquery.fitvids.js"></script>
+  <script src="/AndroidUICollection/js/jquery.ghostHunter.min.js"></script>
+  <script src="/AndroidUICollection/js/script.js"></script>
+</body>
+
+</html>

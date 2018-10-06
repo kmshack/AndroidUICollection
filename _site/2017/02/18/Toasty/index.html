@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2017/02/18/Toasty/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2017/02/18/Toasty/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="Toasty[API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat) [](https://jitpack.io/v/GrenderG/Toasty.svg) [Android Arsenal](https://img.shi...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="Toasty">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="Toasty[API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat) [](https://jitpack.io/v/GrenderG/Toasty.svg) [Android Arsenal](https://img.shi...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2017/02/18/Toasty/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2017/02/18/Toasty/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="Toasty[API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat) [](https://jitpack.io/v/GrenderG/Toasty.svg) [Android Arsenal](https://img.shi..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2017-02-18-Toasty.png">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2017-02-18-Toasty.png">
         
 
         <header class="post__header">
@@ -660,29 +664,29 @@
 
 <p>Add this in your root <code class="highlighter-rouge">build.gradle</code> file (<strong>not</strong> your module <code class="highlighter-rouge">build.gradle</code> file):</p>
 
-<pre><code class="language-gradle">allprojects {
-	repositories {
-		...
-		maven { url "https://jitpack.io" }
-	}
-}
-</code></pre>
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">allprojects</span> <span class="o">{</span>
+	<span class="k">repositories</span> <span class="o">{</span>
+		<span class="o">...</span>
+		<span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s2">"https://jitpack.io"</span> <span class="o">}</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
 <h2 id="dependency">Dependency</h2>
 
 <p>Add this to your module’s <code class="highlighter-rouge">build.gradle</code> file (make sure the version matches the JitPack badge above):</p>
 
-<pre><code class="language-gradle">dependencies {
-	...
-	implementation 'com.github.GrenderG:Toasty:1.3.0'
-}
-</code></pre>
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">dependencies</span> <span class="o">{</span>
+	<span class="o">...</span>
+	<span class="n">implementation</span> <span class="s1">'com.github.GrenderG:Toasty:1.3.0'</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
 <h2 id="configuration">Configuration</h2>
 
 <p>This step is optional, but if you want you can configure some Toasty parameters. Place this anywhere in your app:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">Toasty</span><span class="o">.</span><span class="na">Config</span><span class="o">.</span><span class="na">getInstance</span><span class="o">()</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Toasty</span><span class="o">.</span><span class="na">Config</span><span class="o">.</span><span class="na">getInstance</span><span class="o">()</span>
     <span class="o">.</span><span class="na">setErrorColor</span><span class="o">(</span><span class="nd">@ColorInt</span> <span class="kt">int</span> <span class="n">errorColor</span><span class="o">)</span> <span class="c1">// optional</span>
     <span class="o">.</span><span class="na">setInfoColor</span><span class="o">(</span><span class="nd">@ColorInt</span> <span class="kt">int</span> <span class="n">infoColor</span><span class="o">)</span> <span class="c1">// optional</span>
     <span class="o">.</span><span class="na">setSuccessColor</span><span class="o">(</span><span class="nd">@ColorInt</span> <span class="kt">int</span> <span class="n">successColor</span><span class="o">)</span> <span class="c1">// optional</span>
@@ -692,14 +696,12 @@
     <span class="o">.</span><span class="na">setToastTypeface</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">Typeface</span> <span class="n">typeface</span><span class="o">)</span> <span class="c1">// optional</span>
     <span class="o">.</span><span class="na">setTextSize</span><span class="o">(</span><span class="kt">int</span> <span class="n">sizeInSp</span><span class="o">)</span> <span class="c1">// optional</span>
     <span class="o">.</span><span class="na">apply</span><span class="o">();</span> <span class="c1">// required</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>You can reset the configuration by using <code class="highlighter-rouge">reset()</code> method:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">Toasty</span><span class="o">.</span><span class="na">Config</span><span class="o">.</span><span class="na">reset</span><span class="o">();</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Toasty</span><span class="o">.</span><span class="na">Config</span><span class="o">.</span><span class="na">reset</span><span class="o">();</span>
+</code></pre></div></div>
 
 <h2 id="usage">Usage</h2>
 
@@ -707,42 +709,35 @@
 
 <p>To display an error Toast:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">Toasty</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="n">yourContext</span><span class="o">,</span> <span class="s">"This is an error toast."</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">,</span> <span class="kc">true</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Toasty</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="n">yourContext</span><span class="o">,</span> <span class="s">"This is an error toast."</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">,</span> <span class="kc">true</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+</code></pre></div></div>
 <p>To display a success Toast:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">Toasty</span><span class="o">.</span><span class="na">success</span><span class="o">(</span><span class="n">yourContext</span><span class="o">,</span> <span class="s">"Success"</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">,</span> <span class="kc">true</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Toasty</span><span class="o">.</span><span class="na">success</span><span class="o">(</span><span class="n">yourContext</span><span class="o">,</span> <span class="s">"Success"</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">,</span> <span class="kc">true</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+</code></pre></div></div>
 <p>To display an info Toast:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">Toasty</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">yourContext</span><span class="o">,</span> <span class="s">"Here is some info for you."</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">,</span> <span class="kc">true</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Toasty</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">yourContext</span><span class="o">,</span> <span class="s">"Here is some info for you."</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">,</span> <span class="kc">true</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+</code></pre></div></div>
 <p>To display a warning Toast:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">Toasty</span><span class="o">.</span><span class="na">warning</span><span class="o">(</span><span class="n">yourContext</span><span class="o">,</span> <span class="s">"Beware of the dog."</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">,</span> <span class="kc">true</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Toasty</span><span class="o">.</span><span class="na">warning</span><span class="o">(</span><span class="n">yourContext</span><span class="o">,</span> <span class="s">"Beware of the dog."</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">,</span> <span class="kc">true</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+</code></pre></div></div>
 <p>To display the usual Toast:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">Toasty</span><span class="o">.</span><span class="na">normal</span><span class="o">(</span><span class="n">yourContext</span><span class="o">,</span> <span class="s">"Normal toast w/o icon"</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Toasty</span><span class="o">.</span><span class="na">normal</span><span class="o">(</span><span class="n">yourContext</span><span class="o">,</span> <span class="s">"Normal toast w/o icon"</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+</code></pre></div></div>
 <p>To display the usual Toast with icon:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">Toasty</span><span class="o">.</span><span class="na">normal</span><span class="o">(</span><span class="n">yourContext</span><span class="o">,</span> <span class="s">"Normal toast w/ icon"</span><span class="o">,</span> <span class="n">yourIconDrawable</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Toasty</span><span class="o">.</span><span class="na">normal</span><span class="o">(</span><span class="n">yourContext</span><span class="o">,</span> <span class="s">"Normal toast w/ icon"</span><span class="o">,</span> <span class="n">yourIconDrawable</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+</code></pre></div></div>
 
-<p>You can also create your custom Toasts with the <code class="highlighter-rouge">custom()</code> method:
-<code class="highlighter-rouge">java
-Toasty.custom(yourContext, "I'm a custom Toast", yourIconDrawable, tintColor, duration, withIcon, 
-shouldTint).show();
-</code>
-### Extra
-<a href="https://github.com/GrenderG/Toasty/blob/master/app/src/main/java/es/dmoral/toastysample/MainActivity.java#L98-L107">You can pass formatted text to Toasty</a></p>
+<p>You can also create your custom Toasts with the <code class="highlighter-rouge">custom()</code> method:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Toasty</span><span class="o">.</span><span class="na">custom</span><span class="o">(</span><span class="n">yourContext</span><span class="o">,</span> <span class="s">"I'm a custom Toast"</span><span class="o">,</span> <span class="n">yourIconDrawable</span><span class="o">,</span> <span class="n">tintColor</span><span class="o">,</span> <span class="n">duration</span><span class="o">,</span> <span class="n">withIcon</span><span class="o">,</span> 
+<span class="n">shouldTint</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+</code></pre></div></div>
+<h3 id="extra">Extra</h3>
+<p><a href="https://github.com/GrenderG/Toasty/blob/master/app/src/main/java/es/dmoral/toastysample/MainActivity.java#L98-L107">You can pass formatted text to Toasty</a></p>
 
 <p><strong>There are variants of each method, feel free to explore this library.</strong></p>
 
@@ -762,14 +757,6 @@ shouldTint).show();
 <p>Want to be here? Open an <code class="highlighter-rouge">issue</code> or make a <code class="highlighter-rouge">pull request</code>.</p>
 
 <table>
-	<tr>
-        <td><a href="https://play.google.com/store/apps/details?id=com.trivisionzero.chromophoto"><img src="https://lh3.googleusercontent.com/vmch41lYF_TKb1MKgtYrSgz2rKQ4T1EnGRCGpWSMqLRSzi_pgNWoZpw9WJE8UV4t614=w64" /></a></td>
-		<td><a href="https://play.google.com/store/apps/details?id=com.trivisionzero.chromophoto">ChromoPhoto - Colorize B&amp;W</a></td>
-	</tr>
-	<tr>
-        <td><a href="https://play.google.com/store/apps/details?id=com.serg.chuprin.tageditor"><img src="https://lh3.googleusercontent.com/2EYJPs-qBlKJ3L6cy7idQpzKfZkTzA2G4UQfbs-96VGMftQ-7aV4Dvj77ejzZlAAVx_C=w64" /></a></td>
-		<td><a href="https://play.google.com/store/apps/details?id=com.serg.chuprin.tageditor">AutoTagger - редактор тегов.</a></td>
-	</tr>
 	<tr>
         <td><a href="https://play.google.com/store/apps/details?id=cheetatech.com.colorhub"><img src="https://archive.org/download/ic_launcher_colorhub/ic_launcher_colorhub.png" width="64" /></a></td>
 		<td><a href="https://play.google.com/store/apps/details?id=cheetatech.com.colorhub">ColorHub - Color Palette</a></td>
@@ -810,10 +797,6 @@ shouldTint).show();
         <td><a href="https://play.google.com/store/apps/details?id=com.sunshine.eva"><img src="https://lh3.googleusercontent.com/u4zbQiMobr58biVKT67ka1N-cU_URBAdD6MDU2fGQYsWePvqH9UncMpGnWAFzczfSA=w64" /></a></td>
 		<td><a href="https://play.google.com/store/apps/details?id=com.sunshine.eva">Eva: Everything for Telegram</a></td>
 	</tr>
-	<tr>
-        <td><a href="https://play.google.com/store/apps/details?id=org.imperium.imperious.Pastebin"><img src="https://lh3.googleusercontent.com/zhky42kxZcdlt1u7D6lzc3Mwq0gV0nTiFdm-T3DygQVcNPOofNba3Q2_MWtqoJFgdF8a=w64" /></a></td>
-		<td><a href="https://play.google.com/store/apps/details?id=org.imperium.imperious.Pastebin">Pastebin</a></td>
-	</tr>
 		<tr>
             <td><a href="https://play.google.com/store/apps/details?id=com.KillerBLS.modpeide"><img src="https://lh3.googleusercontent.com/nyB12hF6cPHBrm532qQQslvj-X-klmPlKuQ4Z0MYKDpt4sPVZmWYRZ_SShEfVcTmhg=w64" /></a></td>
 		<td><a href="https://play.google.com/store/apps/details?id=com.KillerBLS.modpeide">ModPE IDE</a></td>
@@ -825,10 +808,6 @@ shouldTint).show();
 	<tr>
             <td><a href="https://play.google.com/store/apps/details?id=com.thirtydegreesray.openhub"><img src="https://lh3.googleusercontent.com/XP-tvaGf-as9XMQ3kcUjohSZlSD7uyf_AcHsjq6jTI0chXWK1yQrnJJs2Y_Pvbe1FRQ=w64" /></a></td>
 		<td><a href="https://play.google.com/store/apps/details?id=com.thirtydegreesray.openhub">OpenHub for GitHub</a></td>
-	</tr>
-		<tr>
-            <td><a href="https://play.google.com/store/apps/details?id=nl.overnightprojects.wakification"><img src="https://lh3.googleusercontent.com/cRV9ytg3rXnfNPBgpZLe0EJr2C8oF5VmZxipRDgFY0xJAl_cZ6JGxM90r4x_BNZbfsgn=w64" /></a></td>
-		<td><a href="https://play.google.com/store/apps/details?id=nl.overnightprojects.wakification">Wakification</a></td>
 	</tr>
 		<tr>
             <td><a href="https://play.google.com/store/apps/details?id=com.controle.developer.hipercontrole"><img src="https://lh3.googleusercontent.com/muPax5lA3VC7LLIgFVYkO3zCqvW2qCG-6QVPLZHYDdCqrGAHRmE_-4PQN7zVohh4JnQ=w64" /></a></td>
@@ -866,17 +845,17 @@ shouldTint).show();
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Toasty&url=http://kmshack.github.io/AndroidUICollection/2017/02/18/Toasty/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=Toasty&url=http://localhost:4000/AndroidUICollection/2017/02/18/Toasty/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2017/02/18/Toasty/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2017/02/18/Toasty/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2017/02/18/Toasty/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2017/02/18/Toasty/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -907,7 +886,7 @@ shouldTint).show();
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2017/02/18/Toasty/";
+    this.page.url = "http://localhost:4000/2017/02/18/Toasty/";
   };
 
   (function() {

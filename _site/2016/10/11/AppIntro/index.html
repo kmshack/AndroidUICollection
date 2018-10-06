@@ -12,8 +12,8 @@
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
   <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
-  <link rel="canonical" href="http://kmshack.github.io/AndroidUICollection/2016/10/11/AppIntro/">
-  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://kmshack.github.io/AndroidUICollection/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2016/10/11/AppIntro/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
   <meta name="description" content="[](https://jitpack.io/v/apl-devs/appintro.svg)[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AppIntro-green.svg?style=flat)[Android Gems](h...">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="AppIntro">
   <meta property="og:site_name" content="Android UI OpenSource" />
   <meta property="og:description" content="[](https://jitpack.io/v/apl-devs/appintro.svg)[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AppIntro-green.svg?style=flat)[Android Gems](h...">
-  <meta property="og:url" content="http://kmshack.github.io/AndroidUICollection/2016/10/11/AppIntro/" />
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/10/11/AppIntro/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
   <meta name="twitter:description" content="[](https://jitpack.io/v/apl-devs/appintro.svg)[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AppIntro-green.svg?style=flat)[Android Gems](h..." />
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -630,7 +634,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
         
-          <meta itemprop="og:image" content="http://kmshack.github.io/AndroidUICollection/images/posts/2016-10-11-AppIntro.png">
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2016-10-11-AppIntro.png">
         
 
         <header class="post__header">
@@ -669,30 +673,29 @@
   <li><strong>Add the JitPack repository to your build file</strong></li>
 </ol>
 
-<p>Add it in your root build.gradle at the end of repositories:
-<code class="highlighter-rouge">gradle
-	allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
-</code></p>
+<p>Add it in your root build.gradle at the end of repositories:</p>
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="k">allprojects</span> <span class="o">{</span>
+		<span class="k">repositories</span> <span class="o">{</span>
+			<span class="o">...</span>
+			<span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s1">'https://jitpack.io'</span> <span class="o">}</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+</code></pre></div></div>
 
 <ol>
   <li><strong>Add the dependency</strong>
-<code class="highlighter-rouge">gradle
- dependencies {
-         implementation 'com.github.apl-devs:appintro:v4.2.3'
- }
-</code></li>
+    <div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">dependencies</span> <span class="o">{</span>
+         <span class="n">implementation</span> <span class="s1">'com.github.apl-devs:appintro:v4.2.3'</span>
+ <span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
 </ol>
 
 <p>Create a new <strong>Activity that extends AppIntro</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">IntroActivity</span> <span class="kd">extends</span> <span class="n">AppIntro</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">IntroActivity</span> <span class="kd">extends</span> <span class="n">AppIntro</span> <span class="o">{</span>
     <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="n">onCreate</span><span class="o">(</span><span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
 
         <span class="c1">// Note here that we DO NOT use setContentView();</span>
@@ -730,34 +733,32 @@
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onSkipPressed</span><span class="o">(</span><span class="n">Fragment</span> <span class="n">currentFragment</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSkipPressed</span><span class="o">(</span><span class="n">Fragment</span> <span class="n">currentFragment</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">.</span><span class="na">onSkipPressed</span><span class="o">(</span><span class="n">currentFragment</span><span class="o">);</span>
         <span class="c1">// Do something when users tap on Skip button.</span>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onDonePressed</span><span class="o">(</span><span class="n">Fragment</span> <span class="n">currentFragment</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDonePressed</span><span class="o">(</span><span class="n">Fragment</span> <span class="n">currentFragment</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">.</span><span class="na">onDonePressed</span><span class="o">(</span><span class="n">currentFragment</span><span class="o">);</span>
         <span class="c1">// Do something when users tap on Done button.</span>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onSlideChanged</span><span class="o">(</span><span class="nd">@Nullable</span> <span class="n">Fragment</span> <span class="n">oldFragment</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">Fragment</span> <span class="n">newFragment</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSlideChanged</span><span class="o">(</span><span class="nd">@Nullable</span> <span class="n">Fragment</span> <span class="n">oldFragment</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">Fragment</span> <span class="n">newFragment</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">.</span><span class="na">onSlideChanged</span><span class="o">(</span><span class="n">oldFragment</span><span class="o">,</span> <span class="n">newFragment</span><span class="o">);</span>
         <span class="c1">// Do something when the slide changes.</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><em>Note above that we DID NOT use setContentView();</em></p>
 
 <p>Finally, declare the activity in your Manifest like so:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;activity</span> <span class="na">android:name=</span><span class="s">"com.example.example.intro"</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;activity</span> <span class="na">android:name=</span><span class="s">"com.example.example.intro"</span>
     <span class="na">android:label=</span><span class="s">"@string/app_intro"</span> <span class="nt">/&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Do not declare the intro as your main app launcher unless you want the intro to launch every time your app starts.
 Refer to the <a href="https://github.com/PaoloRotolo/AppIntro/wiki/How-to-Use#show-the-intro-once">wiki</a> for an example of how to launch the intro once from your main activity.</p>
@@ -765,11 +766,10 @@ Refer to the <a href="https://github.com/PaoloRotolo/AppIntro/wiki/How-to-Use#sh
 <h4 id="alternative-layout">Alternative layout</h4>
 <p>If you want to try an alternative layout (as seen in Google’s Photo app), just extend <strong>AppIntro2</strong> in your Activity. That’s all :)</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">IntroActivity</span> <span class="kd">extends</span> <span class="n">AppIntro2</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">IntroActivity</span> <span class="kd">extends</span> <span class="n">AppIntro2</span> <span class="o">{</span>
     <span class="c1">// ...</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><img src="https://github.com/PaoloRotolo/AppIntro/blob/master/art/layout2.png" width="300" /> <img src="https://github.com/PaoloRotolo/AppIntro/blob/master/art/layout2_2.png" width="300" />
 <br /></p>
@@ -780,20 +780,21 @@ Refer to the <a href="https://github.com/PaoloRotolo/AppIntro/wiki/How-to-Use#sh
 
 <p>AppIntro provides two simple classes, <code class="highlighter-rouge">AppIntroFragment</code> and <code class="highlighter-rouge">AppIntro2Fragment</code> which one can use to build simple slides.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nd">@Override</span>
-<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Override</span>
+<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
     <span class="c1">// ...</span>
 
     <span class="n">addSlide</span><span class="o">(</span><span class="n">AppIntroFragment</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span><span class="n">title</span><span class="o">,</span> <span class="n">description</span><span class="o">,</span> <span class="n">image</span><span class="o">,</span> <span class="n">backgroundColor</span><span class="o">));</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h5 id="custom-slides-example">Custom slides example</h5>
 
-<p>One may also define custom slides as seen in the example project:
- * Copy the class <strong>SampleSlide</strong> from my <a href="https://github.com/paolorotolo/AppIntro/blob/master/example/src/main/java/com/amqtech/opensource/appintroexample/util/SampleSlide.java">example project</a>.
- * Add a new slide with <code class="highlighter-rouge">addSlide(SampleSlide.newInstance(R.layout.your_slide_here));</code></p>
+<p>One may also define custom slides as seen in the example project:</p>
+<ul>
+  <li>Copy the class <strong>SampleSlide</strong> from my <a href="https://github.com/paolorotolo/AppIntro/blob/master/example/src/main/java/com/amqtech/opensource/appintroexample/util/SampleSlide.java">example project</a>.</li>
+  <li>Add a new slide with <code class="highlighter-rouge">addSlide(SampleSlide.newInstance(R.layout.your_slide_here));</code></li>
+</ul>
 
 <p>There’s no need to create one class for fragment anymore. :)</p>
 
@@ -803,34 +804,31 @@ Refer to the <a href="https://github.com/PaoloRotolo/AppIntro/wiki/How-to-Use#sh
 <p>AppIntro comes with some pager animations.
 Choose the one you like and then activate it with:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nd">@Override</span>
-<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Override</span>
+<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
     <span class="c1">// ...</span>
 
     <span class="n">setFadeAnimation</span><span class="o">();</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<p>Available animations:
-<code class="highlighter-rouge">java
-setFadeAnimation()
-setZoomAnimation()
-setFlowAnimation()
-setSlideOverAnimation()
-setDepthAnimation()
-</code></p>
+<p>Available animations:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">setFadeAnimation</span><span class="o">()</span>
+<span class="n">setZoomAnimation</span><span class="o">()</span>
+<span class="n">setFlowAnimation</span><span class="o">()</span>
+<span class="n">setSlideOverAnimation</span><span class="o">()</span>
+<span class="n">setDepthAnimation</span><span class="o">()</span>
+</code></pre></div></div>
 
 <p>If you want to create nice parallax effect or your own custom animation, create your own <strong>PageTransformer</strong> and call:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nd">@Override</span>
-<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Override</span>
+<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
     <span class="c1">// ...</span>
 
     <span class="n">setCustomTransformer</span><span class="o">(</span><span class="n">transformer</span><span class="o">);</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Click <a href="https://github.com/PaoloRotolo/AppIntro/blob/90a513fda9b70a5e5df35435a7f2984832727eeb/AppIntroExample/app/src/main/java/com/github/paolorotolo/appintroexample/animations/CustomAnimation.java">here</a> to see how I did it in the example app.</p>
 
@@ -840,24 +838,23 @@ setDepthAnimation()
 
 <p><img src="art/background_color_transition.gif" style="width: 250px" /></p>
 
-<p>In order to setup the transitions, simply implement <code class="highlighter-rouge">ISlideBackgroundColorHolder</code>:
-```java
-public final class MySlide extends Fragment implements ISlideBackgroundColorHolder {
-    @Override
-    public int getDefaultBackgroundColor() {
-        // Return the default background color of the slide.
-        return Color.parseColor(“#000000”);
-    }</p>
+<p>In order to setup the transitions, simply implement <code class="highlighter-rouge">ISlideBackgroundColorHolder</code>:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">MySlide</span> <span class="kd">extends</span> <span class="n">Fragment</span> <span class="kd">implements</span> <span class="n">ISlideBackgroundColorHolder</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getDefaultBackgroundColor</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// Return the default background color of the slide.</span>
+        <span class="k">return</span> <span class="n">Color</span><span class="o">.</span><span class="na">parseColor</span><span class="o">(</span><span class="s">"#000000"</span><span class="o">);</span>
+    <span class="o">}</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>@Override
-public void setBackgroundColor(@ColorInt int backgroundColor) {
-    // Set the background color of the view within your slide to which the transition should be applied.
-    if (layoutContainer = null) {
-        layoutContainer.setBackgroundColor(backgroundColor);
-    }
-} } ```
-</code></pre>
-</div>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setBackgroundColor</span><span class="o">(</span><span class="nd">@ColorInt</span> <span class="kt">int</span> <span class="n">backgroundColor</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// Set the background color of the view within your slide to which the transition should be applied.</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">layoutContainer</span> <span class="o">=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">layoutContainer</span><span class="o">.</span><span class="na">setBackgroundColor</span><span class="o">(</span><span class="n">backgroundColor</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
 <p>The API is quite low-level, therefore highly customizable. The interface contains two methods:</p>
 
@@ -875,8 +872,8 @@ This is normally the root view of your Fragment’s layout. But one may also app
 
 <p>However, AppIntro simplifies this down to one single line of code</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nd">@Override</span>
-<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Override</span>
+<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
     <span class="c1">// ...</span>
 
     <span class="c1">// Ask for CAMERA permission on the second slide</span>
@@ -886,8 +883,7 @@ This is normally the root view of your Fragment’s layout. But one may also app
     <span class="c1">// Ensure your slide talks about both so as not to confuse the user.</span>
     <span class="n">askForPermissions</span><span class="o">(</span><span class="k">new</span> <span class="n">String</span><span class="o">[]{</span><span class="n">Manifest</span><span class="o">.</span><span class="na">permission</span><span class="o">.</span><span class="na">CAMERA</span><span class="o">,</span> <span class="n">Manifest</span><span class="o">.</span><span class="na">permission</span><span class="o">.</span><span class="na">READ_CONTACTS</span><span class="o">},</span> <span class="mi">2</span><span class="o">);</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>NOTE:</strong> It is advised that you only put one permission in the String array unless you want the app to ask for multiple permissions on the same slide.</p>
 
@@ -897,20 +893,20 @@ This is normally the root view of your Fragment’s layout. But one may also app
 
 <p>If you want to restrict navigation between your slides (i.e. the user has to toggle a checkbox in order to continue), our <strong>Slide Policy</strong> feature might help you.</p>
 
-<p>All you have to do is implement <code class="highlighter-rouge">ISlidePolicy</code> in your slides:
-```java
-public final class MySlide extends Fragment implements ISlidePolicy {
-    @Override
-    public boolean isPolicyRespected() {
-        return // If user should be allowed to leave this slide
-    }</p>
+<p>All you have to do is implement <code class="highlighter-rouge">ISlidePolicy</code> in your slides:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">MySlide</span> <span class="kd">extends</span> <span class="n">Fragment</span> <span class="kd">implements</span> <span class="n">ISlidePolicy</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isPolicyRespected</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="c1">// If user should be allowed to leave this slide</span>
+    <span class="o">}</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>@Override
-public void onUserIllegallyRequestedNextPage() {
-    // User illegally requested next slide
-} } ``` The interface contains two methods:
-</code></pre>
-</div>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onUserIllegallyRequestedNextPage</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// User illegally requested next slide</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>The interface contains two methods:</p>
 
 <ul>
   <li><code class="highlighter-rouge">isPolicyRespected</code>: The return value of this method defines if the user can leave this slide, i.e. navigate to another one</li>
@@ -1029,17 +1025,17 @@ public void onUserIllegallyRequestedNextPage() {
 
 <ul class="share-list">
   <li>
-    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=AppIntro&url=http://kmshack.github.io/AndroidUICollection/2016/10/11/AppIntro/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=AppIntro&url=http://localhost:4000/AndroidUICollection/2016/10/11/AppIntro/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
       <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://kmshack.github.io/AndroidUICollection/2016/10/11/AppIntro/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2016/10/11/AppIntro/" rel="nofollow" target="_blank" title="Share on Facebook">
     <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
     </a>
   </li>
   <li>
-    <a class="share-list__link" href="https://plus.google.com/share?url=http://kmshack.github.io/AndroidUICollection/2016/10/11/AppIntro/" rel="nofollow" target="_blank" title="Share on Google+">
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2016/10/11/AppIntro/" rel="nofollow" target="_blank" title="Share on Google+">
     <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
     </a>
   </li>
@@ -1070,7 +1066,7 @@ public void onUserIllegallyRequestedNextPage() {
 
 <script>
   var disqus_config = function () {
-    this.page.url = "http://kmshack.github.io/2016/10/11/AppIntro/";
+    this.page.url = "http://localhost:4000/2016/10/11/AppIntro/";
   };
 
   (function() {
