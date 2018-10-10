@@ -525,6 +525,10 @@
                 
               
             
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -659,21 +663,29 @@
 <p><a href="/screenshot.gif">CircleIndicator</a></p>
 
 <h2 id="gradle">Gradle</h2>
+
+<h6 id="androidx">AndroidX</h6>
 <div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
-    <span class="n">compile</span> <span class="s1">'me.relex:circleindicator:1.2.2@aar'</span>
+    <span class="n">implementation</span> <span class="s1">'me.relex:circleindicator:2.0.0'</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h6 id="android-support-library">Android Support Library</h6>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
+    <span class="n">compile</span> <span class="s1">'me.relex:circleindicator:1.2.2'</span>
 <span class="o">}</span>
 </code></pre></div></div>
 
 <h2 id="usage">Usage</h2>
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="nt">&lt;me.relex.circleindicator.CircleIndicator</span>
-		<span class="na">android:id=</span><span class="s">"@+id/indicator"</span>
-        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
-        <span class="na">android:layout_height=</span><span class="s">"48dp"</span><span class="nt">/&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;me.relex.circleindicator.CircleIndicator</span>
+	<span class="na">android:id=</span><span class="s">"@+id/indicator"</span>
+	<span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+	<span class="na">android:layout_height=</span><span class="s">"48dp"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">ViewPager</span> <span class="n">viewpager</span> <span class="o">=</span> <span class="o">(</span><span class="n">ViewPager</span><span class="o">)</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">viewpager</span><span class="o">);</span>
-    <span class="n">CircleIndicator</span> <span class="n">indicator</span> <span class="o">=</span> <span class="o">(</span><span class="n">CircleIndicator</span><span class="o">)</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">indicator</span><span class="o">);</span>
-    <span class="n">viewpager</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(</span><span class="n">mPageAdapter</span><span class="o">);</span>
-    <span class="n">indicator</span><span class="o">.</span><span class="na">setViewPager</span><span class="o">(</span><span class="n">viewpager</span><span class="o">);</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ViewPager</span> <span class="n">viewpager</span> <span class="o">=</span> <span class="o">(</span><span class="n">ViewPager</span><span class="o">)</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">viewpager</span><span class="o">);</span>
+<span class="n">CircleIndicator</span> <span class="n">indicator</span> <span class="o">=</span> <span class="o">(</span><span class="n">CircleIndicator</span><span class="o">)</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">indicator</span><span class="o">);</span>
+<span class="n">viewpager</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(</span><span class="n">mPageAdapter</span><span class="o">);</span>
+<span class="n">indicator</span><span class="o">.</span><span class="na">setViewPager</span><span class="o">(</span><span class="n">viewpager</span><span class="o">);</span>
 </code></pre></div></div>
 
 <h5 id="properties">Properties:</h5>
@@ -690,29 +702,6 @@
   <li><code class="highlighter-rouge">app:ci_gravity</code> (default:center)</li>
 </ul>
 
-<h2 id="changelog"><a href="/CHANGELOG.md">Changelog</a></h2>
-<h5 id="v120-please-change-like-this-if-you-used-dynamic-adapter">v1.2.0 Please change like this if you used dynamic adapter</h5>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">viewpager</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(</span><span class="n">mAdapter</span><span class="o">);</span>
-<span class="n">indicator</span><span class="o">.</span><span class="na">setViewPager</span><span class="o">(</span><span class="n">viewpager</span><span class="o">);</span>
-<span class="n">mAdapter</span><span class="o">.</span><span class="na">registerDataSetObserver</span><span class="o">(</span><span class="n">indicator</span><span class="o">.</span><span class="na">getDataSetObserver</span><span class="o">());</span>
-</code></pre></div></div>
-
-<h2 id="license">License</h2>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright (C) 2014 relex
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-</code></pre></div></div>
 
           <br>
           <div class="post__tags">

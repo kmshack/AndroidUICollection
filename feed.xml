@@ -5,9 +5,62 @@
     <description>Collection of OpenSource for Android UI.</description>
     <link>http://localhost:4000/AndroidUICollection/</link>
     <atom:link href="http://localhost:4000/AndroidUICollection/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 06 Oct 2018 15:09:04 +0900</pubDate>
-    <lastBuildDate>Sat, 06 Oct 2018 15:09:04 +0900</lastBuildDate>
-    <generator>Jekyll v3.8.3</generator>
+    <pubDate>Wed, 10 Oct 2018 23:01:24 +0900</pubDate>
+    <lastBuildDate>Wed, 10 Oct 2018 23:01:24 +0900</lastBuildDate>
+    <generator>Jekyll v3.8.4</generator>
+    
+      <item>
+        <title>CardStackView</title>
+        <description>&lt;h1 id=&quot;cardstackview&quot;&gt;CardStackView&lt;/h1&gt;
+&lt;p&gt;Show something like cards with 3 kinds of animations(alldown, updown, updownstack). Two ways to scroll the items:one is scroll normal as listview, other one is scroll to overlap first one.&lt;/p&gt;
+
+&lt;h1 id=&quot;screenshot&quot;&gt;Screenshot&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;/screenshot/screenshot1.gif&quot;&gt;&lt;/a&gt; &lt;a href=&quot;/screenshot/screenshot2.gif&quot;&gt;&lt;/a&gt; &lt;a href=&quot;/screenshot/screenshot3.gif&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;installation&quot;&gt;Installation&lt;/h1&gt;
+&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'com.loopeer.library:cardstack:1.0.2'&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;usages&quot;&gt;Usages&lt;/h1&gt;
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.loopeer.cardstack.CardStackView&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;mStackView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CardStackView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stackview_main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;mTestStackAdapter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TestStackAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;mStackView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mTestStackAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;mTestStackAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;updateData&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Arrays&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;asList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TEST_DATAS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;license&quot;&gt;License&lt;/h1&gt;
+&lt;pre&gt;
+Copyright 2016 Loopeer
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&lt;/pre&gt;
+
+</description>
+        <pubDate>Wed, 10 Oct 2018 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/AndroidUICollection/2018/10/10/CardStackView/</link>
+        <guid isPermaLink="true">http://localhost:4000/AndroidUICollection/2018/10/10/CardStackView/</guid>
+        
+        <category>CardView</category>
+        
+        
+      </item>
     
       <item>
         <title>InboxRecyclerView</title>
@@ -1602,153 +1655,6 @@ limitations under the License.
         <category>sliding</category>
         
         <category>navi</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>JellyToolbar</title>
-        <description>&lt;h1 id=&quot;jellytoolbar&quot;&gt;JellyToolbar&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;[License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)&lt;/a&gt;
-&lt;a href=&quot;https://jitpack.io/#yalantis/jellytoolbar&quot;&gt;[](https://jitpack.io/v/yalantis/jellytoolbar.svg)&lt;/a&gt;
-&lt;a href=&quot;https://yalantis.com/?utm_source=github&quot;&gt;[Yalantis](https://raw.githubusercontent.com/Yalantis/PullToRefresh/develop/PullToRefreshDemo/Resources/badge_dark.png)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.yalantis.jellyanimation.demo&quot;&gt;&lt;img alt=&quot;Android app on Google Play&quot; src=&quot;https://developer.android.com/images/brand/en_app_rgb_wo_60.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Check this &lt;a href=&quot;https://dribbble.com/shots/2092541-Search-Bar-Animation&quot;&gt;project on dribbble&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;gif.gif&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;requirements&quot;&gt;Requirements&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Android SDK 16+&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-
-&lt;p&gt;Add to your root build.gradle:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-Groovy&quot;&gt;allprojects {
-	repositories {
-	  ...
-	  maven { url &quot;https://jitpack.io&quot; }
-	}
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Add the dependency:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-Groovy&quot;&gt;dependencies {
-  compile 'com.github.yalantis:jellytoolbar:v1.0'
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;how-to-use-this-library-in-your-project&quot;&gt;How to use this library in your project?&lt;/h2&gt;
-
-&lt;p&gt;First of all, add &lt;code class=&quot;highlighter-rouge&quot;&gt;JellyToolbar&lt;/code&gt; to the xml layout of your activity, so it looks like that:&lt;/p&gt;
-
-&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;LinearLayout&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:android=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;xmlns:app=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res-auto&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:orientation=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;vertical&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;com.yalantis.jellytoolbar.widget.JellyToolbar&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/toolbar&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/colorPrimary&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:paddingLeft=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@dimen/activity_horizontal_margin&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:paddingStart=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@dimen/activity_horizontal_margin&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:cancelIcon=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@drawable/ic_close&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:endColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/colorEnd&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:icon=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@drawable/ic_search&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:startColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/colorStart&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@string/str_news_feed&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:titleTextColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@android:color/white&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/LinearLayout&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;After that pass an instance of the &lt;code class=&quot;highlighter-rouge&quot;&gt;JellyListener&lt;/code&gt; and content view 
-(the view which would be inserted to the toolbar) to the &lt;code class=&quot;highlighter-rouge&quot;&gt;JellyToolbar&lt;/code&gt;. 
-&lt;code class=&quot;highlighter-rouge&quot;&gt;JellyToolbar&lt;/code&gt; has &lt;code class=&quot;highlighter-rouge&quot;&gt;getToolbar()&lt;/code&gt; method to let you use all the methods of the standard &lt;code class=&quot;highlighter-rouge&quot;&gt;Toolbar&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-Java&quot;&gt;public class MainActivity extends AppCompatActivity {
-
-    private JellyToolbar toolbar;
-    private AppCompatEditText editText;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        toolbar = (JellyToolbar) findViewById(R.id.toolbar);
-        toolbar.getToolbar().setNavigationIcon(R.drawable.ic_menu);
-        toolbar.setJellyListener(jellyListener);
-
-        editText = (AppCompatEditText) LayoutInflater.from(this).inflate(R.layout.edit_text, null);
-        editText.setBackgroundResource(R.color.colorTransparent);
-        toolbar.setContentView(editText);
-    }
-
-    private JellyListener jellyListener = new JellyListener() {
-        @Override
-        public void onCancelIconClicked() {
-            if (TextUtils.isEmpty(editText.getText())) {
-                toolbar.collapse();
-            } else {
-                editText.getText().clear();
-            }
-        }
-    };
-
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To control the animation flow use &lt;code class=&quot;highlighter-rouge&quot;&gt;collapse()&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;expand()&lt;/code&gt; methods.&lt;/p&gt;
-
-&lt;p&gt;Override &lt;code class=&quot;highlighter-rouge&quot;&gt;onToolbarExpandingStarted()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;onToolbarCollapsingStarted()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;onToolbarExpanded()&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;onToolbarCollapsed()&lt;/code&gt;
-methods of the &lt;code class=&quot;highlighter-rouge&quot;&gt;JellyListener&lt;/code&gt; to get all the animation events.&lt;/p&gt;
-
-&lt;h2 id=&quot;let-us-know&quot;&gt;Let us know&lt;/h2&gt;
-
-&lt;p&gt;We’d be really happy if you sent us links to your projects where you use our component. Just send an email to github@yalantis.com And do let us know if you have any questions or suggestion regarding the animation.&lt;/p&gt;
-
-&lt;p&gt;P.S. We’re going to publish more awesomeness wrapped in code and a tutorial on how to make UI for iOS (Android) better than better. Stay tuned&lt;/p&gt;
-
-&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;The MIT License (MIT)
-
-Copyright © 2017 Yalantis, https://yalantis.com
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Sun, 02 Apr 2017 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/AndroidUICollection/2017/04/02/JellyToolbar/</link>
-        <guid isPermaLink="true">http://localhost:4000/AndroidUICollection/2017/04/02/JellyToolbar/</guid>
-        
-        <category>Toolbar</category>
         
         
       </item>

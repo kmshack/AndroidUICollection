@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>AppIntro</title>
-  <meta name="description" content="[](https://jitpack.io/v/apl-devs/appintro.svg)[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AppIntro-green.svg?style=flat)[Android Gems](h...">
+  <meta name="description" content="[](https://jitpack.io/v/paolorotolo/AppIntro.svg)[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AppIntro-green.svg?style=flat)[Android Gems...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
@@ -16,18 +16,18 @@
   <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="[](https://jitpack.io/v/apl-devs/appintro.svg)[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AppIntro-green.svg?style=flat)[Android Gems](h...">
+  <meta name="description" content="[](https://jitpack.io/v/paolorotolo/AppIntro.svg)[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AppIntro-green.svg?style=flat)[Android Gems...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="AppIntro">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="[](https://jitpack.io/v/apl-devs/appintro.svg)[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AppIntro-green.svg?style=flat)[Android Gems](h...">
+  <meta property="og:description" content="[](https://jitpack.io/v/paolorotolo/AppIntro.svg)[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AppIntro-green.svg?style=flat)[Android Gems...">
   <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/10/11/AppIntro/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="[](https://jitpack.io/v/apl-devs/appintro.svg)[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AppIntro-green.svg?style=flat)[Android Gems](h..." />
+  <meta name="twitter:description" content="[](https://jitpack.io/v/paolorotolo/AppIntro.svg)[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AppIntro-green.svg?style=flat)[Android Gems..." />
 
   
   	<!-- Article specific OG data -->
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -651,12 +655,9 @@
               <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/AndroidUICollection/images/posts/2016-10-11-AppIntro.png)"></div>
             </div>
           <br>
-          <p><a href="https://jitpack.io/#apl-devs/appintro">[](https://jitpack.io/v/apl-devs/appintro.svg)</a>
+          <p><a href="https://jitpack.io/#paolorotolo/appintro">[](https://jitpack.io/v/paolorotolo/AppIntro.svg)</a>
 <a href="https://android-arsenal.com/details/1/1939">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AppIntro-green.svg?style=flat)</a>
 <a href="http://www.android-gems.com/lib/PaoloRotolo/AppIntro">[Android Gems](http://www.android-gems.com/badge/PaoloRotolo/AppIntro.svg?branch=master)</a> <a href="https://gitter.im/AppIntro/Lobby?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge">[Join the chat at https://gitter.im/AppIntro/Lobby](https://badges.gitter.im/AppIntro/Lobby.svg)</a></p>
-
-<p>Sample App:</p>
-<p><a href="https://play.google.com/store/apps/details?id=com.amqtech.opensource.appintroexample&amp;utm_source=global_co&amp;utm_medium=prtnr&amp;utm_content=Mar2515&amp;utm_campaign=PartBadge&amp;pcampaignid=MKT-AC-global-none-all-co-pr-py-PartBadges-Oct1515-1"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/apps/en-play-badge-border.png" width="300" /></a></p>
 
 <h1 id="appintro">AppIntro</h1>
 <p>AppIntro is an Android Library that helps you make a <strong>cool intro</strong> for your app, like the ones in Google apps.</p>
@@ -685,7 +686,7 @@
 <ol>
   <li><strong>Add the dependency</strong>
     <div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">dependencies</span> <span class="o">{</span>
-         <span class="n">implementation</span> <span class="s1">'com.github.apl-devs:appintro:v4.2.3'</span>
+         <span class="n">implementation</span> <span class="s1">'com.github.paolorotolo:appintro:v5.0.0'</span>
  <span class="o">}</span>
 </code></pre></div>    </div>
   </li>
@@ -912,6 +913,26 @@ This is normally the root view of your Fragment’s layout. But one may also app
   <li><code class="highlighter-rouge">isPolicyRespected</code>: The return value of this method defines if the user can leave this slide, i.e. navigate to another one</li>
   <li><code class="highlighter-rouge">onUserIllegallyRequestedNextPage</code>: This method gets called if the user tries to leave the slide although <code class="highlighter-rouge">isPolicyRespected</code> returned false. One may show some error message here.</li>
 </ul>
+
+<h2 id="translating">Translating</h2>
+
+<p>Do you want to help AppIntro becoming international 🌍? We are more than happy
+AppIntro currently supports <a href="library/src/main/res">the following languages</a>.</p>
+
+<p>To add a new translation just add a pull request with a new <code class="highlighter-rouge">strings.xml</code> file inside a <code class="highlighter-rouge">values-xx</code> folder (where <code class="highlighter-rouge">xx</code> is a <a href="https://en.wikipedia.org/wiki/ISO_639-1">two-letter ISO 639-1 language code</a>).</p>
+
+<p>In order to provide the translation, your file needs to contain the following strings:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;resources</span> <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;string</span> <span class="na">name=</span><span class="s">"app_intro_skip_button"</span><span class="nt">&gt;</span>[Translation for SKIP]<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;string</span> <span class="na">name=</span><span class="s">"app_intro_next_button"</span><span class="nt">&gt;</span>[Translation for NEXT]<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;string</span> <span class="na">name=</span><span class="s">"app_intro_back_button"</span><span class="nt">&gt;</span>[Translation for BACK]<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;string</span> <span class="na">name=</span><span class="s">"app_intro_done_button"</span><span class="nt">&gt;</span>[Translation for DONE]<span class="nt">&lt;/string&gt;</span>
+<span class="nt">&lt;/resources&gt;</span>
+</code></pre></div></div>
+
+<p>An updated version of the english version translation is <a href="library/src/main/res/values/strings.xml">available here</a>.</p>
 
 <h2 id="example-app">Example App</h2>
 <p>See example code <a href="https://github.com/PaoloRotolo/AppIntro/tree/master/example">here</a> on GitHub. You can also see it live by downloading our example on <a href="https://play.google.com/store/apps/details?id=com.amqtech.opensource.appintroexample">Google Play</a>.</p>
