@@ -23,7 +23,7 @@ kramdown:
 permalink: pretty
 paginate:  24
 
-gems:
+plugins:
   - jekyll-paginate
   - jekyll/tagging
 
