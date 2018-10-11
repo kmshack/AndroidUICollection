@@ -1,0 +1,83 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
+  <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
+    
+  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
+    
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+
+  <meta name="author" content="kmshack" />
+
+  <meta property="og:title" content="{% if page.title %}{{ page.title | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:site_name" content="{{ site.title }}" />
+  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:site" content="@kmshack" />
+  <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
+
+  {% if page.title %}
+  	<!-- Article specific OG data -->
+  	<meta property="og:type" content="article" />
+  	<meta property="article:published_time" content="{{page.date}}" />
+  	{% if page.modified %}
+  		<meta property="article:modified_time" content="{{page.modified}}" />
+  	{% endif %}
+  	<meta property="article:author" content="http://facebook.com/kmshack" />
+    <meta property="article:publisher" content="https://www.facebook.com/kmshack" />
+  	<meta property="article:section" content="{{page.vertical}}" />
+  	{% for tag in page.categories %}
+  		<meta property="article:tag" content="{{tag}}" />
+  	{% endfor %}
+
+  	<meta name="twitter:card" content="summary_large_image" />
+  	<meta name="twitter:creator" content="@kmshack_kr" />
+  	<meta name="twitter:title" content="{{page.title}}" />
+	{% if page.ogimagenull %}
+		<!-- no og image -->
+	{% elsif page.ogimage %}
+		<meta property="og:image" content="{{page.ogimage}}" />
+	  	<meta name="twitter:image" content="{{page.ogimage}}" />
+	  	<meta property="og:image:width" content="600" />
+	  	<meta property="og:image:height" content="315" />
+	{% elsif page.image %}
+	  	<meta property="og:image" content="{{page.image}}" />
+	  	<meta name="twitter:image" content="{{page.image}}" />
+  	{% else %}
+  		<meta property="og:image" content="{{ "/images/logo.png" | prepend: site.baseurl | prepend: site.url }}" />
+  		<meta name="twitter:image" content="{{ "/images/logo.png" | prepend: site.baseurl | prepend: site.url }}" />
+  	{% endif %}
+
+  {% else %}
+  	<!-- OG data for homepage -->
+  	<meta property="og:image" content="{{ "/images/logo.png" | prepend: site.baseurl | prepend: site.url }}" />
+  	<meta property="og:type" content="website" />
+  	<meta name="twitter:card" content="summary" />
+  	<meta name="twitter:title" content="{{site.title}}" />
+  	<meta name="twitter:image" content="{{ "/images/logo.png" | prepend: site.baseurl | prepend: site.url }}" />
+
+  {% endif %}
+
+  <script>
+    var base_url = {{ site.baseurl | jsonify }};
+  </script>
+    
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9975139260149901",
+    enable_page_level_ads: true
+  });
+</script>
+    
+</head>
