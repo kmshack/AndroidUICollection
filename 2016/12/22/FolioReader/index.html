@@ -533,6 +533,14 @@
                 
               
             
+              
+                
+              
+            
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -701,16 +709,24 @@
 
 <h3 id="gradle">Gradle</h3>
 
-<p>Add following dependency to your app module <code class="highlighter-rouge">build.gradle</code> file:</p>
+<p>Add following dependency to your root project <code class="highlighter-rouge">build.gradle</code> file:</p>
 
-<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">repositories</span> <span class="o">{</span>
-    <span class="n">maven</span> <span class="o">{</span>
-        <span class="n">url</span> <span class="s1">'http://dl.bintray.com/mobisystech/maven'</span>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">allprojects</span> <span class="o">{</span>
+    <span class="n">repositories</span> <span class="o">{</span>
+        <span class="o">...</span>
+        <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s2">"https://dl.bintray.com/mobisystech/maven"</span> <span class="o">}</span>
+        <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s2">"https://jitpack.io"</span> <span class="o">}</span>
+        <span class="o">...</span>
     <span class="o">}</span>
 <span class="o">}</span>
+</code></pre></div></div>
 
-<span class="n">dependencies</span> <span class="o">{</span>
-    <span class="n">implementation</span> <span class="s1">'com.folioreader:folioreader:0.4.4'</span>
+<p>Add following dependency to your app module <code class="highlighter-rouge">build.gradle</code> file:</p>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
+    <span class="o">...</span>
+    <span class="n">implementation</span> <span class="s2">"com.folioreader:folioreader:0.5.1"</span>
+    <span class="o">...</span>
 <span class="o">}</span>
 </code></pre></div></div>
 
@@ -792,6 +808,9 @@
 <h2 id="reporting-issue">Reporting Issue</h2>
 
 <p>Please follow <a href="https://github.com/FolioReader/FolioReader-Android/blob/master/.github/ISSUE_TEMPLATE.md">Issue Template</a> to report any issue.</p>
+
+<h2 id="share-your-application">Share your application</h2>
+<p>If you are using FolioReader in your application, share your application link in <a href="https://github.com/FolioReader/FolioReader-Android/issues/291">this issue</a></p>
 
 <h3 id="credits">Credits</h3>
 <ol>

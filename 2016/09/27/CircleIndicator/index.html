@@ -533,6 +533,14 @@
                 
               
             
+              
+                
+              
+            
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -670,7 +678,7 @@
 
 <h6 id="androidx">AndroidX</h6>
 <div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
-    <span class="n">implementation</span> <span class="s1">'me.relex:circleindicator:2.0.0'</span>
+    <span class="n">implementation</span> <span class="s1">'me.relex:circleindicator:2.1.0'</span>
 <span class="o">}</span>
 </code></pre></div></div>
 
@@ -681,15 +689,43 @@
 </code></pre></div></div>
 
 <h2 id="usage">Usage</h2>
+
+<h6 id="viewpager">ViewPager</h6>
+
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;me.relex.circleindicator.CircleIndicator</span>
 	<span class="na">android:id=</span><span class="s">"@+id/indicator"</span>
 	<span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
 	<span class="na">android:layout_height=</span><span class="s">"48dp"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ViewPager</span> <span class="n">viewpager</span> <span class="o">=</span> <span class="o">(</span><span class="n">ViewPager</span><span class="o">)</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">viewpager</span><span class="o">);</span>
+<span class="n">viewpager</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(</span><span class="n">adapter</span><span class="o">);</span>
+
 <span class="n">CircleIndicator</span> <span class="n">indicator</span> <span class="o">=</span> <span class="o">(</span><span class="n">CircleIndicator</span><span class="o">)</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">indicator</span><span class="o">);</span>
-<span class="n">viewpager</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(</span><span class="n">mPageAdapter</span><span class="o">);</span>
 <span class="n">indicator</span><span class="o">.</span><span class="na">setViewPager</span><span class="o">(</span><span class="n">viewpager</span><span class="o">);</span>
+
+<span class="c1">// optional</span>
+<span class="n">adapter</span><span class="o">.</span><span class="na">registerDataSetObserver</span><span class="o">(</span><span class="n">indicator</span><span class="o">.</span><span class="na">getDataSetObserver</span><span class="o">());</span>
+</code></pre></div></div>
+
+<h6 id="recyclerview">RecyclerView</h6>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;me.relex.circleindicator.CircleIndicator2</span>
+	<span class="na">android:id=</span><span class="s">"@+id/indicator"</span>
+	<span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+	<span class="na">android:layout_height=</span><span class="s">"48dp"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">RecyclerView</span> <span class="n">recyclerView</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">recycler_view</span><span class="o">);</span>
+<span class="n">recyclerView</span><span class="o">.</span><span class="na">setLayoutManager</span><span class="o">(</span><span class="n">layoutManager</span><span class="o">);</span>
+<span class="n">recyclerView</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(</span><span class="n">adapter</span><span class="o">);</span>
+
+<span class="n">PagerSnapHelper</span> <span class="n">pagerSnapHelper</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PagerSnapHelper</span><span class="o">();</span>
+<span class="n">pagerSnapHelper</span><span class="o">.</span><span class="na">attachToRecyclerView</span><span class="o">(</span><span class="n">recyclerView</span><span class="o">);</span>
+
+<span class="n">CircleIndicator2</span> <span class="n">indicator</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">indicator</span><span class="o">);</span>
+<span class="n">indicator</span><span class="o">.</span><span class="na">attachToRecyclerView</span><span class="o">(</span><span class="n">recyclerView</span><span class="o">,</span> <span class="n">pagerSnapHelper</span><span class="o">);</span>
+
+<span class="c1">// optional</span>
+<span class="n">adapter</span><span class="o">.</span><span class="na">registerAdapterDataObserver</span><span class="o">(</span><span class="n">indicator</span><span class="o">.</span><span class="na">getAdapterDataObserver</span><span class="o">());</span>
 </code></pre></div></div>
 
 <h5 id="properties">Properties:</h5>
