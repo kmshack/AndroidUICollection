@@ -21,7 +21,7 @@ kramdown:
   
   
 permalink: pretty
-paginate:  24
+paginate:  16
 
 plugins:
   - jekyll-paginate
