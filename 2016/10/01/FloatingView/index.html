@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Floating View</title>
-  <meta name="description" content="FloatingViewThe Android project is View to display information such as chat in front.To API Level 14 or later are supportedScreenshotsWatch YouTube videoSimp...">
+  <meta name="description" content="FloatingViewThe Android project is View to display information such as chat in front.To API Level 14 or higher are supportedScreenshotsWatch YouTube videoSim...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
@@ -16,18 +16,18 @@
   <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="FloatingViewThe Android project is View to display information such as chat in front.To API Level 14 or later are supportedScreenshotsWatch YouTube videoSimp...">
+  <meta name="description" content="FloatingViewThe Android project is View to display information such as chat in front.To API Level 14 or higher are supportedScreenshotsWatch YouTube videoSim...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="Floating View">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="FloatingViewThe Android project is View to display information such as chat in front.To API Level 14 or later are supportedScreenshotsWatch YouTube videoSimp...">
+  <meta property="og:description" content="FloatingViewThe Android project is View to display information such as chat in front.To API Level 14 or higher are supportedScreenshotsWatch YouTube videoSim...">
   <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/10/01/FloatingView/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="FloatingViewThe Android project is View to display information such as chat in front.To API Level 14 or later are supportedScreenshotsWatch YouTube videoSimp..." />
+  <meta name="twitter:description" content="FloatingViewThe Android project is View to display information such as chat in front.To API Level 14 or higher are supportedScreenshotsWatch YouTube videoSim..." />
 
   
   	<!-- Article specific OG data -->
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/AndroidUICollection/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -669,7 +673,7 @@
           <br>
           <h1 id="floatingview">FloatingView</h1>
 <p>The Android project is View to display information such as chat in front.<br />
-To API Level 14 or later are supported</p>
+To API Level 14 or higher are supported</p>
 
 <h2 id="screenshots">Screenshots</h2>
 <p><a href="./screenshot/animation.gif"></a><br />
@@ -681,7 +685,7 @@ To API Level 14 or later are supported</p>
 <a href="http://youtu.be/nb8M2p0agF4">SimpleFloating</a></p>
 
 <h2 id="requirements">Requirements</h2>
-<p>Target Sdk Version : 27<br />
+<p>Target Sdk Version : 28<br />
 Min Sdk Version : 14</p>
 
 <h2 id="how-to-use">How to use</h2>
@@ -693,7 +697,7 @@ Min Sdk Version : 14</p>
   <span class="o">}</span>
 
   <span class="n">dependencies</span> <span class="o">{</span>
-    <span class="n">implementation</span> <span class="err">'</span><span class="n">com</span><span class="o">.</span><span class="na">github</span><span class="o">.</span><span class="na">recruit</span><span class="o">-</span><span class="nl">lifestyle:FloatingView:</span><span class="mf">2.3</span><span class="o">.</span><span class="mi">2</span><span class="err">'</span>
+    <span class="n">implementation</span> <span class="err">'</span><span class="n">com</span><span class="o">.</span><span class="na">github</span><span class="o">.</span><span class="na">recruit</span><span class="o">-</span><span class="nl">lifestyle:FloatingView:</span><span class="mf">2.4</span><span class="o">.</span><span class="mi">0</span><span class="err">'</span>
   <span class="o">}</span>
 </code></pre></div></div>
 
@@ -729,6 +733,7 @@ Min Sdk Version : 14</p>
 
 <p>5) Add the permission to AndroidManifest</p>
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.SYSTEM_ALERT_WINDOW"</span><span class="nt">/&gt;</span>
+ <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.FOREGROUND_SERVICE"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
 
 <p>6) Define the Service to AndroidManifest</p>
@@ -745,8 +750,26 @@ Min Sdk Version : 14</p>
 </code></pre></div></div>
 
 <p>7) Describe the process to start the Service (run on foreground)</p>
+
+<p>example)</p>
+
+<ul>
+  <li>FloatingViewControlFragment.java</li>
+</ul>
+
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">final</span> <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">activity</span><span class="o">,</span> <span class="n">ChatHeadService</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
     <span class="n">ContextCompat</span><span class="o">.</span><span class="na">startForegroundService</span><span class="o">(</span><span class="n">activity</span><span class="o">,</span> <span class="n">intent</span><span class="o">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li>ChatHeadService.java</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">int</span> <span class="nf">onStartCommand</span><span class="o">(</span><span class="n">Intent</span> <span class="n">intent</span><span class="o">,</span> <span class="kt">int</span> <span class="n">flags</span><span class="o">,</span> <span class="kt">int</span> <span class="n">startId</span><span class="o">)</span> <span class="o">{</span>
+    <span class="o">...</span>
+    <span class="n">startForeground</span><span class="o">(</span><span class="n">NOTIFICATION_ID</span><span class="o">,</span> <span class="n">createNotification</span><span class="o">(</span><span class="k">this</span><span class="o">));</span>
+    <span class="o">...</span>
+<span class="o">}</span>
 </code></pre></div></div>
 
 <p>8) Create notification channel (targetSdkVersion &gt;= 26)</p>
@@ -762,6 +785,30 @@ Min Sdk Version : 14</p>
     <span class="o">}</span>
 <span class="o">}</span>
 
+</code></pre></div></div>
+
+<p>9) Add DisplayCutout process(API Level &gt;= 28)</p>
+
+<p>Call <code class="highlighter-rouge">FloatingViewManager.findCutoutSafeArea(activity)</code>.<br />
+Note: Activity must be portrait oriented.<br />
+Note: You must not set <code class="highlighter-rouge">windowLayoutInDisplayCutoutMode</code> to <code class="highlighter-rouge">never</code>.</p>
+
+<p>example)</p>
+
+<ul>
+  <li>FloatingViewControlFragment.java</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">final</span> <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">activity</span><span class="o">,</span> <span class="n">ChatHeadService</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+<span class="n">intent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">ChatHeadService</span><span class="o">.</span><span class="na">EXTRA_CUTOUT_SAFE_AREA</span><span class="o">,</span> <span class="n">FloatingViewManager</span><span class="o">.</span><span class="na">findCutoutSafeArea</span><span class="o">(</span><span class="n">activity</span><span class="o">));</span>
+<span class="n">ContextCompat</span><span class="o">.</span><span class="na">startForegroundService</span><span class="o">(</span><span class="n">activity</span><span class="o">,</span> <span class="n">intent</span><span class="o">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li>ChatHeadService.java</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mFloatingViewManager</span><span class="o">.</span><span class="na">setSafeInsetRect</span><span class="o">((</span><span class="n">Rect</span><span class="o">)</span> <span class="n">intent</span><span class="o">.</span><span class="na">getParcelableExtra</span><span class="o">(</span><span class="n">EXTRA_CUTOUT_SAFE_AREA</span><span class="o">));</span>
 </code></pre></div></div>
 
 <h2 id="static-options">Static Options</h2>
