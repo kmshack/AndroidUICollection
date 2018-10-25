@@ -5,13 +5,448 @@
     <description>Collection of OpenSource for Android UI.</description>
     <link>http://localhost:4000/AndroidUICollection/</link>
     <atom:link href="http://localhost:4000/AndroidUICollection/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 22 Oct 2018 00:02:03 +0900</pubDate>
-    <lastBuildDate>Mon, 22 Oct 2018 00:02:03 +0900</lastBuildDate>
+    <pubDate>Thu, 25 Oct 2018 23:22:34 +0900</pubDate>
+    <lastBuildDate>Thu, 25 Oct 2018 23:22:34 +0900</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
     
       <item>
+        <title>TicketView</title>
+        <description>&lt;h1 id=&quot;ticketview&quot;&gt;TicketView&lt;/h1&gt;
+
+&lt;p&gt;An Android Library used to implement TicketView in android with normal, rounded and scallop corners.&lt;/p&gt;
+
+&lt;h3 id=&quot;specs&quot;&gt;Specs&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://android-arsenal.com/api?level=15&quot;&gt;[API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)&lt;/a&gt;
+&lt;a href=&quot;https://bintray.com/vipulasri/maven/TicketView/_latestVersion&quot;&gt;[Download](https://api.bintray.com/packages/vipulasri/maven/TicketView/images/download.svg)&lt;/a&gt;
+&lt;a href=&quot;http://www.methodscount.com/?lib=com.vipulasri%3Aticketview%3A1.0.2&quot;&gt;[MethodsCount](https://img.shields.io/badge/Methods%20and%20size-125%20|%2012KB-e91e63.svg)&lt;/a&gt;
+&lt;a href=&quot;https://github.com/vipulasri/Timeline-View/blob/master/LICENSE&quot;&gt;[License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;badgesfeatured-in&quot;&gt;Badges/Featured In&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://android-arsenal.com/details/1/6521&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Ticket%20View-brightgreen.svg?style=flat)&lt;/a&gt;
+&lt;a href=&quot;https://www.androiddevdigest.com/digest-171/&quot;&gt;[AndroidDev Digest](https://img.shields.io/badge/AndroidDev%20Digest-%23171-blue.svg)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/vipulasri/TicketView/blob/master/art/showcase.png&quot;&gt;showcase&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;sample-project&quot;&gt;Sample Project&lt;/h2&gt;
+
+&lt;p&gt;For information : checkout &lt;a href=&quot;https://github.com/vipulasri/TicketView/tree/master/sample&quot;&gt;Sample App Code&lt;/a&gt; in repository.&lt;/p&gt;
+
+&lt;h3 id=&quot;download&quot;&gt;Download&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.vipulasri.ticketview.sample&quot;&gt;[TicketView on Google Play](https://github.com/vipulasri/TicketView/blob/master/art/google_play.png)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;quick-setup&quot;&gt;Quick Setup&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-include-library&quot;&gt;1. Include library&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Using Gradle&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-gradle highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;implementation&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'com.vipulasri:ticketview:1.0.7'&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Using Maven&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-maven&quot;&gt;&amp;lt;dependency&amp;gt;
+    &amp;lt;groupId&amp;gt;com.vipulasri&amp;lt;/groupId&amp;gt;
+    &amp;lt;artifactId&amp;gt;ticketview&amp;lt;/artifactId&amp;gt;
+    &amp;lt;version&amp;gt;1.0.7&amp;lt;/version&amp;gt;
+    &amp;lt;type&amp;gt;pom&amp;lt;/type&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;whats-new&quot;&gt;What’s New&lt;/h3&gt;
+
+&lt;p&gt;See the project’s Releases page for a list of versions with their change logs.&lt;/p&gt;
+
+&lt;h3 id=&quot;view-releases&quot;&gt;&lt;a href=&quot;https://github.com/vipulasri/TicketView/releases&quot;&gt;View Releases&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;If you Watch this repository, GitHub will send you an email every time I publish an update.&lt;/p&gt;
+
+&lt;h3 id=&quot;2-usage&quot;&gt;2. Usage&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;In XML Layout :&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;vipulasri&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ticketview&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;TicketView&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;android:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;layout_width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;android:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;layout_height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;160dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;android:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;layout_marginTop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;60dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;android:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;layout_marginLeft&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;20dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;android:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;layout_marginRight&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;20dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;android:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/ticketView&quot;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;app:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ticketOrientation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;vertical&quot;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;app:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ticketScallopRadius&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;app:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ticketShowBorder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;app:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ticketScallopPositionPercent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;50&quot;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;app:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ticketShowDivider&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;app:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ticketDividerType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;dash&quot;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;app:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ticketDividerPadding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;app:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ticketElevation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;14dp&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Configure using xml attributes or setters in code:&lt;/p&gt;
+
+    &lt;table&gt;
+  &lt;th&gt;Attribute Name&lt;/th&gt;
+  &lt;th&gt;Default Value&lt;/th&gt;
+  &lt;th&gt;Description&lt;/th&gt;
+  &lt;tr&gt;
+      &lt;td&gt;app:ticketOrientation=&quot;vertical&quot;&lt;/td&gt;
+      &lt;td&gt;horizontal&lt;/td&gt;
+      &lt;td&gt;sets orientation of divider and scallop&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+      &lt;td&gt;app:ticketBackgroundColor=&quot;@android:color/black&quot;&lt;/td&gt;
+      &lt;td&gt;white&lt;/td&gt;
+      &lt;td&gt;sets background color&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+      &lt;td&gt;app:ticketScallopRadius=&quot;10dp&quot;&lt;/td&gt;
+      &lt;td&gt;20dp&lt;/td&gt;
+      &lt;td&gt;sets scallop radius&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+      &lt;td&gt;app:ticketScallopPositionPercent=&quot;50&quot;&lt;/td&gt;
+      &lt;td&gt;50&lt;/td&gt;
+      &lt;td&gt;sets position of scallop and divider&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+      &lt;td&gt;app:ticketShowBorder=&quot;false&quot;&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;shows border if `true`&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+      &lt;td&gt;app:ticketBorderWidth=&quot;4dp&quot;&lt;/td&gt;
+      &lt;td&gt;2dp&lt;/td&gt;
+      &lt;td&gt;sets border width&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+      &lt;td&gt;app:ticketBorderColor=&quot;@color/grey&quot;&lt;/td&gt;
+      &lt;td&gt;black&lt;/td&gt;
+      &lt;td&gt;sets border color&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+      &lt;td&gt;app:ticketShowDivider=&quot;true&quot;&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;shows divider if `true`&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+      &lt;td&gt;app:ticketDividerType=&quot;dash&quot;&lt;/td&gt;
+      &lt;td&gt;normal&lt;/td&gt;
+      &lt;td&gt;sets type of divider ie `normal` or `dash`&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+      &lt;td&gt;app:ticketDividerColor=&quot;@color/colorAccent&quot;&lt;/td&gt;
+      &lt;td&gt;dark gray&lt;/td&gt;
+      &lt;td&gt;sets divider color&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+      &lt;td&gt;app:ticketDividerWidth=&quot;2dp&quot;&lt;/td&gt;
+      &lt;td&gt;2dp&lt;/td&gt;
+      &lt;td&gt;sets divider width&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+      &lt;td&gt;app:ticketDividerPadding=&quot;0dp&quot;&lt;/td&gt;
+      &lt;td&gt;10dp&lt;/td&gt;
+      &lt;td&gt;sets divider padding&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+      &lt;td&gt;app:ticketDividerDashGap=&quot;4dp&quot;&lt;/td&gt;
+      &lt;td&gt;4dp&lt;/td&gt;
+      &lt;td&gt;sets divider dash gap&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+      &lt;td&gt;app:ticketDividerDashLength=&quot;8dp&quot;&lt;/td&gt;
+      &lt;td&gt;8dp&lt;/td&gt;
+      &lt;td&gt;sets divider dash length&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+      &lt;td&gt;app:ticketCornerType=&quot;rounded&quot;&lt;/td&gt;
+      &lt;td&gt;normal&lt;/td&gt;
+      &lt;td&gt;sets type of corner ie `normal` or `rounded` or `scallop`&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+      &lt;td&gt;app:ticketCornerRadius=&quot;15dp&quot;&lt;/td&gt;
+      &lt;td&gt;4dp&lt;/td&gt;
+      &lt;td&gt;sets corner radius if corner rounder or scallop&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+      &lt;td&gt;app:ticketElevation=&quot;14dp&quot;&lt;/td&gt;
+      &lt;td&gt;0dp&lt;/td&gt;
+      &lt;td&gt;sets elevation to ticket view on android jellybean and above&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;apps-that-use-this-library&quot;&gt;Apps that use this library&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.labfoodandfriends.nikitagudkovs.jlogOpen_yoga&quot;&gt;Open. Yoga&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.labfoodandfriends.nikitagudkovs.jlog_gym&quot;&gt;Open. Gym&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.appbrain.com/stats/libraries/details/ticketview/ticketview&quot;&gt;Apps using Ticket View, via AppBrain Stats&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If you’re using this library in your app and you’d like to list it here,
+Please let me know via &lt;a href=&quot;mailto:vipulasri.2007@gmail.com&quot;&gt;email&lt;/a&gt;, &lt;a href=&quot;https://github.com/vipulasri/TicketView/pulls&quot;&gt;pull requests&lt;/a&gt; or &lt;a href=&quot;https://github.com/vipulasri/TicketView/issues&quot;&gt;issues&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;special-thanks&quot;&gt;Special Thanks&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/nickbutcher&quot;&gt;&lt;strong&gt;Nick Butcher&lt;/strong&gt;&lt;/a&gt; for helping me out with TicketView Shadow/Elevation.&lt;/p&gt;
+
+&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2017 Vipul Asri
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Thu, 25 Oct 2018 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/AndroidUICollection/2018/10/25/TicketView/</link>
+        <guid isPermaLink="true">http://localhost:4000/AndroidUICollection/2018/10/25/TicketView/</guid>
+        
+        <category>View</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>SwipeLayout</title>
+        <description>&lt;h1 id=&quot;swipe-layout&quot;&gt;Swipe Layout&lt;/h1&gt;
+
+&lt;p&gt;Flexible Android Widget&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/rambler-digital-solutions/swipe-layout-android/blob/master/rambler.mail.gif?raw=true&quot;&gt;sample&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
+
+&lt;p&gt;Download via Gradle:&lt;/p&gt;
+&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;api&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ru.rambler.android:swipe-layout:1.0.16'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Swipe Layout&lt;/strong&gt; may contain up to 3 children with &lt;strong&gt;left&lt;/strong&gt;, &lt;strong&gt;right&lt;/strong&gt; or &lt;strong&gt;center&lt;/strong&gt; gravity attributes.&lt;/p&gt;
+
+&lt;p&gt;You could disable swipe completely calling method &lt;code class=&quot;highlighter-rouge&quot;&gt;setSwipeEnabled(false)&lt;/code&gt; or using XML-attribute &lt;code class=&quot;highlighter-rouge&quot;&gt;'app:swipe_enabled=&quot;false'&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;To disable swipe from one of the side you could use methods &lt;code class=&quot;highlighter-rouge&quot;&gt;setLeftSwipeEnabled(false)&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;setRightSwipeEnabled(false)&lt;/code&gt; or via XML:&lt;/p&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ru.rambler.libs.swipe_layout.SwipeLayout&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:android=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;xmlns:app=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res-auto&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@dimen/item_height&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;app:left_swipe_enabled=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;app:right_swipe_enabled=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Full list of widget attributes can be found &lt;a href=&quot;https://github.com/rambler-digital-solutions/swipe-layout-android/blob/develop/swipe-layout/src/main/res/values/attrs.xml&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ru.rambler.libs.swipe_layout.SwipeLayout&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:android=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;xmlns:app=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res-auto&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@dimen/item_height&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;--CENTER.&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;app:gravity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;center&quot;&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;LinearLayout&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        
+        ...
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/LinearLayout&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;--RIGHT--&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;LinearLayout&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:gravity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;right&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:bring_to_clamp=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;150dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:clamp=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;self&quot;&lt;/span&gt;        
+        &lt;span class=&quot;na&quot;&gt;app:sticky=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;100dp&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+        ...
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/LinearLayout&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;--LEFT--&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;FrameLayout&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;200dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:gravity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;left&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:bring_to_clamp=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;100dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:clamp=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;self&quot;&lt;/span&gt;        
+        &lt;span class=&quot;na&quot;&gt;app:sticky=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;none&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+        ...
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/FrameLayout&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ru.rambler.libs.swipe_layout.SwipeLayout&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+
+    http://www.apache.org/licenses/LICENSE-2.0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Thu, 25 Oct 2018 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/AndroidUICollection/2018/10/25/SwipeLayout/</link>
+        <guid isPermaLink="true">http://localhost:4000/AndroidUICollection/2018/10/25/SwipeLayout/</guid>
+        
+        <category>View</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>BoomMenu</title>
+        <description>&lt;h1 id=&quot;boommenu&quot;&gt;BoomMenu&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/Nightonke&quot;&gt;[Developer](https://img.shields.io/badge/Developer-Nightonke-red.svg)&lt;/a&gt;
+&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Apk/BoomMenu%20V2.1.1.apk?raw=true&quot;&gt;[Demo](https://img.shields.io/badge/Demo-Download-orange.svg)&lt;/a&gt;
+&lt;a href=&quot;https://bintray.com/nightonke/maven/boommenu&quot;&gt;[Download](https://api.bintray.com/packages/nightonke/maven/boommenu/images/download.svg)&lt;/a&gt;
+&lt;a href=&quot;https://www.apache.org/licenses/LICENSE-2.0&quot;&gt;[Lisense](https://img.shields.io/badge/License-Apache%202-lightgrey.svg)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;200-comes-finally&quot;&gt;2.0.0 Comes Finally&lt;/h2&gt;
+
+&lt;p&gt;Approximately 8 months ago, I got an inspiration to creating something that can boom and show menu, which I named it Boom-Menu-Button, BMB. But at that time, I just a fresh-man in Android, knowing little about designing. The codes I wrote serveral months ago are ugly and performed low-efficient.&lt;/p&gt;
+
+&lt;p&gt;Between months, I always think about BMB and try to write a better design pattern for implements of BMB. My first try is &lt;a href=&quot;https://github.com/Nightonke/VHBoomMenuButton&quot;&gt;BMB-iOS&lt;/a&gt;, which contains more family characteristics, for instance, buttons-alignment, text-inside/outside-button.&lt;/p&gt;
+
+&lt;p&gt;And now the BMB-Android 2.0.0 comes.&lt;br /&gt;
+&lt;img src=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Pictures/text-inside-button.gif&quot; width=&quot;250&quot; /&gt;
+&lt;img src=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Pictures/ham-button.gif&quot; width=&quot;250&quot; /&gt;
+&lt;img src=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Pictures/text-outside-button.gif&quot; width=&quot;250&quot; /&gt;
+&lt;img src=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Pictures/actionbar-example.gif&quot; width=&quot;250&quot; /&gt;
+&lt;img src=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Pictures/list-example.gif&quot; width=&quot;250&quot; /&gt;
+&lt;img src=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Pictures/share-example.gif&quot; width=&quot;250&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;gradle--maven&quot;&gt;Gradle &amp;amp; Maven&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;compile 'com.nightonke:boommenu:2.1.1'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;dependency&amp;gt;
+  &amp;lt;groupId&amp;gt;com.nightonke&amp;lt;/groupId&amp;gt;
+  &amp;lt;artifactId&amp;gt;boommenu&amp;lt;/artifactId&amp;gt;
+  &amp;lt;version&amp;gt;2.1.1&amp;lt;/version&amp;gt;
+  &amp;lt;type&amp;gt;pom&amp;lt;/type&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;demo&quot;&gt;Demo&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Apk/BoomMenu.png&quot; width=&quot;200&quot; /&gt;&lt;br /&gt;
+Or by link:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Apk/BoomMenu%20V2.1.1.apk?raw=true&quot;&gt;Boom V2.1.1 in Github&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://fir.im/boommenubutton&quot;&gt;Boom V2.1.1 in Fir&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;wiki&quot;&gt;Wiki&lt;/h2&gt;
+&lt;p&gt;Check the &lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki&quot;&gt;wiki&lt;/a&gt; to use BMB.&lt;/p&gt;
+
+&lt;h3 id=&quot;documentation-chapters&quot;&gt;Documentation Chapters&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Basic-Usage&quot;&gt;Basic Usage&lt;/a&gt;&lt;br /&gt;
+How to use BMB in just several lines of code?&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Simple-Circle-Button&quot;&gt;Simple Circle Button&lt;/a&gt;&lt;br /&gt;
+Add simple circle buttons with just an image for each to BMB.&lt;br /&gt;
+ &lt;img src=&quot;https://github.com/Nightonke/BoomMenu/raw/master/Pictures/BoomButton/SimpleCircleButton.png&quot; width=&quot;400&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Text-Inside-Circle-Button&quot;&gt;Text Inside Circle Button&lt;/a&gt;&lt;br /&gt;
+Add text inside circle buttons with a text and image inside for each to BMB.&lt;br /&gt;
+ &lt;img src=&quot;https://github.com/Nightonke/BoomMenu/raw/master/Pictures/BoomButton/TextInsideCircleButton.png&quot; width=&quot;400&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Text-Outside-Circle-Button&quot;&gt;Text Outside Circle Button&lt;/a&gt;  &lt;br /&gt;
+Add text outside circle buttons with a text and image outside for each to BMB.&lt;br /&gt;
+ &lt;img src=&quot;https://github.com/Nightonke/BoomMenu/raw/master/Pictures/BoomButton/TextOutsideCircleButton.png&quot; width=&quot;400&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Ham-Button&quot;&gt;Ham Button&lt;/a&gt;&lt;br /&gt;
+Add ham buttons with with a title, subtitle and image inside for each to BMB.&lt;br /&gt;
+ &lt;img src=&quot;https://github.com/Nightonke/BoomMenu/raw/master/Pictures/BoomButton/HamButton.png&quot; width=&quot;400&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Share-Style&quot;&gt;Share Style&lt;/a&gt;&lt;br /&gt;
+Make a share-style BMB.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Custom-Position&quot;&gt;Custom Position&lt;/a&gt;&lt;br /&gt;
+ Customize the number and positions of pieces and boom-buttons.&lt;br /&gt;
+ &amp;lt;img src=”https://github.com/Nightonke/BoomMenuButton-Images/raw/master/Android/CustomPosition.gif” width=300&amp;gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Button-Place-Alignments&quot;&gt;Button Place Alignments&lt;/a&gt;&lt;br /&gt;
+Place all the buttons to anywhere on screen.&lt;br /&gt;
+ &lt;img src=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Pictures/button-place-alignment-enum/button-place-alignment-1.png&quot; width=&quot;200&quot; /&gt;
+ &lt;img src=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Pictures/button-place-alignment-enum/button-place-alignment-2.png&quot; width=&quot;200&quot; /&gt;
+ &lt;img src=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Pictures/button-place-alignment-enum/button-place-alignment-3.png&quot; width=&quot;200&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Different-Ways-to-Boom&quot;&gt;Different Ways to Boom&lt;/a&gt;&lt;br /&gt;
+Different animations when the buttons boom or re-boom.&lt;br /&gt;
+ &lt;img src=&quot;https://github.com/Nightonke/BoomMenu/raw/master/Pictures/boom-enum/boom-enum-parabola-2.png&quot; width=&quot;400&quot; /&gt;
+ &lt;img src=&quot;https://github.com/Nightonke/BoomMenu/raw/master/Pictures/boom-enum/boom-enum-parabola-3.png&quot; width=&quot;400&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Ease-Animations-for-Buttons&quot;&gt;Ease Animations for Buttons&lt;/a&gt;&lt;br /&gt;
+Use different and cute ease-animations for buttons.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Different-Order-for-Buttons&quot;&gt;Different Order for Buttons&lt;/a&gt;&lt;br /&gt;
+Different order enum for boom-buttons.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Other-Animations-Attributes-for-Buttons&quot;&gt;Other Animations Attributes for Buttons&lt;/a&gt;&lt;br /&gt;
+Delay, duration, rotate-degrees, frames…&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Click-Event-and-Listener&quot;&gt;Click Event and Listener&lt;/a&gt;&lt;br /&gt;
+Listener for clicking each button or animation-states.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Control-BMB&quot;&gt;Control BMB&lt;/a&gt;&lt;br /&gt;
+Boom or re-boom BMB programmatically.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Use-BMB-in-Action-Bar&quot;&gt;Use BMB in Action Bar&lt;/a&gt;&lt;br /&gt;
+How to put BMB in action bar?&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Use-BMB-in-Tool-Bar&quot;&gt;Use BMB in Tool Bar&lt;/a&gt;&lt;br /&gt;
+How to put BMB in tool bar?&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Use-BMB-in-List&quot;&gt;Use BMB in List&lt;/a&gt;&lt;br /&gt;
+Matters need attention when you need a BMB in list-view or recycler-view.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Use-BMB-in-Fragment&quot;&gt;Use BMB in Fragment&lt;/a&gt;&lt;br /&gt;
+Example for use BMB in fragment.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Attributes-for-BMB-or-Pieces-on-BMB&quot;&gt;Attributes for BMB or Pieces on BMB&lt;/a&gt;&lt;br /&gt;
+How to change the size or margins of dots on BMB?&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Cache-Optimization-&amp;amp;-Boom-Area&quot;&gt;Cache Optimization &amp;amp; Boom Area&lt;/a&gt;&lt;br /&gt;
+What if I want BMB to boom in just its parent-view?&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Change-Boom-Buttons-Dynamically&quot;&gt;Change Boom Buttons Dynamically&lt;/a&gt;&lt;br /&gt;
+Change Boom Buttons Dynamically.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Fade-Views&quot;&gt;Fade Views&lt;/a&gt;&lt;br /&gt;
+ Add faded views on BMB.&lt;br /&gt;
+ &amp;lt;img src=”https://github.com/Nightonke/BoomMenuButton-Images/raw/master/Android/FadeViews.gif” width=300&amp;gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Version-History&quot;&gt;Version History&lt;/a&gt;&lt;br /&gt;
+What’s more for every version?&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Structure-for-BMB&quot;&gt;Structure for BMB&lt;/a&gt;&lt;br /&gt;
+Structure for BMB when I designed it, for sharing and communicating.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;issues--feedbacks&quot;&gt;Issues &amp;amp; Feedbacks&lt;/h2&gt;
+&lt;p&gt;Try to tell me the bugs or enhancements about BMB, or contact me with Nightonke@outlook.com / 2584541288@qq.com. Before doing that, having a careful read on &lt;a href=&quot;https://github.com/Nightonke/BoomMenu&quot;&gt;readme&lt;/a&gt;, &lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki&quot;&gt;wiki&lt;/a&gt; and issues is really helpful.&lt;/p&gt;
+
+&lt;h2 id=&quot;readme-for-version-109-or-below&quot;&gt;ReadMe for Version 1.0.9 or Below&lt;/h2&gt;
+&lt;p&gt;If you still wanna use version 1.0.9 or below, you can find the README below:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/blob/master/README-EN.md&quot;&gt;English README&lt;/a&gt; 
+&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/blob/master/README-ZH.md&quot;&gt;中文文档&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;But I strongly suggest you to use the newest version.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-im-doing&quot;&gt;&lt;a href=&quot;http://huangweiping.me/&quot;&gt;What I’m Doing&lt;/a&gt;&lt;/h2&gt;
+
+</description>
+        <pubDate>Thu, 25 Oct 2018 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/AndroidUICollection/2018/10/25/BoomMenu/</link>
+        <guid isPermaLink="true">http://localhost:4000/AndroidUICollection/2018/10/25/BoomMenu/</guid>
+        
+        <category>View</category>
+        
+        
+      </item>
+    
+      <item>
         <title>SnapTabLayout</title>
-        <description>&lt;p&gt;&lt;a href=&quot;https://bintray.com/nirukk52/maven/SnapTablayout/_latestVersion&quot;&gt; [Download](https://api.bintray.com/packages/nirukk52/maven/SnapTablayout/images/download.svg) &lt;/a&gt; &lt;a href=&quot;https://android-arsenal.com/details/1/7243&quot;&gt;[Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-SnapTabLayout-green.svg?style=flat )&lt;/a&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;a href=&quot;https://bintray.com/nirukk52/maven/SnapTablayout/_latestVersion&quot;&gt; [Download](https://api.bintray.com/packages/nirukk52/maven/SnapTablayout/images/download.svg) &lt;/a&gt; &lt;a href=&quot;https://android-arsenal.com/details/1/7243&quot;&gt;[Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-SnapTabLayout-blue.svg?style=flat )&lt;/a&gt; &lt;a href=&quot;https://www.uplabs.com/posts/snaptablayout&quot;&gt;[Material Up](https://img.shields.io/badge/materialup-SnapTablayout-blue.svg)&lt;/a&gt; &lt;a href=&quot;http://androidweekly.net/issues/issue-332&quot;&gt;[Android_Weekly](https://img.shields.io/badge/androidweekly-%23332-blue.svg)&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;snaptablayout&quot;&gt;SnapTabLayout&lt;/h1&gt;
 
@@ -32,7 +467,7 @@
 
 &lt;h2 id=&quot;-installation&quot;&gt;💻 Installation&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;implementation 'com.fridayof1995.tabanimation:SnapTabLayout:0.0.2'
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;implementation 'com.fridayof1995.tabanimation:SnapTabLayout:0.0.3'
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;-usage&quot;&gt;❔ Usage&lt;/h2&gt;
@@ -99,6 +534,7 @@ This parameter gives a smooth color transition to the background of viewpager as
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;## Bugs and Feedback
 
 For bugs, feature requests, and discussion please use [GitHub Issues](https://github.com/nirukk52/SnapTabLayout/issues).
+If you wish to get your app featured here mail me at niranjan.kurambhatti@gmail.com
 
 ## 👨 Developed By
 
@@ -481,7 +917,7 @@ limitations under the License.
 
 &lt;p&gt;InboxRecyclerView is a library for building expandable descendant navigation, inspired by &lt;a href=&quot;http://androidniceties.tumblr.com/post/100872004063/inbox-by-gmail-google-play-link&quot;&gt;Google Inbox&lt;/a&gt; and &lt;a href=&quot;https://material.io/design/material-studies/reply.html&quot;&gt;Reply&lt;/a&gt;. If you’re interested in learning how it was created, &lt;a href=&quot;https://saket.me/inbox-recyclerview&quot;&gt;here’s a detailed blog post&lt;/a&gt;.&lt;/p&gt;
 
-&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;implementation&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'me.saket:inboxrecyclerview:1.0.0-beta3'&lt;/span&gt;
+&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;implementation&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'me.saket:inboxrecyclerview:1.0.0-rc1'&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;FYI, &lt;code class=&quot;highlighter-rouge&quot;&gt;InboxRecyclerView&lt;/code&gt; has a dependency on &lt;code class=&quot;highlighter-rouge&quot;&gt;androidx&lt;/code&gt;. If you haven’t &lt;a href=&quot;https://android-developers.googleblog.com/2018/05/hello-world-androidx.html&quot;&gt;migrated&lt;/a&gt; from the support library already, this would be a good opportunity.&lt;/p&gt;
@@ -497,6 +933,10 @@ limitations under the License.
   &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
 
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;--&lt;/span&gt;
+  &lt;span class=&quot;err&quot;&gt;This&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;your&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;expandable&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;content&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;will&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;be&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;present.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;One&lt;/span&gt;
+  &lt;span class=&quot;err&quot;&gt;way&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;would&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;be&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;Fragment&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;inside&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;layout&lt;/span&gt;
+  &lt;span class=&quot;err&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;update&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;when&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;any&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;list&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;clicked.&lt;/span&gt;
+
   &lt;span class=&quot;err&quot;&gt;It's&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;recommended&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;that&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;content&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;page&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;has&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;higher&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;z-index&lt;/span&gt;
   &lt;span class=&quot;err&quot;&gt;than&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;list.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;This&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;can&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;be&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;achieved&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;either&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;giving&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;a&lt;/span&gt;
   &lt;span class=&quot;err&quot;&gt;higher&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;view&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;position&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;higher&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;elevation.&lt;/span&gt;
@@ -883,888 +1323,6 @@ A vertical sequence UI component for Android.&lt;/p&gt;
         <category>Layout</category>
         
         <category>Sequence</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>ExpandingCollection</title>
-        <description>&lt;p&gt;&lt;a href=&quot;./header.png&quot;&gt;header&lt;/a&gt;
-&lt;img src=&quot;https://github.com/Ramotion/expanding-collection-android/blob/master/preview.gif&quot; width=&quot;600&quot; height=&quot;450&quot; /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;expandingcollection-for-android&quot;&gt;ExpandingCollection for Android&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;http://twitter.com/Ramotion&quot;&gt;[Twitter](https://img.shields.io/badge/Twitter-@Ramotion-blue.svg?style=flat)&lt;/a&gt;
-&lt;a href=&quot;https://paypal.me/Ramotion&quot;&gt;[Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;check-this-library-on-other-platforms&quot;&gt;Check this library on other platforms:&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/Ramotion/expanding-collection&quot;&gt; 
-&lt;img src=&quot;https://github.com/ramotion/navigation-stack/raw/master/Swift@2x.png&quot; width=&quot;178&quot; height=&quot;81&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Looking for developers for your project?&lt;/strong&gt;&lt;br /&gt;
-This project is maintained by Ramotion, Inc. We specialize in the designing and coding of custom UI for Mobile Apps and Websites.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;mailto:alex.a@ramotion.com?subject=Project%20inquiry%20from%20Github&quot;&gt; 
-&lt;img src=&quot;https://github.com/headndshoulders/gliding-collection/raw/master/contact_our_team@2x.png&quot; width=&quot;187&quot; height=&quot;34&quot; /&gt;&lt;/a&gt; &lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;The &lt;a href=&quot;https://store.ramotion.com/product/htc-one-a9-mockup?utm_source=gthb&amp;amp;utm_medium=special&amp;amp;utm_campaign=expanding-collection-android&quot;&gt;Android mockup&lt;/a&gt; available &lt;a href=&quot;https://store.ramotion.com?utm_source=gthb&amp;amp;utm_medium=special&amp;amp;utm_campaign=expanding-collection-android&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;requirements&quot;&gt;Requirements&lt;/h2&gt;
-&lt;p&gt;​&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Android 4.0 IceCreamSandwich (API lvl 14) or greater&lt;/li&gt;
-  &lt;li&gt;Your favorite IDE&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
-&lt;p&gt;​
-maven repo:&lt;/p&gt;
-
-&lt;p&gt;Gradle:&lt;/p&gt;
-&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s1&quot;&gt;'com.ramotion.expandingcollection:expanding-collection:0.9.0'&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;SBT:&lt;/p&gt;
-&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;libraryDependencies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;com.ramotion.expandingcollection&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;expanding-collection&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;0.9.0&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Maven:&lt;/p&gt;
-&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-	&lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;com.ramotion.expandingcollection&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-	&lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;expanding-collection&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-	&lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;0.9.0&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;basic-usage&quot;&gt;Basic usage&lt;/h2&gt;
-&lt;p&gt;​&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Add a background switcher element &lt;code class=&quot;highlighter-rouge&quot;&gt;ECBackgroundSwitcherView&lt;/code&gt; and a main pager element &lt;code class=&quot;highlighter-rouge&quot;&gt;ECPagerView&lt;/code&gt; to your layout. &lt;code class=&quot;highlighter-rouge&quot;&gt;ECPagerView&lt;/code&gt; should always have &lt;code class=&quot;highlighter-rouge&quot;&gt;match_parent&lt;/code&gt; width and &lt;code class=&quot;highlighter-rouge&quot;&gt;wrap_content&lt;/code&gt; height. You can adjust the vertical position yourself using &lt;strong&gt;alignment/gravity&lt;/strong&gt; or &lt;strong&gt;top margin&lt;/strong&gt;. &lt;code class=&quot;highlighter-rouge&quot;&gt;ECBackgroundSwitcherView&lt;/code&gt; is the dynamic background switcher, so you probably want it to be as big as its parent.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;RelativeLayout&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:android=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;com.ramotion.expandingcollection.ECBackgroundSwitcherView&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/ec_bg_switcher_element&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-        
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;com.ramotion.expandingcollection.ECPagerView&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/ec_pager_element&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_centerInParent=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-        
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/RelativeLayout&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Tune &lt;code class=&quot;highlighter-rouge&quot;&gt;ECPagerView&lt;/code&gt;: setup size of card in collapsed state and height of header in expanded state.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.ramotion.expandingcollection.ECPagerView&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:ec=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res-auto&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/ec_pager_element&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_centerInParent=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;ec:cardHeaderHeightExpanded=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;150dp&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;ec:cardHeight=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;200dp&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;ec:cardWidth=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;250dp&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Expanded card contains two parts: a header part with a background (initially visible when card is collapsed) and a ListView element as content (visible only when card is expanded), so you need an xml layout for the list items.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;FrameLayout&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:android=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;TextView&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:android=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/list_item_text&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;100dp&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_gravity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;center_vertical|center_horizontal&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/colorPrimary&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:textAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;center&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-        
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/FrameLayout&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Also, you need to implement a custom list adapter for the list items by extending the parametrized &lt;code class=&quot;highlighter-rouge&quot;&gt;com.ramotion.expandingcollection.ECCardContentListItemAdapter.java&lt;/code&gt; class,  where &lt;code class=&quot;highlighter-rouge&quot;&gt;T&lt;/code&gt; is type of datasource object for list items inside the card. In the example below, &lt;code class=&quot;highlighter-rouge&quot;&gt;T&lt;/code&gt; is just a string object. It’s a pretty straightforward implementation with a common view holder pattern.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;CardListItemAdapter&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ECCardContentListItemAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;CardListItemAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@NonNull&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Context&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;@NonNull&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;objects&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;list_item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;objects&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@NonNull&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;@Nullable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;convertView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;@NonNull&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ViewGroup&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;ViewHolder&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;viewHolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rowView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;convertView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rowView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;LayoutInflater&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inflater&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LayoutInflater&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;rowView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inflater&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;inflate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;list_item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;viewHolder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ViewHolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;viewHolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;itemText&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TextView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rowView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;list_item_text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;rowView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTag&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;viewHolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;viewHolder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ViewHolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rowView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getTag&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-        &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getItem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;viewHolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;itemText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rowView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ViewHolder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;TextView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;itemText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ol&gt;
-  &lt;li&gt;Your data class must implement the &lt;code class=&quot;highlighter-rouge&quot;&gt;com.ramotion.expandingcollection.ECCardData.java&lt;/code&gt; interface where &lt;code class=&quot;highlighter-rouge&quot;&gt;T&lt;/code&gt; is type of datasource object for list items inside the card.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;CardDataImpl&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ECCardData&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cardTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Integer&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mainBackgroundResource&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Integer&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headBackgroundResource&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;listItems&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Integer&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getMainBackgroundResource&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mainBackgroundResource&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Integer&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getHeadBackgroundResource&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headBackgroundResource&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getListItems&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;listItems&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Almost done The last thing we need to do is provide our dataset to a pager element through a pager adapter. It’s just an implementation of the abstract class &lt;code class=&quot;highlighter-rouge&quot;&gt;com.ramotion.expandingcollection.ECPagerViewAdapter.java&lt;/code&gt; with one abstract method, so it can be easily implemented inside your activity.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MainActivity&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Activity&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-   &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ECPagerView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ecPagerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-   &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-   &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Bundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-       &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-       &lt;span class=&quot;n&quot;&gt;setContentView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;activity_main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-       &lt;span class=&quot;c1&quot;&gt;// Get pager from layout&lt;/span&gt;
-       &lt;span class=&quot;n&quot;&gt;ecPagerView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ECPagerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ec_pager_element&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-       &lt;span class=&quot;c1&quot;&gt;// Generate example dataset&lt;/span&gt;
-       &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ECCardData&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dataset&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CardDataImpl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;generateExampleData&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-
-       &lt;span class=&quot;c1&quot;&gt;// Implement pager adapter and attach it to pager view&lt;/span&gt;
-       &lt;span class=&quot;n&quot;&gt;ecPagerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setPagerViewAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ECPagerViewAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getApplicationContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dataset&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-           &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-           &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;instantiateCard&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LayoutInflater&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inflaterService&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ViewGroup&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ListView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ECCardData&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-               &lt;span class=&quot;c1&quot;&gt;// Data object for current card&lt;/span&gt;
-               &lt;span class=&quot;n&quot;&gt;CardDataImpl&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cardData&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CardDataImpl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-               &lt;span class=&quot;c1&quot;&gt;// Set adapter and items to current card content list&lt;/span&gt;
-               &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CardListItemAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getApplicationContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cardData&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getListItems&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()));&lt;/span&gt;
-               &lt;span class=&quot;c1&quot;&gt;// Also some visual tuning can be done here&lt;/span&gt;
-               &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setBackgroundColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;WHITE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-               &lt;span class=&quot;c1&quot;&gt;// Here we can create elements for head view or inflate layout from xml using inflater service&lt;/span&gt;
-               &lt;span class=&quot;n&quot;&gt;TextView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cardTitle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TextView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getApplicationContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
-               &lt;span class=&quot;n&quot;&gt;cardTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cardData&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getCardTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
-               &lt;span class=&quot;n&quot;&gt;cardTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTextSize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;COMPLEX_UNIT_DIP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-               &lt;span class=&quot;n&quot;&gt;FrameLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LayoutParams&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;layoutParams&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FrameLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LayoutParams&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FrameLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LayoutParams&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;WRAP_CONTENT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FrameLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LayoutParams&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;WRAP_CONTENT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-               &lt;span class=&quot;n&quot;&gt;layoutParams&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;gravity&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Gravity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;CENTER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-               &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cardTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;layoutParams&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-               &lt;span class=&quot;c1&quot;&gt;// Card toggling by click on head element&lt;/span&gt;
-               &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setOnClickListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;View&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;OnClickListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-                   &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-                   &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-                       &lt;span class=&quot;n&quot;&gt;ecPagerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toggle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-                   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-               &lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
-           &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-       &lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
-
-       &lt;span class=&quot;c1&quot;&gt;// Add background switcher to pager view&lt;/span&gt;
-       &lt;span class=&quot;n&quot;&gt;ecPagerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setBackgroundSwitcherView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ECBackgroundSwitcherView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ec_bg_switcher_element&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-
-   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-   &lt;span class=&quot;c1&quot;&gt;// Card collapse on back pressed&lt;/span&gt;
-   &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-   &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onBackPressed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-       &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ecPagerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;collapse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt;
-           &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onBackPressed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;You can find this and other, more complex, examples in this repository ​&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;This library is a part of a &lt;a href=&quot;https://github.com/Ramotion/android-ui-animation-components-and-libraries&quot;&gt;&lt;b&gt;selection of our best UI open-source projects.&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;licence&quot;&gt;Licence&lt;/h2&gt;
-&lt;p&gt;​
-Expanding Collection is released under the MIT license.
-See &lt;a href=&quot;./LICENSE.md&quot;&gt;LICENSE&lt;/a&gt; for details.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;get-the-showroom-app-for-android-to-give-it-a-try&quot;&gt;Get the Showroom App for Android to give it a try&lt;/h1&gt;
-&lt;p&gt;Try our UI components in our mobile app. Contact us if interested.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.ramotion.showroom&quot;&gt;
-&lt;img src=&quot;https://raw.githubusercontent.com/Ramotion/react-native-circle-menu/master/google_play@2x.png&quot; width=&quot;104&quot; height=&quot;34&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;mailto:alex.a@ramotion.com?subject=Project%20inquiry%20from%20Github&quot;&gt; 
-&lt;img src=&quot;https://github.com/ramotion/gliding-collection/raw/master/contact_our_team@2x.png&quot; width=&quot;187&quot; height=&quot;34&quot; /&gt;&lt;/a&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;Follow us for the latest updates 
-&lt;br /&gt;
-&lt;a href=&quot;https://goo.gl/rPFpid&quot;&gt;
-&lt;img src=&quot;https://i.imgur.com/ziSqeSo.png/&quot; width=&quot;156&quot; height=&quot;28&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 26 Sep 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/AndroidUICollection/2018/09/26/ExpandingCollection/</link>
-        <guid isPermaLink="true">http://localhost:4000/AndroidUICollection/2018/09/26/ExpandingCollection/</guid>
-        
-        <category>Material</category>
-        
-        <category>Card</category>
-        
-        <category>Peek</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>MaterialChipsInput</title>
-        <description>&lt;h2 id=&quot;not-currently-maintained&quot;&gt;[NOT CURRENTLY MAINTAINED]&lt;/h2&gt;
-
-&lt;h1 id=&quot;materialchipsinput&quot;&gt;MaterialChipsInput&lt;/h1&gt;
-
-&lt;p&gt;Implementation of Material Design &lt;a href=&quot;https://material.io/guidelines/components/chips.html&quot;&gt;Chips&lt;/a&gt; component for Android. The library provides two views : &lt;a href=&quot;#chipsinput&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ChipsInput&lt;/code&gt;&lt;/a&gt; and &lt;a href=&quot;#chipview&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ChipView&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://jitpack.io/#pchmn/MaterialChipsInput&quot;&gt;[Release](https://jitpack.io/v/pchmn/MaterialChipsInput.svg)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/pchmn/MaterialChipsInput/blob/master/docs/demo2.gif&quot; alt=&quot;Demo&quot; height=&quot;600px&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;demo&quot;&gt;Demo&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/pchmn/MaterialChipsInput/raw/master/docs/material-chips-input-sample-v1.0.8.apk&quot;&gt;Download sample-v1.0.8.apk&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;setup&quot;&gt;Setup&lt;/h2&gt;
-
-&lt;p&gt;To use this library your &lt;code class=&quot;highlighter-rouge&quot;&gt;minSdkVersion&lt;/code&gt; must be &amp;gt;= 15.&lt;/p&gt;
-
-&lt;p&gt;In your project level build.gradle :&lt;/p&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;allprojects&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;repositories&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;maven&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;https://jitpack.io&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;       
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;In your app level build.gradle :&lt;/p&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;pchmn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;MaterialChipsInput:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;      
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;chipsinput&quot;&gt;ChipsInput&lt;/h2&gt;
-&lt;p&gt;This view implements the Material Design &lt;a href=&quot;https://material.io/guidelines/components/chips.html#chips-contact-chips&quot;&gt;Contact chips component&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;It is composed of a collection of chips (&lt;code class=&quot;highlighter-rouge&quot;&gt;ChipView&lt;/code&gt;) and an input (&lt;code class=&quot;highlighter-rouge&quot;&gt;EditText&lt;/code&gt;). Touching a chip open a full detailed view (if non disable). The &lt;a href=&quot;#materialchipsinput&quot;&gt;GIF&lt;/a&gt; above describes the behavior of the &lt;code class=&quot;highlighter-rouge&quot;&gt;ChipsInput&lt;/code&gt; view.&lt;/p&gt;
-
-&lt;p&gt;But everything is configurable (optional avatar icon, optional full detailed view, …) so you can use the &lt;code class=&quot;highlighter-rouge&quot;&gt;ChipsInput&lt;/code&gt; view for non contact chips.&lt;/p&gt;
-&lt;h3 id=&quot;basic-usage&quot;&gt;Basic Usage&lt;/h3&gt;
-
-&lt;h4 id=&quot;xml&quot;&gt;XML&lt;/h4&gt;
-&lt;p&gt;Use the ChipsInput view in your layout with default options  :&lt;/p&gt;
-
-&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.pchmn.materialchips.ChipsInput&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/chips_input&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:hint=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Enter a name&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;You can also customize it (&lt;a href=&quot;#chipsinput-attributes&quot;&gt;see&lt;/a&gt; all attributes) :&lt;/p&gt;
-&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.pchmn.materialchips.ChipsInput&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/chips_input&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:hint=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Enter a name&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:hintColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/customColor&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:textColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/customColor&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:maxRows=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;3&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:chip_labelColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/customColor&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:chip_hasAvatarIcon=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:chip_backgroundColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/customColor&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:chip_deletable=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:chip_deleteIconColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/customColor&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:chip_detailed_textColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/customColor&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:chip_detailed_backgroundColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/customColor&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:chip_detailed_deleteIconColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/customColor&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:filterable_list_backgroundColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/customColor&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:filterable_list_textColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/customColor&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;suggestions&quot;&gt;Suggestions&lt;/h4&gt;
-&lt;p&gt;You can pass a &lt;code class=&quot;highlighter-rouge&quot;&gt;List&amp;lt;? extends ChipInterface&amp;gt;&lt;/code&gt; object, which represents your suggestions, to the &lt;code class=&quot;highlighter-rouge&quot;&gt;ChipsInput&lt;/code&gt; view, so it will work as a
-&lt;code class=&quot;highlighter-rouge&quot;&gt;MultiAutoCompleteTextView&lt;/code&gt; :&lt;/p&gt;
-
-&lt;h5 id=&quot;1-create-a-class-that-implements-chipinterface-or-use-directly-the-chip-class-included-in-the-library-&quot;&gt;1. Create a class that implements &lt;code class=&quot;highlighter-rouge&quot;&gt;ChipInterface&lt;/code&gt; (or use directly the &lt;a href=&quot;https://github.com/pchmn/MaterialChipsInput/blob/master/library/src/main/java/com/pchmn/materialchips/model/Chip.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Chip&lt;/code&gt;&lt;/a&gt; class included in the library) :&lt;/h5&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ContactChip&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ChipInterface&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h5 id=&quot;2-then-in-your-activity-or-anything-else-build-your-suggestion-list-of-contactchip-or-chip-and-pass-it-to-the-chipsinput-view-&quot;&gt;2. Then in your activity, or anything else, build your suggestion list of &lt;code class=&quot;highlighter-rouge&quot;&gt;ContactChip&lt;/code&gt; (or &lt;code class=&quot;highlighter-rouge&quot;&gt;Chip&lt;/code&gt;) and pass it to the &lt;code class=&quot;highlighter-rouge&quot;&gt;ChipsInput&lt;/code&gt; view :&lt;/h5&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// get ChipsInput view&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;ChipsInput&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chipsInput&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ChipsInput&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;chips_input&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// build the ContactChip list&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ContactChip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;contactList&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;contactList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ContactChip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt; 
-&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// pass the ContactChip list&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;chipsInput&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setFilterableList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;contactList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;get-the-selected-list&quot;&gt;Get the selected list&lt;/h4&gt;
-&lt;p&gt;When you want you can get the current list of chips selected by the user :&lt;/p&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// get the list&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ContactChip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;contactsSelected&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ContactChip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chipsInput&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getSelectedChipList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;That’s it, there is nothing more to do.
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;advanced-usage&quot;&gt;Advanced Usage&lt;/h3&gt;
-&lt;h4 id=&quot;chipslistener&quot;&gt;ChipsListener&lt;/h4&gt;
-&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;ChipsInput&lt;/code&gt; view provides a listener to interact with the input :&lt;/p&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;chipsInput&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addChipsListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ChipsInput&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ChipsListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-            &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onChipAdded&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ChipInterface&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;newSize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;c1&quot;&gt;// chip added&lt;/span&gt;
-                &lt;span class=&quot;c1&quot;&gt;// newSize is the size of the updated selected chip list&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-            &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-            &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onChipRemoved&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ChipInterface&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;newSize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;c1&quot;&gt;// chip removed&lt;/span&gt;
-                &lt;span class=&quot;c1&quot;&gt;// newSize is the size of the updated selected chip list&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-            &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-            &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onTextChanged&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CharSequence&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;c1&quot;&gt;// text changed&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;add-and-remove-chips-manually&quot;&gt;Add and remove chips manually&lt;/h4&gt;
-&lt;p&gt;You don’t have to pass a &lt;code class=&quot;highlighter-rouge&quot;&gt;List&amp;lt;? extends ChipInterface&amp;gt;&lt;/code&gt; to the &lt;code class=&quot;highlighter-rouge&quot;&gt;ChipsInput&lt;/code&gt; view and you can do the trick manually. Thanks to the &lt;code class=&quot;highlighter-rouge&quot;&gt;ChipsListener&lt;/code&gt; you can be notified when the user is typing and do your own work.&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;ChipsInput&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chipsInput&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ChipsInput&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;chips_input&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h5 id=&quot;add-a-chip&quot;&gt;Add a chip&lt;/h5&gt;
-&lt;p&gt;There are multiple implementations :&lt;/p&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;chipsInput&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addChip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ChipInterface&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// or&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;chipsInput&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addChip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Drawable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;icon&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// or&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;chipsInput&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addChip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Drawable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;icon&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// or&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;chipsInput&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addChip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Uri&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;iconUri&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// or&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;chipsInput&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addChip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Uri&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;iconUri&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// or&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;chipsInput&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addChip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h5 id=&quot;remove-a-chip&quot;&gt;Remove a chip&lt;/h5&gt;
-&lt;p&gt;There are multiple implementations :&lt;/p&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;chipsInput&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;removeChip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ChipInterface&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// or&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;chipsInput&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;removeChipById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// or&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;chipsInput&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;removeChipByLabel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// or&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;chipsInput&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;removeChipByInfo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;After you added or removed a chip the &lt;code class=&quot;highlighter-rouge&quot;&gt;ChipsListener&lt;/code&gt; will be triggered.&lt;/p&gt;
-
-&lt;h5 id=&quot;get-the-selected-list-1&quot;&gt;Get the selected list&lt;/h5&gt;
-&lt;p&gt;When you want you can get the current list of chips selected by the user :&lt;/p&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// get the list&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ChipInterface&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;contactsSelected&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chipsInput&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getSelectedChipList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;chipsinput-attributes&quot;&gt;ChipsInput attributes&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Attribute&lt;/th&gt;
-      &lt;th&gt;Type&lt;/th&gt;
-      &lt;th&gt;Description&lt;/th&gt;
-      &lt;th&gt;Default&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:hint&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;string&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Hint of the input when there is no chip&lt;/td&gt;
-      &lt;td&gt;null&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:hintColor&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Hint color&lt;/td&gt;
-      &lt;td&gt;android default&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:textColor&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Text color when user types&lt;/td&gt;
-      &lt;td&gt;android default&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:maxRows&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;int&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Max rows of chips&lt;/td&gt;
-      &lt;td&gt;2&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:chip_labelColor&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Label color of the chips&lt;/td&gt;
-      &lt;td&gt;android default&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:chip_hasAvatarIcon&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;boolean&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Whether the chips have avatar icon or not&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:chip_deletable&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;boolean&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Whether the chips are deletable (delete icon) or not&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:chip_deleteIconColor&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Delete icon color of the chips&lt;/td&gt;
-      &lt;td&gt;white/black&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:chip_backgroundColor&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Background color of the chips&lt;/td&gt;
-      &lt;td&gt;grey&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:showChipDetailed&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;boolean&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Whether to show full detailed view or not when touching a chip&lt;/td&gt;
-      &lt;td&gt;true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:chip_detailed_textColor&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Full detailed view text color&lt;/td&gt;
-      &lt;td&gt;white/balck&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:chip_detailed_backgroundColor&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Background color of the full detailed view&lt;/td&gt;
-      &lt;td&gt;colorAccent&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:chip_detailed_deleteIconColor&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Delete icon color of the full detailed view&lt;/td&gt;
-      &lt;td&gt;white/black&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:filterable_list_backgroundColor&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Background color of the filterable list of suggestions&lt;/td&gt;
-      &lt;td&gt;white&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:filterable_list_textColor&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Text color of the filterable list of suggestions&lt;/td&gt;
-      &lt;td&gt;black&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;chipview&quot;&gt;ChipView&lt;/h2&gt;
-&lt;p&gt;This view implements the chip component according to the &lt;a href=&quot;https://material.io/guidelines/components/chips.html#chips-usage&quot;&gt;Material Design guidelines&lt;/a&gt; with configurable options (background color, text color, …).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/pchmn/MaterialChipsInput/blob/master/docs/chips-examples.png&quot; alt=&quot;Chips examples&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;usage&quot;&gt;Usage&lt;/h3&gt;
-&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.pchmn.materialchips.ChipView&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;app:label=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Chip 1&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-            
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.pchmn.materialchips.ChipView&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;app:label=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Chip 4&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;app:hasAvatarIcon=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.pchmn.materialchips.ChipView&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;app:label=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Chip 6&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;app:labelColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@android:color/white&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;app:avatarIcon=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@drawable/avatar&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;app:backgroundColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@android:color/holo_blue_light&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;app:deletable=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;app:deleteIconColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@android:color/white&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-    
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;chipview-attributes&quot;&gt;ChipView attributes&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Attribute&lt;/th&gt;
-      &lt;th&gt;Type&lt;/th&gt;
-      &lt;th&gt;Description&lt;/th&gt;
-      &lt;th&gt;Default&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:label&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;string&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Label of the chip&lt;/td&gt;
-      &lt;td&gt;null&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:labelColor&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Label color of the chip&lt;/td&gt;
-      &lt;td&gt;android default&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:hasAvatarIcon&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;boolean&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Whether the chip has avatar icon or not&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:avatarIcon&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;drawable&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Avatar icon resource&lt;/td&gt;
-      &lt;td&gt;null&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:deletable&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;boolean&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Whether the chip is deletable (delete icon) or not&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:deleteIconColor&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Delete icon color of the chip&lt;/td&gt;
-      &lt;td&gt;grey&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:backgroundColor&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Background color of the chip&lt;/td&gt;
-      &lt;td&gt;grey&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;listeners&quot;&gt;Listeners&lt;/h3&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;ChipView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chip&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ChipView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;chip_view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;On chip click listener :&lt;/p&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;chip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setOnChipClicked&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;View&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;OnClickListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// handle click    &lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;On delete button click listener :&lt;/p&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;chip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setOnDeleteClicked&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;View&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;OnClickListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// handle click     &lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;sample&quot;&gt;Sample&lt;/h2&gt;
-
-&lt;p&gt;A sample app with some use cases of the library is available on this &lt;a href=&quot;https://github.com/pchmn/MaterialChipsInput/tree/master/sample&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;You can also download the sample APK &lt;a href=&quot;https://github.com/pchmn/MaterialChipsInput/raw/master/docs/material-chips-input-sample-v1.0.0.apk&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;credits&quot;&gt;Credits&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/DoodleScheduling/android-material-chips&quot;&gt;Android Material Chips&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/robertlevonyan/materialChipView?utm_source=android-arsenal.com&amp;amp;utm_medium=referral&amp;amp;utm_campaign=5396&quot;&gt;Material Chip View&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/BelooS/ChipsLayoutManager&quot;&gt;ChipsLayoutManager&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2017 pchmn
-
-Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Mon, 17 Apr 2017 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/AndroidUICollection/2017/04/17/MaterialChipsInput/</link>
-        <guid isPermaLink="true">http://localhost:4000/AndroidUICollection/2017/04/17/MaterialChipsInput/</guid>
-        
-        <category>Material</category>
-        
-        <category>Input</category>
-        
-        <category>Tag</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>AdaptiveTableLayout</title>
-        <description>&lt;h1 id=&quot;adaptivetablelayout-awesomehttpscdnrawgitcomsindresorhusawesomed7305f38d29fed78fa85652e3a63e154dd8e8829mediabadgesvg--&quot;&gt;AdaptiveTableLayout &lt;a href=&quot;https://github.com/sindresorhus/awesome&quot;&gt;[Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)&lt;/a&gt; &lt;img src=&quot;https://www.cleveroad.com/public/comercial/label-android.svg&quot; height=&quot;19&quot; /&gt; &lt;a href=&quot;https://www.cleveroad.com/?utm_source=github&amp;amp;utm_medium=label&amp;amp;utm_campaign=contacts&quot;&gt;&lt;img src=&quot;https://www.cleveroad.com/public/comercial/label-cleveroad.svg&quot; height=&quot;19&quot; /&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;/images/header.png&quot;&gt;Header image&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;welcome-the-new-csv-library-adaptivetablelayout-for-android-by-cleveroad&quot;&gt;Welcome the new CSV Library AdaptiveTableLayout for Android by Cleveroad&lt;/h2&gt;
-
-&lt;p&gt;Pay your attention to our new library that makes it possible to read, edit and write CSV files. If you use Android-based device, you can easily use our library for implementation of all aforementioned actions. In addition, you will be able to change rows and columns, display the picture via link, and align the required data. It will surely help you cope with your tasks faster and make your output higher. AdaptiveTableLayout library is at your disposal.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/images/demo.gif&quot;&gt;Demo image&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;take-a-look-at-the-animation-of-adaptivetablelayout-for-android-on-youtube-in-hd-quality-for-using-this-library-in-a-valuable-way-you-can-find-our-csv-editor-app-on-the-google-play-store-or-on-appetize&quot;&gt;Take a look at the animation of &lt;strong&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=YTwpEPIlhuE&quot;&gt;AdaptiveTableLayout for Android on YouTube&lt;/a&gt;&lt;/strong&gt; in HD quality. For using this library in a valuable way, you can find our CSV Editor app on the &lt;a target=&quot;_blank&quot; href=&quot;https://play.google.com/store/apps/details?id=com.cleveroad.tablelayout&quot;&gt;Google Play Store&lt;/a&gt; or on &lt;a target=&quot;_blank&quot; href=&quot;https://appetize.io/app/wgacjavwr57fec241bq802gzcg?device=nexus5&amp;amp;scale=75&amp;amp;orientation=portrait&amp;amp;osVersion=7.0&quot;&gt;Appetize&lt;/a&gt;.&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=YTwpEPIlhuE&quot;&gt;[Awesome](/images/youtube.png)&lt;/a&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.cleveroad.tablelayout&quot;&gt;[Awesome](/images/google-play.png)&lt;/a&gt;&lt;a href=&quot;https://appetize.io/app/wgacjavwr57fec241bq802gzcg?device=nexus5&amp;amp;scale=75&amp;amp;orientation=portrait&amp;amp;osVersion=7.0&quot;&gt;[Awesome](/images/appertize.png)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;The main goal of the library is to apply all its functions in the process of working with CSV files. Moreover, it will give you a competitive edge over others.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.cleveroad.com/?utm_source=github&amp;amp;utm_medium=label&amp;amp;utm_campaign=contacts&quot;&gt;[Awesome](/images/logo-footer.png)&lt;/a&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;setup-and-usage&quot;&gt;Setup and usage&lt;/h2&gt;
-&lt;h3 id=&quot;installation&quot;&gt;Installation&lt;/h3&gt;
-&lt;p&gt;by gradle :&lt;/p&gt;
-&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;com.cleveroad:adaptivetablelayout:1.1.1&quot;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h3 id=&quot;features&quot;&gt;Features&lt;/h3&gt;
-&lt;p&gt;Library consists of three parts:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;AdaptiveTableLayout (View)&lt;/li&gt;
-  &lt;li&gt;LinkedAdaptiveTableAdapter (Adapter)&lt;/li&gt;
-  &lt;li&gt;ViewHolderImpl (ViewHolder)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;usage&quot;&gt;Usage&lt;/h3&gt;
-&lt;h4 id=&quot;adaptivetablelayout&quot;&gt;AdaptiveTableLayout&lt;/h4&gt;
-&lt;pre&gt;&lt;code class=&quot;language-XML&quot;&gt;  &amp;lt;com.cleveroad.adaptivetablelayout.AdaptiveTableLayout
-        android:id=&quot;@+id/tableLayout&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;match_parent&quot;      
-        app:cellMargin=&quot;1dp&quot;
-        app:fixedHeaders=&quot;true&quot;
-        app:solidRowHeaders=&quot;true&quot;
-        app:dragAndDropEnabled=&quot;true&quot;/&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;|  attribute name | description |
-|—|—|
-| cellMargin  | margin between cards |
-| fixedHeaders  | fixed headers mode. If enable, headers always will be displayed in the corners. |
-| solidRowHeaders  | solid row headers mode. If enable, row header will change its position with dragging row. |
-| dragAndDropEnabled | drag and drop mode. If enable, column or row will change its position with dragging after long press on row or column header. |&lt;/p&gt;
-
-&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Return fixed headers mode&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isHeaderFixed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; 
-
-&lt;span class=&quot;c1&quot;&gt;// Return solid row headers mode&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isSolidRowHeader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Return drag and drop mode&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isDragAndDropEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Return true if layout direction is RightToLeft&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isRTL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Set fixed headers mode&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setHeaderFixed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headerFixed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Set solid row headers mode&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setSolidRowHeader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;solidRowHeader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Set drag and drop mode&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setDragAndDrow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;enabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;cm&quot;&gt;/**
- * Set adapter with IMMUTABLE data.
- * Create wrapper with links between layout rows, columns and data rows, columns.
- * On drag and drop event just change links but not change data in adapter.
- */&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@Nullable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AdaptiveTableAdapter&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;cm&quot;&gt;/**
- * Set adapter with MUTABLE data.
- * You need to implement switch rows and columns methods.    
- * DO NOT USE WITH BIG DATA
- */&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@Nullable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DataAdaptiveTableLayoutAdapter&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Notify any registered observers that the data set has changed.&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;notifyDataSetChanged&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Notify any registered observers that the item has changed.&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;notifyItemChanged&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rowIndex&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;columnIndex&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Notify any registered observers that the row with rowIndex has changed.&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;notifyRowChanged&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rowIndex&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Notify any registered observers that the column with columnIndex has changed.&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;notifyColumnChanged&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;columnIndex&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h4 id=&quot;adapter&quot;&gt;Adapter&lt;/h4&gt;
-&lt;p&gt;You could use adapter interfaces: AdaptiveTableAdapter and DataAdaptiveTableLayoutAdapter. But to simplify the usage, library contains base adapters: &lt;b&gt;BaseDataAdaptiveTableLayoutAdapter&lt;/b&gt; and &lt;b&gt;LinkedAdaptiveTableAdapter&lt;/b&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;BaseDataAdaptiveTableLayoutAdapter&lt;/b&gt; - simple adapter which works with light data. WARNING on each row/column switch, original data will be changed.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;LinkedAdaptiveTableAdapter&lt;/b&gt; - adapter which works with heavy data. WARNING This type of adapter doesn’t change original data. It contains matrix with changed items with links on it. To get changed data you need use AdaptiveTableLayout.getLinkedAdapterRowsModifications() and AdaptiveTableLayout.getLinkedAdapterColumnsModifications().
-Don’t forget to check AdaptiveTableLayout.isSolidRowHeader() flag. If it’s false, you need to ignore switching first elemet in each row.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;For both adapters you need to know all rows/columns widths, heights and rows/columns count before set adapter to AdaptiveTableLayout.&lt;/b&gt;&lt;/p&gt;
-&lt;h4 id=&quot;fragmentactivity-usage&quot;&gt;Fragment/Activity usage&lt;/h4&gt;
-&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;mTableLayout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AdaptiveTableLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;tableLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;mTableAdapter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SampleLinkedTableAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mCsvFileDataSource&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;mTableAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setOnItemClickListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(...);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;mTableAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setOnItemLongClickListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(...);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;mTableLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mTableAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;mTableLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setHeaderFixed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;mTableLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setSolidRowHeader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;mTableAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;notifyDataSetChanged&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h4 id=&quot;xml-usage&quot;&gt;XML usage&lt;/h4&gt;
-&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;cleveroad&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;adaptivetablelayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;AdaptiveTableLayout&lt;/span&gt;
-        &lt;span class=&quot;nl&quot;&gt;android:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;@+id/tableLayout&quot;&lt;/span&gt;
-        &lt;span class=&quot;nl&quot;&gt;android:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;layout_width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-        &lt;span class=&quot;nl&quot;&gt;android:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;layout_height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-        &lt;span class=&quot;nl&quot;&gt;android:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;layout_below&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;@+id/toolbar&quot;&lt;/span&gt;
-        &lt;span class=&quot;nl&quot;&gt;app:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cellMargin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;1dp&quot;&lt;/span&gt;
-        &lt;span class=&quot;nl&quot;&gt;app:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fixedHeaders&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;true&quot;&lt;/span&gt;
-        &lt;span class=&quot;nl&quot;&gt;app:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;solidRowHeaders&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;true&quot;&lt;/span&gt;
-        &lt;span class=&quot;nl&quot;&gt;app:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dragAndDropEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;true&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h4 id=&quot;adapter-usage&quot;&gt;Adapter usage&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&quot;sample/src/main/java/com/cleveroad/sample/adapter/SampleLinkedTableAdapter.java&quot;&gt; Adapter sample &lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;changelog&quot;&gt;Changelog&lt;/h2&gt;
-&lt;p&gt;See &lt;a href=&quot;/CHANGELOG.md&quot;&gt;changelog history&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;support&quot;&gt;Support&lt;/h3&gt;
-&lt;p&gt;If you have any questions, issues or propositions, please create a &lt;a href=&quot;../../issues/new&quot;&gt;new issue&lt;/a&gt; in this repository.&lt;/p&gt;
-
-&lt;p&gt;If you want to hire us, send an email to sales@cleveroad.com or fill the form on &lt;a href=&quot;https://www.cleveroad.com/contact&quot;&gt;contact page&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Follow us:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.facebook.com/cleveroadinc/&quot;&gt;[Awesome](/images/social/facebook.png)&lt;/a&gt;   &lt;a href=&quot;https://twitter.com/cleveroadinc&quot;&gt;[Awesome](/images/social/twitter.png)&lt;/a&gt;   &lt;a href=&quot;https://plus.google.com/+CleveroadInc&quot;&gt;[Awesome](/images/social/google.png)&lt;/a&gt;   &lt;a href=&quot;https://www.linkedin.com/company/cleveroad-inc-&quot;&gt;[Awesome](/images/social/linkedin.png)&lt;/a&gt;   &lt;a href=&quot;https://www.youtube.com/channel/UCFNHnq1sEtLiy0YCRHG2Vaw&quot;&gt;[Awesome](/images/social/youtube.png)&lt;/a&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;license&quot;&gt;License&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;The MIT License (MIT)
-
-Copyright (c) 2016 Cleveroad Inc.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Mon, 17 Apr 2017 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/AndroidUICollection/2017/04/17/AdaptiveTableLayout/</link>
-        <guid isPermaLink="true">http://localhost:4000/AndroidUICollection/2017/04/17/AdaptiveTableLayout/</guid>
-        
-        <category>layout</category>
         
         
       </item>

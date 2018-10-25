@@ -675,7 +675,7 @@
 
 <p>InboxRecyclerView is a library for building expandable descendant navigation, inspired by <a href="http://androidniceties.tumblr.com/post/100872004063/inbox-by-gmail-google-play-link">Google Inbox</a> and <a href="https://material.io/design/material-studies/reply.html">Reply</a>. If you’re interested in learning how it was created, <a href="https://saket.me/inbox-recyclerview">here’s a detailed blog post</a>.</p>
 
-<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">implementation</span> <span class="s1">'me.saket:inboxrecyclerview:1.0.0-beta3'</span>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">implementation</span> <span class="s1">'me.saket:inboxrecyclerview:1.0.0-rc1'</span>
 </code></pre></div></div>
 
 <p>FYI, <code class="highlighter-rouge">InboxRecyclerView</code> has a dependency on <code class="highlighter-rouge">androidx</code>. If you haven’t <a href="https://android-developers.googleblog.com/2018/05/hello-world-androidx.html">migrated</a> from the support library already, this would be a good opportunity.</p>
@@ -691,6 +691,10 @@
   <span class="na">android:layout_height=</span><span class="s">"match_parent"</span> <span class="nt">/&gt;</span>
 
 <span class="nt">&lt;--</span>
+  <span class="err">This</span> <span class="err">is</span> <span class="err">where</span> <span class="err">your</span> <span class="err">expandable</span> <span class="err">content</span> <span class="err">will</span> <span class="err">be</span> <span class="err">present.</span> <span class="err">One</span>
+  <span class="err">way</span> <span class="err">of</span> <span class="err">using</span> <span class="err">it</span> <span class="err">would</span> <span class="err">be</span> <span class="err">to</span> <span class="err">add</span> <span class="err">a</span> <span class="err">Fragment</span> <span class="err">inside</span> <span class="err">the</span> <span class="err">layout</span>
+  <span class="err">and</span> <span class="err">update</span> <span class="err">it</span> <span class="err">when</span> <span class="err">any</span> <span class="err">list</span> <span class="err">item</span> <span class="err">is</span> <span class="err">clicked.</span>
+
   <span class="err">It's</span> <span class="err">recommended</span> <span class="err">that</span> <span class="err">the</span> <span class="err">content</span> <span class="err">page</span> <span class="err">has</span> <span class="err">a</span> <span class="err">higher</span> <span class="err">z-index</span>
   <span class="err">than</span> <span class="err">the</span> <span class="err">list.</span> <span class="err">This</span> <span class="err">can</span> <span class="err">be</span> <span class="err">achieved</span> <span class="err">by</span> <span class="err">either</span> <span class="err">giving</span> <span class="err">it</span> <span class="err">a</span>
   <span class="err">higher</span> <span class="err">view</span> <span class="err">position</span> <span class="err">or</span> <span class="err">a</span> <span class="err">higher</span> <span class="err">elevation.</span>

@@ -736,9 +736,11 @@
 </code></pre></div></div>
 
 <div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">dependencies</span> <span class="o">{</span>
-    <span class="n">compile</span> <span class="s1">'com.github.daniel-stoneuk:material-about-library:2.3.0'</span>
+    <span class="n">compile</span> <span class="s1">'com.github.daniel-stoneuk:material-about-library:2.4.2'</span>
 <span class="o">}</span>
 </code></pre></div></div>
+
+<p>Releases from 2.4.2 onwards will be using the AndroidX libraries. Use an older release if you wish to continue using the support library version.</p>
 
 <h2 id="migration">Migration</h2>
 
@@ -920,24 +922,40 @@
 <span class="nt">&lt;/style&gt;</span>
 </code></pre></div></div>
 
+<h3 id="custom-adapters">Custom Adapters:</h3>
+<p>It is possible to replace the contents of a card with a custom adapter. If you do this, then none of the items associated with the card will be displayed. Check out the demo app, in which use <a href="https://github.com/yshrsmz/LicenseAdapter">LicenseAdapter</a> (hence the INTERNET permission).</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">MaterialAboutCard</span><span class="o">.</span><span class="na">Builder</span> <span class="n">customAdapterCardBuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MaterialAboutCard</span><span class="o">.</span><span class="na">Builder</span><span class="o">();</span>
+<span class="c1">// Create list of libraries</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Library</span><span class="o">&gt;</span> <span class="n">libraries</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+
+<span class="c1">// Add libraries that are hosted on GitHub with an Apache v2 license.</span>
+<span class="n">libraries</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">Licenses</span><span class="o">.</span><span class="na">fromGitHubApacheV2</span><span class="o">(</span><span class="s">"yshrsmz/LicenseAdapter"</span><span class="o">));</span>
+<span class="n">libraries</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">Licenses</span><span class="o">.</span><span class="na">fromGitHubApacheV2</span><span class="o">(</span><span class="s">"daniel-stoneuk/material-about-library"</span><span class="o">));</span>
+
+<span class="n">customAdapterCardBuilder</span><span class="o">.</span><span class="na">title</span><span class="o">(</span><span class="s">"Custom Adapter (License Adapter)"</span><span class="o">);</span>
+<span class="n">customAdapterCardBuilder</span><span class="o">.</span><span class="na">customAdapter</span><span class="o">(</span><span class="k">new</span> <span class="n">LicenseAdapter</span><span class="o">(</span><span class="n">libraries</span><span class="o">));</span>
+<span class="o">});</span>
+</code></pre></div></div>
+
 <h3 id="dynamic-items">Dynamic items:</h3>
 <p>It’s possible to create dynamic items that either change on tap (or when any other event occurs). There are two examples in the sample application. Simply change the items in the list variable and then call <code class="highlighter-rouge">refreshMaterialAboutList()</code>. DiffUtil calculates the changes to animate in the RecyclerView.</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">final</span> <span class="n">MaterialAboutActionItem</span> <span class="n">item</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MaterialAboutActionItem</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
-                <span class="o">.</span><span class="na">text</span><span class="o">(</span><span class="s">"Dynamic UI"</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">subText</span><span class="o">(</span><span class="n">subText</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">icon</span><span class="o">(</span><span class="k">new</span> <span class="n">IconicsDrawable</span><span class="o">(</span><span class="n">c</span><span class="o">)</span>
-                        <span class="o">.</span><span class="na">icon</span><span class="o">(</span><span class="n">CommunityMaterial</span><span class="o">.</span><span class="na">Icon</span><span class="o">.</span><span class="na">cmd_refresh</span><span class="o">)</span>
-                        <span class="o">.</span><span class="na">color</span><span class="o">(</span><span class="n">ContextCompat</span><span class="o">.</span><span class="na">getColor</span><span class="o">(</span><span class="n">c</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">mal_color_icon_dark_theme</span><span class="o">)</span>
-                        <span class="o">).</span><span class="na">sizeDp</span><span class="o">(</span><span class="mi">18</span><span class="o">))</span>
-                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
-        <span class="n">item</span><span class="o">.</span><span class="na">setOnClickAction</span><span class="o">(</span><span class="k">new</span> <span class="n">MaterialAboutItemOnClickAction</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">()</span> <span class="o">{</span>
-                <span class="n">item</span><span class="o">.</span><span class="na">setSubText</span><span class="o">(</span><span class="s">"Random number: "</span> <span class="o">+</span> <span class="o">((</span><span class="kt">int</span><span class="o">)</span> <span class="o">(</span><span class="n">Math</span><span class="o">.</span><span class="na">random</span><span class="o">()</span> <span class="o">*</span> <span class="mi">10</span><span class="o">)));</span>
-                <span class="n">refreshMaterialAboutList</span><span class="o">();</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
+            <span class="o">.</span><span class="na">text</span><span class="o">(</span><span class="s">"Dynamic UI"</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">subText</span><span class="o">(</span><span class="n">subText</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">icon</span><span class="o">(</span><span class="k">new</span> <span class="n">IconicsDrawable</span><span class="o">(</span><span class="n">c</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">icon</span><span class="o">(</span><span class="n">CommunityMaterial</span><span class="o">.</span><span class="na">Icon</span><span class="o">.</span><span class="na">cmd_refresh</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">color</span><span class="o">(</span><span class="n">ContextCompat</span><span class="o">.</span><span class="na">getColor</span><span class="o">(</span><span class="n">c</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">mal_color_icon_dark_theme</span><span class="o">)</span>
+                    <span class="o">).</span><span class="na">sizeDp</span><span class="o">(</span><span class="mi">18</span><span class="o">))</span>
+            <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+    <span class="n">item</span><span class="o">.</span><span class="na">setOnClickAction</span><span class="o">(</span><span class="k">new</span> <span class="n">MaterialAboutItemOnClickAction</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">()</span> <span class="o">{</span>
+            <span class="n">item</span><span class="o">.</span><span class="na">setSubText</span><span class="o">(</span><span class="s">"Random number: "</span> <span class="o">+</span> <span class="o">((</span><span class="kt">int</span><span class="o">)</span> <span class="o">(</span><span class="n">Math</span><span class="o">.</span><span class="na">random</span><span class="o">()</span> <span class="o">*</span> <span class="mi">10</span><span class="o">)));</span>
+            <span class="n">refreshMaterialAboutList</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">});</span>
 </code></pre></div></div>
 
 <h3 id="custom-card-and-action-layout">Custom card and Action layout</h3>
