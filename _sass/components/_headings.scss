@@ -1,0 +1,33 @@
+//---------------------------
+// Separator
+//---------------------------
+
+// <h5 class="separator">
+//   <span class="separator__title">Newsletter</span>
+// </h5>
+
+.separator {
+  position: relative;
+  margin: $line-height__base auto;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: $font-size__small;
+  font-weight: $font-weight__light;
+  letter-spacing: 1px;
+
+  &:after {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 50%;
+    content: "";
+    border-bottom: 1px solid $border-color;
+  }
+
+  &__title {
+    position: relative;
+    z-index: 1;
+    padding: 0px half($line-height__base);
+    background: #FFF none repeat scroll 0% 0%;
+  }
+}

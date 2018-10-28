@@ -1,0 +1,45 @@
+//---------------------------
+// Share icons
+//---------------------------
+
+.share-list {
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  padding: 0;
+  border: 1px solid $border-color;
+  margin-bottom: $line-height__base;
+  line-height: $line-height__small;
+  list-style: none;
+
+  li {
+    flex: 1;
+    -ms-flex: 1;
+    -webkit-box-flex: 1;
+    text-align: center;
+    margin: 0;
+    border-right: 1px solid $border-color;
+
+    &:last-child { border-right: 0; }
+  }
+
+  &__link {
+    display: block;
+    padding: quarter($line-height__base);
+
+    font-size: $font-size__small;
+    transition: $base-transition-speed;
+
+    &:hover {
+      background-color: $grey-bg;
+
+      .share-list__icon--twitter  { fill: $twitter-brand; }
+      .share-list__icon--facebook { fill: $facebook-brand; }
+      .share-list__icon--google   { fill: $google-brand; }
+    }
+  }
+
+  &__icon { fill: $color__base; }
+
+  @media #{$medium-down} { margin-bottom: $line-height__medium; }
+}

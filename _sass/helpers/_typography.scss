@@ -1,0 +1,34 @@
+//---------------------------
+// Typography
+//---------------------------
+
+.light    { font-weight: $font-weight__light; }
+.regular  { font-weight: $font-weight__regular; }
+.bold     { font-weight: $font-weight__bold; }
+
+.italic     { font-style: italic; }
+.cap        { text-transform: capitalize; }
+.uppercase  { text-transform: uppercase; }
+
+.ell {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.font-base    { font-size: $font-size__base; }
+
+.font-medium  {
+  font-size: $font-size__medium;
+  line-height: $line-height__medium;
+}
+
+.font-small {
+  font-size: $font-size__small;
+  line-height: $line-height__small;
+}
+
+.font-tiny {
+  font-size: $font-size__tiny;
+  line-height: $line-height__tiny;
+}

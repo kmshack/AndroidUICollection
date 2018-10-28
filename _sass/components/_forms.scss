@@ -1,0 +1,32 @@
+//---------------------------
+// Forms
+//---------------------------
+
+input[type='text'],
+input[type='tel'],
+input[type='number'],
+input[type='email'],
+textarea {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 0;
+  display: inline-block;
+  border: 1px solid $color__base;
+  margin-bottom: quarter($line-height__base);
+  padding: quarter($line-height__small) half($line-height__small);
+
+  font-family: $font__serif;
+  font-size: $font-size__small;
+  line-height: $line-height__medium;
+  letter-spacing: 1px;
+
+  outline: none;
+  background: transparent;
+  appearance: none;
+  border-radius: 0;
+  transition: $base-transition-speed;
+
+  @media #{$large-up} { padding: quarter($line-height__base) half($line-height__base); }
+
+  &:focus { border: 1px solid $color__base--hover; }
+}

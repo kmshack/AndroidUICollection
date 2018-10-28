@@ -1,0 +1,100 @@
+//---------------------------
+// Grid
+//---------------------------
+
+$total-columns:           12 !default;
+$base-space-unit:        1em !default;
+$row-max-width:         1100px !default;
+
+// gridCalc(1, 12) => 8.33333%
+
+@function gridCalc($columnNumber, $totalColumns) {
+  @return percentage($columnNumber / $totalColumns);
+}
+
+.row {
+  margin: 0 auto;
+  padding-left: half($line-height__medium);
+  padding-right: half($line-height__medium);
+  max-width: $row-max-width;
+
+  &:before,
+  &:after {
+    display: table;
+    clear: both;
+    content: " ";
+  }
+
+  .row {
+    padding: 0;
+    margin-right: - half($line-height__medium);
+    margin-left:  - half($line-height__medium);
+
+    @media #{$large-up} {
+      margin-right: - half($line-height__base);
+      margin-left:  - half($line-height__base);
+    }
+  }
+
+  @media #{$large-up} {
+    padding-left: half($line-height__base);
+    padding-right: half($line-height__base);
+  }
+
+  &--full {
+    max-width: 100%;
+  }
+}
+
+.column {
+  position: relative;
+  float: left;
+  padding-right: half($line-height__medium);
+  padding-left: half($line-height__medium);
+  width: 100%;
+
+  @media #{$large-up} {
+    padding-right: half($line-height__base);
+    padding-left: half($line-height__base);
+  }
+}
+
+.column--center {
+  float: none;
+  margin: 0 auto;
+}
+
+// Small screens
+
+@media only screen {
+
+  @for $i from 1 through $total-columns {
+    .small#{-$i} {
+      width: gridCalc($i, $total-columns);
+    }
+  }
+
+}
+
+// Medium screens :: Larger than 640px
+@media #{$medium-up} {
+
+  @for $i from 1 through $total-columns {
+    .medium#{-$i} {
+      width: gridCalc($i, $total-columns);
+    }
+  }
+
+}
+
+// Large screens :: Larger than 1024px
+
+@media #{$large-up} {
+
+  @for $i from 1 through $total-columns {
+    .large#{-$i} {
+      width: gridCalc($i, $total-columns);
+    }
+  }
+
+}

@@ -1,0 +1,33 @@
+//---------------------------
+// Source code
+//---------------------------
+
+pre,
+code {
+  font-family: $font__monospace;
+  background-color: $grey-bg;
+}
+
+// Code block
+
+pre {
+  overflow: auto;
+  margin-top: 0;
+  margin-bottom: $line-height__base;
+  padding: $line-height__base;
+
+  font-size: $font-size__medium;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+
+  @media #{$medium-down} {
+    margin-bottom: $line-height__small;
+    padding: $line-height__medium;
+  }
+}
+
+// Inline code
+
+p code {
+  padding: half(quarter($line-height__medium)) quarter($line-height__medium);
+}

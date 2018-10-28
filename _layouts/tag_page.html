@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<div class="wrapper">
+
+  <div class="row row--full">
+    <div class="column large-12">
+
+      <header class="page-header box">
+        <div data-icon="ei-tag" data-size="s" class="box__icon"></div>
+        <div class="box__body">
+          <h4 class="box__title">{{ page.tag }}</h4>
+        </div>
+      </header>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="post-list">
+      {% for post in page.posts %}
+        {% unless post.draft %}
+          {% include post-card.html %}
+        {% endunless %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="row">
+    {% include pagination.html %}
+  </div>
+
+</div>

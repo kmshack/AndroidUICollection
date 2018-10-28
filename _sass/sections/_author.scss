@@ -1,0 +1,36 @@
+//---------------------------
+// Author
+//---------------------------
+
+.author-image {
+  float: left;
+  margin: 0;
+  margin-right: $line-height__medium;
+
+  .img {
+    height: $line-height__base * 3;
+    width: $line-height__base * 3;
+
+    background-position: center;
+    background-size: cover;
+    border-radius: 100%;
+
+    @media #{$medium-down} {
+      height: double($line-height__base);
+      width: double($line-height__base);
+    }
+  }
+
+  @media #{$large-up} { margin-right: $line-height__base; }
+}
+
+.author-meta {
+  text-indent: - 1px;
+
+  .icon {
+    fill: $color__base;
+    transition: $base-transition-speed;
+  }
+
+  a .icon:hover { fill: $color__base--hover; }
+}

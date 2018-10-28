@@ -1,0 +1,71 @@
+---
+layout: default
+---
+
+{% include base_path %}
+
+{% assign author = site.authors[page.author] %}
+
+<div class="wrapper">
+  <div class="row row--full">
+
+    <div class="column column--center medium-12 large-12">
+      <div class="grey-bg CoverImage FlexEmbed FlexEmbed--16by9" style="background-image: url({{ page.image | prepend: site.baseurl }})"></div>
+        
+    </div>
+      
+    <div class="column column--center medium-12 large-10">
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+        {% if page.image %}
+          <meta itemprop="og:image" content="{{ base_path }}{{ page.image }}">
+        {% endif %}
+
+        <header class="post__header">
+          <h2 class="post__title" itemprop="name headline">{{ page.title }}</h2>
+          
+          <h3 class="post__date">
+            <a href="{{ page.link }}" target="_blank"><span data-icon="ei-sc-github" data-size="s"></span>{{ page.link }}</a>
+          </h3>
+        </header>
+
+        <div class="post-content" itemprop="articleBody">
+            
+            <div class="column column--center medium-12 large-4">
+              <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url({{ page.image | prepend: site.baseurl }})"></div>
+            </div>
+          <br>
+          {{ content }}
+          <br>
+          <div class="post__tags">
+            {% for tag in page.tags %}
+              <a href="{{ site.baseurl }}/tag/{{ tag }}">{{ tag }}</a>
+            {% endfor %}
+          </div>
+            
+        </div>
+          
+          <br>
+          <hr>
+          <br>  
+          <div class="post-content"  itemprop="articleBody">
+            
+          </div>
+          <br>
+          <hr>
+          <br>
+
+        {% if page.author %}
+          {% include author.html %}
+        {% endif %}
+
+        {% include share.html %}
+
+        {% include subscribe-form.html %}
+
+        {% include disqus.html %}
+      </article>
+    </div>
+
+  </div> <!-- row-->
+</div> <!-- wrapper -->
