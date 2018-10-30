@@ -677,7 +677,7 @@
 <h2 id="this-is-chipslayoutmanager---custom-recycler-views-layoutmanager-which-moves-item-to-the-next-line-when-no-space-left-on-the-current">This is ChipsLayoutManager - custom Recycler View’s LayoutManager which moves item to the next line when no space left on the current</h2>
 <p>This layout manager could represent <a href="https://material.google.com/components/chips.html#">Google Chips material design pattern</a></p>
 
-<p>As an android developer i see that google isn’t so polite to support all our wishes, and when i faced with such common task like create spannable list
+<p>As an android developer i see that google isn’t so polite to support all our wishes, and when i faced with such common task like create spannable list<br />
 but with support of CRUD animations i decided to make such stuff and share it.</p>
 
 <p align="center">
@@ -702,7 +702,7 @@ but with support of CRUD animations i decided to make such stuff and share it.</
 <p>or just import <code class="highlighter-rouge">ChipsLayoutManager</code> module to your project.</p>
 
 <h3 id="features">Features</h3>
-<p>Layout manager represents chips or spanned or “bubble” structure of list items and is a good replace for typical implementations of such issue based on spans in <code class="highlighter-rouge">TextView</code> 
+<p>Layout manager represents chips or spanned or “bubble” structure of list items and is a good replace for typical implementations of such issue based on spans in <code class="highlighter-rouge">TextView</code> <br />
 or custom <code class="highlighter-rouge">FlowLayout</code>s.</p>
 
 <ul>
@@ -744,8 +744,8 @@ or custom <code class="highlighter-rouge">FlowLayout</code>s.</p>
 
 </center>
 
-<p>####Fill strategy
-Any row has some space left, where is impossible to place the next view, because that space is too small.
+<p>####Fill strategy<br />
+Any row has some space left, where is impossible to place the next view, because that space is too small.<br />
 But we could distribute that space for available views in that row.</p>
 
 <p>Row strategy is a mode of distribution left space.</p>
@@ -758,7 +758,7 @@ But we could distribute that space for available views in that row.</p>
   <li><code class="highlighter-rouge">STRATEGY_CENTER_DENSE</code> - Views are placed in center of canvas. There is no extra space distributed between views.</li>
 </ul>
 
-<p>In such layouts by default last row isn’t considered completed. So strategy isn’t applied for last row.
+<p>In such layouts by default last row isn’t considered completed. So strategy isn’t applied for last row.<br />
 But you can also enable opposite behaviour.</p>
 
 <h3 id="usage">Usage</h3>
@@ -796,11 +796,11 @@ But you can also enable opposite behaviour.</p>
 rv.setLayoutManager(chipsLayoutManager);
 </code></pre>
 
-<p>Notice that if you changed gravity resolver or row breaker conditions in runtime - it won’t affect already drown items and cached item positions.
+<p>Notice that if you changed gravity resolver or row breaker conditions in runtime - it won’t affect already drown items and cached item positions.<br />
 You have to call <code class="highlighter-rouge">notifyItemChanged</code> on <code class="highlighter-rouge">ChipsLayoutManager</code> otherwise layout won’t be predictable.</p>
 
-<p><strong>Device current direction</strong> have been chosen by default.
-You can manipulate with layout direction (<strong>LTR</strong> or <strong>RTL</strong>)<br />
+<p><strong>Device current direction</strong> have been chosen by default.<br />
+You can manipulate with layout direction (<strong>LTR</strong> or <strong>RTL</strong>)<br /><br />
 <em>On Api &gt;= 17:</em></p>
 <pre><code class="language-XML">&lt;android.support.v7.widget.RecyclerView
        android:layout_width="match_parent"
@@ -812,25 +812,25 @@ You can manipulate with layout direction (<strong>LTR</strong> or <strong>RTL</s
 <pre><code class="language-JAVA">ViewCompat.setLayoutDirection(recyclerView, ViewCompat.LAYOUT_DIRECTION_RTL);
 </code></pre>
 
-<p>For example look at sample application.
+<p>For example look at sample application.<br />
 <br /></p>
 <h3 id="bonus">Bonus</h3>
-<p>You may need an <code class="highlighter-rouge">RecyclerView.ItemDecoration</code> to work with <code class="highlighter-rouge">ChipsLayoutManager</code> for fast setup as showed in sample. <br />
+<p>You may need an <code class="highlighter-rouge">RecyclerView.ItemDecoration</code> to work with <code class="highlighter-rouge">ChipsLayoutManager</code> for fast setup as showed in sample. <br /><br />
 It contained in same package and named <code class="highlighter-rouge">SpacingItemDecoration</code>.</p>
 
 <h2 id="support--maintainedhttpsimgshieldsiomaintenanceyes2017svg-">Support <a href="https://github.com/BelooS/ChipsLayoutManager/tree/dev"> [Maintained](https://img.shields.io/maintenance/yes/2017.svg) </a></h2>
-<p>BETA is going.
-I respond to your founded issues. Just create a ticket if you found something goes wrong.<br />
+<p>BETA is going.<br />
+I respond to your founded issues. Just create a ticket if you found something goes wrong.<br /><br />
 Thanks for testing, guys. I’m really appreciate it.</p>
 
 <h3 id="contributors">Contributors</h3>
-<p>All pull requests are welcome. I’ve tried to make code clean &amp; readable, so the next is up to you.
+<p>All pull requests are welcome. I’ve tried to make code clean &amp; readable, so the next is up to you.<br />
 I appreciate any help and contributors will be mentioned here.</p>
 
 <p>Thanks, <a href="https://github.com/szijpeter">szijpeter</a> and everyone for valuable updates.</p>
 
 <h3 id="known-issues">Known issues</h3>
-<p>I create issues in tracking board of known problems.
+<p>I create issues in tracking board of known problems.<br />
 These issues are going to be fixed in next versions.</p>
 
 <h3 id="license--license-for-chipslayoutmanagerhttpsimgshieldsiohexpmlplugsvg-">License <a href="https://github.com/BelooS/ChipsLayoutManager/blob/dev/LICENSE"> [license for ChipsLayoutManager](https://img.shields.io/hexpm/l/plug.svg) </a></h3>

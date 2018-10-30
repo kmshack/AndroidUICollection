@@ -684,29 +684,29 @@
   </tbody>
 </table>
 
-<p><a href="https://github.com/dinuscxj/RecyclerRefreshLayout">RecyclerRefreshLayout</a> 
-based on the {@link android.support.v4.widget.SwipeRefreshLayout}
-The <code class="highlighter-rouge">RecyclerRefreshLayout</code> should be used whenever the user can refresh the
-contents of a <code class="highlighter-rouge">view</code> via a vertical swipe gesture. The activity that
-instantiates this view should add an <code class="highlighter-rouge">OnRefreshListener</code> to be notified
-whenever the swipe to refresh gesture is completed. The <code class="highlighter-rouge">RecyclerRefreshLayout</code>
-will notify the listener each and every time the gesture is completed again;
-the listener is responsible for correctly determining when to actually
-initiate a refresh of its content. If the listener determines there should
-not be a refresh, it must call <code class="highlighter-rouge">setRefreshing(false)</code> to cancel any visual
-indication of a refresh. If an activity wishes to show just the progress
-animation, it should call <code class="highlighter-rouge">setRefreshing(true)</code>. To disable the gesture and
+<p><a href="https://github.com/dinuscxj/RecyclerRefreshLayout">RecyclerRefreshLayout</a> <br />
+based on the {@link android.support.v4.widget.SwipeRefreshLayout}<br />
+The <code class="highlighter-rouge">RecyclerRefreshLayout</code> should be used whenever the user can refresh the<br />
+contents of a <code class="highlighter-rouge">view</code> via a vertical swipe gesture. The activity that<br />
+instantiates this view should add an <code class="highlighter-rouge">OnRefreshListener</code> to be notified<br />
+whenever the swipe to refresh gesture is completed. The <code class="highlighter-rouge">RecyclerRefreshLayout</code><br />
+will notify the listener each and every time the gesture is completed again;<br />
+the listener is responsible for correctly determining when to actually<br />
+initiate a refresh of its content. If the listener determines there should<br />
+not be a refresh, it must call <code class="highlighter-rouge">setRefreshing(false)</code> to cancel any visual<br />
+indication of a refresh. If an activity wishes to show just the progress<br />
+animation, it should call <code class="highlighter-rouge">setRefreshing(true)</code>. To disable the gesture and<br />
 progress animation, call <code class="highlighter-rouge">setEnabled(false)</code> on the <code class="highlighter-rouge">view</code>.</p>
 
 <blockquote>
   <p>Note: The <code class="highlighter-rouge">RecyclerRefreshLayout</code> supports all of the views: <code class="highlighter-rouge">ListView</code>, <code class="highlighter-rouge">GridView</code>, <code class="highlighter-rouge">ScrollView</code>, <code class="highlighter-rouge">FrameLayout</code>, or Even a single <code class="highlighter-rouge">TextView</code></p>
 </blockquote>
 
-<p><a href="https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutNormal.gif?width=300"></a>
-<a href="https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutFloat.gif?width=300"></a>
-<a href="https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutPinned.gif?width=300"></a><br />
-<a href="https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutLoadMore.gif?width=300"></a>
-<a href="https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutNoData.gif?width=300"></a>
+<p><a href="https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutNormal.gif?width=300"></a><br />
+<a href="https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutFloat.gif?width=300"></a><br />
+<a href="https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutPinned.gif?width=300"></a><br /><br />
+<a href="https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutLoadMore.gif?width=300"></a><br />
+<a href="https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutNoData.gif?width=300"></a><br />
 <a href="https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutLoadError.gif?width=300"></a><br /></p>
 
 <h2 id="installation">Installation</h2>
@@ -738,28 +738,28 @@ progress animation, call <code class="highlighter-rouge">setEnabled(false)</code
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">RecyclerRefreshLayout</span><span class="o">.</span><span class="na">setOnRefreshListener</span><span class="o">(</span><span class="n">OnRefreshListener</span><span class="o">);</span>
 </code></pre></div></div>
 
-<p>Notify the widget that refresh state has changed. Do not call this 
+<p>Notify the widget that refresh state has changed. Do not call this <br />
 when refresh is triggered by a swipe gesture.</p>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">RecyclerRefreshLayout</span><span class="o">.</span><span class="na">setRefreshing</span><span class="o">(</span><span class="kt">boolean</span><span class="o">);</span>
 </code></pre></div></div>
 
 <h4 id="configure-the-attributesoptional">Configure the attributes(optional)</h4>
-<p>Set the interpolator used by the animation that move the refresh view 
+<p>Set the interpolator used by the animation that move the refresh view <br />
 the release point to the refreshing point.</p>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">RecyclerRefreshLayout</span><span class="o">.</span><span class="na">setAnimateToRefreshInterpolator</span><span class="o">(</span><span class="n">Interpolator</span><span class="o">);</span>
 </code></pre></div></div>
 
-<p>Set the interpolator used by the animation that move the refresh view 
+<p>Set the interpolator used by the animation that move the refresh view <br />
 from the refreshing point or (the release point) to the start point.</p>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">RecyclerRefreshLayout</span><span class="o">.</span><span class="na">setAnimateToStartInterpolator</span><span class="o">(</span><span class="n">Interpolator</span><span class="o">);</span>
 </code></pre></div></div>
 
-<p>Set the duration used by the animation that move the refresh view 
+<p>Set the duration used by the animation that move the refresh view <br />
 the release point to the refreshing point.</p>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">RecyclerRefreshLayout</span><span class="o">.</span><span class="na">setAnimateToRefreshDuration</span><span class="o">(</span><span class="kt">int</span><span class="o">);</span>
 </code></pre></div></div>
 
-<p>Set the duration used by the animation that move the refresh view 
+<p>Set the duration used by the animation that move the refresh view <br />
 from the refreshing point or (the release point) to the start point.</p>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">RecyclerRefreshLayout</span><span class="o">.</span><span class="na">setAnimateToStartDuration</span><span class="o">(</span><span class="kt">int</span><span class="o">);</span>
 </code></pre></div></div>

@@ -673,7 +673,7 @@
           <br>
           <h1 id="discretescrollview">DiscreteScrollView</h1>
 
-<p>The library is a RecyclerView-based implementation of a scrollable list, where current item is centered and can be changed using swipes.
+<p>The library is a RecyclerView-based implementation of a scrollable list, where current item is centered and can be changed using swipes.<br />
 It is similar to a ViewPager, but you can quickly and painlessly create layout, where views adjacent to the currently selected view are partially or fully visible on the screen.</p>
 
 <p><a href="https://github.com/yarolegovich/DiscreteScrollView/blob/master/images/cards_shop.gif">GifSampleShop</a></p>
@@ -698,7 +698,7 @@ It is similar to a ViewPager, but you can quickly and painlessly create layout, 
 
 <h2 id="wiki">Wiki</h2>
 <h3 id="general">General</h3>
-<p>The library uses a custom LayoutManager to adjust items’ positions on the screen and handle scroll, however it is not exposed to the client 
+<p>The library uses a custom LayoutManager to adjust items’ positions on the screen and handle scroll, however it is not exposed to the client <br />
 code. All public API is accessible through DiscreteScrollView class, which is a simple descendant of RecyclerView.</p>
 
 <p>If you have ever used RecyclerView - you already know how to use this library. One thing to note - you should NOT set LayoutManager.</p>
@@ -708,7 +708,7 @@ code. All public API is accessible through DiscreteScrollView class, which is a 
   <li>Add DiscreteScrollView to your layout either using xml or code:</li>
   <li>Create your implementation of RecyclerView.Adapter. Refer to the <a href="https://github.com/yarolegovich/DiscreteScrollView/blob/master/sample/src/main/java/com/yarolegovich/discretescrollview/sample/shop/ShopAdapter.java">sample</a> for an example, if you don’t know how to do it.</li>
   <li>Set the adapter.</li>
-  <li>You are done
+  <li>You are done<br />
 ```xml</li>
 </ol>
 <com.yarolegovich.discretescrollview.DiscreteScrollView android:id="@+id/picker" android:layout_width="match_parent" android:layout_height="wrap_content" app:dsv_orientation="horizontal|vertical" />
@@ -731,7 +731,7 @@ scrollView.setAdapter(new YourAdapterImplementation());
 <span class="n">scrollView</span><span class="o">.</span><span class="na">setItemTransitionTimeMillis</span><span class="o">(</span><span class="kt">int</span> <span class="n">millis</span><span class="o">);</span> <span class="c1">//determines how much time it takes to change the item on fling, settle or smoothScroll</span>
 </code></pre></div></div>
 <h4 id="transformations">Transformations</h4>
-<p>One useful feature of ViewPager is page transformations. It allows you, for example, to create carousel effect. DiscreteScrollView also supports 
+<p>One useful feature of ViewPager is page transformations. It allows you, for example, to create carousel effect. DiscreteScrollView also supports <br />
 page transformations.</p>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scrollView</span><span class="o">.</span><span class="na">setItemTransformer</span><span class="o">(</span><span class="n">transformer</span><span class="o">);</span>
 
@@ -792,9 +792,9 @@ page transformations.</p>
 <p>Currently <code class="highlighter-rouge">InfiniteScrollAdapter</code> handles data set changes inefficiently, so your contributions are welcome.</p>
 <h4 id="callbacks">Callbacks</h4>
 <ul>
-  <li>Scroll state changes:
-```java
-scrollView.addScrollStateChangeListener(listener);
+  <li>Scroll state changes:<br />
+```java<br />
+scrollView.addScrollStateChangeListener(listener);<br />
 scrollView.removeScrollStateChangeListener(listener);</li>
 </ul>
 
@@ -802,7 +802,7 @@ scrollView.removeScrollStateChangeListener(listener);</li>
 
 <p>void onScrollStart(T currentItemHolder, int adapterPosition); //called when scroll is started, including programatically initiated scroll</p>
 
-<p>void onScrollEnd(T currentItemHolder, int adapterPosition); //called when scroll ends
+<p>void onScrollEnd(T currentItemHolder, int adapterPosition); //called when scroll ends<br />
   /**</p>
 <ul>
   <li>Called when scroll is in progress.</li>
@@ -827,14 +827,14 @@ scrollView.removeScrollStateChangeListener(listener);</li>
   <li>@param currentIndex - index of current view</li>
   <li>@param newIndex - index of a view which is becoming the new current</li>
   <li>@param currentHolder - ViewHolder of a current view</li>
-  <li>@param newCurrent - ViewHolder of a view which is becoming the new current
-   */
-  void onScroll(float scrollPosition, int currentIndex, int newIndex, @Nullable T currentHolder, @Nullable T newCurrentHolder); 
-}
+  <li>@param newCurrent - ViewHolder of a view which is becoming the new current<br />
+   */<br />
+  void onScroll(float scrollPosition, int currentIndex, int newIndex, @Nullable T currentHolder, @Nullable T newCurrentHolder); <br />
+}<br />
 ```</li>
-  <li>Scroll:
-```java
-scrollView.addScrollListener(listener);
+  <li>Scroll:<br />
+```java<br />
+scrollView.addScrollListener(listener);<br />
 scrollView.removeScrollListener(listener);</li>
 </ul>
 

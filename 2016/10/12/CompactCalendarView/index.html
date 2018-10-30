@@ -672,7 +672,7 @@
             </div>
           <br>
           <h1 id="compactcalendarview-build-statushttpstravis-ciorgsundeepkcompactcalendarviewsvgbranchmaster">CompactCalendarView <a href="https://travis-ci.org/SundeepK/CompactCalendarView">[Build Status](https://travis-ci.org/SundeepK/CompactCalendarView.svg?branch=master)</a></h1>
-<p>CompactCalendarView is a simple calendar view which provides scrolling between months. It’s based on Java’s Date and Calendar classes. It provides a simple api to query for dates and listeners for specific events.  For example, when the calendar has scrolled to a new month or a day has been selected.
+<p>CompactCalendarView is a simple calendar view which provides scrolling between months. It’s based on Java’s Date and Calendar classes. It provides a simple api to query for dates and listeners for specific events.  For example, when the calendar has scrolled to a new month or a day has been selected.<br />
 Still under active development.</p>
 
 <p><img src="https://github.com/SundeepK/CompactCalendarView/blob/master/images/compact-calendar-view-example-multi-events.png" width="500" /></p>
@@ -681,7 +681,7 @@ Still under active development.</p>
 <p>Please raise an issue of the requirement so that a discussion can take before any code is written, even if you intend to raise a pull request. Please see setup for testing.</p>
 
 <h1 id="testing">Testing</h1>
-<p>CompactCalendarView makes use of screenshot-tests-for-android (https://github.com/facebook/screenshot-tests-for-android). This is for UI testing. Since screenshot-tests-for-android takes screenshots, we need a way to ensure images can be reproduced consistently. To do this, a specific emulator is used to run tests.
+<p>CompactCalendarView makes use of screenshot-tests-for-android (https://github.com/facebook/screenshot-tests-for-android). This is for UI testing. Since screenshot-tests-for-android takes screenshots, we need a way to ensure images can be reproduced consistently. To do this, a specific emulator is used to run tests.<br />
 Unfortunately, an older emulator is used for now. New pull requests which change functionality some how should aim to create new screenshot tests or unit tests if possible. To run this locally, run the below commands:</p>
 
 <p>Pre-requisite (Also refer to .travis.yml):</p>
@@ -701,7 +701,7 @@ Unfortunately, an older emulator is used for now. New pull requests which change
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo </span>no | <span class="nv">$ANDROID_HOME</span>/tools/bin/avdmanager create avd <span class="nt">--force</span> <span class="nt">-n</span> testCompactCalendarEmulator <span class="nt">-k</span> <span class="s2">"system-images;android-22;default;armeabi-v7a"</span>
 </code></pre></div></div>
 
-<p>Create sd card (creating in current dir):
+<p>Create sd card (creating in current dir):<br />
 Any problems with sdcard are best solved by deleting and trying again</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>mksdcard <span class="nt">-l</span> sdcard 100M sdcard
 </code></pre></div></div>

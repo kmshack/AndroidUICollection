@@ -5,9 +5,118 @@
     <description>Collection of OpenSource for Android UI.</description>
     <link>http://localhost:4000/AndroidUICollection/</link>
     <atom:link href="http://localhost:4000/AndroidUICollection/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 25 Oct 2018 23:22:34 +0900</pubDate>
-    <lastBuildDate>Thu, 25 Oct 2018 23:22:34 +0900</lastBuildDate>
+    <pubDate>Tue, 30 Oct 2018 23:36:40 +0900</pubDate>
+    <lastBuildDate>Tue, 30 Oct 2018 23:36:40 +0900</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
+    
+      <item>
+        <title>WoWoViewPager</title>
+        <description>&lt;h1 id=&quot;wowoviewpager&quot;&gt;WoWoViewPager&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/Nightonke&quot;&gt;[Developer](https://img.shields.io/badge/Developer-Nightonke-red.svg)&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager#demo&quot;&gt;[Demo](https://img.shields.io/badge/Demo-Download-orange.svg)&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://bintray.com/nightonke/maven/wowo-viewpager&quot;&gt;[Download](https://api.bintray.com/packages/nightonke/maven/wowo-viewpager/images/download.svg)&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://www.apache.org/licenses/LICENSE-2.0&quot;&gt;[Lisense](https://img.shields.io/badge/License-Apache%202-lightgrey.svg)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/Nightonke/WoWoViewPager/blob/master/Pictures/GuidePage1.gif&quot; /&gt; &lt;img src=&quot;https://github.com/Nightonke/WoWoViewPager/blob/master/Pictures/GuidePage2.gif&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;WoWoViewPager combines ViewPager and Animations to provide a simple way to create applications’ guide pages. When users are dragging WoWoViewPager, they become the director of the applications. The above gifs show how WoWoViewPager looks like, it supports some simple animations like translation, scale, alpha, background color animations, and moreover, some complicate animations like gif-playing, svg-drawing and path-drawing animations with corresponding custom views.&lt;/p&gt;
+
+&lt;h2 id=&quot;note&quot;&gt;Note&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Here comes the 2.0.0 version The old versions(1.0.2 or below) are deprecated. The new version provides plenty features for convenient usage and efficiency improvement.&lt;/li&gt;
+  &lt;li&gt;Thanks &lt;a href=&quot;https://github.com/sacot41/SCViewPager&quot;&gt;SCViewPager&lt;/a&gt; for giving me inspiration for codes.&lt;/li&gt;
+  &lt;li&gt;Thanks &lt;a href=&quot;https://github.com/IFTTT/JazzHands&quot;&gt;JazzHands&lt;/a&gt; for giving me inspiration for animations.&lt;/li&gt;
+  &lt;li&gt;Thanks &lt;a href=&quot;https://github.com/konmik&quot;&gt;konmik&lt;/a&gt; for providing a better HSV-animation.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;gradle--maven&quot;&gt;Gradle &amp;amp; Maven&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;compile 'com.nightonke:wowoviewpager:2.0.0'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;dependency&amp;gt;
+  &amp;lt;groupId&amp;gt;com.nightonke&amp;lt;/groupId&amp;gt;
+  &amp;lt;artifactId&amp;gt;wowoviewpager&amp;lt;/artifactId&amp;gt;
+  &amp;lt;version&amp;gt;2.0.0&amp;lt;/version&amp;gt;
+  &amp;lt;type&amp;gt;pom&amp;lt;/type&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;demo&quot;&gt;Demo&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/Nightonke/WoWoViewPager/blob/master/Apk/WoWo%20in%20Fir.png&quot; width=&quot;200&quot; /&gt;  &lt;br /&gt;
+Or by link:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/blob/master/Apk/WoWo%20V2.0.0.apk?raw=true&quot;&gt;WoWoViewPager V2.0.0 in Github&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://fir.im/wowoviewpager&quot;&gt;WoWoViewPager V2.0.0 in Fir&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;wiki&quot;&gt;Wiki&lt;/h2&gt;
+&lt;p&gt;Check the &lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/wiki&quot;&gt;wiki&lt;/a&gt; to use WoWoViewPager.&lt;/p&gt;
+
+&lt;h3 id=&quot;documentation-chapters&quot;&gt;Documentation Chapters&lt;/h3&gt;
+&lt;h4 id=&quot;basic-usage&quot;&gt;&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/wiki/Basic-Usage&quot;&gt;Basic Usage&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;ease&quot;&gt;&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/wiki/Ease&quot;&gt;Ease&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;chameleon&quot;&gt;&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/wiki/Chameleon&quot;&gt;Chameleon&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;typewriter&quot;&gt;&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/wiki/Typewriter&quot;&gt;Typewriter&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;basic-animations&quot;&gt;Basic Animations&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/wiki/Position-Animation&quot;&gt;Position Animation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/wiki/Position-3D-Animation&quot;&gt;Position 3D Animation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/wiki/Translation-Animation&quot;&gt;Translation Animation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/wiki/Translation-3D-Animation&quot;&gt;Translation 3D Animation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/wiki/Scale-Animation&quot;&gt;Scale Animation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/wiki/Alpha-Animation&quot;&gt;Alpha Animation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/wiki/Rotation-Animation&quot;&gt;Rotation Animation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/wiki/Elevation-Animation&quot;&gt;Elevation Animation&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;textview-animations&quot;&gt;TextView Animations&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/wiki/TextView-TextSize-Animation&quot;&gt;TextView TextSize Animation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/wiki/TextView-TextColor-Animation&quot;&gt;TextView TextColor Animation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/wiki/TextView-Text-Animation&quot;&gt;TextView Text Animation&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;color-animations&quot;&gt;Color Animations&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/wiki/Background-Color-Animation&quot;&gt;Background Color Animation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/wiki/Shape-Color-Animation&quot;&gt;Shape Color Animation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/wiki/State-List-Color-Animation&quot;&gt;State-List Color Animation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/wiki/Layer-List-Color-Animation&quot;&gt;Layer-List Color Animation&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;path-animation&quot;&gt;&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/wiki/Path-Animation&quot;&gt;Path Animation&lt;/a&gt;&lt;/h4&gt;
+
+&lt;h4 id=&quot;wowoviewpager-attributes&quot;&gt;&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/wiki/WoWoViewPager-Attributes&quot;&gt;WoWoViewPager Attributes&lt;/a&gt;&lt;/h4&gt;
+
+&lt;h4 id=&quot;interface-expansibility&quot;&gt;Interface Expansibility&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/wiki/Custom-Animation&quot;&gt;Custom Animation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/wiki/Interface-Animation&quot;&gt;Interface Animation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/wiki/SVG-Animation&quot;&gt;SVG Animation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/wiki/GIF-Animation&quot;&gt;GIF Animation&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;version-history&quot;&gt;&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/wiki/Version-History&quot;&gt;Version History&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;how-wowoviewpager-works&quot;&gt;&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/wiki/How-WoWoViewPager-Works&quot;&gt;How WoWoViewPager Works&lt;/a&gt;&lt;/h4&gt;
+
+&lt;h2 id=&quot;issues--feedbacks&quot;&gt;Issues &amp;amp; Feedbacks&lt;/h2&gt;
+&lt;p&gt;Try to tell me the bugs or enhancements about WoWoViewPager, or contact me with Nightonke@outlook.com / 2584541288@qq.com. Before doing that, having a careful read on &lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager&quot;&gt;read-me&lt;/a&gt;, &lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/wiki&quot;&gt;wiki&lt;/a&gt; and &lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/issues&quot;&gt;issues&lt;/a&gt; is really helpful.&lt;/p&gt;
+
+&lt;h2 id=&quot;about-versions&quot;&gt;About Versions&lt;/h2&gt;
+&lt;p&gt;Version 1.0.2 or below use the old api of WoWoViewPager. From version 2.0.0, builder-pattern was used in WoWoViewPager and gif-playing, svg-drawing animations and more features are supported. I strongly suggest to use version 2.0.0 or above. If you still want to use version 1.0.2 or below, try to check the old documents(&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/blob/master/DEPRECATED-README-EN.md&quot;&gt;English&lt;/a&gt;|&lt;a href=&quot;https://github.com/Nightonke/WoWoViewPager/blob/master/DEPRECATED-README-ZH.md&quot;&gt;中文文档&lt;/a&gt;).&lt;/p&gt;
+
+&lt;h2 id=&quot;about-me&quot;&gt;About Me&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://huangweiping.me/&quot;&gt;Nightonke&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 30 Oct 2018 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/AndroidUICollection/2018/10/30/WoWoViewPager/</link>
+        <guid isPermaLink="true">http://localhost:4000/AndroidUICollection/2018/10/30/WoWoViewPager/</guid>
+        
+        <category>ViewPager</category>
+        
+        
+      </item>
     
       <item>
         <title>TicketView</title>
@@ -16,13 +125,13 @@
 &lt;p&gt;An Android Library used to implement TicketView in android with normal, rounded and scallop corners.&lt;/p&gt;
 
 &lt;h3 id=&quot;specs&quot;&gt;Specs&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://android-arsenal.com/api?level=15&quot;&gt;[API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)&lt;/a&gt;
-&lt;a href=&quot;https://bintray.com/vipulasri/maven/TicketView/_latestVersion&quot;&gt;[Download](https://api.bintray.com/packages/vipulasri/maven/TicketView/images/download.svg)&lt;/a&gt;
-&lt;a href=&quot;http://www.methodscount.com/?lib=com.vipulasri%3Aticketview%3A1.0.2&quot;&gt;[MethodsCount](https://img.shields.io/badge/Methods%20and%20size-125%20|%2012KB-e91e63.svg)&lt;/a&gt;
+&lt;p&gt;&lt;a href=&quot;https://android-arsenal.com/api?level=15&quot;&gt;[API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://bintray.com/vipulasri/maven/TicketView/_latestVersion&quot;&gt;[Download](https://api.bintray.com/packages/vipulasri/maven/TicketView/images/download.svg)&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://www.methodscount.com/?lib=com.vipulasri%3Aticketview%3A1.0.2&quot;&gt;[MethodsCount](https://img.shields.io/badge/Methods%20and%20size-125%20|%2012KB-e91e63.svg)&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;https://github.com/vipulasri/Timeline-View/blob/master/LICENSE&quot;&gt;[License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;badgesfeatured-in&quot;&gt;Badges/Featured In&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://android-arsenal.com/details/1/6521&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Ticket%20View-brightgreen.svg?style=flat)&lt;/a&gt;
+&lt;p&gt;&lt;a href=&quot;https://android-arsenal.com/details/1/6521&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Ticket%20View-brightgreen.svg?style=flat)&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;https://www.androiddevdigest.com/digest-171/&quot;&gt;[AndroidDev Digest](https://img.shields.io/badge/AndroidDev%20Digest-%23171-blue.svg)&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/vipulasri/TicketView/blob/master/art/showcase.png&quot;&gt;showcase&lt;/a&gt;&lt;/p&gt;
@@ -192,7 +301,7 @@
 
 &lt;p&gt;&lt;a href=&quot;https://www.appbrain.com/stats/libraries/details/ticketview/ticketview&quot;&gt;Apps using Ticket View, via AppBrain Stats&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;If you’re using this library in your app and you’d like to list it here,
+&lt;p&gt;If you’re using this library in your app and you’d like to list it here,&lt;br /&gt;
 Please let me know via &lt;a href=&quot;mailto:vipulasri.2007@gmail.com&quot;&gt;email&lt;/a&gt;, &lt;a href=&quot;https://github.com/vipulasri/TicketView/pulls&quot;&gt;pull requests&lt;/a&gt; or &lt;a href=&quot;https://github.com/vipulasri/TicketView/issues&quot;&gt;issues&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;special-thanks&quot;&gt;Special Thanks&lt;/h2&gt;
@@ -237,7 +346,7 @@ limitations under the License.
 &lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
 
 &lt;p&gt;Download via Gradle:&lt;/p&gt;
-&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;api&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ru.rambler.android:swipe-layout:1.0.16'&lt;/span&gt;
+&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;implementation&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ru.rambler.android:swipe-layout:1.0.16'&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
 
@@ -316,9 +425,9 @@ limitations under the License.
       <item>
         <title>BoomMenu</title>
         <description>&lt;h1 id=&quot;boommenu&quot;&gt;BoomMenu&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/Nightonke&quot;&gt;[Developer](https://img.shields.io/badge/Developer-Nightonke-red.svg)&lt;/a&gt;
-&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Apk/BoomMenu%20V2.1.1.apk?raw=true&quot;&gt;[Demo](https://img.shields.io/badge/Demo-Download-orange.svg)&lt;/a&gt;
-&lt;a href=&quot;https://bintray.com/nightonke/maven/boommenu&quot;&gt;[Download](https://api.bintray.com/packages/nightonke/maven/boommenu/images/download.svg)&lt;/a&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/Nightonke&quot;&gt;[Developer](https://img.shields.io/badge/Developer-Nightonke-red.svg)&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Apk/BoomMenu%20V2.1.1.apk?raw=true&quot;&gt;[Demo](https://img.shields.io/badge/Demo-Download-orange.svg)&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://bintray.com/nightonke/maven/boommenu&quot;&gt;[Download](https://api.bintray.com/packages/nightonke/maven/boommenu/images/download.svg)&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;https://www.apache.org/licenses/LICENSE-2.0&quot;&gt;[Lisense](https://img.shields.io/badge/License-Apache%202-lightgrey.svg)&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;200-comes-finally&quot;&gt;2.0.0 Comes Finally&lt;/h2&gt;
@@ -327,12 +436,12 @@ limitations under the License.
 
 &lt;p&gt;Between months, I always think about BMB and try to write a better design pattern for implements of BMB. My first try is &lt;a href=&quot;https://github.com/Nightonke/VHBoomMenuButton&quot;&gt;BMB-iOS&lt;/a&gt;, which contains more family characteristics, for instance, buttons-alignment, text-inside/outside-button.&lt;/p&gt;
 
-&lt;p&gt;And now the BMB-Android 2.0.0 comes.&lt;br /&gt;
-&lt;img src=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Pictures/text-inside-button.gif&quot; width=&quot;250&quot; /&gt;
-&lt;img src=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Pictures/ham-button.gif&quot; width=&quot;250&quot; /&gt;
-&lt;img src=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Pictures/text-outside-button.gif&quot; width=&quot;250&quot; /&gt;
-&lt;img src=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Pictures/actionbar-example.gif&quot; width=&quot;250&quot; /&gt;
-&lt;img src=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Pictures/list-example.gif&quot; width=&quot;250&quot; /&gt;
+&lt;p&gt;And now the BMB-Android 2.0.0 comes.  &lt;br /&gt;
+&lt;img src=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Pictures/text-inside-button.gif&quot; width=&quot;250&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Pictures/ham-button.gif&quot; width=&quot;250&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Pictures/text-outside-button.gif&quot; width=&quot;250&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Pictures/actionbar-example.gif&quot; width=&quot;250&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Pictures/list-example.gif&quot; width=&quot;250&quot; /&gt;&lt;br /&gt;
 &lt;img src=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Pictures/share-example.gif&quot; width=&quot;250&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;gradle--maven&quot;&gt;Gradle &amp;amp; Maven&lt;/h2&gt;
@@ -347,7 +456,7 @@ limitations under the License.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;demo&quot;&gt;Demo&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Apk/BoomMenu.png&quot; width=&quot;200&quot; /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Apk/BoomMenu.png&quot; width=&quot;200&quot; /&gt;  &lt;br /&gt;
 Or by link:&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Apk/BoomMenu%20V2.1.1.apk?raw=true&quot;&gt;Boom V2.1.1 in Github&lt;/a&gt;&lt;/p&gt;
@@ -360,64 +469,64 @@ Or by link:&lt;/p&gt;
 &lt;h3 id=&quot;documentation-chapters&quot;&gt;Documentation Chapters&lt;/h3&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Basic-Usage&quot;&gt;Basic Usage&lt;/a&gt;&lt;br /&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Basic-Usage&quot;&gt;Basic Usage&lt;/a&gt;  &lt;br /&gt;
 How to use BMB in just several lines of code?&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Simple-Circle-Button&quot;&gt;Simple Circle Button&lt;/a&gt;&lt;br /&gt;
-Add simple circle buttons with just an image for each to BMB.&lt;br /&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Simple-Circle-Button&quot;&gt;Simple Circle Button&lt;/a&gt;  &lt;br /&gt;
+Add simple circle buttons with just an image for each to BMB.  &lt;br /&gt;
  &lt;img src=&quot;https://github.com/Nightonke/BoomMenu/raw/master/Pictures/BoomButton/SimpleCircleButton.png&quot; width=&quot;400&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Text-Inside-Circle-Button&quot;&gt;Text Inside Circle Button&lt;/a&gt;&lt;br /&gt;
-Add text inside circle buttons with a text and image inside for each to BMB.&lt;br /&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Text-Inside-Circle-Button&quot;&gt;Text Inside Circle Button&lt;/a&gt;  &lt;br /&gt;
+Add text inside circle buttons with a text and image inside for each to BMB.  &lt;br /&gt;
  &lt;img src=&quot;https://github.com/Nightonke/BoomMenu/raw/master/Pictures/BoomButton/TextInsideCircleButton.png&quot; width=&quot;400&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Text-Outside-Circle-Button&quot;&gt;Text Outside Circle Button&lt;/a&gt;  &lt;br /&gt;
-Add text outside circle buttons with a text and image outside for each to BMB.&lt;br /&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Text-Outside-Circle-Button&quot;&gt;Text Outside Circle Button&lt;/a&gt;    &lt;br /&gt;
+Add text outside circle buttons with a text and image outside for each to BMB.  &lt;br /&gt;
  &lt;img src=&quot;https://github.com/Nightonke/BoomMenu/raw/master/Pictures/BoomButton/TextOutsideCircleButton.png&quot; width=&quot;400&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Ham-Button&quot;&gt;Ham Button&lt;/a&gt;&lt;br /&gt;
-Add ham buttons with with a title, subtitle and image inside for each to BMB.&lt;br /&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Ham-Button&quot;&gt;Ham Button&lt;/a&gt;  &lt;br /&gt;
+Add ham buttons with with a title, subtitle and image inside for each to BMB.  &lt;br /&gt;
  &lt;img src=&quot;https://github.com/Nightonke/BoomMenu/raw/master/Pictures/BoomButton/HamButton.png&quot; width=&quot;400&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Share-Style&quot;&gt;Share Style&lt;/a&gt;&lt;br /&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Share-Style&quot;&gt;Share Style&lt;/a&gt;  &lt;br /&gt;
 Make a share-style BMB.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Custom-Position&quot;&gt;Custom Position&lt;/a&gt;&lt;br /&gt;
- Customize the number and positions of pieces and boom-buttons.&lt;br /&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Custom-Position&quot;&gt;Custom Position&lt;/a&gt;  &lt;br /&gt;
+ Customize the number and positions of pieces and boom-buttons.  &lt;br /&gt;
  &amp;lt;img src=”https://github.com/Nightonke/BoomMenuButton-Images/raw/master/Android/CustomPosition.gif” width=300&amp;gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Button-Place-Alignments&quot;&gt;Button Place Alignments&lt;/a&gt;&lt;br /&gt;
-Place all the buttons to anywhere on screen.&lt;br /&gt;
- &lt;img src=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Pictures/button-place-alignment-enum/button-place-alignment-1.png&quot; width=&quot;200&quot; /&gt;
- &lt;img src=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Pictures/button-place-alignment-enum/button-place-alignment-2.png&quot; width=&quot;200&quot; /&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Button-Place-Alignments&quot;&gt;Button Place Alignments&lt;/a&gt;  &lt;br /&gt;
+Place all the buttons to anywhere on screen.  &lt;br /&gt;
+ &lt;img src=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Pictures/button-place-alignment-enum/button-place-alignment-1.png&quot; width=&quot;200&quot; /&gt;&lt;br /&gt;
+ &lt;img src=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Pictures/button-place-alignment-enum/button-place-alignment-2.png&quot; width=&quot;200&quot; /&gt;&lt;br /&gt;
  &lt;img src=&quot;https://github.com/Nightonke/BoomMenu/blob/master/Pictures/button-place-alignment-enum/button-place-alignment-3.png&quot; width=&quot;200&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Different-Ways-to-Boom&quot;&gt;Different Ways to Boom&lt;/a&gt;&lt;br /&gt;
-Different animations when the buttons boom or re-boom.&lt;br /&gt;
- &lt;img src=&quot;https://github.com/Nightonke/BoomMenu/raw/master/Pictures/boom-enum/boom-enum-parabola-2.png&quot; width=&quot;400&quot; /&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Different-Ways-to-Boom&quot;&gt;Different Ways to Boom&lt;/a&gt;  &lt;br /&gt;
+Different animations when the buttons boom or re-boom.  &lt;br /&gt;
+ &lt;img src=&quot;https://github.com/Nightonke/BoomMenu/raw/master/Pictures/boom-enum/boom-enum-parabola-2.png&quot; width=&quot;400&quot; /&gt;&lt;br /&gt;
  &lt;img src=&quot;https://github.com/Nightonke/BoomMenu/raw/master/Pictures/boom-enum/boom-enum-parabola-3.png&quot; width=&quot;400&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Ease-Animations-for-Buttons&quot;&gt;Ease Animations for Buttons&lt;/a&gt;&lt;br /&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Ease-Animations-for-Buttons&quot;&gt;Ease Animations for Buttons&lt;/a&gt;  &lt;br /&gt;
 Use different and cute ease-animations for buttons.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Different-Order-for-Buttons&quot;&gt;Different Order for Buttons&lt;/a&gt;&lt;br /&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Different-Order-for-Buttons&quot;&gt;Different Order for Buttons&lt;/a&gt;  &lt;br /&gt;
 Different order enum for boom-buttons.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Other-Animations-Attributes-for-Buttons&quot;&gt;Other Animations Attributes for Buttons&lt;/a&gt;&lt;br /&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Other-Animations-Attributes-for-Buttons&quot;&gt;Other Animations Attributes for Buttons&lt;/a&gt;  &lt;br /&gt;
 Delay, duration, rotate-degrees, frames…&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Click-Event-and-Listener&quot;&gt;Click Event and Listener&lt;/a&gt;&lt;br /&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Click-Event-and-Listener&quot;&gt;Click Event and Listener&lt;/a&gt;  &lt;br /&gt;
 Listener for clicking each button or animation-states.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Control-BMB&quot;&gt;Control BMB&lt;/a&gt;&lt;br /&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Control-BMB&quot;&gt;Control BMB&lt;/a&gt;  &lt;br /&gt;
 Boom or re-boom BMB programmatically.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Use-BMB-in-Action-Bar&quot;&gt;Use BMB in Action Bar&lt;/a&gt;&lt;br /&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Use-BMB-in-Action-Bar&quot;&gt;Use BMB in Action Bar&lt;/a&gt;  &lt;br /&gt;
 How to put BMB in action bar?&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Use-BMB-in-Tool-Bar&quot;&gt;Use BMB in Tool Bar&lt;/a&gt;&lt;br /&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Use-BMB-in-Tool-Bar&quot;&gt;Use BMB in Tool Bar&lt;/a&gt;  &lt;br /&gt;
 How to put BMB in tool bar?&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Use-BMB-in-List&quot;&gt;Use BMB in List&lt;/a&gt;&lt;br /&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Use-BMB-in-List&quot;&gt;Use BMB in List&lt;/a&gt;  &lt;br /&gt;
 Matters need attention when you need a BMB in list-view or recycler-view.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Use-BMB-in-Fragment&quot;&gt;Use BMB in Fragment&lt;/a&gt;&lt;br /&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Use-BMB-in-Fragment&quot;&gt;Use BMB in Fragment&lt;/a&gt;  &lt;br /&gt;
 Example for use BMB in fragment.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Attributes-for-BMB-or-Pieces-on-BMB&quot;&gt;Attributes for BMB or Pieces on BMB&lt;/a&gt;&lt;br /&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Attributes-for-BMB-or-Pieces-on-BMB&quot;&gt;Attributes for BMB or Pieces on BMB&lt;/a&gt;  &lt;br /&gt;
 How to change the size or margins of dots on BMB?&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Cache-Optimization-&amp;amp;-Boom-Area&quot;&gt;Cache Optimization &amp;amp; Boom Area&lt;/a&gt;&lt;br /&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Cache-Optimization-&amp;amp;-Boom-Area&quot;&gt;Cache Optimization &amp;amp; Boom Area&lt;/a&gt;  &lt;br /&gt;
 What if I want BMB to boom in just its parent-view?&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Change-Boom-Buttons-Dynamically&quot;&gt;Change Boom Buttons Dynamically&lt;/a&gt;&lt;br /&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Change-Boom-Buttons-Dynamically&quot;&gt;Change Boom Buttons Dynamically&lt;/a&gt;  &lt;br /&gt;
 Change Boom Buttons Dynamically.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Fade-Views&quot;&gt;Fade Views&lt;/a&gt;&lt;br /&gt;
- Add faded views on BMB.&lt;br /&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Fade-Views&quot;&gt;Fade Views&lt;/a&gt;  &lt;br /&gt;
+ Add faded views on BMB.  &lt;br /&gt;
  &amp;lt;img src=”https://github.com/Nightonke/BoomMenuButton-Images/raw/master/Android/FadeViews.gif” width=300&amp;gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Version-History&quot;&gt;Version History&lt;/a&gt;&lt;br /&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Version-History&quot;&gt;Version History&lt;/a&gt;  &lt;br /&gt;
 What’s more for every version?&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Structure-for-BMB&quot;&gt;Structure for BMB&lt;/a&gt;&lt;br /&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/wiki/Structure-for-BMB&quot;&gt;Structure for BMB&lt;/a&gt;  &lt;br /&gt;
 Structure for BMB when I designed it, for sharing and communicating.&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -427,7 +536,7 @@ Structure for BMB when I designed it, for sharing and communicating.&lt;/li&gt;
 &lt;h2 id=&quot;readme-for-version-109-or-below&quot;&gt;ReadMe for Version 1.0.9 or Below&lt;/h2&gt;
 &lt;p&gt;If you still wanna use version 1.0.9 or below, you can find the README below:&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/blob/master/README-EN.md&quot;&gt;English README&lt;/a&gt; 
+&lt;p&gt;&lt;a href=&quot;https://github.com/Nightonke/BoomMenu/blob/master/README-EN.md&quot;&gt;English README&lt;/a&gt; &lt;br /&gt;
 &lt;a href=&quot;https://github.com/Nightonke/BoomMenu/blob/master/README-ZH.md&quot;&gt;中文文档&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;But I strongly suggest you to use the newest version.&lt;/p&gt;
@@ -460,7 +569,7 @@ Structure for BMB when I designed it, for sharing and communicating.&lt;/li&gt;
 &lt;h2 id=&quot;contents&quot;&gt;Contents&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;#installation&quot;&gt;Installation&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#usage&quot;&gt;How to use / Sample&lt;/a&gt;
+  &lt;li&gt;&lt;a href=&quot;#usage&quot;&gt;How to use / Sample&lt;/a&gt;&lt;br /&gt;
  	- &lt;a href=&quot;#customization&quot;&gt;Customization&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#bugs-and-feedback&quot;&gt;Bugs and feedback&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -494,19 +603,19 @@ setNumOfTabs(SnapTabLayout.NumOfTabs.FIVE);
   &lt;/li&gt;
   &lt;li&gt;
     &lt;h3 id=&quot;setting-the-icons-required&quot;&gt;Setting the icons (Required)&lt;/h3&gt;
-    &lt;p&gt;This parameter specifies the icons to be inflated:
-All of the below are ImageButtons so you can set image, background etc.
-&lt;a href=&quot;https://user-images.githubusercontent.com/28961063/47033253-f4a95000-d191-11e8-91b6-c95fce21b439.png&quot;&gt;tab_name_explain&lt;/a&gt;
-```
-tabLayout.smallCenterButton.setImageResource()
-tabLayout.largeCenterButton.setImageResource()
-tabLayout.startButton.setImageResource()
+    &lt;p&gt;This parameter specifies the icons to be inflated:&lt;br /&gt;
+All of the below are ImageButtons so you can set image, background etc.&lt;br /&gt;
+&lt;a href=&quot;https://user-images.githubusercontent.com/28961063/47033253-f4a95000-d191-11e8-91b6-c95fce21b439.png&quot;&gt;tab_name_explain&lt;/a&gt;&lt;br /&gt;
+```&lt;br /&gt;
+tabLayout.smallCenterButton.setImageResource()&lt;br /&gt;
+tabLayout.largeCenterButton.setImageResource()&lt;br /&gt;
+tabLayout.startButton.setImageResource()&lt;br /&gt;
 tabLayout.endButton.setImageResource()&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;//Below required only when using five tabs.
-tabLayout.midStart.setImageResource()
+&lt;p&gt;//Below required only when using five tabs.&lt;br /&gt;
+tabLayout.midStart.setImageResource()&lt;br /&gt;
 tabLayout.midEnd.setImageResource()&lt;/p&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 ## 📐 Customization
@@ -514,21 +623,21 @@ tabLayout.midEnd.setImageResource()&lt;/p&gt;
 * ### Background (Optional)
 This parameter sets the background in extended and collapsed tab mode:
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;tabLayout.setBackgroundCollapsed(R.drawable.tab_gradient_collapsed) // By default black fall gradient.
+&lt;p&gt;tabLayout.setBackgroundCollapsed(R.drawable.tab_gradient_collapsed) // By default black fall gradient.&lt;br /&gt;
 tabLayout.setBackgroundExpanded(R.drawable.tab_gradient_expanded)&lt;/p&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 * ### Color Transition in Icons (Optional)
 This parameter sets the *ColorFilter* in extended and collapsed tab mode:
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;// When the layout moves from expanded to collapsed: Icons color transitions from white to black.
+&lt;p&gt;// When the layout moves from expanded to collapsed: Icons color transitions from white to black.&lt;br /&gt;
 tabLayout.setTransitionIconColors(R.color.white, R.color.black)&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 * ### Color Transition in ViewPager Background (Optional)
 This parameter gives a smooth color transition to the background of viewpager as seen in demo:
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;tabLayout.setVpTransitionBgColors(LeftSideColor: android.R.color.holo_purple
-                , CenterColor: android.R.color.black
+&lt;p&gt;tabLayout.setVpTransitionBgColors(LeftSideColor: android.R.color.holo_purple&lt;br /&gt;
+                , CenterColor: android.R.color.black&lt;br /&gt;
                 , RightSideColor: android.R.color.holo_orange_dark)&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;## Bugs and Feedback
@@ -539,7 +648,7 @@ If you wish to get your app featured here mail me at niranjan.kurambhatti@gmail.
 ## 👨 Developed By
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Niranjan Kurambhatti
+&lt;p&gt;Niranjan Kurambhatti&lt;br /&gt;
 ```&lt;/p&gt;
 
 &lt;h2 id=&quot;-license&quot;&gt;📃 License&lt;/h2&gt;
@@ -573,8 +682,8 @@ limitations under the License.
         <title>Konfetti</title>
         <description>&lt;h1 id=&quot;konfetti-&quot;&gt;Konfetti 🎊&lt;/h1&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://www.android.com&quot;&gt;[platform](https://img.shields.io/badge/platform-Android-green.svg)&lt;/a&gt;
-&lt;a href=&quot;https://android-arsenal.com/api?level=16s&quot;&gt;[API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)&lt;/a&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.android.com&quot;&gt;[platform](https://img.shields.io/badge/platform-Android-green.svg)&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://android-arsenal.com/api?level=16s&quot;&gt;[API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;https://opensource.org/licenses/ISC&quot;&gt;[License: ISC](https://img.shields.io/badge/License-ISC-yellow.svg)&lt;/a&gt; &lt;a href=&quot;https://github.com/KotlinBy/awesome-kotlin&quot;&gt;[Awesome Kotlin Badge](https://kotlin.link/awesome-kotlin.svg)&lt;/a&gt; &lt;a href=&quot;http://twitter.com/dionsegijn&quot;&gt;[Twitter](https://img.shields.io/badge/Twitter-@dionsegijn-blue.svg?style=flat)&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Celebrate more with this lightweight confetti particle system 🎊 Create realistic confetti by implementing this easy to use library.&lt;/p&gt;
@@ -685,22 +794,22 @@ limitations under the License.
     
       <item>
         <title>FoldingCell</title>
-        <description>&lt;p&gt;&lt;a href=&quot;./header.png&quot;&gt;header&lt;/a&gt;
-&lt;img src=&quot;https://github.com/Ramotion/folding-cell-android/blob/master/folding_cell_preview.gif&quot; width=&quot;600&quot; height=&quot;450&quot; /&gt;
+        <description>&lt;p&gt;&lt;a href=&quot;./header.png&quot;&gt;header&lt;/a&gt;&lt;br /&gt;
+&lt;img src=&quot;https://github.com/Ramotion/folding-cell-android/blob/master/folding_cell_preview.gif&quot; width=&quot;600&quot; height=&quot;450&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;foldingcell-for-android&quot;&gt;FoldingCell for Android&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;https://circleci.com/gh/Ramotion/folding-cell-android&quot;&gt;[Circle CI](https://circleci.com/gh/Ramotion/folding-cell-android.svg?style=svg)&lt;/a&gt;
-&lt;a href=&quot;https://www.codacy.com/app/juri-v/folding-cell-android&quot;&gt;[Codacy Badge](https://api.codacy.com/project/badge/grade/339ae33122964163a55a5e8e90619cbc)&lt;/a&gt;
-&lt;a href=&quot;http://twitter.com/Ramotion&quot;&gt;[Twitter](https://img.shields.io/badge/Twitter-@Ramotion-blue.svg?style=flat)&lt;/a&gt;
-&lt;a href=&quot;https://github.com/igrigorik/ga-beacon&quot;&gt;[Analytics](https://ga-beacon.appspot.com/UA-84973210-1/ramotion/folding-cell-android?pixel)&lt;/a&gt;
+&lt;p&gt;&lt;a href=&quot;https://circleci.com/gh/Ramotion/folding-cell-android&quot;&gt;[Circle CI](https://circleci.com/gh/Ramotion/folding-cell-android.svg?style=svg)&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://www.codacy.com/app/juri-v/folding-cell-android&quot;&gt;[Codacy Badge](https://api.codacy.com/project/badge/grade/339ae33122964163a55a5e8e90619cbc)&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://twitter.com/Ramotion&quot;&gt;[Twitter](https://img.shields.io/badge/Twitter-@Ramotion-blue.svg?style=flat)&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://github.com/igrigorik/ga-beacon&quot;&gt;[Analytics](https://ga-beacon.appspot.com/UA-84973210-1/ramotion/folding-cell-android?pixel)&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;https://paypal.me/Ramotion&quot;&gt;[Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;check-this-library-on-other-platforms&quot;&gt;Check this library on other platforms:&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/Ramotion/folding-cell&quot;&gt; 
 &lt;img src=&quot;https://github.com/ramotion/navigation-stack/raw/master/Swift@2x.png&quot; width=&quot;178&quot; height=&quot;81&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Looking for developers for your project?&lt;/strong&gt;&lt;br /&gt;
+&lt;p&gt;&lt;strong&gt;Looking for developers for your project?&lt;/strong&gt;&lt;br /&gt;&lt;br /&gt;
 This project is maintained by Ramotion, Inc. We specialize in the designing and coding of custom UI for Mobile Apps and Websites.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;mailto:alex.a@ramotion.com?subject=Project%20inquiry%20from%20Github&quot;&gt; 
@@ -714,7 +823,7 @@ This project is maintained by Ramotion, Inc. We specialize in the designing and 
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
-&lt;p&gt;​
+&lt;p&gt;​&lt;br /&gt;
 Just download the package from &lt;a href=&quot;http://central.maven.org/maven2/com/ramotion/foldingcell/folding-cell/1.2.2/folding-cell-1.2.2.aar&quot;&gt;here&lt;/a&gt; and add it to your project classpath, or just use the maven repo:&lt;/p&gt;
 
 &lt;p&gt;Gradle:&lt;/p&gt;
@@ -734,8 +843,8 @@ Just download the package from &lt;a href=&quot;http://central.maven.org/maven2/
 &lt;h2 id=&quot;basic-usage&quot;&gt;Basic usage&lt;/h2&gt;
 &lt;p&gt;​&lt;/p&gt;
 &lt;ol&gt;
-  &lt;li&gt;Add &lt;code class=&quot;highlighter-rouge&quot;&gt;com.ramotion.foldingcell.FoldingCell&lt;/code&gt; to your layout
-​
+  &lt;li&gt;Add &lt;code class=&quot;highlighter-rouge&quot;&gt;com.ramotion.foldingcell.FoldingCell&lt;/code&gt; to your layout&lt;br /&gt;
+​&lt;br /&gt;
 ```xml&lt;/li&gt;
 &lt;/ol&gt;
 &lt;com.ramotion.foldingcell.FoldingCell xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; android:id=&quot;@+id/folding_cell&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot;&gt;
@@ -776,14 +885,14 @@ Just download the package from &lt;a href=&quot;http://central.maven.org/maven2/
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;​&lt;/p&gt;
 &lt;ol&gt;
-  &lt;li&gt;Almost done Two steps remain For correct animation, you need to set up two properties on the root element(s) of your Folding Cell:
+  &lt;li&gt;Almost done Two steps remain For correct animation, you need to set up two properties on the root element(s) of your Folding Cell:&lt;br /&gt;
 ​
     &lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;android:clipChildren=&quot;false&quot;
 android:clipToPadding=&quot;false&quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
     &lt;p&gt;​&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;Final step Add onClickListener to your Folding Cell in &lt;code class=&quot;highlighter-rouge&quot;&gt;MainActivity.java&lt;/code&gt; to toggle animation:
+  &lt;li&gt;Final step Add onClickListener to your Folding Cell in &lt;code class=&quot;highlighter-rouge&quot;&gt;MainActivity.java&lt;/code&gt; to toggle animation:&lt;br /&gt;
 ​
     &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Bundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
@@ -804,7 +913,7 @@ android:clipToPadding=&quot;false&quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
     &lt;p&gt;​&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;Extra step - customizing cell settings. For now, there are three main parameters - animation time, back side color and additional flips count. If first two do not cause questions, the third requires an some explanation. It is count of flips to be executed after first(main) flip. Default value is &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;(auto choose). Also there is a fourth, additional parameter - camera height, it controls level(depth) of 3d effect. There are two ways to change cell settings:
+  &lt;li&gt;Extra step - customizing cell settings. For now, there are three main parameters - animation time, back side color and additional flips count. If first two do not cause questions, the third requires an some explanation. It is count of flips to be executed after first(main) flip. Default value is &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;(auto choose). Also there is a fourth, additional parameter - camera height, it controls level(depth) of 3d effect. There are two ways to change cell settings:&lt;br /&gt;
 From xml layout file with &lt;code class=&quot;highlighter-rouge&quot;&gt;res-auto&lt;/code&gt; namespace &lt;code class=&quot;highlighter-rouge&quot;&gt;xmlns:folding-cell=&quot;http://schemas.android.com/apk/res-auto&quot;&lt;/code&gt;:
     &lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;folding-cell:animationDuration=&quot;1000&quot;
 folding-cell:backSideColor=&quot;@color/bgBackSideColor&quot;
@@ -819,18 +928,18 @@ folding-cell:cameraHeight=&quot;30&quot;
 &lt;span class=&quot;c1&quot;&gt;// or with camera height parameter&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;fc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;initialize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;DKGRAY&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-    &lt;p&gt;​
-You can find this and other, more complex, examples in this repository
+    &lt;p&gt;​&lt;br /&gt;
+You can find this and other, more complex, examples in this repository&lt;br /&gt;
 ​&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;br /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
 This library is a part of a &lt;a href=&quot;https://github.com/Ramotion/android-ui-animation-components-and-libraries&quot;&gt;&lt;b&gt;selection of our best UI open-source projects&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;licence&quot;&gt;Licence&lt;/h2&gt;
-&lt;p&gt;​
-Folding cell is released under the MIT license.
+&lt;p&gt;​&lt;br /&gt;
+Folding cell is released under the MIT license.&lt;br /&gt;
 See &lt;a href=&quot;./LICENSE.md&quot;&gt;LICENSE&lt;/a&gt; for details.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -839,12 +948,12 @@ See &lt;a href=&quot;./LICENSE.md&quot;&gt;LICENSE&lt;/a&gt; for details.&lt;/p&
 &lt;p&gt;Try our UI components in our mobile app. Contact us if interested.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.ramotion.showroom&quot;&gt;
-&lt;img src=&quot;https://raw.githubusercontent.com/Ramotion/react-native-circle-menu/master/google_play@2x.png&quot; width=&quot;104&quot; height=&quot;34&quot; /&gt;&lt;/a&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/Ramotion/react-native-circle-menu/master/google_play@2x.png&quot; width=&quot;104&quot; height=&quot;34&quot; /&gt;&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;mailto:alex.a@ramotion.com?subject=Project%20inquiry%20from%20Github&quot;&gt; 
-&lt;img src=&quot;https://github.com/ramotion/gliding-collection/raw/master/contact_our_team@2x.png&quot; width=&quot;187&quot; height=&quot;34&quot; /&gt;&lt;/a&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-Follow us for the latest updates&lt;br /&gt;
+&lt;img src=&quot;https://github.com/ramotion/gliding-collection/raw/master/contact_our_team@2x.png&quot; width=&quot;187&quot; height=&quot;34&quot; /&gt;&lt;/a&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;
+Follow us for the latest updates&lt;br /&gt;&lt;br /&gt;
 &lt;a href=&quot;https://goo.gl/rPFpid&quot;&gt;
 &lt;img src=&quot;https://i.imgur.com/ziSqeSo.png/&quot; width=&quot;156&quot; height=&quot;28&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -1049,7 +1158,7 @@ limitations under the License.
  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ConstraintLayout&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;I recommend you hide the second view layout, since it’s only used as a placeholder for the end destination.
+&lt;p&gt;I recommend you hide the second view layout, since it’s only used as a placeholder for the end destination.&lt;br /&gt;
 The views can be of any type, you can mix and match them, the two layouts can have a different number of views and nested layouts are 100% supported. The only things to keep in mind are:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -1142,187 +1251,6 @@ The views can be of any type, you can mix and match them, the two layouts can ha
         <guid isPermaLink="true">http://localhost:4000/AndroidUICollection/2018/09/27/Transitioner/</guid>
         
         <category>Transitioner</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>SequenceLayout</title>
-        <description>&lt;h1 id=&quot;sequence-layout-httpsjitpackiovtransferwisesequence-layoutsvg&quot;&gt;sequence-layout &lt;a href=&quot;https://jitpack.io/#transferwise/sequence-layout&quot;&gt;[](https://jitpack.io/v/transferwise/sequence-layout.svg)&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;&lt;img align=&quot;right&quot; src=&quot;https://media.giphy.com/media/TGaDOPfTrX749uhD0L/giphy.gif&quot; /&gt;
-A vertical sequence UI component for Android.&lt;/p&gt;
-
-&lt;p&gt;Animates a progress bar to the first active step in the sequence and then periodically runs a pulse animation on that step.&lt;/p&gt;
-
-&lt;h2 id=&quot;setup&quot;&gt;Setup&lt;/h2&gt;
-
-&lt;p&gt;Add the JitPack maven repository to your root &lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt;:&lt;/p&gt;
-&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;allprojects&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;repositories&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;maven&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://jitpack.io&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;And then the actual library dependency to your module’s &lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;implementation&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'com.github.transferwise:sequence-layout:1.0.7'&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-
-&lt;p&gt;Take a look at the &lt;code class=&quot;highlighter-rouge&quot;&gt;sample&lt;/code&gt; app in this repository.&lt;/p&gt;
-
-&lt;h3 id=&quot;in-xml-layout&quot;&gt;In XML layout&lt;/h3&gt;
-&lt;p&gt;You can define steps in your XML layout:&lt;/p&gt;
-
-&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.transferwise.sequencelayout.SequenceLayout&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;com.transferwise.sequencelayout.SequenceStep&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:anchor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;30 Nov&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;First step&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;com.transferwise.sequencelayout.SequenceStep&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Second step&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;com.transferwise.sequencelayout.SequenceStep&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:active=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:anchor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Today&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:subtitle=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Subtitle of this step.&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Third step&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:titleTextAppearance=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@style/TextAppearance.AppCompat.Title&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;com.transferwise.sequencelayout.SequenceStep&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Fourth step&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;com.transferwise.sequencelayout.SequenceStep&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:anchor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;2 Dec&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Fifth step&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/com.transferwise.sequencelayout.SequenceLayout&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Custom attributes for &lt;code class=&quot;highlighter-rouge&quot;&gt;SequenceLayout&lt;/code&gt;:&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Attribute&lt;/th&gt;
-      &lt;th&gt;Description&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;progressForegroundColor&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;foreground color of the progress bar&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;progressBackgroundColor&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;background color of the progress bar&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Custom attributes for &lt;code class=&quot;highlighter-rouge&quot;&gt;SequenceStep&lt;/code&gt;:&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Attribute&lt;/th&gt;
-      &lt;th&gt;Description&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;active&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;boolean to indicate if step is active. There should only be one active step per &lt;code class=&quot;highlighter-rouge&quot;&gt;SequenceLayout&lt;/code&gt;.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;anchor&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;text for the left side of the step&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;anchorTextAppearance&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;styling for the left side of the step&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;title&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;title of the step&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;titleTextAppearance&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;styling for the title of the step&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;subtitle&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;subtitle of the step&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;subtitleTextAppearance&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;styling for the subtitle of the step&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;programmatically&quot;&gt;Programmatically&lt;/h3&gt;
-
-&lt;p&gt;Alternatively, define an adapter that extends &lt;code class=&quot;highlighter-rouge&quot;&gt;SequenceAdapter&amp;lt;T&amp;gt;&lt;/code&gt;, like this:&lt;/p&gt;
-
-&lt;div class=&quot;language-kotlin highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyAdapter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;py&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MyItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SequenceAdapter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MyAdapter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MyItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Int&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MyItem&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bindView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sequenceStep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SequenceStep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MyItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sequenceStep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;setActive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isActive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;setAnchor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;formattedDate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;setAnchorTextAppearance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.)&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;setTitleTextAppearance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;setSubtitle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.)&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;setSubtitleTextAppearance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.)&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;data class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;py&quot;&gt;isActive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Boolean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                      &lt;span class=&quot;kd&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;py&quot;&gt;formattedDate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                      &lt;span class=&quot;kd&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;py&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;… and use it for a &lt;code class=&quot;highlighter-rouge&quot;&gt;SequenceLayout&lt;/code&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;language-kotlin highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;py&quot;&gt;items&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;listOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MyItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MyItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MyItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.))&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;sequenceLayout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setAdapter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MyAdapter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Wed, 26 Sep 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/AndroidUICollection/2018/09/26/SequenceLayout/</link>
-        <guid isPermaLink="true">http://localhost:4000/AndroidUICollection/2018/09/26/SequenceLayout/</guid>
-        
-        <category>Layout</category>
-        
-        <category>Sequence</category>
         
         
       </item>
