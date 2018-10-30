@@ -17,11 +17,11 @@ twitter_username: kmshack_kr
 markdown: kramdown
 kramdown:
   input: GFM
-  hard_wrap: false
+  hard_wrap: true
   
   
 permalink: pretty
-paginate:  16
+paginate:  20
 
 plugins:
   - jekyll-paginate
