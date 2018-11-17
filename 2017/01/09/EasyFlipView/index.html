@@ -545,6 +545,14 @@
                 
               
             
+              
+                
+              
+            
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -675,75 +683,75 @@
 <p><a href="https://www.codacy.com/app/wajahatkarim3/EasyFlipView?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=wajahatkarim3/EasyFlipView&amp;utm_campaign=badger">[Codacy Badge](https://api.codacy.com/project/badge/Grade/b6f4c512c5cf4705a41a04fe101a6c6e)</a><br />
 <a href="https://travis-ci.org/wajahatkarim3/EasyFlipView">[Build Status](https://travis-ci.org/wajahatkarim3/EasyFlipView.svg?branch=master)</a> <a href="https://bintray.com/wajahatkarim3/EasyFlipView/com.wajahatkarim3.EasyFlipView/_latestVersion"> [Download](https://api.bintray.com/packages/wajahatkarim3/EasyFlipView/com.wajahatkarim3.EasyFlipView/images/download.svg) </a> <a href="https://android-arsenal.com/details/1/5051">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-EasyFlipView-brightgreen.svg?style=flat)</a> <a href="https://android-arsenal.com/api?level=15">[API](https://img.shields.io/badge/API-15%2B-blue.svg?style=flat)</a> <a href="https://material.uplabs.com/posts/easyflipview">[](https://img.shields.io/badge/MaterialUp-EasyFlipView-yellowgreen.png)</a> <a href="https://saythanks.io/to/wajahatkarim3">[Say Thanks](https://img.shields.io/badge/Say%20Thanks–1EAEDB.svg)</a></p>
 
-<p>A quick and easy flip view through which you can create views with two sides like credit cards, poker cards etc.</p>
+<div align="center">
+  <sub>Built with ❤︎ by
+  <a href="https://twitter.com/WajahatKarim">Wajahat Karim</a> and
+  <a href="https://github.com/wajahatkarim3/EasyFlipView/graphs/contributors">
+    contributors
+  </a>
+&lt;/div&gt;
+<br />
 
-<p><a href="https://github.com/wajahatkarim3/EasyFlipView/blob/master/Art/demo.gif"></a></p>
+A quick and easy flip view through which you can create views with two sides like credit cards, poker cards etc. 
 
-<h1 id="️-changelog">✔️ Changelog</h1>
-<p>Changes exist in the <a href="https://github.com/wajahatkarim3/EasyFlipView/releases">releases</a> tab.</p>
+[](https://github.com/wajahatkarim3/EasyFlipView/blob/master/Art/demo.gif)
 
-<h1 id="-installation">💻 Installation</h1>
-<p>Add this in your app’s build.gradle file:</p>
-<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
-  <span class="n">implementation</span> <span class="s1">'com.wajahatkarim3.EasyFlipView:EasyFlipView:2.1.0'</span>
-<span class="o">}</span>
-</code></pre></div></div>
+✔️ Changelog
+=========
+Changes exist in the [releases](https://github.com/wajahatkarim3/EasyFlipView/releases) tab.
 
-<p>Or add EasyFlipView as a new dependency inside your pom.xml</p>
+💻 Installation
+============
+Add this in your app's build.gradle file:
+```groovy
+dependencies {
+  implementation 'com.wajahatkarim3.EasyFlipView:EasyFlipView:2.1.1'
+}
+```
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;dependency&gt;</span> 
-  <span class="nt">&lt;groupId&gt;</span>com.wajahatkarim3.EasyFlipView<span class="nt">&lt;/groupId&gt;</span>
-  <span class="nt">&lt;artifactId&gt;</span>EasyFlipView<span class="nt">&lt;/artifactId&gt;</span> 
-  <span class="nt">&lt;version&gt;</span>2.1.0<span class="nt">&lt;/version&gt;</span>
-  <span class="nt">&lt;type&gt;</span>pom<span class="nt">&lt;/type&gt;</span> 
-<span class="nt">&lt;/dependency&gt;</span>
-</code></pre></div></div>
-<p>❔ Usage<br />
-=====</p>
+Or add EasyFlipView as a new dependency inside your pom.xml
 
-<h2 id="xml">XML</h2>
-<p>EasyFlipView In XML layouts(“Vertical”)</p>
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;com.wajahatkarim3.easyflipview.EasyFlipView</span>
-	<span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
-	<span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
-	<span class="na">app:flipOnTouch=</span><span class="s">"true"</span>
-	<span class="na">app:flipEnabled=</span><span class="s">"true"</span>
-	<span class="na">app:flipDuration=</span><span class="s">"400"</span>
-	<span class="na">app:flipType=</span><span class="s">"vertical"</span>
-	<span class="na">app:flipFrom=</span><span class="s">"front"</span>
-	<span class="nt">&gt;</span>
+```xml
+<dependency> 
+  <groupId>com.wajahatkarim3.EasyFlipView</groupId>
+  <artifactId>EasyFlipView</artifactId> 
+  <version>2.1.1</version>
+  <type>pom</type> 
+</dependency>
+```
+❔ Usage
+=====
 
-	<span class="nt">&lt;--</span> <span class="err">Back</span> <span class="err">Layout</span> <span class="err">Goes</span> <span class="err">Here</span> <span class="err">--</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;include</span> <span class="na">layout=</span><span class="s">"@layout/flash_card_layout_back"</span><span class="nt">/&gt;</span>
+XML
+---
+EasyFlipView In XML layouts("Vertical")
+```xml
+<com.wajahatkarim3.easyflipview.EasyFlipView android:layout_width="match_parent" android:layout_height="wrap_content" app:flipOnTouch="true" app:flipEnabled="true" app:flipDuration="400" app:flipType="vertical" app:flipFrom="front">
+
+	&lt;-- Back Layout Goes Here --&gt;
+	<include layout="@layout/flash_card_layout_back" />
         
-	<span class="nt">&lt;--</span> <span class="err">Front</span> <span class="err">Layout</span> <span class="err">Goes</span> <span class="err">Here</span> <span class="err">--</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;include</span> <span class="na">layout=</span><span class="s">"@layout/flash_card_layout_front"</span><span class="nt">/&gt;</span>
+	&lt;-- Front Layout Goes Here --&gt;
+	<include layout="@layout/flash_card_layout_front" />
 
-<span class="nt">&lt;/com.wajahatkarim3.easyflipview.EasyFlipView&gt;</span>
-</code></pre></div></div>
+</com.wajahatkarim3.easyflipview.EasyFlipView>
+```
 
-<p>EasyFlipView In XML layouts(“Horizontal”)</p>
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;com.wajahatkarim3.easyflipview.EasyFlipView</span>
-	<span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
-	<span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
-	<span class="na">app:flipOnTouch=</span><span class="s">"true"</span>
-	<span class="na">app:flipEnabled=</span><span class="s">"true"</span>
-	<span class="na">app:flipDuration=</span><span class="s">"400"</span>
-	<span class="na">app:flipFrom=</span><span class="s">"right"</span>
-	<span class="na">app:flipType=</span><span class="s">"horizontal"</span>
-	<span class="nt">&gt;</span>
+EasyFlipView In XML layouts("Horizontal")
+```xml
+<com.wajahatkarim3.easyflipview.EasyFlipView android:layout_width="match_parent" android:layout_height="wrap_content" app:flipOnTouch="true" app:flipEnabled="true" app:flipDuration="400" app:flipFrom="right" app:flipType="horizontal">
 
-	<span class="nt">&lt;--</span> <span class="err">Back</span> <span class="err">Layout</span> <span class="err">Goes</span> <span class="err">Here</span> <span class="err">--</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;include</span> <span class="na">layout=</span><span class="s">"@layout/flash_card_layout_back"</span><span class="nt">/&gt;</span>
+	&lt;-- Back Layout Goes Here --&gt;
+	<include layout="@layout/flash_card_layout_back" />
 
-	<span class="nt">&lt;--</span> <span class="err">Front</span> <span class="err">Layout</span> <span class="err">Goes</span> <span class="err">Here</span> <span class="err">--</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;include</span> <span class="na">layout=</span><span class="s">"@layout/flash_card_layout_front"</span><span class="nt">/&gt;</span>
+	&lt;-- Front Layout Goes Here --&gt;
+	<include layout="@layout/flash_card_layout_front" />
 
-<span class="nt">&lt;/com.wajahatkarim3.easyflipview.EasyFlipView&gt;</span>
-</code></pre></div></div>
+</com.wajahatkarim3.easyflipview.EasyFlipView>
+```
 
-<h1 id="-customizations--attributes">🎨 Customizations &amp; Attributes</h1>
-<p>All customizable attributes for EasyFlipView</p>
+# 🎨 Customizations &amp; Attributes
+All customizable attributes for EasyFlipView
 <table>
     <th>Attribute Name</th>
     <th>Default Value</th>
@@ -782,116 +790,132 @@
                 </tr>
     </table>
 
-<h2 id="in-code-java">In Code (Java)</h2>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Flips the view with or without animation</span>
-<span class="n">mYourFlipView</span><span class="o">.</span><span class="na">flipTheView</span><span class="o">();</span>
-<span class="n">mYourFlipView</span><span class="o">.</span><span class="na">flipTheView</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+In Code (Java)
+----
+```java
+// Flips the view with or without animation
+mYourFlipView.flipTheView();
+mYourFlipView.flipTheView(false);
 
-<span class="c1">// Sets and Gets the Flip Animation Duration in milliseconds (Default is 400 ms)</span>
-<span class="n">mYourFlipView</span><span class="o">.</span><span class="na">setFlipDuration</span><span class="o">(</span><span class="mi">1000</span><span class="o">);</span>
-<span class="kt">int</span> <span class="n">dur</span> <span class="o">=</span> <span class="n">mYourFlipView</span><span class="o">.</span><span class="na">getFlipDuration</span><span class="o">();</span>
+// Sets and Gets the Flip Animation Duration in milliseconds (Default is 400 ms)
+mYourFlipView.setFlipDuration(1000);
+int dur = mYourFlipView.getFlipDuration();
 
-<span class="c1">// Sets and gets the flip enable status (Default is true)</span>
-<span class="n">mYourFlipView</span><span class="o">.</span><span class="na">setFlipEnabled</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
-<span class="kt">boolean</span> <span class="n">flipStatus</span> <span class="o">=</span> <span class="n">mYourFlipView</span><span class="o">.</span><span class="na">isFlipEnabled</span><span class="o">();</span>
+// Sets and gets the flip enable status (Default is true)
+mYourFlipView.setFlipEnabled(false);
+boolean flipStatus = mYourFlipView.isFlipEnabled();
 
-<span class="c1">// Sets and gets the flip on touch status (Default is true)</span>
-<span class="n">mYourFlipView</span><span class="o">.</span><span class="na">setFlipOntouch</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
-<span class="kt">boolean</span> <span class="n">flipTouchStatus</span> <span class="o">=</span> <span class="n">mYourFlipView</span><span class="o">.</span><span class="na">isFlipOnTouch</span><span class="o">();</span>
+// Sets and gets the flip on touch status (Default is true)
+mYourFlipView.setFlipOntouch(false);
+boolean flipTouchStatus = mYourFlipView.isFlipOnTouch();
 
-<span class="c1">// Get current flip state in enum (FlipState.FRONT_SIDE or FlipState.BACK_SIDE)</span>
-<span class="n">EasyFlipView</span><span class="o">.</span><span class="na">FlipState</span> <span class="n">flipSide</span> <span class="o">=</span> <span class="n">mYourFlipView</span><span class="o">.</span><span class="na">getCurrentFlipState</span><span class="o">();</span>
+// Get current flip state in enum (FlipState.FRONT_SIDE or FlipState.BACK_SIDE)
+EasyFlipView.FlipState flipSide = mYourFlipView.getCurrentFlipState();
 
-<span class="c1">// Get whether front/back side of flip is visible or not.</span>
-<span class="kt">boolean</span> <span class="n">frontVal</span> <span class="o">=</span> <span class="n">mYourFlipView</span><span class="o">.</span><span class="na">isFrontSide</span><span class="o">();</span>
-<span class="kt">boolean</span> <span class="n">backVal</span> <span class="o">=</span> <span class="n">mYourFlipView</span><span class="o">.</span><span class="na">isBackSide</span><span class="o">();</span>
+// Get whether front/back side of flip is visible or not.
+boolean frontVal = mYourFlipView.isFrontSide();
+boolean backVal = mYourFlipView.isBackSide();
 
-<span class="c1">// Get/Set the FlipType to FlipType.Horizontal</span>
-<span class="kt">boolean</span> <span class="n">isHorizontal</span> <span class="o">=</span> <span class="n">mYourFlipView</span><span class="o">.</span><span class="na">isHorizontalType</span><span class="o">();</span>
-<span class="n">mYourFlipView</span><span class="o">.</span><span class="na">setToHorizontalType</span><span class="o">();</span>
+// Get/Set the FlipType to FlipType.Horizontal
+boolean isHorizontal = mYourFlipView.isHorizontalType();
+mYourFlipView.setToHorizontalType();
 
-<span class="c1">// Get/Set the FlipType to FlipType.Vertical</span>
-<span class="kt">boolean</span> <span class="n">isVertical</span> <span class="o">=</span> <span class="n">mYourFlipView</span><span class="o">.</span><span class="na">isVerticalType</span><span class="o">();</span>
-<span class="n">mYourFlipView</span><span class="o">.</span><span class="na">setToVerticalType</span><span class="o">();</span>
+// Get/Set the FlipType to FlipType.Vertical
+boolean isVertical = mYourFlipView.isVerticalType();
+mYourFlipView.setToVerticalType();
 
-</code></pre></div></div>
+// Sets the animation direction from left (horizontal) and back (vertical)
+easyFlipView.setFlipTypeFromLeft();
 
-<h2 id="flip-animation-listener">Flip Animation Listener</h2>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">EasyFlipView</span> <span class="n">easyFlipView</span> <span class="o">=</span> <span class="o">(</span><span class="n">EasyFlipView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">easyFlipView</span><span class="o">);</span>
-<span class="n">easyFlipView</span><span class="o">.</span><span class="na">setOnFlipListener</span><span class="o">(</span><span class="k">new</span> <span class="n">EasyFlipView</span><span class="o">.</span><span class="na">OnFlipAnimationListener</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onViewFlipCompleted</span><span class="o">(</span><span class="n">EasyFlipView</span> <span class="n">flipView</span><span class="o">,</span> <span class="n">EasyFlipView</span><span class="o">.</span><span class="na">FlipState</span> <span class="n">newCurrentSide</span><span class="o">)</span> 
-            <span class="o">{</span>
+// Sets the animation direction from right (horizontal) and front (vertical)
+easyFlipView.setFlipTypeFromRight();
+
+// Sets the animation direction from front (vertical) and right (horizontal)
+easyFlipView.setFlipTypeFromFront();
+
+// Sets the animation direction from back (vertical) and left (horizontal)
+easyFlipView.setFlipTypeFromBack();
+
+// Returns the flip type from direction. For horizontal, it will be either right or left and for vertical, it will be front or back.
+easyFlipView.getFlipTypeFrom();
+
+```
+
+Flip Animation Listener
+---
+```java
+EasyFlipView easyFlipView = (EasyFlipView) findViewById(R.id.easyFlipView);
+easyFlipView.setOnFlipListener(new EasyFlipView.OnFlipAnimationListener() {
+            @Override
+            public void onViewFlipCompleted(EasyFlipView flipView, EasyFlipView.FlipState newCurrentSide) 
+            {
                 
-                <span class="c1">// ...</span>
-                <span class="c1">// Your code goes here</span>
-                <span class="c1">// ...</span>
+                // ...
+                // Your code goes here
+                // ...
                 
-            <span class="o">}</span>
-        <span class="o">});</span>
-</code></pre></div></div>
+            }
+        });
+```
 
-<h1 id="-donations">💰 Donations</h1>
+💰 Donations
+=============
 
-<p>This project needs you If you would like to support this project’s further development, the creator of this project or the continuous maintenance of this project, feel free to donate. Your donation is highly appreciated (and I love food, coffee and beer). Thank you</p>
+This project needs you If you would like to support this project's further development, the creator of this project or the continuous maintenance of this project, feel free to donate. Your donation is highly appreciated (and I love food, coffee and beer). Thank you
 
-<p><strong>PayPal</strong></p>
+**PayPal**
 
-<ul>
-  <li><strong><a href="https://www.paypal.me/WajahatKarim/5">Donate $5</a></strong>: Thank’s for creating this project, here’s a tea (or some juice) for you</li>
-  <li><strong><a href="https://www.paypal.me/WajahatKarim/10">Donate $10</a></strong>: Wow, I am stunned. Let me take you to the movies</li>
-  <li><strong><a href="https://www.paypal.me/WajahatKarim/15">Donate $15</a></strong>: I really appreciate your work, let’s grab some lunch</li>
-  <li><strong><a href="https://www.paypal.me/WajahatKarim/25">Donate $25</a></strong>: That’s some awesome stuff you did right there, dinner is on me</li>
-  <li><strong><a href="https://www.paypal.me/WajahatKarim/50">Donate $50</a></strong>: I really really want to support this project, great job</li>
-  <li><strong><a href="https://www.paypal.me/WajahatKarim/100">Donate $100</a></strong>: You are the man This project saved me hours (if not days) of struggle and hard work, simply awesome</li>
-  <li><strong><a href="https://www.paypal.me/WajahatKarim/2799">Donate $2799</a></strong>: Go buddy, buy Macbook Pro for yourself</li>
-</ul>
+* **[Donate $5](https://www.paypal.me/WajahatKarim/5)**: Thank's for creating this project, here's a tea (or some juice) for you
+* **[Donate $10](https://www.paypal.me/WajahatKarim/10)**: Wow, I am stunned. Let me take you to the movies
+* **[Donate $15](https://www.paypal.me/WajahatKarim/15)**: I really appreciate your work, let's grab some lunch
+* **[Donate $25](https://www.paypal.me/WajahatKarim/25)**: That's some awesome stuff you did right there, dinner is on me
+* **[Donate $50](https://www.paypal.me/WajahatKarim/50)**: I really really want to support this project, great job
+* **[Donate $100](https://www.paypal.me/WajahatKarim/100)**: You are the man This project saved me hours (if not days) of struggle and hard work, simply awesome
+* **[Donate $2799](https://www.paypal.me/WajahatKarim/2799)**: Go buddy, buy Macbook Pro for yourself
 
-<p>Of course, you can also choose what you want to donate, all donations are awesome</p>
+Of course, you can also choose what you want to donate, all donations are awesome
 
-<h1 id="-developed-by">👨 Developed By</h1>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Wajahat Karim
-</code></pre></div></div>
-<ul>
-  <li>Website (http://wajahatkarim.com)</li>
-  <li>Twitter (http://twitter.com/wajahatkarim)</li>
-  <li>Medium (http://www.medium.com/@wajahatkarim3)</li>
-  <li>LinkedIn (http://www.linkedin.com/in/wajahatkarim)</li>
-</ul>
+👨 Developed By
+============
+```
+Wajahat Karim
+```
+- Website (http://wajahatkarim.com)
+- Twitter (http://twitter.com/wajahatkarim)
+- Medium (http://www.medium.com/@wajahatkarim3)
+- LinkedIn (http://www.linkedin.com/in/wajahatkarim)
 
-<h1 id="-special-thanks">💖 Special Thanks</h1>
-<ul>
-  <li><a href="https://github.com/iGio90"><strong>iGio90</strong></a> for adding dynamic views support <a href="https://github.com/wajahatkarim3/EasyFlipView/pull/10">Pull Request # 10</a></li>
-  <li><a href="https://www.linkedin.com/in/sachin-varma-58b243118/"><strong>Sachin Varma</strong></a> for adding vertical animations support <a href="https://github.com/wajahatkarim3/EasyFlipView/pull/12">Pull Request # 12</a></li>
-  <li><a href="https://www.linkedin.com/in/sachin-varma-58b243118/"><strong>Sachin Varma</strong></a> for adding multi-dimension animations support <a href="https://github.com/wajahatkarim3/EasyFlipView/pull/23">Pull Request # 23</a></li>
-</ul>
+💖 Special Thanks
+=========
+- [**iGio90**](https://github.com/iGio90) for adding dynamic views support [Pull Request # 10](https://github.com/wajahatkarim3/EasyFlipView/pull/10)
+- [**Sachin Varma**](https://www.linkedin.com/in/sachin-varma-58b243118/) for adding vertical animations support [Pull Request # 12](https://github.com/wajahatkarim3/EasyFlipView/pull/12)
+- [**Sachin Varma**](https://www.linkedin.com/in/sachin-varma-58b243118/) for adding multi-dimension animations support [Pull Request # 23](https://github.com/wajahatkarim3/EasyFlipView/pull/23)
 
-<h1 id="-how-to-contribute">👍 How to Contribute</h1>
-<ol>
-  <li>Fork it</li>
-  <li>Create your feature branch (git checkout -b my-new-feature)</li>
-  <li>Commit your changes (git commit -am ‘Add some feature’)</li>
-  <li>Push to the branch (git push origin my-new-feature)</li>
-  <li>Create new Pull Request</li>
-</ol>
 
-<h1 id="-license">📃 License</h1>
+# 👍 How to Contribute
+1. Fork it
+2. Create your feature branch (git checkout -b my-new-feature)
+3. Commit your changes (git commit -am 'Add some feature')
+4. Push to the branch (git push origin my-new-feature)
+5. Create new Pull Request
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright 2017 Wajahat Karim
+# 📃 License
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+    Copyright 2018 Wajahat Karim
 
-   http://www.apache.org/licenses/LICENSE-2.0
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-</code></pre></div></div>
+       http://www.apache.org/licenses/LICENSE-2.0
 
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+</sub></div>
 
           <br>
           <div class="post__tags">

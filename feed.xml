@@ -5,9 +5,278 @@
     <description>Collection of OpenSource for Android UI.</description>
     <link>http://localhost:4000/AndroidUICollection/</link>
     <atom:link href="http://localhost:4000/AndroidUICollection/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 30 Oct 2018 23:36:40 +0900</pubDate>
-    <lastBuildDate>Tue, 30 Oct 2018 23:36:40 +0900</lastBuildDate>
+    <pubDate>Sat, 17 Nov 2018 23:58:01 +0900</pubDate>
+    <lastBuildDate>Sat, 17 Nov 2018 23:58:01 +0900</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
+    
+      <item>
+        <title>MotionLayout Carousel</title>
+        <description>&lt;h1 id=&quot;android-motionlayout-carousel&quot;&gt;Android MotionLayout Carousel&lt;/h1&gt;
+&lt;p&gt;Simple Carousel built with MotionLayout&lt;/p&gt;
+
+&lt;h4 id=&quot;demo-1&quot;&gt;Demo 1&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/faob-dev/MotionLayoutCarousel/master/screenshots/motion_layout.gif&quot;&gt;alt tag&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;demo-2&quot;&gt;Demo 2&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/faob-dev/MotionLayoutCarousel/master/screenshots/motion_layout2.gif&quot;&gt;alt tag&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 17 Nov 2018 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/AndroidUICollection/2018/11/17/MotionLayoutCarousel/</link>
+        <guid isPermaLink="true">http://localhost:4000/AndroidUICollection/2018/11/17/MotionLayoutCarousel/</guid>
+        
+        <category>MotionLayout</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>CookieBar2</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://android-arsenal.com/details/1/6122&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-CookieBar2-brightgreen.svg?style=flat)&lt;/a&gt; &lt;a href=&quot;https://www.codacy.com/app/AviranAbady/CookieBar2?utm_source=github.com&amp;amp;utm_medium=referral&amp;amp;utm_content=AviranAbady/CookieBar2&amp;amp;utm_campaign=badger&quot;&gt;[Codacy Badge](https://api.codacy.com/project/badge/Grade/6474fc01133444e0b6f615d9b1af8589)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;cookiebar-2&quot;&gt;CookieBar 2&lt;/h1&gt;
+&lt;p&gt;CookieBar is a lightweight library for showing a brief message at the top or bottom of the screen.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-gradle highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;implementation&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'org.aviran.cookiebar2:cookiebar2:1.0.9'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;screenshot&quot;&gt;Screenshot&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/AviranAbady/storage/master/cookiebar2.gif&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Main differences from the original &lt;a href=&quot;https://github.com/liuguangqiang/CookieBar/&quot;&gt;Cookiebar&lt;/a&gt; are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Swipe to dismiss has been added.&lt;/li&gt;
+  &lt;li&gt;Programmatic dismiss functionality added.&lt;/li&gt;
+  &lt;li&gt;Only one Cookie can be displayed at a time (New top cookie will dismiss the current top one if exists).&lt;/li&gt;
+  &lt;li&gt;Message view captures clicks, blocks downward propagation.&lt;/li&gt;
+  &lt;li&gt;Slightly different build interface.&lt;/li&gt;
+  &lt;li&gt;Icon animator support.&lt;/li&gt;
+  &lt;li&gt;Custom layout can be applied to a cookie.&lt;/li&gt;
+  &lt;li&gt;Colors presets added.&lt;/li&gt;
+  &lt;li&gt;Removed supportRtl / allowBackup from library scope (Should be set at app level).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;create-a-simple-cookie&quot;&gt;Create a simple cookie&lt;/h2&gt;
+&lt;h3 id=&quot;using-kotlin&quot;&gt;Using Kotlin&lt;/h3&gt;
+&lt;div class=&quot;language-kotlin highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;CookieBar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;@MainActivity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;TITLE&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setMessage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;MESSAGE&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;using-java&quot;&gt;Using Java&lt;/h3&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;CookieBar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MainActivity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+         &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;TITLE&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+         &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;MESSAGE&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+         &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;cookie-with-an-icon-and-an-action&quot;&gt;Cookie with an icon and an action&lt;/h2&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;CookieBar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MainActivity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+         &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;TITLE&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+         &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setIcon&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;icon&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+         &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;MESSAGE&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+         &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAction&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ACTION&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;OnActionClickListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+             &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+             &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+             &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+         &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;
+         &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;programmatically-dismiss-cookies-currently-being-displayed&quot;&gt;Programmatically dismiss cookies currently being displayed&lt;/h2&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;CookieBar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;dismiss&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MainActivity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;create-a-cookie-with-a-custom-layout&quot;&gt;Create a cookie with a custom layout&lt;/h2&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// The view you inflate must contain subviews with the same id's as the original layout_cookie.xml&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// You can set visibility to gone, if you wish to hide them.&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+                        &lt;span class=&quot;n&quot;&gt;LayoutInflater&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+                        &lt;span class=&quot;nf&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()).&lt;/span&gt;
+                        &lt;span class=&quot;n&quot;&gt;inflate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;custom_cookie&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ProgressBar&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;progressBar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;cookiebar_progressbar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;CookieBar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MainActivity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+         &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setCustomView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;customView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+         &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;plain_cookie_title&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+         &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;plain_cookie_message&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+         &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setDuration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+         &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAction&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hide Progress bar&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;OnActionClickListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                  &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+                  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                           &lt;span class=&quot;n&quot;&gt;progressBar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setVisibility&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;View&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;GONE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+         &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;
+         &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;change-default-cookie-style-by-setting-theme-attributes&quot;&gt;Change default cookie style by setting theme attributes&lt;/h2&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;style&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;AppTheme&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;parent=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Theme.AppCompat.Light.DarkActionBar&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;item&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cookieTitleColor&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;@color/default_title_color&lt;span class=&quot;nt&quot;&gt;&amp;lt;/item&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;item&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cookieMessageColor&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;@color/default_message_color&lt;span class=&quot;nt&quot;&gt;&amp;lt;/item&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;item&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cookieActionColor&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;@color/default_action_color&lt;span class=&quot;nt&quot;&gt;&amp;lt;/item&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;item&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cookieBackgroundColor&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;@color/default_bg_color&lt;span class=&quot;nt&quot;&gt;&amp;lt;/item&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;dynamically-set-cookie-style&quot;&gt;Dynamically set cookie style&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;layoutGravity&lt;/li&gt;
+  &lt;li&gt;backgroundColor&lt;/li&gt;
+  &lt;li&gt;titleColor&lt;/li&gt;
+  &lt;li&gt;messageColor&lt;/li&gt;
+  &lt;li&gt;actionColor&lt;/li&gt;
+  &lt;li&gt;duration&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2017
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Sat, 17 Nov 2018 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/AndroidUICollection/2018/11/17/CookieBar2/</link>
+        <guid isPermaLink="true">http://localhost:4000/AndroidUICollection/2018/11/17/CookieBar2/</guid>
+        
+        <category>View</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>FlabbyListView</title>
+        <description>&lt;h1 id=&quot;flabbylistview&quot;&gt;FlabbyListView&lt;/h1&gt;
+
+&lt;p&gt;Android library to display a ListView which cells are not rigid but flabby and react to ListView scroll and touch events.&lt;/p&gt;
+
+&lt;p&gt;A video example of this library is on this &lt;a href=&quot;https://www.youtube.com/watch?v=yN6oO4dBgW8&quot;&gt;youtube video&lt;/a&gt;.  &lt;br /&gt;
+The &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.jpardogo.android.flabbylistview&quot;&gt;demo app&lt;/a&gt; can be found on the play store.  &lt;br /&gt;
+And I also wrote a &lt;a href=&quot;http://blog.jpardogo.com/path-and-control-points/&quot;&gt;blog post&lt;/a&gt; about this library in &lt;a href=&quot;http://jpardogo.com&quot;&gt;my blog&lt;/a&gt;&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+ &lt;img src=&quot;http://i.imgur.com/ugCBHiH.gif](http://i.imgur.com/ugCBHiH.gif&quot; /&gt;
+ &lt;img src=&quot;http://i.imgur.com/wfWGrBS.gif](http://i.imgur.com/wfWGrBS.gif&quot; /&gt;
+ &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.jpardogo.android.flabbylistview&quot;&gt;
+    &lt;img src=&quot;https://raw.github.com/jpardogo/ListBuddies/master/art/google_play%20badge.png&quot; /&gt;
+ &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+
+&lt;p&gt;1.Place the &lt;code class=&quot;highlighter-rouge&quot;&gt;FlabbyListView&lt;/code&gt; on your layout:&lt;/p&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;lt;com.jpardogo.android.flabbylistview.lib.FlabbyListView&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;xmlns:android=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;xmlns:tools=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/tools&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@android:id/list&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;2.Populate it with items which xml layout is wrap by a &lt;code class=&quot;highlighter-rouge&quot;&gt;FlabbyLayout&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;lt;--Notice&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;that&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;view&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;&amp;lt;FrameLayout&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;.--&amp;gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;com.jpardogo.android.flabbylistview.lib.FlabbyLayout&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;xmlns:android=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;xmlns:tools=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/tools&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;100dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:orientation=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;vertical&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;--Your&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;content--&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/FlabbyLayout&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;3.Set the color of each item. It needs to be set on the getView method of your adapter calling &lt;code class=&quot;highlighter-rouge&quot;&gt;setFlabbyColor&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;FlabbyLayout&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;convertView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ViewGroup&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;ViewHolder&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;holder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;convertView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;convertView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LayoutInflater&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;inflate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;item_list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;holder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ViewHolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;convertView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;convertView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTag&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;holder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;holder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ViewHolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;convertView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getTag&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;argb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mRandomizer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;nextInt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;256&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mRandomizer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;nextInt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;256&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mRandomizer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;nextInt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;256&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FlabbyLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;convertView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setFlabbyColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;holder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getItem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;convertView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Including in your project&lt;br /&gt;
+————————-&lt;/p&gt;
+
+&lt;p&gt;You can either add the library to your application as a library project or add the following dependency to your build.gradle:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://maven-badges.herokuapp.com/maven-central/com.jpardogo.flabbylistview/library/badge.svg&quot;&gt;Maven Central&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'com.jpardogo.flabbylistview:library:(latest version)'&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;notes&quot;&gt;Notes&lt;/h2&gt;
+
+&lt;p&gt;The iOS version developed by &lt;a href=&quot;https://github.com/brocoo&quot;&gt;brocoo&lt;/a&gt; is available at &lt;a href=&quot;https://github.com/brocoo/BRFlabbyTable&quot;&gt;BRFlabbyTable&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;developed-by&quot;&gt;Developed By&lt;/h2&gt;
+
+&lt;p&gt;Javier Pardo de Santayana Gómez - &lt;a href=&quot;mailto:jpardogo@gmail.com&quot;&gt;jpardogo@gmail.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/jpardogo&quot;&gt;
+  &lt;img alt=&quot;Follow me on Twitter&quot; src=&quot;https://raw.github.com/jpardogo/ListBuddies/master/art/ic_twitter.png&quot; /&gt;
+&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://plus.google.com/u/0/+JavierPardo/posts&quot;&gt;
+  &lt;img alt=&quot;Follow me on Google+&quot; src=&quot;https://raw.github.com/jpardogo/ListBuddies/master/art/ic_google+.png&quot; /&gt;
+&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://www.linkedin.com/profile/view?id=155395637&quot;&gt;
+  &lt;img alt=&quot;Follow me on LinkedIn&quot; src=&quot;https://raw.github.com/jpardogo/ListBuddies/master/art/ic_linkedin.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2013 Javier Pardo de Santayana Gómez
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Thu, 01 Nov 2018 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/AndroidUICollection/2018/11/01/FlabbyListView/</link>
+        <guid isPermaLink="true">http://localhost:4000/AndroidUICollection/2018/11/01/FlabbyListView/</guid>
+        
+        <category>ListView</category>
+        
+        
+      </item>
     
       <item>
         <title>WoWoViewPager</title>
@@ -568,9 +837,9 @@ Structure for BMB when I designed it, for sharing and communicating.&lt;/li&gt;
 
 &lt;h2 id=&quot;contents&quot;&gt;Contents&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#installation&quot;&gt;Installation&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#usage&quot;&gt;How to use / Sample&lt;/a&gt;&lt;br /&gt;
- 	- &lt;a href=&quot;#customization&quot;&gt;Customization&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#💻-Installation&quot;&gt;Installation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#❔-Usage&quot;&gt;How to use / Sample&lt;/a&gt;&lt;br /&gt;
+ 	- &lt;a href=&quot;#📐-Customization&quot;&gt;Customization&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#bugs-and-feedback&quot;&gt;Bugs and feedback&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -643,7 +912,6 @@ This parameter gives a smooth color transition to the background of viewpager as
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;## Bugs and Feedback
 
 For bugs, feature requests, and discussion please use [GitHub Issues](https://github.com/nirukk52/SnapTabLayout/issues).
-If you wish to get your app featured here mail me at niranjan.kurambhatti@gmail.com
 
 ## 👨 Developed By
 
@@ -963,294 +1231,6 @@ Follow us for the latest updates&lt;br /&gt;&lt;br /&gt;
         <guid isPermaLink="true">http://localhost:4000/AndroidUICollection/2018/10/11/FoldingCell/</guid>
         
         <category>View</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>CardStackView</title>
-        <description>&lt;h1 id=&quot;cardstackview&quot;&gt;CardStackView&lt;/h1&gt;
-&lt;p&gt;Show something like cards with 3 kinds of animations(alldown, updown, updownstack). Two ways to scroll the items:one is scroll normal as listview, other one is scroll to overlap first one.&lt;/p&gt;
-
-&lt;h1 id=&quot;screenshot&quot;&gt;Screenshot&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;/screenshot/screenshot1.gif&quot;&gt;&lt;/a&gt; &lt;a href=&quot;/screenshot/screenshot2.gif&quot;&gt;&lt;/a&gt; &lt;a href=&quot;/screenshot/screenshot3.gif&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;installation&quot;&gt;Installation&lt;/h1&gt;
-&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'com.loopeer.library:cardstack:1.0.2'&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;usages&quot;&gt;Usages&lt;/h1&gt;
-&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.loopeer.cardstack.CardStackView&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;mStackView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CardStackView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stackview_main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;mTestStackAdapter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TestStackAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;mStackView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mTestStackAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;mTestStackAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;updateData&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Arrays&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;asList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TEST_DATAS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;license&quot;&gt;License&lt;/h1&gt;
-&lt;pre&gt;
-Copyright 2016 Loopeer
-
-Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-&lt;/pre&gt;
-
-</description>
-        <pubDate>Wed, 10 Oct 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/AndroidUICollection/2018/10/10/CardStackView/</link>
-        <guid isPermaLink="true">http://localhost:4000/AndroidUICollection/2018/10/10/CardStackView/</guid>
-        
-        <category>CardView</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>InboxRecyclerView</title>
-        <description>&lt;p&gt;&lt;a href=&quot;https://youtu.be/aI9wX91m3Qs&quot;&gt;[](https://github.com/saket/InboxRecyclerView/blob/master/images/static_thumbnail.jpg)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;InboxRecyclerView is a library for building expandable descendant navigation, inspired by &lt;a href=&quot;http://androidniceties.tumblr.com/post/100872004063/inbox-by-gmail-google-play-link&quot;&gt;Google Inbox&lt;/a&gt; and &lt;a href=&quot;https://material.io/design/material-studies/reply.html&quot;&gt;Reply&lt;/a&gt;. If you’re interested in learning how it was created, &lt;a href=&quot;https://saket.me/inbox-recyclerview&quot;&gt;here’s a detailed blog post&lt;/a&gt;.&lt;/p&gt;
-
-&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;implementation&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'me.saket:inboxrecyclerview:1.0.0-rc1'&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;FYI, &lt;code class=&quot;highlighter-rouge&quot;&gt;InboxRecyclerView&lt;/code&gt; has a dependency on &lt;code class=&quot;highlighter-rouge&quot;&gt;androidx&lt;/code&gt;. If you haven’t &lt;a href=&quot;https://android-developers.googleblog.com/2018/05/hello-world-androidx.html&quot;&gt;migrated&lt;/a&gt; from the support library already, this would be a good opportunity.&lt;/p&gt;
-
-&lt;h3 id=&quot;usage&quot;&gt;Usage&lt;/h3&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;InboxRecyclerView&lt;/code&gt; can be dropped in existing projects without requiring any effort. You can take a look at the &lt;a href=&quot;https://github.com/saket/InboxRecyclerView/tree/master/sample&quot;&gt;sample app&lt;/a&gt; for best practices or &lt;a href=&quot;https://github.com/saket/InboxRecyclerView/releases&quot;&gt;download its APK&lt;/a&gt; for trying it out on your phone.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Layout&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;me.saket.inboxrecyclerview.InboxRecyclerView&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;--&lt;/span&gt;
-  &lt;span class=&quot;err&quot;&gt;This&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;your&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;expandable&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;content&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;will&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;be&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;present.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;One&lt;/span&gt;
-  &lt;span class=&quot;err&quot;&gt;way&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;would&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;be&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;Fragment&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;inside&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;layout&lt;/span&gt;
-  &lt;span class=&quot;err&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;update&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;when&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;any&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;list&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;clicked.&lt;/span&gt;
-
-  &lt;span class=&quot;err&quot;&gt;It's&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;recommended&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;that&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;content&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;page&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;has&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;higher&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;z-index&lt;/span&gt;
-  &lt;span class=&quot;err&quot;&gt;than&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;list.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;This&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;can&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;be&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;achieved&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;either&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;giving&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;a&lt;/span&gt;
-  &lt;span class=&quot;err&quot;&gt;higher&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;view&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;position&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;higher&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;elevation.&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;me.saket.inboxrecyclerview.page.ExpandablePageLayout&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Expanding content&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;recyclerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setExpandablePage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;contentPage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;recyclerViewAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;itemClickListener&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clickedItem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;expandableFragment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;loadContent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clickedItem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;recyclerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;expandItem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clickedItem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;adapterId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;how-do-i&quot;&gt;How do I…&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/saket/InboxRecyclerView/wiki/Item-animations&quot;&gt;customize item expand animations?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/saket/InboxRecyclerView/wiki/Pull-to-collapse&quot;&gt;control the pull-to-collapse gesture?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/saket/InboxRecyclerView/wiki/Background-tint&quot;&gt;change the background tint?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/saket/InboxRecyclerView/wiki/Page-callbacks&quot;&gt;listen to state changes?&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;pull-collapsible-activities&quot;&gt;Pull collapsible activities&lt;/h3&gt;
-
-&lt;p&gt;To maintain consistency across the whole app, this library also includes a &lt;code class=&quot;highlighter-rouge&quot;&gt;PullCollapsibleActivity&lt;/code&gt; that brings the same animations and gesture to activities with little effort.&lt;/p&gt;
-
-&lt;p&gt;Step 1. Extend &lt;code class=&quot;highlighter-rouge&quot;&gt;PullCollapsibleActivity&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Step 2. Add these attributes to the activity’s theme:&lt;/p&gt;
-
-&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;item&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;“android:windowIsTranslucent”&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;true&lt;span class=&quot;nt&quot;&gt;&amp;lt;/item&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;item&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;“android:colorBackgroundCacheHint”&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;@null&lt;span class=&quot;nt&quot;&gt;&amp;lt;/item&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;license&quot;&gt;License&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2018 Saket Narayan.
-
-Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Fri, 28 Sep 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/AndroidUICollection/2018/09/28/InboxRecyclerView/</link>
-        <guid isPermaLink="true">http://localhost:4000/AndroidUICollection/2018/09/28/InboxRecyclerView/</guid>
-        
-        <category>RecyclerView</category>
-        
-        <category>Inbox</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Transitioner</title>
-        <description>&lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/dev-labs-bg/transitioner/master/logo.png&quot;&gt;logo&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://opensource.org/licenses/MIT&quot;&gt;[License: MIT](https://img.shields.io/badge/license-MIT-a31f34.svg?style=flat-square)&lt;/a&gt; &lt;a href=&quot;https://bintray.com/radoslav/maven/transitioner/1.3/link&quot;&gt;[Download](https://img.shields.io/badge/download-1.3-6db33f.svg?style=flat-square&amp;amp;label=version)&lt;/a&gt; &lt;a href=&quot;http://kotlinlang.org&quot;&gt;[Kotlin](https://img.shields.io/badge/kotlin-1.2.0-f5801e.svg?style=flat-square)&lt;/a&gt; &lt;a href=&quot;http://twitter.com/devlabsbg&quot;&gt;[Twitter URL](https://img.shields.io/badge/twitter-%40devlabsbg-1DA1F2.svg?style=flat-square&amp;amp;logo=twitter)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Transitioner provides easy, dynamic and adjustable animations between two views with nested children.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/dev-labs-bg/transitioner/blob/master/preview1.gif&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;App design feature &lt;a href=&quot;https://www.uplabs.com/posts/ios-weather-app-animation-interface&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-
-&lt;p&gt;First you need to create a Transitioner object containing your original and ending views:&lt;/p&gt;
-
-&lt;div class=&quot;language-kotlin highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;py&quot;&gt;transition&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Transitioner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;original_view&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ending_view&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The view pairs must have matching “tag” attributes so that they can be bound together:&lt;/p&gt;
-
-&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ConstraintLayout&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/original_view&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:tag=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;constrView&quot;&lt;/span&gt;
-        &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;TextView&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/text&quot;&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;android:tag=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;firstView&quot;&lt;/span&gt;
-            &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ConstraintLayout&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;ConstraintLayout&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/ending_view&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:tag=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;constrView&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:visibility=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;invisible&quot;&lt;/span&gt;
-        &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;EditText&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/text3&quot;&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;android:tag=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;firstView&quot;&lt;/span&gt;
-            &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
- &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ConstraintLayout&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;I recommend you hide the second view layout, since it’s only used as a placeholder for the end destination.&lt;br /&gt;
-The views can be of any type, you can mix and match them, the two layouts can have a different number of views and nested layouts are 100% supported. The only things to keep in mind are:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;all views which you would want to match together must have the same tag attribute in both layouts&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;all unmatched views will remain at their original place inside the original layout&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;the second layout is just a placeholder. It doesn’t hold any logic, it only shows where the original layout should move to.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;basic-usage&quot;&gt;Basic Usage&lt;/h3&gt;
-
-&lt;div class=&quot;language-kotlin highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;n&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setProgress&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0.5f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
- &lt;span class=&quot;c1&quot;&gt;//or&lt;/span&gt;
- &lt;span class=&quot;n&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setProgress&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;additional-methods-and-tweaks&quot;&gt;Additional methods and tweaks&lt;/h3&gt;
-&lt;div class=&quot;language-kotlin highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;duration&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;500&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;interpolator&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AccelerateDecelerateInterpolator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;animateTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;percent&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;onProgressChanged&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//triggered on every progress change of the transition&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;seekBar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;progress&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;toInt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    
-&lt;span class=&quot;kd&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;py&quot;&gt;progress&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Float&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;currentProgress&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Here is a preview of a simple application made using this library&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/dev-labs-bg/transitioner/master/preview.gif&quot;&gt;Preview&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;This effect can be reproduced by placing the “Transitioner.setProgress(Float)” function inside a onTouch or a onProgressChanged method.&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
-
-&lt;h3 id=&quot;gradle&quot;&gt;Gradle&lt;/h3&gt;
-
-&lt;div class=&quot;language-gradle highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'bg.devlabs.transitioner:transitioner:&amp;lt;latest_version&amp;gt;'&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;maven&quot;&gt;Maven&lt;/h3&gt;
-&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;bg.devlabs.transitioner&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;transitioner&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;latest_version&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;type&amp;gt;&lt;/span&gt;pom&lt;span class=&quot;nt&quot;&gt;&amp;lt;/type&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;manually&quot;&gt;Manually&lt;/h3&gt;
-
-&lt;p&gt;You can also manually download &lt;a href=&quot;https://github.com/dev-labs-bg/transitioner/blob/master/transitioner/src/main/java/bg/devlabs/transitioner/Transitioner.kt&quot;&gt;the library class&lt;/a&gt; and use it in your application.&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;h2 id=&quot;compatibility&quot;&gt;Compatibility&lt;/h2&gt;
-
-&lt;p&gt;Minimum Android SDK: API level 19&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;h2 id=&quot;author&quot;&gt;Author&lt;/h2&gt;
-
-&lt;p&gt;Radoslav Yankov &lt;a href=&quot;https://twitter.com/Radoslav_Y&quot;&gt;@Radoslav_Y&lt;/a&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;h2 id=&quot;getting-help&quot;&gt;Getting help&lt;/h2&gt;
-
-&lt;p&gt;If you spot a problem you can open an issue on the Github page, or alternatively, you can tweet us at &lt;a href=&quot;https://twitter.com/devlabsbg&quot;&gt;@devlabsbg&lt;/a&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
-
-&lt;p&gt;Transitioner is released under the &lt;a href=&quot;https://gitlab.com/SimonaStoyanova/flying-fab/blob/master/LICENSE&quot;&gt;MIT License&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 27 Sep 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/AndroidUICollection/2018/09/27/Transitioner/</link>
-        <guid isPermaLink="true">http://localhost:4000/AndroidUICollection/2018/09/27/Transitioner/</guid>
-        
-        <category>Transitioner</category>
         
         
       </item>

@@ -545,6 +545,14 @@
                 
               
             
+              
+                
+              
+            
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -676,7 +684,7 @@
 <p><a href="https://travis-ci.org/Tunous/SwipeActionView">[Build Status](https://travis-ci.org/Tunous/SwipeActionView.svg?branch=master)</a><br />
 <a href="https://jitpack.io/#Tunous/SwipeActionView">[Release](https://jitpack.io/v/Tunous/SwipeActionView.svg)</a><br />
 <a href="https://android-arsenal.com/details/1/5250">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SwipeActionView-brightgreen.svg?style=flat)</a><br />
-<a href="https://android-arsenal.com/api?level=11">[API](https://img.shields.io/badge/API-11%2B-blue.svg?style=flat)</a></p>
+<a href="https://android-arsenal.com/api?level=14">[API](https://img.shields.io/badge/API-14%2B-blue.svg?style=flat)</a></p>
 
 <p>SwipeActionView is a swipe-able view, which allows users to perform actions by swiping it to the left or right side.</p>
 
@@ -698,7 +706,6 @@
   <li><a href="#click-listeners">Click listeners</a></li>
   <li><a href="#attr">Attributes</a>
     <ul>
-      <li><a href="#attr-alwaysDrawBackground">sav_alwaysDrawBackground</a></li>
       <li><a href="#attr-rippleTakesPadding">sav_rippleTakesPadding</a></li>
       <li><a href="#attr-swipeLeftRippleColor">sav_swipeLeftRippleColor</a></li>
       <li><a href="#attr-swipeRightRippleColor">sav_swipeRightRippleColor</a></li>
@@ -761,22 +768,23 @@ Below example will create <code class="highlighter-rouge">TextView</code> that c
     <span class="nt">&lt;TextView</span>
         <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
         <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:background=</span><span class="s">"@android:color/background_light"</span>
         <span class="na">android:padding=</span><span class="s">"16dp"</span>
         <span class="na">android:text=</span><span class="s">"Swipe me"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/me.thanel.swipeactionview.SwipeActionView&gt;</span>
 </code></pre></div></div>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SwipeActionView</span> <span class="n">swipeView</span> <span class="o">=</span> <span class="o">(</span><span class="n">SwipeActionView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">swipe_view</span><span class="o">);</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SwipeActionView</span> <span class="n">swipeView</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">swipe_view</span><span class="o">);</span>
 
 <span class="n">swipeView</span><span class="o">.</span><span class="na">setSwipeGestureListener</span><span class="o">(</span><span class="k">new</span> <span class="n">SwipeGestureListener</span><span class="o">()</span> <span class="o">{</span>
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onSwipedLeft</span><span class="o">(</span><span class="nd">@NotNull</span> <span class="n">SwipeActionView</span> <span class="n">swipeActionView</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onSwipedLeft</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">SwipeActionView</span> <span class="n">swipeActionView</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">showToast</span><span class="o">(</span><span class="s">"Swiped left"</span><span class="o">);</span>
         <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onSwipedRight</span><span class="o">(</span><span class="nd">@NotNull</span> <span class="n">SwipeActionView</span> <span class="n">swipeActionView</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onSwipedRight</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">SwipeActionView</span> <span class="n">swipeActionView</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">showToast</span><span class="o">(</span><span class="s">"Swiped right"</span><span class="o">);</span>
         <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
     <span class="o">}</span>
@@ -797,7 +805,7 @@ Below example will create <code class="highlighter-rouge">TextView</code> that c
 <p>The container is a view which is drawn above other views. In the default state, this is the only visible view, and it is what gets moved when users perform swipe gestures. It can be either a simple <code class="highlighter-rouge">TextView</code>, custom view or even some sort of view group like <code class="highlighter-rouge">LinearLayout</code>. There is no limit for that, which allows you to gain complete control over the look of your views.</p>
 
 <h3 id="background-views"><a id="bg-views">Background views</a></h3>
-<p>Background views are the mostly invisible part of <code class="highlighter-rouge">SwipeActionView</code>. They get revealed only when users start performing swipe gestures.</p>
+<p>Background views are the mostly invisible part of <code class="highlighter-rouge">SwipeActionView</code>. They get revealed only when users start performing swipe gestures. (Unless your container view has transparent background)</p>
 
 <p>You can specify for which swipe direction each of them corresponds by setting their <code class="highlighter-rouge">layout_gravity</code> attribute. <br />
 Default value or setting it to either <code class="highlighter-rouge">left</code> and/or <code class="highlighter-rouge">start</code> means that it will start appearing when users perform right swipe gesture. On the other hand setting it to <code class="highlighter-rouge">end</code> and/or <code class="highlighter-rouge">right</code> will result in the view to start appearing when users swipe to the left. This doesn’t mean that you aren’t allowed to use other <code class="highlighter-rouge">layout_gravity</code> options like <code class="highlighter-rouge">center</code>. They will still control the view as usual and will be ignored by <code class="highlighter-rouge">SwipeActionView</code>.</p>
@@ -836,6 +844,7 @@ Default value or setting it to either <code class="highlighter-rouge">left</code
     <span class="nt">&lt;TextView</span>
         <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
         <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:background=</span><span class="s">"@android:color/background_light"</span>
         <span class="na">android:padding=</span><span class="s">"16dp"</span>
         <span class="na">android:text=</span><span class="s">"Swipe me"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/me.thanel.swipeactionview.SwipeActionView&gt;</span>
@@ -852,7 +861,7 @@ Default value or setting it to either <code class="highlighter-rouge">left</code
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">swipeView</span><span class="o">.</span><span class="na">setSwipeGestureListener</span><span class="o">(</span><span class="k">new</span> <span class="n">SwipeGestureListener</span><span class="o">()</span> <span class="o">{</span>
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onSwipedLeft</span><span class="o">(</span><span class="nd">@NotNull</span> <span class="n">SwipeActionView</span> <span class="n">swipeActionView</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onSwipedLeft</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">SwipeActionView</span> <span class="n">swipeActionView</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">showToast</span><span class="o">(</span><span class="s">"Swiped left"</span><span class="o">);</span>
 
         <span class="c1">// Returning true automatically moves view to original position</span>
@@ -860,7 +869,7 @@ Default value or setting it to either <code class="highlighter-rouge">left</code
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onSwipedRight</span><span class="o">(</span><span class="nd">@NotNull</span> <span class="n">SwipeActionView</span> <span class="n">swipeActionView</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onSwipedRight</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">SwipeActionView</span> <span class="n">swipeActionView</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">showToast</span><span class="o">(</span><span class="s">"Swiped right"</span><span class="o">);</span>
         
         <span class="c1">// Returning false requires calling moveToOriginalPosition() manually to</span>
@@ -898,9 +907,6 @@ Default value or setting it to either <code class="highlighter-rouge">left</code
 
 <h1 id="attributes"><a id="attr">Attributes</a></h1>
 
-<h4 id="appsav_alwaysdrawbackgroundtruefalse"><a id="attr-alwaysDrawBackground"><code class="highlighter-rouge">app:sav_alwaysDrawBackground="true|false"</code></a></h4>
-<p>To reduce overdraw <code class="highlighter-rouge">SwipeActionView</code> only draws parts of the main background and background views which become visible due to swipe gesture. This is not always what you want as it could break any container views with transparency. A good example where you would want to use this attribute is when you had <code class="highlighter-rouge">CardView</code> as your container.</p>
-
 <h4 id="appsav_rippletakespaddingtruefalse"><a id="attr-rippleTakesPadding"><code class="highlighter-rouge">app:sav_rippleTakesPadding="true|false"</code></a></h4>
 <p>If you want ripple effect to take padding together with container view you can set this attribute to true.</p>
 
@@ -932,7 +938,7 @@ He also created <code class="highlighter-rouge">SwipeRippleDrawable</code> and a
 <strong>Huge thanks</strong></p>
 
 <h1 id="license"><a id="license">License</a></h1>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright © 2016-2017 Łukasz Rutkowski
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright © 2016-2018 Łukasz Rutkowski
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
