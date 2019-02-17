@@ -553,6 +553,22 @@
                 
               
             
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -608,7 +624,7 @@
 
           <div class="font-tiny">
               <br>
-            &copy; 2018 Android UI OpenSource
+            &copy; 2019 Android UI OpenSource
           </div>
         </div>
       </div>
@@ -679,18 +695,18 @@
               <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/AndroidUICollection/images/posts/2018-11-17-CookieBar2.gif)"></div>
             </div>
           <br>
-          <p><a href="https://android-arsenal.com/details/1/6122">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-CookieBar2-brightgreen.svg?style=flat)</a> <a href="https://www.codacy.com/app/AviranAbady/CookieBar2?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=AviranAbady/CookieBar2&amp;utm_campaign=badger">[Codacy Badge](https://api.codacy.com/project/badge/Grade/6474fc01133444e0b6f615d9b1af8589)</a></p>
+          <p><a href="https://android-arsenal.com/details/1/6122">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-CookieBar2-brightgreen.svg?style=flat)</a> <a href="https://www.codacy.com/app/AviranAbady/CookieBar2?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=AviranAbady/CookieBar2&amp;utm_campaign=badger">[Codacy Badge](https://api.codacy.com/project/badge/Grade/6474fc01133444e0b6f615d9b1af8589)</a> <a href="http://androidweekly.net/issues/issue-335">[AndroidWeekly335](https://raw.githubusercontent.com/AviranAbady/storage/master/AndroidWeekly335.png)</a></p>
 
 <h1 id="cookiebar-2">CookieBar 2</h1>
 <p>CookieBar is a lightweight library for showing a brief message at the top or bottom of the screen.<br /><br /></p>
 
-<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">implementation</span> <span class="s1">'org.aviran.cookiebar2:cookiebar2:1.0.9'</span>
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">implementation</span> <span class="s1">'org.aviran.cookiebar2:cookiebar2:1.1.1'</span>
 </code></pre></div></div>
 
 <h2 id="screenshot">Screenshot</h2>
-<p><img src="https://raw.githubusercontent.com/AviranAbady/storage/master/cookiebar2.gif" /></p>
+<p><img src="https://raw.githubusercontent.com/AviranAbady/storage/master/cookiebar2_1.1.0.gif" /></p>
 
-<p>Main differences from the original <a href="https://github.com/liuguangqiang/CookieBar/">Cookiebar</a> are:</p>
+<p>Main differences from the original Cookiebar library are:</p>
 
 <ul>
   <li>Swipe to dismiss has been added.</li>
@@ -701,33 +717,48 @@
   <li>Icon animator support.</li>
   <li>Custom layout can be applied to a cookie.</li>
   <li>Colors presets added.</li>
-  <li>Removed supportRtl / allowBackup from library scope (Should be set at app level).</li>
+  <li>Root view can be overridden and customized.</li>
+  <li>Removed supportRtl / allowBackup from library scope (Set at app level when necessary).</li>
 </ul>
 
 <h2 id="create-a-simple-cookie">Create a simple cookie</h2>
 <h3 id="using-kotlin">Using Kotlin</h3>
 <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">CookieBar</span><span class="p">.</span><span class="n">build</span><span class="p">(</span><span class="k">this</span><span class="n">@MainActivity</span><span class="p">)</span>
-          <span class="p">.</span><span class="n">setTitle</span><span class="p">(</span><span class="s">"TITLE"</span><span class="p">)</span>
-          <span class="p">.</span><span class="n">setMessage</span><span class="p">(</span><span class="s">"MESSAGE"</span><span class="p">)</span>
-          <span class="p">.</span><span class="n">show</span><span class="p">()</span>
+         <span class="p">.</span><span class="n">setTitle</span><span class="p">(</span><span class="s">"TITLE"</span><span class="p">)</span>         <span class="c1">// String resources are also supported</span>
+         <span class="p">.</span><span class="n">setMessage</span><span class="p">(</span><span class="s">"MESSAGE"</span><span class="p">)</span>     <span class="c1">// i.e. R.string.message</span>
+         <span class="p">.</span><span class="n">show</span><span class="p">()</span>                    <span class="c1">// Cookies are displayed at the top by default</span>
 </code></pre></div></div>
 <h3 id="using-java">Using Java</h3>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">CookieBar</span><span class="o">.</span><span class="na">build</span><span class="o">(</span><span class="n">MainActivity</span><span class="o">.</span><span class="na">this</span><span class="o">)</span>
          <span class="o">.</span><span class="na">setTitle</span><span class="o">(</span><span class="s">"TITLE"</span><span class="o">)</span>
          <span class="o">.</span><span class="na">setMessage</span><span class="o">(</span><span class="s">"MESSAGE"</span><span class="o">)</span>
+         <span class="o">.</span><span class="na">setCookiePosition</span><span class="o">(</span><span class="n">CookieBar</span><span class="o">.</span><span class="na">BOTTOM</span><span class="o">)</span>  <span class="c1">// Cookie will be displayed at the bottom</span>
+         <span class="o">.</span><span class="na">show</span><span class="o">();</span>                              <span class="c1">// of the screen</span>
+</code></pre></div></div>
+
+<h2 id="customize-colors-icon-icon-animation-call-to-action-button-display-duration">Customize colors, icon, icon animation, call to action button, display duration</h2>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">CookieBar</span><span class="o">.</span><span class="na">build</span><span class="o">(</span><span class="n">MainActivity</span><span class="o">.</span><span class="na">this</span><span class="o">)</span>
+         <span class="o">.</span><span class="na">setTitle</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">title</span><span class="o">)</span>
+         <span class="o">.</span><span class="na">setTitleColor</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">green</span><span class="o">)</span>
+         <span class="o">.</span><span class="na">setIcon</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">icon</span><span class="o">)</span>
+         <span class="o">.</span><span class="na">setIconAnimation</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">animator</span><span class="o">.</span><span class="na">spin</span><span class="o">)</span>
+         <span class="o">.</span><span class="na">setMessage</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">message</span><span class="o">)</span>
+         <span class="o">.</span><span class="na">setAction</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">action_text</span><span class="o">,</span> <span class="k">new</span> <span class="n">OnActionClickListener</span><span class="o">()</span> <span class="o">{</span>
+             <span class="nd">@Override</span>
+             <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">()</span> <span class="o">{</span>
+                <span class="c1">// Do something</span>
+             <span class="o">}</span>
+         <span class="o">})</span>
+         <span class="o">.</span><span class="na">setDuration</span><span class="o">(</span><span class="mi">5000</span><span class="o">)</span> <span class="c1">// 5 seconds</span>
          <span class="o">.</span><span class="na">show</span><span class="o">();</span>
 </code></pre></div></div>
 
-<h2 id="cookie-with-an-icon-and-an-action">Cookie with an icon and an action</h2>
+<h2 id="customize-inout-animation">Customize in/out animation</h2>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">CookieBar</span><span class="o">.</span><span class="na">build</span><span class="o">(</span><span class="n">MainActivity</span><span class="o">.</span><span class="na">this</span><span class="o">)</span>
-         <span class="o">.</span><span class="na">setTitle</span><span class="o">(</span><span class="s">"TITLE"</span><span class="o">)</span>
-         <span class="o">.</span><span class="na">setIcon</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">icon</span><span class="o">)</span>
-         <span class="o">.</span><span class="na">setMessage</span><span class="o">(</span><span class="s">"MESSAGE"</span><span class="o">)</span>
-         <span class="o">.</span><span class="na">setAction</span><span class="o">(</span><span class="s">"ACTION"</span><span class="o">,</span> <span class="k">new</span> <span class="n">OnActionClickListener</span><span class="o">()</span> <span class="o">{</span>
-             <span class="nd">@Override</span>
-             <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">()</span> <span class="o">{</span>
-             <span class="o">}</span>
-         <span class="o">})</span>
+         <span class="o">.</span><span class="na">setTitle</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">title</span><span class="o">)</span>
+         <span class="o">.</span><span class="na">setMessage</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">message</span><span class="o">)</span>
+         <span class="o">.</span><span class="na">setAnimationIn</span><span class="o">(</span><span class="n">android</span><span class="o">.</span><span class="na">R</span><span class="o">.</span><span class="na">anim</span><span class="o">.</span><span class="na">slide_in_left</span><span class="o">,</span> <span class="n">android</span><span class="o">.</span><span class="na">R</span><span class="o">.</span><span class="na">anim</span><span class="o">.</span><span class="na">slide_in_left</span><span class="o">)</span>
+         <span class="o">.</span><span class="na">setAnimationOut</span><span class="o">(</span><span class="n">android</span><span class="o">.</span><span class="na">R</span><span class="o">.</span><span class="na">anim</span><span class="o">.</span><span class="na">slide_out_right</span><span class="o">,</span> <span class="n">android</span><span class="o">.</span><span class="na">R</span><span class="o">.</span><span class="na">anim</span><span class="o">.</span><span class="na">slide_out_right</span><span class="o">)</span>
          <span class="o">.</span><span class="na">show</span><span class="o">();</span>
 </code></pre></div></div>
 
@@ -736,27 +767,45 @@
 
 </code></pre></div></div>
 
-<h2 id="create-a-cookie-with-a-custom-layout">Create a cookie with a custom layout</h2>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// The view you inflate must contain subviews with the same id's as the original layout_cookie.xml</span>
-<span class="c1">// You can set visibility to gone, if you wish to hide them.</span>
-<span class="kd">final</span> <span class="n">View</span> <span class="n">customView</span> <span class="o">=</span>
-                        <span class="n">LayoutInflater</span><span class="o">.</span>
-                        <span class="nf">from</span><span class="o">(</span><span class="n">getContext</span><span class="o">()).</span>
-                        <span class="n">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">custom_cookie</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
-
-<span class="kd">final</span> <span class="n">ProgressBar</span> <span class="n">progressBar</span> <span class="o">=</span> <span class="n">customView</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">cookiebar_progressbar</span><span class="o">);</span>
+<h2 id="create-a-cookie-with-a-custom-layout---create-a-dialog">Create a cookie with a custom layout - Create a dialog</h2>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* setCustomView -  Set the layout resource for your custom cookie view.
+   setCustomViewInitializer - Called after layout inflation, for subview setup. */</span>
 
 <span class="n">CookieBar</span><span class="o">.</span><span class="na">build</span><span class="o">(</span><span class="n">MainActivity</span><span class="o">.</span><span class="na">this</span><span class="o">)</span>
-         <span class="o">.</span><span class="na">setCustomView</span><span class="o">(</span><span class="n">customView</span><span class="o">)</span>
-         <span class="o">.</span><span class="na">setTitle</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">plain_cookie_title</span><span class="o">)</span>
-         <span class="o">.</span><span class="na">setMessage</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">plain_cookie_message</span><span class="o">)</span>
-         <span class="o">.</span><span class="na">setDuration</span><span class="o">(</span><span class="mi">10000</span><span class="o">)</span>
-         <span class="o">.</span><span class="na">setAction</span><span class="o">(</span><span class="s">"Hide Progress bar"</span><span class="o">,</span> <span class="k">new</span> <span class="n">OnActionClickListener</span><span class="o">()</span> <span class="o">{</span>
+         <span class="o">.</span><span class="na">setCustomView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">custom_cookie</span><span class="o">)</span>
+         <span class="o">.</span><span class="na">setCustomViewInitializer</span><span class="o">(</span><span class="k">new</span> <span class="n">CookieBar</span><span class="o">.</span><span class="na">CustomViewInitializer</span><span class="o">()</span> <span class="o">{</span>
                   <span class="nd">@Override</span>
-                  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">()</span> <span class="o">{</span>
-                           <span class="n">progressBar</span><span class="o">.</span><span class="na">setVisibility</span><span class="o">(</span><span class="n">View</span><span class="o">.</span><span class="na">GONE</span><span class="o">);</span>
+                  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">initView</span><span class="o">(</span><span class="n">View</span> <span class="n">view</span><span class="o">)</span> <span class="o">{</span>
+
+                           <span class="n">Button</span> <span class="n">btnNew</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">custom_cookie_btn_new</span><span class="o">);</span>
+                           <span class="n">Button</span> <span class="n">btnOpen</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">custom_cookie_btn_open</span><span class="o">);</span>
+                           <span class="n">Button</span> <span class="n">btnSave</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">custom_cookie_btn_save</span><span class="o">);</span>
+
+                           <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span> <span class="n">btnListener</span> <span class="o">=</span> <span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+
+                                    <span class="nd">@Override</span>
+                                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">view</span><span class="o">)</span> <span class="o">{</span>
+                                             <span class="n">Button</span> <span class="n">button</span> <span class="o">=</span> <span class="o">(</span><span class="n">Button</span><span class="o">)</span> <span class="n">view</span><span class="o">;</span>
+                                             <span class="n">button</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">clicked</span><span class="o">);</span>
+                                    <span class="o">}</span>
+                                <span class="o">};</span>
+
+                           <span class="n">btnNew</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="n">btnListener</span><span class="o">);</span>
+                           <span class="n">btnOpen</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="n">btnListener</span><span class="o">);</span>
+                           <span class="n">btnSave</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="n">btnListener</span><span class="o">);</span>
                   <span class="o">}</span>
          <span class="o">})</span>
+         <span class="o">.</span><span class="na">setAction</span><span class="o">(</span><span class="s">"Close"</span><span class="o">,</span> <span class="k">new</span> <span class="n">OnActionClickListener</span><span class="o">()</span> <span class="o">{</span>
+                  <span class="nd">@Override</span>
+                  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">()</span> <span class="o">{</span>
+                           <span class="n">CookieBar</span><span class="o">.</span><span class="na">dismiss</span><span class="o">(</span><span class="n">MainActivity</span><span class="o">.</span><span class="na">this</span><span class="o">);</span>
+                  <span class="o">}</span>
+         <span class="o">})</span>
+         <span class="o">.</span><span class="na">setTitle</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">title</span><span class="o">)</span>
+         <span class="o">.</span><span class="na">setMessage</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">message</span><span class="o">)</span>
+         <span class="o">.</span><span class="na">setEnableAutoDismiss</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span> <span class="c1">// Cookie will stay on display until manually dismissed</span>
+         <span class="o">.</span><span class="na">setSwipeToDismiss</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>    <span class="c1">// Deny dismiss by swiping off the view</span>
+         <span class="o">.</span><span class="na">setCookiePosition</span><span class="o">(</span><span class="n">CookieBar</span><span class="o">.</span><span class="na">BOTTOM</span><span class="o">)</span>
          <span class="o">.</span><span class="na">show</span><span class="o">();</span>
 </code></pre></div></div>
 
@@ -770,19 +819,26 @@
 <span class="nt">&lt;/style&gt;</span>
 </code></pre></div></div>
 
-<h2 id="dynamically-set-cookie-style">Dynamically set cookie style</h2>
+<h2 id="dynamically-set-cookie-properties">Dynamically set cookie properties</h2>
 <ul>
-  <li>layoutGravity</li>
-  <li>backgroundColor</li>
-  <li>titleColor</li>
-  <li>messageColor</li>
-  <li>actionColor</li>
-  <li>duration</li>
+  <li>Cookie position (Top/Bottom)</li>
+  <li>Display duration</li>
+  <li>Title text color</li>
+  <li>Body text color</li>
+  <li>Action text color</li>
+  <li>Background color</li>
+  <li>Icon resource</li>
+  <li>Icon animation</li>
+  <li>In/Out animations for the entire view</li>
+  <li>View layout</li>
 </ul>
+
+<h2 id="attribution">Attribution</h2>
+<p>Forked from the early code base of CookieBar, by Eric Liu.</p>
 
 <h2 id="license">License</h2>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright 2017
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright 2018, Aviran Abady.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

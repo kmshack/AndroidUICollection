@@ -553,6 +553,22 @@
                 
               
             
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -608,7 +624,7 @@
 
           <div class="font-tiny">
               <br>
-            &copy; 2018 Android UI OpenSource
+            &copy; 2019 Android UI OpenSource
           </div>
         </div>
       </div>
@@ -706,7 +722,7 @@
 
 <div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">dependencies</span> <span class="o">{</span>
 	<span class="o">...</span>
-	<span class="n">implementation</span> <span class="s1">'com.github.GrenderG:Toasty:1.3.0'</span>
+	<span class="n">implementation</span> <span class="s1">'com.github.GrenderG:Toasty:1.4.0'</span>
 <span class="o">}</span>
 </code></pre></div></div>
 
@@ -715,14 +731,10 @@
 <p>This step is optional, but if you want you can configure some Toasty parameters. Place this anywhere in your app:</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Toasty</span><span class="o">.</span><span class="na">Config</span><span class="o">.</span><span class="na">getInstance</span><span class="o">()</span>
-    <span class="o">.</span><span class="na">setErrorColor</span><span class="o">(</span><span class="nd">@ColorInt</span> <span class="kt">int</span> <span class="n">errorColor</span><span class="o">)</span> <span class="c1">// optional</span>
-    <span class="o">.</span><span class="na">setInfoColor</span><span class="o">(</span><span class="nd">@ColorInt</span> <span class="kt">int</span> <span class="n">infoColor</span><span class="o">)</span> <span class="c1">// optional</span>
-    <span class="o">.</span><span class="na">setSuccessColor</span><span class="o">(</span><span class="nd">@ColorInt</span> <span class="kt">int</span> <span class="n">successColor</span><span class="o">)</span> <span class="c1">// optional</span>
-    <span class="o">.</span><span class="na">setWarningColor</span><span class="o">(</span><span class="nd">@ColorInt</span> <span class="kt">int</span> <span class="n">warningColor</span><span class="o">)</span> <span class="c1">// optional</span>
-    <span class="o">.</span><span class="na">setTextColor</span><span class="o">(</span><span class="nd">@ColorInt</span> <span class="kt">int</span> <span class="n">textColor</span><span class="o">)</span> <span class="c1">// optional</span>
     <span class="o">.</span><span class="na">tintIcon</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">tintIcon</span><span class="o">)</span> <span class="c1">// optional (apply textColor also to the icon)</span>
     <span class="o">.</span><span class="na">setToastTypeface</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">Typeface</span> <span class="n">typeface</span><span class="o">)</span> <span class="c1">// optional</span>
     <span class="o">.</span><span class="na">setTextSize</span><span class="o">(</span><span class="kt">int</span> <span class="n">sizeInSp</span><span class="o">)</span> <span class="c1">// optional</span>
+    <span class="o">.</span><span class="na">allowQueue</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">allowQueue</span><span class="o">)</span> <span class="c1">// optional (prevents several Toastys from queuing)</span>
     <span class="o">.</span><span class="na">apply</span><span class="o">();</span> <span class="c1">// required</span>
 </code></pre></div></div>
 
@@ -814,8 +826,12 @@
 		<td><a href="https://play.google.com/store/apps/details?id=com.thesrb.bluewords">BlueWords</a></td>
 	</tr>
 	<tr>
-        <td><a href="https://play.google.com/store/apps/details?id=com.levionsoftware.photos"><img src="https://lh3.googleusercontent.com/ipeHvI63HPVwGK3VmyP-flSbTDoh2q93Fte-xwYKgf4OTsEvjC_wqUfKSejjAWZElS8p=w64" /></a></td>
+        <td><a href="https://play.google.com/store/apps/details?id=com.levionsoftware.photos"><img src="https://lh3.googleusercontent.com/BgryiDdm8YVUaXbrGJG2PsIy61qBa92sXReVIpRy8y2xZxtU46c0tp2izjdhRcKRgbc=w64" /></a></td>
 		<td><a href="https://play.google.com/store/apps/details?id=com.levionsoftware.photos">Levipic - Photo Gallery &amp; Map</a></td>
+	</tr>
+	<tr>
+        <td><a href="https://play.google.com/store/apps/details?id=com.levionsoftware.instagram_map"><img src="https://lh3.googleusercontent.com/QL0QDLXBm9j2Y2An4MOZtlbI02yx_zuI7I3vMBM_mBO_BbimNKjBQeldQBBKo0P60Og=w64" /></a></td>
+		<td><a href="https://play.google.com/store/apps/details?id=com.levionsoftware.instagram_map">Photo Map - Photo and Video Gallery</a></td>
 	</tr>
 	<tr>
         <td><a href="https://play.google.com/store/apps/details?id=com.sunshine.makilite"><img src="https://lh3.googleusercontent.com/RL082J8D9AyVJdyoT8sN8Mb47LUJEn3ssvp8jgrke_K_sWAXgEl9F8tjudqDoL7y5A0=w64" /></a></td>
@@ -849,6 +865,10 @@
             <td><a href="https://play.google.com/store/apps/details?id=org.openhab.habdroid"><img src="https://lh3.googleusercontent.com/RhinsfPN8qFHQDyPKssmiPl4P_-JJpw7GaQO4K7TVixMjrkZsPh0NPXlL2nJRrR4PAbw=w64" /></a></td>
 		<td><a href="https://play.google.com/store/apps/details?id=org.openhab.habdroid">openHAB</a></td>
 	</tr>
+	<tr>
+                <td><a href="https://play.google.com/store/apps/details?id=org.saarang.app"><img src="https://lh3.googleusercontent.com/m683OsEgBAU15kdHOSsl-lckDPEa0bdsK2xvhq3Qs4vww-ueJnW8xY0xXfwfMV6dOyE=w64" /></a></td>
+    		<td><a href="https://play.google.com/store/apps/details?id=org.saarang.app">Saarang</a></td>
+    	</tr>
 </table>
 
 

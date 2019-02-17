@@ -553,6 +553,22 @@
                 
               
             
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -608,7 +624,7 @@
 
           <div class="font-tiny">
               <br>
-            &copy; 2018 Android UI OpenSource
+            &copy; 2019 Android UI OpenSource
           </div>
         </div>
       </div>
@@ -705,6 +721,8 @@
       <li><a href="#cancel">Cancel</a></li>
       <li><a href="#rewind">Rewind</a></li>
       <li><a href="#overlay">Overlay</a></li>
+      <li><a href="#paging">Paging</a></li>
+      <li><a href="#reloading">Reloading</a></li>
       <li><a href="#stack-from">Stack From</a></li>
       <li><a href="#visible-count">Visible Count</a></li>
       <li><a href="#translation-interval">Translation Interval</a></li>
@@ -838,6 +856,23 @@ CardStackView.swipe();
     </tr>
   </tbody>
 </table>
+
+<h2 id="paging">Paging</h2>
+
+<p>You can implement paging by using following two ways.</p>
+
+<ol>
+  <li>Use <a href="https://developer.android.com/reference/android/support/v7/util/DiffUtil">DiffUtil</a>.</li>
+  <li>Call <a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter#notifyItemRangeInserted(int,%20int)">RecyclerView.Adapter.notifyItemRangeInserted</a> manually.</li>
+</ol>
+
+<p><strong>Caution</strong></p>
+
+<p>You should <strong>not</strong> call <code class="highlighter-rouge">RecyclerView.Adapter.notifyDataSetChanged</code> for paging because this method will reset top position and maybe occur a perfomance issue.</p>
+
+<h2 id="reloading">Reloading</h2>
+
+<p>You can implement reloading by calling <code class="highlighter-rouge">RecyclerView.Adapter.notifyDataSetChanged</code>.</p>
 
 <h2 id="stack-from">Stack From</h2>
 
@@ -1209,6 +1244,14 @@ CardStackView.swipe();
     <tr>
       <td style="text-align: left">CardStackListener.onCardCanceled()</td>
       <td style="text-align: left">This method is called when the card is dragged less than threshold.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">CardStackListener.onCardAppeared(View view, int position)</td>
+      <td style="text-align: left">This method is called when the card appeared.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">CardStackListener.onCardDisappeared(View view, int position)</td>
+      <td style="text-align: left">This method is called when the card disappeared.</td>
     </tr>
   </tbody>
 </table>

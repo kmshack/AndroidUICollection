@@ -553,6 +553,22 @@
                 
               
             
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -608,7 +624,7 @@
 
           <div class="font-tiny">
               <br>
-            &copy; 2018 Android UI OpenSource
+            &copy; 2019 Android UI OpenSource
           </div>
         </div>
       </div>
@@ -683,7 +699,9 @@
 
 <p>Rewriting Plaid using <a href="https://developer.android.com/topic/libraries/architecture/">Android Architecture Components</a>, in Kotlin.</p>
 
-<p>🛑 During the initial development stage, we’re not accepting external PRs. 🛑</p>
+<p>🛑 During the initial development stage, we’re not accepting external PRs that touch on the app’s architecture. 🛑</p>
+
+<p>✋ From time to time we’ll open issues as “<a href="https://github.com/nickbutcher/plaid/issues?q=is%3Aissue+is%3Aopen+label%3A%22Up+for+grabs+%F0%9F%A4%9A%22">Up for grabs</a>”. We’ll be happy to <a href="https://github.com/nickbutcher/plaid/blob/master/CONTRIBUTING.md#contributing-a-patch">get your contributions</a> on those</p>
 
 <p>👍 Comments and new issues created are welcomed.</p>
 
@@ -695,11 +713,27 @@
 Plaid represents a great real world app example: it provides a fairly complex set of functionalities, it has technical debt, it has features that have to be dealt with as APIs are being removed.<br />
 All of these problems are encountered by many projects in the Android community and therefore, make Plaid a suitable showcase for all the advantages that architecture components bring.</p>
 
-<h4 id="read-more">Read more</h4>
+<h4 id="more-information">More information</h4>
 
 <ul>
-  <li><a href="https://medium.com/@crafty/restitching-plaid-9ca5588d3b0a">Restitching Plaid - Updating Plaid to modern app standards</a></li>
-  <li><a href="https://medium.com/androiddevelopers/a-patchwork-plaid-monolith-to-modularized-app-60235d9f212e">A patchwork Plaid - Monolith to modularized app</a></li>
+  <li>
+    <p>Read more:</p>
+
+    <ul>
+      <li><a href="https://medium.com/@crafty/restitching-plaid-9ca5588d3b0a">Restitching Plaid - Updating Plaid to modern app standards</a></li>
+      <li><a href="https://medium.com/androiddevelopers/a-patchwork-plaid-monolith-to-modularized-app-60235d9f212e">A patchwork Plaid - Monolith to modularized app</a></li>
+      <li><a href="https://medium.com/androiddevelopers/cross-stitching-plaid-and-androidx-7603a192348e">Cross-stitching Plaid and AndroidX</a></li>
+      <li><a href="https://medium.com/androiddevelopers/dependency-injection-in-a-multi-module-project-1a09511c14b7">Dependency injection in a multi module project</a></li>
+    </ul>
+  </li>
+  <li>
+    <p>Video Presentations:</p>
+
+    <ul>
+      <li><a href="https://youtu.be/Sy6ZdgqrQp0">Shaping Your App’s Architecture with Kotlin and Architecture Components by Florina</a> (Florina Muntenescu at KotlinConf 2018)</li>
+      <li><a href="https://youtu.be/NNWejxBORgc">Re-stitching Plaid with Kotlin</a> (Florina Muntenescu at Android Dev Summit ‘18)</li>
+    </ul>
+  </li>
 </ul>
 
 <h3 id="goals">Goals</h3>
@@ -715,7 +749,7 @@ All of these problems are encountered by many projects in the Android community 
 
 <h3 id="android-studio-ide-setup">Android Studio IDE setup</h3>
 
-<p>Plaid requires Android Studio version 3.2 or higher.</p>
+<p>Plaid requires Android Studio version 3.4 or higher.</p>
 
 <p>Plaid uses <a href="https://ktlint.github.io/">ktlint</a> to enforce Kotlin coding styles.<br />
 Here’s how to configure it for use with Android Studio (instructions adapted<br />
@@ -724,14 +758,12 @@ from the ktlint <a href="https://github.com/shyiko/ktlint/blob/master/README.md"
 <ul>
   <li>Close Android Studio if it’s open</li>
   <li>
-    <p>Download ktlint:</p>
-
-    <p><code class="highlighter-rouge">curl -sSLO https://github.com/shyiko/ktlint/releases/download/0.27.0/ktlint &amp;&amp; chmod a+x ktlint</code></p>
+    <p>Download ktlint using these <a href="https://github.com/shyiko/ktlint/blob/master/README.md#installation">installation instructions</a></p>
   </li>
   <li>
     <p>Inside the project root directory run:</p>
 
-    <p><code class="highlighter-rouge">ktlint --apply-to-idea-project --android</code></p>
+    <p><code class="highlighter-rouge">./ktlint --apply-to-idea-project --android</code></p>
   </li>
   <li>
     <p>Remove ktlint if desired:</p>

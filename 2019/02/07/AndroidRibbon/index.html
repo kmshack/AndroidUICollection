@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>AndroidRibbon</title>
+  <meta name="description" content="AndroidRibbon[License](https://img.shields.io/badge/License-Apache%202.0-blue.svg) [API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)[C...">
+  <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
+  <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
+    
+  <link rel="stylesheet" href="/AndroidUICollection/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/AndroidUICollection/2019/02/07/AndroidRibbon/">
+  <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
+    
+  <meta name="description" content="AndroidRibbon[License](https://img.shields.io/badge/License-Apache%202.0-blue.svg) [API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)[C...">
+
+
+  <meta name="author" content="kmshack" />
+
+  <meta property="og:title" content="AndroidRibbon">
+  <meta property="og:site_name" content="Android UI OpenSource" />
+  <meta property="og:description" content="AndroidRibbon[License](https://img.shields.io/badge/License-Apache%202.0-blue.svg) [API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)[C...">
+  <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2019/02/07/AndroidRibbon/" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:site" content="@kmshack" />
+  <meta name="twitter:description" content="AndroidRibbon[License](https://img.shields.io/badge/License-Apache%202.0-blue.svg) [API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)[C..." />
+
+  
+  	<!-- Article specific OG data -->
+  	<meta property="og:type" content="article" />
+  	<meta property="article:published_time" content="2019-02-07 00:00:00 +0900" />
+  	
+  	<meta property="article:author" content="http://facebook.com/kmshack" />
+    <meta property="article:publisher" content="https://www.facebook.com/kmshack" />
+  	<meta property="article:section" content="" />
+  	
+
+  	<meta name="twitter:card" content="summary_large_image" />
+  	<meta name="twitter:creator" content="@kmshack_kr" />
+  	<meta name="twitter:title" content="AndroidRibbon" />
+	
+	  	<meta property="og:image" content="/images/posts/2019-02-07-AndroidRibbon.gif" />
+	  	<meta name="twitter:image" content="/images/posts/2019-02-07-AndroidRibbon.gif" />
+  	
+
+  
+
+  <script>
+    var base_url = "/AndroidUICollection";
+  </script>
+    
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9975139260149901",
+    enable_page_level_ads: true
+  });
+</script>
+    
+</head>
+
+<body>
+
+  <!-- Google Analytics Code -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85072530-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  <div class="off-canvas-container">
+    <div class="sidebar">
+  <div class="row">
+
+    <div class="column small-10 large-12">
+      <br>
+      <h1 class="sidebar__logo logo"><a href="/AndroidUICollection/">Android UI OpenSource</a></h1>
+      <div class="sidebar__description font-tiny">Collection of OpenSource for Android UI.</div>
+    </div>
+
+    <label class="off-canvas-toggle"><span data-icon="ei-navicon" data-size="s"></span></label>
+
+    <div class="off-canvas-content">
+
+      <div class="column small-12 large-12">
+        <nav class="navigation">
+          <ul class="list-bare text-center">
+            
+              
+            
+              
+                
+                  <li>
+                    <a class="page-link" href="/AndroidUICollection/about.html">About</a>
+                  </li>
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+            <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="column small-12 large-12">
+        <ul class="social-nav social-icons">
+
+          
+          <li>
+            <a href="http://www.github.com/kmshack" target="_blank">
+              <span data-icon="ei-sc-github" data-size="s"></span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="http://www.twitter.com/kmshack_kr" target="_blank">
+              <span data-icon="ei-sc-twitter" data-size="s"></span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="mailto:kmshack@naver.com" target="_blank">
+              <span data-icon="ei-envelope" data-size="s"></span>
+            </a>
+          </li>
+          
+
+          <li>
+            <a class="toggle-search-button" href="#">
+              <span data-icon="ei-search" data-size="s"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+        
+      <div class="sidebar__bottom">
+        <div class="column small-12 large-12">
+            
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- androidui -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:250px;height:250px"
+                 data-ad-client="ca-pub-9975139260149901"
+                 data-ad-slot="5123612274"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+
+          <div class="font-tiny">
+              <br>
+            &copy; 2019 Android UI OpenSource
+          </div>
+        </div>
+      </div>
+        
+    </div> <!-- off-canvas-content -->
+      
+
+
+  </div>
+    
+
+    
+</div>
+
+<div class="search-form-container">
+
+  <form class="search-form">
+    <fieldset class="search-form__fieldset">
+      <div class="row">
+        <div class="column column--center large-8">
+          <input class="search-form__field" placeholder="Type to search" autofocus>
+          <input class="search-form__submit" type="submit" value="search">
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+  <div class="row">
+    <div class="column column--center large-8">
+      <div class="search-results"></div>
+    </div>
+  </div>
+
+  <div data-icon="ei-close" data-size="s" class="close-search-button search-form-container__close"></div>
+
+</div>
+
+    
+
+
+
+<div class="wrapper">
+  <div class="row row--full">
+
+    <div class="column column--center medium-12 large-12">
+      <div class="grey-bg CoverImage FlexEmbed FlexEmbed--16by9" style="background-image: url(/AndroidUICollection/images/posts/2019-02-07-AndroidRibbon.gif)"></div>
+        
+    </div>
+      
+    <div class="column column--center medium-12 large-10">
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+        
+          <meta itemprop="og:image" content="http://localhost:4000/AndroidUICollection/images/posts/2019-02-07-AndroidRibbon.gif">
+        
+
+        <header class="post__header">
+          <h2 class="post__title" itemprop="name headline">AndroidRibbon</h2>
+          
+          <h3 class="post__date">
+            <a href="https://github.com/skydoves/AndroidRibbon" target="_blank"><span data-icon="ei-sc-github" data-size="s"></span>https://github.com/skydoves/AndroidRibbon</a>
+          </h3>
+        </header>
+
+        <div class="post-content" itemprop="articleBody">
+            
+            <div class="column column--center medium-12 large-4">
+              <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/AndroidUICollection/images/posts/2019-02-07-AndroidRibbon.gif)"></div>
+            </div>
+          <br>
+          <h1 id="androidribbon">AndroidRibbon</h1>
+<p><a href="https://opensource.org/licenses/Apache-2.0">[License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)</a> <br />
+<a href="https://android-arsenal.com/api?level=16">[API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)</a><br />
+<a href="https://www.codacy.com/app/skydoves/AndroidRibbon?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=skydoves/AndroidRibbon&amp;utm_campaign=Badge_Grade">[Codacy Badge](https://api.codacy.com/project/badge/Grade/feb143f9abec414a83d1ea4ec928359b)</a><br />
+<a href="https://travis-ci.org/skydoves/AndroidRibbon">[Build Status](https://travis-ci.org/skydoves/AndroidRibbon.svg?branch=master)</a> <br />
+<a href="https://skydoves.github.io/libraries/androidribbon/javadoc/androidribbon/">[JavaDoc](https://img.shields.io/badge/Javadoc-AndroidRibbon-yellow.svg)</a> <br /><br />
+Beautiful and the simplest ribbon view with shimmering effect. <a href="https://github.com/skydoves/AndroidRibbon/tree/master/.github/README_CHINESE.md">中文語</a> <br /></p>
+
+<p><a href="https://user-images.githubusercontent.com/24237865/51105497-7873e680-182c-11e9-954a-1bf767d15312.gif">gif0</a> <a href="https://user-images.githubusercontent.com/24237865/51105671-fb953c80-182c-11e9-8288-7ce97d5474e8.gif">gif1</a></p>
+
+<h2 id="download">Download</h2>
+<p><a href="https://bintray.com/devmagician/maven/androidribbon/_latestVersion">[Download](https://api.bintray.com/packages/devmagician/maven/androidribbon/images/download.svg) </a><br />
+<a href="https://jitpack.io/#skydoves/AndroidRibbon">[Jitpack](https://jitpack.io/v/skydoves/AndroidRibbon.svg)</a></p>
+<h3 id="gradle">Gradle</h3>
+<p>And add a dependency code to your <strong>module</strong>’s <code class="highlighter-rouge">build.gradle</code> file.</p>
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">dependencies</span> <span class="o">{</span>  
+    <span class="n">implementation</span> <span class="s2">"com.github.skydoves:androidribbon:1.0.0"</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="usage">Usage</h2>
+<p>Add following XML namespace inside your XML layout file.</p>
+
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">xmlns:</span><span class="n">app</span><span class="o">=</span><span class="s2">"http://schemas.android.com/apk/res-auto"</span>
+</code></pre></div></div>
+
+<h3 id="ribbonview-in-layout">RibbonView in layout</h3>
+
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">com</span><span class="o">.</span><span class="na">skydoves</span><span class="o">.</span><span class="na">androidribbon</span><span class="o">.</span><span class="na">RibbonView</span>
+     <span class="nl">android:</span><span class="n">layout_width</span><span class="o">=</span><span class="s2">"match_parent"</span>
+     <span class="nl">android:</span><span class="n">layout_height</span><span class="o">=</span><span class="s2">"wrap_content"</span>
+     <span class="nl">android:</span><span class="n">text</span><span class="o">=</span><span class="s2">"skydoves"</span>
+     <span class="nl">android:</span><span class="n">textColor</span><span class="o">=</span><span class="s2">"@android:color/white"</span>
+     <span class="nl">app:</span><span class="n">ribbon_rotation</span><span class="o">=</span><span class="s2">"-45"</span> <span class="c1">// set rotation</span>
+     <span class="nl">app:</span><span class="n">ribbon_background_color</span><span class="o">=</span><span class="s2">"@color/colorPrimary"</span> <span class="c1">// set background color</span>
+     <span class="nl">app:</span><span class="n">ribbon_ribbonRadius</span><span class="o">=</span><span class="s2">"4dp"</span> <span class="c1">// set radius</span>
+     <span class="nl">app:</span><span class="n">ribbon_drawable</span><span class="o">=</span><span class="s2">"@drawable/ribbon03"</span> <span class="c1">// set drawable, not background color</span>
+     <span class="nl">app:</span><span class="n">ribbon_padding_top</span><span class="o">=</span><span class="s2">"4dp"</span>
+     <span class="nl">app:</span><span class="n">ribbon_padding_bottom</span><span class="o">=</span><span class="s2">"8dp"</span><span class="o">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="create-using-builder">create using Builder</h3>
+<p>This is how to create <code class="highlighter-rouge">RibbonView</code>’s instance using <code class="highlighter-rouge">RibbonView.Builder</code> class.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="n">RibbonView</span><span class="o">.</span><span class="na">Builder</span><span class="o">(</span><span class="n">context</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"Android-Ribbon"</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">setTextColor</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">WHITE</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">setTextSize</span><span class="o">(</span><span class="mi">13</span><span class="n">f</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">setRibbonRotation</span><span class="o">(-</span><span class="mi">45</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">setRibbonBackgroundColor</span><span class="o">(</span><span class="n">ContextCompat</span><span class="o">.</span><span class="na">getColor</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">bright_lavender</span><span class="o">))</span>
+      <span class="o">.</span><span class="na">setRibbonDrawable</span><span class="o">(</span><span class="n">ContextCompat</span><span class="o">.</span><span class="na">getDrawable</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">ribbon03</span><span class="o">))</span>
+      <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+</code></pre></div></div>
+
+<h3 id="create-using-kotlin-dsl">create using kotlin dsl</h3>
+<p>This is how to create <code class="highlighter-rouge">RibbonView</code>’s instance using kotlin dsl.</p>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">ribbonView</span> <span class="p">=</span> <span class="n">ribbonView</span><span class="p">(</span><span class="n">context</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">text</span> <span class="p">=</span> <span class="s">"Android-Ribbon"</span>
+      <span class="n">textColor</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">WHITE</span>
+      <span class="n">textSize</span> <span class="p">=</span> <span class="m">13f</span>
+      <span class="n">textStyle</span> <span class="p">=</span> <span class="n">Typeface</span><span class="p">.</span><span class="n">BOLD</span>
+      <span class="n">ribbonRotation</span> <span class="p">=</span> <span class="p">-</span><span class="m">45</span>
+      <span class="n">ribbonDrawable</span> <span class="p">=</span> <span class="n">ContextCompat</span><span class="p">.</span><span class="n">getDrawable</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">R</span><span class="p">.</span><span class="n">drawable</span><span class="p">.</span><span class="n">ribbon02</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="shimmerribbonview">ShimmerRibbonView</h2>
+<p>ShimmerRibbonView lets you implement shimmer animation easily.</p>
+
+<h3 id="shimmerribbonview-in-layout">ShimmerRibbonView in layout</h3>
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">com</span><span class="o">.</span><span class="na">skydoves</span><span class="o">.</span><span class="na">androidribbon</span><span class="o">.</span><span class="na">ShimmerRibbonView</span>
+      <span class="nl">android:</span><span class="n">layout_width</span><span class="o">=</span><span class="s2">"130dp"</span>
+      <span class="nl">android:</span><span class="n">layout_height</span><span class="o">=</span><span class="s2">"wrap_content"</span>
+      <span class="nl">android:</span><span class="n">alpha</span><span class="o">=</span><span class="s2">"0.8"</span>
+      <span class="nl">app:</span><span class="n">shimmer_base_alpha</span><span class="o">=</span><span class="s2">"1.0"</span>
+      <span class="nl">app:</span><span class="n">shimmer_highlight_alpha</span><span class="o">=</span><span class="s2">"0.5"</span>
+      <span class="nl">app:</span><span class="n">shimmer_ribbon_text</span><span class="o">=</span><span class="s2">"Android-Ribbon"</span>
+      <span class="nl">app:</span><span class="n">shimmer_ribbon_textColor</span><span class="o">=</span><span class="s2">"@android:color/white"</span>
+      <span class="nl">app:</span><span class="n">shimmer_ribbon_textStyle</span><span class="o">=</span><span class="s2">"bold"</span>
+      <span class="nl">app:</span><span class="n">shimmer_ribbon_padding_top</span><span class="o">=</span><span class="s2">"3dp"</span>
+      <span class="nl">app:</span><span class="n">shimmer_ribbon_padding_bottom</span><span class="o">=</span><span class="s2">"3dp"</span>
+      <span class="nl">app:</span><span class="n">shimmer_ribbon_rotation</span><span class="o">=</span><span class="s2">"-45"</span>
+      <span class="nl">app:</span><span class="n">shimmer_ribbon_background_color</span><span class="o">=</span><span class="s2">"@color/colorPrimary"</span><span class="o">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="create-using-builder-1">create using Builder</h3>
+<p>This is how to create <code class="highlighter-rouge">ShimmerRibbonView</code>’s instance using <code class="highlighter-rouge">ShimmerRibbonView.Builder</code> class.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="n">ShimmerRibbonView</span><span class="o">.</span><span class="na">Builder</span><span class="o">(</span><span class="n">context</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">setRibbonView</span><span class="o">(</span><span class="n">ribbonView</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">setShimmer</span><span class="o">(</span><span class="n">shimmer</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+</code></pre></div></div>
+
+<h3 id="create-using-kotlin-dsl-1">create using kotlin dsl</h3>
+<p>This is how to create <code class="highlighter-rouge">ShimmerRibbonView</code>’s instance using kotlin dsl.</p>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">shimmerRibbonView</span> <span class="p">=</span> <span class="n">shimmerRibbonView</span><span class="p">(</span><span class="n">context</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">ribbon</span> <span class="p">=</span> <span class="n">ribbonView</span><span class="p">(</span><span class="n">context</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">text</span> <span class="p">=</span> <span class="s">"Android-Ribbon"</span>
+          <span class="n">textColor</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">WHITE</span>
+          <span class="n">textSize</span> <span class="p">=</span> <span class="m">13f</span>
+          <span class="n">textStyle</span> <span class="p">=</span> <span class="n">Typeface</span><span class="p">.</span><span class="n">BOLD</span>
+          <span class="n">ribbonRotation</span> <span class="p">=</span> <span class="p">-</span><span class="m">45</span>
+          <span class="n">ribbonDrawable</span> <span class="p">=</span> <span class="n">ContextCompat</span><span class="p">.</span><span class="n">getDrawable</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">R</span><span class="p">.</span><span class="n">drawable</span><span class="p">.</span><span class="n">ribbon02</span><span class="p">)</span>
+      <span class="p">}</span>
+      <span class="n">shimmer</span> <span class="p">=</span> <span class="n">alphaShimmer</span> <span class="p">{</span>
+          <span class="n">setBaseAlpha</span><span class="p">(</span><span class="m">1.0f</span><span class="p">)</span>
+          <span class="n">setHighlightAlpha</span><span class="p">(</span><span class="m">0.5f</span><span class="p">)</span>
+       <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="shimmer">Shimmer</h2>
+<p>This library using <a href="https://github.com/facebook/shimmer-android">shimmer-android</a> by Facebook.<br /><br />
+Here are the detail <a href="http://facebook.github.io/shimmer-android/">shimmer-instruction</a> about shimmer or you can reference below examples.</p>
+
+<h3 id="create-using-builder-2">create using Builder</h3>
+<p>This is how to create <code class="highlighter-rouge">Shimmer</code>’s instance using <code class="highlighter-rouge">Shimmer.Builder</code> class.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="n">Shimmer</span><span class="o">.</span><span class="na">AlphaHighlightBuilder</span><span class="o">()</span>
+      <span class="o">.</span><span class="na">setBaseAlpha</span><span class="o">(</span><span class="mf">1.0f</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">setHighlightAlpha</span><span class="o">(</span><span class="mf">0.5f</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">setRepeatDelay</span><span class="o">(</span><span class="mi">1000</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">setDuration</span><span class="o">(</span><span class="mi">1000</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">setDirection</span><span class="o">(</span><span class="n">Shimmer</span><span class="o">.</span><span class="na">Direction</span><span class="o">.</span><span class="na">RIGHT_TO_LEFT</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+</code></pre></div></div>
+
+<h3 id="create-using-kotlin-dsl-2">create using kotlin dsl</h3>
+<p>This is how to create <code class="highlighter-rouge">Shimmer</code>’s instance using kotlin dsl.</p>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">shimmer_alpha</span> <span class="p">=</span> <span class="n">alphaShimmer</span> <span class="p">{</span>
+      <span class="n">setBaseAlpha</span><span class="p">(</span><span class="m">1.0f</span><span class="p">)</span>
+      <span class="n">setHighlightAlpha</span><span class="p">(</span><span class="m">0.5f</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="kd">val</span> <span class="py">shimmer_color</span> <span class="p">=</span> <span class="n">colorShimmer</span> <span class="p">{</span>
+      <span class="n">setBaseAlpha</span><span class="p">(</span><span class="m">1.0f</span><span class="p">)</span>
+      <span class="n">setHighlightAlpha</span><span class="p">(</span><span class="m">0.5f</span><span class="p">)</span>
+      <span class="n">setBaseColor</span><span class="p">(</span><span class="n">ContextCompat</span><span class="p">.</span><span class="n">getColor</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">R</span><span class="p">.</span><span class="n">color</span><span class="p">.</span><span class="n">colorPrimary</span><span class="p">))</span>
+      <span class="n">setHighlightColor</span><span class="p">(</span><span class="n">ContextCompat</span><span class="p">.</span><span class="n">getColor</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">R</span><span class="p">.</span><span class="n">color</span><span class="p">.</span><span class="n">colorPrimaryDark</span><span class="p">))</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="ribbonlayout">RibbonLayout</h2>
+<p>RibbonLayout lets RibbonViews overlap with other child views.</p>
+
+<h3 id="ribbonlayout-in-layout">RibbonLayout in layout</h3>
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">com</span><span class="o">.</span><span class="na">skydoves</span><span class="o">.</span><span class="na">androidribbon</span><span class="o">.</span><span class="na">RibbonLayout</span>
+      <span class="nl">android:</span><span class="n">id</span><span class="o">=</span><span class="s2">"@+id/ribbonLayout01"</span>
+      <span class="nl">android:</span><span class="n">layout_width</span><span class="o">=</span><span class="s2">"match_parent"</span>
+      <span class="nl">android:</span><span class="n">layout_height</span><span class="o">=</span><span class="s2">"wrap_content"</span>
+      <span class="nl">app:</span><span class="n">ribbonLayout_header_align</span><span class="o">=</span><span class="s2">"left"</span>
+      <span class="nl">app:</span><span class="n">ribbonLayout_bottom_align</span><span class="o">=</span><span class="s2">"center"</span><span class="o">&gt;</span>
+
+     <span class="o">&lt;</span><span class="n">ImageView</span>
+          <span class="nl">android:</span><span class="n">layout_width</span><span class="o">=</span><span class="s2">"match_parent"</span>
+          <span class="nl">android:</span><span class="n">layout_height</span><span class="o">=</span><span class="s2">"180dp"</span>
+          <span class="nl">android:</span><span class="n">src</span><span class="o">=</span><span class="s2">"@drawable/background02"</span>
+          <span class="nl">android:</span><span class="n">scaleType</span><span class="o">=</span><span class="s2">"fitXY"</span><span class="o">/&gt;</span>
+<span class="o">&lt;/</span><span class="n">com</span><span class="o">.</span><span class="na">skydoves</span><span class="o">.</span><span class="na">androidribbon</span><span class="o">.</span><span class="na">RibbonLayout</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>And should set <code class="highlighter-rouge">ribbonHeader</code> or <code class="highlighter-rouge">ribbonBottom</code> using <code class="highlighter-rouge">RibbonView</code> or <code class="highlighter-rouge">ShimmerRibbonView</code> instance.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ribbonLayout</span><span class="o">.</span><span class="na">setRibbonHeader</span><span class="o">(</span><span class="n">ribbon_header</span><span class="o">);</span>
+<span class="n">ribbonLayout</span><span class="o">.</span><span class="na">setRibbonBottomAlign</span><span class="o">(</span><span class="n">Gravity</span><span class="o">.</span><span class="na">LEFT</span><span class="o">);</span>
+<span class="n">ribbonLayout</span><span class="o">.</span><span class="na">setRibbonBottom</span><span class="o">(</span><span class="n">ribbon_bottom</span><span class="o">);</span>
+<span class="n">ribbonLayout</span><span class="o">.</span><span class="na">setRibbonBottomAlign</span><span class="o">(</span><span class="n">Gravity</span><span class="o">.</span><span class="na">RIGHT</span><span class="o">);</span>
+</code></pre></div></div>
+
+<h2 id="ribbonrecyclerview">RibbonRecyclerView</h2>
+<p>RibbonRecyclerView lets you implement RecyclerView has <code class="highlighter-rouge">RibbonView</code> items easily.</p>
+
+<h3 id="ribbonrecyclerview-in-layout">RibbonRecyclerView in layout</h3>
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">com</span><span class="o">.</span><span class="na">skydoves</span><span class="o">.</span><span class="na">androidribbon</span><span class="o">.</span><span class="na">RibbonRecyclerView</span>
+      <span class="nl">android:</span><span class="n">id</span><span class="o">=</span><span class="s2">"@+id/ribbonRecyclerView"</span>
+      <span class="nl">android:</span><span class="n">layout_width</span><span class="o">=</span><span class="s2">"match_parent"</span>
+      <span class="nl">android:</span><span class="n">layout_height</span><span class="o">=</span><span class="s2">"wrap_content"</span>
+      <span class="nl">android:</span><span class="n">layout_marginTop</span><span class="o">=</span><span class="s2">"15dp"</span>
+      <span class="nl">app:</span><span class="n">ribbon_recycler_space</span><span class="o">=</span><span class="s2">"3dp"</span>
+      <span class="nl">app:</span><span class="n">ribbon_recycler_orientation</span><span class="o">=</span><span class="s2">"horizontal"</span><span class="o">/&gt;</span>
+</code></pre></div></div>
+
+<p>Add or remove <code class="highlighter-rouge">RibbonView</code> items.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">recyclerView</span><span class="o">.</span><span class="na">addRibbon</span><span class="o">(</span><span class="n">ribbonView</span><span class="o">);</span>
+<span class="n">recyclerView</span><span class="o">.</span><span class="na">addRibbon</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="n">ribbonView</span><span class="o">);</span>
+<span class="n">recyclerView</span><span class="o">.</span><span class="na">addRibbonList</span><span class="o">(</span><span class="n">ribbonViewList</span><span class="o">);</span>
+<span class="n">recyclerView</span><span class="o">.</span><span class="na">removeRibbon</span><span class="o">(</span><span class="n">ribbonView</span><span class="o">);</span>
+<span class="n">recyclerView</span><span class="o">.</span><span class="na">removeRibbon</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+<span class="n">recyclerView</span><span class="o">.</span><span class="na">clear</span><span class="o">();</span>
+</code></pre></div></div>
+
+<h2 id="ribbonview-attributes">RibbonView Attributes</h2>
+<p>Attributes | Type | Default | Description<br />
+— | — | — | —<br />
+ribbonBackgroundColor | Color | #e254ff | sets ribbon background using color.<br />
+ribbonRadius | Float | 10f | sets ribbon corner’s radius. It’s only active using with <code class="highlighter-rouge">ribbonBackgroundColor</code>.<br />
+ribbonDrawable | Drawable | null | sets ribbon background using drawable. <code class="highlighter-rouge">ribbonBackgroundColor</code> and <code class="highlighter-rouge">ribbonRadius</code> will be ignored.<br />
+ribbonRotation | Int | 0 | sets ribbon rotation. Only between 1 to 90 or -90 to -1 degree.<br />
+paddingLeft | Float | 8f | sets left padding of the text.<br />
+paddingTop | Float | 4f | sets top padding of the text.<br />
+paddingRight | Float | 8f | sets right padding of the text.<br />
+paddingBottom | Float | 4f | sets bottom padding of the text.<br />
+text | String | “” | sets text. It is same as <code class="highlighter-rouge">android:text</code> attribute.<br />
+textColor | Color | Color.WHITE | sets text color. It is same as <code class="highlighter-rouge">android:textColor</code> attribute.<br />
+textSize | Float | 12f | sets text size. It is same as <code class="highlighter-rouge">android:textSize</code> attribute.<br />
+textStyle | Int | Typeface.NORMAL | sets text style. It is same as <code class="highlighter-rouge">android:textStyle</code> attribute.</p>
+
+<h2 id="shimmerribbonview-attributes">ShimmerRibbonView Attributes</h2>
+<p>Attributes | Type | Default | Description<br />
+— | — | — | —<br />
+ribbon | RibbonView | RibbonView(context) | sets <code class="highlighter-rouge">RibbonView</code> on the frame.<br />
+shimmer | Shimmer | AlphaHighlightBuilder(context).build() | sets <code class="highlighter-rouge">Shimmer</code> on the frame.</p>
+
+<h2 id="shimmerlayout-attributes">ShimmerLayout Attributes</h2>
+<p>Attributes | Type | Default | Description<br />
+— | — | — | —<br />
+ribbonHeader | RibbonView | RibbonView(context) | sets header <code class="highlighter-rouge">RibbonView</code> on the frame.<br />
+ribbonBottom | RibbonView | RibbonView(context) | sets bottom <code class="highlighter-rouge">RibbonView</code> on the frame.<br />
+ribbonHeaderAlign | Gravity | Gravity.START | sets an align of the header ribbon.<br />
+ribbonBottomAlign | Gravity | Gravity.CENTER | sets an align of the bottom ribbon.</p>
+
+<h1 id="license">License</h1>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright 2019 skydoves
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</code></pre></div></div>
+
+          <br>
+          <div class="post__tags">
+            
+              <a href="/AndroidUICollection/tag/AndroidRibbon">AndroidRibbon</a>
+            
+          </div>
+            
+        </div>
+          
+          <br>
+          <hr>
+          <br>  
+          <div class="post-content"  itemprop="articleBody">
+            
+          </div>
+          <br>
+          <hr>
+          <br>
+
+        
+
+        
+
+<ul class="share-list">
+  <li>
+    <a class="share-list__link" href="https://twitter.com/intent/tweet?text=AndroidRibbon&url=http://localhost:4000/AndroidUICollection/2019/02/07/AndroidRibbon/&via=kmshack_kr&related=kmshack_kr" rel="nofollow" target="_blank" title="Share on Twitter">
+      <div data-icon="ei-sc-twitter" data-size="s" class="share-list__icon share-list__icon--twitter"></div>
+    </a>
+  </li>
+  <li>
+    <a class="share-list__link" href="https://facebook.com/sharer.php?u=http://localhost:4000/AndroidUICollection/2019/02/07/AndroidRibbon/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <div data-icon="ei-sc-facebook" data-size="s" class="share-list__icon share-list__icon--facebook"></div>
+    </a>
+  </li>
+  <li>
+    <a class="share-list__link" href="https://plus.google.com/share?url=http://localhost:4000/AndroidUICollection/2019/02/07/AndroidRibbon/" rel="nofollow" target="_blank" title="Share on Google+">
+    <div data-icon="ei-sc-google-plus" data-size="s" class="share-list__icon share-list__icon--google"></div>
+    </a>
+  </li>
+</ul>
+
+        <h5 class="separator">
+  <span class="separator__title">Newsletter</span>
+</h5>
+
+<div class="box box--news-letter">
+  <form action="//aspirethemes.us12.list-manage.com/subscribe/post?u=9723f3c5c3a2637fbba3bc673&amp;id=7b50db9989" method="post" target="_blank">
+    <div class="row">
+      <div class="column medium-9 large-9">
+        <input type="email" name="EMAIL" placeholder="Your email address">
+      </div>
+      <div class="column medium-3 large-3">
+        <input type="submit" class="button button--expand" value="SIGN UP">
+      </div>
+    </div>
+  </form>
+</div>
+
+        <section class="disqus">
+  <h5 class="separator">
+    <span class="separator__title">Comments</span>
+  </h5>
+  <div id="disqus_thread"></div>
+
+<script>
+  var disqus_config = function () {
+    this.page.url = "http://localhost:4000/2019/02/07/AndroidRibbon/";
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//android-kmshack-kr.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</section>
+      </article>
+    </div>
+
+  </div> <!-- row-->
+</div> <!-- wrapper -->
+  </div>
+    
+  <script src="/AndroidUICollection/js/jquery-2.1.4.min.js"></script>
+  <script src="/AndroidUICollection/js/evil-icons.min.js"></script>
+  <script src="/AndroidUICollection/js/jquery.fitvids.js"></script>
+  <script src="/AndroidUICollection/js/jquery.ghostHunter.min.js"></script>
+  <script src="/AndroidUICollection/js/script.js"></script>
+</body>
+
+</html>

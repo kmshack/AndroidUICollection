@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>OTP/PIN View</title>
-  <meta name="description" content="Android PinView/OtpView                A custom control to enter a four digit code usually in cases of authentication.         Supporting Android PinView/Otp...">
+  <meta name="description" content="Android PinView/OtpView                   A custom control to enter a four digit code usually in cases of authentication.         Supporting Android PinView/...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
@@ -16,18 +16,18 @@
   <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://localhost:4000/AndroidUICollection/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="Android PinView/OtpView                A custom control to enter a four digit code usually in cases of authentication.         Supporting Android PinView/Otp...">
+  <meta name="description" content="Android PinView/OtpView                   A custom control to enter a four digit code usually in cases of authentication.         Supporting Android PinView/...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="OTP/PIN View">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="Android PinView/OtpView                A custom control to enter a four digit code usually in cases of authentication.         Supporting Android PinView/Otp...">
+  <meta property="og:description" content="Android PinView/OtpView                   A custom control to enter a four digit code usually in cases of authentication.         Supporting Android PinView/...">
   <meta property="og:url" content="http://localhost:4000/AndroidUICollection/2016/10/07/PinOtpView/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="Android PinView/OtpView                A custom control to enter a four digit code usually in cases of authentication.         Supporting Android PinView/Otp..." />
+  <meta name="twitter:description" content="Android PinView/OtpView                   A custom control to enter a four digit code usually in cases of authentication.         Supporting Android PinView/..." />
 
   
   	<!-- Article specific OG data -->
@@ -553,6 +553,22 @@
                 
               
             
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/AndroidUICollection/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -608,7 +624,7 @@
 
           <div class="font-tiny">
               <br>
-            &copy; 2018 Android UI OpenSource
+            &copy; 2019 Android UI OpenSource
           </div>
         </div>
       </div>
@@ -681,10 +697,11 @@
           <br>
           <h1 align="center">Android PinView/OtpView</h1>
 <p align="center">
-  <a href="https://app.codacy.com/app/mukesh_2/android-otpview-pinview?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=mukeshsolanki/android-otpview-pinview&amp;utm_campaign=Badge_Grade_Dashboard"><img src="https://api.codacy.com/project/badge/Grade/9251d0eef1d64538aa2599a26e6db8f8" /></a>
+  <a href="https://www.codacy.com/app/mukeshsolanki/android-otpview-pinview?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=mukeshsolanki/android-otpview-pinview&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/ea98277d42924a09b5ae9daa5d10e424" /></a>
+  <a href="https://jitpack.io/#mukeshsolanki/android-otpview-pinview"> <img src="https://jitpack.io/v/mukeshsolanki/android-otpview-pinview/month.svg" /></a>
   <a href="https://jitpack.io/#mukeshsolanki/android-otpview-pinview"> <img src="https://jitpack.io/v/mukeshsolanki/android-otpview-pinview.svg" /></a>
   <a href="https://circleci.com/gh/mukeshsolanki/android-otpview-pinview/tree/master"> <img src="https://circleci.com/gh/mukeshsolanki/android-otpview-pinview/tree/master.svg?style=shield" /></a>
-  <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" /></a>
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" /></a>
   <br /><br />
     A custom control to enter a four digit code usually in cases of authentication.
 </p>
@@ -740,7 +757,12 @@
       <span class="nt">/&gt;</span>
 .....
 </code></pre></div></div>
-
+<p>Add otpview style in the AppTheme</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"AppTheme"</span> <span class="na">parent=</span><span class="s">"Theme.AppCompat.Light.NoActionBar"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;--</span> <span class="err">Customize</span> <span class="err">your</span> <span class="err">theme</span> <span class="err">here.</span> <span class="err">--</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"otpViewStyle"</span><span class="nt">&gt;</span>@style/OtpWidget.OtpView<span class="nt">&lt;/item&gt;</span>
+  <span class="nt">&lt;/style&gt;</span>
+</code></pre></div></div>
 <p>To get a callback when the user enters the otp make use of <code class="highlighter-rouge">OnOtpCompletionListener</code> like wise</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">private</span> <span class="n">OtpView</span> <span class="n">otpView</span><span class="o">;</span>
@@ -770,7 +792,9 @@
 | app:cursorColor | sets the color of the cursor |<br />
 | app:cursorWidth | sets width of the cursor |<br />
 | app:itemBackground | sets the background color of each item in the otp view |<br />
-| app:hideLineWhenFilled | toggles the line border |</p>
+| app:hideLineWhenFilled | toggles the line border |<br />
+| app:rtlTextDirection | toggles RTL text direction |<br />
+| app:state_filled | toggles the option fill the field after data has been entered (Style of file can we set with a drawable assigned using itemBackground |</p>
 
 <p>Apart from these you can use any property that applies to an <code class="highlighter-rouge">EditText</code>.</p>
 
@@ -786,19 +810,27 @@
 </ul>
 
 <h2 id="license">License</h2>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright 2018 Mukesh Solanki
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MIT License
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+Copyright (c) 2018 Mukesh Solanki
 
-http://www.apache.org/licenses/LICENSE-2.0
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 </code></pre></div></div>
 
           <br>
