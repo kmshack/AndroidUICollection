@@ -7,4 +7,4 @@ tag: [compose, picker, wheel, date-time]
 link: 'https://github.com/commandiron/WheelPickerCompose'
 ---
 
-{% remote_markdown https://raw.githubusercontent.com/commandiron/WheelPickerCompose/main/README.md %}
+{% remote_markdown https://raw.githubusercontent.com/commandiron/WheelPickerCompose/master/README.md %}

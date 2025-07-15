@@ -7,4 +7,4 @@ tag: [compose, floating, bubble, overlay]
 link: 'https://github.com/dofire/Floating-Bubble-View'
 ---
 
-{% remote_markdown https://raw.githubusercontent.com/dofire/Floating-Bubble-View/main/README.md %}
+{% remote_markdown https://raw.githubusercontent.com/dofire/Floating-Bubble-View/master/README.md %}
