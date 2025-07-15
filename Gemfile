@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 
 gem 'bundler'
-gem 'jekyll', '~> 3.8.0'
+gem 'jekyll', '~> 3.9.5'
 gem 'jekyll-paginate'
 gem 'jekyll-tagging'
+gem 'kramdown', '>= 2.3.1'
+gem 'kramdown-parser-gfm'
+gem 'addressable', '>= 2.8'
+gem 'webrick'
