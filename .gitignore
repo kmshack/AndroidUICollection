@@ -1,0 +1,44 @@
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Bundle
+.bundle/
+vendor/
+
+# Remote markdown cache
+_remote_markdown_cache/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Node (if using any JS tools)
+node_modules/
+
+# Ruby
+*.gem
+*.rbc
+.config
+coverage/
+InstalledFiles
+pkg/
+spec/reports/
+test/tmp/
+test/version_tmp/
+tmp/
+
+# Environment variables
+.env
+.env.local
+
+# Logs
+*.log
