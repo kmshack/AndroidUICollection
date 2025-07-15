@@ -35,6 +35,17 @@ layout: default
               <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url({{ page.image | prepend: site.baseurl }})"></div>
             </div>
           <br>
+          
+          {% if page.summary %}
+          <div class="library-summary">
+            <h3>📚 Library Overview</h3>
+            <p>{{ page.summary }}</p>
+          </div>
+          <br>
+          <hr>
+          <br>
+          {% endif %}
+          
           {{ content }}
           <br>
           <div class="post__tags">

@@ -32,10 +32,25 @@
 }
 
 .FlexEmbed--9by16:before {
+  // Remove fixed aspect ratio for masonry layout
+  padding-bottom: 0;
+}
 
-  @media #{$large-up} { padding-bottom: 180%; }
-  @media #{$large-down} { padding-bottom: 80%; }
-     
+// Variable height support for masonry
+.FlexEmbed--masonry {
+  position: relative;
+  
+  &:before {
+    display: none;
+  }
+  
+  .CoverImage {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 200px;
+    max-height: 400px;
+  }
 }
 
 .CoverImage {

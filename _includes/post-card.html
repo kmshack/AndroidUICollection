@@ -1,4 +1,4 @@
-<article class="post-card-wrap column medium-3 large-3"> 
+<article class="post-card-wrap"> 
 
   <div class="post-card">
       
@@ -19,9 +19,10 @@
       {% else %}
 
         <a href="{{ post.url | prepend: site.baseurl }}" class="block" title="{{ post.title }}">
-          <div class="grey-bg post-card__image CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url({{ post.image | prepend: site.baseurl }})">
+          <div class="post-card__image">
+            <img src="{{ post.image | prepend: site.baseurl }}" alt="{{ post.title }}" class="masonry-image" loading="lazy">
             {% if post.featured %}
-              <span title="Featured Post">
+              <span class="post-card--featured" title="Featured Post">
                 <span class="post-card--featured__icon" data-icon="ei-star" data-size="s"></span>
               </span>
             {% endif %}

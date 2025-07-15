@@ -1,0 +1,43 @@
+//---------------------------
+// Library Summary Component
+//---------------------------
+
+.library-summary {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-left: 4px solid #007bff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  
+  h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #343a40;
+    font-size: 1.25rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  p {
+    margin: 0;
+    color: #495057;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+  
+  @media #{$medium-down} {
+    padding: 1rem;
+    margin: 1.5rem 0;
+    
+    h3 {
+      font-size: 1.1rem;
+    }
+    
+    p {
+      font-size: 0.95rem;
+    }
+  }
+}

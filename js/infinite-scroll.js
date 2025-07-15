@@ -81,6 +81,11 @@
             postsContainer.appendChild(fragment);
             currentIndex = endIndex;
             
+            // Apply masonry layout if available
+            if (window.applyMasonryLayout) {
+                setTimeout(window.applyMasonryLayout, 100);
+            }
+            
             // Hide spinner, show button
             spinner.style.display = 'none';
             

@@ -21,7 +21,17 @@
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(git pull:*)",
-      "Bash(bash:*)"
+      "Bash(bash:*)",
+      "Bash(grep:*)",
+      "Bash(pkill:*)",
+      "Bash(pip3 install:*)",
+      "Bash(for repo in \"skydoves/compose-tooltip\" \"cashapp/paging-multiplatform\" \"massoudss/audioWaveformView\")",
+      "Bash(do echo \"Checking $repo:\")",
+      "Bash(done)",
+      "Bash(wget:*)",
+      "WebFetch(domain:valentinilk.github.io)",
+      "Bash(# Download material-you-grid.gif\nwget -O images/posts/material-you-grid.gif \"\"https://raw.githubusercontent.com/SimplyBuilt/material-you-grid/main/screenshots/dynamic_color_grid_screenshot.png\"\" 2>/dev/null || echo \"\"Failed: material-you-grid\"\"\n\n# Download reveal.gif  \nwget -O images/posts/reveal.gif \"\"https://raw.githubusercontent.com/svenjacobs/reveal/main/art/demo.gif\"\" 2>/dev/null || echo \"\"Failed: reveal\"\"\n\n# Download lazybones.gif\nwget -O images/posts/lazybones.gif \"\"https://raw.githubusercontent.com/ChildrenOfCorn/Lazybones/master/art/demo.gif\"\" 2>/dev/null || echo \"\"Failed: lazybones\"\"\n\n# List what we downloaded\nls -la images/posts/{material-you-grid,reveal,lazybones}.gif 2>/dev/null | grep -v \"\"cannot access\"\")",
+      "Bash(# Check more missing images and try to download them\n# ComposeHabitToolkit from skydoves\nwget -O images/posts/ComposeHabitToolkit.gif \"\"https://raw.githubusercontent.com/skydoves/skydoves/main/showcase/compose-habit-tracker-anim.gif\"\" 2>/dev/null && echo \"\"✅ Downloaded ComposeHabitToolkit.gif\"\" || echo \"\"❌ Failed: ComposeHabitToolkit\"\"\n\n# compose-tooltip from skydoves\nwget -O images/posts/compose-tooltip.gif \"\"https://raw.githubusercontent.com/skydoves/compose-tooltip/main/preview/preview.gif\"\" 2>/dev/null && echo \"\"✅ Downloaded compose-tooltip.gif\"\" || echo \"\"❌ Failed: compose-tooltip\"\"\n\n# List recently modified files\nls -lt images/posts/*.gif | head -10)"
     ],
     "deny": []
   }
