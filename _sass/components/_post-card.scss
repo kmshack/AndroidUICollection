@@ -12,6 +12,8 @@
   &__image {
     margin-bottom: half($line-height__base);
     transition: $base-transition-speed;
+    border-radius: 12px;
+    overflow: hidden;
 
     @media #{$medium-down} {
       margin-bottom: half($line-height__medium);
