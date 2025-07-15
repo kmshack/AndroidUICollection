@@ -3,7 +3,7 @@ layout: post
 title: FinestWebView
 featured: true
 image: '/images/posts/2016-10-04-FinestWebView.png'
-tag: [view, web]
+tag: [view, webview]
 link: 'https://github.com/TheFinestArtist/FinestWebView-Android'
 md: 'https://raw.githubusercontent.com/TheFinestArtist/FinestWebView-Android/master/README.md'
 ---

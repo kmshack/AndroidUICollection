@@ -3,7 +3,7 @@ layout: post
 title: Navigation Tab Bar
 featured: true
 image: '/images/posts/2016-10-01-NavigationTabBar.gif'
-tag: [view, navigation]
+tag: [view, navigation, badge, bar, devlight, library]
 link: 'https://github.com/DevLight-Mobile-Agency/NavigationTabBar'
 md: 'https://raw.githubusercontent.com/DevLight-Mobile-Agency/NavigationTabBar/master/README.md'
 ---

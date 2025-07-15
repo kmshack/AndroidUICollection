@@ -3,7 +3,7 @@ layout: post
 title: MaterialRecents
 featured: true
 image: '/images/posts/2016-10-02-MaterialRecents.gif'
-tag: [view, recents, material]
+tag: [material, view]
 link: 'https://github.com/ZieIony/MaterialRecents'
 md: 'https://raw.githubusercontent.com/ZieIony/MaterialRecents/master/README.md'
 ---

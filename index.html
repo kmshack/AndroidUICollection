@@ -6,16 +6,20 @@ layout: default
 
   <div class="row row--full">
     <div class="post-list">
-      {% for post in paginator.posts %}
-        {% unless post.draft %}
-          {% include post-card.html %}
-        {% endunless %}
-      {% endfor %}
+      <!-- Posts will be dynamically loaded here -->
     </div>
   </div>
 
-  <div class="row row--full">
-    {% include pagination.html %}
+  <!-- Hidden container with all posts -->
+  <div id="all-posts" style="display: none;">
+    {% for post in site.posts %}
+      {% unless post.draft %}
+        {% include post-card.html %}
+      {% endunless %}
+    {% endfor %}
   </div>
 
 </div>
+
+<!-- Include infinite scroll script -->
+<script src="{{ '/js/infinite-scroll.js' | prepend: site.baseurl }}"></script>

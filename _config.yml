@@ -21,7 +21,7 @@ kramdown:
   
   
 permalink: pretty
-paginate:  24
+# paginate:  24  # Disabled for infinite scroll
 
 plugins:
   - jekyll-paginate

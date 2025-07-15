@@ -3,7 +3,7 @@ layout: post
 title: AVLoadingIndicatorView
 featured: true
 image: '/images/posts/2016-09-27-AVLoadingIndicatorView.gif'
-tag: [view, indicator, loading]
+tag: [animation, indicator, loading, view]
 link: 'https://github.com/81813780/AVLoadingIndicatorView'
 ---
 

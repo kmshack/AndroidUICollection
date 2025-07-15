@@ -3,7 +3,7 @@ layout: post
 title: Folder Reside Menu
 featured: true
 image: '/images/posts/2016-10-02-FolderResideMenu.gif'
-tag: [view, menu, drawer]
+tag: [expand, menu, view]
 link: 'https://github.com/dkmeteor/Folder-ResideMenu'
 md: 'https://raw.githubusercontent.com/dkmeteor/Folder-ResideMenu/master/README.md'
 ---
